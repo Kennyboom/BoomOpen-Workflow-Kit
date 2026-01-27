@@ -16,12 +16,12 @@ Transform one AI into a coordinated team of 20 specialist agents with structured
 
 ## Why Agent Assistant?
 
-| 🎯 Feature | What It Does |
-|------------|--------------|
-| **One-Time Setup, Forever Use** | Configure once at global level (`~/.cursor/`, `~/.claude/`, etc.) and it auto-applies to ALL your projects. No more repetitive config for every new repo. |
-| **Sub-Agent Orchestration** | When supported (Claude Code, Cursor Max mode), the main agent spawns specialized sub-agents to handle tasks **in parallel** — backend, frontend, testing, security all working simultaneously. |
-| **Multi-Platform Support** | Works seamlessly across **Cursor**, **GitHub Copilot**, **Claude Code**, and **Antigravity/Gemini**. Same workflows, any tool. |
-| **Matrix Skill Discovery** | Automatically injects the right skills into each agent based on their profile and your request. 310+ skills, zero manual config. |
+| 🎯 Feature                      | What It Does                                                                                                                                                                                   |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **One-Time Setup, Forever Use** | Configure once at global level (`~/.cursor/`, `~/.claude/`, etc.) and it auto-applies to ALL your projects. No more repetitive config for every new repo.                                      |
+| **Sub-Agent Orchestration**     | When supported (Claude Code, Cursor Max mode), the main agent spawns specialized sub-agents to handle tasks **in parallel** — backend, frontend, testing, security all working simultaneously. |
+| **Multi-Platform Support**      | Works seamlessly across **Cursor**, **GitHub Copilot**, **Claude Code**, and **Antigravity/Gemini**. Same workflows, any tool.                                                                 |
+| **Matrix Skill Discovery**      | Automatically injects the right skills into each agent based on their profile and your request. 310+ skills, zero manual config.                                                               |
 
 ### The Goal
 
@@ -31,15 +31,31 @@ Transform one AI into a coordinated team of 20 specialist agents with structured
 
 ## Quick Results
 
-| Metric | Improvement |
-|--------|-------------|
-| ⏰ Time-to-Production | **70% faster** |
-| 🐛 Bug Rate | **70% reduction** |
-| 💰 Token Cost | **85% savings** |
+| Metric                | Improvement       |
+| --------------------- | ----------------- |
+| ⏰ Time-to-Production | **70% faster**    |
+| 🐛 Bug Rate           | **70% reduction** |
+| 💰 Token Cost         | **85% savings**   |
 
 ---
 
 ## Installation
+
+### Global Package (Recommended)
+
+```bash
+npm install -g @namch/agent-assistant
+
+# After installing globally, run:
+
+agent-assistant install cursor # Setup for Cursor
+agent-assistant install claude # Setup for Claude Code
+agent-assistant install copilot # Setup for GitHub Copilot
+agent-assistant install antigravity # Setup for Antigravity/Gemini
+agent-assistant install --all # Setup for ALL tools
+```
+
+### From Source
 
 ```bash
 # Clone
@@ -55,6 +71,38 @@ node cli/install.js install --all       # All tools
 ```
 
 That's it. The framework installs globally and works across all your projects.
+
+## Uninstall
+
+### Remove configurations
+
+```bash
+agent-assistant uninstall cursor      # Remove from Cursor
+agent-assistant uninstall claude      # Remove from Claude Code
+agent-assistant uninstall copilot     # Remove from GitHub Copilot
+agent-assistant uninstall antigravity # Remove from Antigravity/Gemini
+agent-assistant uninstall --all       # Remove from ALL tools
+```
+
+### Remove global package
+
+```bash
+npm uninstall -g @namch/agent-assistant
+```
+
+### From Source
+
+```bash
+cd agent-assistant
+node cli/install.js uninstall cursor      # Remove from Cursor
+node cli/install.js uninstall claude      # Remove from Claude Code
+node cli/install.js uninstall copilot     # Remove from GitHub Copilot
+node cli/install.js uninstall antigravity # Remove from Antigravity/Gemini
+node cli/install.js uninstall --all   # Remove from all tools
+# Then remove the directory
+cd ..
+rm -rf agent-assistant
+```
 
 ---
 
@@ -82,34 +130,34 @@ Creates `./documents/` files that agents reference. Without docs, agents work ge
 
 ### Variants
 
-| Variant | Use For | Agents |
-|---------|---------|--------|
-| `:fast` | Simple tasks | 2-3 agents |
+| Variant | Use For          | Agents                     |
+| ------- | ---------------- | -------------------------- |
+| `:fast` | Simple tasks     | 2-3 agents                 |
 | `:hard` | Complex features | 5-8 agents + quality gates |
 
 ---
 
 ## Commands Reference
 
-| Category | Commands |
-|----------|----------|
-| **Build** | `/cook`, `/code`, `/fix` |
-| **Quality** | `/test`, `/review`, `/debug` |
-| **Plan** | `/plan`, `/brainstorm`, `/design` |
-| **Docs** | `/docs:core`, `/docs:business`, `/docs:audit` |
-| **Deploy** | `/deploy:check`, `/deploy:preview`, `/deploy:production` |
+| Category    | Commands                                                 |
+| ----------- | -------------------------------------------------------- |
+| **Build**   | `/cook`, `/code`, `/fix`                                 |
+| **Quality** | `/test`, `/review`, `/debug`                             |
+| **Plan**    | `/plan`, `/brainstorm`, `/design`                        |
+| **Docs**    | `/docs:core`, `/docs:business`, `/docs:audit`            |
+| **Deploy**  | `/deploy:check`, `/deploy:preview`, `/deploy:production` |
 
 ---
 
 ## 20 Specialist Agents
 
-| Domain | Agents |
-|--------|--------|
-| **Implementation** | backend-engineer, frontend-engineer, mobile-engineer, game-engineer |
-| **Architecture** | tech-lead, database-architect |
-| **Quality** | tester, reviewer, debugger, security-engineer |
-| **Planning** | planner, brainstormer, business-analyst |
-| **Support** | designer, devops-engineer, docs-manager, performance-engineer, researcher, scouter, project-manager |
+| Domain             | Agents                                                                                              |
+| ------------------ | --------------------------------------------------------------------------------------------------- |
+| **Implementation** | backend-engineer, frontend-engineer, mobile-engineer, game-engineer                                 |
+| **Architecture**   | tech-lead, database-architect                                                                       |
+| **Quality**        | tester, reviewer, debugger, security-engineer                                                       |
+| **Planning**       | planner, brainstormer, business-analyst                                                             |
+| **Support**        | designer, devops-engineer, docs-manager, performance-engineer, researcher, scouter, project-manager |
 
 ---
 
@@ -144,12 +192,12 @@ agent-assistant/
 
 ## Supported Tools
 
-| Tool | Status | Install Path |
-|------|--------|--------------|
-| Cursor | ✅ Full | `~/.cursor/` |
-| Claude Code | ✅ Full | `~/.claude/` |
+| Tool           | Status  | Install Path  |
+| -------------- | ------- | ------------- |
+| Cursor         | ✅ Full | `~/.cursor/`  |
+| Claude Code    | ✅ Full | `~/.claude/`  |
 | GitHub Copilot | ✅ Full | `~/.copilot/` |
-| Antigravity | ✅ Full | `~/.gemini/` |
+| Antigravity    | ✅ Full | `~/.gemini/`  |
 
 ---
 

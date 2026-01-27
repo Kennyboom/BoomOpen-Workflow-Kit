@@ -1,6 +1,6 @@
 {
-  "name": "agent-assistant",
-  "version": "1.0.0",
+  "name": "@namch/agent-assistant",
+  "version": "1.0.2",
   "description": "Multi-agent orchestration framework for AI coding assistants (Cursor, Copilot, Antigravity, Claude Code).",
   "main": "cli/install.js",
   "bin": {
