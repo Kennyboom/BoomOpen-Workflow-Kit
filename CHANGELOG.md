@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2026-01-30
+
+### Added
+
+- **Plan-already-provided short-circuit**: `/code:hard` and `/code:focus` now detect when the user references an existing plan (`@plan`, `@PLAN-...`, path to `PLAN-*.md`, or phrases like "according to plan" / "follow the plan"). When a valid plan exists, **research, scout, and brainstorm phases are skipped** and execution goes straight to context optimization → implementation → test → review.
+
+### Changed
+
+- **`commands/code.md`**: Routing logic updated so that when the user references an existing plan, the router directs to `/code:hard` or `/code:focus` (workflow then skips redundant phases).
+- **`commands/code/hard.md`** and **`commands/code/focus.md`**: New section "PLAN-ALREADY-PROVIDED: SKIP REDUNDANT PHASES" with detection rules and resolution (skip Phase 1–3 when plan provided).
+
 ## [1.0.3] - 2026-01-30
 
 ### Added

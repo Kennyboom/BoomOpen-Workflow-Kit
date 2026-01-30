@@ -28,6 +28,9 @@ execution-mode: router
 ## ROUTING LOGIC
 
 ```
+IF user references an existing plan (@plan, @PLAN-..., path to PLAN-*.md, or "according to plan" / "follow the plan"):
+  → Route to /code:hard or /code:focus (workflow will SKIP research, scout, brainstorm and go straight to implementation)
+
 IF task is simple (clear requirements, single file):
   → Route to /code:fast
 

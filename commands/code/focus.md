@@ -28,6 +28,26 @@ execution-mode: execute
 
 ---
 
+## 📌 PLAN-ALREADY-PROVIDED: SKIP REDUNDANT PHASES
+
+**Before starting Phase 1**, resolve whether the user is **coding from an existing plan**. If yes, **do not** run research, scout, or brainstorm.
+
+### Detection
+
+- User message references a plan: e.g. `@plan`, `@PLAN-...`, path like `./reports/plans/PLAN-{name}.md`, or phrases like "according to plan", "follow the plan", "code from plan", "implement per plan".
+- Or a plan file already exists for this task at `./reports/plans/PLAN-{task}.md` (derive `{task}` from `$ARGUMENTS` or from the referenced file name).
+
+### Resolution
+
+1. **CHECK**: Does a valid plan file exist (user-provided path or `./reports/plans/PLAN-{task}.md`)?
+2. **IF YES**:
+   - **SKIP** Phase 1 (Requirements/Brainstorm), Phase 2 (Scout), Phase 3 (Planning).
+   - **ANNOUNCE**: "✅ Plan provided/found — skipping research, scout, and planning. Proceeding to implementation."
+   - **GO TO**: Strict Context Gate (automatic) → then Phase 4 (Implementation) → Phase 5 (Testing) → Phase 6 (Review).
+3. **IF NO**: Run phases in order: Phase 1 → 2 → 3 → Context Gate → 4 → 5 → 6.
+
+---
+
 ## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
 
 > **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
