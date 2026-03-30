@@ -109,7 +109,7 @@ All 12 workflows are classified by complexity (Low / Medium / High) and frequenc
 | **ID** | BW-006 |
 | **Name** | Dynamic Skill Discovery |
 | **Actor** | HSOL System |
-| **Trigger** | Fitness score < 0.8 for hard/focus command variants |
+| **Trigger** | Fitness score < 0.8 for hard/team command variants |
 | **Outcome** | `npx skills find` → evaluate candidates → check superiority delta (>0.15) → if low-trust + critical: user confirmation → `npx skills add` → register in `_dynamic.yaml` |
 | **Exception Handling** | Timeout (5s) → matrix-only fallback; install failure → rollback + offer matrix skills |
 | **Complexity** | High |
@@ -194,7 +194,7 @@ All 12 workflows are classified by complexity (Low / Medium / High) and frequenc
 | **ID** | BW-011 |
 | **Name** | Plan Short-Circuit |
 | **Actor** | Orchestrator |
-| **Trigger** | User references an existing `PLAN-*.md` file in `/code:hard` or `/code:focus` commands |
+| **Trigger** | User references an existing `PLAN-*.md` file in `/code:hard` or `/code:team` commands |
 | **Outcome** | Detect plan reference → skip research/scout/brainstorm phases → jump to context optimization → implement → test → review |
 | **Exception Handling** | Plan file must exist and be valid; invalid plan → fall back to standard BW-003 flow |
 | **Complexity** | Low |

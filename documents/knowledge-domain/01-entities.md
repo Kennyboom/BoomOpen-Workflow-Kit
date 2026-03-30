@@ -199,15 +199,15 @@ Each team domain folder contains exactly 3 files:
 
 | Command | Slug | Category | Variants |
 |---------|------|----------|----------|
-| /cook | `cook` | engineering | fast, hard, focus, team |
-| /code | `code` | engineering | fast, hard, focus, team |
-| /fix | `fix` | engineering | fast, hard, focus, team |
-| /debug | `debug` | validation | fast, hard, focus, team |
-| /test | `test` | validation | fast, hard, focus, team |
-| /plan | `plan` | planning | fast, hard, focus, team |
-| /design | `design` | design | fast, hard, focus, team |
+| /cook | `cook` | engineering | fast, hard, team |
+| /code | `code` | engineering | fast, hard, team |
+| /fix | `fix` | engineering | fast, hard, team |
+| /debug | `debug` | validation | fast, hard, team |
+| /test | `test` | validation | fast, hard, team |
+| /plan | `plan` | planning | fast, hard, team |
+| /design | `design` | design | fast, hard, team |
 | /review | `review` | validation | fast, hard, team |
-| /report | `report` | support | fast, hard, focus, team |
+| /report | `report` | support | fast, hard, team |
 | /brainstorm | `brainstorm` | research | fast, hard, team |
 | /docs | `docs` | support | core, business, audit |
 | /deploy | `deploy` | devops | check, preview, production, rollback |
@@ -257,7 +257,6 @@ Each variant defines a sequence of phases:
 |------|-------------|-------------|
 | `fast` | cook, code, fix, debug, test, plan, design, report, brainstorm, ask | Minimal phases, quick execution, skip discovery |
 | `hard` | cook, code, fix, debug, test, plan, design, review, report, brainstorm, ask | Full workflow, all phases, full skill resolution |
-| `focus` | cook, code, fix, debug, test, plan, design, report | Hard workflow with enforced context optimization |
 | `team` | cook, code, fix, debug, test, plan, design, review, report, brainstorm | Golden Triangle (3 agents per phase) |
 | `core` | docs | Core documentation workflow |
 | `business` | docs | Business documentation workflow |
@@ -528,7 +527,7 @@ All entry points follow the same pattern:
 | `hsol.discovery.timeout_ms` | integer | `5000` | Discovery timeout in milliseconds |
 | `hsol.discovery.cache_ttl_seconds` | integer | `3600` | Cache time-to-live |
 | `hsol.discovery.async_threshold` | float | `0.8` | Matrix fitness above this skips discovery |
-| `hsol.discovery.apply_for_variants` | string[] | `[hard, focus]` | Variants that trigger discovery |
+| `hsol.discovery.apply_for_variants` | string[] | `[hard, team]` | Variants that trigger discovery |
 | `hsol.trust.new_skill` | float | `0.3` | Initial trust for new skills |
 | `hsol.trust.after_3_executions` | float | `0.5` | Trust after 3 successes |
 | `hsol.trust.after_10_executions` | float | `0.7` | Trust after 10 successes |

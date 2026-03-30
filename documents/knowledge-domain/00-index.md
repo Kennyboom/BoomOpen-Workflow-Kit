@@ -76,7 +76,7 @@ erDiagram
     COMMAND_VARIANT {
         string filename PK "e.g. cook/fast.md"
         string parent_command FK "cook"
-        string variant_type "fast, hard, focus, team"
+        string variant_type "fast, hard, team"
         int phase_count "Number of phases"
         string agents_used "Agent assignments"
     }

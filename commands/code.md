@@ -29,16 +29,13 @@ execution-mode: router
 
 ```
 IF user references an existing plan (@plan, @PLAN-..., path to PLAN-*.md, or "according to plan" / "follow the plan"):
-  → Route to /code:hard or /code:focus (workflow will SKIP research, scout, brainstorm and go straight to implementation)
+  → Route to /code:hard (workflow will SKIP research, scout, brainstorm and go straight to implementation)
 
 IF task is simple (clear requirements, single file):
   → Route to /code:fast
 
 IF task is complex (multi-file, research needed):
   → Route to /code:hard
-
-IF task is complex AND context optimization is critical:
-  → Route to /code:focus
 
 IF task is complex AND maximum quality with team collaboration needed:
   → Route to /code:team
@@ -55,7 +52,6 @@ IF unsure:
 | ------------- | ------------------------------------------------------- |
 | `/code:fast`  | Quick implementation, clear requirements                |
 | `/code:hard`  | Complex features, multi-file changes                    |
-| `/code:focus` | Complex features with **enforced context optimization** |
 | `/code:team`  | Maximum quality with parallel agent team collaboration |
 
 ---
@@ -71,8 +67,7 @@ IF unsure:
 
 1. ⚡ **Fast** → `/code:fast` — Quick implementation
 2. ⚡⚡⚡ **Hard** → `/code:hard` — Full development cycle
-3. 🎯 **Focus** → `/code:focus` — Full cycle with **automatic context clearing** (prevents hallucination)
-4. 👥 **Team** → `/code:team` — Full team collaboration (parallel agents, maximum quality)
+3. 👥 **Team** → `/code:team` — Full team collaboration (parallel agents, maximum quality)
 
 ⏳ Awaiting selection...
 ```

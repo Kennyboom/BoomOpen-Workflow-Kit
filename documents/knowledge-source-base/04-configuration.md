@@ -223,7 +223,7 @@ The central config for the Hybrid Skill Orchestration Layer:
 | `hsol.discovery.timeout_ms` | `5000` | Discovery request timeout |
 | `hsol.discovery.cache_ttl_seconds` | `3600` | Cache duration (1 hour) |
 | `hsol.discovery.async_threshold` | `0.8` | Skip discovery if matrix fitness exceeds this |
-| `hsol.discovery.apply_for_variants` | `["hard", "focus"]` | Only run discovery for these variants; `fast` skips it |
+| `hsol.discovery.apply_for_variants` | `["hard", "team"]` | Only run discovery for these variants; `fast` skips it |
 
 ### matrix-skills/_dynamic.yaml
 

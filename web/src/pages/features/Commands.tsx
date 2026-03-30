@@ -69,8 +69,8 @@ export default function Commands() {
             </Card>
             <Card>
               <CardContent>
-                <Badge variant="purple" size="sm" className="mb-2">:focus</Badge>
-                <p className="text-sm text-text-secondary">Clear context + auto-run phases. Use when you want zero drift from chat history.</p>
+                <Badge variant="purple" size="sm" className="mb-2">:team</Badge>
+                <p className="text-sm text-text-secondary">Parallel multi-agent collaboration with structured phase handoffs.</p>
               </CardContent>
             </Card>
           </div>
@@ -81,8 +81,8 @@ export default function Commands() {
               <p className="text-sm text-text-secondary">
                 Long chat history can make the model &quot;hallucinate&quot; from old context instead of your current request. 
                 <strong> :hard</strong> uses structured phases and deliverables so each step is grounded in the task. 
-                <strong> :focus</strong> goes further by clearing context before running—execution starts fresh and stays locked on what you asked for. 
-                Use <code className="text-text-accent">:focus</code> for complex or critical tasks when you want the best fidelity to your intent.
+                <strong> :team</strong> adds collaborative validation across specialized agents to improve correctness and reduce blind spots.
+                Use <code className="text-text-accent">:team</code> for complex or critical tasks when you need maximum quality.
               </p>
             </CardContent>
           </Card>

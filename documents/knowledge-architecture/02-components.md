@@ -132,19 +132,19 @@ graph LR
 
 | Command | Router File | Variants | Category |
 |---------|------------|----------|----------|
-| `/cook` | `commands/cook.md` | fast, hard, focus, team | Engineering |
-| `/fix` | `commands/fix.md` | fast, hard, focus, team | Engineering |
-| `/plan` | `commands/plan.md` | fast, hard, focus, team | Planning |
-| `/debug` | `commands/debug.md` | fast, hard, focus, team | Validation |
-| `/test` | `commands/test.md` | fast, hard, focus, team | Validation |
+| `/cook` | `commands/cook.md` | fast, hard, team | Engineering |
+| `/fix` | `commands/fix.md` | fast, hard, team | Engineering |
+| `/plan` | `commands/plan.md` | fast, hard, team | Planning |
+| `/debug` | `commands/debug.md` | fast, hard, team | Validation |
+| `/test` | `commands/test.md` | fast, hard, team | Validation |
 | `/review` | `commands/review.md` | fast, hard | Validation |
 | `/docs` | `commands/docs.md` | core, business, audit | Documentation |
-| `/design` | `commands/design.md` | fast, hard, focus, team | Design |
+| `/design` | `commands/design.md` | fast, hard, team | Design |
 | `/deploy` | `commands/deploy.md` | check, preview, production, rollback | Operations |
-| `/report` | `commands/report.md` | fast, hard, focus, team | Reporting |
+| `/report` | `commands/report.md` | fast, hard, team | Reporting |
 | `/brainstorm` | `commands/brainstorm.md` | fast, hard | Research |
 | `/ask` | `commands/ask.md` | fast, hard | Research |
-| `/code` | `commands/code.md` | fast, hard, focus, team | Engineering |
+| `/code` | `commands/code.md` | fast, hard, team | Engineering |
 | `/auto` | `commands/auto.md` | — | Meta |
 
 ### Router Structure (common pattern from cook.md)

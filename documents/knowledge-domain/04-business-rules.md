@@ -197,7 +197,6 @@ The superiority delta of 0.15 means a dynamic skill must exceed the best matrix 
 |---------|-------------------|
 | `fast` | Always skipped — matrix only |
 | `hard` | Enabled — full resolution |
-| `focus` | Enabled — full resolution |
 | `team` | Enabled — full resolution |
 
 ### Complexity Gate

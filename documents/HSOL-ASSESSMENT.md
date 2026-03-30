@@ -11,7 +11,7 @@
 | Dimension | Rating | Notes |
 |-----------|--------|--------|
 | **Completeness** | Strong | Resolution algorithm, decision gate, blocking/async, variant/fitness, trust, conflict, edge cases are defined. |
-| **Consistency** | Strong | Thresholds (0.75, 0.8), variant (fast/hard/focus), and flow align across Discovery, Orchestration, _index.yaml, Blueprint. |
+| **Consistency** | Strong | Thresholds (0.75, 0.8), variant (fast/hard/team), and flow align across Discovery, Orchestration, _index.yaml, Blueprint. |
 | **Production readiness** | Good | Clear rules for tool scope, install commands, fallbacks; a few operational gaps (see below). |
 | **Agent intelligence** | Strong | Matrix-first + dynamic enhancement, blocking when matrix insufficient so current task uses new skill; async when matrix adequate. |
 
@@ -28,9 +28,9 @@
 
 2. **Variant + fitness logic**
    - Fast → no discovery (keeps fast path low-latency).
-   - Hard/Focus + fitness ≥ 0.8 → skip discovery.
-   - Hard/Focus + 0.75 ≤ fitness < 0.8 → async (recommend for next time).
-   - Hard/Focus + fitness < 0.75 → blocking (current task uses new skill). Aligns with “skill for current work” goal.
+   - Hard/Team + fitness ≥ 0.8 → skip discovery.
+   - Hard/Team + 0.75 ≤ fitness < 0.8 → async (recommend for next time).
+   - Hard/Team + fitness < 0.75 → blocking (current task uses new skill). Aligns with “skill for current work” goal.
 
 3. **Tool-scoped behavior**
    - All install/verify actions are for the **current tool only**; `-g -y` and no cross-tool install unless user asks. Reduces confusion and errors.
@@ -78,7 +78,7 @@
 
 ### 5. Default variant (optional)
 
-**Issue**: When user says `/cook` without `:fast` or `:hard`, the router picks a default. Discovery runs only for hard/focus. If the default is “hard”, discovery applies; if “fast”, it does not. Not ambiguous but could be explicit.
+**Issue**: When user says `/cook` without `:fast` or `:hard`, the router picks a default. Discovery runs only for hard/team. If the default is “hard”, discovery applies; if “fast”, it does not. Not ambiguous but could be explicit.
 
 **Suggestion**: In SKILL-DISCOVERY or SKILL-ORCHESTRATION, one line: “When command has no variant, use the router’s default (e.g. hard for full workflows); discovery eligibility follows that variant.” Optional.
 
@@ -96,7 +96,7 @@
 - **Install flow**: Commands, scope (current tool), and confirm rules are clear.
 - **Fallbacks**: Timeout, no skills, install failure are handled.
 - **Config**: _index.yaml has discovery on/off, thresholds, variants, promotion; per-agent overrides exist.
-- **Cross-doc alignment**: Thresholds (0.75, 0.8), variant list (hard, focus), and flow (blocking vs async) match across docs and config.
+- **Cross-doc alignment**: Thresholds (0.75, 0.8), variant list (hard, team), and flow (blocking vs async) match across docs and config.
 
 ---
 

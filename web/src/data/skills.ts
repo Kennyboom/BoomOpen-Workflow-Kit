@@ -63,7 +63,7 @@ export const skillDiscoverySteps = [
   {
     step: 3,
     title: 'Optional Dynamic Discovery',
-    description: 'For hard/focus commands, if matrix fitness is below threshold, find-skills can discover community skills.',
+    description: 'For hard/team commands, if matrix fitness is below threshold, find-skills can discover community skills.',
     icon: '🌐',
   },
   {
@@ -90,9 +90,9 @@ export interface HsolDecisionRow {
 
 export const hsolDecisionTable: HsolDecisionRow[] = [
   { scenario: 'Fast path', variant: 'fast', matrixFitness: 'any', action: 'No discovery; matrix only.' },
-  { scenario: 'Matrix sufficient', variant: 'hard / focus', matrixFitness: '≥ 0.8', action: 'Skip discovery; execute with matrix.' },
-  { scenario: 'Matrix adequate', variant: 'hard / focus', matrixFitness: '0.75 – 0.8', action: 'Async discovery; recommend for next time.' },
-  { scenario: 'Matrix insufficient', variant: 'hard / focus', matrixFitness: '< 0.75', action: 'Blocking discovery → install → re-inject → execute with new skill.' },
+  { scenario: 'Matrix sufficient', variant: 'hard / team', matrixFitness: '≥ 0.8', action: 'Skip discovery; execute with matrix.' },
+  { scenario: 'Matrix adequate', variant: 'hard / team', matrixFitness: '0.75 – 0.8', action: 'Async discovery; recommend for next time.' },
+  { scenario: 'Matrix insufficient', variant: 'hard / team', matrixFitness: '< 0.75', action: 'Blocking discovery → install → re-inject → execute with new skill.' },
 ]
 
 // What makes HSOL unique
@@ -111,7 +111,7 @@ export const hsolUniqueFeatures: HsolUniqueFeature[] = [
   {
     icon: '🌐',
     title: 'Variant-Aware Discovery',
-    description: 'Dynamic discovery runs only for hard/focus; fast stays fast with no network call.',
+    description: 'Dynamic discovery runs only for hard/team; fast stays fast with no network call.',
   },
   {
     icon: '📐',

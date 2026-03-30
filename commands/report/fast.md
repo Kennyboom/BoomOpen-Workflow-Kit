@@ -10,7 +10,7 @@ execution-mode: execute
 > **MISSION**: Generate concise, actionable status reports and summaries.
 >
 > Use for daily standups, progress checks, and high-level overviews.
-> For **update existing files** or **generate from template**, use `/report:hard` or `/report:focus`.
+> For **update existing files** or **generate from template**, use `/report:hard` or `/report:team`.
 
 <task>$ARGUMENTS</task>
 
@@ -61,7 +61,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | Agent | `reporter`                                                                 |
 | ----- | -------------------------------------------------------------------------- |
 | Goal  | Infer intent; if **create report** → generate concise status report        |
-| Exit  | Report with Summary, Key Changes, Next Steps — or recommend `/report:hard`/`/report:focus` if user intent is update/template |
+| Exit  | Report with Summary, Key Changes, Next Steps — or recommend `/report:hard`/`/report:team` if user intent is update/template |
 
 ---
 

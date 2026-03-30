@@ -27,7 +27,6 @@ agent-assistant/
 │   └── cook/                # Variant subdirectory
 │       ├── fast.md
 │       ├── hard.md
-│       ├── focus.md
 │       └── team.md
 ├── documents/               # Project knowledge base
 │   ├── knowledge-overview/

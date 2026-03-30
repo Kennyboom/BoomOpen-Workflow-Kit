@@ -208,14 +208,13 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Implement new features end-to-end |
 | Input | Feature description |
-| Variants | `fast`, `hard`, `focus`, `team` |
-| Default routing | Simple spec → fast; Complex → hard; Context-critical → focus; Max quality → team |
+| Variants | `fast`, `hard`, `team` |
+| Default routing | Simple spec → fast; Complex → hard; Max quality → team |
 
 | Variant | Phases | Discovery | Team |
 |---------|--------|-----------|------|
 | `fast` | Minimal (typically 2-3) | Matrix only, skip dynamic | Single agent per phase |
 | `hard` | Full (typically 5-7) | Matrix + dynamic discovery | Single agent per phase |
-| `focus` | Full with context clearing | Matrix + dynamic discovery | Single agent per phase |
 | `team` | Full with Golden Triangle | Matrix + dynamic discovery | 3 agents per phase |
 
 #### `/code` — Code Generation
@@ -224,7 +223,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Generate code snippets or modules |
 | Input | Code specification |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Same as `/cook` |
 
 #### `/fix` — Bug Fixing
@@ -233,7 +232,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Identify and fix bugs |
 | Input | Bug description or error message |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Clear bug → fast; Complex/multi-component → hard |
 
 #### `/debug` — Debugging
@@ -242,7 +241,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Deep investigation of issues |
 | Input | Issue description or symptoms |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Quick investigation → fast; Root cause analysis → hard |
 
 #### `/test` — Test Generation
@@ -251,7 +250,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Generate test suites |
 | Input | Component or feature to test |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Unit tests → fast; Full coverage strategy → hard |
 
 #### `/plan` — Planning
@@ -260,7 +259,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Create implementation plans and task breakdowns |
 | Input | Feature or project to plan |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Quick plan → fast; Detailed architecture → hard |
 
 #### `/design` — UI/UX Design
@@ -269,7 +268,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Design user interfaces and experiences |
 | Input | UI/UX requirements |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Simple component → fast; Full design system → hard |
 
 #### `/review` — Code Review
@@ -287,7 +286,7 @@ The Orchestrator also detects commands from natural language:
 |----------|-------|
 | Purpose | Generate reports and summaries |
 | Input | Topic or scope for report |
-| Variants | `fast`, `hard`, `focus`, `team` |
+| Variants | `fast`, `hard`, `team` |
 | Default routing | Quick summary → fast; Detailed analysis → hard |
 
 #### `/brainstorm` — Ideation
@@ -349,14 +348,14 @@ Execution is blocked until all three are loaded.
 
 ### Variant Behavior Matrix
 
-| Behavior | fast | hard | focus | team |
-|----------|------|------|-------|------|
-| Phase count | Minimal (2-3) | Full (5-7) | Full (5-7) | Full (5-7) |
-| Skill discovery | Matrix only | Matrix + dynamic | Matrix + dynamic | Matrix + dynamic |
-| Context clearing | No | No | Yes (between phases) | No |
-| Agents per phase | 1 | 1 | 1 | 3 (Golden Triangle) |
-| Debate rounds | N/A | N/A | N/A | Up to 3 |
-| Deliverable review | Exit criteria only | Exit criteria | Exit criteria + context check | Consensus stamp required |
+| Behavior | fast | hard | team |
+|----------|------|------|------|
+| Phase count | Minimal (2-3) | Full (5-7) | Full (5-7) |
+| Skill discovery | Matrix only | Matrix + dynamic | Matrix + dynamic |
+| Context clearing | No | No | No |
+| Agents per phase | 1 | 1 | 3 (Golden Triangle) |
+| Debate rounds | N/A | N/A | Up to 3 |
+| Deliverable review | Exit criteria only | Exit criteria | Consensus stamp required |
 
 ---
 
@@ -444,7 +443,6 @@ The HSOL maps agent profiles to skill domains via the `agent_profiles` section i
 |---------|-------------------|
 | `fast` | Skip dynamic discovery entirely — matrix skills only |
 | `hard` | Full resolution — matrix first, dynamic discovery if fitness < 0.8 |
-| `focus` | Same as `hard` — full resolution with dynamic discovery |
 | `team` | Same as `hard` — full resolution with dynamic discovery |
 | Other (core, business, audit, check, etc.) | Standard matrix resolution |
 

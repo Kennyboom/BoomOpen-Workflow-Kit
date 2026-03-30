@@ -58,7 +58,7 @@ Built with Node.js >=18.0.0 using only built-in modules (fs, path, os, readline)
 | Specialist Agents | 21 |
 | Team Configurations | 17 teams (51 team agents) |
 | Commands | 14 |
-| Command Variants | 4 (fast, hard, focus, team) |
+| Command Variants | 4 (fast, hard, team) |
 | Skill Modules | 1,430+ |
 | Skill Domains | 19 |
 | Rules | 7 |

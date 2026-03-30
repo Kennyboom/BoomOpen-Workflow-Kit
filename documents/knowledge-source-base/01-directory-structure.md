@@ -118,27 +118,27 @@ agent-assistant/                          # Project root — npm package @namch/
 │   ├── brainstorm.md                     # /brainstorm command router
 │   ├── brainstorm/                       # fast.md, hard.md, team.md (3 variants)
 │   ├── code.md                           # /code command router
-│   ├── code/                             # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── code/                             # fast.md, hard.md, team.md (4 variants)
 │   ├── cook.md                           # /cook command router
-│   ├── cook/                             # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── cook/                             # fast.md, hard.md, team.md (4 variants)
 │   ├── debug.md                          # /debug command router
-│   ├── debug/                            # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── debug/                            # fast.md, hard.md, team.md (4 variants)
 │   ├── deploy.md                         # /deploy command router
 │   ├── deploy/                           # check.md, preview.md, production.md, rollback.md (4 variants)
 │   ├── design.md                         # /design command router
-│   ├── design/                           # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── design/                           # fast.md, hard.md, team.md (4 variants)
 │   ├── docs.md                           # /docs command router
 │   ├── docs/                             # audit.md, business.md, core.md (3 variants)
 │   ├── fix.md                            # /fix command router
-│   ├── fix/                              # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── fix/                              # fast.md, hard.md, team.md (4 variants)
 │   ├── plan.md                           # /plan command router
-│   ├── plan/                             # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── plan/                             # fast.md, hard.md, team.md (4 variants)
 │   ├── report.md                         # /report command router
-│   ├── report/                           # fast.md, focus.md, hard.md, team.md (4 variants)
+│   ├── report/                           # fast.md, hard.md, team.md (4 variants)
 │   ├── review.md                         # /review command router
 │   ├── review/                           # fast.md, hard.md, team.md (3 variants)
 │   ├── test.md                           # /test command router
-│   └── test/                             # fast.md, focus.md, hard.md, team.md (4 variants)
+│   └── test/                             # fast.md, hard.md, team.md (4 variants)
 │
 ├── documents/                            # Project documentation
 │   ├── HSOL-ASSESSMENT.md                # Assessment of HSOL system
@@ -228,7 +228,7 @@ The only directory containing executable code. Houses `install.js` (~600 lines, 
 Contains 5 subdirectories, one per supported AI coding tool. Each provides platform-specific assets (entry point files, config files, rule files) that are copied during installation. The CLI reads from these directories to customize the installation for each platform's directory structure and file conventions.
 
 ### `commands/` — Command Workflows
-Contains 14 command router files (`.md`) at the top level and corresponding subdirectories with variant strategies. Standard variants are `fast.md`, `focus.md`, `hard.md`, `team.md`; deploy uses `check.md`, `preview.md`, `production.md`, `rollback.md`; docs uses `audit.md`, `business.md`, `core.md`. The command router file defines the base workflow, and variants modify execution strategy. Total: 61 Markdown files.
+Contains 14 command router files (`.md`) at the top level and corresponding subdirectories with variant strategies. Standard variants are `fast.md`, `hard.md`, `team.md`; deploy uses `check.md`, `preview.md`, `production.md`, `rollback.md`; docs uses `audit.md`, `business.md`, `core.md`. The command router file defines the base workflow, and variants modify execution strategy. Total: 61 Markdown files.
 
 ### `documents/` — Project Documentation
 Stores long-form project documentation including the HSOL design blueprint, HSOL assessment, and the knowledge source base (this folder). Files here are included in the npm package and copied during installation to `~/.{tool}/skills/agent-assistant/documents/`.

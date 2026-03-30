@@ -61,7 +61,7 @@ The 10 Orchestration Laws define absolute behavioral constraints on the Orchestr
 | PS-003 | Input immutability | A phase receives prior deliverables as read-only inputs (Law 8) |
 | PS-004 | Halt on failure | If exit criteria not met and BW-010 cannot recover → halt workflow |
 | PS-005 | No skip | Phases cannot be skipped except via explicit short-circuit (BW-011) |
-| PS-006 | Plan short-circuit | If valid PLAN-*.md referenced in /code:hard or /code:focus → skip research/scout/brainstorm phases |
+| PS-006 | Plan short-circuit | If valid PLAN-*.md referenced in /code:hard or /code:team → skip research/scout/brainstorm phases |
 | PS-007 | Variant authority | The variant file defines the phase sequence — no deviation |
 
 ---
@@ -84,7 +84,7 @@ The 10 Orchestration Laws define absolute behavioral constraints on the Orchestr
 | HS-005 | Confirmation gate | Low-trust skill + critical task → Framework User confirmation required |
 | HS-006 | Timeout ceiling | Discovery must complete within 5 seconds; timeout → matrix-only |
 | HS-007 | Install rollback | Failed installation → rollback + offer matrix alternatives |
-| HS-008 | Hard/focus only | Dynamic discovery only triggers for hard and focus command variants |
+| HS-008 | Hard/team only | Dynamic discovery only triggers for hard and team command variants |
 
 ### Trust Progression Rules
 

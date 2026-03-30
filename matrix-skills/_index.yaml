@@ -56,7 +56,7 @@ hsol:
     cache_ttl_seconds: 3600
     async_threshold: 0.8  # Matrix fitness above this skips discovery
     # Only run dynamic discovery (find-skills) for these variants; "fast" skips discovery so fast stays fast
-    apply_for_variants: ["hard", "focus"]
+    apply_for_variants: ["hard", "team"]
     
   # Fitness scoring weights
   fitness_weights:

@@ -61,7 +61,7 @@ Dynamic skills: trust = 0.3 - 1.0 (based on history)
 | Variant | Discovery |
 |---------|----------|
 | `fast` | **Skip** — use matrix only |
-| `hard`, `focus` | Check matrix fitness, may trigger discovery |
+| `hard`, `team` | Check matrix fitness, may trigger discovery |
 
 ### By Matrix Fitness
 

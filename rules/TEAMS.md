@@ -415,7 +415,7 @@ IS task complex with multiple concerns (security + performance + correctness)?
    ├─ YES → :team (Golden Triangle)
    └─ NO
       IS task simple and single-domain?
-      ├─ YES → Single-agent variant (:fast, :hard, :focus)
+      ├─ YES → Single-agent variant (:fast, :hard, :team)
       └─ NO  → Single-agent variant with manual review step
 ```
 
@@ -425,7 +425,6 @@ IS task complex with multiple concerns (security + performance + correctness)?
 |---------|----------------|--------|------|
 | `:fast` | Single agent | 1 | Speed priority, simple tasks |
 | `:hard` | Single agent | 1 | Standard quality, focused tasks |
-| `:focus` | Single agent | 1 | Clean execution, noise reduction |
 | `:team` | Golden Triangle | 3 | Maximum quality, adversarial review, complex tasks |
 
 **⛔ Do NOT use `:team` for**:

@@ -123,7 +123,7 @@ This is the core workflow of the framework. When a user types a command (explici
 1. User input received (prompt or natural language)
 2. **Pre-flight**: Orchestrator validates input is actionable
 3. **Command Detection**: Match input to command (`/cook`, `/fix`, `/plan`, etc.) or natural language mapping
-4. **Variant Resolution**: Determine variant (`:easy`, `:hard`, `:focus`, `:team`, etc.) — default if unspecified
+4. **Variant Resolution**: Determine variant (`:easy`, `:hard`, `:team`, etc.) — default if unspecified
 5. **Workflow File Load**: Read `commands/{cmd}.md` → `commands/{cmd}/{variant}.md`
 6. **Phase Initialization**: Parse phase sequence from workflow file
 7. **For each phase (sequential)**:
@@ -562,11 +562,11 @@ flowchart TD
 
 ### Narrative
 
-When a user references an existing plan file in a `/code:hard` or `/code:focus` command, the Orchestrator detects this and skips early research phases, jumping directly to implementation.
+When a user references an existing plan file in a `/code:hard` or `/code:team` command, the Orchestrator detects this and skips early research phases, jumping directly to implementation.
 
 ### Steps
 
-1. User invokes `/code:hard` or `/code:focus` referencing `PLAN-*.md`
+1. User invokes `/code:hard` or `/code:team` referencing `PLAN-*.md`
 2. Orchestrator detects plan file reference
 3. Validate that plan file exists and is parseable
 4. Extract implementation plan from file
@@ -576,7 +576,7 @@ When a user references an existing plan file in a `/code:hard` or `/code:focus` 
 
 ```mermaid
 flowchart TD
-    A[/code:hard or /code:focus with PLAN ref] --> B{PLAN-*.md exists?}
+    A[/code:hard or /code:team with PLAN ref] --> B{PLAN-*.md exists?}
     B -->|No| C[Fall back to standard BW-003]
     B -->|Yes| D{Plan valid?}
     D -->|No| C
@@ -638,4 +638,4 @@ flowchart TD
 - `rules/PHASES.md` — Phase sequencing constraints, exit criteria definitions
 - `cli/install.js` — Installation and uninstallation implementation details
 - `commands/*.md` — Command definitions, variant routing rules
-- `commands/code/*.md` — Plan short-circuit detection in hard/focus variants
+- `commands/code/*.md` — Plan short-circuit detection in hard/team variants

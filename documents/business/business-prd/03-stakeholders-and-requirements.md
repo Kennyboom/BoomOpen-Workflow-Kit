@@ -125,7 +125,7 @@
 | Req ID | Requirement | Priority | INVEST Score | Stakeholders | Goals |
 |--------|-------------|----------|-------------|--------------|-------|
 | BR-006 | 14 structured commands available (`/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/brainstorm`, `/ask`, `/code`, `/auto`) | Must | 25/30 | S1 | BG-006 |
-| BR-007 | 4 variant strategies per command: `fast`, `hard`, `focus`, `team` | Should | 26/30 | S1 | BG-006 |
+| BR-007 | 4 variant strategies per command: `fast`, `hard`, `team` | Should | 26/30 | S1 | BG-006 |
 | BR-015 | Natural language command detection maps free-text to structured commands | Must | 27/30 | S1 | BG-006 |
 | BR-016 | Plan-already-provided short-circuit skips planning when user supplies a plan | Should | 28/30 | S1 | BG-003, BG-005 |
 | BR-017 | Documentation generation via `/docs` creates knowledge, business, and audit docs | Should | 23/30 | S1, S6 | BG-010 |

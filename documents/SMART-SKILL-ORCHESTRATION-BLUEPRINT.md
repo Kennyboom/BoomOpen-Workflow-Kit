@@ -263,7 +263,7 @@ ROOT CAUSE: No automated feedback loop between:
 > **Blocking** (matrix fitness &lt; 0.75): Wait for discovery → install → re-inject → **then** execute. Purpose: new skill is **used for the current task** — best completion for this request. **Async** (fitness 0.75–0.8): Do not wait; execute with matrix; when discovery returns only surface recommendation for **next time**. Async does not improve accuracy for the current task.
 
 **Principle 2b: Conditional Discovery (Variant + Fitness)**
-> Dynamic discovery (find-skills, steps 8–10) runs **only** when: (1) command variant is **`hard`** or **`focus`** — **`fast`** skips discovery so fast stays fast; (2) best matrix fitness **&lt; 0.8** — if matrix already has a highly suitable skill (e.g. 9–10), skip discovery. So: fast flow → steps 1–7 + execute; hard/focus + matrix sufficient → same; hard/focus + matrix &lt; 0.8 → full flow including discovery.
+> Dynamic discovery (find-skills, steps 8–10) runs **only** when: (1) command variant is **`hard`** or **`team`** — **`fast`** skips discovery so fast stays fast; (2) best matrix fitness **&lt; 0.8** — if matrix already has a highly suitable skill (e.g. 9–10), skip discovery. So: fast flow → steps 1–7 + execute; hard/team + matrix sufficient → same; hard/team + matrix &lt; 0.8 → full flow including discovery.
 
 **Principle 3: Graduated Trust**
 > Newly discovered skills start in "evaluation mode" with limited scope. Trust increases with successful executions.

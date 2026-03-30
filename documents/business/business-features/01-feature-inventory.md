@@ -82,15 +82,15 @@
 
 ---
 
-### BF-006 — 4 Variant Strategies
+### BF-006 — 3 Variant Strategies
 
-**Description**: Each command supports up to 4 variants controlling scope and rigor: `:fast` (2–3 agents, basic gates), `:hard` (5–8 agents, comprehensive gates including test/review/security), `:focus` (clean execution with context optimization), `:team` (adversarial Golden Triangle with debate mechanism).
+**Description**: Each command supports up to 3 variants controlling scope and rigor: `:fast` (2–3 agents, basic gates), `:hard` (5–8 agents, comprehensive gates including test/review/security), `:team` (adversarial Golden Triangle with debate mechanism).
 
 **Business Value**: Right-sized workflows for every task. Simple fixes use `:fast` (seconds), production features use `:hard` (thorough), critical systems use `:team` (adversarial review). Token cost scales with complexity.
 
 **Goal Mapping**: BG-003 (Speed), BG-006 (Structured workflows)
 
-**Key Files**: `commands/cook/fast.md`, `commands/cook/hard.md`, `commands/cook/focus.md`, `commands/cook/team.md` (pattern repeated per command)
+**Key Files**: `commands/cook/fast.md`, `commands/cook/hard.md`, `commands/cook/team.md`, `commands/cook/team.md` (pattern repeated per command)
 
 ---
 
@@ -170,7 +170,7 @@
 
 ### BF-013 — Dynamic Skill Discovery
 
-**Description**: When the matrix fitness score falls below 0.8 for `:hard` or `:focus` variants, the `find-skills` mechanism can discover additional community skills at runtime. Discovered skills are registered in `matrix-skills/_dynamic.yaml`.
+**Description**: When the matrix fitness score falls below 0.8 for `:hard` or `:team` variants, the `find-skills` mechanism can discover additional community skills at runtime. Discovered skills are registered in `matrix-skills/_dynamic.yaml`.
 
 **Business Value**: Extends the framework's knowledge beyond the bundled 1,430 skills. Community contributions supplement gaps in niche or emerging domains without requiring a framework release.
 
@@ -286,7 +286,7 @@
 
 **Goal Mapping**: BG-003 (Speed)
 
-**Key Files**: `commands/code.md` (routing), `commands/code/hard.md`, `commands/code/focus.md` (skip logic)
+**Key Files**: `commands/code.md` (routing), `commands/code/hard.md`, `commands/code/team.md` (skip logic)
 
 ---
 

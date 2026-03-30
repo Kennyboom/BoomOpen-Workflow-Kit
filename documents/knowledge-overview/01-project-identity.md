@@ -51,7 +51,7 @@ Agent Assistant solves these by:
 1. **Global one-time installation** — Markdown and YAML configurations installed into each AI tool's global directory (`~/.cursor/`, `~/.claude/`, `~/.copilot/`, etc.) apply to all projects automatically.
 2. **Orchestrator pattern** — The AI reads a platform entry file that transforms it into an Orchestrator role. It delegates work to specialist agents rather than attempting everything itself.
 3. **21 specialist agents** — Each with a defined profile, responsibility scope, and skill set. Examples: `backend-engineer`, `tester`, `security-engineer`, `tech-lead`.
-4. **14 structured commands** — `/cook`, `/code`, `/fix`, `/debug`, `/test`, `/plan`, `/design`, `/review`, `/report`, `/brainstorm`, `/docs`, `/deploy`, `/ask`, `/auto` — each with variant strategies (fast, hard, focus, team).
+4. **14 structured commands** — `/cook`, `/code`, `/fix`, `/debug`, `/test`, `/plan`, `/design`, `/review`, `/report`, `/brainstorm`, `/docs`, `/deploy`, `/ask`, `/auto` — each with variant strategies (fast, hard, team).
 5. **Automatic skill injection (HSOL)** — 1,430+ skills across 19 domains resolved by agent profile and request context, with no manual skill selection required.
 6. **Cross-platform parity** — The same workflows and agent definitions work across all 5 supported AI coding tools.
 

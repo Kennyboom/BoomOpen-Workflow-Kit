@@ -48,7 +48,7 @@ The framework draws from several patterns without being a pure instance of any:
 | **Orchestrator/Choreography** | Single orchestrator delegates to specialist agents via tiered execution |
 | **Plugin Architecture** | 1,430 skill modules are independently discoverable and composable |
 | **Pipeline** | Commands execute as phase-sequential pipelines with exit criteria |
-| **Strategy Pattern** | Command routers select variant workflows (fast/hard/focus/team) at runtime |
+| **Strategy Pattern** | Command routers select variant workflows (fast/hard/team/team) at runtime |
 | **Actor Model** | Agents communicate through append-only mailbox files, not direct calls |
 
 ---
@@ -82,7 +82,7 @@ graph TB
 
     subgraph "COMMAND LAYER — Routing"
         ROUTERS["14 Command Routers<br/>cook · fix · plan · debug<br/>test · review · docs · design<br/>deploy · report · brainstorm<br/>ask · code · auto"]
-        VARIANTS["Workflow Variants<br/>:fast · :hard · :focus · :team"]
+        VARIANTS["Workflow Variants<br/>:fast · :hard · :team"]
     end
 
     subgraph "AGENT LAYER — Execution"

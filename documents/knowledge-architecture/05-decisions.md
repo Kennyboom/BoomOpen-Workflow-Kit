@@ -312,7 +312,7 @@ Matrix skills (1,430 across 19 domains) provide a trusted baseline. Dynamic disc
   - 0.10 × Freshness — recency
   - 0.10 × Success Rate — execution history
 - Trust progression prevents untested skills from affecting critical workflows
-- Variant-gated discovery (`:fast` skips, `:hard`/`:focus` may trigger) keeps fast paths fast
+- Variant-gated discovery (`:fast` skips, `:hard`/`:team` may trigger) keeps fast paths fast
 
 ### Trade-offs
 
@@ -322,14 +322,14 @@ Matrix skills (1,430 across 19 domains) provide a trusted baseline. Dynamic disc
 | Community discovery fills gaps automatically | Dynamic skills start untrusted (0.3) |
 | 5-factor scoring balances multiple dimensions | Scoring is interpretive (AI evaluates), not deterministic |
 | Trust progression protects quality | New skills need 10 successful executions to reach VALIDATED |
-| Variant gating preserves fast path performance | Discovery only runs for hard/focus variants |
+| Variant gating preserves fast path performance | Discovery only runs for hard/team variants |
 
 ### Evidence
 
 - `matrix-skills/_index.yaml`: `total_matrix_skills: 1430`, 19 domain files, HSOL config with `async_threshold: 0.8`
 - `rules/SKILLS.md`: Resolution algorithm (6 steps), fitness formula (5 factors with weights), trust lifecycle (4 stages with criteria)
 - `matrix-skills/_dynamic.yaml`: Dynamic skill governance fields (owner, checksum, support_state, promotion_state)
-- `_index.yaml` discovery config: `apply_for_variants: ["hard", "focus"]` — confirms `:fast` skips discovery
+- `_index.yaml` discovery config: `apply_for_variants: ["hard", "team"]` — confirms `:fast` skips discovery
 
 ---
 

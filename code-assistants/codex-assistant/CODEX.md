@@ -133,9 +133,8 @@ Append `:variant` to any command for specialized workflows:
 | `:hard` | `commands/{cmd}/hard.md` | Complex/deep variant |
 | `:fast` | `commands/{cmd}/fast.md` | Quick/lightweight variant |
 | `:team` | `commands/{cmd}/team.md` | Parallel multi-agent team |
-| `:focus` | `commands/{cmd}/focus.md` | Focused single-concern variant |
 
-**Examples**: `/cook:hard`, `/fix:fast`, `/review:team`, `/plan:focus`
+**Examples**: `/cook:hard`, `/fix:fast`, `/review:team`, `/plan:team`
 
 **Team variant baseline**: `:team` is supported only where `commands/{cmd}/team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
 

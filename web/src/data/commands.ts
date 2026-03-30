@@ -31,7 +31,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick execution, fewer phases' },
           { name: 'hard', description: 'Comprehensive, all phases' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/cook add user authentication with JWT',
       },
@@ -41,7 +41,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick execution' },
           { name: 'hard', description: 'Comprehensive' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/code create a React button component',
       },
@@ -51,7 +51,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick fix' },
           { name: 'hard', description: 'Deep investigation' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/fix the login form validation is broken',
       },
@@ -69,7 +69,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick tests' },
           { name: 'hard', description: 'Full coverage' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/test add tests for the auth service',
       },
@@ -88,7 +88,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick debug' },
           { name: 'hard', description: 'Deep analysis' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/debug why is the API returning 500 errors',
       },
@@ -106,7 +106,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick plan' },
           { name: 'hard', description: 'Detailed plan' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/plan redesign the database schema for scalability',
       },
@@ -125,7 +125,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick design' },
           { name: 'hard', description: 'Full design' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/design a dashboard for analytics',
       },
@@ -169,7 +169,7 @@ export const commandCategories: CommandCategory[] = [
         variants: [
           { name: 'fast', description: 'Quick status/summary' },
           { name: 'hard', description: 'Full analysis, any topic' },
-          { name: 'focus', description: 'Clear context + auto-run phases' },
+          { name: 'team', description: 'Parallel multi-agent execution' },
         ],
         example: '/report status report for sprint',
       },
@@ -211,13 +211,13 @@ export const commandCategories: CommandCategory[] = [
 
 // Quick reference commands for docs page
 export const quickReferenceCommands = [
-  { cmd: '/cook', desc: 'Full feature implementation', variants: ':fast, :hard, :focus' },
-  { cmd: '/fix', desc: 'Bug fix with investigation', variants: ':fast, :hard, :focus' },
-  { cmd: '/test', desc: 'Generate test suites', variants: ':fast, :hard, :focus' },
+  { cmd: '/cook', desc: 'Full feature implementation', variants: ':fast, :hard, :team' },
+  { cmd: '/fix', desc: 'Bug fix with investigation', variants: ':fast, :hard, :team' },
+  { cmd: '/test', desc: 'Generate test suites', variants: ':fast, :hard, :team' },
   { cmd: '/review', desc: 'Code review', variants: ':fast, :hard' },
-  { cmd: '/plan', desc: 'Create implementation plan', variants: ':fast, :hard, :focus' },
-  { cmd: '/debug', desc: 'Root cause analysis', variants: ':fast, :hard, :focus' },
-  { cmd: '/report', desc: 'Create/update reports and summaries', variants: ':fast, :hard, :focus' },
+  { cmd: '/plan', desc: 'Create implementation plan', variants: ':fast, :hard, :team' },
+  { cmd: '/debug', desc: 'Root cause analysis', variants: ':fast, :hard, :team' },
+  { cmd: '/report', desc: 'Create/update reports and summaries', variants: ':fast, :hard, :team' },
   { cmd: '/docs', desc: 'Generate documentation', variants: ':core, :business, :audit' },
   { cmd: '/deploy', desc: 'Deployment workflows', variants: ':check, :preview, :production' },
 ]

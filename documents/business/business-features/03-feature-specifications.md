@@ -124,9 +124,9 @@ Each feature specification includes:
 
 ---
 
-### BF-006 — 4 Variant Strategies
+### BF-006 — 3 Variant Strategies
 
-**Description**: `:fast` (2–3 agents), `:hard` (5–8 agents + gates), `:focus` (clean execution), `:team` (adversarial Golden Triangle).
+**Description**: `:fast` (2–3 agents), `:hard` (5–8 agents + gates), `:team` (adversarial Golden Triangle).
 
 **Acceptance Criteria**:
 
@@ -134,11 +134,10 @@ Each feature specification includes:
 |---|-------|------|------|
 | AC-1 | `/cook` command issued | User specifies `:fast` | 2–3 agents execute with basic quality gates |
 | AC-2 | `/cook` command issued | User specifies `:hard` | 5–8 agents execute with test, review, and security gates |
-| AC-3 | `/cook` command issued | User specifies `:focus` | Context optimization runs; clean focused output produced |
-| AC-4 | `/cook` command issued | User specifies `:team` | Golden Triangle team (Tech Lead + Executor + Reviewer) with debate |
+| AC-3 | `/cook` command issued | User specifies `:team` | Golden Triangle team (Tech Lead + Executor + Reviewer) with debate |
 
 **Technical Surface**:
-- `commands/cook/fast.md`, `commands/cook/hard.md`, `commands/cook/focus.md`, `commands/cook/team.md`
+- `commands/cook/fast.md`, `commands/cook/hard.md`, `commands/cook/team.md`
 - Pattern replicated for each command supporting variants
 
 **Dependencies**: BF-005 (command router)
@@ -156,7 +155,7 @@ Each feature specification includes:
 | AC-1 | Agent has profile with backend domain | HSOL resolves skills | Backend-relevant skills from `matrix-skills/backend.yaml` are injected |
 | AC-2 | 19 domain YAML files exist | HSOL resolution runs | All domains are searchable; `_index.yaml` is the entry point |
 | AC-3 | Fitness score computed | Score >= 0.8 | Skill is included in the resolved set |
-| AC-4 | Fitness score computed | Score < 0.8 in `:hard`/`:focus` | Dynamic discovery (BF-013) may trigger |
+| AC-4 | Fitness score computed | Score < 0.8 in `:hard`/`:team` | Dynamic discovery (BF-013) may trigger |
 
 **Technical Surface**:
 - `rules/SKILLS.md` — Resolution algorithm, fitness scoring, thresholds
@@ -274,7 +273,7 @@ Each feature specification includes:
 
 ### BF-013 — Dynamic Skill Discovery
 
-**Description**: When fitness < 0.8 in `:hard`/`:focus`, `find-skills` discovers community skills. Tracked in `_dynamic.yaml`.
+**Description**: When fitness < 0.8 in `:hard`/`:team`, `find-skills` discovers community skills. Tracked in `_dynamic.yaml`.
 
 **Acceptance Criteria**:
 
@@ -470,7 +469,7 @@ Each feature specification includes:
 
 **Technical Surface**:
 - `commands/code.md` — Detection routing
-- `commands/code/hard.md`, `commands/code/focus.md` — Skip logic section
+- `commands/code/hard.md`, `commands/code/team.md` — Skip logic section
 
 **Dependencies**: BF-005 (`/code` command)
 

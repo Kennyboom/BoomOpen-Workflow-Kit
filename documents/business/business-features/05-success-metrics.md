@@ -75,7 +75,7 @@
 
 | KPI | Baseline | Target | Measurement | Status |
 |-----|----------|--------|-------------|--------|
-| Variants per command | 1 (no variants) | Up to 4 (fast, hard, focus, team) | Count variant files per command directory | ✅ VALIDATED |
+| Variants per command | 1 (no variants) | Up to 4 (fast, hard, team) | Count variant files per command directory | ✅ VALIDATED |
 | Agent scaling | Fixed | `:fast` 2–3, `:hard` 5–8, `:team` 3 per team | Verify agent count in variant file phase definitions | 📐 STRUCTURAL |
 | Quality gate presence | None | `:hard` includes test + review + security gates | Parse `:hard` variant files for gate definitions | 📐 STRUCTURAL |
 
@@ -225,7 +225,7 @@
 
 | KPI | Baseline | Target | Measurement | Status |
 |-----|----------|--------|-------------|--------|
-| Report variants | 0 | 4 (auto, fast, hard, focus) | Count variant files | ✅ VALIDATED |
+| Report variants | 0 | 3 (fast, hard, team) | Count variant files | ✅ VALIDATED |
 | Report accuracy | Manual reports | Grounded in project state | Compare report assertions to actual codebase state | ❌ UNVALIDATED |
 
 ---

@@ -156,7 +156,6 @@ Each command router selects from up to 4 strategy variants at runtime:
 |---------|----------|-------------|---------------|
 | `:fast` | Minimal workflow, skip research | 2–3 phases | Simple, clear specification |
 | `:hard` | Full workflow with research and planning | 5–7 phases | Complex, multi-component |
-| `:focus` | Full workflow with enforced context optimization | 5–7 phases | Complex + context-critical |
 | `:team` | Golden Triangle adversarial collaboration | 5–7 phases × 3 agents each | Maximum quality required |
 
 Special variants exist for some commands:
@@ -167,7 +166,7 @@ Special variants exist for some commands:
 
 From `rules/REFERENCE.md`:
 ```
-| `/cook` | cook.md | fast, hard, focus |
+| `/cook` | cook.md | fast, hard, team |
 | `/deploy` | deploy.md | check, preview, production, rollback |
 ```
 

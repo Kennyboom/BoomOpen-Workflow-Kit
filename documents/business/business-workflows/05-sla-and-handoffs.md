@@ -33,7 +33,7 @@ These timings depend on the AI model's inference speed and context window. They 
 |----------|-----------|---------------|------------|
 | BW-003 | Single phase execution | 5s – 60s | Model inference + tool execution |
 | BW-003 | Full command (simple variant) | 30s – 5min | Phase count × phase time |
-| BW-003 | Full command (hard/focus variant) | 2min – 30min | Research + implementation complexity |
+| BW-003 | Full command (hard/team variant) | 2min – 30min | Research + implementation complexity |
 | BW-004 | Agent delegation (TIER 1) | 5s – 30s per phase | Sub-agent spawn + execution |
 | BW-004 | Agent delegation (TIER 2) | 3s – 20s per phase | No spawn overhead |
 | BW-008 | Team collaboration (full cycle) | 5min – 45min | 1–3 debate rounds × 3 agents |

@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2026-03-30
+
+### Removed
+- **Focus workflow variant deprecation (complete)**:
+  - Removed remaining focus workflow files and command-level focus routing references.
+  - Removed focus variant mentions from active command metadata and workflow documentation.
+  - Removed stale focus references from business analysis docs that still listed `fast/hard/focus/team`.
+
+### Changed
+- **Changelog and docs normalization after focus cleanup**:
+  - Updated changelog wording to avoid legacy focus workflow terminology in active release notes.
+  - Kept accessibility/UI focus semantics (e.g., `:focus`, `:focus-visible`) untouched where they are unrelated to command variants.
+
 ## [1.3.1] - 2026-03-26
 
 ### Changed

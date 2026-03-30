@@ -47,7 +47,7 @@ export default function MatrixSkills() {
       <Section background="secondary" spacing="lg">
         <SectionHeader
           title="How Skill Resolution Works"
-          description="Matrix resolution first; optional dynamic discovery for hard/focus commands."
+          description="Matrix resolution first; optional dynamic discovery for hard/team commands."
         />
 
         <div className="max-w-4xl mx-auto">
@@ -104,7 +104,7 @@ export default function MatrixSkills() {
                 <p className="text-body text-sm">
                   <span className="text-text-accent font-semibold">HSOL:</span> When the backend-engineer
                   agent is invoked, the system resolves matrix skills from matching domains (&lt;10ms).
-                  For hard/focus commands, if matrix fitness is below threshold, dynamic discovery (find-skills)
+                  For hard/team commands, if matrix fitness is below threshold, dynamic discovery (find-skills)
                   can install community skills and re-inject for the current task.
                 </p>
               </div>

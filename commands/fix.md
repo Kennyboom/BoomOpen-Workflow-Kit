@@ -34,9 +34,6 @@ IF issue is simple (clear cause, quick fix):
 IF issue is complex (research needed, multi-file):
   → Route to /fix:hard
 
-IF issue is complex AND context optimization is critical:
-  → Route to /fix:focus
-
 IF issue is complex AND maximum quality with team collaboration needed:
   → Route to /fix:team
 
@@ -52,7 +49,6 @@ IF unsure:
 | ------------ | ----------------------------------------------------- |
 | `/fix:fast`  | Quick fixes, clear issues                             |
 | `/fix:hard`  | Complex issues, research needed                       |
-| `/fix:focus` | Complex issues with **enforced context optimization** |
 | `/fix:team`  | Maximum quality with parallel agent team collaboration |
 
 ---
@@ -68,8 +64,7 @@ IF unsure:
 
 1. ⚡ **Fast** → `/fix:fast` — Quick fix
 2. ⚡⚡⚡ **Hard** → `/fix:hard` — Full resolution
-3. 🎯 **Focus** → `/fix:focus` — Full resolution with **automatic context clearing** (prevents hallucination)
-4. 👥 **Team** → `/fix:team` — Full team collaboration (parallel agents, maximum quality)
+3. 👥 **Team** → `/fix:team` — Full team collaboration (parallel agents, maximum quality)
 
 ⏳ Awaiting selection...
 ```

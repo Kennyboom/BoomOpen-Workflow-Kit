@@ -22,7 +22,7 @@ Transform one AI into a coordinated team of 21 specialist agents with structured
 | **One-Time Setup, Forever Use** | Configure once at global level (`~/.cursor/`, `~/.claude/`, etc.) and it auto-applies to ALL your projects. No more repetitive config for every new repo.                                      |
 | **Sub-Agent Orchestration**     | When supported (Claude Code, Cursor Max mode), the main agent spawns specialized sub-agents to handle tasks **in parallel** — backend, frontend, testing, security all working simultaneously. |
 | **Multi-Platform Support**      | Works seamlessly across **Cursor**, **GitHub Copilot**, **Claude Code**, **Codex**, and **Antigravity/Gemini**. Same workflows, any tool.                                                                 |
-| **Matrix Skill Discovery (HSOL)** | Injects the right skills by profile and request; optional dynamic discovery (find-skills) for `hard`/`focus` when matrix fitness &lt; 0.8. 1400+ matrix skills, zero manual config. |
+| **Matrix Skill Discovery (HSOL)** | Injects the right skills by profile and request; optional dynamic discovery (find-skills) for `hard`/`team` when matrix fitness &lt; 0.8. 1400+ matrix skills, zero manual config. |
 
 ### The Goal
 
@@ -140,7 +140,6 @@ Creates `./documents/` files that agents reference. Without docs, agents work ge
 | ------- | ---------------- | -------------------------- |
 | `:fast` | Simple tasks     | 2-3 agents                 |
 | `:hard` | Complex features | 5-8 agents + quality gates |
-| `:focus` | Clean execution | (cook, code, fix, debug, design, plan, test, report) |
 | `:team` | Team workflows   | All agents, structured phases |
 
 ## Commands Reference
@@ -151,7 +150,7 @@ Creates `./documents/` files that agents reference. Without docs, agents work ge
 | **Quality** | `/test`, `/review`, `/debug`                             |
 | **Plan**    | `/plan`, `/brainstorm`, `/design`                        |
 | **Docs**    | `/docs:core`, `/docs:business`, `/docs:audit`            |
-| **Report**  | `/report:fast`, `/report:hard`, `/report:focus`           |
+| **Report**  | `/report:fast`, `/report:hard`, `/report:team`           |
 | **Deploy**  | `/deploy:check`, `/deploy:preview`, `/deploy:production` |
 
 ---
@@ -188,7 +187,7 @@ profile: "backend:execution"
 ```
 agent-assistant/
 ├── agents/          # 21 specialist agents
-├── commands/        # 50+ workflow commands (routers + variants: fast, hard, focus)
+├── commands/        # 50+ workflow commands (routers + variants: fast, hard, team)
 ├── rules/           # 8 orchestration rules
 ├── matrix-skills/   # 19 domain skill registries
 ├── skills/          # 1400+ domain skills

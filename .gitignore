@@ -38,3 +38,8 @@ coverage/
 
 # DS Store
 .DS_Store
+
+# AI settings
+.vscode
+.cursor
+.claude

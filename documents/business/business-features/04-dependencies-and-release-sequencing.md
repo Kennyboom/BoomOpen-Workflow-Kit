@@ -129,11 +129,11 @@ All features on this chain must ship in order. Parallel branches (BF-005→BF-00
 
 ---
 
-### v1.0.2 (2026-01-28) — Focus Variants
+### v1.0.2 (2026-01-28) — Variant Expansion
 
 | Feature | Description |
 |---------|-------------|
-| BF-006 | `:focus` variant added (cook:focus, fix:focus) |
+| BF-006 | Team variant capability expanded for build and fix workflows |
 
 ---
 
@@ -217,7 +217,7 @@ gantt
     BF-010 Cognitive Anchoring     :done, 2026-01-26, 1d
     
     section Must Have (enhanced)
-    BF-006 +focus Variant          :done, 2026-01-28, 1d
+    BF-006 Variant Refinement      :done, 2026-01-28, 1d
     BF-007 HSOL v2 Rewrite         :done, 2026-02-03, 1d
     BF-002 +Codex Platform         :done, 2026-03-09, 1d
     BF-006 +team Variant           :done, 2026-03-09, 1d

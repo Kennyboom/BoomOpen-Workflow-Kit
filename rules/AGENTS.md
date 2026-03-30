@@ -142,7 +142,7 @@ result:
 
 | When | Use |
 |------|-----|
-| Standard `:fast`, `:hard`, `:focus` variants | Single agent per phase |
+| Standard `:fast`, `:hard` variants | Single agent per phase |
 | `:team` variant | Golden Triangle per phase |
 | User explicitly requests team review/collaboration | `:team` variant |
 | Maximum quality with adversarial debate is priority | `:team` variant |

@@ -219,8 +219,7 @@ stateDiagram-v2
 |---------|-------------------|
 | `:fast` | Skip — use matrix skills only, no dynamic discovery |
 | `:hard` | Check matrix fitness; trigger discovery if < 0.8 |
-| `:focus` | Check matrix fitness; trigger discovery if < 0.8 |
-| `:team` | Same as `:hard`/`:focus` — applies per agent in the triangle |
+| `:team` | Same as `:hard` — applies per agent in the triangle |
 
 ---
 

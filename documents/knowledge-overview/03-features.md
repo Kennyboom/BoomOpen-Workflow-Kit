@@ -71,7 +71,7 @@ The Hybrid Skill Orchestration Layer automatically resolves and injects relevant
 5. Calculate fitness scores (semantic match 35%, specificity 25%, trust 20%, freshness 10%, success rate 10%)
 6. Return sorted skill set
 
-**Dynamic discovery**: When matrix fitness score falls below 0.8 for `:hard` or `:focus` variants, the `find-skills` mechanism can discover additional community skills at runtime.
+**Dynamic discovery**: When matrix fitness score falls below 0.8 for `:hard` or `:team` variants, the `find-skills` mechanism can discover additional community skills at runtime.
 
 **Evidence**: [../../rules/SKILLS.md](../../rules/SKILLS.md), [../../matrix-skills/_index.yaml](../../matrix-skills/_index.yaml), [../../matrix-skills/](../../matrix-skills/)
 
@@ -142,7 +142,6 @@ Each command supports up to 4 variants that control scope, agent count, and qual
 |---------|-------|--------|---------------|----------|
 | `:fast` | Minimal | 2–3 | Basic | Simple tasks, quick fixes |
 | `:hard` | Full | 5–8 | Comprehensive (test, review, security) | Complex features, production code |
-| `:focus` | Clean | Variable | Targeted | Focused execution with clean output |
 | `:team` | Adversarial | 3 per team (Golden Triangle) | Debate mechanism | Critical features needing multiple perspectives |
 
 **Evidence**: [../../README.md](../../README.md), [../../commands/cook/](../../commands/cook/)
@@ -204,7 +203,7 @@ Classified error recovery system that prevents silent failures:
 | Specialist Agents | 21 |
 | Team Configurations | 17 (51 team agents) |
 | Commands | 14 |
-| Variants | 4 (fast, hard, focus, team) |
+| Variants | 4 (fast, hard, team) |
 | Skill Modules | 1,430+ |
 | Skill Domains | 19 |
 | Orchestration Rules | 7 files |

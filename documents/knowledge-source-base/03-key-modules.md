@@ -205,24 +205,23 @@ Implements the command routing system — the primary user-facing interface. Use
 | `ask.md` | `ask/` | `fast`, `hard` |
 | `auto.md` | — | (no variants) |
 | `brainstorm.md` | `brainstorm/` | `fast`, `hard`, `team` |
-| `code.md` | `code/` | `fast`, `focus`, `hard`, `team` |
-| `cook.md` | `cook/` | `fast`, `focus`, `hard`, `team` |
-| `debug.md` | `debug/` | `fast`, `focus`, `hard`, `team` |
+| `code.md` | `code/` | `fast`, `hard`, `team` |
+| `cook.md` | `cook/` | `fast`, `hard`, `team` |
+| `debug.md` | `debug/` | `fast`, `hard`, `team` |
 | `deploy.md` | `deploy/` | `check`, `preview`, `production`, `rollback` |
-| `design.md` | `design/` | `fast`, `focus`, `hard`, `team` |
+| `design.md` | `design/` | `fast`, `hard`, `team` |
 | `docs.md` | `docs/` | `audit`, `business`, `core` |
-| `fix.md` | `fix/` | `fast`, `focus`, `hard`, `team` |
-| `plan.md` | `plan/` | `fast`, `focus`, `hard`, `team` |
-| `report.md` | `report/` | `fast`, `focus`, `hard`, `team` |
+| `fix.md` | `fix/` | `fast`, `hard`, `team` |
+| `plan.md` | `plan/` | `fast`, `hard`, `team` |
+| `report.md` | `report/` | `fast`, `hard`, `team` |
 | `review.md` | `review/` | `fast`, `hard`, `team` |
-| `test.md` | `test/` | `fast`, `focus`, `hard`, `team` |
+| `test.md` | `test/` | `fast`, `hard`, `team` |
 
 **Variant Pattern Categories**:
 
 | Pattern | Variants | Used By |
 |---------|----------|---------|
-| Standard (4 variants) | `fast`, `focus`, `hard`, `team` | code, cook, debug, design, fix, plan, report, test |
-| Standard-3 (no focus) | `fast`, `hard`, `team` | brainstorm, review |
+| Standard-3 | `fast`, `hard`, `team` | code, cook, debug, design, fix, plan, report, test, brainstorm, review |
 | Minimal (2 variants) | `fast`, `hard` | ask |
 | Deploy-specific | `check`, `preview`, `production`, `rollback` | deploy |
 | Docs-specific | `audit`, `business`, `core` | docs |
@@ -310,7 +309,7 @@ HSOL Resolution Flow:
 
 | File | Purpose |
 |------|---------|
-| `_index.yaml` | Master HSOL configuration v1.1: enables HSOL, sets discovery parameters, defines `find-skills` integration commands, configures async threshold (0.8), variant applicability (`hard`, `focus` only — `fast` skips discovery) |
+| `_index.yaml` | Master HSOL configuration v1.1: enables HSOL, sets discovery parameters, defines `find-skills` integration commands, configures async threshold (0.8), variant applicability (`hard`, `team` only — `fast` skips discovery) |
 | `_dynamic.yaml` | Manifest for community-installed skills added via `npx skills add` |
 | 19 domain `.yaml` files | Pre-curated skill registries mapped to agent profiles |
 
@@ -345,7 +344,7 @@ HSOL Resolution Flow:
 | `version` | 1.1 | HSOL protocol version |
 | `total_matrix_skills` | 1,430 | Total pre-curated skills |
 | `async_threshold` | 0.8 | Matrix fitness above this skips dynamic discovery |
-| `apply_for_variants` | `["hard", "focus"]` | Dynamic discovery only runs for these variants |
+| `apply_for_variants` | `["hard", "team"]` | Dynamic discovery only runs for these variants |
 | `timeout_ms` | 5,000 | Discovery timeout |
 | `cache_ttl_seconds` | 3,600 | Discovery cache duration |
 | `find-skills` CLI commands | `npx skills find`, `npx skills add`, `npx skills check`, `npx skills update` | External skill service integration |

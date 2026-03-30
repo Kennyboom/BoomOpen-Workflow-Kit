@@ -8,19 +8,19 @@
 
 | Command | Router | Variants |
 |---------|--------|----------|
-| `/cook` | `cook.md` | `fast`, `hard`, `focus` |
-| `/fix` | `fix.md` | `fast`, `hard`, `focus` |
-| `/plan` | `plan.md` | `fast`, `hard`, `focus` |
-| `/debug` | `debug.md` | `fast`, `hard`, `focus` |
-| `/test` | `test.md` | `fast`, `hard`, `focus` |
+| `/cook` | `cook.md` | `fast`, `hard`, `team` |
+| `/fix` | `fix.md` | `fast`, `hard`, `team` |
+| `/plan` | `plan.md` | `fast`, `hard`, `team` |
+| `/debug` | `debug.md` | `fast`, `hard`, `team` |
+| `/test` | `test.md` | `fast`, `hard`, `team` |
 | `/review` | `review.md` | `fast`, `hard` |
 | `/docs` | `docs.md` | `core`, `business`, `audit` |
-| `/design` | `design.md` | `fast`, `hard`, `focus` |
+| `/design` | `design.md` | `fast`, `hard`, `team` |
 | `/deploy` | `deploy.md` | `check`, `preview`, `production`, `rollback` |
-| `/report` | `report.md` | `fast`, `hard`, `focus` |
+| `/report` | `report.md` | `fast`, `hard`, `team` |
 | `/brainstorm` | `brainstorm.md` | `fast`, `hard` |
 | `/ask` | `ask.md` | `fast`, `hard` |
-| `/code` | `code.md` | `fast`, `hard`, `focus` |
+| `/code` | `code.md` | `fast`, `hard`, `team` |
 
 ---
 

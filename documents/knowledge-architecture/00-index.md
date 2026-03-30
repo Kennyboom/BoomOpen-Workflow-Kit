@@ -29,7 +29,7 @@ graph TB
 
     subgraph "Command Layer"
         ROUTER["14 Command Routers"]
-        VARIANTS["54 Workflow Variants<br/>(fast, hard, focus, team)"]
+        VARIANTS["54 Workflow Variants<br/>(fast, hard, team)"]
     end
 
     subgraph "Agent Layer"
@@ -95,7 +95,7 @@ graph TB
 | Platform Entry Points | 5 (CLAUDE.md, COPILOT.md, CURSOR.md, CODEX.md, GEMINI.md) |
 | Rule Files | 7 (CORE, PHASES, AGENTS, SKILLS, TEAMS, ERRORS, REFERENCE) |
 | Command Routers | 14 |
-| Workflow Variants | 4 per command (fast, hard, focus, team) |
+| Workflow Variants | 4 per command (fast, hard, team) |
 | Individual Agents | 21 across 5 categories (meta, execution, validation, research, support) |
 | Team Configurations | 17 teams × 3 roles = 51 team agents |
 | Skill Modules | 1,430 matrix + dynamic community skills |
