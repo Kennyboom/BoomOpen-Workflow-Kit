@@ -1,13 +1,13 @@
 ---
-description: ⚡⚡⚡ Full Test — Comprehensive QA with quality gates
-version: "1.0"
+description: ⚡⚡⚡ Full Test — Comprehensive QA and TDD Workflow
+version: "3.0"
 category: validation
 execution-mode: execute
 ---
 
-# /test:hard — Comprehensive Testing
+# /test:hard — Test Engineer v3.0
 
-> **MISSION**: Full QA workflow with quality gates and coverage reporting.
+> **MISSION**: Full QA workflow with quality gates, complete coverage reporting, and TDD enforcement.
 
 <scope>$ARGUMENTS</scope>
 
@@ -36,14 +36,15 @@ execution-mode: execute
 
 ---
 
-## 📁 PLAN CHECKPOINT VERIFICATION
+## GOLDEN RULES
 
 ```
-IF ./reports/{topic}/plans/PLAN-{scope} exists (.md file or folder):
-  1. READ plan completely
-  2. EXTRACT all checkpoints
-  3. FOR EACH checkpoint → Create test
-  4. OUTPUT: "Checkpoint Coverage: X/Y"
+1. TEST BEHAVIOR, NOT IMPLEMENTATION — Refactor-proof tests
+2. ONE ASSERTION PER TEST — Clear failure messages
+3. ARRANGE-ACT-ASSERT — Consistent structure
+4. TEST PYRAMID — Many unit, some integration, few E2E
+5. NO FLAKY TESTS — Deterministic, no timing deps
+6. REGRESSION FIRST — Add test for bugs BEFORE fixing
 ```
 
 ---
@@ -54,33 +55,77 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 1: TEST STRATEGY
+## 🎭 Phase 1: Test Strategy & Spec Traceability
 
 | Agent | `tester`                                |
 | ----- | --------------------------------------- |
-| Goal  | Design test strategy                    |
+| Goal  | Design test strategy from Specs         |
+| Rules | MUST map specs to test files            |
 | Exit  | Strategy defined, test types identified |
 
----
+```
+BEFORE writing tests:
+
+1. SCAN project:
+   □ Test framework detected (Jest/Vitest/Playwright?)
+   □ Existing test count and coverage
+   □ Test patterns already in use
+
+2. CLASSIFY target:
+   □ Pure function → Unit test
+   □ Component with state → Component test
+   □ API endpoint → Integration test
+   □ User flow → E2E test
+
+3. SPEC TRACEABILITY (Check if specs exist e.g. plans/)
+   □ Map each AC -> test file
+   □ Report Gaps
+```
 
 ---
 
-## 🎭 Phase 2: DEPENDENCY MAPPING
+## 🎭 Phase 2: DEPENDENCY MAPPING & COVERAGE
 
 | Agent | `scouter`                              |
 | ----- | -------------------------------------- |
-| Goal  | Map test dependencies                  |
+| Goal  | Map test dependencies & plan coverage  |
 | Exit  | Dependencies mapped, environment ready |
+
+```
+COVERAGE BUDGET TARGETS:
+| Layer | Target | Minimum | Tool |
+|-------|:------:|:-------:|------|
+| Statements | 80% | 70% | Framework Coverage |
+| Branches | 75% | 65% | Framework Coverage |
+
+PRIORITY (what to test FIRST):
+1. Business logic / utils (highest ROI)
+2. API route handlers
+3. Complex components with state
+4. Edge cases from bug history
+```
 
 ---
 
-## 🎭 Phase 3: TEST EXECUTION
+## 🎭 Phase 3: TEST EXECUTION (TDD Workflow)
 
 | Agent        | `tester`                                                        |
 | ------------ | --------------------------------------------------------------- |
 | Prerequisite | READ PLAN file if exists                                        |
-| Goal         | Run full test suite                                             |
+| Goal         | Run/write full test suite following TDD workflow                |
 | Exit         | All tests run, coverage measured, checkpoint mapping documented |
+
+```
+TDD WORKFLOW (Red → Green → Refactor):
+🔴 RED — Write FAILING test first.
+🟢 GREEN — Minimal code to pass.
+🔵 REFACTOR — Clean without breaking.
+
+PATTERNS:
+- Use describes for grouping.
+- Use Arrange-Act-Assert.
+- Edge cases and Error Paths should be explicitly tested.
+```
 
 ---
 
@@ -100,6 +145,17 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | ----- | --------------------------------- |
 | Goal  | Verify quality gates              |
 | Exit  | All gates pass, coverage adequate |
+
+```
+BEFORE submitting tests:
+□ Tests are independent (no shared state)
+□ No hardcoded waits (use waitFor/findBy)
+□ Mocks reset between tests (afterEach)
+□ Edge cases covered (null, empty, max, min)
+□ Error paths covered (network, validation, auth)
+□ No console.log left in tests
+□ Coverage meets targets
+```
 
 ---
 

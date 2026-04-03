@@ -1,15 +1,15 @@
 ---
-description: 💻 Code Router — Route to implementation workflows
+description: 💻 Code Router — Route to feature and implementation workflows
 version: "1.0"
 category: engineering
 execution-mode: router
 ---
 
-# /code — Implementation Router
+# /code — Feature & Implementation Router
 
-> **ROUTER DIRECTIVE**: Analyze task complexity and route to appropriate implementation workflow.
+> **ROUTER DIRECTIVE**: Analyze task/feature complexity and route to appropriate implementation workflow.
 
-<task>$ARGUMENTS</task>
+<task_or_feature>$ARGUMENTS</task_or_feature>
 
 ---
 
@@ -31,13 +31,13 @@ execution-mode: router
 IF user references an existing plan (@plan, @PLAN-..., path to PLAN-*.md, or "according to plan" / "follow the plan"):
   → Route to /code:hard (workflow will SKIP research, scout, brainstorm and go straight to implementation)
 
-IF task is simple (clear requirements, single file):
+IF task/feature is simple (clear requirements, single file):
   → Route to /code:fast
 
-IF task is complex (multi-file, research needed):
+IF task/feature is complex (multi-file, new feature structure, research needed):
   → Route to /code:hard
 
-IF task is complex AND maximum quality with team collaboration needed:
+IF task/feature is complex AND maximum quality with team collaboration needed:
   → Route to /code:team
 
 IF unsure:
@@ -59,14 +59,14 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 💻 Implementation Mode Selection
+## 💻 Feature & Implementation Mode Selection
 
-**Task**: [parsed task]
+**Request**: [parsed task/feature]
 
 **Choose workflow:**
 
 1. ⚡ **Fast** → `/code:fast` — Quick implementation
-2. ⚡⚡⚡ **Hard** → `/code:hard` — Full development cycle
+2. ⚡⚡⚡ **Hard** → `/code:hard` — Full feature development cycle
 3. 👥 **Team** → `/code:team` — Full team collaboration (parallel agents, maximum quality)
 
 ⏳ Awaiting selection...

@@ -1,10 +1,10 @@
 {
-  "name": "@namch/agent-assistant",
-  "version": "1.3.2",
-  "description": "Multi-agent orchestration framework for AI coding assistants (Cursor, Copilot, Antigravity, Claude Code, Codex) with Hybrid Skill Orchestration Layer (HSOL).",
+  "name": "@boomopen/workflow-kit",
+  "version": "1.0.0",
+  "description": "BoomOpen Workflow Kit - Multi-agent orchestration framework with Hybrid Skill Orchestration Layer (HSOL) and elite core skills.",
   "main": "cli/install.js",
   "bin": {
-    "agent-assistant": "./cli/install.js"
+    "boomopen": "./cli/install.js"
   },
   "scripts": {
     "install:cursor": "node cli/install.js install cursor",

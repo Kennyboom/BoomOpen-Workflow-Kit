@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Agent Assistant CLI Installer
+ * BoomOpen Workflow Kit CLI Installer
  * 
- * Installs the Agent Assistant framework for different AI coding tools:
+ * Installs the BoomOpen Workflow Kit framework for different AI coding tools:
  * - Cursor
  * - GitHub Copilot
  * - Antigravity (Gemini)
@@ -11,10 +11,10 @@
  * - Codex
  * 
  * Usage:
- *   npx agent-assistant install [tool]
- *   npx agent-assistant install --all
- *   npx agent-assistant uninstall [tool]
- *   npx agent-assistant list
+ *   npx boomopen-workflow-kit install [tool]
+ *   npx boomopen-workflow-kit install --all
+ *   npx boomopen-workflow-kit uninstall [tool]
+ *   npx boomopen-workflow-kit list
  * 
  * Features:
  *   - Real-time progress bar with file count
@@ -57,14 +57,14 @@ const TOOLS = {
             skills: path.join(HOME, '.cursor', 'skills'),
             agents: path.join(HOME, '.cursor', 'agents'),
             commands: path.join(HOME, '.cursor', 'commands'),
-            agentAssistant: path.join(HOME, '.cursor', 'skills', 'agent-assistant'),
+            agentAssistant: path.join(HOME, '.cursor', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
-            '~/.{TOOL}/skills/agent-assistant/': '~/.cursor/skills/agent-assistant/',
-            '{TOOL}/agent-assistant/': 'cursor/skills/agent-assistant/',
+            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.cursor/skills/boomopen-workflow-kit/',
+            '{TOOL}/boomopen-workflow-kit/': 'cursor/skills/boomopen-workflow-kit/',
             '{TOOL}': 'cursor',
             '{HOME}': '~',
-            '~/.agent/': '~/.cursor/skills/agent-assistant/'
+            '~/.agent/': '~/.cursor/skills/boomopen-workflow-kit/'
         },
         assets: {
             rules: path.join(ROOT, 'code-assistants', 'cursor-assistant', 'rules'),
@@ -80,18 +80,18 @@ const TOOLS = {
             commands: path.join(HOME, '.copilot', 'commands'),
             agents: path.join(HOME, '.copilot', 'agents'),
             rules: path.join(HOME, '.copilot', 'rules'),
-            agentAssistant: path.join(HOME, '.copilot', 'skills', 'agent-assistant'),
+            agentAssistant: path.join(HOME, '.copilot', 'skills', 'boomopen-workflow-kit'),
             vsCodePrompts: getVSCodePromptsFolder(),
         },
         replacements: {
-            '~/.{TOOL}/skills/agent-assistant/': '~/.copilot/skills/agent-assistant/',
-            '{TOOL}/agent-assistant/': 'copilot/skills/agent-assistant/',
+            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.copilot/skills/boomopen-workflow-kit/',
+            '{TOOL}/boomopen-workflow-kit/': 'copilot/skills/boomopen-workflow-kit/',
             '{TOOL}': 'copilot',
             '{HOME}': '~',
-            '~/.agent/': '~/.copilot/skills/agent-assistant/'
+            '~/.agent/': '~/.copilot/skills/boomopen-workflow-kit/'
         },
         assets: {
-            agentFile: path.join(ROOT, 'code-assistants', 'copilot-assistant', 'agent-assistant.agent.md'),
+            agentFile: path.join(ROOT, 'code-assistants', 'copilot-assistant', 'boomopen-workflow-kit.agent.md'),
         }
     },
     antigravity: {
@@ -106,14 +106,14 @@ const TOOLS = {
             globalAgents: path.join(HOME, '.gemini', 'agents'), // Global config
             workflows: path.join(HOME, '.antigravity', 'workflows'),
             globalWorkflows: path.join(HOME, '.gemini', 'antigravity', 'global_workflows'),
-            agentAssistant: path.join(HOME, '.gemini', 'antigravity', 'skills', 'agent-assistant'),
+            agentAssistant: path.join(HOME, '.gemini', 'antigravity', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
-            '~/.{TOOL}/skills/agent-assistant/': '~/.gemini/antigravity/skills/agent-assistant/',
-            '{TOOL}/agent-assistant/': 'gemini/antigravity/skills/agent-assistant/',
+            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/',
+            '{TOOL}/boomopen-workflow-kit/': 'gemini/antigravity/skills/boomopen-workflow-kit/',
             '{TOOL}': 'gemini/antigravity',
             '{HOME}': '~',
-            '~/.agent/': '~/.gemini/antigravity/skills/agent-assistant/'
+            '~/.agent/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/'
         },
         assets: {
             geminiMd: path.join(ROOT, 'code-assistants', 'antigravity-assistant', 'GEMINI.md'),
@@ -128,14 +128,14 @@ const TOOLS = {
             skills: path.join(HOME, '.claude', 'skills'),
             commands: path.join(HOME, '.claude', 'commands'),
             agents: path.join(HOME, '.claude', 'agents'),
-            agentAssistant: path.join(HOME, '.claude', 'skills', 'agent-assistant'),
+            agentAssistant: path.join(HOME, '.claude', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
-            '~/.{TOOL}/skills/agent-assistant/': '~/.claude/skills/agent-assistant/',
-            '{TOOL}/agent-assistant/': 'claude/skills/agent-assistant/',
+            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.claude/skills/boomopen-workflow-kit/',
+            '{TOOL}/boomopen-workflow-kit/': 'claude/skills/boomopen-workflow-kit/',
             '{TOOL}': 'claude',
             '{HOME}': '~',
-            '~/.agent/': '~/.claude/skills/agent-assistant/'
+            '~/.agent/': '~/.claude/skills/boomopen-workflow-kit/'
         },
         assets: {
             claudeMd: path.join(ROOT, 'code-assistants', 'claude-assistant', 'CLAUDE.md'),
@@ -149,14 +149,14 @@ const TOOLS = {
             skills: path.join(HOME, '.codex', 'skills'),
             commands: path.join(HOME, '.codex', 'commands'),
             agents: path.join(HOME, '.codex', 'agents'),
-            agentAssistant: path.join(HOME, '.codex', 'skills', 'agent-assistant'),
+            agentAssistant: path.join(HOME, '.codex', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
-            '~/.{TOOL}/skills/agent-assistant/': '~/.codex/skills/agent-assistant/',
-            '{TOOL}/agent-assistant/': 'codex/skills/agent-assistant/',
+            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.codex/skills/boomopen-workflow-kit/',
+            '{TOOL}/boomopen-workflow-kit/': 'codex/skills/boomopen-workflow-kit/',
             '{TOOL}': 'codex',
             '{HOME}': '~',
-            '~/.agent/': '~/.codex/skills/agent-assistant/'
+            '~/.agent/': '~/.codex/skills/boomopen-workflow-kit/'
         },
         assets: {
             codexMd: path.join(ROOT, 'code-assistants', 'codex-assistant', 'CODEX.md'),
@@ -167,7 +167,7 @@ const TOOLS = {
     }
 };
 
-// Core directories to copy for agent-assistant framework
+// Core directories to copy for boomopen-workflow-kit framework
 // Note: 'workflows' used to exist but was merged into 'rules'
 // We copy 'commands' to both 'commands' and 'workflows' for backward compatibility
 const CORE_DIRS = ['agents', 'rules', 'documents', 'commands', 'matrix-skills'];
@@ -606,7 +606,7 @@ function installCursor() {
     resetProgress();
     progressState.total = estimateInstallFiles();
     
-    console.log(`\n📦 Installing Agent Assistant for ${tool.name}...`);
+    console.log(`\n📦 Installing BoomOpen Workflow Kit for ${tool.name}...`);
     console.log(`   Estimated files: ~${formatNumber(progressState.total)}\n`);
 
     let total = 0;
@@ -638,7 +638,7 @@ function installCursor() {
         }
     }
 
-    // --- 2. INSTALL EXTENSION BRAIN (~/.cursor/skills/agent-assistant) ---
+    // --- 2. INSTALL EXTENSION BRAIN (~/.cursor/skills/boomopen-workflow-kit) ---
     // Clean install - remove old framework
     if (fs.existsSync(tool.paths.agentAssistant)) {
         fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
@@ -699,16 +699,16 @@ function installCopilot() {
     resetProgress();
     progressState.total = estimateInstallFiles();
     
-    console.log(`\n📦 Installing Agent Assistant for ${tool.name}...`);
+    console.log(`\n📦 Installing BoomOpen Workflow Kit for ${tool.name}...`);
     console.log(`   Estimated files: ~${formatNumber(progressState.total)}\n`);
 
     let total = 0;
 
     // --- 1. INSTALL TO VS CODE PROMPTS & GLOBAL CONFIG ---
     if (tool.assets.agentFile && fs.existsSync(tool.assets.agentFile)) {
-        // 1.1 Custom Prompt (VS Code) -> agent-assistant.agent.md
+        // 1.1 Custom Prompt (VS Code) -> boomopen-workflow-kit.agent.md
         ensureDir(tool.paths.vsCodePrompts);
-        const promptDest = path.join(tool.paths.vsCodePrompts, 'agent-assistant.agent.md');
+        const promptDest = path.join(tool.paths.vsCodePrompts, 'boomopen-workflow-kit.agent.md');
         if (copyFileWithReplace(tool.assets.agentFile, promptDest, tool.replacements)) {
             total++;
         }
@@ -727,7 +727,7 @@ function installCopilot() {
         }
     }
 
-    // --- 2. INSTALL CORE FRAMEWORK (~/.copilot/skills/agent-assistant) ---
+    // --- 2. INSTALL CORE FRAMEWORK (~/.copilot/skills/boomopen-workflow-kit) ---
     // Clean install - remove old framework
     if (fs.existsSync(tool.paths.agentAssistant)) {
         fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
@@ -795,7 +795,7 @@ function installAntigravity() {
     resetProgress();
     progressState.total = estimateInstallFiles() * 1.5; // Antigravity has more destinations
     
-    console.log(`\n📦 Installing Agent Assistant for ${tool.name}...`);
+    console.log(`\n📦 Installing BoomOpen Workflow Kit for ${tool.name}...`);
     console.log(`   Estimated files: ~${formatNumber(Math.round(progressState.total))}\n`);
 
     let total = 0;
@@ -817,8 +817,8 @@ function installAntigravity() {
     if (tool.assets.geminiMd && fs.existsSync(tool.assets.geminiMd)) {
         const destFile = path.join(tool.paths.gemini, 'GEMINI.md');
         // Simple overwrite or append logic here, simpler than surgical for now to match extension
-        const MARKER_START = '<!-- AGENT-ASSISTANT-START -->';
-        const MARKER_END = '<!-- AGENT-ASSISTANT-END -->';
+        const MARKER_START = '<!-- boomopen-workflow-kit-START -->';
+        const MARKER_END = '<!-- boomopen-workflow-kit-END -->';
 
         let bundledContent = fs.readFileSync(tool.assets.geminiMd, 'utf8');
         const keys = Object.keys(tool.replacements).sort((a, b) => b.length - a.length);
@@ -876,7 +876,7 @@ function installAntigravity() {
     ensureDir(tool.paths.globalWorkflows);
     total += copyWithReplace(path.join(ROOT, 'commands'), tool.paths.globalWorkflows, tool.replacements);
 
-    // 3.2 Core Framework (~/.gemini/antigravity/skills/agent-assistant)
+    // 3.2 Core Framework (~/.gemini/antigravity/skills/boomopen-workflow-kit)
     if (fs.existsSync(tool.paths.agentAssistant)) {
         fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
     }
@@ -926,7 +926,7 @@ function installClaude() {
     resetProgress();
     progressState.total = estimateInstallFiles();
     
-    console.log(`\n📦 Installing Agent Assistant for ${tool.name}...`);
+    console.log(`\n📦 Installing BoomOpen Workflow Kit for ${tool.name}...`);
     console.log(`   Estimated files: ~${formatNumber(progressState.total)}\n`);
 
     let total = 0;
@@ -955,7 +955,7 @@ function installClaude() {
     ensureDir(tool.paths.agents);
     total += copyWithReplace(path.join(ROOT, 'agents'), tool.paths.agents, tool.replacements);
 
-    // --- 2. INSTALL CORE FRAMEWORK (~/.claude/skills/agent-assistant) ---
+    // --- 2. INSTALL CORE FRAMEWORK (~/.claude/skills/boomopen-workflow-kit) ---
     if (fs.existsSync(tool.paths.agentAssistant)) {
         fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
     }
@@ -1010,10 +1010,10 @@ function mergeCodexConfig(templatePath, userConfigPath) {
     }
 
     // Our marker: lines between start and end markers
-    const markerStart = '# === AGENT-ASSISTANT START ===';
-    const markerEnd = '# === AGENT-ASSISTANT END ===';
+    const markerStart = '# === boomopen-workflow-kit START ===';
+    const markerEnd = '# === boomopen-workflow-kit END ===';
 
-    // Remove old agent-assistant sections from user config
+    // Remove old boomopen-workflow-kit sections from user config
     const startIdx = userConfig.indexOf(markerStart);
     const endIdx = userConfig.indexOf(markerEnd);
     if (startIdx !== -1 && endIdx !== -1) {
@@ -1037,7 +1037,7 @@ function mergeCodexConfig(templatePath, userConfigPath) {
 
     // Build our managed block
     let managedBlock = `\n${markerStart}\n`;
-    managedBlock += '# Managed by Agent Assistant — do not edit manually\n\n';
+    managedBlock += '# Managed by BoomOpen Workflow Kit — do not edit manually\n\n';
 
     // Add [features] if not present
     if (!userConfig.includes('[features]')) {
@@ -1075,7 +1075,7 @@ function installCodex() {
     resetProgress();
     progressState.total = estimateInstallFiles();
     
-    console.log(`\n📦 Installing Agent Assistant for ${tool.name}...`);
+    console.log(`\n📦 Installing BoomOpen Workflow Kit for ${tool.name}...`);
     console.log(`   Estimated files: ~${formatNumber(progressState.total)}\n`);
 
     let total = 0;
@@ -1120,7 +1120,7 @@ function installCodex() {
     ensureDir(tool.paths.commands);
     total += copyWithReplace(path.join(ROOT, 'commands'), tool.paths.commands, tool.replacements);
 
-    // --- 2. INSTALL CORE FRAMEWORK (~/.codex/skills/agent-assistant) ---
+    // --- 2. INSTALL CORE FRAMEWORK (~/.codex/skills/boomopen-workflow-kit) ---
     if (fs.existsSync(tool.paths.agentAssistant)) {
         fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
     }
@@ -1211,14 +1211,14 @@ function uninstallCursor() {
     resetProgress();
     progressState.total = 10; // Approximate count of remove operations
     
-    console.log(`\n🗑️  Uninstalling Agent Assistant from ${tool.name}...`);
+    console.log(`\n🗑️  Uninstalling BoomOpen Workflow Kit from ${tool.name}...`);
     console.log(`   This will remove the framework while preserving user skills.\n`);
 
     let removed = 0;
 
     // 1. Remove Rules & Global Configs
     const filesToRemove = [
-        path.join(tool.paths.rules, 'agent-assistant.mdc'),
+        path.join(tool.paths.rules, 'boomopen-workflow-kit.mdc'),
         path.join(tool.paths.editorHome, 'CURSOR.md'),
         path.join(tool.paths.editorHome, 'AGENT.md'),
         path.join(tool.paths.editorHome, 'CLAUDE.md')
@@ -1263,13 +1263,13 @@ function uninstallCopilot() {
     resetProgress();
     progressState.total = 10;
     
-    console.log(`\n🗑️  Uninstalling Agent Assistant from ${tool.name}...`);
+    console.log(`\n🗑️  Uninstalling BoomOpen Workflow Kit from ${tool.name}...`);
     console.log(`   This will remove the framework while preserving user skills.\n`);
 
     let removed = 0;
 
     // 1. Remove from VS Code Prompts
-    const promptFile = path.join(tool.paths.vsCodePrompts, 'agent-assistant.agent.md');
+    const promptFile = path.join(tool.paths.vsCodePrompts, 'boomopen-workflow-kit.agent.md');
     if (removeFile(promptFile)) {
         removed++;
     }
@@ -1316,7 +1316,7 @@ function uninstallAntigravity() {
     resetProgress();
     progressState.total = 12;
     
-    console.log(`\n🗑️  Uninstalling Agent Assistant from ${tool.name}...`);
+    console.log(`\n🗑️  Uninstalling BoomOpen Workflow Kit from ${tool.name}...`);
     console.log(`   This will remove the framework while preserving user skills.\n`);
 
     let removed = 0;
@@ -1354,7 +1354,7 @@ function uninstallAntigravity() {
         removed++;
     }
 
-    // 3.2 Remove Core Framework (~/.gemini/antigravity/skills/agent-assistant)
+    // 3.2 Remove Core Framework (~/.gemini/antigravity/skills/boomopen-workflow-kit)
     if (removeDir(tool.paths.agentAssistant)) {
         removed++;
     }
@@ -1377,7 +1377,7 @@ function uninstallClaude() {
     resetProgress();
     progressState.total = 6;
     
-    console.log(`\n🗑️  Uninstalling Agent Assistant from ${tool.name}...`);
+    console.log(`\n🗑️  Uninstalling BoomOpen Workflow Kit from ${tool.name}...`);
     console.log(`   This will remove the framework while preserving user skills.\n`);
 
     let removed = 0;
@@ -1421,7 +1421,7 @@ function uninstallCodex() {
     resetProgress();
     progressState.total = 6;
     
-    console.log(`\n🗑️  Uninstalling Agent Assistant from ${tool.name}...`);
+    console.log(`\n🗑️  Uninstalling BoomOpen Workflow Kit from ${tool.name}...`);
     console.log(`   This will remove the framework while preserving user skills.\n`);
 
     let removed = 0;
@@ -1478,7 +1478,7 @@ function printBanner() {
     console.log(`
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║   🤖 Agent Assistant Framework Installer                      ║
+║   🤖 BoomOpen Workflow Kit Framework Installer                      ║
 ║                                                               ║
 ║   Multi-agent orchestration for AI coding assistants          ║
 ║                                                               ║
@@ -1488,7 +1488,7 @@ function printBanner() {
 
 function printUsage() {
     console.log(`
-Usage: npx agent-assistant <command> [options]
+Usage: npx boomopen-workflow-kit <command> [options]
 
 Commands:
   install [tool]     Install for a specific tool (cursor, copilot, antigravity, claude, codex)
@@ -1498,10 +1498,10 @@ Commands:
   help               Show this help message
 
 Examples:
-  npx agent-assistant install cursor
-  npx agent-assistant install --all
-  npx agent-assistant uninstall copilot
-  npx agent-assistant list
+  npx boomopen-workflow-kit install cursor
+  npx boomopen-workflow-kit install --all
+  npx boomopen-workflow-kit uninstall copilot
+  npx boomopen-workflow-kit list
 `);
 }
 
@@ -1519,12 +1519,12 @@ function listTools() {
             // Show installation details
             const details = [];
             if (key === 'cursor') {
-                if (fs.existsSync(path.join(tool.paths.rules, 'agent-assistant.mdc'))) {
+                if (fs.existsSync(path.join(tool.paths.rules, 'boomopen-workflow-kit.mdc'))) {
                     details.push('rules');
                 }
             }
             if (key === 'copilot') {
-                if (fs.existsSync(path.join(tool.paths.vsCodePrompts, 'agent-assistant.agent.md'))) {
+                if (fs.existsSync(path.join(tool.paths.vsCodePrompts, 'boomopen-workflow-kit.agent.md'))) {
                     details.push('VS Code prompts');
                 }
             }
@@ -1532,7 +1532,7 @@ function listTools() {
                 const geminiPath = path.join(tool.paths.gemini, 'GEMINI.md');
                 if (fs.existsSync(geminiPath)) {
                     const content = fs.readFileSync(geminiPath, 'utf8');
-                    if (content.includes('AGENT-ASSISTANT-START')) {
+                    if (content.includes('boomopen-workflow-kit-START')) {
                         details.push('GEMINI.md');
                     }
                 }
@@ -1709,3 +1709,4 @@ async function main() {
 }
 
 main().catch(console.error);
+
