@@ -29,6 +29,12 @@ Unlike standard AI assistant setups that act as a "jack of all trades," BoomOpen
 - **The SPIE v3 Debugger (5-Whys Mechanism)**: When errors occur, BoomOpen prevents the AI from wildly guessing patches. It enforces the "5-Whys" root-cause methodology to surgically eliminate the core flaw.
 - **Supercharged by HSOL**: Injecting domain-expert knowledge with **1400+ specific skills**, effectively cloning Senior Engineers constraint models (e.g., Apple HIG for UI, strict SOLID principles for specific frameworks).
 
+### 🧠 Deep Memory Architecture (.brain)
+Unlike standard AI sessions that experience amnesia once you close the editor, BoomOpen Workflow Kit creates a localized nervous system for your project inside the `.brain/` directory:
+- **Persistent Knowledge Items (KI)**: The kit enforces a `knowledge/` folder structure containing curated design decisions and system architecture. The AI proactively reads these before starting any task to keep code aligned with existing patterns.
+- **Cross-Session Memory Integration**: Using commands like `/save`, the AI automatically extracts the current session's key findings into a disk-based memory bank. When you return tomorrow, simply run `/recap` to perfectly resurrect the AI's prior context. 
+- **Context Swap Mechanism**: During incredibly long conversations, BoomOpen forces a graceful downgrade by generating a `handover.md` file, flushing its RAM, and starting clean without losing project trajectory.
+
 ### 💻 Supported AI Tools
 | Tool | Support Level | Installation Path |
 |------|--------------|-------------------|
@@ -108,6 +114,12 @@ Khác với việc dùng AI (như ChatGPT, Claude hay Github Copilot) theo kiể
 - **Bảo toàn Bộ não vô hạn (Context Budget)**: Các AI thường bị "ngu đi" hoặc "rút ngắn trí nhớ" sau 40-50 tin nhắn do tràn RAM / Context Window. BoomOpen có cơ chế tự động quét bộ nhớ và đóng gói kiến thức sang file `handover.md` để giải phóng bộ nhớ tạm, giúp AI luôn thông minh ở mức cao cấp nhất trọn đời dự án dự án.
 - **Vũ khí Debug SPIE v3.0 (Kỹ thuật điều tra 5-Whys)**: Lỗi log đầy đỏ lòm terminal? Thay vì nhắm mắt sửa bừa thêm bug mới, BoomOpen áp đặt quy trình của Kỹ sư Kiểm thử Động cơ bằng cách hỏi "tại sao" đủ 5 bước sâu xuống cấu trúc hạ tầng để đào tận gốc nguyên nhân cỗi rễ.
 - **Sức mạnh từ Kho tàng Bí kíp (1400+ HSOL)**: Không chỉ là một khung làm việc suông, hệ thống này được đút thụt hàng tá quy chuẩn chuẩn quốc tế. Cần làm app iOS? BoomOpen lập tức nạp luật Apple Core HIG. Cần build API chuẩn? Nó móc luật thiết kế SOLID RESTful ra kìm cương AI. Code sinh ra là để Deploy, không phải để vứt đi.
+
+### 🧠 Kiến trúc Trí nhớ Sâu (.brain)
+Khác với các phiên Chat AI thông thường cứ tắt trình duyệt là "mất trí nhớ", BoomOpen Workflow Kit cấy thẳng một hệ thần kinh nhân tạo vào dự án của bạn thông qua lõi `.brain/`:
+- **Knowledge Items (Kho Bí kíp Dự án)**: Hệ thống duy trì một vùng nhớ `knowledge/` đóng vai trò là "Sách Thánh" lưu trữ các quyết định thiết kế và luồng Logic quan trọng. Mỗi khi AI làm việc, nó bị hệ thống cưỡng bức phải nạp lại Cẩm nang này đầu tiên để không bao giờ đi chệch quỹ đạo codebase.
+- **Lưu trữ Ký ức Xuyên Phiên (Cross-Session Memory)**: Với các dự án kéo dài, bạn có thể chạy lệnh `/save` để AI tự động đóng băng toàn bộ luồng tư duy hiện tại vào ổ cứng. Ngày mai mở lại máy, chỉ việc gõ `/recap` là lập tức "hồi sinh" ngữ cảnh của ngày hôm qua.
+- **Cơ chế Context Swap (Tráo Ngữ cảnh)**: Khi đoạn Chat quá dài dẫn đến hiện tượng quên trước quên sau, BoomOpen sẽ chủ động tạo ra giấy chuyển giao công tác `handover.md`, sau đó dọn dẹp sạch sẽ RAM của AI để duy trì IQ ở mức 100% nhưng vẫn bám sát mục tiêu.
 
 ### 💻 Các công cụ AI được Hỗ trợ
 Hệ thống hiện tại hỗ trợ cài đặt toàn cục và tự động áp dụng các quy tắc cho:
