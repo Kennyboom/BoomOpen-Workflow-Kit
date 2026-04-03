@@ -55,8 +55,13 @@ node cli/install.js install --all
 ---
 
 ### 🚀 Quick Start
-Once installed, simply open your AI chat interface (e.g., Cursor Chat) and type one of the router commands:
+Once installed, simply open your AI chat interface (e.g., Cursor Chat) and type one of the router commands. Each command supports different variants based on the complexity of the task:
 
+- **`:fast`** — For quick tweaks, single-file edits, or simple features. (e.g., `/code:fast`)
+- **`:hard`** — For complex, multi-file features requiring deep thinking, systematic debugging, or structural changes. (e.g., `/plan:hard`)
+- **`:team`** — For massive epics requiring a multi-agent orchestrated approach. (e.g., `/orchestrate:team`)
+
+**Examples:**
 - `/code:fast "add dark mode"` — Execute a simple feature.
 - `/plan:hard "build payment module"` — Trigger the Master Planner v4 to build an architectural blueprint.
 - `/debug:hard "auth failed in production"` — Trigger the SPIE (Systematic Problem Investigation Engine) to find the root cause.
@@ -121,8 +126,13 @@ node cli/install.js install --all
 ---
 
 ### 🚀 Khởi động nhanh (Cách sử dụng)
-Sau khi cài đặt xong, hãy mở phần Chat của AI (vd: Cursor Chat) và gõ ngay các tập lệnh sau:
+Sau khi cài đặt xong, hãy mở phần Chat của AI (vd: Cursor Chat) và gõ ngay các tập lệnh. Mỗi tập lệnh đi kèm các cấp độ (variants) khác nhau phụ thuộc vào độ khó của tác vụ:
 
+- **`:fast`** — Dành cho các chỉnh sửa nhanh, thêm tính năng nhỏ hoặc sửa lỗi đơn giản trên 1 file. (vd: `/code:fast`)
+- **`:hard`** — Dành cho các cụm tính năng nền tảng, hệ thống sửa đa file, đòi hỏi AI phải tư duy kiến trúc và quy trình chặt chẽ. (vd: `/plan:hard`)
+- **`:team`** — Dành cho các siêu dự án (Epics) cần kết hợp và ủy quyền cho nhiều Đặc vụ AI chuyên biệt cùng xử lý. (vd: `/orchestrate:team`)
+
+**Mẫu câu lệnh thực tế:**
 - `/code:fast "thêm nút dark mode"` — Build tính năng nhanh và gọn.
 - `/plan:hard "xây hệ thống thanh toán"` — Kích hoạt Master Planner lên kế hoạch tỉ mỉ trước khi code.
 - `/debug:hard "lỗi xác thực đăng nhập"` — Gọi chuyên gia gỡ rối giải quyết tận gốc vấn đề theo phương pháp 5-Whys.
