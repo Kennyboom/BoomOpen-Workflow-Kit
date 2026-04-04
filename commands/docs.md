@@ -1,11 +1,11 @@
 ---
-description: "📝 Docs - Full Documentation Suite (executes ALL sub-commands sequentially)"
+description: "ðŸ“ Docs - Full Documentation Suite (executes ALL sub-commands sequentially)"
 version: "2.0"
 category: documentation
 execution-mode: execute
 ---
 
-# /docs — Full Documentation Suite
+# /docs â€” Full Documentation Suite
 
 > **MISSION**: Execute ALL documentation sub-commands **SEQUENTIALLY**. Only report "Done" when ALL deliverables are created: 5 knowledge folders (26+ files) + 4 business folders (22+ files) + 4 audit folders (20+ files).
 
@@ -13,19 +13,19 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. docs/core.md), and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. docs/core.md), and execute it.
 
 ---
 
-## ⚠️ EXECUTION RULES (NON-NEGOTIABLE)
+## âš ï¸ EXECUTION RULES (NON-NEGOTIABLE)
 
 > [!CAUTION]
 >
@@ -37,25 +37,25 @@ execution-mode: execute
 
 ---
 
-## 🔄 SEQUENTIAL EXECUTION FLOW
+## ðŸ”„ SEQUENTIAL EXECUTION FLOW
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│ STEP 1: Load & Execute /docs:core                               │
-│   → Wait until ALL 5 knowledge folders are created              │
-│   → Each folder: 00-index.md + numbered sub-files               │
-│   → Verify: knowledge-overview/, architecture/, domain/,        │
-│   →         source-base/, standards/                            │
-├─────────────────────────────────────────────────────────────────┤
-│ STEP 2: Load & Execute /docs:business                           │
-│   → Wait until ALL 4 business folders are created               │
-│   → Verify: business-prd/, features/, workflows/, glossary/     │
-├─────────────────────────────────────────────────────────────────┤
-│ STEP 3: Load & Execute /docs:audit                              │
-│   → Wait until ALL 4 audit folders are created                   │
-│   → Verify: audit-security, compliance, dataflow,               │
-│             recommendations                                     │
-└─────────────────────────────────────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ STEP 1: Load & Execute /docs:core                               â”‚
+â”‚   â†’ Wait until ALL 5 knowledge folders are created              â”‚
+â”‚   â†’ Each folder: 00-index.md + numbered sub-files               â”‚
+â”‚   â†’ Verify: knowledge-overview/, architecture/, domain/,        â”‚
+â”‚   â†’         source-base/, standards/                            â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚ STEP 2: Load & Execute /docs:business                           â”‚
+â”‚   â†’ Wait until ALL 4 business folders are created               â”‚
+â”‚   â†’ Verify: business-prd/, features/, workflows/, glossary/     â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚ STEP 3: Load & Execute /docs:audit                              â”‚
+â”‚   â†’ Wait until ALL 4 audit folders are created                   â”‚
+â”‚   â†’ Verify: audit-security, compliance, dataflow,               â”‚
+â”‚             recommendations                                     â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ---
@@ -64,10 +64,10 @@ execution-mode: execute
 
 | Attribute       | Value                                             |
 | --------------- | ------------------------------------------------- |
-| **Sub-Command** | `~/.{TOOL}/agent-assistant/commands/docs/core.md` |
+| **Sub-Command** | `~/.{TOOL}/agent-assistant/commands/docs-core.md` |
 | **Action**      | **LOAD AND FOLLOW** the entire core.md workflow   |
 
-### Folders to be Created (v3.0 — folder-based):
+### Folders to be Created (v3.0 â€” folder-based):
 
 - [ ] `./documents/knowledge-overview/` (00-index.md + 4 sub-files)
 - [ ] `./documents/knowledge-architecture/` (00-index.md + 5 sub-files)
@@ -75,7 +75,7 @@ execution-mode: execute
 - [ ] `./documents/knowledge-source-base/` (00-index.md + 4 sub-files)
 - [ ] `./documents/knowledge-standards/` (00-index.md + 4 sub-files)
 
-**⏸️ PAUSE HERE** — Do NOT proceed to Step 2 until all 5 knowledge folders with sub-files exist.
+**â¸ï¸ PAUSE HERE** â€” Do NOT proceed to Step 2 until all 5 knowledge folders with sub-files exist.
 
 ---
 
@@ -83,17 +83,17 @@ execution-mode: execute
 
 | Attribute       | Value                                                 |
 | --------------- | ----------------------------------------------------- |
-| **Sub-Command** | `~/.{TOOL}/agent-assistant/commands/docs/business.md` |
+| **Sub-Command** | `~/.{TOOL}/agent-assistant/commands/docs-business.md` |
 | **Action**      | **LOAD AND FOLLOW** the entire business.md workflow   |
 
-### Folders to be Created (v4.0 — folder-based):
+### Folders to be Created (v4.0 â€” folder-based):
 
 - [ ] `./documents/business/business-prd/` (00-index.md + 4 sub-files)
 - [ ] `./documents/business/business-features/` (00-index.md + 5 sub-files)
 - [ ] `./documents/business/business-workflows/` (00-index.md + 5 sub-files)
 - [ ] `./documents/business/business-glossary/` (00-index.md + 4 sub-files)
 
-**⏸️ PAUSE HERE** — Do NOT proceed to Step 3 until all 4 business folders with sub-files exist.
+**â¸ï¸ PAUSE HERE** â€” Do NOT proceed to Step 3 until all 4 business folders with sub-files exist.
 
 ---
 
@@ -101,7 +101,7 @@ execution-mode: execute
 
 | Attribute       | Value                                              |
 | --------------- | -------------------------------------------------- |
-| **Sub-Command** | `~/.{TOOL}/agent-assistant/commands/docs/audit.md` |
+| **Sub-Command** | `~/.{TOOL}/agent-assistant/commands/docs-audit.md` |
 | **Action**      | **LOAD AND FOLLOW** the entire audit.md workflow   |
 
 ### Folders to be Created (v4.0 - folder-based):
@@ -113,62 +113,62 @@ execution-mode: execute
 
 ---
 
-## ✅ FINAL VERIFICATION (REQUIRED)
+## âœ… FINAL VERIFICATION (REQUIRED)
 
 Before reporting "Done", verify ALL deliverables exist:
 
 ```
 ./documents/
-├── Core (5 folders, 26+ files)
-│   ├── ✅ knowledge-overview/        (00-index + 01~04)
-│   ├── ✅ knowledge-architecture/    (00-index + 01~05)
-│   ├── ✅ knowledge-domain/          (00-index + 01~04)
-│   ├── ✅ knowledge-source-base/     (00-index + 01~04)
-│   └── ✅ knowledge-standards/       (00-index + 01~04)
-├── Business (4 folders, 22+ files)
-│   ├── ✅ business-prd/          (00-index + 01~04)
-│   ├── ✅ business-features/     (00-index + 01~05)
-│   ├── ✅ business-workflows/    (00-index + 01~05)
-│   └── ✅ business-glossary/     (00-index + 01~04)
-└── Audit (4 folders, 20+ files)
-    ├── ✅ audit-security/         (00-index + 01~04)
-    ├── ✅ audit-compliance/       (00-index + 01~04)
-    ├── ✅ audit-dataflow/         (00-index + 01~04)
-    └── ✅ audit-recommendations/  (00-index + 01~04)
+â”œâ”€â”€ Core (5 folders, 26+ files)
+â”‚   â”œâ”€â”€ âœ… knowledge-overview/        (00-index + 01~04)
+â”‚   â”œâ”€â”€ âœ… knowledge-architecture/    (00-index + 01~05)
+â”‚   â”œâ”€â”€ âœ… knowledge-domain/          (00-index + 01~04)
+â”‚   â”œâ”€â”€ âœ… knowledge-source-base/     (00-index + 01~04)
+â”‚   â””â”€â”€ âœ… knowledge-standards/       (00-index + 01~04)
+â”œâ”€â”€ Business (4 folders, 22+ files)
+â”‚   â”œâ”€â”€ âœ… business-prd/          (00-index + 01~04)
+â”‚   â”œâ”€â”€ âœ… business-features/     (00-index + 01~05)
+â”‚   â”œâ”€â”€ âœ… business-workflows/    (00-index + 01~05)
+â”‚   â””â”€â”€ âœ… business-glossary/     (00-index + 01~04)
+â””â”€â”€ Audit (4 folders, 20+ files)
+    â”œâ”€â”€ âœ… audit-security/         (00-index + 01~04)
+    â”œâ”€â”€ âœ… audit-compliance/       (00-index + 01~04)
+    â”œâ”€â”€ âœ… audit-dataflow/         (00-index + 01~04)
+    â””â”€â”€ âœ… audit-recommendations/  (00-index + 01~04)
 ```
 
 ---
 
-## 📊 COMPLETION OUTPUT
+## ðŸ“Š COMPLETION OUTPUT
 
 Only output this when ALL deliverables are verified:
 
 ```markdown
-## ✅ Full Documentation Suite Complete
+## âœ… Full Documentation Suite Complete
 
-### 📁 All Documents Created
+### ðŸ“ All Documents Created
 
 | Type     | Deliverables                                                | Status   |
 | -------- | ----------------------------------------------------------- | -------- |
-| Core     | 5 knowledge folders (overview, architecture, domain, source-base, standards) | ✅ 5/5 folders |
-| Business | 4 business folders (prd, features, workflows, glossary)     | ✅ 4/4 folders |
-| Audit    | 4 audit folders (security, compliance, dataflow, recommendations) | ✅ 4/4 folders |
+| Core     | 5 knowledge folders (overview, architecture, domain, source-base, standards) | âœ… 5/5 folders |
+| Business | 4 business folders (prd, features, workflows, glossary)     | âœ… 4/4 folders |
+| Audit    | 4 audit folders (security, compliance, dataflow, recommendations) | âœ… 4/4 folders |
 
 **Total: 13 folders (68+ files) created in `./documents/`**
 ```
 
 ---
 
-## 🚫 FORBIDDEN
+## ðŸš« FORBIDDEN
 
-- ❌ Skipping any sub-command
-- ❌ Creating partial deliverables and reporting "Done"
-- ❌ Executing sub-commands in parallel (must be sequential)
-- ❌ Reporting "Done" before all deliverables exist
+- âŒ Skipping any sub-command
+- âŒ Creating partial deliverables and reporting "Done"
+- âŒ Executing sub-commands in parallel (must be sequential)
+- âŒ Reporting "Done" before all deliverables exist
 
 ---
 
-## 📌 INDIVIDUAL ROUTES (Still Available)
+## ðŸ“Œ INDIVIDUAL ROUTES (Still Available)
 
 If you need only ONE type:
 
