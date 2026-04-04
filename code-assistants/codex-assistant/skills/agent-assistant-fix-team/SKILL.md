@@ -1,6 +1,6 @@
 ---
 name: agent-assistant-fix-team
-description: "🔺 Team Fix — Golden Triangle adversarial collaboration. Use when user types /fix:team."
+description: "ðŸ”º Team Fix â€” Golden Triangle adversarial collaboration. Use when user types /fix:team."
 ---
 
 # /fix:team
@@ -9,10 +9,10 @@ description: "🔺 Team Fix — Golden Triangle adversarial collaboration. Use w
 
 ## Rules
 
-1. **Load first**: `~/.codex/skills/agent-assistant/rules/CORE.md` — follow all 10 Laws
+1. **Load first**: `~/.codex/skills/agent-assistant/rules/CORE.md` â€” follow all 10 Laws
 2. **Agents**: Spawn via Codex native multi-agent (`~/.codex/agents/`)
 3. **Skills**: Resolve from `~/.codex/skills/agent-assistant/matrix-skills/`
 
 ## Workflow
 
-**Load and follow**: `~/.codex/skills/agent-assistant/commands/fix/team.md`
+**Load and follow**: `~/.codex/skills/agent-assistant/commands/fix-team.md`

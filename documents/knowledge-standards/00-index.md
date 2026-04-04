@@ -8,7 +8,7 @@
 
 ## Quick Summary
 
-Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standards primarily through convention and tooling defaults rather than exhaustive configuration. The project uses Conventional Commits via semantic-release for versioning and publishing, Husky for git hooks, and Node.js built-in syntax checking for the CLI. The web sub-project adds ESLint 9 and TypeScript. There is no project-wide formatter (no Prettier), no CI/CD pipeline, no commitlint, no lint-staged, no editorconfig, and no test coverage tooling. Standards are largely implicit — derived from observed naming patterns, directory structure conventions, and YAML frontmatter schemas repeated consistently across hundreds of agent and command files.
+Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standards primarily through convention and tooling defaults rather than exhaustive configuration. The project uses Conventional Commits via semantic-release for versioning and publishing, Husky for git hooks, and Node.js built-in syntax checking for the CLI. The web sub-project adds ESLint 9 and TypeScript. There is no project-wide formatter (no Prettier), no CI/CD pipeline, no commitlint, no lint-staged, no editorconfig, and no test coverage tooling. Standards are largely implicit â€” derived from observed naming patterns, directory structure conventions, and YAML frontmatter schemas repeated consistently across hundreds of agent and command files.
 
 ---
 
@@ -16,7 +16,7 @@ Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standar
 
 1. [Quick Summary](#quick-summary)
 2. [Sub-Files](#sub-files)
-3. [Quick Reference — Naming Conventions](#quick-reference--naming-conventions)
+3. [Quick Reference â€” Naming Conventions](#quick-reference--naming-conventions)
 4. [Quick Facts](#quick-facts)
 5. [Cross-References](#cross-references)
 6. [Known Gaps](#known-gaps)
@@ -34,7 +34,7 @@ Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standar
 
 ---
 
-## Quick Reference — Naming Conventions
+## Quick Reference â€” Naming Conventions
 
 | Content Type | Pattern | Examples |
 |-------------|---------|----------|
@@ -42,7 +42,7 @@ Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standar
 | Team directories | kebab-case dirs | `agents/teams/backend-team/` |
 | Team role files | lowercase `.md` (fixed names) | `techlead.md`, `executor.md`, `reviewer.md` |
 | Command files | kebab-case `.md` | `cook.md`, `brainstorm.md` |
-| Command variants | kebab-case in subdirs | `commands/cook/fast.md`, `commands/cook/hard.md` |
+| Command variants | kebab-case in subdirs | `commands/cook-fast.md`, `commands/cook-hard.md` |
 | Rule files | UPPER_CASE `.md` | `CORE.md`, `PHASES.md`, `AGENTS.md` |
 | Skill directories | kebab-case dirs | `skills/find-skills/`, `skills/ab-test-setup/` |
 | Matrix skill files | kebab-case `.yaml` | `backend.yaml`, `ai-ml.yaml` |
@@ -69,13 +69,13 @@ Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standar
 | ESLint (web only) | Active | ESLint ^9.39.1 + typescript-eslint |
 | TypeScript (web only) | Active | TypeScript compiler via tsconfig |
 | Markdown Linting | Suggested, not enforced | `lint:md` script is echo-only |
-| Prettier / Formatter | Not configured | — |
-| CI/CD Pipeline | Not configured | — |
-| commitlint | Not configured | — |
-| lint-staged | Not configured | — |
-| editorconfig | Not configured | — |
-| Test Coverage | Not configured | — |
-| Containerization | Not configured | — |
+| Prettier / Formatter | Not configured | â€” |
+| CI/CD Pipeline | Not configured | â€” |
+| commitlint | Not configured | â€” |
+| lint-staged | Not configured | â€” |
+| editorconfig | Not configured | â€” |
+| Test Coverage | Not configured | â€” |
+| Containerization | Not configured | â€” |
 
 ---
 
@@ -97,7 +97,7 @@ Agent Assistant (`@namch/agent-assistant` v1.3.0) enforces a lean set of standar
 
 ## Known Gaps
 
-These are documented absences — not recommendations. They reflect the current state of the project as of v1.3.0.
+These are documented absences â€” not recommendations. They reflect the current state of the project as of v1.3.0.
 
 | Gap | Impact | Notes |
 |-----|--------|-------|

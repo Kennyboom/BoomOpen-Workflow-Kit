@@ -21,7 +21,7 @@ execution-mode: router
 2. PHASES.md — Phase Execution
 3. AGENTS.md — Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. plan/hard.md), and execute it.
+**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. plan-hard.md), and execute it.
 
 ---
 
