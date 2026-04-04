@@ -21,7 +21,7 @@ execution-mode: execute
 2. PHASES.md â€” Phase Execution
 3. AGENTS.md â€” Tiered Execution
 
-**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. docs/core.md), and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. docs-core.md), and execute it.
 
 ---
 

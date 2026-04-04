@@ -48,9 +48,9 @@ REPORTS  = ./reports/{topic}/
 
 | Input | File |
 |-------|------|
-| `/cook`, `/cook:hard` | `commands/cook.md` → `commands/cook/hard.md` |
-| `/cook:fast` | `commands/cook/fast.md` (direct) |
-| `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | Same pattern |
+| `/cook`, `/cook:hard` | `commands/cook.md` → `commands/cook-hard.md` |
+| `/cook:fast` | `commands/cook-fast.md` (direct) |
+| `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | Same pattern: `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/brainstorm` | `commands/brainstorm.md` → variant |
 | `/ask` | `commands/ask.md` → variant |
 | `/code` | `commands/code.md` → variant |
@@ -66,8 +66,8 @@ REPORTS  = ./reports/{topic}/
 - "design/ui/ux/mockup" → `/design`
 - "document/docs/readme/spec" → `/docs`
 
-**Variant syntax**: `/cmd:variant` or `/cmd/variant` both work.
-**Team variant baseline**: `:team` is supported only where `commands/{cmd}/team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
+**Variant syntax**: `/cmd:variant` or `/cmd-variant` both work.
+**Team variant baseline**: `:team` is supported only where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
 
 ---
 

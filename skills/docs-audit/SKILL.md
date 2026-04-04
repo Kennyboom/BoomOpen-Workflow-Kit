@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-This skill replaces the workflow in `commands/docs/audit.md` with a reusable, self-contained audit documentation engine.
+This skill replaces the workflow in `commands/docs-audit.md` with a reusable, self-contained audit documentation engine.
 
 It supports three modes:
 - `CREATE`: generate missing audit folders from scratch.
@@ -223,7 +223,7 @@ Mandatory document rules:
 - No unresolved placeholders or template residue in final output.
 
 Visual/document UX rules:
-- Start each major section with a short status strip using symbols: `✅ Verified`, `🟡 Partial`, `🔴 Gap`, `⚪ Unknown`.
+- Start each major section with a short status strip using symbols: `âœ… Verified`, `ðŸŸ¡ Partial`, `ðŸ”´ Gap`, `âšª Unknown`.
 - Keep paragraph blocks short (2-4 lines) and prefer bullet structure for audit decisions.
 - Place a `### Quick Read` block near the top with 3-5 bullets.
 
@@ -256,17 +256,17 @@ Verify all of the following before completion:
 
 | Check | audit-security/ | audit-compliance/ | audit-dataflow/ | audit-recommendations/ |
 |---|---|---|---|---|
-| Folder exists with 00-index + sub-files | □ | □ | □ | □ |
-| TOC present in 00-index.md | □ | □ | □ | □ |
-| English only | □ | □ | □ | □ |
-| Evidence sources present | □ | □ | □ | □ |
-| Known gaps present in 00-index.md | □ | □ | □ | □ |
-| Strict score in 00-index.md | □ | □ | □ | □ |
-| No TODO/TBD placeholders | □ | □ | □ | □ |
-| No unresolved {placeholder} markers | □ | □ | □ | □ |
-| Claims backed by evidence | □ | □ | □ | □ |
-| Score rationale present | □ | □ | □ | □ |
-| Finding IDs consistent cross-folder | □ | □ | □ | □ |
+| Folder exists with 00-index + sub-files | â–¡ | â–¡ | â–¡ | â–¡ |
+| TOC present in 00-index.md | â–¡ | â–¡ | â–¡ | â–¡ |
+| English only | â–¡ | â–¡ | â–¡ | â–¡ |
+| Evidence sources present | â–¡ | â–¡ | â–¡ | â–¡ |
+| Known gaps present in 00-index.md | â–¡ | â–¡ | â–¡ | â–¡ |
+| Strict score in 00-index.md | â–¡ | â–¡ | â–¡ | â–¡ |
+| No TODO/TBD placeholders | â–¡ | â–¡ | â–¡ | â–¡ |
+| No unresolved {placeholder} markers | â–¡ | â–¡ | â–¡ | â–¡ |
+| Claims backed by evidence | â–¡ | â–¡ | â–¡ | â–¡ |
+| Score rationale present | â–¡ | â–¡ | â–¡ | â–¡ |
+| Finding IDs consistent cross-folder | â–¡ | â–¡ | â–¡ | â–¡ |
 
 Additional quality gates:
 - `audit-security/` must contain at least one attack-surface view and one findings table.
@@ -283,10 +283,10 @@ Provide a concise final report:
 
 | Folder | Mode | Status |
 |---|---|---|
-| ./documents/audit/audit-security/ | CREATE/UPDATE/MIGRATE | ✅ |
-| ./documents/audit/audit-compliance/ | CREATE/UPDATE/MIGRATE | ✅ |
-| ./documents/audit/audit-dataflow/ | CREATE/UPDATE/MIGRATE | ✅ |
-| ./documents/audit/audit-recommendations/ | CREATE/UPDATE/MIGRATE | ✅ |
+| ./documents/audit/audit-security/ | CREATE/UPDATE/MIGRATE | âœ… |
+| ./documents/audit/audit-compliance/ | CREATE/UPDATE/MIGRATE | âœ… |
+| ./documents/audit/audit-dataflow/ | CREATE/UPDATE/MIGRATE | âœ… |
+| ./documents/audit/audit-recommendations/ | CREATE/UPDATE/MIGRATE | âœ… |
 
 ### Score Summary
 - Security posture: {score}

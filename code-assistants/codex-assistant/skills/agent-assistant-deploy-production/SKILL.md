@@ -1,6 +1,6 @@
 ---
 name: agent-assistant-deploy-production
-description: "🚀 Deploy Production — Production release with safety gates. Use when user types /deploy:production."
+description: "ðŸš€ Deploy Production â€” Production release with safety gates. Use when user types /deploy:production."
 ---
 
 # /deploy:production
@@ -9,10 +9,10 @@ description: "🚀 Deploy Production — Production release with safety gates. U
 
 ## Rules
 
-1. **Load first**: `~/.codex/skills/agent-assistant/rules/CORE.md` — follow all 10 Laws
+1. **Load first**: `~/.codex/skills/agent-assistant/rules/CORE.md` â€” follow all 10 Laws
 2. **Agents**: Spawn via Codex native multi-agent (`~/.codex/agents/`)
 3. **Skills**: Resolve from `~/.codex/skills/agent-assistant/matrix-skills/`
 
 ## Workflow
 
-**Load and follow**: `~/.codex/skills/agent-assistant/commands/deploy/production.md`
+**Load and follow**: `~/.codex/skills/agent-assistant/commands/deploy-production.md`
