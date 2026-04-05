@@ -13,7 +13,7 @@ execution-mode: execute
 
 ## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
 
-**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 1. CORE.md â€” Identity, Laws, Routing  
 2. PHASES.md â€” Phase Execution  
 3. AGENTS.md â€” Tiered Execution  
