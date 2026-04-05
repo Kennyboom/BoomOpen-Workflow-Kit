@@ -1,4 +1,4 @@
-# Agent Assistant — Decision Rules & Exceptions
+# BoomOpen Workflow Kit — Decision Rules & Exceptions
 
 | Field | Value |
 |-------|-------|

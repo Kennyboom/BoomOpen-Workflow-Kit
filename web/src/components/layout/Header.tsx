@@ -62,7 +62,7 @@ export function Header({ className }: HeaderProps) {
                 'focus-visible:ring-[var(--color-text-accent)]',
                 'rounded-lg'
               )}
-              aria-label="Agent Assistant - Home"
+              aria-label="BoomOpen Workflow Kit - Home"
             >
               <motion.img
                 src="/assets/logo.svg"
@@ -81,7 +81,7 @@ export function Header({ className }: HeaderProps) {
                   'hidden sm:inline'
                 )}
               >
-                Agent Assistant
+                BoomOpen Workflow Kit
               </span>
             </Link>
 

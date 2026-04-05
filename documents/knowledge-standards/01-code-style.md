@@ -1,4 +1,4 @@
-# Agent Assistant â€” Code Style Standards
+# BoomOpen Workflow Kit â€” Code Style Standards
 
 > **Purpose**: Formatting rules and naming conventions for every content type in the project, derived from observed patterns and tool configuration
 > **Parent**: [00-index.md](./00-index.md)
@@ -9,7 +9,7 @@
 
 ## Formatter Status
 
-Agent Assistant has **no project-wide code formatter**. There is no Prettier configuration (`.prettierrc`, `.prettierrc.json`, or `prettier` in `package.json`). There is no editorconfig (`.editorconfig`). Formatting consistency is maintained by convention, not tooling.
+BoomOpen Workflow Kit has **no project-wide code formatter**. There is no Prettier configuration (`.prettierrc`, `.prettierrc.json`, or `prettier` in `package.json`). There is no editorconfig (`.editorconfig`). Formatting consistency is maintained by convention, not tooling.
 
 **Web sub-project exception**: The `web/` directory uses ESLint ^9.39.1 with `typescript-eslint` and React plugins, which enforces some code quality rules but is not a formatter.
 
@@ -83,7 +83,7 @@ Agent Assistant has **no project-wide code formatter**. There is no Prettier con
 | Functions | camelCase | `ensureDir()`, `copyWithReplace()`, `copyFileWithReplace()` |
 | Constants | camelCase (local scoped) | `const installPath = ...` |
 | Global constants | UPPER_SNAKE_CASE | `const PLATFORMS = { ... }` |
-| File header | JSDoc-style comment block | `/** Agent Assistant CLI Installer */` |
+| File header | JSDoc-style comment block | `/** BoomOpen Workflow Kit CLI Installer */` |
 | Shebang | Present in entry point | `#!/usr/bin/env node` |
 
 ### TypeScript/TSX â€” Web (`web/src/**/*.{ts,tsx}`)

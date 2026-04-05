@@ -1,8 +1,8 @@
-# CODEX.md — Agent Assistant Orchestrator for OpenAI Codex
+# CODEX.md — BoomOpen Workflow Kit Orchestrator for OpenAI Codex
 
 > ⛔ **MANDATORY BOOT SEQUENCE** — EXECUTE BEFORE ANY OTHER ACTION
 >
-> 1. **READ NOW**: `~/.codex/skills/agent-assistant/rules/CORE.md`
+> 1. **READ NOW**: `~/.codex/skills/boomopen-workflow-kit/rules/CORE.md`
 > 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
 > 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
 >
@@ -31,10 +31,10 @@
 
 ```
 CONFIG   = ~/.codex/config.toml
-COMMANDS = ~/.codex/skills/agent-assistant/commands/
-AGENTS   = ~/.codex/skills/agent-assistant/agents/
+COMMANDS = ~/.codex/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.codex/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.codex/skills/
-RULES    = ~/.codex/skills/agent-assistant/rules/
+RULES    = ~/.codex/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -43,7 +43,7 @@ REPORTS  = ./reports/{topic}/
 ## 🤖 CODEX MULTI-AGENT SYSTEM
 
 Codex has a **native multi-agent system** configured in `~/.codex/config.toml`.
-There are **21 specialist agents** registered, each with their own `.toml` config and full agent definition in `~/.codex/skills/agent-assistant/agents/{name}.md`.
+There are **21 specialist agents** registered, each with their own `.toml` config and full agent definition in `~/.codex/skills/boomopen-workflow-kit/agents/{name}.md`.
 
 ### TIER 1 — SPAWN AGENTS (Primary Method)
 
@@ -58,7 +58,7 @@ When a workflow phase requires a specialist:
 ### TIER 2 — EMBODY (Fallback Only)
 
 Only if agent spawning fails or is unavailable:
-- EMBODY the specialist role by reading their full definition from `~/.codex/skills/agent-assistant/agents/{name}.md`
+- EMBODY the specialist role by reading their full definition from `~/.codex/skills/boomopen-workflow-kit/agents/{name}.md`
 - Follow their constraints, thinking protocol, and output format exactly
 
 **❌ FORBIDDEN**: Using TIER 2 when TIER 1 (native agent spawning) is available
@@ -97,13 +97,13 @@ Only if agent spawning fails or is unavailable:
 |---------|----------|
 | Response to user | **Same as user's language** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/`, `./documents/` | **Always English** |
+| Files in `./reports/{topic}/`, `./documents/` | **Same as user's language** (technical terms in English) |
 
 ---
 
 ## 🎯 COMMAND ROUTING
 
-When you detect a slash command or natural language intent, **load the `$agent-assistant-workflows` skill** (or read the workflow file directly) and follow the phase-by-phase workflow.
+When you detect a slash command or natural language intent, **load the `$boomopen-workflow-kit-workflows` skill** (or read the workflow file directly) and follow the phase-by-phase workflow.
 
 ### Slash Commands
 
@@ -209,7 +209,7 @@ Append `:variant` to any command for specialized workflows:
 1. RECEIVE user request
 2. DETECT command (explicit slash command or natural language)
 3. LOAD CORE.md (if not already loaded)
-4. LOAD workflow: use $agent-assistant-workflows skill or read commands/{cmd}.md directly
+4. LOAD workflow: use $boomopen-workflow-kit-workflows skill or read commands/{cmd}.md directly
 5. For EACH phase in workflow:
    a. Load PHASES.md (phase execution rules)
    b. SPAWN specialist agent via Codex multi-agent system (TIER 1)
@@ -224,7 +224,7 @@ Append `:variant` to any command for specialized workflows:
 
 ## 🔗 SKILL INTEGRATION
 
-When handling commands, use the `$agent-assistant-workflows` skill for workflow routing:
+When handling commands, use the `$boomopen-workflow-kit-workflows` skill for workflow routing:
 - The skill maps commands to their workflow files
 - It provides phase-to-agent mappings
 - It handles variant resolution
@@ -233,4 +233,4 @@ When handling commands, use the `$agent-assistant-workflows` skill for workflow 
 
 **🎻 You are the CONDUCTOR. SPAWN SPECIALISTS to play their parts.**
 
-**📖 NOW: Read `~/.codex/skills/agent-assistant/rules/CORE.md` before proceeding.**
+**📖 NOW: Read `~/.codex/skills/boomopen-workflow-kit/rules/CORE.md` before proceeding.**

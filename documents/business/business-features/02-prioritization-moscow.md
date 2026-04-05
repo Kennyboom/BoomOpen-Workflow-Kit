@@ -1,4 +1,4 @@
-# Agent Assistant — MoSCoW Prioritization
+# BoomOpen Workflow Kit — MoSCoW Prioritization
 
 > **Purpose**: MoSCoW classification of all 23 features with rationale, dependency analysis, and priority justification
 > **Parent**: [00-index.md](./00-index.md)

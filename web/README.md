@@ -1,6 +1,6 @@
-# Agent Assistant Website
+# BoomOpen Workflow Kit Website
 
-Professional website for the Agent Assistant project - a multi-agent orchestration system for AI coding assistants.
+Professional website for the BoomOpen Workflow Kit project - a multi-agent orchestration system for AI coding assistants.
 
 ## Features
 

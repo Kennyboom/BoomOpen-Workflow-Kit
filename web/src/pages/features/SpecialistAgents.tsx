@@ -146,7 +146,7 @@ export default function SpecialistAgents() {
               Explore Commands →
             </Button>
             <Button variant="secondary" size="lg" href="/installation">
-              Install Agent Assistant
+              Install BoomOpen Workflow Kit
             </Button>
           </div>
         </div>

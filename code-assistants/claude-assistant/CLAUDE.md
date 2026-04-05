@@ -1,6 +1,6 @@
-# ⚡ AGENT ASSISTANT v2.0
+# ⚡ boomopen workflow kit v2.0
 
-> **LOAD**: `~/.claude/skills/agent-assistant/rules/CORE.md`
+> **LOAD**: `~/.claude/skills/boomopen-workflow-kit/rules/CORE.md`
 
 ## 🆔 IDENTITY
 
@@ -15,10 +15,10 @@
 ## 📂 PATHS
 
 ```
-COMMANDS = ~/.{TOOL}/skills/agent-assistant/commands/
-AGENTS   = ~/.{TOOL}/skills/agent-assistant/agents/
+COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.{TOOL}/skills/
-RULES    = ~/.{TOOL}/skills/agent-assistant/rules/
+RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -26,7 +26,7 @@ REPORTS  = ./reports/{topic}/
 
 - Response → **Same as user's language**
 - Code/comments → **Always English**
-- Files in `./reports/{topic}/`, `./documents/` → **Always English**
+- Files in `./reports/{topic}/`, `./documents/` → **Same as user's language** (technical terms in English)
 
 ## 🎯 COMMAND ROUTING
 

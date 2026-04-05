@@ -1,4 +1,4 @@
-# Agent Assistant — Directory Structure
+# BoomOpen Workflow Kit — Directory Structure
 
 > **Purpose**: Complete annotated directory tree (depth 3-4) with functional purpose of every top-level directory and key files
 > **Parent**: [00-index.md](./00-index.md)
@@ -27,7 +27,7 @@ The project root contains 10 top-level directories and 12 root-level files. The 
 ## Annotated Directory Tree
 
 ```
-agent-assistant/                          # Project root — npm package @namch/agent-assistant
+boomopen-workflow-kit/                          # Project root — npm package @namch/boomopen-workflow-kit
 │
 ├── package.json                          # npm manifest: scripts, deps, engines, bin, files
 ├── package-lock.json                     # Locked dependency tree
@@ -106,7 +106,7 @@ agent-assistant/                          # Project root — npm package @namch/
 │   │   ├── agents/                       # Codex-specific agent TOML files
 │   │   └── skills/                       # Codex-specific skill overrides
 │   ├── copilot-assistant/                # GitHub Copilot platform assets
-│   │   └── agent-assistant.agent.md      # Copilot agent definition file
+│   │   └── boomopen-workflow-kit.agent.md      # Copilot agent definition file
 │   └── cursor-assistant/                 # Cursor platform assets
 │       ├── .cursorrules                  # Cursor rules file (becomes CURSOR.md on install)
 │       └── rules/                        # Cursor MDC rule files
@@ -231,7 +231,7 @@ Contains 5 subdirectories, one per supported AI coding tool. Each provides platf
 Contains 14 command router files (`.md`) at the top level and corresponding subdirectories with variant strategies. Standard variants are `fast.md`, `hard.md`, `team.md`; deploy uses `check.md`, `preview.md`, `production.md`, `rollback.md`; docs uses `audit.md`, `business.md`, `core.md`. The command router file defines the base workflow, and variants modify execution strategy. Total: 61 Markdown files.
 
 ### `documents/` — Project Documentation
-Stores long-form project documentation including the HSOL design blueprint, HSOL assessment, and the knowledge source base (this folder). Files here are included in the npm package and copied during installation to `~/.{tool}/skills/agent-assistant/documents/`.
+Stores long-form project documentation including the HSOL design blueprint, HSOL assessment, and the knowledge source base (this folder). Files here are included in the npm package and copied during installation to `~/.{tool}/skills/boomopen-workflow-kit/documents/`.
 
 ### `matrix-skills/` — HSOL Domain Registries
 Contains 21 YAML files: `_index.yaml` (central registry with HSOL configuration and discovery settings), `_dynamic.yaml` (community-installed dynamic skills), and 19 domain-specific registries. Each domain YAML maps skills to agents by profile, priority, and relevance. The HSOL version is 1.1 with 1,430 total matrix skills.

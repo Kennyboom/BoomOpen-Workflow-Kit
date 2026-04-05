@@ -1,4 +1,4 @@
-# Agent Assistant — Features
+# BoomOpen Workflow Kit — Features
 
 > **Purpose**: Comprehensive inventory of key features, capabilities, performance metrics, and component counts
 > **Parent**: [00-index.md](./00-index.md)
@@ -45,11 +45,11 @@ The same agent definitions, commands, and workflows work across 5 AI coding tool
 
 | Platform | Install Path | Status |
 |----------|-------------|--------|
-| Cursor | `~/.cursor/skills/agent-assistant/` | Full support |
-| GitHub Copilot | `~/.copilot/skills/agent-assistant/` | Full support |
-| Claude Code | `~/.claude/skills/agent-assistant/` | Full support |
-| Codex | `~/.codex/skills/agent-assistant/` | Full support |
-| Antigravity/Gemini | `~/.gemini/antigravity/skills/agent-assistant/` | Full support |
+| Cursor | `~/.cursor/skills/boomopen-workflow-kit/` | Full support |
+| GitHub Copilot | `~/.copilot/skills/boomopen-workflow-kit/` | Full support |
+| Claude Code | `~/.claude/skills/boomopen-workflow-kit/` | Full support |
+| Codex | `~/.codex/skills/boomopen-workflow-kit/` | Full support |
+| Antigravity/Gemini | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` | Full support |
 
 **How it works**: The CLI installer has platform-specific path configurations and template variable replacements (`{TOOL}`, `{HOME}`) that adapt the same source files for each platform's directory structure.
 

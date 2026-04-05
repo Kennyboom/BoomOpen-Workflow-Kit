@@ -1,4 +1,4 @@
-# Agent Assistant — Components
+# BoomOpen Workflow Kit — Components
 
 > **Purpose**: Per-component breakdown of every major subsystem — responsibility, interfaces, dependencies, and file locations
 > **Parent**: [00-index.md](./00-index.md)
@@ -311,7 +311,7 @@ Each agent file follows a standard structure:
 | **Name** | CLI Installer |
 | **Responsibility** | Copy framework files from npm package to each platform's global directory, performing `{TOOL}` placeholder substitution |
 | **Key Files** | `cli/install.js` (main), `cli/README.md` (usage docs) |
-| **Interfaces** | **Input**: `npx agent-assistant install [tool\|--all]`. **Output**: Files in `~/.{tool}/skills/agent-assistant/`. |
+| **Interfaces** | **Input**: `npx boomopen-workflow-kit install [tool\|--all]`. **Output**: Files in `~/.{tool}/skills/boomopen-workflow-kit/`. |
 | **Dependencies** | Node.js >=18.0.0, built-in modules only (`fs`, `path`, `os`, `readline`) |
 | **Platforms Supported** | Cursor, GitHub Copilot, Claude Code (via Antigravity path), Codex, Antigravity/Gemini |
 
@@ -319,13 +319,13 @@ Each agent file follows a standard structure:
 
 | Command | Action |
 |---------|--------|
-| `npx agent-assistant install cursor` | Install to `~/.cursor/skills/agent-assistant/` |
-| `npx agent-assistant install copilot` | Install to `~/.copilot/skills/agent-assistant/` |
-| `npx agent-assistant install antigravity` | Install to Gemini/Antigravity path |
-| `npx agent-assistant install codex` | Install to `~/.codex/skills/agent-assistant/` |
-| `npx agent-assistant install --all` | Install to all platforms |
-| `npx agent-assistant uninstall [tool]` | Remove from specified platform |
-| `npx agent-assistant list` | Show installed platforms |
+| `npx boomopen-workflow-kit install cursor` | Install to `~/.cursor/skills/boomopen-workflow-kit/` |
+| `npx boomopen-workflow-kit install copilot` | Install to `~/.copilot/skills/boomopen-workflow-kit/` |
+| `npx boomopen-workflow-kit install antigravity` | Install to Gemini/Antigravity path |
+| `npx boomopen-workflow-kit install codex` | Install to `~/.codex/skills/boomopen-workflow-kit/` |
+| `npx boomopen-workflow-kit install --all` | Install to all platforms |
+| `npx boomopen-workflow-kit uninstall [tool]` | Remove from specified platform |
+| `npx boomopen-workflow-kit list` | Show installed platforms |
 
 ### Replacement Maps (from cli/install.js)
 
@@ -333,11 +333,11 @@ The installer replaces these placeholders in all copied Markdown/YAML files:
 
 | Placeholder | Example Replacement (Cursor) |
 |------------|------------------------------|
-| `~/.{TOOL}/skills/agent-assistant/` | `~/.cursor/skills/agent-assistant/` |
-| `{TOOL}/agent-assistant/` | `cursor/skills/agent-assistant/` |
+| `~/.{TOOL}/skills/boomopen-workflow-kit/` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| `{TOOL}/boomopen-workflow-kit/` | `cursor/skills/boomopen-workflow-kit/` |
 | `{TOOL}` | `cursor` |
 | `{HOME}` | `~` |
-| `~/.agent/` | `~/.cursor/skills/agent-assistant/` |
+| `~/.agent/` | `~/.cursor/skills/boomopen-workflow-kit/` |
 
 ---
 
@@ -356,7 +356,7 @@ Each platform template directory contains platform-specific configuration files:
 | Platform | Notable Assets |
 |----------|---------------|
 | Cursor | Rules directory, `.cursorrules` file |
-| Copilot | `agent-assistant.agent.md` (VS Code prompt file) |
+| Copilot | `boomopen-workflow-kit.agent.md` (VS Code prompt file) |
 | Claude Code | Claude-specific configuration |
 | Codex | Codex-specific configuration |
 | Antigravity | Gemini-specific configuration |
@@ -391,7 +391,7 @@ Each platform template directory contains platform-specific configuration files:
 | Attribute | Value |
 |-----------|-------|
 | **Name** | Marketing Website |
-| **Responsibility** | Public-facing marketing site for the Agent Assistant project |
+| **Responsibility** | Public-facing marketing site for the BoomOpen Workflow Kit project |
 | **Key Files** | `web/` directory (React 19 + Vite + Tailwind CSS v4) |
 | **Interfaces** | Standalone web application deployed to Vercel |
 | **Dependencies** | Independent sub-project — not part of the core framework or npm distribution |

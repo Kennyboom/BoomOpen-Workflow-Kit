@@ -1,11 +1,11 @@
 ---
-description: 💻 Code Router — Route to feature and implementation workflows
+description: ðŸ’» Code Router â€” Route to feature and implementation workflows
 version: "1.0"
 category: engineering
 execution-mode: router
 ---
 
-# /code — Feature & Implementation Router
+# /code â€” Feature & Implementation Router
 
 > **ROUTER DIRECTIVE**: Analyze task/feature complexity and route to appropriate implementation workflow.
 
@@ -13,15 +13,15 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -29,19 +29,19 @@ execution-mode: router
 
 ```
 IF user references an existing plan (@plan, @PLAN-..., path to PLAN-*.md, or "according to plan" / "follow the plan"):
-  → Route to /code:hard (workflow will SKIP research, scout, brainstorm and go straight to implementation)
+  â†’ Route to /code:hard (workflow will SKIP research, scout, brainstorm and go straight to implementation)
 
 IF task/feature is simple (clear requirements, single file):
-  → Route to /code:fast
+  â†’ Route to /code:fast
 
 IF task/feature is complex (multi-file, new feature structure, research needed):
-  → Route to /code:hard
+  â†’ Route to /code:hard
 
 IF task/feature is complex AND maximum quality with team collaboration needed:
-  → Route to /code:team
+  â†’ Route to /code:team
 
 IF unsure:
-  → Default to /code:fast (escalate if needed)
+  â†’ Default to /code:fast (escalate if needed)
 ```
 
 ---
@@ -59,15 +59,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 💻 Feature & Implementation Mode Selection
+## ðŸ’» Feature & Implementation Mode Selection
 
 **Request**: [parsed task/feature]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/code:fast` — Quick implementation
-2. ⚡⚡⚡ **Hard** → `/code:hard` — Full feature development cycle
-3. 👥 **Team** → `/code:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/code:fast` â€” Quick implementation
+2. âš¡âš¡âš¡ **Hard** â†’ `/code:hard` â€” Full feature development cycle
+3. ðŸ‘¥ **Team** â†’ `/code:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

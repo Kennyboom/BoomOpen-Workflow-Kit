@@ -1,6 +1,6 @@
 # Knowledge Source Base
 
-> **Purpose**: Comprehensive technical knowledge base for the @namch/agent-assistant project — a multi-agent orchestration framework for AI coding assistants
+> **Purpose**: Comprehensive technical knowledge base for the @namch/boomopen-workflow-kit project — a multi-agent orchestration framework for AI coding assistants
 > **Sub-files**: 4
 > **Last Updated**: 2026-03-26
 
@@ -8,7 +8,7 @@
 
 ## Quick Summary
 
-Agent Assistant is a plugin-based orchestration framework (v1.3.0) that installs Markdown and YAML configuration files into AI coding tool directories (Cursor, GitHub Copilot, Antigravity/Gemini, Claude Code, and Codex). The framework implements a Hybrid Skill Orchestration Layer (HSOL) that dynamically resolves and injects skills from a matrix of 1,430 skill definitions across 19 domains. It operates as a pure CLI tool built on Node.js >=18.0.0 using only built-in modules (fs, path, os, readline) with zero production dependencies.
+BoomOpen Workflow Kit is a plugin-based orchestration framework (v1.3.0) that installs Markdown and YAML configuration files into AI coding tool directories (Cursor, GitHub Copilot, Antigravity/Gemini, Claude Code, and Codex). The framework implements a Hybrid Skill Orchestration Layer (HSOL) that dynamically resolves and injects skills from a matrix of 1,430 skill definitions across 19 domains. It operates as a pure CLI tool built on Node.js >=18.0.0 using only built-in modules (fs, path, os, readline) with zero production dependencies.
 
 The core architecture centers on an Orchestrator pattern: an AI coding assistant reads the platform entry point file (CURSOR.md, COPILOT.md, CLAUDE.md, CODEX.md, or GEMINI.md), which bootstraps it into the Orchestrator role. The Orchestrator then delegates work to 21 specialist agents (plus 51 team agents across 17 teams) using 14 command workflows with 47 variant strategies. Skills are resolved through the matrix-skills YAML registry and optionally enhanced by dynamic discovery via the find-skills mechanism.
 
@@ -41,7 +41,7 @@ The project also includes a separate React 19 + Vite + Tailwind marketing websit
 
 | Key | Value |
 |-----|-------|
-| Package Name | `@namch/agent-assistant` |
+| Package Name | `@namch/boomopen-workflow-kit` |
 | Version | 1.3.0 |
 | License | MIT |
 | Author | NamCH |

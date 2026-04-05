@@ -9,13 +9,13 @@
 Skills = Domain knowledge modules in `{SKILLS_PATH}/`.
 
 **Two sources**:
-1. **Matrix Skills** — Pre-curated in `~/.{TOOL}/skills/agent-assistant/matrix-skills/*.yaml` (fast, trusted)
+1. **Matrix Skills** — Pre-curated in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml` (fast, trusted)
 2. **Dynamic Skills** — Community skills via `find-skills` (on-demand)
 
 **Canonical governance source**:
-- Runtime thresholds, trust progression, and promotion gates are defined in `~/.{TOOL}/skills/agent-assistant/matrix-skills/_index.yaml` (`hsol` block).
+- Runtime thresholds, trust progression, and promotion gates are defined in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_index.yaml` (`hsol` block).
 - If this file conflicts with `_index.yaml`, `_index.yaml` is the source of truth.
-- Dynamic skill entry governance metadata is declared in `~/.{TOOL}/skills/agent-assistant/matrix-skills/_dynamic.yaml`.
+- Dynamic skill entry governance metadata is declared in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_dynamic.yaml`.
 
 ---
 
@@ -23,7 +23,7 @@ Skills = Domain knowledge modules in `{SKILLS_PATH}/`.
 
 ```
 1. PARSE agent profile from frontmatter
-2. LOAD inherited domains from ~/.{TOOL}/skills/agent-assistant/matrix-skills/_index.yaml
+2. LOAD inherited domains from ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_index.yaml
 3. FILTER skills by relevance_mapping
 4. APPLY priority thresholds (critical≥9, core≥7, minimum≥5)
 5. CALCULATE fitness scores
@@ -76,7 +76,7 @@ Dynamic skills: trust = 0.3 - 1.0 (based on history)
 ```
 WHEN task_complexity == Complex:
   1. PARSE task keywords and domain
-  2. SCAN ~/.{TOOL}/skills/agent-assistant/matrix-skills/*.yaml for matching skills
+  2. SCAN ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml for matching skills
   3. READ matched SKILL.md files
   4. CALCULATE fitness scores
   5. IF fitness ≥ 0.8 → Use matched skills
@@ -86,7 +86,7 @@ WHEN task_complexity == Complex:
   
   ⛔ NEVER skip steps 1-4 and default to "base knowledge"
   ⛔ NEVER invent skill names — use ACTUAL skills from matrix
-  ✅ ALWAYS reference real skill IDs from ~/.{TOOL}/skills/agent-assistant/matrix-skills/
+  ✅ ALWAYS reference real skill IDs from ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/
 ```
 
 ---
@@ -159,7 +159,7 @@ Agents don't list individual skills. They reference HSOL:
 ```markdown
 ## ⚡ Skills
 
-> **MATRIX DISCOVERY**: Auto-injected from `~/.{TOOL}/skills/agent-assistant/matrix-skills/`
+> **MATRIX DISCOVERY**: Auto-injected from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `{domain}:{category}` | Domains: `{inherit_from}`
 ```
 
@@ -169,7 +169,7 @@ Agents don't list individual skills. They reference HSOL:
 
 ```
 1. Create: {SKILLS_PATH}/{skill-id}/SKILL.md
-2. Add to: ~/.{TOOL}/skills/agent-assistant/matrix-skills/{domain}.yaml
+2. Add to: ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/{domain}.yaml
 3. Do NOT edit agent files (skills resolved by profile)
 ```
 
@@ -213,7 +213,7 @@ IF no_relevant_skills:
 detection:
   - Outputting "Complex → Using base knowledge" (IMMEDIATE VIOLATION)
   - Classifying task as Complex but not scanning matrix-skills/
-  - Inventing or fabricating skill names not in ~/.{TOOL}/skills/agent-assistant/matrix-skills/*.yaml
+  - Inventing or fabricating skill names not in ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml
   - Skipping resolution algorithm for non-fast variants
 
 correction:
@@ -225,8 +225,8 @@ correction:
 strict_rules:
   ❌ NEVER output "Complex → Using base knowledge"
   ❌ NEVER skip matrix scan for complex tasks
-  ❌ NEVER fabricate skill names — use only what exists in ~/.{TOOL}/skills/agent-assistant/matrix-skills/
-  ✅ ALWAYS scan ~/.{TOOL}/skills/agent-assistant/matrix-skills/ when task is complex
+  ❌ NEVER fabricate skill names — use only what exists in ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/
+  ✅ ALWAYS scan ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/ when task is complex
   ✅ ALWAYS read relevant SKILL.md files before delegation
   ✅ IF no matching skills found → report gap explicitly, offer discovery
 ```
@@ -235,10 +235,10 @@ strict_rules:
 
 ## C8 Foundation Enforcement Checkpoints
 
-- `C8-SKILLS-01` (BLOCK): Use HSOL values from `~/.{TOOL}/skills/agent-assistant/matrix-skills/_index.yaml`; do not invent local threshold variants.
+- `C8-SKILLS-01` (BLOCK): Use HSOL values from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_index.yaml`; do not invent local threshold variants.
 - `C8-SKILLS-02` (BLOCK): For low-trust task-critical discovery (`fitness < 0.75`), user confirmation is mandatory before install.
 - `C8-SKILLS-03` (BLOCK): Promotion to matrix requires all declared promotion gates (executions, success rate, inactivity window).
-- `C8-SKILLS-04` (BLOCK): Dynamic manifest entries must preserve owner/freshness/integrity/support-state metadata from `~/.{TOOL}/skills/agent-assistant/matrix-skills/_dynamic.yaml`.
+- `C8-SKILLS-04` (BLOCK): Dynamic manifest entries must preserve owner/freshness/integrity/support-state metadata from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_dynamic.yaml`.
 - `C8-SKILLS-05` (BLOCK): Complex tasks MUST resolve skills via HSOL algorithm. "Complex → Using base knowledge" is a protocol violation.
 
 ---

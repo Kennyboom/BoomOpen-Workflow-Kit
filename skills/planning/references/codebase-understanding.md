@@ -15,8 +15,8 @@
 
 ALWAYS read these files first when they exist under `./documents/`:
 
-1. **`~/.claude/skills/agent-assistant/rules/AGENT-RULES.md`** (IMPORTANT)
-   (Fallback: `~/.claude/skills/agent-assistant/rules/AGENT-RULES.md`)
+1. **`~/.claude/skills/boomopen-workflow-kit/rules/AGENT-RULES.md`** (IMPORTANT)
+   (Fallback: `~/.claude/skills/boomopen-workflow-kit/rules/AGENT-RULES.md`)
    - File Name Conventions & Size Management
    - Development rules and best practices
    - Code quality standards & Security guidelines

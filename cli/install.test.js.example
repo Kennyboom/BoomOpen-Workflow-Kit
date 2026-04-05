@@ -21,7 +21,7 @@ describe('CLI Installer', () => {
     
     describe('ensureDir()', () => {
         test('should create directory if it does not exist', () => {
-            const testDir = path.join(os.tmpdir(), 'agent-assistant-test-' + Date.now());
+            const testDir = path.join(os.tmpdir(), 'boomopen-workflow-kit-test-' + Date.now());
             
             // Uncomment when ensureDir is exported:
             // ensureDir(testDir);

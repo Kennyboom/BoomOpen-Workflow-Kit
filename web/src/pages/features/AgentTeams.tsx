@@ -380,7 +380,7 @@ export default function AgentTeams() {
           >
             <Terminal
               command="/cook:team add JWT authentication with refresh tokens"
-              title="Agent Assistant — Team Mode"
+              title="BoomOpen Workflow Kit — Team Mode"
             />
           </motion.div>
 

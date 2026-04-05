@@ -1,4 +1,4 @@
-# Agent Assistant — Detailed Workflows
+# BoomOpen Workflow Kit — Detailed Workflows
 
 | Field | Value |
 |-------|-------|
@@ -17,11 +17,11 @@ The Framework User runs the CLI to install framework files into their AI coding 
 
 ### Steps
 
-1. User executes `agent-assistant install <tool>` or `agent-assistant install --all`
+1. User executes `boomopen-workflow-kit install <tool>` or `boomopen-workflow-kit install --all`
 2. CLI validates Node.js version (>=18)
 3. CLI validates `<tool>` against known TOOLS list (claude, copilot, cursor, codex, gemini)
 4. For each target tool:
-   a. Resolve target directory: `~/.{tool}/skills/agent-assistant/`
+   a. Resolve target directory: `~/.{tool}/skills/boomopen-workflow-kit/`
    b. Create directory structure if not exists
    c. Copy framework files (agents, commands, rules, skills, matrix-skills)
    d. Apply placeholder replacement in copied files
@@ -51,7 +51,7 @@ flowchart TD
     E -->|Yes| F[Single tool selected]
     D --> G[For each tool]
     F --> G
-    G --> H[Resolve target: ~/.tool/skills/agent-assistant/]
+    G --> H[Resolve target: ~/.tool/skills/boomopen-workflow-kit/]
     H --> I{Create directory?}
     I -->|Fail| I1[Report directory error]
     I1 --> Z1
@@ -74,10 +74,10 @@ The Framework User removes installed framework files while preserving any custom
 
 ### Steps
 
-1. User executes `agent-assistant uninstall <tool>` or `agent-assistant uninstall --all`
+1. User executes `boomopen-workflow-kit uninstall <tool>` or `boomopen-workflow-kit uninstall --all`
 2. CLI validates tool name(s)
 3. For each target tool:
-   a. Check if installation directory exists at `~/.{tool}/skills/agent-assistant/`
+   a. Check if installation directory exists at `~/.{tool}/skills/boomopen-workflow-kit/`
    b. If not exists → skip with informational message
    c. Identify bundled files (from manifest)
    d. Remove only bundled files

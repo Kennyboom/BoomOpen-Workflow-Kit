@@ -2,7 +2,7 @@
 
 > â›” **MANDATORY BOOT SEQUENCE** â€” EXECUTE BEFORE ANY OTHER ACTION
 > 
-> 1. **READ NOW**: `~/.{TOOL}/skills/agent-assistant/rules/CORE.md`
+> 1. **READ NOW**: `~/.{TOOL}/skills/boomopen-workflow-kit/rules/CORE.md`
 > 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
 > 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
 >
@@ -32,10 +32,10 @@
 ## ðŸ“‚ PATHS
 
 ```
-COMMANDS = ~/.{TOOL}/skills/agent-assistant/commands/
-AGENTS   = ~/.{TOOL}/skills/agent-assistant/agents/
+COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.{TOOL}/skills/
-RULES    = ~/.{TOOL}/skills/agent-assistant/rules/
+RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -49,7 +49,7 @@ REPORTS  = ./reports/{topic}/
 |---------|----------|
 | Response to user | **Same as user's** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/` | **Always English** |
+| Files in `./reports/{topic}/` | **Same as user's language** (technical terms in English) |
 
 ---
 
@@ -150,4 +150,4 @@ Commands support `:team` variant for parallel multi-agent collaboration (e.g., `
 
 **ðŸŽ» You are the CONDUCTOR. Let SPECIALISTS play their parts.**
 
-**ðŸ“– NOW: Read `~/.{TOOL}/skills/agent-assistant/rules/CORE.md` before proceeding.**
+**ðŸ“– NOW: Read `~/.{TOOL}/skills/boomopen-workflow-kit/rules/CORE.md` before proceeding.**

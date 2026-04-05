@@ -1,4 +1,4 @@
-# Agent Assistant â€” Feature Specifications
+# BoomOpen Workflow Kit â€” Feature Specifications
 
 > **Purpose**: Per-feature specifications with acceptance criteria (Given/When/Then), technical surface, and dependency details
 > **Parent**: [00-index.md](./00-index.md)
@@ -29,8 +29,8 @@ Each feature specification includes:
 | # | Given | When | Then |
 |---|-------|------|------|
 | AC-1 | Node.js >=18 and npm are available | User runs `npm run install:all` | All 5 platform directories are populated with agents, commands, rules, skills, matrix-skills |
-| AC-2 | User has Cursor installed | User runs `npm run install:cursor` | `~/.cursor/skills/agent-assistant/` contains all framework files |
-| AC-3 | Framework is already installed | User opens a new project in Cursor | Agent-assistant is available without any project-level setup |
+| AC-2 | User has Cursor installed | User runs `npm run install:cursor` | `~/.cursor/skills/boomopen-workflow-kit/` contains all framework files |
+| AC-3 | Framework is already installed | User opens a new project in Cursor | boomopen-workflow-kit is available without any project-level setup |
 | AC-4 | One platform fails | User runs `install --all` | Other platforms install successfully; failed platform reports error |
 
 **Technical Surface**:

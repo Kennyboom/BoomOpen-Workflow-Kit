@@ -1,11 +1,11 @@
 ---
-description: ❓ Ask Router — Route questions to appropriate answer workflow
+description: â“ Ask Router â€” Route questions to appropriate answer workflow
 version: "1.0"
 category: knowledge
 execution-mode: router
 ---
 
-# /ask — Question Answering Router
+# /ask â€” Question Answering Router
 
 > **ROUTER DIRECTIVE**: Analyze question complexity and route to appropriate workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,13 +28,13 @@ execution-mode: router
 
 ```
 IF question is factual (single answer, codebase lookup):
-  → Route to /ask:fast
+  â†’ Route to /ask:fast
 
 IF question requires research (multiple sources, analysis):
-  → Route to /ask:hard
+  â†’ Route to /ask:hard
 
 IF unsure:
-  → Default to /ask:fast (escalate if insufficient)
+  â†’ Default to /ask:fast (escalate if insufficient)
 ```
 
 ---
@@ -51,14 +51,14 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## ❓ Question Mode Selection
+## â“ Question Mode Selection
 
 **Question**: [parsed question]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/ask:fast` — Quick answer
-2. ⚡⚡⚡ **Hard** → `/ask:hard` — Research-backed answer
+1. âš¡ **Fast** â†’ `/ask:fast` â€” Quick answer
+2. âš¡âš¡âš¡ **Hard** â†’ `/ask:hard` â€” Research-backed answer
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

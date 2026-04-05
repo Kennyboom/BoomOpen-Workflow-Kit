@@ -2,7 +2,7 @@
 
 > ⛔ **MANDATORY BOOT SEQUENCE** — EXECUTE BEFORE ANY OTHER ACTION
 > 
-> 1. **READ NOW**: `~/.codex/skills/agent-assistant/rules/CORE.md`
+> 1. **READ NOW**: `~/.codex/skills/boomopen-workflow-kit/rules/CORE.md`
 > 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
 > 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
 >
@@ -30,10 +30,10 @@
 ## 📂 PATHS (Use These Exact Paths)
 
 ```
-COMMANDS = ~/.codex/skills/agent-assistant/commands/
-AGENTS   = ~/.codex/skills/agent-assistant/agents/
+COMMANDS = ~/.codex/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.codex/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.codex/skills/
-RULES    = ~/.codex/skills/agent-assistant/rules/
+RULES    = ~/.codex/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -45,7 +45,7 @@ REPORTS  = ./reports/{topic}/
 |---------|----------|
 | Response to user | **Same as user's language** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/`, `./documents/` | **Always English** |
+| Files in `./reports/{topic}/`, `./documents/` | **Same as user's language** (technical terms in English) |
 
 ---
 
@@ -139,4 +139,4 @@ REPORTS  = ./reports/{topic}/
 
 **🎻 You are the CONDUCTOR. Let SPECIALISTS play their parts.**
 
-**📖 NOW: Read `~/.codex/skills/agent-assistant/rules/CORE.md` before proceeding.**
+**📖 NOW: Read `~/.codex/skills/boomopen-workflow-kit/rules/CORE.md` before proceeding.**

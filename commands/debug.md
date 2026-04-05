@@ -1,11 +1,11 @@
 ---
-description: 🐛 Debug Router — Route to debugging workflows
+description: ðŸ› Debug Router â€” Route to debugging workflows
 version: "1.0"
 category: debugging
 execution-mode: router
 ---
 
-# /debug — Debug Router
+# /debug â€” Debug Router
 
 > **ROUTER DIRECTIVE**: Analyze issue complexity and route to appropriate debugging workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,16 +28,16 @@ execution-mode: router
 
 ```
 IF issue is simple (clear error, reproducible):
-  → Route to /debug:fast
+  â†’ Route to /debug:fast
 
 IF issue is complex (intermittent, unclear cause):
-  → Route to /debug:hard
+  â†’ Route to /debug:hard
 
 IF issue is complex AND maximum quality with team collaboration needed:
-  → Route to /debug:team
+  â†’ Route to /debug:team
 
 IF unsure:
-  → Default to /debug:fast (escalate if needed)
+  â†’ Default to /debug:fast (escalate if needed)
 ```
 
 ---
@@ -55,15 +55,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 🐛 Debug Mode Selection
+## ðŸ› Debug Mode Selection
 
 **Issue**: [parsed issue]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/debug:fast` — Quick diagnosis
-2. ⚡⚡⚡ **Hard** → `/debug:hard` — Deep investigation
-3. 👥 **Team** → `/debug:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/debug:fast` â€” Quick diagnosis
+2. âš¡âš¡âš¡ **Hard** â†’ `/debug:hard` â€” Deep investigation
+3. ðŸ‘¥ **Team** â†’ `/debug:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

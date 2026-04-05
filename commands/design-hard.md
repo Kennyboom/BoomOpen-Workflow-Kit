@@ -1,11 +1,11 @@
 ---
-description: ⚡⚡⚡ Full Design — Complete design process with research
+description: âš¡âš¡âš¡ Full Design â€” Complete design process with research
 version: "1.0"
 category: design
 execution-mode: execute
 ---
 
-# /design:hard — Full Design Process
+# /design:hard â€” Full Design Process
 
 > **MISSION**: Execute complete design process with research, exploration, and iteration.
 
@@ -13,21 +13,21 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
 
 ---
 
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
+## ðŸ”€ TIERED EXECUTION PROTOCOL (MANDATORY)
 
 > **Reference: AGENTS.md (Tiered Execution)`
 
@@ -35,16 +35,16 @@ execution-mode: execute
 tiered_execution:
   principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
   for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
+    TIER_1_MANDATORY: "IF tool exists â†’ MUST use SUB_AGENT_DELEGATION"
+    TIER_2_FALLBACK: "ONLY on system errorâ€”NOT complexity/preference/speed"
   anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
+    - âŒ NEVER use Tier 2 when Tier 1 tool is available
+    - âœ… ALWAYS attempt Tier 1 first when tool exists
 ```
 
 ---
 
-## ⚠️ CRITICAL: DELIVERABLE FILE RULES
+## âš ï¸ CRITICAL: DELIVERABLE FILE RULES
 
 ```yaml
 deliverable_files:
@@ -57,25 +57,25 @@ enforcement:
   - Design file is the deliverable for implementation phases
 ```
 
-All files in `./reports/{topic}/` → English only.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` â†’ English only.
+**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## â›” INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
 
 ---
 
-## 🎭 Phase 1: REQUIREMENTS DISCOVERY
+## ðŸŽ­ Phase 1: REQUIREMENTS DISCOVERY
 
 | Attribute | Value                       |
 | --------- | --------------------------- |
 | **Agent** | `brainstormer`              |
 | **Goal**  | Clarify design requirements |
 
-### ⚡ TIERED EXECUTION
+### âš¡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -84,7 +84,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
+> EMBODY [brainstormer] â€” Requires logged system error justification.
 
 **Exit Criteria:**
 
@@ -95,14 +95,14 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: RESEARCH
+## ðŸŽ­ Phase 2: RESEARCH
 
 | Attribute | Value                           |
 | --------- | ------------------------------- |
 | **Agent** | `researcher`                    |
 | **Goal**  | Research design patterns and UX |
 
-### ⚡ TIERED EXECUTION
+### âš¡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -111,7 +111,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] — Requires logged system error justification.
+> EMBODY [researcher] â€” Requires logged system error justification.
 
 **Exit Criteria:**
 
@@ -121,14 +121,14 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 3: CODEBASE ANALYSIS
+## ðŸŽ­ Phase 3: CODEBASE ANALYSIS
 
 | Attribute | Value                      |
 | --------- | -------------------------- |
 | **Agent** | `scouter`                  |
 | **Goal**  | Map existing design system |
 
-### ⚡ TIERED EXECUTION
+### âš¡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -137,7 +137,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> EMBODY [scouter] â€” Requires logged system error justification.
 
 **Exit Criteria:**
 
@@ -148,14 +148,14 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 4: DESIGN CREATION
+## ðŸŽ­ Phase 4: DESIGN CREATION
 
 | Attribute | Value                  |
 | --------- | ---------------------- |
 | **Agent** | `designer`             |
 | **Goal**  | Full design with specs |
 
-### ⚡ TIERED EXECUTION
+### âš¡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -164,7 +164,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/designer.md`
-> EMBODY [designer] — Requires logged system error justification.
+> EMBODY [designer] â€” Requires logged system error justification.
 
 **Exit Criteria:**
 
@@ -178,14 +178,14 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 5: DESIGN REVIEW
+## ðŸŽ­ Phase 5: DESIGN REVIEW
 
 | Attribute | Value                 |
 | --------- | --------------------- |
 | **Agent** | `reviewer`            |
 | **Goal**  | Review design quality |
 
-### ⚡ TIERED EXECUTION
+### âš¡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -194,7 +194,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/reviewer.md`
-> EMBODY [reviewer] — Requires logged system error justification.
+> EMBODY [reviewer] â€” Requires logged system error justification.
 
 **Exit Criteria:**
 
@@ -209,6 +209,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present design with:
 
-1. ✅ **Done** — Design complete
-2. 💻 **Implement** → `/code:hard`
-3. 🔄 **Iterate** — Further refinement
+1. âœ… **Done** â€” Design complete
+2. ðŸ’» **Implement** â†’ `/code:hard`
+3. ðŸ”„ **Iterate** â€” Further refinement

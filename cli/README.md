@@ -1,10 +1,10 @@
-# Agent Assistant CLI
+# BoomOpen Workflow Kit CLI
 
-Command-line installer for the Agent Assistant Framework.
+Command-line installer for the BoomOpen Workflow Kit Framework.
 
 ## Overview
 
-This CLI tool installs the Agent Assistant framework for different AI coding tools. It copies the necessary files (agents, commands, skills, rules) to the appropriate locations for each tool.
+This CLI tool installs the BoomOpen Workflow Kit framework for different AI coding tools. It copies the necessary files (agents, commands, skills, rules) to the appropriate locations for each tool.
 
 ## Supported Tools
 
@@ -22,8 +22,8 @@ This CLI tool installs the Agent Assistant framework for different AI coding too
 
 ```bash
 # Clone the repository
-git clone https://github.com/hainamchung/agent-assistant.git
-cd agent-assistant
+git clone https://github.com/hainamchung/boomopen-workflow-kit.git
+cd boomopen-workflow-kit
 
 # Install for a specific tool
 node cli/install.js install cursor
@@ -49,7 +49,7 @@ npm run install:all
 ## Usage
 
 ```
-Usage: agent-assistant <command> [options]
+Usage: boomopen-workflow-kit <command> [options]
 
 Commands:
   install [tool]     Install for a specific tool (cursor, copilot, antigravity, claude, codex)
@@ -59,52 +59,52 @@ Commands:
   help               Show help message
 
 Examples:
-  agent-assistant install cursor
-  agent-assistant install claude
-  agent-assistant install --all
-  agent-assistant uninstall copilot
-  agent-assistant list
+  boomopen-workflow-kit install cursor
+  boomopen-workflow-kit install claude
+  boomopen-workflow-kit install --all
+  boomopen-workflow-kit uninstall copilot
+  boomopen-workflow-kit list
 ```
 
 ## Commands
 
 ### install
 
-Install the Agent Assistant framework for one or more tools.
+Install the BoomOpen Workflow Kit framework for one or more tools.
 
 ```bash
 # Install for Cursor
-agent-assistant install cursor
+boomopen-workflow-kit install cursor
 
 # Install for GitHub Copilot
-agent-assistant install copilot
+boomopen-workflow-kit install copilot
 
 # Install for Antigravity/Gemini
-agent-assistant install antigravity
+boomopen-workflow-kit install antigravity
 
 # Install for Claude Code
-agent-assistant install claude
+boomopen-workflow-kit install claude
 
 # Install for Codex
-agent-assistant install codex
+boomopen-workflow-kit install codex
 
 # Install for all tools
-agent-assistant install --all
+boomopen-workflow-kit install --all
 
 # Interactive mode (prompts for selection)
-agent-assistant install
+boomopen-workflow-kit install
 ```
 
 ### uninstall
 
-Remove the Agent Assistant framework from a tool.
+Remove the BoomOpen Workflow Kit framework from a tool.
 
 ```bash
 # Uninstall from Cursor
-agent-assistant uninstall cursor
+boomopen-workflow-kit uninstall cursor
 
 # Uninstall from all tools
-agent-assistant uninstall --all
+boomopen-workflow-kit uninstall --all
 ```
 
 ### list
@@ -112,7 +112,7 @@ agent-assistant uninstall --all
 Show supported tools and their installation status.
 
 ```bash
-agent-assistant list
+boomopen-workflow-kit list
 ```
 
 Example output:
@@ -133,18 +133,18 @@ Example output:
 
 | Content        | Location                              |
 | -------------- | ------------------------------------- |
-| Global Rules   | `~/.cursor/rules/agent-assistant.mdc` |
+| Global Rules   | `~/.cursor/rules/boomopen-workflow-kit.mdc` |
 | Commands       | `~/.cursor/commands/`                 |
 | Skills         | `~/.cursor/skills/`                   |
 | Agents         | `~/.cursor/agents/`                   |
-| Core Framework | `~/.cursor/skills/agent-assistant/`   |
+| Core Framework | `~/.cursor/skills/boomopen-workflow-kit/`   |
 
 ### For GitHub Copilot
 
 | Content          | Location                                                     |
 | ---------------- | ------------------------------------------------------------ |
-| Agent Definition | `~/.copilot/skills/agent-assistant/agent-assistant.agent.md` |
-| Core Framework   | `~/.copilot/skills/agent-assistant/`                         |
+| Agent Definition | `~/.copilot/skills/boomopen-workflow-kit/boomopen-workflow-kit.agent.md` |
+| Core Framework   | `~/.copilot/skills/boomopen-workflow-kit/`                         |
 | Skills           | `~/.copilot/skills/`                                         |
 | Native Agents    | `~/.copilot/skills/agents/`                                  |
 
@@ -154,7 +154,7 @@ Example output:
 | ---------------- | --------------------------------------------------------- |
 | Global Rules     | `~/.gemini/GEMINI.md`                                     |
 | Agent Definition | `~/.gemini/antigravity/agents/AntigravityGlobal.agent.md` |
-| Core Framework   | `~/.gemini/antigravity/skills/agent-assistant/`           |
+| Core Framework   | `~/.gemini/antigravity/skills/boomopen-workflow-kit/`           |
 | Skills           | `~/.gemini/antigravity/skills/`                           |
 | Workflows        | `~/.gemini/antigravity/workflows/`                        |
 
@@ -166,7 +166,7 @@ Example output:
 | Commands       | `~/.claude/commands/`               |
 | Skills         | `~/.claude/skills/`                 |
 | Agents         | `~/.claude/agents/`                 |
-| Core Framework | `~/.claude/skills/agent-assistant/` |
+| Core Framework | `~/.claude/skills/boomopen-workflow-kit/` |
 
 ### For Codex
 
@@ -176,7 +176,7 @@ Example output:
 | Commands       | `~/.codex/commands/`               |
 | Skills         | `~/.codex/skills/`                 |
 | Agents         | `~/.codex/agents/`                 |
-| Core Framework | `~/.codex/skills/agent-assistant/` |
+| Core Framework | `~/.codex/skills/boomopen-workflow-kit/` |
 
 ## Path Replacements
 
@@ -185,7 +185,7 @@ The installer automatically replaces placeholder paths in all Markdown files:
 | Placeholder               | Replacement                                                          |
 | ------------------------- | -------------------------------------------------------------------- |
 | `{TOOL}`                  | Tool-specific path (e.g., `cursor`, `copilot`, `codex`, `gemini/antigravity`) |
-| `{TOOL}/agent-assistant/` | Full path to agent-assistant directory                               |
+| `{TOOL}/boomopen-workflow-kit/` | Full path to boomopen-workflow-kit directory                               |
 
 ## Requirements
 
@@ -233,4 +233,4 @@ After installation, you may need to:
 
 ## License
 
-MIT License - Part of the Agent Assistant Framework.
+MIT License - Part of the BoomOpen Workflow Kit Framework.

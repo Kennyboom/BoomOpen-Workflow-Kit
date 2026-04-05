@@ -1,4 +1,4 @@
-# Agent Assistant — Git Workflow
+# BoomOpen Workflow Kit — Git Workflow
 
 > **Purpose**: Commit message format, semantic-release pipeline, branch naming, Husky hooks, and end-to-end release process
 > **Parent**: [00-index.md](./00-index.md)
@@ -9,7 +9,7 @@
 
 ## Commit Message Format
 
-Agent Assistant uses **Conventional Commits** as defined by the `conventionalcommits` preset in semantic-release. The format is:
+BoomOpen Workflow Kit uses **Conventional Commits** as defined by the `conventionalcommits` preset in semantic-release. The format is:
 
 ```
 <type>(<scope>): <description>
@@ -111,7 +111,7 @@ The release pipeline is fully automated via `semantic-release` ^22.0.12 with the
 | 1 | `@semantic-release/commit-analyzer` | Analyzes commits since last release, determines version bump (major/minor/patch/none) |
 | 2 | `@semantic-release/release-notes-generator` | Generates changelog content from commits using `conventionalcommits` preset |
 | 3 | `@semantic-release/changelog` | Writes generated notes to `CHANGELOG.md` |
-| 4 | `@semantic-release/npm` | Publishes package to npm registry (scoped public: `@namch/agent-assistant`) |
+| 4 | `@semantic-release/npm` | Publishes package to npm registry (scoped public: `@namch/boomopen-workflow-kit`) |
 | 5 | `@semantic-release/git` | Commits updated `CHANGELOG.md` and `package.json`, creates git tag |
 | 6 | `@semantic-release/github` | Creates GitHub Release with notes |
 
@@ -148,7 +148,7 @@ Only `CHANGELOG.md` (updated content) and `package.json` (bumped version) are co
 4. Determines version bump (or skips if no releasable commits)
 5. release-notes-generator creates changelog entry
 6. changelog plugin writes to CHANGELOG.md
-7. npm plugin publishes @namch/agent-assistant@{new-version} to npm
+7. npm plugin publishes @namch/boomopen-workflow-kit@{new-version} to npm
 8. git plugin commits CHANGELOG.md + package.json, creates tag v{new-version}
 9. github plugin creates GitHub Release with notes
 ```
@@ -210,7 +210,7 @@ The `.gitignore` excludes:
 }
 ```
 
-- Package is scoped (`@namch/agent-assistant`) and published with public access
+- Package is scoped (`@namch/boomopen-workflow-kit`) and published with public access
 - The `files` field in `package.json` explicitly lists included paths: `cli/`, `agents/`, `commands/`, `rules/`, `matrix-skills/`, `skills/`, `documents/`, `code-assistants/`, `LICENSE`, `README.md`, `CHANGELOG.md`
 - The `web/` directory is excluded from the npm package
 

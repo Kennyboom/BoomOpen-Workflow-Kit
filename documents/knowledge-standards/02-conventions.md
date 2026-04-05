@@ -1,4 +1,4 @@
-# Agent Assistant — Conventions
+# BoomOpen Workflow Kit — Conventions
 
 > **Purpose**: File/directory organization patterns, YAML frontmatter conventions, import patterns, module structure, comment standards, and document numbering conventions
 > **Parent**: [00-index.md](./00-index.md)
@@ -12,7 +12,7 @@
 ### Root-Level Structure
 
 ```
-agent-assistant/
+boomopen-workflow-kit/
 ├── agents/                  # 21 specialist agent definitions
 │   └── teams/               # 17 team configurations (3 roles each)
 ├── cli/                     # CLI installer (CommonJS JavaScript)

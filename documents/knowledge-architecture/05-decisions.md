@@ -1,4 +1,4 @@
-# Agent Assistant — Architecture Decision Records
+# BoomOpen Workflow Kit — Architecture Decision Records
 
 > **Purpose**: Key architecture decisions with choices, alternatives considered, rationale, and trade-offs
 > **Parent**: [00-index.md](./00-index.md)
@@ -39,7 +39,7 @@
 
 ### Context
 
-The framework needs to define complex multi-agent workflows, routing logic, conditional execution, and structured protocols. Traditional frameworks encode this as executable code. Agent Assistant encodes framework logic as Markdown instructions that the AI model reads and follows.
+The framework needs to define complex multi-agent workflows, routing logic, conditional execution, and structured protocols. Traditional frameworks encode this as executable code. BoomOpen Workflow Kit encodes framework logic as Markdown instructions that the AI model reads and follows.
 
 ### Decision
 
@@ -87,7 +87,7 @@ All operational logic — orchestrator identity, command routing, phase executio
 
 ### Context
 
-Traditional multi-agent frameworks require a server process, message queues, and orchestration infrastructure. Agent Assistant needs to run in 5 different AI coding tools with no shared backend.
+Traditional multi-agent frameworks require a server process, message queues, and orchestration infrastructure. BoomOpen Workflow Kit needs to run in 5 different AI coding tools with no shared backend.
 
 ### Decision
 
@@ -188,7 +188,7 @@ The framework must work identically across 5 AI platforms (Cursor, GitHub Copilo
 
 **Use `{TOOL}` placeholders in all source files, replaced at install time by the CLI for each target platform.**
 
-All Markdown and YAML files reference paths with `{TOOL}` (e.g., `~/.{TOOL}/skills/agent-assistant/`). When `cli/install.js` copies files to a platform directory, it performs text replacement on every file with the platform-specific values.
+All Markdown and YAML files reference paths with `{TOOL}` (e.g., `~/.{TOOL}/skills/boomopen-workflow-kit/`). When `cli/install.js` copies files to a platform directory, it performs text replacement on every file with the platform-specific values.
 
 ### Alternatives Considered
 
@@ -220,11 +220,11 @@ All Markdown and YAML files reference paths with `{TOOL}` (e.g., `~/.{TOOL}/skil
 - `cli/install.js` defines `replacements` map for each platform in the TOOLS config:
   ```javascript
   replacements: {
-      '~/.{TOOL}/skills/agent-assistant/': '~/.cursor/skills/agent-assistant/',
+      '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.cursor/skills/boomopen-workflow-kit/',
       '{TOOL}': 'cursor',
   }
   ```
-- All rule files use `~/.{TOOL}/skills/agent-assistant/` paths (verified in CORE.md, SKILLS.md)
+- All rule files use `~/.{TOOL}/skills/boomopen-workflow-kit/` paths (verified in CORE.md, SKILLS.md)
 - `package.json` has 5 install scripts: `install:cursor`, `install:copilot`, `install:antigravity`, `install:codex`, `install:all`
 
 ---

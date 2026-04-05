@@ -2,7 +2,7 @@
 description: Emergency recovery when things break. Rollback code, deployments, or database changes with severity-based protocols.
 ---
 
-# /rollback — Emergency Recovery Commander v1.0
+# /rollback â€” Emergency Recovery Commander v1.0
 
 $ARGUMENTS
 
@@ -11,12 +11,12 @@ $ARGUMENTS
 ## GOLDEN RULES
 
 ```
-1. STAY CALM — Panic causes mistakes
-2. ASSESS BEFORE ACT — Severity first, action second
-3. BACKUP BEFORE ROLLBACK — Always
-4. ROLLBACK BEFORE DEBUG (P0/P1) — Uptime first
-5. NOTIFY TEAM — Transparency is key
-6. POST-MORTEM — Every P0/P1 must have lessons learned
+1. STAY CALM â€” Panic causes mistakes
+2. ASSESS BEFORE ACT â€” Severity first, action second
+3. BACKUP BEFORE ROLLBACK â€” Always
+4. ROLLBACK BEFORE DEBUG (P0/P1) â€” Uptime first
+5. NOTIFY TEAM â€” Transparency is key
+6. POST-MORTEM â€” Every P0/P1 must have lessons learned
 ```
 
 ---
@@ -24,29 +24,29 @@ $ARGUMENTS
 ## Phase 1: Incident Assessment
 
 ```
-"⏪ EMERGENCY RECOVERY — Assessing situation now.
+"âª EMERGENCY RECOVERY â€” Assessing situation now.
 
-1️⃣ WHAT BROKE?
+1ï¸âƒ£ WHAT BROKE?
    A) App won't load (blank page / 500 error)
    B) Recent deploy broke something
    C) Database issue (data loss / query errors)
    D) Code changes broke local development
-   E) Other — describe the issue
+   E) Other â€” describe the issue
 
-2️⃣ WHO IS AFFECTED?
+2ï¸âƒ£ WHO IS AFFECTED?
    A) Just me (development)
    B) Team (staging)
-   C) Customers (production) ← HIGHEST PRIORITY"
+   C) Customers (production) â† HIGHEST PRIORITY"
 ```
 
 ### Severity Classification
 
 | Level | Name | Target | Action |
 |:-----:|------|--------|--------|
-| 🔴 P0 | CRITICAL | < 15 min | Rollback NOW, investigate LATER |
-| 🟠 P1 | HIGH | < 30 min | Quick assess, rollback if needed |
-| 🟡 P2 | MEDIUM | < 1 hour | Debug first, rollback if stuck |
-| 🟢 P3 | LOW | When free | Use /debug instead |
+| ðŸ”´ P0 | CRITICAL | < 15 min | Rollback NOW, investigate LATER |
+| ðŸŸ  P1 | HIGH | < 30 min | Quick assess, rollback if needed |
+| ðŸŸ¡ P2 | MEDIUM | < 1 hour | Debug first, rollback if stuck |
+| ðŸŸ¢ P3 | LOW | When free | Use /debug instead |
 
 ---
 
@@ -56,71 +56,71 @@ $ARGUMENTS
 
 ```
 A) Rollback SPECIFIC FILE
-   → git checkout -- [file]
+   â†’ git checkout -- [file]
 
 B) Rollback ALL uncommitted changes
-   → git stash (keeps changes for later)
+   â†’ git stash (keeps changes for later)
 
 C) Rollback to SPECIFIC COMMIT
-   → git log --oneline -10
-   → git revert [commit-hash]
+   â†’ git log --oneline -10
+   â†’ git revert [commit-hash]
 
-D) Don't rollback — fix instead
-   → Switch to /debug
+D) Don't rollback â€” fix instead
+   â†’ Switch to /debug
 ```
 
 ### 2.2 Production Rollback
 
 ```
 VERCEL:
-  □ vercel rollback [deployment-url]
-  □ Or: Dashboard → Deployments → Promote previous
-  □ Instant rollback (< 5 seconds)
+  â–¡ vercel rollback [deployment-url]
+  â–¡ Or: Dashboard â†’ Deployments â†’ Promote previous
+  â–¡ Instant rollback (< 5 seconds)
 
 RAILWAY:
-  □ railway environment rollback
-  □ Or: Dashboard → Deployments → Redeploy previous
+  â–¡ railway environment rollback
+  â–¡ Or: Dashboard â†’ Deployments â†’ Redeploy previous
 
 DOCKER:
-  □ docker compose down
-  □ docker compose -f docker-compose.previous.yml up -d
-  □ Or: docker tag app:previous app:latest && docker compose up -d
+  â–¡ docker compose down
+  â–¡ docker compose -f docker-compose.previous.yml up -d
+  â–¡ Or: docker tag app:previous app:latest && docker compose up -d
 
 KUBERNETES:
-  □ kubectl rollout undo deployment/[app-name]
-  □ kubectl rollout status deployment/[app-name]
-  □ Verify: kubectl get pods (all Running?)
+  â–¡ kubectl rollout undo deployment/[app-name]
+  â–¡ kubectl rollout status deployment/[app-name]
+  â–¡ Verify: kubectl get pods (all Running?)
 
 PM2 (Node.js):
-  □ pm2 deploy production revert 1
+  â–¡ pm2 deploy production revert 1
 
 GIT-BASED CI/CD:
-  □ git revert HEAD
-  □ git push (triggers new deploy with old code)
+  â–¡ git revert HEAD
+  â–¡ git push (triggers new deploy with old code)
 ```
 
 ### 2.3 Database Rollback
 
 ```
-⚠️ DANGEROUS — Backup current state FIRST!
+âš ï¸ DANGEROUS â€” Backup current state FIRST!
 
 A) Revert latest migration
-   → prisma migrate reset (careful!)
-   → npm run migrate:rollback
-   → Reverts ONLY the most recent migration
+   â†’ prisma migrate reset (careful!)
+   â†’ npm run migrate:rollback
+   â†’ Reverts ONLY the most recent migration
 
 B) Restore from backup
-   → pg_restore -d [db_name] [backup_file]
-   → ⚠️ Data since backup will be LOST
+   â†’ pg_restore -d [db_name] [backup_file]
+   â†’ âš ï¸ Data since backup will be LOST
 
 C) Point-in-time recovery (managed DBs)
-   → AWS RDS / Supabase / PlanetScale support this
-   → Restore to exact timestamp
+   â†’ AWS RDS / Supabase / PlanetScale support this
+   â†’ Restore to exact timestamp
 
-⚠️ ALWAYS:
-  □ Backup before restore
-  □ Test on staging first
-  □ Notify team before touching production DB
+âš ï¸ ALWAYS:
+  â–¡ Backup before restore
+  â–¡ Test on staging first
+  â–¡ Notify team before touching production DB
 ```
 
 ---
@@ -129,13 +129,13 @@ C) Point-in-time recovery (managed DBs)
 
 ```
 ROLLBACK STEPS (in order):
-1. ✅ BACKUP current state (git stash / db dump)
-2. ✅ Notify team (if production)
-3. ✅ Execute rollback command
-4. ✅ Verify: App loads?
-5. ✅ Verify: Data integrity OK?
-6. ✅ Verify: Core functions work?
-7. ✅ Notify: "System restored"
+1. âœ… BACKUP current state (git stash / db dump)
+2. âœ… Notify team (if production)
+3. âœ… Execute rollback command
+4. âœ… Verify: App loads?
+5. âœ… Verify: Data integrity OK?
+6. âœ… Verify: Core functions work?
+7. âœ… Notify: "System restored"
 ```
 
 ---
@@ -144,12 +144,12 @@ ROLLBACK STEPS (in order):
 
 ```
 HEALTH CHECK:
-□ App loads? (homepage, login page)
-□ Core actions work? (CRUD operations)
-□ API health: GET /api/health → 200?
-□ Database queries executing?
-□ No data loss? (check row counts)
-□ Error monitoring: back to normal?
+â–¡ App loads? (homepage, login page)
+â–¡ Core actions work? (CRUD operations)
+â–¡ API health: GET /api/health â†’ 200?
+â–¡ Database queries executing?
+â–¡ No data loss? (check row counts)
+â–¡ Error monitoring: back to normal?
 ```
 
 ---
@@ -179,8 +179,8 @@ Affected: [N] users
 - [Improvement 1]
 
 ## Action Items (prevent recurrence)
-□ [Prevention action 1]
-□ [Prevention action 2]
+â–¡ [Prevention action 1]
+â–¡ [Prevention action 2]
 ```
 
 ---
@@ -188,18 +188,18 @@ Affected: [N] users
 ## Phase 6: Handover
 
 ```
-⏪ RECOVERY COMPLETE!
+âª RECOVERY COMPLETE!
 
-📊 Results:
-  ✅ System: Online
-  ✅ Severity: [P0-P3]
-  ✅ Downtime: [X] minutes
-  ✅ Data integrity: OK
-  ✅ Post-mortem: [Done/Needed]
+ðŸ“Š Results:
+  âœ… System: Online
+  âœ… Severity: [P0-P3]
+  âœ… Downtime: [X] minutes
+  âœ… Data integrity: OK
+  âœ… Post-mortem: [Done/Needed]
 
 Next steps:
-  1. /debug — Find root cause
-  2. /test — Verify everything works
-  3. /deploy — Redeploy (after fix)
-  4. /save — Persist context
+  1. /debug â€” Find root cause
+  2. /test â€” Verify everything works
+  3. /deploy â€” Redeploy (after fix)
+  4. /save â€” Persist context
 ```

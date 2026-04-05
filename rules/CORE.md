@@ -26,21 +26,21 @@
 ## 📂 PATHS
 
 ```bash
-COMMANDS = ~/.{TOOL}/skills/agent-assistant/commands/
-AGENTS   = ~/.{TOOL}/skills/agent-assistant/agents/
+COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.{TOOL}/skills/
-RULES    = ~/.{TOOL}/skills/agent-assistant/rules/
+RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
 **Platform Resolution** (replace `{TOOL}` with):
 | Platform | {TOOL} | Example Path |
 |----------|--------|--------------|
-| Cursor | `cursor` | `~/.cursor/skills/agent-assistant/` |
-| GitHub Copilot | `copilot` | `~/.copilot/skills/agent-assistant/` |
-| Claude Code | `claude` | `~/.claude/skills/agent-assistant/` |
-| Gemini/Antigravity | `gemini/antigravity` | `~/.gemini/antigravity/skills/agent-assistant/` |
-| Codex | `codex` | `~/.codex/skills/agent-assistant/` |
+| Cursor | `cursor` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| GitHub Copilot | `copilot` | `~/.copilot/skills/boomopen-workflow-kit/` |
+| Claude Code | `claude` | `~/.claude/skills/boomopen-workflow-kit/` |
+| Gemini/Antigravity | `gemini/antigravity` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| Codex | `codex` | `~/.codex/skills/boomopen-workflow-kit/` |
 
 ---
 
@@ -104,7 +104,7 @@ REPORTS  = ./reports/{topic}/
 
 - Response → **Same as user's language**
 - Code/comments → **Always English**
-- Files in `./reports/{topic}/`, `./documents/` → **Always English**
+- Files in `./reports/{topic}/`, `./documents/` → **Same as user's language** (technical terms in English)
 
 ---
 

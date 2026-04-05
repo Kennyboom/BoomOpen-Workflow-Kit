@@ -167,7 +167,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Initial Release**: First stable release of `@namch/agent-assistant`.
+- **Initial Release**: First stable release of `@namch/boomopen-workflow-kit`.
 - **Core Orchestration**: Framework for managing multi-agent workflows.
-- **CLI Tool**: `agent-assistant` CLI for easy installation and management.
+- **CLI Tool**: `boomopen-workflow-kit` CLI for easy installation and management.
 - **Multi-Assistant Support**: Compatibility with Cursor, GitHub Copilot, Claude Code, Codex, and Antigravity.

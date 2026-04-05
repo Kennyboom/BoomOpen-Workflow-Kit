@@ -74,7 +74,7 @@ export default function NotFound() {
                   Commands
                 </Link>
                 <a 
-                  href="https://github.com/hainamchung/agent-assistant"
+                  href="https://github.com/hainamchung/boomopen-workflow-kit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-text-accent hover:text-text-primary transition-colors flex items-center gap-1"

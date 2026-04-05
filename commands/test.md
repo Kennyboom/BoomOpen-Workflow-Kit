@@ -1,11 +1,11 @@
 ---
-description: 🧪 Test Router — Route to testing workflows
+description: ðŸ§ª Test Router â€” Route to testing workflows
 version: "1.0"
 category: validation
 execution-mode: router
 ---
 
-# /test — Testing Router
+# /test â€” Testing Router
 
 > **ROUTER DIRECTIVE**: Analyze testing need and route to appropriate workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,16 +28,16 @@ execution-mode: router
 
 ```
 IF scope is limited (unit tests, quick check):
-  → Route to /test:fast
+  â†’ Route to /test:fast
 
 IF scope is comprehensive (full suite, E2E):
-  → Route to /test:hard
+  â†’ Route to /test:hard
 
 IF scope is comprehensive AND maximum quality with team collaboration needed:
-  → Route to /test:team
+  â†’ Route to /test:team
 
 IF unsure:
-  → Default to /test:fast
+  â†’ Default to /test:fast
 ```
 
 ---
@@ -55,15 +55,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 🧪 Test Mode Selection
+## ðŸ§ª Test Mode Selection
 
 **Scope**: [parsed scope]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/test:fast` — Quick tests
-2. ⚡⚡⚡ **Hard** → `/test:hard` — Comprehensive testing
-3. 👥 **Team** → `/test:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/test:fast` â€” Quick tests
+2. âš¡âš¡âš¡ **Hard** â†’ `/test:hard` â€” Comprehensive testing
+3. ðŸ‘¥ **Team** â†’ `/test:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

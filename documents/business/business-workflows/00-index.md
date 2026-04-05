@@ -1,4 +1,4 @@
-# Agent Assistant — Business Workflows Index
+# BoomOpen Workflow Kit — Business Workflows Index
 
 | Field | Value |
 |-------|-------|
@@ -11,7 +11,7 @@
 
 ## Quick Summary
 
-The Agent Assistant framework operates through **12 canonical workflows** executed by **7 distinct actor types**. Workflows span the full lifecycle from CLI installation (BW-001) through command routing (BW-003), agent delegation (BW-004), skill resolution (BW-005), team collaboration (BW-008), error recovery (BW-010), and platform integration (BW-012). Every workflow enforces strict phase sequencing, tiered execution, and deterministic error handling — no silent failures are permitted.
+The BoomOpen Workflow Kit framework operates through **12 canonical workflows** executed by **7 distinct actor types**. Workflows span the full lifecycle from CLI installation (BW-001) through command routing (BW-003), agent delegation (BW-004), skill resolution (BW-005), team collaboration (BW-008), error recovery (BW-010), and platform integration (BW-012). Every workflow enforces strict phase sequencing, tiered execution, and deterministic error handling — no silent failures are permitted.
 
 ---
 

@@ -14,9 +14,9 @@ RESPONSIBILITIES:
 - Write gameplay tests and performance benchmarks
 
 BEFORE ANY TASK:
-1. READ your full agent definition: ~/.codex/skills/agent-assistant/agents/game-engineer.md
-2. READ global rules: ~/.codex/skills/agent-assistant/rules/CORE.md
-3. Discover applicable skills: ~/.codex/skills/agent-assistant/matrix-skills/
+1. READ your full agent definition: ~/.codex/skills/boomopen-workflow-kit/agents/game-engineer.md
+2. READ global rules: ~/.codex/skills/boomopen-workflow-kit/rules/CORE.md
+3. Discover applicable skills: ~/.codex/skills/boomopen-workflow-kit/matrix-skills/
 
 CONSTRAINTS:
 - Always consider performance impact of every change

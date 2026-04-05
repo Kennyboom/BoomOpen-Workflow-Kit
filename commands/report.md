@@ -1,43 +1,43 @@
 ---
-description: 📝 Report Router — Multi-purpose reporting (create report, update docs, or generate from template)
+description: ðŸ“ Report Router â€” Multi-purpose reporting (create report, update docs, or generate from template)
 version: "1.0"
 category: documentation
 execution-mode: router
 ---
 
-# /report — Reporting Router
+# /report â€” Reporting Router
 
 > **ROUTER DIRECTIVE**: Analyze reporting needs and route to appropriate reporting workflow.
 >
-> **MULTI-PURPOSE**: Report supports any topic and three output modes — create new report, update existing files, or generate from user template/format.
+> **MULTI-PURPOSE**: Report supports any topic and three output modes â€” create new report, update existing files, or generate from user template/format.
 
 <task>$ARGUMENTS</task>
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
 ## OUTPUT MODES (infer from user request)
 
-Reporter **infers** the mode from what the user asks for — no fixed phrase list. Choose by **intent**:
+Reporter **infers** the mode from what the user asks for â€” no fixed phrase list. Choose by **intent**:
 
 | Mode | User intent | Reporter action |
 |------|-------------|-----------------|
-| **Create report** | User wants a **new** deliverable (report, summary, analysis, documentation). | Scout/synthesize → write **new** file under `./reports/{topic}/` or path user specifies. |
-| **Update existing** | User wants **changes reflected in existing** files (docs, README, specs, etc.). | Scout → identify related files → **edit** those files. Do not create a new report unless also asked. |
-| **From template** | User provides a **format, template, or structure** to follow. | Use that format/structure → generate file(s) matching it (e.g. after scouting source). |
+| **Create report** | User wants a **new** deliverable (report, summary, analysis, documentation). | Scout/synthesize â†’ write **new** file under `./reports/{topic}/` or path user specifies. |
+| **Update existing** | User wants **changes reflected in existing** files (docs, README, specs, etc.). | Scout â†’ identify related files â†’ **edit** those files. Do not create a new report unless also asked. |
+| **From template** | User provides a **format, template, or structure** to follow. | Use that format/structure â†’ generate file(s) matching it (e.g. after scouting source). |
 
-**Topic-agnostic**: Subject is whatever the user asks for — infer from the request; not limited to status or technical only.
+**Topic-agnostic**: Subject is whatever the user asks for â€” infer from the request; not limited to status or technical only.
 
 ---
 
@@ -45,19 +45,19 @@ Reporter **infers** the mode from what the user asks for — no fixed phrase lis
 
 ```
 IF task is simple status update OR summary:
-  → Route to /report:fast
+  â†’ Route to /report:fast
 
 IF task is comprehensive analysis OR deep dive OR any non-trivial topic (infer from request):
-  → Route to /report:hard
+  â†’ Route to /report:hard
 
 IF user explicitly asks to UPDATE existing files (not create report):
-  → Use /report:hard or /report:team; reporter OUTPUT MODE = update existing files
+  â†’ Use /report:hard or /report:team; reporter OUTPUT MODE = update existing files
 
 IF task is complex AND maximum quality with team collaboration needed:
-  → Route to /report:team
+  â†’ Route to /report:team
 
 IF unsure:
-  → Default to /report:fast (escalate if needed)
+  â†’ Default to /report:fast (escalate if needed)
 ```
 
 ---
@@ -75,15 +75,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 📝 Reporting Mode Selection
+## ðŸ“ Reporting Mode Selection
 
 **Task**: [parsed task]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/report:fast` — Quick summary
-2. ⚡⚡⚡ **Hard** → `/report:hard` — Full analysis, any topic; create report **or** update existing files / use template
-3. 👥 **Team** → `/report:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/report:fast` â€” Quick summary
+2. âš¡âš¡âš¡ **Hard** â†’ `/report:hard` â€” Full analysis, any topic; create report **or** update existing files / use template
+3. ðŸ‘¥ **Team** â†’ `/report:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

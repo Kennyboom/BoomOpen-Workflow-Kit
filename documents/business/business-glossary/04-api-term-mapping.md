@@ -1,4 +1,4 @@
-# Agent Assistant — API Term Mapping
+# BoomOpen Workflow Kit — API Term Mapping
 
 | Field | Value |
 |-------|-------|

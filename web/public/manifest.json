@@ -1,6 +1,6 @@
 {
-  "name": "Agent Assistant",
-  "short_name": "Agent Assistant",
+  "name": "BoomOpen Workflow Kit",
+  "short_name": "BoomOpen Workflow Kit",
   "description": "Multi-agent orchestration framework for AI coding assistants. 21 specialist agents, 1400+ skills, and 50+ workflows.",
   "start_url": "/",
   "display": "standalone",

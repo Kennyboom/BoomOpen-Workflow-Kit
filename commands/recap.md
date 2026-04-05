@@ -2,7 +2,7 @@
 description: Restore session context from .brain/ to resume previous work. Smart context loading with progress tracking.
 ---
 
-# /recap — Context Restoration v2.0
+# /recap â€” Context Restoration v2.0
 
 $ARGUMENTS
 
@@ -12,11 +12,11 @@ $ARGUMENTS
 
 ```
 READ in this order:
-1. .brain/session.json → current working state
-2. .brain/brain.json → project knowledge
-3. .brain/handover.md → if exists, last handover notes
-4. docs/specs/ → active specs
-5. git log --oneline -5 → recent activity
+1. .brain/session.json â†’ current working state
+2. .brain/brain.json â†’ project knowledge
+3. .brain/handover.md â†’ if exists, last handover notes
+4. docs/specs/ â†’ active specs
+5. git log --oneline -5 â†’ recent activity
 ```
 
 ### If .brain/ exists:
@@ -39,11 +39,11 @@ Parse brain.json for:
 ### If .brain/ NOT found:
 
 ```
-"❌ No saved context found.
+"âŒ No saved context found.
 
 Options:
-1. /plan — Start planning a new feature
-2. /init — Bootstrap a new project
+1. /plan â€” Start planning a new feature
+2. /init â€” Bootstrap a new project
 3. Tell me what you're working on"
 ```
 
@@ -67,51 +67,51 @@ IF git has recent commits:
 ## Phase 3: Context Report
 
 ```
-🧠 SESSION RESTORED
+ðŸ§  SESSION RESTORED
 
-📁 Project: [name] ([type])
-🏷️ Stack: [framework] + [db] + [hosting]
-📊 Status: [planning|coding|testing]
+ðŸ“ Project: [name] ([type])
+ðŸ·ï¸ Stack: [framework] + [db] + [hosting]
+ðŸ“Š Status: [planning|coding|testing]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
-📊 PROGRESS:
-████████░░░░░░░░░░░░ [X]% ([N/M] features)
+ðŸ“Š PROGRESS:
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘ [X]% ([N/M] features)
 
-✅ Completed:
+âœ… Completed:
   - [Feature A]
   - [Feature B]
 
-🔄 In Progress:
-  - [Feature C] ← YOU ARE HERE
+ðŸ”„ In Progress:
+  - [Feature C] â† YOU ARE HERE
 
-📋 Remaining:
+ðŸ“‹ Remaining:
   - [Feature D]
   - [Feature E]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
-📝 Key Decisions:
+ðŸ“ Key Decisions:
   - [Decision 1]
   - [Decision 2]
 
-🚧 Blockers:
+ðŸš§ Blockers:
   - [Blocker if any]
 
-⚠️ Unresolved Errors:
+âš ï¸ Unresolved Errors:
   - [Error if any]
 
-📂 Recent Changes:
+ðŸ“‚ Recent Changes:
   - [commit 1]
   - [commit 2]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
 Ready to continue? Options:
 1. Continue [current feature]
-2. /next — See recommended next step
-3. /create — Start coding
-4. /plan — Plan something new
+2. /next â€” See recommended next step
+3. /create â€” Start coding
+4. /plan â€” Plan something new
 ```
 
 ---
@@ -122,20 +122,20 @@ Based on restored context, provide targeted advice:
 
 ```
 IF status == "debugging":
-  → "Last session had unresolved errors. Try /debug"
+  â†’ "Last session had unresolved errors. Try /debug"
 
 IF status == "coding" AND progress > 80%:
-  → "Almost done! Consider /test then /deploy"
+  â†’ "Almost done! Consider /test then /deploy"
 
 IF blockers exist:
-  → "Blocker from last session: [X]. Resolved?"
+  â†’ "Blocker from last session: [X]. Resolved?"
 
 IF handover.md exists:
-  → "Handover notes from last session: [summary]"
+  â†’ "Handover notes from last session: [summary]"
 
 IF no activity for > 7 days:
-  → "It's been a while! Let me re-scan the project..."
-  → Run deeper analysis (git log, file scan)
+  â†’ "It's been a while! Let me re-scan the project..."
+  â†’ Run deeper analysis (git log, file scan)
 ```
 
 ---
@@ -144,13 +144,13 @@ IF no activity for > 7 days:
 
 ```
 IF session.json is corrupted:
-  → Fallback to git log analysis
-  → "Session file damaged. Rebuilding from git history..."
+  â†’ Fallback to git log analysis
+  â†’ "Session file damaged. Rebuilding from git history..."
 
 IF brain.json is missing but session.json exists:
-  → Load session only
-  → "Static knowledge missing. Session state loaded."
+  â†’ Load session only
+  â†’ "Static knowledge missing. Session state loaded."
 
 IF everything is missing:
-  → "Fresh start! Use /init or /plan to begin."
+  â†’ "Fresh start! Use /init or /plan to begin."
 ```

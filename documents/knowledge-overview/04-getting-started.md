@@ -1,4 +1,4 @@
-# Agent Assistant — Getting Started
+# BoomOpen Workflow Kit — Getting Started
 
 > **Purpose**: Step-by-step installation, environment setup, first run commands, testing, and troubleshooting
 > **Parent**: [00-index.md](./00-index.md)
@@ -36,18 +36,18 @@ This is the simplest method. Install once, use across all projects.
 
 ```bash
 # Step 1: Install the package globally
-npm install -g @namch/agent-assistant@latest
+npm install -g @namch/boomopen-workflow-kit@latest
 
 # Step 2: Verify installation
-agent-assistant list
+boomopen-workflow-kit list
 
 # Step 3: Install for your AI tool(s)
-agent-assistant install cursor        # Cursor only
-agent-assistant install claude        # Claude Code only
-agent-assistant install copilot       # GitHub Copilot only
-agent-assistant install antigravity   # Antigravity/Gemini only
-agent-assistant install codex         # Codex only
-agent-assistant install --all         # All tools at once
+boomopen-workflow-kit install cursor        # Cursor only
+boomopen-workflow-kit install claude        # Claude Code only
+boomopen-workflow-kit install copilot       # GitHub Copilot only
+boomopen-workflow-kit install antigravity   # Antigravity/Gemini only
+boomopen-workflow-kit install codex         # Codex only
+boomopen-workflow-kit install --all         # All tools at once
 ```
 
 ### Option B: From Source
@@ -56,10 +56,10 @@ Use this if you want to contribute, inspect the source, or run from a local chec
 
 ```bash
 # Step 1: Clone the repository
-git clone https://github.com/hainamchung/agent-assistant.git
+git clone https://github.com/hainamchung/boomopen-workflow-kit.git
 
 # Step 2: Navigate into the project
-cd agent-assistant
+cd boomopen-workflow-kit
 
 # Step 3: Install for your AI tool(s)
 node cli/install.js install cursor        # Cursor only
@@ -76,11 +76,11 @@ The CLI installer copies framework files into the AI tool's global configuration
 
 | Tool | Target Directory |
 |------|-----------------|
-| Cursor | `~/.cursor/skills/agent-assistant/` |
-| GitHub Copilot | `~/.copilot/skills/agent-assistant/` |
-| Claude Code | `~/.claude/skills/agent-assistant/` |
-| Codex | `~/.codex/skills/agent-assistant/` |
-| Antigravity/Gemini | `~/.gemini/antigravity/skills/agent-assistant/` |
+| Cursor | `~/.cursor/skills/boomopen-workflow-kit/` |
+| GitHub Copilot | `~/.copilot/skills/boomopen-workflow-kit/` |
+| Claude Code | `~/.claude/skills/boomopen-workflow-kit/` |
+| Codex | `~/.codex/skills/boomopen-workflow-kit/` |
+| Antigravity/Gemini | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
 
 Files installed include: 21 agent definitions, 14 command workflows with variants, 7 rule files, 19 matrix-skill registries, 1,430+ skill modules, and platform-specific entry point files.
 
@@ -92,20 +92,20 @@ After installation, confirm files are in place:
 
 ```bash
 # For Cursor:
-ls ~/.cursor/skills/agent-assistant/
+ls ~/.cursor/skills/boomopen-workflow-kit/
 # Expected: agents/ commands/ rules/ matrix-skills/ skills/ documents/ ...
 
 # For Claude Code:
-ls ~/.claude/skills/agent-assistant/
+ls ~/.claude/skills/boomopen-workflow-kit/
 # Expected: same structure
 
 # For GitHub Copilot:
-ls ~/.copilot/skills/agent-assistant/
+ls ~/.copilot/skills/boomopen-workflow-kit/
 # Expected: same structure
 
 # List all installed tools:
-agent-assistant list
-# Output shows which tools have Agent Assistant installed
+boomopen-workflow-kit list
+# Output shows which tools have BoomOpen Workflow Kit installed
 ```
 
 ---
@@ -197,41 +197,41 @@ npm test
 
 ```bash
 # Remove from a specific tool:
-agent-assistant uninstall cursor
-agent-assistant uninstall claude
-agent-assistant uninstall copilot
-agent-assistant uninstall antigravity
-agent-assistant uninstall codex
+boomopen-workflow-kit uninstall cursor
+boomopen-workflow-kit uninstall claude
+boomopen-workflow-kit uninstall copilot
+boomopen-workflow-kit uninstall antigravity
+boomopen-workflow-kit uninstall codex
 
 # Remove from all tools at once:
-agent-assistant uninstall --all
+boomopen-workflow-kit uninstall --all
 ```
 
 ### Remove from Source
 
 ```bash
-cd agent-assistant
+cd boomopen-workflow-kit
 node cli/install.js uninstall --all
 cd ..
-rm -rf agent-assistant
+rm -rf boomopen-workflow-kit
 ```
 
 ### Remove Global Package
 
 ```bash
-npm uninstall -g @namch/agent-assistant
+npm uninstall -g @namch/boomopen-workflow-kit
 ```
 
 ---
 
 ## Environment Setup for Contributors
 
-If you want to contribute to Agent Assistant:
+If you want to contribute to BoomOpen Workflow Kit:
 
 ```bash
 # Step 1: Fork the repo on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/agent-assistant.git
-cd agent-assistant
+git clone https://github.com/YOUR_USERNAME/boomopen-workflow-kit.git
+cd boomopen-workflow-kit
 
 # Step 2: Install devDependencies (for commit hooks and release tooling)
 npm install
@@ -293,7 +293,7 @@ The project uses Conventional Commits enforced by Husky hooks:
 
 ## Common Issues and Troubleshooting
 
-### "command not found: agent-assistant"
+### "command not found: boomopen-workflow-kit"
 
 **Cause**: Global npm bin directory is not in your PATH.
 
@@ -310,7 +310,7 @@ source ~/.zshrc
 
 ### "Error: Node.js version too old"
 
-**Cause**: Agent Assistant requires Node.js >=18.0.0.
+**Cause**: BoomOpen Workflow Kit requires Node.js >=18.0.0.
 
 ```bash
 # Check current version:
@@ -334,10 +334,10 @@ mkdir -p ~/.npm-global
 npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
 source ~/.zshrc
-npm install -g @namch/agent-assistant@latest
+npm install -g @namch/boomopen-workflow-kit@latest
 
 # Option B: Use npx (no global install)
-npx @namch/agent-assistant install --all
+npx @namch/boomopen-workflow-kit install --all
 ```
 
 ### "Files not appearing in AI tool"
@@ -346,9 +346,9 @@ npx @namch/agent-assistant install --all
 
 ```bash
 # Verify files exist:
-ls ~/.cursor/skills/agent-assistant/    # For Cursor
-ls ~/.claude/skills/agent-assistant/    # For Claude Code
-ls ~/.copilot/skills/agent-assistant/   # For Copilot
+ls ~/.cursor/skills/boomopen-workflow-kit/    # For Cursor
+ls ~/.claude/skills/boomopen-workflow-kit/    # For Claude Code
+ls ~/.copilot/skills/boomopen-workflow-kit/   # For Copilot
 
 # If files exist but tool doesn't see them:
 # 1. Close and reopen the AI tool completely
@@ -357,16 +357,16 @@ ls ~/.copilot/skills/agent-assistant/   # For Copilot
 
 ### "Commands not recognized by AI tool"
 
-**Cause**: The platform entry file may not have loaded. Agent Assistant commands (like `/cook`, `/plan`) are interpreted by the AI model via the installed Markdown files, not by the tool's CLI.
+**Cause**: The platform entry file may not have loaded. BoomOpen Workflow Kit commands (like `/cook`, `/plan`) are interpreted by the AI model via the installed Markdown files, not by the tool's CLI.
 
 ```bash
 # Verify the entry point file exists:
-ls ~/.cursor/rules/          # Should contain Agent Assistant rules for Cursor
+ls ~/.cursor/rules/          # Should contain BoomOpen Workflow Kit rules for Cursor
 ls ~/.claude/CLAUDE.md       # Entry point for Claude Code
 ls ~/.copilot/               # Entry point for Copilot
 
 # If missing, re-run install:
-agent-assistant install cursor   # or your tool
+boomopen-workflow-kit install cursor   # or your tool
 ```
 
 ### "Test file not found"

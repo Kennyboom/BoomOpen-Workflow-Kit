@@ -32,7 +32,7 @@ category: execution
 
 ## ⚡ Skills
 
-> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/agent-assistant/matrix-skills/`
+> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `gaming:execution` | Domains: `gaming`, `performance`, `frontend`
 
 ---

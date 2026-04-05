@@ -1,8 +1,8 @@
 ---
-description: Smart navigator — detect current state and recommend the next workflow. Use when stuck or unsure what to do next.
+description: Smart navigator â€” detect current state and recommend the next workflow. Use when stuck or unsure what to do next.
 ---
 
-# /next — Smart Navigator v1.0
+# /next â€” Smart Navigator v1.0
 
 $ARGUMENTS
 
@@ -21,12 +21,12 @@ Analyze current state and recommend the EXACT next action.
 
 ```
 READ (in priority order):
-1. .brain/session.json → working_on, status, pending
-2. .brain/brain.json → project type, features
-3. docs/specs/ → spec files exist?
-4. docs/DESIGN*.md → design docs exist?
-5. git status → uncommitted changes?
-6. git log --oneline -3 → recent commits
+1. .brain/session.json â†’ working_on, status, pending
+2. .brain/brain.json â†’ project type, features
+3. docs/specs/ â†’ spec files exist?
+4. docs/DESIGN*.md â†’ design docs exist?
+5. git status â†’ uncommitted changes?
+6. git log --oneline -3 â†’ recent commits
 7. Scan for TODO/FIXME in source files
 ```
 
@@ -38,28 +38,28 @@ Based on what exists, determine current phase:
 
 ```
 NO .brain/ AND NO docs/:
-  → Phase: EMPTY (nothing started)
+  â†’ Phase: EMPTY (nothing started)
 
 .brain/ exists BUT NO docs/specs/:
-  → Phase: IDEATION (has context, no plan)
+  â†’ Phase: IDEATION (has context, no plan)
 
 docs/specs/ exists BUT NO DESIGN:
-  → Phase: PLANNED (has spec, no design)
+  â†’ Phase: PLANNED (has spec, no design)
 
 DESIGN exists BUT few source files:
-  → Phase: DESIGNED (has design, not coded)
+  â†’ Phase: DESIGNED (has design, not coded)
 
 Source files exist AND git has recent commits:
-  → Phase: CODING (actively developing)
+  â†’ Phase: CODING (actively developing)
 
 session.json status == "debugging":
-  → Phase: DEBUGGING (has errors)
+  â†’ Phase: DEBUGGING (has errors)
 
 session.json status == "testing":
-  → Phase: TESTING (running tests)
+  â†’ Phase: TESTING (running tests)
 
 All features done AND tests pass:
-  → Phase: READY TO DEPLOY
+  â†’ Phase: READY TO DEPLOY
 ```
 
 ---
@@ -68,47 +68,47 @@ All features done AND tests pass:
 
 ### If EMPTY:
 ```
-🧭 Project is empty — nothing started yet.
+ðŸ§­ Project is empty â€” nothing started yet.
 
-➡️ Next: /init to bootstrap your project
+âž¡ï¸ Next: /init to bootstrap your project
    Or: /brainstorm if you have a rough idea
    Or: /plan if you know exactly what to build
 ```
 
 ### If IDEATION:
 ```
-🧭 You have context but no formal plan.
+ðŸ§­ You have context but no formal plan.
 
-➡️ Next: /plan to create detailed specs
+âž¡ï¸ Next: /plan to create detailed specs
    Tip: A good plan prevents 80% of bugs.
 ```
 
 ### If PLANNED:
 ```
-🧭 Specs are ready! No technical design yet.
+ðŸ§­ Specs are ready! No technical design yet.
 
-➡️ Next: /architect to create technical design
+âž¡ï¸ Next: /architect to create technical design
    This covers: DB schema, API contracts, state management
 ```
 
 ### If DESIGNED:
 ```
-🧭 Design complete. Time to build!
+ðŸ§­ Design complete. Time to build!
 
-➡️ Next: /create to start coding
+âž¡ï¸ Next: /create to start coding
    Your specs and design are ready as input.
 ```
 
 ### If CODING (with progress):
 ```
-🧭 DEVELOPMENT IN PROGRESS
+ðŸ§­ DEVELOPMENT IN PROGRESS
 
-📊 Progress:
-████████░░░░░░░░░░░░ [X]% ([N/M] features)
+ðŸ“Š Progress:
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘ [X]% ([N/M] features)
 
-📍 Currently: [feature name] — [task]
+ðŸ“ Currently: [feature name] â€” [task]
 
-➡️ Next:
+âž¡ï¸ Next:
   1. Continue coding: /create [current feature]
   2. Hit a bug? /debug
   3. Need a break? /save to persist context
@@ -117,22 +117,22 @@ All features done AND tests pass:
 
 ### If DEBUGGING:
 ```
-🧭 You have unresolved errors from last session.
+ðŸ§­ You have unresolved errors from last session.
 
-🐛 Error: [description from session.json]
+ðŸ› Error: [description from session.json]
 
-➡️ Next: /debug to investigate
+âž¡ï¸ Next: /debug to investigate
    Tip: Start with the hypothesis from last session.
 ```
 
 ### If READY TO DEPLOY:
 ```
-🧭 All features done! Tests passing!
+ðŸ§­ All features done! Tests passing!
 
-➡️ Next:
-  1. /deep-audit — Final quality check (recommended)
-  2. /security-audit — Security review
-  3. /deploy — Ship it!
+âž¡ï¸ Next:
+  1. /deep-audit â€” Final quality check (recommended)
+  2. /security-audit â€” Security review
+  3. /deploy â€” Ship it!
 ```
 
 ---
@@ -141,16 +141,16 @@ All features done AND tests pass:
 
 ```
 IF uncommitted changes > 5 files:
-  → "⚠️ You have [N] uncommitted files. Commit often!"
+  â†’ "âš ï¸ You have [N] uncommitted files. Commit often!"
 
 IF last commit > 2 hours ago:
-  → "⚠️ Last commit was [X] ago. Save your work!"
+  â†’ "âš ï¸ Last commit was [X] ago. Save your work!"
 
 IF TODO count > 3:
-  → "📌 [N] TODOs found in code. Clean up before deploy."
+  â†’ "ðŸ“Œ [N] TODOs found in code. Clean up before deploy."
 
 IF session is long:
-  → "🌙 Long session. Consider /save then fresh /recap."
+  â†’ "ðŸŒ™ Long session. Consider /save then fresh /recap."
 ```
 
 ---
@@ -158,21 +158,21 @@ IF session is long:
 ## Workflow Chain Reference
 
 ```
-/init → /brainstorm → /plan → /architect → /create
-                                              │
-                                    ┌─────────┼──────────┐
-                                    ▼         ▼          ▼
+/init â†’ /brainstorm â†’ /plan â†’ /architect â†’ /create
+                                              â”‚
+                                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                                    â–¼         â–¼          â–¼
                                  /debug    /test    /enhance
-                                    │         │          │
-                                    └─────────┼──────────┘
-                                              ▼
-                              /deep-audit → /security-audit
-                                              │
-                                              ▼
-                                   /deploy → /save
-                                              │
+                                    â”‚         â”‚          â”‚
+                                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                                              â–¼
+                              /deep-audit â†’ /security-audit
+                                              â”‚
+                                              â–¼
+                                   /deploy â†’ /save
+                                              â”‚
                                      (new session)
-                                              │
+                                              â”‚
                                            /recap
 ```
 
@@ -183,15 +183,15 @@ IF session is long:
 ## Output Format
 
 ```
-🧭 WHERE YOU ARE:
+ðŸ§­ WHERE YOU ARE:
 [Brief status description]
 
-📊 PROGRESS: [if applicable]
-████████░░░░░░░░░░░░ X%
+ðŸ“Š PROGRESS: [if applicable]
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘ X%
 
-➡️ RECOMMENDED NEXT:
+âž¡ï¸ RECOMMENDED NEXT:
 [Specific command with explanation]
 
-💡 TIP:
+ðŸ’¡ TIP:
 [Context-specific advice]
 ```

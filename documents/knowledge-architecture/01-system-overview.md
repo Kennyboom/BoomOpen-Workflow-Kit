@@ -1,4 +1,4 @@
-# Agent Assistant — System Overview
+# BoomOpen Workflow Kit — System Overview
 
 > **Purpose**: High-level architecture diagram, architecture style, layer boundaries, and key design decisions
 > **Parent**: [00-index.md](./00-index.md)
@@ -20,7 +20,7 @@
 
 ## Architecture Style
 
-Agent Assistant is a **plugin-based orchestrator framework** where Markdown and YAML files serve as the instruction set, and the AI model itself serves as the runtime. There is no traditional server, no running process, and no compiled binary. The framework is distributed as an npm package containing structured instruction files that, once installed into an AI tool's global directory, reconfigure that tool's behavior into a multi-agent orchestration system.
+BoomOpen Workflow Kit is a **plugin-based orchestrator framework** where Markdown and YAML files serve as the instruction set, and the AI model itself serves as the runtime. There is no traditional server, no running process, and no compiled binary. The framework is distributed as an npm package containing structured instruction files that, once installed into an AI tool's global directory, reconfigure that tool's behavior into a multi-agent orchestration system.
 
 ### What It Is
 
@@ -28,7 +28,7 @@ Agent Assistant is a **plugin-based orchestrator framework** where Markdown and 
 |---------------|-------------|
 | **Type** | Instruction-distribution framework (content as code) |
 | **Runtime** | The AI model reads and follows Markdown/YAML files at inference time |
-| **Deployment** | `npm install` → `cli/install.js` copies files to `~/.{tool}/skills/agent-assistant/` |
+| **Deployment** | `npm install` → `cli/install.js` copies files to `~/.{tool}/skills/boomopen-workflow-kit/` |
 | **Execution** | No process runs — the AI loads CORE.md as its "operating system" on every prompt |
 | **State** | Stateless between sessions; file-based communication within sessions (Mailbox pattern) |
 

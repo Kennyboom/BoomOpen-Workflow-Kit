@@ -1,4 +1,4 @@
-# Agent Assistant — Synonyms and Deprecated Terms
+# BoomOpen Workflow Kit — Synonyms and Deprecated Terms
 
 | Field | Value |
 |-------|-------|

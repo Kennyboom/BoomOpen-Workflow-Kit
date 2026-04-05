@@ -1,4 +1,4 @@
-# Agent Assistant — API Contracts
+# BoomOpen Workflow Kit — API Contracts
 
 > **Purpose**: CLI interface specifications, Prompt Command Interface, and HSOL skill resolution protocol
 > **Parent**: [00-index.md](./00-index.md)
@@ -18,7 +18,7 @@
 
 ## API Overview
 
-Agent Assistant exposes two distinct interfaces, neither of which is an HTTP API:
+BoomOpen Workflow Kit exposes two distinct interfaces, neither of which is an HTTP API:
 
 | Interface | Type | Consumer | Entry Point |
 |-----------|------|----------|-------------|
@@ -35,15 +35,15 @@ There is also an internal resolution protocol — the HSOL (Hybrid Skill Orchest
 
 | Property | Value |
 |----------|-------|
-| Binary name | `agent-assistant` |
+| Binary name | `boomopen-workflow-kit` |
 | Entry point | `cli/install.js` |
 | Runtime | Node.js >= 18.0.0 |
 | Dependencies | Zero (uses only `node:fs`, `node:path`, `node:os`, `node:readline`) |
-| Package | `@namch/agent-assistant` on npm |
+| Package | `@namch/boomopen-workflow-kit` on npm |
 
 ### Commands
 
-#### `agent-assistant install <tool>`
+#### `boomopen-workflow-kit install <tool>`
 
 Installs the framework to a specific AI platform's global directory.
 
@@ -55,7 +55,7 @@ Installs the framework to a specific AI platform's global directory.
 **Behavior**:
 
 1. Resolves the platform's installation paths from the TOOLS configuration object
-2. Creates the directory structure (`skills/agent-assistant/`, `agents/`, `commands/`, `rules/`, `matrix-skills/`, `documents/`)
+2. Creates the directory structure (`skills/boomopen-workflow-kit/`, `agents/`, `commands/`, `rules/`, `matrix-skills/`, `documents/`)
 3. Copies core directories: `agents/`, `rules/`, `documents/`, `commands/`, `matrix-skills/`
 4. Copies `skills/` directory (1,430 skill modules)
 5. Performs `{TOOL}` placeholder replacement in all Markdown and YAML files
@@ -84,7 +84,7 @@ Installs the framework to a specific AI platform's global directory.
 
 ---
 
-#### `agent-assistant uninstall <tool>`
+#### `boomopen-workflow-kit uninstall <tool>`
 
 Removes the framework from a specific AI platform's global directory.
 
@@ -95,9 +95,9 @@ Removes the framework from a specific AI platform's global directory.
 
 **Behavior**:
 
-1. Resolves the platform's `agentAssistant` path
+1. Resolves the platform's `boomopenWorkflowKit` path
 2. Removes only bundled agent files (preserves user-custom agents)
-3. Removes the `skills/agent-assistant/` directory tree
+3. Removes the `skills/boomopen-workflow-kit/` directory tree
 4. Removes platform-specific assets installed by the framework
 
 **npm script shortcuts**:
@@ -112,7 +112,7 @@ Removes the framework from a specific AI platform's global directory.
 
 ---
 
-#### `agent-assistant list`
+#### `boomopen-workflow-kit list`
 
 Lists which platforms currently have the framework installed.
 
@@ -122,7 +122,7 @@ Lists which platforms currently have the framework installed.
 
 **Behavior**:
 
-1. Checks each platform's `agentAssistant` path for existence
+1. Checks each platform's `boomopenWorkflowKit` path for existence
 2. Prints a list of installed platforms with status indicators
 
 **npm script shortcut**: `npm run list`
@@ -133,7 +133,7 @@ Lists which platforms currently have the framework installed.
 
 The installer copies these directories from the npm package into platform-specific paths:
 
-| Source Directory | Destination (relative to `agentAssistant` path) | Contents |
+| Source Directory | Destination (relative to `boomopenWorkflowKit` path) | Contents |
 |-----------------|------------------------------------------------|----------|
 | `agents/` | `agents/` | 21 individual agents + 17 team folders (51 role files) |
 | `rules/` | `rules/` | 7 governance files |
@@ -149,7 +149,7 @@ The installer copies these directories from the npm package into platform-specif
 |----------|-------|--------|-------------|
 | Cursor | Rules directory | `code-assistants/cursor-assistant/rules/` | `~/.cursor/rules/` |
 | Cursor | Cursorrules | `code-assistants/cursor-assistant/.cursorrules` | `~/.cursor/.cursorrules` |
-| Copilot | Agent file | `code-assistants/copilot-assistant/agent-assistant.agent.md` | VS Code prompts folder |
+| Copilot | Agent file | `code-assistants/copilot-assistant/boomopen-workflow-kit.agent.md` | VS Code prompts folder |
 | Antigravity | Gemini config | `code-assistants/antigravity-assistant/GEMINI.md` | `~/.gemini/GEMINI.md` |
 | Antigravity | Agent file | `code-assistants/antigravity-assistant/AntigravityGlobal.agent.md` | `~/.gemini/agents/` |
 | Claude | Claude config | `code-assistants/claude-assistant/CLAUDE.md` | `~/.claude/CLAUDE.md` |

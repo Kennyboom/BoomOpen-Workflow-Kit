@@ -1,11 +1,11 @@
 ---
-description: ⚡⚡⚡ Full Test — Comprehensive QA and TDD Workflow
+description: âš¡âš¡âš¡ Full Test â€” Comprehensive QA and TDD Workflow
 version: "3.0"
 category: validation
 execution-mode: execute
 ---
 
-# /test:hard — Test Engineer v3.0
+# /test:hard â€” Test Engineer v3.0
 
 > **MISSION**: Full QA workflow with quality gates, complete coverage reporting, and TDD enforcement.
 
@@ -13,21 +13,21 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
 
 ---
 
-## 🔀 TIERED EXECUTION
+## ðŸ”€ TIERED EXECUTION
 
 | Tier       | When               | Action                       |
 | ---------- | ------------------ | ---------------------------- |
@@ -39,23 +39,23 @@ execution-mode: execute
 ## GOLDEN RULES
 
 ```
-1. TEST BEHAVIOR, NOT IMPLEMENTATION — Refactor-proof tests
-2. ONE ASSERTION PER TEST — Clear failure messages
-3. ARRANGE-ACT-ASSERT — Consistent structure
-4. TEST PYRAMID — Many unit, some integration, few E2E
-5. NO FLAKY TESTS — Deterministic, no timing deps
-6. REGRESSION FIRST — Add test for bugs BEFORE fixing
+1. TEST BEHAVIOR, NOT IMPLEMENTATION â€” Refactor-proof tests
+2. ONE ASSERTION PER TEST â€” Clear failure messages
+3. ARRANGE-ACT-ASSERT â€” Consistent structure
+4. TEST PYRAMID â€” Many unit, some integration, few E2E
+5. NO FLAKY TESTS â€” Deterministic, no timing deps
+6. REGRESSION FIRST â€” Add test for bugs BEFORE fixing
 ```
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## â›” INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
 
 ---
 
-## 🎭 Phase 1: Test Strategy & Spec Traceability
+## ðŸŽ­ Phase 1: Test Strategy & Spec Traceability
 
 | Agent | `tester`                                |
 | ----- | --------------------------------------- |
@@ -67,24 +67,24 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 BEFORE writing tests:
 
 1. SCAN project:
-   □ Test framework detected (Jest/Vitest/Playwright?)
-   □ Existing test count and coverage
-   □ Test patterns already in use
+   â–¡ Test framework detected (Jest/Vitest/Playwright?)
+   â–¡ Existing test count and coverage
+   â–¡ Test patterns already in use
 
 2. CLASSIFY target:
-   □ Pure function → Unit test
-   □ Component with state → Component test
-   □ API endpoint → Integration test
-   □ User flow → E2E test
+   â–¡ Pure function â†’ Unit test
+   â–¡ Component with state â†’ Component test
+   â–¡ API endpoint â†’ Integration test
+   â–¡ User flow â†’ E2E test
 
 3. SPEC TRACEABILITY (Check if specs exist e.g. plans/)
-   □ Map each AC -> test file
-   □ Report Gaps
+   â–¡ Map each AC -> test file
+   â–¡ Report Gaps
 ```
 
 ---
 
-## 🎭 Phase 2: DEPENDENCY MAPPING & COVERAGE
+## ðŸŽ­ Phase 2: DEPENDENCY MAPPING & COVERAGE
 
 | Agent | `scouter`                              |
 | ----- | -------------------------------------- |
@@ -107,7 +107,7 @@ PRIORITY (what to test FIRST):
 
 ---
 
-## 🎭 Phase 3: TEST EXECUTION (TDD Workflow)
+## ðŸŽ­ Phase 3: TEST EXECUTION (TDD Workflow)
 
 | Agent        | `tester`                                                        |
 | ------------ | --------------------------------------------------------------- |
@@ -116,10 +116,10 @@ PRIORITY (what to test FIRST):
 | Exit         | All tests run, coverage measured, checkpoint mapping documented |
 
 ```
-TDD WORKFLOW (Red → Green → Refactor):
-🔴 RED — Write FAILING test first.
-🟢 GREEN — Minimal code to pass.
-🔵 REFACTOR — Clean without breaking.
+TDD WORKFLOW (Red â†’ Green â†’ Refactor):
+ðŸ”´ RED â€” Write FAILING test first.
+ðŸŸ¢ GREEN â€” Minimal code to pass.
+ðŸ”µ REFACTOR â€” Clean without breaking.
 
 PATTERNS:
 - Use describes for grouping.
@@ -129,7 +129,7 @@ PATTERNS:
 
 ---
 
-## 🎭 Phase 4: FAILURE ANALYSIS (IF FAILURES)
+## ðŸŽ­ Phase 4: FAILURE ANALYSIS (IF FAILURES)
 
 | Agent   | `debugger`             |
 | ------- | ---------------------- |
@@ -139,7 +139,7 @@ PATTERNS:
 
 ---
 
-## 🎭 Phase 5: QUALITY GATES
+## ðŸŽ­ Phase 5: QUALITY GATES
 
 | Agent | `tester`                          |
 | ----- | --------------------------------- |
@@ -148,13 +148,13 @@ PATTERNS:
 
 ```
 BEFORE submitting tests:
-□ Tests are independent (no shared state)
-□ No hardcoded waits (use waitFor/findBy)
-□ Mocks reset between tests (afterEach)
-□ Edge cases covered (null, empty, max, min)
-□ Error paths covered (network, validation, auth)
-□ No console.log left in tests
-□ Coverage meets targets
+â–¡ Tests are independent (no shared state)
+â–¡ No hardcoded waits (use waitFor/findBy)
+â–¡ Mocks reset between tests (afterEach)
+â–¡ Edge cases covered (null, empty, max, min)
+â–¡ Error paths covered (network, validation, auth)
+â–¡ No console.log left in tests
+â–¡ Coverage meets targets
 ```
 
 ---
@@ -163,6 +163,6 @@ BEFORE submitting tests:
 
 Present test report with:
 
-1. ✅ **Pass** — All tests green
-2. 🔧 **Fix** → `/fix:fast`
-3. 📝 **Review** → `/review`
+1. âœ… **Pass** â€” All tests green
+2. ðŸ”§ **Fix** â†’ `/fix:fast`
+3. ðŸ“ **Review** â†’ `/review`

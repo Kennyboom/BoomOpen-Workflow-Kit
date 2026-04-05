@@ -1,11 +1,11 @@
 ---
-description: 💡 Brainstorm Router — Route to ideation workflows
+description: ðŸ’¡ Brainstorm Router â€” Route to ideation workflows
 version: "1.0"
 category: planning
 execution-mode: router
 ---
 
-# /brainstorm — Ideation Router
+# /brainstorm â€” Ideation Router
 
 > **ROUTER DIRECTIVE**: Analyze ideation need and route to appropriate brainstorming workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,16 +28,16 @@ execution-mode: router
 
 ```
 IF topic is clear (quick ideas, simple exploration):
-  → Route to /brainstorm:fast
+  â†’ Route to /brainstorm:fast
 
 IF topic is complex (research needed, deep analysis):
-  → Route to /brainstorm:hard
+  â†’ Route to /brainstorm:hard
 
 IF topic is complex AND maximum quality with team collaboration needed:
-  → Route to /brainstorm:team
+  â†’ Route to /brainstorm:team
 
 IF unsure:
-  → Default to /brainstorm:fast
+  â†’ Default to /brainstorm:fast
 ```
 
 ---
@@ -55,15 +55,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 💡 Brainstorm Mode Selection
+## ðŸ’¡ Brainstorm Mode Selection
 
 **Topic**: [parsed topic]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/brainstorm:fast` — Quick ideation
-2. ⚡⚡⚡ **Hard** → `/brainstorm:hard` — Deep exploration
-3. 👥 **Team** → `/brainstorm:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/brainstorm:fast` â€” Quick ideation
+2. âš¡âš¡âš¡ **Hard** â†’ `/brainstorm:hard` â€” Deep exploration
+3. ðŸ‘¥ **Team** â†’ `/brainstorm:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

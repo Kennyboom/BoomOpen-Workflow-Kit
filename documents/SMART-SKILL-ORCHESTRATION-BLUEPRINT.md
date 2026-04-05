@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This blueprint addresses the **Scalability Paradox** in AI agent skill management: the tension between maintaining a stable, low-latency static skill library (`~/.{TOOL}/skills/agent-assistant/matrix-skills/`) and the need for dynamic, on-demand skill discovery via the **find-skills** skill. 
+This blueprint addresses the **Scalability Paradox** in AI agent skill management: the tension between maintaining a stable, low-latency static skill library (`~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`) and the need for dynamic, on-demand skill discovery via the **find-skills** skill. 
 
 The solution is a **Hybrid Skill Orchestration Layer** (HSOL) that:
 1. Preserves the reliability of matrix-skills as the primary execution tier
@@ -42,7 +42,7 @@ Before HSOL can function, the **find-skills** skill must exist at `{SKILLS_PATH}
 **Installation (current tool only, skip confirmation when using npx):**
 
 ```bash
-# Option 1: Automatic when user installs agent-assistant for a tool
+# Option 1: Automatic when user installs boomopen-workflow-kit for a tool
 # User runs: npm run install:cursor (or install:copilot, install:antigravity, install:codex)
 # The CLI copies skills/ (including find-skills) to that tool's path only.
 
@@ -76,7 +76,7 @@ ls "{SKILLS_PATH}/find-skills/SKILL.md"
 
 ### 1.1 Current State Assessment
 
-**Static Layer (`~/.{TOOL}/skills/agent-assistant/matrix-skills/`):**
+**Static Layer (`~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`):**
 ```
 Strengths:
 ├── Low latency (< 1ms skill resolution)
@@ -678,9 +678,9 @@ installation_tiers:
     use_case: "Battle-tested, widely useful skills"
     process: |
       1. When promotion criteria met (executions, success_rate, recency), skill is auto-promoted
-      2. System adds skill entry to ~/.{TOOL}/skills/agent-assistant/matrix-skills/{domain}.yaml (no promotion queue, no human review)
+      2. System adds skill entry to ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/{domain}.yaml (no promotion queue, no human review)
       3. Write target: the GLOBAL tool path the main agent already reads from
-         (e.g. ~/.cursor/skills/agent-assistant/matrix-skills/ for Cursor)
+         (e.g. ~/.cursor/skills/boomopen-workflow-kit/matrix-skills/ for Cursor)
       4. Same files the orchestrator loaded at session start — we update those on disk
       5. Next resolution cycle (or cache invalidation / hot-reload) picks up the new skill
          — no tool restart required; available to all agents on next request
@@ -838,7 +838,7 @@ unified_skill_index:
       domain: "backend"
       priority: 8
       trust_level: 1.0
-      path: "~/.{TOOL}/skills/agent-assistant/matrix-skills/backend.yaml"
+      path: "~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/backend.yaml"
   
   # Dynamic skills (user-installed)
   dynamic_skills:
@@ -1195,7 +1195,7 @@ success_metrics:
 ### 9.2 New Files Required
 
 ```
-agent-assistant/
+boomopen-workflow-kit/
 ├── matrix-skills/
 │   ├── _index.yaml          # ← Add dynamic_registry section
 │   ├── _dynamic.yaml        # ← NEW: Dynamic skill manifest
@@ -1263,7 +1263,7 @@ migration_strategy:
 | Term | Definition |
 |------|------------|
 | **HSOL** | Hybrid Skill Orchestration Layer — the core system designed in this blueprint |
-| **Matrix Skills** | Pre-curated skills in `~/.{TOOL}/skills/agent-assistant/matrix-skills/*.yaml` |
+| **Matrix Skills** | Pre-curated skills in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml` |
 | **Dynamic Skills** | Skills discovered/installed via `find-skills` CLI |
 | **Skill Fitness** | Computed score representing how well a skill matches a request |
 | **Gap Detection** | Identifying when matrix skills cannot satisfy a request |

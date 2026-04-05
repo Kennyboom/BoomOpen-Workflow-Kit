@@ -36,7 +36,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Docs', href: '/docs' },
   {
     label: 'GitHub',
-    href: 'https://github.com/hainamchung/agent-assistant',
+    href: 'https://github.com/hainamchung/boomopen-workflow-kit',
     external: true,
   },
 ]

@@ -1,4 +1,4 @@
-# Agent Assistant — Database Schema
+# BoomOpen Workflow Kit — Database Schema
 
 > **Purpose**: Explanation of the file-based data model — this project has no traditional database
 > **Parent**: [00-index.md](./00-index.md)
@@ -9,7 +9,7 @@
 
 ## Not Applicable — File-Based Storage
 
-Agent Assistant does not use a database. There is no SQL, no NoSQL, no ORM, and no data persistence layer. The entire framework is a **content distribution system** — it distributes Markdown and YAML files into AI tool directories, and those files are read at runtime by the AI model itself.
+BoomOpen Workflow Kit does not use a database. There is no SQL, no NoSQL, no ORM, and no data persistence layer. The entire framework is a **content distribution system** — it distributes Markdown and YAML files into AI tool directories, and those files are read at runtime by the AI model itself.
 
 ---
 
@@ -109,10 +109,10 @@ Since the AI model is the runtime, "queries" are file reads:
 
 | Operation | Mechanism |
 |-----------|-----------|
-| Create | CLI installer copies files from npm package to `~/.{tool}/skills/agent-assistant/` |
+| Create | CLI installer copies files from npm package to `~/.{tool}/skills/boomopen-workflow-kit/` |
 | Read | AI model reads files from the installed directory at runtime |
-| Update | User runs `npm update @namch/agent-assistant` then `agent-assistant install <tool>` |
-| Delete | `agent-assistant uninstall <tool>` removes installed files |
+| Update | User runs `npm update @namch/boomopen-workflow-kit` then `boomopen-workflow-kit install <tool>` |
+| Delete | `boomopen-workflow-kit uninstall <tool>` removes installed files |
 
 ### Why No Database
 
