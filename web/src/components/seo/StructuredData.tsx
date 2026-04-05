@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = 'https://agent-assistant-ten.vercel.app'
+const SITE_URL = 'https://boomopen-workflow-kit-ten.vercel.app'
 
 interface SoftwareApplicationData {
   name: string
@@ -23,7 +23,7 @@ interface OrganizationData {
 
 // Software Application Schema
 export function SoftwareApplicationSchema({
-  name = 'Agent Assistant',
+  name = 'BoomOpen Workflow Kit',
   description = 'Multi-agent orchestration framework for AI coding assistants. 21 specialist agents, 310+ skills, and 50+ workflows.',
   applicationCategory = 'DeveloperApplication',
   operatingSystem = 'Any',
@@ -42,12 +42,12 @@ export function SoftwareApplicationSchema({
       priceCurrency: offers.priceCurrency,
     },
     url: SITE_URL,
-    downloadUrl: 'https://www.npmjs.com/package/@namch/agent-assistant',
+    downloadUrl: 'https://www.npmjs.com/package/@namch/boomopen-workflow-kit',
     softwareVersion: '1.0.0',
     author: {
       '@type': 'Organization',
       name: 'NamCH',
-      url: 'https://github.com/hainamchung/agent-assistant.git',
+      url: 'https://github.com/hainamchung/boomopen-workflow-kit.git',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -70,11 +70,11 @@ export function SoftwareApplicationSchema({
 // Organization Schema
 export function OrganizationSchema({
   name = 'NamCH',
-  url = 'https://github.com/hainamchung/agent-assistant.git',
+  url = 'https://github.com/hainamchung/boomopen-workflow-kit.git',
   logo = `${SITE_URL}/assets/logo.png`,
   description = 'AI safety company building reliable, interpretable, and steerable AI systems.',
   sameAs = [
-    'https://github.com/hainamchung/agent-assistant.git',
+    'https://github.com/hainamchung/boomopen-workflow-kit.git',
   ],
 }: Partial<OrganizationData> = {}) {
   const schema = {
@@ -101,7 +101,7 @@ export function WebsiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Agent Assistant',
+    name: 'BoomOpen Workflow Kit',
     url: SITE_URL,
     description: 'Multi-agent orchestration framework for AI coding assistants',
     potentialAction: {

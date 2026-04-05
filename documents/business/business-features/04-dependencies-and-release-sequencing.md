@@ -1,4 +1,4 @@
-# Agent Assistant — Dependencies and Release Sequencing
+# BoomOpen Workflow Kit — Dependencies and Release Sequencing
 
 > **Purpose**: Feature dependency graph, release history mapping, and recommended rollout order for new installations
 > **Parent**: [00-index.md](./00-index.md)
@@ -245,7 +245,7 @@ gantt
 
 ## Recommended Rollout Order for New Installations
 
-For teams adopting agent-assistant for the first time, the recommended rollout sequence introduces features in dependency-safe batches:
+For teams adopting boomopen-workflow-kit for the first time, the recommended rollout sequence introduces features in dependency-safe batches:
 
 ### Phase 1 — Foundation (Day 1)
 

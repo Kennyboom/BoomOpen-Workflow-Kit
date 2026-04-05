@@ -1,5 +1,5 @@
 /**
- * Common type definitions for Agent Assistant website
+ * Common type definitions for BoomOpen Workflow Kit website
  */
 
 // ========================================
@@ -182,7 +182,7 @@ export interface SkillCard {
 export interface ComparisonRow {
   feature: string
   traditional: string | boolean
-  agentAssistant: string | boolean
+  boomopenWorkflowKit: string | boolean
   notes?: string
 }
 

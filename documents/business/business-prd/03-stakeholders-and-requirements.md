@@ -1,4 +1,4 @@
-# Agent Assistant — Stakeholders and Requirements
+# BoomOpen Workflow Kit — Stakeholders and Requirements
 
 > **Purpose**: Stakeholder map with goals and touchpoints, functional requirements (BR-001–BR-023), non-functional requirements, and traceability to business goals
 > **Parent**: [00-index.md](./00-index.md)
@@ -17,7 +17,7 @@
 | **Description** | Software developer using one or more AI coding assistants daily for building, debugging, testing, and deploying software |
 | **Primary Goals** | BG-001 (one-time setup), BG-003 (faster delivery), BG-006 (structured workflows) |
 | **Secondary Goals** | BG-004 (fewer bugs), BG-005 (lower token cost) |
-| **Touchpoints** | CLI installer (`agent-assistant install --all`), slash commands (`/cook`, `/fix`, `/plan`, `/test`, `/review`), natural language input |
+| **Touchpoints** | CLI installer (`boomopen-workflow-kit install --all`), slash commands (`/cook`, `/fix`, `/plan`, `/test`, `/review`), natural language input |
 | **Success Criteria** | Installs in ≤5 minutes; commands produce usable deliverables without prompt iteration |
 | **Pain Points Addressed** | Repetitive prompt engineering, inconsistent AI output, no workflow structure |
 
@@ -101,13 +101,13 @@
 
 | Req ID | Requirement | Priority | INVEST Score | Stakeholders | Goals |
 |--------|-------------|----------|-------------|--------------|-------|
-| BR-001 | Framework installs globally via `npm install -g` and writes platform-specific config files to `~/.{TOOL}/skills/agent-assistant/` | Must | 29/30 | S1, S2 | BG-001, BG-002 |
+| BR-001 | Framework installs globally via `npm install -g` and writes platform-specific config files to `~/.{TOOL}/skills/boomopen-workflow-kit/` | Must | 29/30 | S1, S2 | BG-001, BG-002 |
 | BR-002 | Framework supports 5 platforms: Cursor, Copilot, Claude Code, Codex, Antigravity/Gemini | Must | 24/30 | S5 | BG-002 |
 | BR-023 | CLI list command shows installed platforms and status | Should | 27/30 | S1 | BG-001 |
 
-**Acceptance Criteria (BR-001)**: Given a clean machine with Node.js 18+, when user runs `npm install -g @namch/agent-assistant && agent-assistant install --all`, then config files exist at `~/.cursor/`, `~/.copilot/`, `~/.claude/`, `~/.codex/`, `~/.gemini/antigravity/` and exit code is 0.
+**Acceptance Criteria (BR-001)**: Given a clean machine with Node.js 18+, when user runs `npm install -g @namch/boomopen-workflow-kit && boomopen-workflow-kit install --all`, then config files exist at `~/.cursor/`, `~/.copilot/`, `~/.claude/`, `~/.codex/`, `~/.gemini/antigravity/` and exit code is 0.
 
-**Acceptance Criteria (BR-002)**: Given the framework is installed, when user runs `agent-assistant install {platform}` for each platform, then each platform's entry point file is created and the orchestrator instructions are loadable by that platform's AI runtime.
+**Acceptance Criteria (BR-002)**: Given the framework is installed, when user runs `boomopen-workflow-kit install {platform}` for each platform, then each platform's entry point file is created and the orchestrator instructions are loadable by that platform's AI runtime.
 
 ### Agent System
 

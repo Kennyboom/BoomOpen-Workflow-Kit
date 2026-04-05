@@ -1,4 +1,4 @@
-# Agent Assistant — Success Metrics
+# BoomOpen Workflow Kit — Success Metrics
 
 > **Purpose**: KPIs per feature with baselines, targets, measurement approach, and validation status
 > **Parent**: [00-index.md](./00-index.md)

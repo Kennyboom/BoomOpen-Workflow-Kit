@@ -1,4 +1,4 @@
-# Agent Assistant — Testing Standards
+# BoomOpen Workflow Kit — Testing Standards
 
 > **Purpose**: Test file organization, test runner usage, coverage status, test categories, and an honest assessment of what exists versus what is missing
 > **Parent**: [00-index.md](./00-index.md)
@@ -9,7 +9,7 @@
 
 ## Test Runner
 
-Agent Assistant uses the **Node.js built-in test runner** (`node:test`), available since Node.js 18. No external test framework (Jest, Mocha, Vitest, AVA) is installed.
+BoomOpen Workflow Kit uses the **Node.js built-in test runner** (`node:test`), available since Node.js 18. No external test framework (Jest, Mocha, Vitest, AVA) is installed.
 
 ### Test Command
 

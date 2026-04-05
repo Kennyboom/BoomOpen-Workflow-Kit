@@ -57,14 +57,15 @@ const TOOLS = {
             skills: path.join(HOME, '.cursor', 'skills'),
             agents: path.join(HOME, '.cursor', 'agents'),
             commands: path.join(HOME, '.cursor', 'commands'),
-            agentAssistant: path.join(HOME, '.cursor', 'skills', 'boomopen-workflow-kit'),
+            frameworkPath: path.join(HOME, '.cursor', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
             '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.cursor/skills/boomopen-workflow-kit/',
             '{TOOL}/boomopen-workflow-kit/': 'cursor/skills/boomopen-workflow-kit/',
             '{TOOL}': 'cursor',
             '{HOME}': '~',
-            '~/.agent/': '~/.cursor/skills/boomopen-workflow-kit/'
+            '~/.agent/': '~/.cursor/skills/boomopen-workflow-kit/',
+            'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
             rules: path.join(ROOT, 'code-assistants', 'cursor-assistant', 'rules'),
@@ -80,7 +81,7 @@ const TOOLS = {
             commands: path.join(HOME, '.copilot', 'commands'),
             agents: path.join(HOME, '.copilot', 'agents'),
             rules: path.join(HOME, '.copilot', 'rules'),
-            agentAssistant: path.join(HOME, '.copilot', 'skills', 'boomopen-workflow-kit'),
+            frameworkPath: path.join(HOME, '.copilot', 'skills', 'boomopen-workflow-kit'),
             vsCodePrompts: getVSCodePromptsFolder(),
         },
         replacements: {
@@ -88,7 +89,8 @@ const TOOLS = {
             '{TOOL}/boomopen-workflow-kit/': 'copilot/skills/boomopen-workflow-kit/',
             '{TOOL}': 'copilot',
             '{HOME}': '~',
-            '~/.agent/': '~/.copilot/skills/boomopen-workflow-kit/'
+            '~/.agent/': '~/.copilot/skills/boomopen-workflow-kit/',
+            'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
             agentFile: path.join(ROOT, 'code-assistants', 'copilot-assistant', 'boomopen-workflow-kit.agent.md'),
@@ -106,14 +108,15 @@ const TOOLS = {
             globalAgents: path.join(HOME, '.gemini', 'agents'), // Global config
             workflows: path.join(HOME, '.antigravity', 'workflows'),
             globalWorkflows: path.join(HOME, '.gemini', 'antigravity', 'global_workflows'),
-            agentAssistant: path.join(HOME, '.gemini', 'antigravity', 'skills', 'boomopen-workflow-kit'),
+            frameworkPath: path.join(HOME, '.gemini', 'antigravity', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
             '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/',
             '{TOOL}/boomopen-workflow-kit/': 'gemini/antigravity/skills/boomopen-workflow-kit/',
             '{TOOL}': 'gemini/antigravity',
             '{HOME}': '~',
-            '~/.agent/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/'
+            '~/.agent/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/',
+            'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
             geminiMd: path.join(ROOT, 'code-assistants', 'antigravity-assistant', 'GEMINI.md'),
@@ -128,14 +131,15 @@ const TOOLS = {
             skills: path.join(HOME, '.claude', 'skills'),
             commands: path.join(HOME, '.claude', 'commands'),
             agents: path.join(HOME, '.claude', 'agents'),
-            agentAssistant: path.join(HOME, '.claude', 'skills', 'boomopen-workflow-kit'),
+            frameworkPath: path.join(HOME, '.claude', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
             '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.claude/skills/boomopen-workflow-kit/',
             '{TOOL}/boomopen-workflow-kit/': 'claude/skills/boomopen-workflow-kit/',
             '{TOOL}': 'claude',
             '{HOME}': '~',
-            '~/.agent/': '~/.claude/skills/boomopen-workflow-kit/'
+            '~/.agent/': '~/.claude/skills/boomopen-workflow-kit/',
+            'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
             claudeMd: path.join(ROOT, 'code-assistants', 'claude-assistant', 'CLAUDE.md'),
@@ -149,14 +153,15 @@ const TOOLS = {
             skills: path.join(HOME, '.codex', 'skills'),
             commands: path.join(HOME, '.codex', 'commands'),
             agents: path.join(HOME, '.codex', 'agents'),
-            agentAssistant: path.join(HOME, '.codex', 'skills', 'boomopen-workflow-kit'),
+            frameworkPath: path.join(HOME, '.codex', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
             '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.codex/skills/boomopen-workflow-kit/',
             '{TOOL}/boomopen-workflow-kit/': 'codex/skills/boomopen-workflow-kit/',
             '{TOOL}': 'codex',
             '{HOME}': '~',
-            '~/.agent/': '~/.codex/skills/boomopen-workflow-kit/'
+            '~/.agent/': '~/.codex/skills/boomopen-workflow-kit/',
+            'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
             codexMd: path.join(ROOT, 'code-assistants', 'codex-assistant', 'CODEX.md'),
@@ -478,6 +483,30 @@ function removeFile(filePath, trackProgress = true) {
     return false;
 }
 
+/**
+ * Remove all subdirectories within a directory but keep files (For Gemini workflow flattening)
+ */
+function removeSubdirectories(dir, trackProgress = true) {
+    if (!fs.existsSync(dir)) return 0;
+    let count = 0;
+    try {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            if (entry.isDirectory()) {
+                const fullPath = path.join(dir, entry.name);
+                fs.rmSync(fullPath, { recursive: true, force: true });
+                if (trackProgress && process.env.DEBUG) {
+                    console.log(`  🗑️ Filtered sub-directory for Gemini: ${entry.name}`);
+                }
+                count++;
+            }
+        }
+    } catch (e) {
+        logError('removeSubdirectories', dir, e);
+    }
+    return count;
+}
+
 function formatNumber(num) {
     return num.toLocaleString();
 }
@@ -640,30 +669,30 @@ function installCursor() {
 
     // --- 2. INSTALL EXTENSION BRAIN (~/.cursor/skills/boomopen-workflow-kit) ---
     // Clean install - remove old framework
-    if (fs.existsSync(tool.paths.agentAssistant)) {
-        fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
+    if (fs.existsSync(tool.paths.frameworkPath)) {
+        fs.rmSync(tool.paths.frameworkPath, { recursive: true, force: true });
     }
-    ensureDir(tool.paths.agentAssistant);
+    ensureDir(tool.paths.frameworkPath);
 
     // Copy all core directories
     for (const dir of CORE_DIRS) {
         const srcDir = path.join(ROOT, dir);
         if (fs.existsSync(srcDir)) {
-            total += copyWithReplace(srcDir, path.join(tool.paths.agentAssistant, dir), tool.replacements);
+            total += copyWithReplace(srcDir, path.join(tool.paths.frameworkPath, dir), tool.replacements);
         }
     }
 
     // Also copy 'commands' to 'workflows' for backward compatibility
     const commandsSrc = path.join(ROOT, 'commands');
     if (fs.existsSync(commandsSrc)) {
-        total += copyWithReplace(commandsSrc, path.join(tool.paths.agentAssistant, 'workflows'), tool.replacements);
+        total += copyWithReplace(commandsSrc, path.join(tool.paths.frameworkPath, 'workflows'), tool.replacements);
     }
 
     // Copy root files (README.md, etc.)
     for (const file of ROOT_FILES) {
         const srcFile = path.join(ROOT, file);
         if (fs.existsSync(srcFile)) {
-            if (copyFileWithReplace(srcFile, path.join(tool.paths.agentAssistant, file), tool.replacements)) {
+            if (copyFileWithReplace(srcFile, path.join(tool.paths.frameworkPath, file), tool.replacements)) {
                 total++;
             }
         }
@@ -685,7 +714,7 @@ function installCursor() {
     console.log(`\n   📁 Paths:`);
     console.log(`      Rules:          ${tool.paths.rules}`);
     console.log(`      Commands:       ${tool.paths.commands}`);
-    console.log(`      Core Framework: ${tool.paths.agentAssistant}`);
+    console.log(`      Core Framework: ${tool.paths.frameworkPath}`);
     console.log(`      Skills:         ${tool.paths.skills}`);
     console.log(`      Native Agents:  ${tool.paths.agents}`);
 
@@ -729,16 +758,16 @@ function installCopilot() {
 
     // --- 2. INSTALL CORE FRAMEWORK (~/.copilot/skills/boomopen-workflow-kit) ---
     // Clean install - remove old framework
-    if (fs.existsSync(tool.paths.agentAssistant)) {
-        fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
+    if (fs.existsSync(tool.paths.frameworkPath)) {
+        fs.rmSync(tool.paths.frameworkPath, { recursive: true, force: true });
     }
-    ensureDir(tool.paths.agentAssistant);
+    ensureDir(tool.paths.frameworkPath);
 
     // Copy all core directories
     for (const dir of CORE_DIRS) {
         const srcDir = path.join(ROOT, dir);
         if (fs.existsSync(srcDir)) {
-            total += copyWithReplace(srcDir, path.join(tool.paths.agentAssistant, dir), tool.replacements);
+            total += copyWithReplace(srcDir, path.join(tool.paths.frameworkPath, dir), tool.replacements);
         }
     }
 
@@ -751,14 +780,14 @@ function installCopilot() {
     // Also copy 'commands' to 'workflows' for backward compatibility
     const commandsSrc = path.join(ROOT, 'commands');
     if (fs.existsSync(commandsSrc)) {
-        total += copyWithReplace(commandsSrc, path.join(tool.paths.agentAssistant, 'workflows'), tool.replacements);
+        total += copyWithReplace(commandsSrc, path.join(tool.paths.frameworkPath, 'workflows'), tool.replacements);
     }
 
     // Copy root files (README.md, etc.)
     for (const file of ROOT_FILES) {
         const srcFile = path.join(ROOT, file);
         if (fs.existsSync(srcFile)) {
-            if (copyFileWithReplace(srcFile, path.join(tool.paths.agentAssistant, file), tool.replacements)) {
+            if (copyFileWithReplace(srcFile, path.join(tool.paths.frameworkPath, file), tool.replacements)) {
                 total++;
             }
         }
@@ -781,7 +810,7 @@ function installCopilot() {
     console.log(`      VS Code Prompts: ${tool.paths.vsCodePrompts}`);
     console.log(`      Global Config:   ${tool.paths.home}`);
     console.log(`      Commands:        ${tool.paths.commands}`);
-    console.log(`      Core Framework:  ${tool.paths.agentAssistant}`);
+    console.log(`      Core Framework:  ${tool.paths.frameworkPath}`);
     console.log(`      Skills:          ${tool.paths.skills}`);
     console.log(`      Native Agents:   ${tool.paths.agents}`);
 
@@ -804,6 +833,7 @@ function installAntigravity() {
     // 1.1 Workflows (from commands) -> ~/.antigravity/workflows
     ensureDir(tool.paths.workflows);
     total += copyWithReplace(path.join(ROOT, 'commands'), tool.paths.workflows, tool.replacements);
+    removeSubdirectories(tool.paths.workflows, true); // 🔴 Bóc tách: Filter out non-root subdirectories to prevent command jam
 
     // 1.2 Agents -> ~/.antigravity/agents
     ensureDir(tool.paths.agents);
@@ -875,30 +905,31 @@ function installAntigravity() {
     // 3.1 Global Workflows (~/.gemini/antigravity/global_workflows)
     ensureDir(tool.paths.globalWorkflows);
     total += copyWithReplace(path.join(ROOT, 'commands'), tool.paths.globalWorkflows, tool.replacements);
-
+    removeSubdirectories(tool.paths.globalWorkflows, true); // 🔴 Bóc tách subdirectories
     // 3.2 Core Framework (~/.gemini/antigravity/skills/boomopen-workflow-kit)
-    if (fs.existsSync(tool.paths.agentAssistant)) {
-        fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
+    if (fs.existsSync(tool.paths.frameworkPath)) {
+        fs.rmSync(tool.paths.frameworkPath, { recursive: true, force: true });
     }
-    ensureDir(tool.paths.agentAssistant);
+    ensureDir(tool.paths.frameworkPath);
 
     for (const dir of CORE_DIRS) {
         const srcDir = path.join(ROOT, dir);
         if (fs.existsSync(srcDir)) {
-            total += copyWithReplace(srcDir, path.join(tool.paths.agentAssistant, dir), tool.replacements);
+            total += copyWithReplace(srcDir, path.join(tool.paths.frameworkPath, dir), tool.replacements);
         }
     }
 
     // Backward compat workflows
     const commandsSrc = path.join(ROOT, 'commands');
     if (fs.existsSync(commandsSrc)) {
-        total += copyWithReplace(commandsSrc, path.join(tool.paths.agentAssistant, 'workflows'), tool.replacements);
+        total += copyWithReplace(commandsSrc, path.join(tool.paths.frameworkPath, 'workflows'), tool.replacements);
+        removeSubdirectories(path.join(tool.paths.frameworkPath, 'workflows'), true); // 🔴 Bóc tách
     }
 
     for (const file of ROOT_FILES) {
         const srcFile = path.join(ROOT, file);
         if (fs.existsSync(srcFile)) {
-            if (copyFileWithReplace(srcFile, path.join(tool.paths.agentAssistant, file), tool.replacements)) total++;
+            if (copyFileWithReplace(srcFile, path.join(tool.paths.frameworkPath, file), tool.replacements)) total++;
         }
     }
 
@@ -956,29 +987,29 @@ function installClaude() {
     total += copyWithReplace(path.join(ROOT, 'agents'), tool.paths.agents, tool.replacements);
 
     // --- 2. INSTALL CORE FRAMEWORK (~/.claude/skills/boomopen-workflow-kit) ---
-    if (fs.existsSync(tool.paths.agentAssistant)) {
-        fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
+    if (fs.existsSync(tool.paths.frameworkPath)) {
+        fs.rmSync(tool.paths.frameworkPath, { recursive: true, force: true });
     }
-    ensureDir(tool.paths.agentAssistant);
+    ensureDir(tool.paths.frameworkPath);
 
     for (const dir of CORE_DIRS) {
         const srcDir = path.join(ROOT, dir);
         if (fs.existsSync(srcDir)) {
-            total += copyWithReplace(srcDir, path.join(tool.paths.agentAssistant, dir), tool.replacements);
+            total += copyWithReplace(srcDir, path.join(tool.paths.frameworkPath, dir), tool.replacements);
         }
     }
 
     // Copy backward compat workflows
     const commandsSrc = path.join(ROOT, 'commands');
     if (fs.existsSync(commandsSrc)) {
-        total += copyWithReplace(commandsSrc, path.join(tool.paths.agentAssistant, 'workflows'), tool.replacements);
+        total += copyWithReplace(commandsSrc, path.join(tool.paths.frameworkPath, 'workflows'), tool.replacements);
     }
 
     // Copy root files
     for (const file of ROOT_FILES) {
         const srcFile = path.join(ROOT, file);
         if (fs.existsSync(srcFile)) {
-            if (copyFileWithReplace(srcFile, path.join(tool.paths.agentAssistant, file), tool.replacements)) total++;
+            if (copyFileWithReplace(srcFile, path.join(tool.paths.frameworkPath, file), tool.replacements)) total++;
         }
     }
 
@@ -1121,29 +1152,29 @@ function installCodex() {
     total += copyWithReplace(path.join(ROOT, 'commands'), tool.paths.commands, tool.replacements);
 
     // --- 2. INSTALL CORE FRAMEWORK (~/.codex/skills/boomopen-workflow-kit) ---
-    if (fs.existsSync(tool.paths.agentAssistant)) {
-        fs.rmSync(tool.paths.agentAssistant, { recursive: true, force: true });
+    if (fs.existsSync(tool.paths.frameworkPath)) {
+        fs.rmSync(tool.paths.frameworkPath, { recursive: true, force: true });
     }
-    ensureDir(tool.paths.agentAssistant);
+    ensureDir(tool.paths.frameworkPath);
 
     for (const dir of CORE_DIRS) {
         const srcDir = path.join(ROOT, dir);
         if (fs.existsSync(srcDir)) {
-            total += copyWithReplace(srcDir, path.join(tool.paths.agentAssistant, dir), tool.replacements);
+            total += copyWithReplace(srcDir, path.join(tool.paths.frameworkPath, dir), tool.replacements);
         }
     }
 
     // Copy backward compat workflows
     const commandsSrc = path.join(ROOT, 'commands');
     if (fs.existsSync(commandsSrc)) {
-        total += copyWithReplace(commandsSrc, path.join(tool.paths.agentAssistant, 'workflows'), tool.replacements);
+        total += copyWithReplace(commandsSrc, path.join(tool.paths.frameworkPath, 'workflows'), tool.replacements);
     }
 
     // Copy root files
     for (const file of ROOT_FILES) {
         const srcFile = path.join(ROOT, file);
         if (fs.existsSync(srcFile)) {
-            if (copyFileWithReplace(srcFile, path.join(tool.paths.agentAssistant, file), tool.replacements)) total++;
+            if (copyFileWithReplace(srcFile, path.join(tool.paths.frameworkPath, file), tool.replacements)) total++;
         }
     }
 
@@ -1169,7 +1200,7 @@ function installCodex() {
     console.log(`      Agents:    ${tool.paths.agents} (TOML configs)`);
     console.log(`      Commands:  ${tool.paths.commands}`);
     console.log(`      Skills:    ${tool.paths.skills}`);
-    console.log(`      Framework: ${tool.paths.agentAssistant}`);
+    console.log(`      Framework: ${tool.paths.frameworkPath}`);
 
     return total;
 }
@@ -1236,7 +1267,7 @@ function uninstallCursor() {
     }
 
     // 3. Remove Core Framework
-    if (removeDir(tool.paths.agentAssistant)) {
+    if (removeDir(tool.paths.frameworkPath)) {
         removed++;
     }
 
@@ -1275,7 +1306,7 @@ function uninstallCopilot() {
     }
 
     // 2. Remove core framework
-    if (removeDir(tool.paths.agentAssistant)) {
+    if (removeDir(tool.paths.frameworkPath)) {
         removed++;
     }
 
@@ -1355,7 +1386,7 @@ function uninstallAntigravity() {
     }
 
     // 3.2 Remove Core Framework (~/.gemini/antigravity/skills/boomopen-workflow-kit)
-    if (removeDir(tool.paths.agentAssistant)) {
+    if (removeDir(tool.paths.frameworkPath)) {
         removed++;
     }
 
@@ -1399,7 +1430,7 @@ function uninstallClaude() {
     }
 
     // 4. Remove Core Framework
-    if (removeDir(tool.paths.agentAssistant)) {
+    if (removeDir(tool.paths.frameworkPath)) {
         removed++;
     }
 
@@ -1455,7 +1486,7 @@ function uninstallCodex() {
     }
 
     // 4. Remove Core Framework
-    if (removeDir(tool.paths.agentAssistant)) {
+    if (removeDir(tool.paths.frameworkPath)) {
         removed++;
     }
 
@@ -1509,8 +1540,8 @@ function listTools() {
     console.log('\n📋 Supported Tools:\n');
 
     for (const [key, tool] of Object.entries(TOOLS)) {
-        // Check for the agentAssistant path which all tools now have
-        const installed = fs.existsSync(tool.paths.agentAssistant);
+        // Check for the frameworkPath path which all tools now have
+        const installed = fs.existsSync(tool.paths.frameworkPath);
         const status = installed ? '✅ Installed' : '⬚ Not installed';
 
         console.log(`  ${key.padEnd(12)} ${tool.name.padEnd(25)} ${status}`);

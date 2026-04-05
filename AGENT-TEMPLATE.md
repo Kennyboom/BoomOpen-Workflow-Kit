@@ -80,7 +80,7 @@ category: {execution|planning|validation|research|debugging|orchestration}
 ```markdown
 ## âš¡ Skills
 
-> **MATRIX DISCOVERY (HSOL)**: Skills auto-injected from `~/.{TOOL}/skills/agent-assistant/matrix-skills/` (domain files + `_dynamic.yaml`). Profile: `{domain}:{category}` | Domains: `{primary}`, `{secondary}`, `{tertiary}`. Dynamic discovery (find-skills) may add skills for `hard`/`focus` when matrix fitness &lt; 0.8.
+> **MATRIX DISCOVERY (HSOL)**: Skills auto-injected from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/` (domain files + `_dynamic.yaml`). Profile: `{domain}:{category}` | Domains: `{primary}`, `{secondary}`, `{tertiary}`. Dynamic discovery (find-skills) may add skills for `hard`/`focus` when matrix fitness &lt; 0.8.
 
 | Domain File | Key Skills |
 |-------------|------------|
@@ -205,7 +205,7 @@ category: execution
 
 ## âš¡ Skills
 
-> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/agent-assistant/matrix-skills/`
+> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `backend:execution` | Domains: `backend`, `architecture`, `quality`, `data`, `languages`
 
 | Domain File | Key Skills |

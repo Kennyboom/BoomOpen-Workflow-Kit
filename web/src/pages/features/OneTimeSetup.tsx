@@ -46,7 +46,7 @@ const benefits = [
 ]
 
 const howItWorks = [
-  { step: 1, title: 'Install Globally', description: 'Run the npm install command to set up Agent Assistant in your home directory.' },
+  { step: 1, title: 'Install Globally', description: 'Run the npm install command to set up BoomOpen Workflow Kit in your home directory.' },
   { step: 2, title: 'Open Any Project', description: 'Navigate to any project directory and start your AI coding assistant.' },
   { step: 3, title: 'Start Using Commands', description: 'Use commands like /cook, /fix, /test and let specialized agents handle the work.' },
 ]
@@ -73,7 +73,7 @@ export default function OneTimeSetup() {
               One-Time Setup
             </h1>
             <p className="text-body text-lg mb-8">
-              Configure Agent Assistant once globally, and use it across all your projects.
+              Configure BoomOpen Workflow Kit once globally, and use it across all your projects.
               No more copying configuration files. No more inconsistent setups.
             </p>
           </motion.div>
@@ -135,7 +135,7 @@ export default function OneTimeSetup() {
               </div>
               <div>
                 <span className="text-text-muted">$</span>{' '}
-                <span className="text-text-accent">npm install -g @namch/agent-assistant</span>
+                <span className="text-text-accent">npm install -g @namch/boomopen-workflow-kit</span>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function OneTimeSetup() {
       <Section background="secondary" spacing="lg">
         <SectionHeader 
           title="Platform-Specific Installation" 
-          description="Agent Assistant automatically configures itself for your platform."
+          description="BoomOpen Workflow Kit automatically configures itself for your platform."
         />
 
         <div className="grid gap-6 md:grid-cols-2">

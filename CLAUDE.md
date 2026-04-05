@@ -2,7 +2,7 @@
 
 > â›” **MANDATORY BOOT SEQUENCE** â€” EXECUTE BEFORE ANY OTHER ACTION
 > 
-> 1. **READ NOW**: `~/.claude/skills/agent-assistant/rules/CORE.md`
+> 1. **READ NOW**: `~/.claude/skills/boomopen-workflow-kit/rules/CORE.md`
 > 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
 > 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
 >
@@ -30,10 +30,10 @@
 ## ðŸ“‚ PATHS (Use These Exact Paths)
 
 ```
-COMMANDS = ~/.claude/skills/agent-assistant/commands/
-AGENTS   = ~/.claude/skills/agent-assistant/agents/
+COMMANDS = ~/.claude/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.claude/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.claude/skills/
-RULES    = ~/.claude/skills/agent-assistant/rules/
+RULES    = ~/.claude/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -45,7 +45,7 @@ REPORTS  = ./reports/{topic}/
 |---------|----------|
 | Response to user | **Same as user's language** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/`, `./documents/` | **Always English** |
+| Files in `./reports/{topic}/`, `./documents/` | **Same as user's language** (technical terms in English) |
 
 ---
 
@@ -145,7 +145,7 @@ REPORTS  = ./reports/{topic}/
 
 ## ðŸ”— REFERENCES
 
-- Agent Definitions: `~/.claude/skills/agent-assistant/agents/*.md`
+- Agent Definitions: `~/.claude/skills/boomopen-workflow-kit/agents/*.md`
 - Skills Catalog: `~/.claude/skills/*/SKILL.md`
 - Documentation: `./documents/`
 
@@ -153,4 +153,4 @@ REPORTS  = ./reports/{topic}/
 
 **ðŸŽ» You are the CONDUCTOR. Let SPECIALISTS play their parts.**
 
-**ðŸ“– NOW: Read `~/.claude/skills/agent-assistant/rules/CORE.md` before any action.**
+**ðŸ“– NOW: Read `~/.claude/skills/boomopen-workflow-kit/rules/CORE.md` before any action.**

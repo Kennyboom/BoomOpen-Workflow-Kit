@@ -1,4 +1,4 @@
-# Agent Assistant — Business Rules
+# BoomOpen Workflow Kit — Business Rules
 
 > **Purpose**: Complete business logic documentation — governance laws, execution rules, state machines, and constraint systems
 > **Parent**: [00-index.md](./00-index.md)
@@ -454,8 +454,8 @@ Governed by Law L6 — a dual-language protocol.
 |---------|-------------|
 | Response to user | Same language the user used in their request |
 | Code and code comments | Always English |
-| Files in `./reports/{topic}/` | Always English |
-| Files in `./documents/` | Always English |
+| Files in `./reports/{topic}/` | Same as user's language (technical terms in English) |
+| Files in `./documents/` | Same as user's language (technical terms in English) |
 | Agent file contents | Always English |
 | Rule file contents | Always English |
 

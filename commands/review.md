@@ -1,11 +1,11 @@
 ---
-description: 🔍 Review Router — Route to code review workflows
+description: ðŸ” Review Router â€” Route to code review workflows
 version: "1.0"
 category: validation
 execution-mode: router
 ---
 
-# /review — Code Review Router
+# /review â€” Code Review Router
 
 > **ROUTER DIRECTIVE**: Analyze review scope and route to appropriate workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,16 +28,16 @@ execution-mode: router
 
 ```
 IF scope is small (PR, few files):
-  → Route to /review:fast
+  â†’ Route to /review:fast
 
 IF scope is large (codebase, architecture):
-  → Route to /review:hard
+  â†’ Route to /review:hard
 
 IF scope is large AND maximum quality with team collaboration needed:
-  → Route to /review:team
+  â†’ Route to /review:team
 
 IF unsure:
-  → Default to /review:fast
+  â†’ Default to /review:fast
 ```
 
 ---
@@ -55,15 +55,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 🔍 Review Mode Selection
+## ðŸ” Review Mode Selection
 
 **Scope**: [parsed scope]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/review:fast` — Quick review
-2. ⚡⚡⚡ **Hard** → `/review:hard` — Deep analysis
-3. 👥 **Team** → `/review:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/review:fast` â€” Quick review
+2. âš¡âš¡âš¡ **Hard** â†’ `/review:hard` â€” Deep analysis
+3. ðŸ‘¥ **Team** â†’ `/review:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

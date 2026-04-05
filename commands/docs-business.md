@@ -13,32 +13,19 @@ execution-mode: execute
 
 ---
 
-## PRE-FLIGHT (DO FIRST - BLOCKS PHASE 1)
+## PRE-FLIGHT
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. CORE.md - Identity, Laws, Routing
-2. PHASES.md - Phase Execution
-3. AGENTS.md - Tiered Execution
-
-**Do not run Phase 1 until all are loaded.** Follow all rules in those files; they override any conflicting instructions in this file.
+**LOAD**: CORE.md â†’ PHASES.md â†’ AGENTS.md (path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`)
 
 ---
 
-## TIERED EXECUTION PROTOCOL (MANDATORY)
+## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
 
-> **Reference: AGENTS.md (Tiered Execution)**
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists -> MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error - NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - NEVER use Tier 2 when Tier 1 tool is available
-    - ALWAYS attempt Tier 1 first when tool exists
-```
+> **ðŸ”´ YOU MUST READ this reference file NOW. Do NOT skip.**
+>
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/docs-recon-protocol.md` â€” Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
+>
+> **Failure to read = incorrect execution. This file contains BINDING protocols.**
 
 ---
 
@@ -140,46 +127,7 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 | **Agent** | `scouter` |
 | **Goal** | Build evidence-backed business intelligence from codebase + existing docs |
 
-### TIERED EXECUTION
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] - Requires logged system error justification.
-
-### Required Work
-
-1. Detect current business docs state (folder-level mode per area):
-   - `./documents/business/business-prd/`
-   - `./documents/business/business-features/`
-   - `./documents/business/business-workflows/`
-   - `./documents/business/business-glossary/`
-
-   Mode rules:
-   - Folder exists with sub-files -> UPDATE
-   - Flat file exists (legacy `business-*.md`) -> MIGRATE
-   - Neither exists -> CREATE
-
-2. Scan business signals from repository:
-   - README/product docs/roadmap/changelog
-   - route and API surfaces for user-facing capabilities
-   - domain models/entities/events
-   - feature flags/config toggles
-
-3. Extract and catalog:
-   - stakeholders and actors
-   - business goals and constraints
-   - feature inventory and dependencies
-   - workflow candidates and state transitions
-   - domain terminology and synonyms
-
-4. Build Business Evidence Ledger with file-level references.
-
-### Mandatory Output
-
-```markdown
 ## Business Intelligence Report
 
 ### Execution Plan
@@ -245,27 +193,7 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 | **Goal** | Convert raw intelligence into structured, testable business artifacts |
 | **Skill** | Load `skills/business-analyst/SKILL.md` |
 
-### TIERED EXECUTION
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `business-analyst`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/business-analyst.md`
-> EMBODY [business-analyst] - Requires logged system error justification.
-
-### Required Work
-
-1. Apply INVEST quality to requirements.
-2. Apply MoSCoW prioritization to features.
-3. Canonicalize workflows.
-4. Resolve glossary conflicts (canonical term + aliases + deprecated terms).
-5. Build traceability matrix:
-   - Business Goal -> Requirement -> Feature -> Workflow -> KPI
-
-### Mandatory Output
-
-```markdown
 ## Structured Business Pack
 
 ### Goals and Scope
@@ -316,90 +244,6 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 | **Agent** | `docs-manager` |
 | **Goal** | Generate or update all 4 business folders in English only |
 
-### TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `docs-manager`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/docs-manager.md`
-> EMBODY [docs-manager] - Requires logged system error justification.
-
-### Thinking Protocol (MANDATORY - Run BEFORE Writing Each Sub-File)
-
-For each sub-file, THINK before writing:
-
-1. What evidence from Phase 1/2 supports this file's content?
-2. Is every claim backed by an actual file read or the Business Evidence Ledger?
-3. Am I writing REAL project data or just paraphrasing the template?
-4. Would a business stakeholder find this SUFFICIENT for decision-making?
-5. Is anything speculative? Remove it or mark: "Assumption - needs verification"
-
-### Writing Protocol (MANDATORY)
-
-For each business folder:
-
-1. If UPDATE mode:
-   - read all existing sub-files fully
-   - preserve accurate sections
-   - append missing and revise stale sections
-   - add update footer: `> Last updated: {date} - {summary}` to touched files
-2. If CREATE mode:
-   - create folder
-   - write `00-index.md` first
-   - write `01-...`, `02-...` sub-files sequentially
-3. If MIGRATE mode (legacy flat file exists):
-   - read existing flat file fully - preserve all valid content
-   - create folder with `00-index.md` + sub-files
-   - distribute content into appropriate sub-files
-   - add migration note: `> Migrated from flat file: {date}`
-   - delete or archive legacy flat file after migration
-4. Include `## Evidence Sources` in every sub-file
-5. Include `## Known Gaps and Open Questions` in every `00-index.md`
-6. No placeholders: `TODO`, `TBD`, `{placeholder}`, `fill in later`
-
-### Per-Folder Content Requirements
-
-#### `business-prd/`
-- `00-index.md`: summary, TOC, key facts, cross-refs
-- `01-executive-summary.md`: mission, value proposition, target outcomes
-- `02-problem-goals-and-scope.md`: problem statement, goals, non-goals, in-scope/out-of-scope
-- `03-stakeholders-and-requirements.md`: stakeholder map, functional/non-functional requirements, traceability
-- `04-acceptance-risks-assumptions.md`: acceptance criteria, risks, assumptions, open questions
-
-#### `business-features/`
-- `00-index.md`: summary, TOC, key facts, cross-refs
-- `01-feature-inventory.md`: complete feature list and business value
-- `02-prioritization-moscow.md`: MoSCoW prioritization with rationale
-- `03-feature-specifications.md`: feature-level spec details and acceptance checks
-- `04-dependencies-and-release-sequencing.md`: dependencies, rollout order, sequencing constraints
-- `05-success-metrics.md`: KPIs, baselines, targets, measurement approach
-
-#### `business-workflows/`
-- `00-index.md`: summary, TOC, key facts, cross-refs
-- `01-actor-map.md`: actor definitions, responsibilities, boundaries
-- `02-workflow-catalog.md`: workflow inventory with trigger/outcome
-- `03-detailed-workflows.md`: step-by-step flows with decision points
-- `04-decision-rules-and-exceptions.md`: business rules, exceptions, fallback paths
-- `05-sla-and-handoffs.md`: timing expectations, handoff contracts, SLA/SLO context
-
-#### `business-glossary/`
-- `00-index.md`: summary, TOC, key facts, cross-refs
-- `01-canonical-terms.md`: approved canonical terms and definitions
-- `02-synonyms-and-deprecated-terms.md`: aliases, deprecated terms, replacement guidance
-- `03-domain-entities-and-events.md`: entity/event vocabulary and meaning boundaries
-- `04-api-term-mapping.md`: mapping between domain terms and API fields/endpoints
-
-### Exit Criteria
-
-- [ ] `business-prd/` complete (`00-index.md` + 4 sub-files)
-- [ ] `business-features/` complete (`00-index.md` + 5 sub-files)
-- [ ] `business-workflows/` complete (`00-index.md` + 5 sub-files)
-- [ ] `business-glossary/` complete (`00-index.md` + 4 sub-files)
-- [ ] Each sub-file includes Evidence Sources
-- [ ] No placeholders remain
-
----
 
 ## Phase 4: QUALITY AND CONSISTENCY REVIEW
 
@@ -408,18 +252,7 @@ For each business folder:
 | **Agent** | `project-manager` |
 | **Goal** | Validate cross-folder consistency, delivery readiness, and completeness |
 
-### TIERED EXECUTION
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `project-manager`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/project-manager.md`
-> EMBODY [project-manager] - Requires logged system error justification.
-
-### Consistency Matrix (MANDATORY)
-
-```markdown
 ## Business Docs Consistency Matrix
 | Check | PRD | Features | Workflows | Glossary | Status |
 |------|-----|----------|-----------|----------|--------|

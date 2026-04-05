@@ -26,22 +26,22 @@ const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/hainamchung/agent-assistant',
+        href: 'https://github.com/hainamchung/boomopen-workflow-kit',
         external: true,
       },
       {
         label: 'License',
-        href: 'https://github.com/hainamchung/agent-assistant/blob/main/LICENSE',
+        href: 'https://github.com/hainamchung/boomopen-workflow-kit/blob/main/LICENSE',
         external: true,
       },
       {
         label: 'Issues',
-        href: 'https://github.com/hainamchung/agent-assistant/issues',
+        href: 'https://github.com/hainamchung/boomopen-workflow-kit/issues',
         external: true,
       },
       {
         label: 'Contributing',
-        href: 'https://github.com/hainamchung/agent-assistant/blob/main/README.md',
+        href: 'https://github.com/hainamchung/boomopen-workflow-kit/blob/main/README.md',
         external: true,
       },
     ],
@@ -85,7 +85,7 @@ export function Footer({ className }: FooterProps) {
                 aria-hidden="true"
               />
               <span className="text-lg font-semibold text-[var(--color-text-primary)]">
-                Agent Assistant
+                BoomOpen Workflow Kit
               </span>
             </Link>
             <p className="text-sm text-[var(--color-text-secondary)] mb-4 max-w-xs">
@@ -95,7 +95,7 @@ export function Footer({ className }: FooterProps) {
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com/hainamchung/agent-assistant"
+                href="https://github.com/hainamchung/boomopen-workflow-kit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(

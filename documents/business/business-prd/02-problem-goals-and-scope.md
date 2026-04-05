@@ -1,4 +1,4 @@
-# Agent Assistant — Problem, Goals, and Scope
+# BoomOpen Workflow Kit — Problem, Goals, and Scope
 
 > **Purpose**: Problem statement, 10 business goals (BG-001–BG-010), non-goals, and in-scope/out-of-scope boundary
 > **Parent**: [00-index.md](./00-index.md)
@@ -141,12 +141,12 @@ The cost is measured in time (manual prompt iteration), quality (bugs from shall
 
 ## Non-Goals
 
-The following are explicitly NOT objectives for Agent Assistant v1.3.0:
+The following are explicitly NOT objectives for BoomOpen Workflow Kit v1.3.0:
 
 | Non-Goal | Rationale |
 |----------|-----------|
 | Replace human developers | The framework augments developer productivity; human judgment and oversight remain essential |
-| Provide a backend server or HTTP API | Agent Assistant operates as a file-based configuration layer, not a running service |
+| Provide a backend server or HTTP API | BoomOpen Workflow Kit operates as a file-based configuration layer, not a running service |
 | Build a SaaS platform | No hosted service, no user accounts, no subscription model |
 | Create a database or data persistence layer | All state is file-based (Markdown, YAML); no database engine is used or required |
 | Develop a mobile application | The framework targets desktop AI coding assistant integrations only |

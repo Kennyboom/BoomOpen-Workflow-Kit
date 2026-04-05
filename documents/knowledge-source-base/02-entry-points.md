@@ -1,4 +1,4 @@
-# Agent Assistant — Entry Points
+# BoomOpen Workflow Kit — Entry Points
 
 > **Purpose**: Maps all application entry files, the CLI boot sequence, build/script entry points, and configuration entry points
 > **Parent**: [00-index.md](./00-index.md)
@@ -29,7 +29,7 @@ This is the **sole executable file** in the entire project. It is declared in `p
 {
   "main": "cli/install.js",
   "bin": {
-    "agent-assistant": "./cli/install.js"
+    "boomopen-workflow-kit": "./cli/install.js"
   }
 }
 ```
@@ -40,7 +40,7 @@ This is the **sole executable file** in the entire project. It is declared in `p
 - **Size**: ~600 lines
 - **Minimum Runtime**: Node.js >=18.0.0
 
-When installed globally via `npm install -g @namch/agent-assistant`, the `agent-assistant` binary becomes available system-wide. When invoked via `npx`, it runs directly from the package.
+When installed globally via `npm install -g @namch/boomopen-workflow-kit`, the `boomopen-workflow-kit` binary becomes available system-wide. When invoked via `npx`, it runs directly from the package.
 
 ### Secondary: Platform Entry Point Files (Root)
 
@@ -76,8 +76,8 @@ npm run uninstall:copilot  # → node cli/install.js uninstall copilot
 npm run list               # → node cli/install.js list
 
 # Via npx (after npm publish)
-npx agent-assistant install cursor
-npx @namch/agent-assistant install --all
+npx boomopen-workflow-kit install cursor
+npx @namch/boomopen-workflow-kit install --all
 ```
 
 ### 2. Module Loading
@@ -123,8 +123,8 @@ resetProgress()
   → estimateInstallFiles()        # Counts files across CORE_DIRS + skills + agents
   → Per-platform install function:
       1. Copy platform-specific assets (rules, entry points, agent files)
-      2. Clean install: remove old ~/.{tool}/skills/agent-assistant/
-      3. Copy CORE_DIRS to agentAssistant path
+      2. Clean install: remove old ~/.{tool}/skills/boomopen-workflow-kit/
+      3. Copy CORE_DIRS to boomopenWorkflowKit path
       4. Copy commands also to "workflows" for backward compatibility
       5. Copy ROOT_FILES (README.md)
       6. Copy skills/ directory (1,430 skill folders)
@@ -138,7 +138,7 @@ resetProgress()
 #### Uninstall Flow
 ```
 resetProgress()
-  → Remove agentAssistant directory
+  → Remove boomopenWorkflowKit directory
   → Remove platform-specific config files
   → completeProgress()
   → printSummary()
@@ -147,7 +147,7 @@ resetProgress()
 #### List Flow
 ```
 For each tool in TOOLS:
-  → Check if agentAssistant path exists
+  → Check if boomopenWorkflowKit path exists
   → Print status (installed / not installed)
 ```
 
@@ -176,7 +176,7 @@ Each platform has a unique installation target structure. The `TOOLS` config obj
 ├── CLAUDE.md                 # Claude entry (from root CLAUDE.md)
 ├── agents/                   # Native subagent support (from agents/)
 └── skills/
-    └── agent-assistant/      # Core framework
+    └── boomopen-workflow-kit/      # Core framework
         ├── agents/           # CORE_DIRS[0]
         ├── rules/            # CORE_DIRS[1]
         ├── documents/        # CORE_DIRS[2]
@@ -190,12 +190,12 @@ Each platform has a unique installation target structure. The `TOOLS` config obj
 ```
 ~/.copilot/
 ├── skills/
-│   └── agent-assistant/      # Core framework (same structure as Cursor)
+│   └── boomopen-workflow-kit/      # Core framework (same structure as Cursor)
 ├── commands/                 # Global commands
 ├── agents/                   # Native subagents
 ├── rules/                    # Global rules
 └── [VS Code prompts folder]  # Platform-specific prompt location
-    └── agent-assistant.agent.md  # Copilot agent definition
+    └── boomopen-workflow-kit.agent.md  # Copilot agent definition
 ```
 
 The VS Code prompts folder path varies by OS:
@@ -208,7 +208,7 @@ The VS Code prompts folder path varies by OS:
 ~/.gemini/
 ├── antigravity/
 │   ├── skills/
-│   │   └── agent-assistant/  # Core framework
+│   │   └── boomopen-workflow-kit/  # Core framework
 │   └── global_workflows/     # Global workflows
 ├── agents/                   # Global agent configs
 │   └── AntigravityGlobal.agent.md
@@ -222,7 +222,7 @@ The VS Code prompts folder path varies by OS:
 ```
 ~/.claude/
 ├── skills/
-│   └── agent-assistant/      # Core framework
+│   └── boomopen-workflow-kit/      # Core framework
 ├── commands/                 # Global commands
 ├── agents/                   # Native subagents
 └── CLAUDE.md                 # Platform entry
@@ -232,7 +232,7 @@ The VS Code prompts folder path varies by OS:
 ```
 ~/.codex/
 ├── skills/
-│   └── agent-assistant/      # Core framework
+│   └── boomopen-workflow-kit/      # Core framework
 ├── commands/                 # Global commands
 ├── agents/                   # Native subagents (TOML format from code-assistants/codex-assistant/agents/)
 └── config.toml               # Codex config (from code-assistants/codex-assistant/config.toml)

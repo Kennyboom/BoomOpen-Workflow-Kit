@@ -1,11 +1,11 @@
 ---
-description: ⚡ Quick Test — Fast testing for specific scope
+description: âš¡ Quick Test â€” Fast testing for specific scope
 version: "1.0"
 category: validation
 execution-mode: execute
 ---
 
-# /test:fast — Quick Testing
+# /test:fast â€” Quick Testing
 
 > **MISSION**: Run targeted tests for specific scope.
 
@@ -13,20 +13,20 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
 
 ---
 
-## 🔀 TIERED EXECUTION
+## ðŸ”€ TIERED EXECUTION
 
 | Tier | When | Action |
 |------|------|--------|
@@ -35,13 +35,13 @@ execution-mode: execute
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## â›” INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
 
 ---
 
-## 🎭 Phase 1: TEST EXECUTION
+## ðŸŽ­ Phase 1: TEST EXECUTION
 
 | Agent | `tester` |
 |-------|----------|
@@ -50,7 +50,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: QUICK ANALYSIS (IF FAILURES)
+## ðŸŽ­ Phase 2: QUICK ANALYSIS (IF FAILURES)
 
 | Agent | `debugger` |
 |-------|------------|
@@ -73,5 +73,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present results with:
 
-1. ✅ **Pass** — Tests green
-2. 🔧 **Fix** → `/fix:fast`
+1. âœ… **Pass** â€” Tests green
+2. ðŸ”§ **Fix** â†’ `/fix:fast`

@@ -20,8 +20,8 @@ export const platforms: Platform[] = [
     icon: '⚡',
     description: 'Full integration with Cursor IDE through .cursorrules and custom rules.',
     status: 'full',
-    configFile: '.cursor/rules/agent-assistant.mdc',
-    installPath: '~/.cursor/skills/agent-assistant/',
+    configFile: '.cursor/rules/boomopen-workflow-kit.mdc',
+    installPath: '~/.cursor/skills/boomopen-workflow-kit/',
     features: [
       'Custom agent rules',
       'Skill auto-discovery',
@@ -29,14 +29,14 @@ export const platforms: Platform[] = [
       'Sub-agent orchestration',
     ],
     steps: [
-      'Install Agent Assistant globally',
+      'Install BoomOpen Workflow Kit globally',
       'Restart Cursor IDE',
-      'Agent Assistant auto-discovers from global path',
+      'BoomOpen Workflow Kit auto-discovers from global path',
       'Start using /cook, /fix, /test commands',
     ],
     setup: [
-      'agent-assistant install cursor',
-      'agent-assistant uninstall cursor',
+      'boomopen-workflow-kit install cursor',
+      'boomopen-workflow-kit uninstall cursor',
     ]
   },
   {
@@ -46,7 +46,7 @@ export const platforms: Platform[] = [
     description: 'Native support through CLAUDE.md for seamless Claude integration.',
     status: 'full',
     configFile: 'CLAUDE.md',
-    installPath: '~/.claude/skills/agent-assistant/',
+    installPath: '~/.claude/skills/boomopen-workflow-kit/',
     features: [
       'Native Claude support',
       'CLAUDE.md configuration',
@@ -54,24 +54,24 @@ export const platforms: Platform[] = [
       'Orchestration laws',
     ],
     steps: [
-      'Install Agent Assistant globally',
+      'Install BoomOpen Workflow Kit globally',
       'CLAUDE.md is auto-detected in projects',
       'Global config applies to all projects',
       'Use slash commands in any project',
     ],
     setup: [
-      'agent-assistant install claude',
-      'agent-assistant uninstall claude',
+      'boomopen-workflow-kit install claude',
+      'boomopen-workflow-kit uninstall claude',
     ]
   },
   {
     id: 'copilot',
     name: 'GitHub Copilot',
     icon: '🐙',
-    description: 'Works with GitHub Copilot through agent-assistant.agent.md files.',
+    description: 'Works with GitHub Copilot through boomopen-workflow-kit.agent.md files.',
     status: 'full',
-    configFile: 'agent-assistant.agent.md',
-    installPath: '~/.copilot/skills/agent-assistant/',
+    configFile: 'boomopen-workflow-kit.agent.md',
+    installPath: '~/.copilot/skills/boomopen-workflow-kit/',
     features: [
       'Copilot agents',
       'Workspace integration',
@@ -79,14 +79,14 @@ export const platforms: Platform[] = [
       'Skill injection',
     ],
     steps: [
-      'Install Agent Assistant globally',
+      'Install BoomOpen Workflow Kit globally',
       'Agent files are auto-detected',
       'Works with Copilot Chat',
       'Full orchestration support',
     ],
     setup: [
-      'agent-assistant install copilot',
-      'agent-assistant uninstall copilot',
+      'boomopen-workflow-kit install copilot',
+      'boomopen-workflow-kit uninstall copilot',
     ]
   },
   {
@@ -96,7 +96,7 @@ export const platforms: Platform[] = [
     description: 'Full support for Antigravity through GEMINI.md configuration.',
     status: 'full',
     configFile: 'GEMINI.md',
-    installPath: '~/.antigravity/skills/agent-assistant/',
+    installPath: '~/.antigravity/skills/boomopen-workflow-kit/',
     features: [
       'Gemini integration',
       'Global configuration',
@@ -104,14 +104,14 @@ export const platforms: Platform[] = [
       'Matrix skills',
     ],
     steps: [
-      'Install Agent Assistant globally',
+      'Install BoomOpen Workflow Kit globally',
       'GEMINI.md is auto-detected',
       'Global configuration applies',
       'Use all commands and workflows',
     ],
     setup: [
-      'agent-assistant install antigravity',
-      'agent-assistant uninstall antigravity',
+      'boomopen-workflow-kit install antigravity',
+      'boomopen-workflow-kit uninstall antigravity',
     ]
   },
   {
@@ -121,7 +121,7 @@ export const platforms: Platform[] = [
     description: 'Full support for OpenAI Codex through AGENTS.md (primary) and CODEX.md compatibility.',
     status: 'full',
     configFile: 'AGENTS.md + CODEX.md',
-    installPath: '~/.codex/skills/agent-assistant/',
+    installPath: '~/.codex/skills/boomopen-workflow-kit/',
     features: [
       'Codex integration',
       'CODEX.md configuration',
@@ -129,14 +129,14 @@ export const platforms: Platform[] = [
       'Orchestration laws',
     ],
     steps: [
-      'Install Agent Assistant globally',
+      'Install BoomOpen Workflow Kit globally',
       'CODEX.md is auto-detected in projects',
       'Global config applies to all projects',
       'Use slash commands in any project',
     ],
     setup: [
-      'agent-assistant install codex',
-      'agent-assistant uninstall codex',
+      'boomopen-workflow-kit install codex',
+      'boomopen-workflow-kit uninstall codex',
     ]
   },
 ]

@@ -1,11 +1,11 @@
 ---
-description: 🔧 Fix Router — Route to issue resolution workflows
+description: ðŸ”§ Fix Router â€” Route to issue resolution workflows
 version: "1.0"
 category: debugging
 execution-mode: router
 ---
 
-# /fix — Issue Resolution Router
+# /fix â€” Issue Resolution Router
 
 > **ROUTER DIRECTIVE**: Analyze issue complexity and route to appropriate fix workflow.
 
@@ -13,15 +13,15 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -29,16 +29,16 @@ execution-mode: router
 
 ```
 IF issue is simple (clear cause, quick fix):
-  → Route to /fix:fast
+  â†’ Route to /fix:fast
 
 IF issue is complex (research needed, multi-file):
-  → Route to /fix:hard
+  â†’ Route to /fix:hard
 
 IF issue is complex AND maximum quality with team collaboration needed:
-  → Route to /fix:team
+  â†’ Route to /fix:team
 
 IF unsure:
-  → Default to /fix:fast (escalate if needed)
+  â†’ Default to /fix:fast (escalate if needed)
 ```
 
 ---
@@ -56,15 +56,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 🔧 Fix Mode Selection
+## ðŸ”§ Fix Mode Selection
 
 **Issue**: [parsed issue]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/fix:fast` — Quick fix
-2. ⚡⚡⚡ **Hard** → `/fix:hard` — Full resolution
-3. 👥 **Team** → `/fix:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/fix:fast` â€” Quick fix
+2. âš¡âš¡âš¡ **Hard** â†’ `/fix:hard` â€” Full resolution
+3. ðŸ‘¥ **Team** â†’ `/fix:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

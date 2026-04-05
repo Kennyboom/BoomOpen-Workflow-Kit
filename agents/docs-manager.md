@@ -33,7 +33,7 @@ category: support
 
 ## ⚡ Skills
 
-> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/agent-assistant/matrix-skills/`
+> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `research:documentation` | Domains: `research`
 
 ---

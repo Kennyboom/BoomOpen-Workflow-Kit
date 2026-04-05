@@ -1,4 +1,4 @@
-# Agent Assistant — Configuration
+# BoomOpen Workflow Kit — Configuration
 
 > **Purpose**: Complete inventory of all configuration files, environment variables, and secrets management across the framework and web sub-project
 > **Parent**: [00-index.md](./00-index.md)
@@ -26,7 +26,7 @@
 
 ## Overview
 
-Agent Assistant uses two distinct configuration layers:
+BoomOpen Workflow Kit uses two distinct configuration layers:
 
 1. **Tooling Config** — Standard Node.js/npm/Vite config files for building, linting, releasing, and deploying
 2. **Framework Config** — YAML and Markdown files that configure the AI orchestration behavior (HSOL, rules, agents)
@@ -41,11 +41,11 @@ The project has zero production dependencies. All config files serve either the 
 
 | Field | Value | Purpose |
 |-------|-------|---------|
-| `name` | `@namch/agent-assistant` | Scoped npm package name |
+| `name` | `@namch/boomopen-workflow-kit` | Scoped npm package name |
 | `version` | `1.3.0` | Current version (managed by semantic-release) |
 | `description` | Multi-agent orchestration framework... | npm registry description |
 | `main` | `cli/install.js` | Default module entry for `require()` |
-| `bin.agent-assistant` | `./cli/install.js` | CLI binary name for `npx` invocation |
+| `bin.boomopen-workflow-kit` | `./cli/install.js` | CLI binary name for `npx` invocation |
 | `engines.node` | `>=18.0.0` | Minimum Node.js version constraint |
 | `license` | `MIT` | Open source license |
 | `author` | `NamCH` | Package author |
@@ -348,9 +348,9 @@ Located at `code-assistants/cursor-assistant/.cursorrules`. Cursor's native rule
 
 Located at `code-assistants/cursor-assistant/rules/`. Contains MDC (Markdown Cursor) files installed to `~/.cursor/rules/` for Cursor's native rule system.
 
-### Copilot: agent-assistant.agent.md
+### Copilot: boomopen-workflow-kit.agent.md
 
-Located at `code-assistants/copilot-assistant/agent-assistant.agent.md`. Installed to the VS Code prompts folder:
+Located at `code-assistants/copilot-assistant/boomopen-workflow-kit.agent.md`. Installed to the VS Code prompts folder:
 - **macOS**: `~/Library/Application Support/Code/User/prompts/`
 - **Windows**: `%APPDATA%/Code/User/prompts/`
 - **Linux**: `~/.config/Code/User/prompts/`
@@ -427,7 +427,7 @@ package.json                    ← Root package config
 │
 ├── code-assistants/*/          ← Platform-specific configs
 │   ├── cursor: .cursorrules, rules/
-│   ├── copilot: agent-assistant.agent.md
+│   ├── copilot: boomopen-workflow-kit.agent.md
 │   ├── antigravity: GEMINI.md, AntigravityGlobal.agent.md
 │   ├── claude: CLAUDE.md
 │   └── codex: CODEX.md, config.toml, agents/, skills/

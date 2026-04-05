@@ -1,11 +1,11 @@
 ---
-description: 📋 Plan Router — Route to planning workflows
+description: ðŸ“‹ Plan Router â€” Route to planning workflows
 version: "1.0"
 category: planning
 execution-mode: router
 ---
 
-# /plan — Planning Router
+# /plan â€” Planning Router
 
 > **ROUTER DIRECTIVE**: Analyze planning need and route to appropriate workflow.
 
@@ -13,15 +13,15 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. plan-hard.md), and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. plan-hard.md), and execute it.
 
 ---
 
@@ -29,16 +29,16 @@ execution-mode: router
 
 ```
 IF task is clear (known approach, codebase-only):
-  → Route to /plan:fast
+  â†’ Route to /plan:fast
 
 IF task is complex (research needed, architectural):
-  → Route to /plan:hard
+  â†’ Route to /plan:hard
 
 IF task is complex AND maximum quality with team collaboration needed:
-  → Route to /plan:team
+  â†’ Route to /plan:team
 
 IF unsure:
-  → Default to /plan:fast
+  â†’ Default to /plan:fast
 ```
 
 ---
@@ -56,15 +56,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## 📋 Planning Mode Selection
+## ðŸ“‹ Planning Mode Selection
 
 **Task**: [parsed task]
 
 **Choose workflow:**
 
-1. ⚡ **Fast** → `/plan:fast` — Quick plan
-2. ⚡⚡⚡ **Hard** → `/plan:hard` — Full research-backed plan
-3. 👥 **Team** → `/plan:team` — Full team collaboration (parallel agents, maximum quality)
+1. âš¡ **Fast** â†’ `/plan:fast` â€” Quick plan
+2. âš¡âš¡âš¡ **Hard** â†’ `/plan:hard` â€” Full research-backed plan
+3. ðŸ‘¥ **Team** â†’ `/plan:team` â€” Full team collaboration (parallel agents, maximum quality)
 
-⏳ Awaiting selection...
+â³ Awaiting selection...
 ```

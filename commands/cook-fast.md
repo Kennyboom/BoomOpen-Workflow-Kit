@@ -1,11 +1,11 @@
 ---
-description: ⚡ Quick Feature — Rapid feature implementation
+description: âš¡ Quick Feature â€” Rapid feature implementation
 version: "1.0"
 category: engineering
 execution-mode: execute
 ---
 
-# /cook:fast — Rapid Feature Implementation
+# /cook:fast â€” Rapid Feature Implementation
 
 > **MISSION**: Quickly implement well-defined features with minimal ceremony.
 
@@ -13,52 +13,52 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
 
 ---
 
-## 🔀 TIERED EXECUTION
+## ðŸ”€ TIERED EXECUTION
 
 | Tier       | When               | Action                       |
 | ---------- | ------------------ | ---------------------------- |
 | **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
-**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
+**âŒ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
 
 ---
 
-## 📁 PRIOR PLAN CHECK
+## ðŸ“ PRIOR PLAN CHECK
 
 ```
 IF ./reports/{topic}/plans/PLAN-{feature} exists (.md file or folder):
-  → READ and FOLLOW it
+  â†’ READ and FOLLOW it
 ELSE:
-  → Create micro-plan inline
+  â†’ Create micro-plan inline
 ```
 
-Any files in `./reports/{topic}/` or `./documents/` → English only.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+Any files in `./reports/{topic}/` or `./documents/` â†’ English only.
+**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## â›” INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
 
 ---
 
-## 🎭 Phase 1: CONTEXT SCAN
+## ðŸŽ­ Phase 1: CONTEXT SCAN
 
 | Agent | `scouter`                                     |
 | ----- | --------------------------------------------- |
@@ -67,7 +67,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: MICRO-PLANNING
+## ðŸŽ­ Phase 2: MICRO-PLANNING
 
 | Agent | `planner`                          |
 | ----- | ---------------------------------- |
@@ -76,11 +76,11 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 3: IMPLEMENTATION
+## ðŸŽ­ Phase 3: IMPLEMENTATION
 
 | Agent        | Route by domain                                                               |
 | ------------ | ----------------------------------------------------------------------------- |
-| Route        | UI → `frontend-engineer`, API → `backend-engineer`, DB → `database-architect` |
+| Route        | UI â†’ `frontend-engineer`, API â†’ `backend-engineer`, DB â†’ `database-architect` |
 | Prerequisite | READ `./reports/{topic}/plans/PLAN-{feature}` if exists                            |
 | Goal         | Implement feature                                                             |
 | Exit         | Feature implemented, code compiles, basic testing done                        |
@@ -101,6 +101,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present feature with:
 
-1. ✅ **Done** — Feature complete
-2. 🧪 **Test** → `/test`
-3. 📝 **Docs** → `/docs:core`
+1. âœ… **Done** â€” Feature complete
+2. ðŸ§ª **Test** â†’ `/test`
+3. ðŸ“ **Docs** â†’ `/docs:core`

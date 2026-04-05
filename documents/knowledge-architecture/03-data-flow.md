@@ -1,4 +1,4 @@
-# Agent Assistant — Data Flow
+# BoomOpen Workflow Kit — Data Flow
 
 > **Purpose**: Request lifecycle, CLI install flow, skill resolution flow, and Golden Triangle team flow — all with Mermaid diagrams
 > **Parent**: [00-index.md](./00-index.md)
@@ -90,13 +90,13 @@ The CLI installer is the distribution mechanism — it copies framework files fr
 
 ```mermaid
 flowchart TD
-    START["npm install @namch/agent-assistant<br/>or npx agent-assistant install {tool}"]
+    START["npm install @namch/boomopen-workflow-kit<br/>or npx boomopen-workflow-kit install {tool}"]
     
     PARSE["Parse CLI arguments<br/>install | uninstall | list"]
     RESOLVE["Resolve target platform(s)<br/>cursor | copilot | antigravity | codex | --all"]
     
     subgraph "Per Platform"
-        DIRS["Create directory structure<br/>~/.{tool}/skills/agent-assistant/"]
+        DIRS["Create directory structure<br/>~/.{tool}/skills/boomopen-workflow-kit/"]
         
         subgraph "Copy Loop (all framework files)"
             READ["Read source file from npm package"]
@@ -122,13 +122,13 @@ flowchart TD
 
 | Category | Source Path | Destination |
 |----------|-----------|-------------|
-| Rules | `rules/*.md` | `~/.{tool}/skills/agent-assistant/rules/` |
-| Agents | `agents/*.md` | `~/.{tool}/skills/agent-assistant/agents/` |
-| Team Agents | `agents/teams/*/` | `~/.{tool}/skills/agent-assistant/agents/teams/` |
-| Commands | `commands/**/*.md` | `~/.{tool}/skills/agent-assistant/commands/` |
-| Matrix Skills | `matrix-skills/*.yaml` | `~/.{tool}/skills/agent-assistant/matrix-skills/` |
+| Rules | `rules/*.md` | `~/.{tool}/skills/boomopen-workflow-kit/rules/` |
+| Agents | `agents/*.md` | `~/.{tool}/skills/boomopen-workflow-kit/agents/` |
+| Team Agents | `agents/teams/*/` | `~/.{tool}/skills/boomopen-workflow-kit/agents/teams/` |
+| Commands | `commands/**/*.md` | `~/.{tool}/skills/boomopen-workflow-kit/commands/` |
+| Matrix Skills | `matrix-skills/*.yaml` | `~/.{tool}/skills/boomopen-workflow-kit/matrix-skills/` |
 | Skills | `skills/*/SKILL.md` | `~/.{tool}/skills/*/SKILL.md` (at skills root) |
-| Documents | `documents/**` | `~/.{tool}/skills/agent-assistant/documents/` |
+| Documents | `documents/**` | `~/.{tool}/skills/boomopen-workflow-kit/documents/` |
 | Platform Assets | `code-assistants/{tool}-assistant/` | Platform-specific locations (varies) |
 
 ### Replacement Table (from cli/install.js)
@@ -138,7 +138,7 @@ All `.md` and `.yaml` files undergo text replacement. The replacement map is pla
 | Placeholder | Cursor | Copilot | Codex |
 |------------|--------|---------|-------|
 | `{TOOL}` | `cursor` | `copilot` | `codex` |
-| `~/.{TOOL}/skills/agent-assistant/` | `~/.cursor/skills/agent-assistant/` | `~/.copilot/skills/agent-assistant/` | `~/.codex/skills/agent-assistant/` |
+| `~/.{TOOL}/skills/boomopen-workflow-kit/` | `~/.cursor/skills/boomopen-workflow-kit/` | `~/.copilot/skills/boomopen-workflow-kit/` | `~/.codex/skills/boomopen-workflow-kit/` |
 | `{HOME}` | `~` | `~` | `~` |
 
 ---

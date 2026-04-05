@@ -1,11 +1,11 @@
 ---
-description: "🔺 Team Review — Golden Triangle adversarial collaboration for maximum quality code review"
+description: "ðŸ”º Team Review â€” Golden Triangle adversarial collaboration for maximum quality code review"
 version: "2.0"
 category: quality
 execution-mode: execute
 ---
 
-# /review:team — Golden Triangle Code Review
+# /review:team â€” Golden Triangle Code Review
 
 > **MISSION**: Maximum quality code review through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents: Tech Lead (coordinator),
@@ -16,61 +16,35 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-4. **TEAMS.md** — Golden Triangle protocol (MANDATORY)
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: Load `SKILLS.md` on-demand for fitness calculation and dynamic discovery.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
 
-> Reference: AGENTS.md (Tiered Execution) + TEAMS.md (Golden Triangle Protocol)
-
-| Tier       | When                          | Action                                                                    |
-| ---------- | ----------------------------- | ------------------------------------------------------------------------- |
-| **TIER 1** | runSubagent/Agent Tool EXISTS | Orchestrator spawns Tech Lead → Tech Lead spawns Executor + Reviewer      |
-| **TIER 2** | Tool MISSING or SYSTEM error  | EMBODY Tech Lead → EMBODY Executor → EMBODY Reviewer → EMBODY Tech Lead  |
-
-**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
-
-**TIER 2 Golden Triangle Embodiment** (per TEAMS.md):
-```
-1. EMBODY Tech Lead → decompose → Shared Task List → dispatch
-2. EMBODY Executor → execute → post SUBMISSION to Mailbox
-3. EMBODY Reviewer → review → post REVIEW to Mailbox
-4. IF FAIL → EMBODY Executor → fix/defend → EMBODY Reviewer → re-check (max 3 rounds)
-5. EMBODY Tech Lead → arbitrate if needed → post DECISION → synthesize output
-```
+> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip.**
+>
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` â€” Convergent Analysis detailed protocol
+> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` â€” Implementation step-by-step (for coding phases)
+>
+> **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
 
-## 📬 MAILBOX & DELIVERABLES
+## ðŸ“ DELIVERABLE FILES
 
-**Mailbox**: `./reports/{topic}/MAILBOX-{date}.md` — All triangle agents READ/APPEND. Never overwrite.
-**Protocol**: See TEAMS.md § Mailbox Message Types (TASK_ASSIGNMENT, SUBMISSION, REVIEW, DEFENSE, RESUBMISSION, APPROVAL, ESCALATION, ARBITRATION, DECISION).
+| Phase | Output |
+|-------|--------|
+| P1: Scope & Context | `./reports/{topic}/scouts/SCOUT-{scope}` |
+| P3: Improvement Plan | `./reports/{topic}/reviews/REVIEW-REPORT-{scope}` |
+| P4: Final Review | `./reports/{topic}/reviews/REVIEW-{scope}` |
+| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-| Phase / Team     | Output                                          |
-| ---------------- | ----------------------------------------------- |
-| Phase 1 (Scope)  | `./reports/{topic}/scouts/SCOUT-{scope}`             |
-| Phase 2 (Review) | Review findings in Mailbox                      |
-| Phase 3 (Plan)   | `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`    |
-| Phase 4 (Summary)| `./reports/{topic}/reviews/REVIEW-{scope}`           |
-
-All files in `./reports/{topic}/` → English only.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+**âš ï¸ Paths = base names.** â‰¤ 150 lines â†’ `{name}.md`. > 150 lines â†’ `{name}/` folder.
 
 ---
 
-## 🔗 PHASE DEPENDENCIES
+## ðŸ”— PHASE DEPENDENCIES
 
 | Phase                             | Requires                        | Blocking    |
 | --------------------------------- | ------------------------------- | ----------- |
@@ -79,32 +53,11 @@ All files in `./reports/{topic}/` → English only.
 | P3: Improvement Plan              | All review findings from P2     | **YES**     |
 | P4: Summary & Recommendations     | Improvement plan from P3        | **YES**     |
 
-**⛔ Blocking**: If input missing → STOP → Create it first → Resume
+**â›” Blocking**: If input missing â†’ STOP â†’ Create it first â†’ Resume
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-**Deliverable paths = base names.** Small (≤ 150 lines) → `{name}.md`. Large (> 150 lines or ≥ 4 sections) → `{name}/` folder with `00-index.md` + section files.
-
-One phase at a time. Within each phase follow the Golden Triangle Loop (TEAMS.md § Golden Triangle Protocol):
-
-```
-1. Spawn Golden Triangle (Tech Lead + Executor + Reviewer)
-2. Tech Lead decomposes → publishes Shared Task List
-3. Executor executes → posts SUBMISSION to Mailbox
-4. Reviewer critiques → posts REVIEW to Mailbox
-5. Debate loop: fix/defend → re-review (max 3 rounds)
-6. Consensus → Tech Lead posts DECISION → Phase output released
-```
-
-**Consensus Stamp** (required per phase): `✅ CONSENSUS: {TechLead} ✓ | {Executor} ✓ | {Reviewer} ✓`
-
-**Plan Compliance**: If `./reports/{topic}/plans/PLAN-{scope}` exists → verify code matches plan, flag deviations.
-
----
-
-## 🎭 Phase 1: SCOPE & CONTEXT — 🔺 GOLDEN TRIANGLE
+## ðŸŽ­ Phase 1: SCOPE & CONTEXT â€” ðŸ”º GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -114,29 +67,29 @@ One phase at a time. Within each phase follow the Golden Triangle Loop (TEAMS.md
 
 **Triangle Loop**:
 1. `reviewer` decomposes scope into areas: changed files, dependency graph, architecture impact, plan compliance baseline
-2. `reviewer` posts TASK_ASSIGNMENT → dispatches to `scouter`
-3. `scouter` surveys codebase → posts SUBMISSION with findings per area:
+2. `reviewer` posts TASK_ASSIGNMENT â†’ dispatches to `scouter`
+3. `scouter` surveys codebase â†’ posts SUBMISSION with findings per area:
    - All changed files with line-level diff summary
    - Call chain trace: callers and callees of changed functions
    - Blast radius: downstream components affected by changes
    - Recent churn: files with high change frequency (risk indicator)
    - Architecture layer mapping: which layers are touched
-4. `tech-lead` reviews each SUBMISSION → posts REVIEW:
+4. `tech-lead` reviews each SUBMISSION â†’ posts REVIEW:
    - Is the blast radius complete or are downstream effects missing?
    - Are there untouched files that SHOULD have changed (consistency gap)?
    - Is the architecture impact properly assessed?
    - Are there hidden coupling risks not surfaced?
-5. If FAIL → `scouter` addresses gaps or defends → RESUBMISSION/DEFENSE
-6. Max 3 rounds → ESCALATION to `reviewer` if unresolved
+5. If FAIL â†’ `scouter` addresses gaps or defends â†’ RESUBMISSION/DEFENSE
+6. Max 3 rounds â†’ ESCALATION to `reviewer` if unresolved
 7. `reviewer` synthesizes approved findings into unified scope document
 
 **Deliverable**: `./reports/{topic}/scouts/SCOUT-{scope}`
 **Exit Criteria**: Review scope mapped, blast radius assessed, dependencies traced, focus areas flagged
-**Consensus**: ✅ CONSENSUS: reviewer ✓ | scouter ✓ | tech-lead ✓
+**Consensus**: âœ… CONSENSUS: reviewer âœ“ | scouter âœ“ | tech-lead âœ“
 
 ---
 
-## 🎭 Phase 2: CODE QUALITY REVIEW — 🔺 GOLDEN TRIANGLE (CRITICAL)
+## ðŸŽ­ Phase 2: CODE QUALITY REVIEW â€” ðŸ”º GOLDEN TRIANGLE (CRITICAL)
 
 > **THIS IS THE MOST CRITICAL PHASE.** Every step is detailed. No shortcuts.
 
@@ -150,93 +103,32 @@ One phase at a time. Within each phase follow the Golden Triangle Loop (TEAMS.md
 
 ### 5 REVIEW DIMENSIONS (ALL MANDATORY)
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│ 1. CORRECTNESS — Logic sound? Edge cases handled? Tests?     │
-│ 2. SECURITY (OWASP) — Injection, auth, input validation?    │
-│ 3. PERFORMANCE — N+1 queries, memory leaks, complexity?     │
-│ 4. ARCHITECTURE COMPLIANCE — Patterns, layer boundaries?     │
-│ 5. CODE QUALITY — Naming, DRY, SOLID, readability?          │
-└──────────────────────────────────────────────────────────────┘
-```
+| # | Dimension | Focus |
+|---|-----------|-------|
+| 1 | CORRECTNESS | Logic bugs, edge cases, error handling |
+| 2 | SECURITY | Injection, auth bypass, input validation, secrets |
+| 3 | PERFORMANCE | N+1 queries, unnecessary allocations, hot paths |
+| 4 | CODE QUALITY | Naming, DRY, SOLID, readability, test coverage |
+| 5 | PLAN COMPLIANCE | Does code match plan spec? (if PLAN exists) |
 
-### GOLDEN TRIANGLE REVIEW LOOP (CRITICAL — Step by Step)
+### GOLDEN TRIANGLE REVIEW LOOP (CRITICAL â€” Step by Step)
 
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║  PHASE 2: CODE REVIEW LOOP — FOLLOW EXACTLY                         ║
-╠══════════════════════════════════════════════════════════════════════╣
-║                                                                      ║
-║  STEP 1: Tech Lead reads SCOUT-{scope}.md                           ║
-║  - Load scope and blast radius into context                          ║
-║  - Identify all files requiring review                               ║
-║  - Prioritize by risk (highest first)                                ║
-║                                                                      ║
-║  STEP 2: Tech Lead creates Shared Task List                          ║
-║  - Break review into per-file/module tasks                           ║
-║  - Format: [ID] [Status] [File/Module] [Dimensions] [Risk Level]    ║
-║  - Post as TASK_ASSIGNMENT to Mailbox                                ║
-║                                                                      ║
-║  STEP 3: FOR EACH TASK — Executor performs deep review               ║
-║  a. Read TASK_ASSIGNMENT from Mailbox                                ║
-║  b. Review code line-by-line across ALL 5 dimensions                 ║
-║  c. Post SUBMISSION to Mailbox:                                      ║
-║     │ Task: {ID} | File(s): {list} | Lines: {range}                 ║
-║     │ Findings:                                                      ║
-║     │ | # | Dim  | Sev  | File:Line | Issue      |                   ║
-║     │ |---|------|------|-----------|------------|                   ║
-║     │ | 1 | SEC  | CRIT | app.ts:42 | SQLi       |                   ║
-║     │ | 2 | PERF | WARN | db.ts:18  | N+1 query  |                   ║
-║     │ Positive notes: {what's done well}                             ║
-║     │ Plan compliance: {if PLAN exists}                              ║
-║                                                                      ║
-║  STEP 4: Reviewer challenges each SUBMISSION (combined lens)         ║
-║  d. Read SUBMISSION from Mailbox                                     ║
-║  e. Apply triple lens:                                               ║
-║     SECURITY: OWASP missed? Auth gaps? Injection? Secrets?          ║
-║     PERFORMANCE: Complexity? N+1? Memory leaks? Caching?            ║
-║     STANDARDS: Naming? Error handling? Concurrency? Observability?  ║
-║  f. Post REVIEW to Mailbox:                                          ║
-║     │ Task: {ID} | Status: PASS or FAIL                             ║
-║     │ Additional findings: {table}                                   ║
-║     │ Disputed executor findings: {list}                             ║
-║     │ Confirmed executor findings: {list}                            ║
-║     │ Required actions: {list}                                       ║
-║                                                                      ║
-║  STEP 5: IF FAIL — Debate Loop (max 3 rounds)                       ║
-║  g. Executor reads REVIEW findings                                   ║
-║  h. For EACH finding:                                                ║
-║     - VALID → Accept, upgrade severity                               ║
-║     - DISPUTED → DEFENSE with evidence                               ║
-║  i. Post RESUBMISSION/DEFENSE:                                       ║
-║     │ Round: {1/2/3} | Accepted: {list} | Defended: {list+evidence} ║
-║  j. Reviewer re-reviews → back to (d)                                ║
-║  k. Round 3 unresolved → ESCALATION → Tech Lead ARBITRATION         ║
-║                                                                      ║
-║  STEP 6: IF PASS → APPROVAL → mark ✅ → next task                   ║
-║                                                                      ║
-║  STEP 7: ALL tasks complete                                          ║
-║  - Tech Lead consolidates: merge findings, deduplicate, group by dim ║
-║  - Post DECISION:                                                    ║
-║     │ Phase: 2 | Tasks: {n}/{total} | CRIT={n} WARN={n} INFO={n}   ║
-║     │ Disputes: {n} | Arbitrations: {n}                             ║
-║     │ ✅ CONSENSUS: reviewer ✓ | reviewer(exec) ✓ | security+perf ✓║
-║  - Release consolidated findings table                               ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
+
+> **â›” See `_ref/convergent-analysis-loop.md` or `_ref/implementation-loop.md` for detailed step-by-step protocol.**
+
 
 **PLAN COMPLIANCE** (if PLAN exists):
 ```
 FOR EACH phase in PLAN-{scope}.md:
-  - Verify code implements plan spec → "Plan Phase X → Code Y → ✅/⚠️/❌"
+  - Verify code implements plan spec â†’ "Plan Phase X â†’ Code Y â†’ âœ…/âš ï¸/âŒ"
 ```
 
 **Exit Criteria**: All files reviewed across 5 dimensions, findings severity-ranked, security + performance validated
-**Consensus**: ✅ CONSENSUS: reviewer ✓ | reviewer(exec) ✓ | security+perf ✓
+**Consensus**: âœ… CONSENSUS: reviewer âœ“ | reviewer(exec) âœ“ | security+perf âœ“
 
 ---
 
-## 🎭 Phase 3: IMPROVEMENT PLAN — 🔺 GOLDEN TRIANGLE
+## ðŸŽ­ Phase 3: IMPROVEMENT PLAN â€” ðŸ”º GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -247,32 +139,32 @@ FOR EACH phase in PLAN-{scope}.md:
 **Prerequisite**: All Phase 2 findings consolidated in Mailbox.
 
 **Triangle Loop**:
-1. `tech-lead` reads Phase 2 findings → decomposes into improvement areas:
+1. `tech-lead` reads Phase 2 findings â†’ decomposes into improvement areas:
    - Critical issues (must fix before merge)
    - Warnings (should fix, tech debt if deferred)
    - Suggestions (opportunistic improvements)
    - Plan deviations (if PLAN exists)
-2. `tech-lead` posts TASK_ASSIGNMENT → dispatches to `planner`
-3. `planner` writes structured improvement plan → posts SUBMISSION:
+2. `tech-lead` posts TASK_ASSIGNMENT â†’ dispatches to `planner`
+3. `planner` writes structured improvement plan â†’ posts SUBMISSION:
    - Prioritized issue table with effort estimates
    - Fix recommendations per issue (specific, actionable)
    - Dependency order: which fixes must come first
    - Risk of NOT fixing: business + technical impact per issue
-4. `reviewer` reviews improvement plan → posts REVIEW:
+4. `reviewer` reviews improvement plan â†’ posts REVIEW:
    - Severity ratings accurate or inflated/deflated?
    - Fix recommendations correct and complete?
    - Phase 2 findings dropped or downgraded without justification?
    - Priority ordering sound (critical before cosmetic)?
-5. Debate loop if FAIL → `planner` adjusts or defends → max 3 rounds
+5. Debate loop if FAIL â†’ `planner` adjusts or defends â†’ max 3 rounds
 6. `tech-lead` synthesizes final improvement plan
 
 **Deliverable**: `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`
 **Exit Criteria**: All findings prioritized, fix recommendations documented, effort estimated, nothing dropped
-**Consensus**: ✅ CONSENSUS: tech-lead ✓ | planner ✓ | reviewer ✓
+**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | planner âœ“ | reviewer âœ“
 
 ---
 
-## 🎭 Phase 4: SUMMARY & RECOMMENDATIONS — 🔺 GOLDEN TRIANGLE
+## ðŸŽ­ Phase 4: SUMMARY & RECOMMENDATIONS â€” ðŸ”º GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -284,20 +176,20 @@ FOR EACH phase in PLAN-{scope}.md:
 
 **Triangle Loop**:
 1. `tech-lead` decomposes summary: verdict, risk matrix, actions, stakeholder brief
-2. `tech-lead` posts TASK_ASSIGNMENT → dispatches to `reporter`
-3. `reporter` writes final review report → posts SUBMISSION:
+2. `tech-lead` posts TASK_ASSIGNMENT â†’ dispatches to `reporter`
+3. `reporter` writes final review report â†’ posts SUBMISSION:
    ```markdown
    # Code Review: {scope}
-   ## Verdict: ✅ APPROVED / ⚠️ APPROVED WITH CONDITIONS / ❌ CHANGES REQUIRED
+   ## Verdict: âœ… APPROVED / âš ï¸ APPROVED WITH CONDITIONS / âŒ CHANGES REQUIRED
    ## Executive Summary
    {2-3 sentence overview of code quality, key risks, recommendation}
    ## Risk Assessment
    | Risk | Severity | Likelihood | Business Impact | Mitigation |
-   ## Critical Issues ({count}) — MUST fix
+   ## Critical Issues ({count}) â€” MUST fix
    | # | Category | File:Line | Description | Fix | Effort |
-   ## Warnings ({count}) — SHOULD fix
+   ## Warnings ({count}) â€” SHOULD fix
    | # | Category | File:Line | Description | Fix | Effort |
-   ## Suggestions ({count}) — COULD improve
+   ## Suggestions ({count}) â€” COULD improve
    | # | Category | File:Line | Description | Fix | Effort |
    ## Security Summary
    Vulnerabilities: {count by severity} | OWASP: {categories}
@@ -306,36 +198,36 @@ FOR EACH phase in PLAN-{scope}.md:
    ## Plan Compliance (if applicable)
    Phases verified: {X}/{Y} | Deviations: {list or "None"}
    ## Recommended Actions
-   1. {action} — Owner: {who} — Priority: {P0/P1/P2}
+   1. {action} â€” Owner: {who} â€” Priority: {P0/P1/P2}
    ```
-4. `business-analyst` reviews final report → posts REVIEW:
+4. `business-analyst` reviews final report â†’ posts REVIEW:
    - Business impact clearly communicated?
    - Non-technical stakeholder would understand verdict?
    - Recommended actions concrete and assignable?
    - Risk assessment calibrated (not alarmist or dismissive)?
-5. Debate loop if FAIL → `reporter` adjusts or defends → max 3 rounds
+5. Debate loop if FAIL â†’ `reporter` adjusts or defends â†’ max 3 rounds
 6. `tech-lead` approves final report
 
 **Deliverable**: `./reports/{topic}/reviews/REVIEW-{scope}`
 **Exit Criteria**: Executive summary complete, verdict issued, all findings actionable, stakeholder-ready
-**Consensus**: ✅ CONSENSUS: tech-lead ✓ | reporter ✓ | business-analyst ✓
+**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | reporter âœ“ | business-analyst âœ“
 
 ---
 
-## ✅ COMPLETION
+## âœ… COMPLETION
 
 Present final review report with consensus stamps from ALL phases:
 
 ```markdown
-# 🔺 Golden Triangle Review Report: {scope}
+# ðŸ”º Golden Triangle Review Report: {scope}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Scope & Context | reviewer / scouter / tech-lead | ✅ | {n} |
-| P2: Code Quality Review | reviewer / reviewer / security+perf | ✅ | {n} |
-| P3: Improvement Plan | tech-lead / planner / reviewer | ✅ | {n} |
-| P4: Summary | tech-lead / reporter / business-analyst | ✅ | {n} |
+| P1: Scope & Context | reviewer / scouter / tech-lead | âœ… | {n} |
+| P2: Code Quality Review | reviewer / reviewer / security+perf | âœ… | {n} |
+| P3: Improvement Plan | tech-lead / planner / reviewer | âœ… | {n} |
+| P4: Summary | tech-lead / reporter / business-analyst | âœ… | {n} |
 
 ## Debate Summary
 - Total submissions: {count}
@@ -349,8 +241,8 @@ Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
 
 **Verdict Routing**:
 
-1. ✅ **Approved** — Code ready to merge
-2. ⚠️ **Approved with conditions** — Minor fixes needed → `/fix:fast`
-3. ❌ **Changes required** — Critical issues → `/fix:hard` or `/fix:team`
-4. 🔒 **Security block** — Security vulnerabilities must be resolved → `/fix:hard`
-5. 🧪 **Test gaps** — Insufficient coverage → `/test:team`
+1. âœ… **Approved** â€” Code ready to merge
+2. âš ï¸ **Approved with conditions** â€” Minor fixes needed â†’ `/fix:fast`
+3. âŒ **Changes required** â€” Critical issues â†’ `/fix:hard` or `/fix:team`
+4. ðŸ”’ **Security block** â€” Security vulnerabilities must be resolved â†’ `/fix:hard`
+5. ðŸ§ª **Test gaps** â€” Insufficient coverage â†’ `/test:team`

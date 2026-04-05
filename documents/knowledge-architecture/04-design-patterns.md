@@ -1,4 +1,4 @@
-# Agent Assistant — Design Patterns
+# BoomOpen Workflow Kit — Design Patterns
 
 > **Purpose**: Catalog of all observed architectural patterns with descriptions, locations, rationale, and code references
 > **Parent**: [00-index.md](./00-index.md)
@@ -317,7 +317,7 @@ From `agents/backend-engineer.md`:
 profile: "backend:execution"
 ```
 ```markdown
-> **MATRIX DISCOVERY**: Skills auto-injected from domain files in ~/.{TOOL}/skills/agent-assistant/matrix-skills/
+> **MATRIX DISCOVERY**: Skills auto-injected from domain files in ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/
 > Profile: backend:execution | Domains: backend, architecture, quality, data, languages
 ```
 
@@ -447,11 +447,11 @@ The framework uses `{TOOL}` (and related) placeholders throughout all Markdown a
 
 | Platform | `{TOOL}` Value | Install Path |
 |----------|---------------|--------------|
-| Cursor | `cursor` | `~/.cursor/skills/agent-assistant/` |
-| GitHub Copilot | `copilot` | `~/.copilot/skills/agent-assistant/` |
-| Claude Code | `claude` | `~/.claude/skills/agent-assistant/` |
-| Codex | `codex` | `~/.codex/skills/agent-assistant/` |
-| Antigravity/Gemini | `gemini/antigravity` | `~/.gemini/antigravity/skills/agent-assistant/` |
+| Cursor | `cursor` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| GitHub Copilot | `copilot` | `~/.copilot/skills/boomopen-workflow-kit/` |
+| Claude Code | `claude` | `~/.claude/skills/boomopen-workflow-kit/` |
+| Codex | `codex` | `~/.codex/skills/boomopen-workflow-kit/` |
+| Antigravity/Gemini | `gemini/antigravity` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
 
 ### Platform-Specific Assets
 
@@ -460,7 +460,7 @@ Beyond placeholder substitution, each platform has custom assets in `code-assist
 | Platform | Custom Assets |
 |----------|--------------|
 | Cursor | Rules directory, `.cursorrules` file |
-| Copilot | `agent-assistant.agent.md` VS Code prompt file |
+| Copilot | `boomopen-workflow-kit.agent.md` VS Code prompt file |
 | Claude Code | Claude-specific configuration |
 | Codex | Codex-specific configuration |
 | Antigravity | Gemini-specific configuration |
@@ -470,7 +470,7 @@ Beyond placeholder substitution, each platform has custom assets in `code-assist
 From `cli/install.js` (Cursor config):
 ```javascript
 replacements: {
-    '~/.{TOOL}/skills/agent-assistant/': '~/.cursor/skills/agent-assistant/',
+    '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.cursor/skills/boomopen-workflow-kit/',
     '{TOOL}': 'cursor',
     '{HOME}': '~',
 }

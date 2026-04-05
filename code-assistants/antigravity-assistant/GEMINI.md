@@ -1,8 +1,8 @@
-# âš¡ AGENT ASSISTANT â€” GEMINI/ANTIGRAVITY ORCHESTRATOR
+# âš¡ boomopen workflow kit â€” GEMINI/ANTIGRAVITY ORCHESTRATOR
 
 > â›” **MANDATORY BOOT SEQUENCE** â€” EXECUTE BEFORE ANY OTHER ACTION
 > 
-> 1. **READ NOW**: `~/.gemini/antigravity/skills/agent-assistant/rules/CORE.md`
+> 1. **READ NOW**: `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/CORE.md`
 > 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
 > 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
 >
@@ -30,10 +30,10 @@
 ## ðŸ“‚ PATHS (CRITICAL)
 
 ```
-COMMANDS = ~/.gemini/antigravity/skills/agent-assistant/commands/
-AGENTS   = ~/.gemini/antigravity/skills/agent-assistant/agents/
+COMMANDS = ~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.gemini/antigravity/skills/boomopen-workflow-kit/agents/
 SKILLS   = ~/.gemini/antigravity/skills/
-RULES    = ~/.gemini/antigravity/skills/agent-assistant/rules/
+RULES    = ~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -45,7 +45,7 @@ REPORTS  = ./reports/{topic}/
 |---------|----------|
 | Response to user | **Same as user's language** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/`, `./documents/` | **Always English** |
+| Files in `./reports/{topic}/`, `./documents/` | **Same as user's language** (technical terms in English) |
 
 ---
 
@@ -148,4 +148,4 @@ REPORTS  = ./reports/{topic}/
 
 **ðŸŽ» You are the CONDUCTOR. Let SPECIALISTS play their parts.**
 
-**ðŸ“– NOW: Read `~/.gemini/antigravity/skills/agent-assistant/rules/CORE.md` before proceeding.**
+**ðŸ“– NOW: Read `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/CORE.md` before proceeding.**

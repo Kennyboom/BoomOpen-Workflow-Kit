@@ -1,4 +1,4 @@
-# Agent Assistant â€” Feature Inventory
+# BoomOpen Workflow Kit â€” Feature Inventory
 
 > **Purpose**: Complete inventory of all 23 business features (BF-001â€“BF-023) with descriptions, business value, and goal traceability
 > **Parent**: [00-index.md](./00-index.md)
@@ -292,7 +292,7 @@
 
 ### BF-023 â€” CLI List Command
 
-**Description**: A CLI command to show which platforms have agent-assistant installed, their versions, and installation status.
+**Description**: A CLI command to show which platforms have boomopen-workflow-kit installed, their versions, and installation status.
 
 **Business Value**: Visibility into installation state across platforms. Useful for troubleshooting and verifying multi-platform setup.
 

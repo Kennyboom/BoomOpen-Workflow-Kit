@@ -1,4 +1,4 @@
-# Agent Assistant — Technology Stack
+# BoomOpen Workflow Kit — Technology Stack
 
 > **Purpose**: Categorized inventory of all technologies, frameworks, and tools used in the project with versions and evidence
 > **Parent**: [00-index.md](./00-index.md)
@@ -9,7 +9,7 @@
 
 ## Stack Overview
 
-Agent Assistant is split into two distinct codebases under one repository:
+BoomOpen Workflow Kit is split into two distinct codebases under one repository:
 
 1. **CLI Framework** (core product) — Pure Node.js with zero dependencies, CommonJS modules
 2. **Marketing Website** (`web/`) — React 19 + Vite + Tailwind CSS v4 SPA deployed to Vercel
@@ -88,7 +88,7 @@ The CLI has no production dependencies. All npm packages listed in `package.json
 |-----------|---------|------|----------|
 | npm Registry | N/A | Package distribution (public scoped: `@namch`) | [../../package.json](../../package.json) — `publishConfig.access: "public"` |
 | GitHub | N/A | Source code hosting, issue tracking, releases | [../../README.md](../../README.md) — repository links |
-| Vercel | N/A | Marketing website hosting | [../../README.md](../../README.md) — website URL `agent-assistant-ten.vercel.app` |
+| Vercel | N/A | Marketing website hosting | [../../README.md](../../README.md) — website URL `boomopen-workflow-kit-ten.vercel.app` |
 
 ---
 

@@ -32,7 +32,7 @@ category: research
 
 ## ⚡ Skills
 
-> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/agent-assistant/matrix-skills/`
+> **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `planning:business` | Domains: `planning`, `management`
 
 ---

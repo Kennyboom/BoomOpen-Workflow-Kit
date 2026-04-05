@@ -332,7 +332,7 @@ After last phase:
 ```
 BEFORE emitting Skills Analysis:
   IF complexity == Complex:
-    □ Did I scan ~/.{TOOL}/skills/agent-assistant/matrix-skills/*.yaml? → Required
+    □ Did I scan ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml? → Required
     □ Did I read matched SKILL.md files? → Required
     □ Am I referencing REAL skill IDs? → Required
     □ Am I defaulting to "base knowledge"? → ⛔ VIOLATION — re-run resolution

@@ -1,5 +1,5 @@
 # =============================================================================
-# Agent Assistant — Codex Multi-Agent Configuration
+# boomopen workflow kit — Codex Multi-Agent Configuration
 # =============================================================================
 # This file is MERGED into ~/.codex/config.toml during install.
 # It registers all 21 specialist agents and enables multi-agent orchestration.

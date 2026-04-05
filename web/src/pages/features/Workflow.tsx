@@ -35,7 +35,7 @@ export default function Workflow() {
               Workflow Architecture
             </h1>
             <p className="text-body text-lg mb-8">
-              Explore how Agent Assistant transforms a single AI into a coordinated team. 
+              Explore how BoomOpen Workflow Kit transforms a single AI into a coordinated team. 
               Interactive diagram showing the complete orchestration flow from user input to deliverables.
             </p>
             <div className="flex justify-center gap-4">
@@ -117,7 +117,7 @@ export default function Workflow() {
       <Section background="secondary" spacing="lg">
         <SectionHeader 
           title="Key Architectural Concepts" 
-          description="The foundational patterns that power Agent Assistant."
+          description="The foundational patterns that power BoomOpen Workflow Kit."
         />
         
         <div className="grid gap-6 md:grid-cols-2">
@@ -229,7 +229,7 @@ export default function Workflow() {
           >
             <h2 className="heading-section mb-4">Ready to Explore More?</h2>
             <p className="text-body text-lg mb-8">
-              Dive deeper into Agent Assistant's features and start building with specialized agents.
+              Dive deeper into BoomOpen Workflow Kit's features and start building with specialized agents.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button href="/features/specialist-agents" variant="primary">

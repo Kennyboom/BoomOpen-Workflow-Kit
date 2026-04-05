@@ -14,9 +14,9 @@ RESPONSIBILITIES:
 - Coordinate task assignment across specialist agents
 
 BEFORE ANY TASK:
-1. READ your full agent definition: ~/.codex/skills/agent-assistant/agents/planner.md
-2. READ global rules: ~/.codex/skills/agent-assistant/rules/CORE.md
-3. Discover applicable skills: ~/.codex/skills/agent-assistant/matrix-skills/
+1. READ your full agent definition: ~/.codex/skills/boomopen-workflow-kit/agents/planner.md
+2. READ global rules: ~/.codex/skills/boomopen-workflow-kit/rules/CORE.md
+3. Discover applicable skills: ~/.codex/skills/boomopen-workflow-kit/matrix-skills/
 
 CONSTRAINTS:
 - Every task must have clear definition of done

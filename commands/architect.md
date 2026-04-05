@@ -1,6 +1,6 @@
 ---
 description: >-
-  Bulletproof Design System v2 — C4 Architecture, ADR, Database Schema,
+  Bulletproof Design System v2 â€” C4 Architecture, ADR, Database Schema,
   API Contracts, Screen Specs, State Management, Error Handling,
   Caching Strategy, and mandatory Design Coverage Audit.
   NO code writing. Design docs only.
@@ -8,7 +8,7 @@ category: architecture
 execution-mode: sequential
 ---
 
-# /architect — Bulletproof Design System v2.0
+# /architect â€” Bulletproof Design System v2.0
 
 $ARGUMENTS
 
@@ -36,7 +36,7 @@ Architect = Know HOW to build it.
 
 This command creates bulletproof technical design including
 architecture, database schema, API contracts, state management,
-caching, error handling — all verified by mandatory audit.
+caching, error handling â€” all verified by mandatory audit.
 ```
 
 ---
@@ -46,9 +46,9 @@ caching, error handling — all verified by mandatory audit.
 ### 1.1 Auto-Scope Detection
 
 ```
-1. Read docs/specs/ → ALL features needing technical design
-2. Read docs/BRIEF.md → project context
-3. Read existing docs/design/ → designs already done
+1. Read docs/specs/ â†’ ALL features needing technical design
+2. Read docs/BRIEF.md â†’ project context
+3. Read existing docs/design/ â†’ designs already done
 
 Report to user:
   "Found [X] features needing technical design.
@@ -63,34 +63,34 @@ Report to user:
 
 ### 1.2 Component Discovery Engine (MANDATORY)
 
-> ⛔ BEFORE drawing architecture, MUST list ALL components.
+> â›” BEFORE drawing architecture, MUST list ALL components.
 
-**Entities → DB Tables:**
-
-```
-Profile → profiles table (columns, indexes, relations)
-Campaign → campaigns + campaign_profiles tables
-Content → content_posts + content_scores tables
-```
-
-**Actions → API Endpoints:**
+**Entities â†’ DB Tables:**
 
 ```
-Create Profile → POST /api/v1/profiles
-Get Profiles → GET /api/v1/profiles
-Update Profile → PUT /api/v1/profiles/:id
-Delete Profile → DELETE /api/v1/profiles/:id
+Profile â†’ profiles table (columns, indexes, relations)
+Campaign â†’ campaigns + campaign_profiles tables
+Content â†’ content_posts + content_scores tables
 ```
 
-**Screens → Screen Specs:**
+**Actions â†’ API Endpoints:**
 
 ```
-Dashboard → route, components, API calls, states
-Profile List → route, components, API calls, states
-Create Profile → form fields, validation, submit API
+Create Profile â†’ POST /api/v1/profiles
+Get Profiles â†’ GET /api/v1/profiles
+Update Profile â†’ PUT /api/v1/profiles/:id
+Delete Profile â†’ DELETE /api/v1/profiles/:id
 ```
 
-**Output — Component Inventory Table:**
+**Screens â†’ Screen Specs:**
+
+```
+Dashboard â†’ route, components, API calls, states
+Profile List â†’ route, components, API calls, states
+Create Profile â†’ form fields, validation, submit API
+```
+
+**Output â€” Component Inventory Table:**
 
 ```markdown
 | # | Component | Type | Feature | Status |
@@ -100,25 +100,25 @@ Create Profile → form fields, validation, submit API
 | 3 | Dashboard | Screen | Core | Not designed |
 ```
 
-> ⛔ DO NOT proceed until user approves Component Inventory.
+> â›” DO NOT proceed until user approves Component Inventory.
 
 ---
 
 ## Phase 2: C4 Architecture (Level 1-3)
 
 ```
-LEVEL 1 — System Context (bird's eye view):
-👤 User ──► [📱 App] ──► [💳 Stripe] / [📧 Email] / [🤖 AI]
+LEVEL 1 â€” System Context (bird's eye view):
+ðŸ‘¤ User â”€â”€â–º [ðŸ“± App] â”€â”€â–º [ðŸ’³ Stripe] / [ðŸ“§ Email] / [ðŸ¤– AI]
 
-LEVEL 2 — Container (inside app):
-┌────────────── [App] ──────────────┐
-│ [Frontend] ◄──► [Backend API] ◄──► [Database] │
-│                 [Redis Cache]                   │
-│                 [Job Queue]                     │
-└─────────────────────────────────────────────────┘
+LEVEL 2 â€” Container (inside app):
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ [App] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ [Frontend] â—„â”€â”€â–º [Backend API] â—„â”€â”€â–º [Database] â”‚
+â”‚                 [Redis Cache]                   â”‚
+â”‚                 [Job Queue]                     â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
-LEVEL 3 — Component (inside backend):
-Routes → Controllers → Services → Models
+LEVEL 3 â€” Component (inside backend):
+Routes â†’ Controllers â†’ Services â†’ Models
 Middleware: auth, cors, rateLimit, validation
 Validators: zod schemas
 ```
@@ -129,11 +129,11 @@ Validators: zod schemas
 
 ```markdown
 ## ADR-001: Choose [Technology/Pattern]
-Date: [Date] | Status: ✅ Accepted
+Date: [Date] | Status: âœ… Accepted
 
 Context: [Problem to solve]
 Decision: [What was chosen]
-Rationale: [Why — 3 specific reasons]
+Rationale: [Why â€” 3 specific reasons]
 Alternatives: [What was considered and rejected]
 Consequences: [Good / Trade-offs / Risks]
 ```
@@ -151,20 +151,20 @@ For each table:
 - Indexes (especially on FK, WHERE, ORDER BY columns)
 
 Example:
-│ users │ id UUID PK │ email UNIQUE │ name │ role ENUM │
-│       │ password_hash │ created_at │ updated_at │
-│ INDEX: idx_users_email, idx_users_role │
-│ RELATION: users.id → orders.user_id │
+â”‚ users â”‚ id UUID PK â”‚ email UNIQUE â”‚ name â”‚ role ENUM â”‚
+â”‚       â”‚ password_hash â”‚ created_at â”‚ updated_at â”‚
+â”‚ INDEX: idx_users_email, idx_users_role â”‚
+â”‚ RELATION: users.id â†’ orders.user_id â”‚
 
 Optimization Checklist:
-□ FK columns indexed
-□ WHERE columns indexed
-□ Soft delete: deleted_at + partial index
-□ Timestamps: created_at, updated_at
-□ UUID primary keys (not auto-increment)
-□ ENUM for fixed values (role, status)
-□ JSON/JSONB for flexible data
-□ Migration strategy defined
+â–¡ FK columns indexed
+â–¡ WHERE columns indexed
+â–¡ Soft delete: deleted_at + partial index
+â–¡ Timestamps: created_at, updated_at
+â–¡ UUID primary keys (not auto-increment)
+â–¡ ENUM for fixed values (role, status)
+â–¡ JSON/JSONB for flexible data
+â–¡ Migration strategy defined
 ```
 
 ---
@@ -172,20 +172,20 @@ Optimization Checklist:
 ## Phase 5: API Contract Design
 
 ```
-📡 POST /api/v1/auth/login
-Auth: ❌ Public | Rate Limit: 5/min/IP
+ðŸ“¡ POST /api/v1/auth/login
+Auth: âŒ Public | Rate Limit: 5/min/IP
 Request: { email: string, password: string }
 200: { success: true, data: { token, user } }
 401: { success: false, error: { code: "AUTH_FAILED", msg } }
 422: { success: false, error: { code: "VALIDATION", details } }
 
 API Checklist:
-□ Versioning (/api/v1/)
-□ Consistent envelope: { success, data, error }
-□ Error codes: machine-readable (AUTH_FAILED)
-□ Pagination: { data, meta: { page, total, limit } }
-□ Filtering: ?status=active&sort=-created_at
-□ CORS: explicit origin whitelist
+â–¡ Versioning (/api/v1/)
+â–¡ Consistent envelope: { success, data, error }
+â–¡ Error codes: machine-readable (AUTH_FAILED)
+â–¡ Pagination: { data, meta: { page, total, limit } }
+â–¡ Filtering: ?status=active&sort=-created_at
+â–¡ CORS: explicit origin whitelist
 ```
 
 ---
@@ -212,11 +212,11 @@ For EACH screen:
 ## Phase 7: User Journey (5 flows)
 
 ```
-1. ONBOARDING: Landing → Sign up → Verify → First action → Dashboard
-2. CORE ACTION: Dashboard → Create → Edit → Confirm → Success
-3. ERROR RECOVERY: Action → Error → Message → Retry → Success
-4. OFFLINE: Action → Lost connection → Queue → Reconnect → Sync
-5. ACCOUNT: Profile → Settings → Billing → Delete account → Confirm
+1. ONBOARDING: Landing â†’ Sign up â†’ Verify â†’ First action â†’ Dashboard
+2. CORE ACTION: Dashboard â†’ Create â†’ Edit â†’ Confirm â†’ Success
+3. ERROR RECOVERY: Action â†’ Error â†’ Message â†’ Retry â†’ Success
+4. OFFLINE: Action â†’ Lost connection â†’ Queue â†’ Reconnect â†’ Sync
+5. ACCOUNT: Profile â†’ Settings â†’ Billing â†’ Delete account â†’ Confirm
 ```
 
 ---
@@ -228,10 +228,10 @@ For EACH screen:
 
 | Type | Tool | Examples |
 |------|------|----------|
-| 🌐 Server | TanStack Query | users, orders, products |
-| 💻 Client | Zustand | UI state, theme, sidebar |
-| 💾 Persistent | localStorage | auth token, preferences |
-| 🔗 URL | searchParams | filters, pagination, tabs |
+| ðŸŒ Server | TanStack Query | users, orders, products |
+| ðŸ’» Client | Zustand | UI state, theme, sidebar |
+| ðŸ’¾ Persistent | localStorage | auth token, preferences |
+| ðŸ”— URL | searchParams | filters, pagination, tabs |
 
 Store Slicing:
 | Store | State | Actions |
@@ -243,7 +243,7 @@ Store Slicing:
 
 ---
 
-## Phase 9: Error Handling (8 types — ALL MANDATORY)
+## Phase 9: Error Handling (8 types â€” ALL MANDATORY)
 
 ```markdown
 | Error Type | Response | UI Behavior |
@@ -264,9 +264,9 @@ Store Slicing:
 
 ```markdown
 5 cache layers:
-Browser → CDN → API (TanStack) → Server (Redis) → DB
+Browser â†’ CDN â†’ API (TanStack) â†’ Server (Redis) â†’ DB
 
-🚫 NEVER cache: auth tokens, real-time data, sensitive data
+ðŸš« NEVER cache: auth tokens, real-time data, sensitive data
 
 Integration Matrix:
 | Source A | Source B | Protocol | Error Strategy |
@@ -281,18 +281,18 @@ Integration Matrix:
 
 ## Phase 11: Design Coverage Audit (MANDATORY)
 
-> ⛔ NO handover if audit FAILS.
+> â›” NO handover if audit FAILS.
 
 ```markdown
 | Check | Requirement | Status |
 |-------|-------------|--------|
-| Entity Coverage | Every entity has DB schema + indexes | ☐ |
-| API Coverage | Every action has endpoint + error codes | ☐ |
-| Screen Coverage | Every screen has spec (route, auth, states) | ☐ |
-| Error Coverage | All 8 error types have handling defined | ☐ |
-| ADR Coverage | Every tech decision has ADR | ☐ |
+| Entity Coverage | Every entity has DB schema + indexes | â˜ |
+| API Coverage | Every action has endpoint + error codes | â˜ |
+| Screen Coverage | Every screen has spec (route, auth, states) | â˜ |
+| Error Coverage | All 8 error types have handling defined | â˜ |
+| ADR Coverage | Every tech decision has ADR | â˜ |
 
-IF any FAIL → complete design before handover.
+IF any FAIL â†’ complete design before handover.
 ```
 
 ---
@@ -308,23 +308,23 @@ IF any FAIL → complete design before handover.
 ## After Architecture
 
 ```
-🏗️ TECHNICAL DESIGN COMPLETE!
-📍 File: docs/DESIGN-{feature}.md
+ðŸ—ï¸ TECHNICAL DESIGN COMPLETE!
+ðŸ“ File: docs/DESIGN-{feature}.md
 
-✅ C4 Architecture (Level 1-3)
-✅ ADR Records (7+ decisions documented)
-✅ Database Schema + Indexes
-✅ API Contracts + Error Responses
-✅ Screen Specs (all screens)
-✅ User Journey (5 flows)
-✅ State Management (4 types)
-✅ Error Handling (8 types)
-✅ Caching Strategy (5 layers)
-✅ Integration Matrix
-✅ Design Coverage Audit: ALL PASS
+âœ… C4 Architecture (Level 1-3)
+âœ… ADR Records (7+ decisions documented)
+âœ… Database Schema + Indexes
+âœ… API Contracts + Error Responses
+âœ… Screen Specs (all screens)
+âœ… User Journey (5 flows)
+âœ… State Management (4 types)
+âœ… Error Handling (8 types)
+âœ… Caching Strategy (5 layers)
+âœ… Integration Matrix
+âœ… Design Coverage Audit: ALL PASS
 
 Next:
-1. /code — Start implementation
-2. /deep-audit — Verify design logic
-3. /plan — Refine plan
+1. /code â€” Start implementation
+2. /deep-audit â€” Verify design logic
+3. /plan â€” Refine plan
 ```

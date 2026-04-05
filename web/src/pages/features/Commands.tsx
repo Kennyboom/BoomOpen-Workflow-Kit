@@ -128,7 +128,7 @@ export default function Commands() {
       <Section background="gradient" spacing="lg">
         <SectionHeader 
           title="Natural Language Detection" 
-          description="You don't always need slash commands. Agent Assistant understands intent."
+          description="You don't always need slash commands. BoomOpen Workflow Kit understands intent."
         />
 
         <div className="max-w-3xl mx-auto">

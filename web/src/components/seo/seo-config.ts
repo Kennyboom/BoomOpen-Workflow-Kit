@@ -3,25 +3,25 @@
  * Separated from component for fast-refresh compatibility
  */
 
-export const SITE_URL = 'https://agent-assistant-ten.vercel.app'
+export const SITE_URL = 'https://boomopen-workflow-kit-ten.vercel.app'
 export const DEFAULT_IMAGE = '/assets/logo.png'
-export const SITE_NAME = 'Agent Assistant'
+export const SITE_NAME = 'BoomOpen Workflow Kit'
 
 // Pre-configured SEO for common pages
 export const pageSEO = {
   home: {
-    title: 'Agent Assistant',
+    title: 'BoomOpen Workflow Kit',
     description: 'Multi-agent orchestration for AI coding assistants with 21 specialist agents, 310+ skills, and 50+ workflows. Multi-agent orchestration for AI coding assistants.',
     pathname: '/',
   },
   installation: {
     title: 'Installation Guide',
-    description: 'Install Agent Assistant globally and start using specialized agents in all your projects. Quick setup for Cursor, Claude Code, GitHub Copilot, Codex, and Antigravity.',
+    description: 'Install BoomOpen Workflow Kit globally and start using specialized agents in all your projects. Quick setup for Cursor, Claude Code, GitHub Copilot, Codex, and Antigravity.',
     pathname: '/installation',
   },
   docs: {
     title: 'Documentation',
-    description: 'Learn Agent Assistant - complete documentation for AI-powered development workflows with specialized agents and intelligent orchestration.',
+    description: 'Learn BoomOpen Workflow Kit - complete documentation for AI-powered development workflows with specialized agents and intelligent orchestration.',
     pathname: '/docs',
   },
   specialistAgents: {
@@ -61,7 +61,7 @@ export const pageSEO = {
   },
   workflow: {
     title: 'System Architecture',
-    description: 'Interactive architecture diagram showing how Agent Assistant orchestrates 21 specialist agents, 310+ skills, and tiered execution through the Orchestrator Pattern.',
+    description: 'Interactive architecture diagram showing how BoomOpen Workflow Kit orchestrates 21 specialist agents, 310+ skills, and tiered execution through the Orchestrator Pattern.',
     pathname: '/features/workflow',
   },
   agentTeams: {

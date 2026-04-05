@@ -1,11 +1,11 @@
 ---
-description: 🤖 Autonomous Execution — Full workflow automation
+description: ðŸ¤– Autonomous Execution â€” Full workflow automation
 version: "1.0"
 category: meta
 execution-mode: router
 ---
 
-# /auto — Autonomous Workflow Orchestrator
+# /auto â€” Autonomous Workflow Orchestrator
 
 > **ROUTER DIRECTIVE**: Analyze task and autonomously execute complete workflow without user intervention between phases.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+1. CORE.md â€” Identity, Laws, Routing  
+2. PHASES.md â€” Phase Execution  
+3. AGENTS.md â€” Tiered Execution  
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -35,27 +35,27 @@ execution-mode: router
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## â›” INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
 
 ---
 
-## 🎭 Phase 1: TASK ANALYSIS
+## ðŸŽ­ Phase 1: TASK ANALYSIS
 
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `tech-lead` |
 | **Goal** | Classify task and select workflow |
 
-### ⚡ ADAPTIVE EXECUTION
+### âš¡ ADAPTIVE EXECUTION
 
 **IF platform supports subagents:**
 > Delegate to `tech-lead` subagent. Do NOT read agent file directly.
 
 **ELSE (EMBODY fallback):**
 > Load `{AGENTS_PATH}/tech-lead.md`
-> EMBODY [tech-lead] — Apply methodology from agent file.
+> EMBODY [tech-lead] â€” Apply methodology from agent file.
 
 **Exit Criteria:**
 
@@ -65,7 +65,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: AUTONOMOUS EXECUTION
+## ðŸŽ­ Phase 2: AUTONOMOUS EXECUTION
 
 Execute selected workflow phases without pause:
 
@@ -79,21 +79,21 @@ Execute selected workflow phases without pause:
 
 ---
 
-## 🎭 Phase 3: FINAL REPORT
+## ðŸŽ­ Phase 3: FINAL REPORT
 
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `tech-lead` |
 | **Goal** | Synthesize results and present summary |
 
-### ⚡ ADAPTIVE EXECUTION
+### âš¡ ADAPTIVE EXECUTION
 
 **IF platform supports subagents:**
 > Delegate to `tech-lead` subagent. Do NOT read agent file directly.
 
 **ELSE (EMBODY fallback):**
 > Load `{AGENTS_PATH}/tech-lead.md`
-> EMBODY [tech-lead] — Apply methodology from agent file.
+> EMBODY [tech-lead] â€” Apply methodology from agent file.
 
 **Exit Criteria:**
 
@@ -107,5 +107,5 @@ Execute selected workflow phases without pause:
 
 Present final result with:
 
-1. ✅ **Done** — Task complete
-2. 🔄 **Continue** — Follow-up actions available
+1. âœ… **Done** â€” Task complete
+2. ðŸ”„ **Continue** â€” Follow-up actions available

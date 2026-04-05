@@ -1,11 +1,11 @@
 ---
-description: ⚡ Quick Plan — Fast planning without deep research
+description: âš¡ Quick Plan â€” Fast planning without deep research
 version: "1.0"
 category: planning
 execution-mode: execute
 ---
 
-# /plan:fast — Quick Planning
+# /plan:fast â€” Quick Planning
 
 > **MISSION**: Create quick implementation plan for clear tasks.
 
@@ -13,39 +13,39 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. CORE.md â€” Identity, Laws, Routing
+2. PHASES.md â€” Phase Execution
+3. AGENTS.md â€” Tiered Execution
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
 
 ---
 
-## 🔀 TIERED EXECUTION
+## ðŸ”€ TIERED EXECUTION
 
 | Tier       | When               | Action                       |
 | ---------- | ------------------ | ---------------------------- |
 | **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
-**Deliverables:** All files in `./reports/{topic}/` → English only.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+**Deliverables:** All files in `./reports/{topic}/` â†’ English only.
+**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## â›” INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing). Format: rules/PHASES.md § Phase output structure.
+One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing). Format: rules/PHASES.md Â§ Phase output structure.
 
 ---
 
-## 🎭 Phase 1: CONTEXT SCAN
+## ðŸŽ­ Phase 1: CONTEXT SCAN
 
 | Agent | `scouter`                                              |
 | ----- | ------------------------------------------------------ |
@@ -54,7 +54,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: PLAN CREATION
+## ðŸŽ­ Phase 2: PLAN CREATION
 
 | Agent  | `planner`                          |
 | ------ | ---------------------------------- |
@@ -77,5 +77,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present plan with:
 
-1. ✅ **Plan Ready** — `./reports/{topic}/plans/PLAN-{task}`
-2. 🍳 **Implement** → `/cook:fast`
+1. âœ… **Plan Ready** â€” `./reports/{topic}/plans/PLAN-{task}`
+2. ðŸ³ **Implement** â†’ `/cook:fast`

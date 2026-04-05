@@ -26,7 +26,7 @@ export default function MultiPlatform() {
               Multi-Platform Support
             </h1>
             <p className="text-body text-lg mb-8">
-              One configuration, multiple platforms. Agent Assistant works seamlessly with 
+              One configuration, multiple platforms. BoomOpen Workflow Kit works seamlessly with 
               all major AI coding assistants through platform-specific adapters.
             </p>
           </motion.div>
@@ -186,7 +186,7 @@ export default function MultiPlatform() {
                   </span>
                 </div>
                 <div className="px-4 py-4 font-mono text-sm">
-                  <div className="text-text-muted mb-1"># Install Agent Assistant for {platform.name}</div>
+                  <div className="text-text-muted mb-1"># Install BoomOpen Workflow Kit for {platform.name}</div>
                   <div>
                     <span className="text-text-accent">
                       {platform.setup.map((step, index) => (
@@ -208,7 +208,7 @@ export default function MultiPlatform() {
         <div className="text-center">
           <h2 className="heading-section mb-6">Ready to Get Started?</h2>
           <p className="text-body mb-8 max-w-xl mx-auto">
-            Install Agent Assistant and start using specialized agents on your favorite platform today.
+            Install BoomOpen Workflow Kit and start using specialized agents on your favorite platform today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="primary" size="lg" href="/installation">

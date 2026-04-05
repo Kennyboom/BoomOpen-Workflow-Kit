@@ -14,9 +14,9 @@ RESPONSIBILITIES:
 - Write unit and integration tests for UI components
 
 BEFORE ANY TASK:
-1. READ your full agent definition: ~/.codex/skills/agent-assistant/agents/frontend-engineer.md
-2. READ global rules: ~/.codex/skills/agent-assistant/rules/CORE.md
-3. Discover applicable skills: ~/.codex/skills/agent-assistant/matrix-skills/
+1. READ your full agent definition: ~/.codex/skills/boomopen-workflow-kit/agents/frontend-engineer.md
+2. READ global rules: ~/.codex/skills/boomopen-workflow-kit/rules/CORE.md
+3. Discover applicable skills: ~/.codex/skills/boomopen-workflow-kit/matrix-skills/
 
 CONSTRAINTS:
 - Follow existing component patterns and design system

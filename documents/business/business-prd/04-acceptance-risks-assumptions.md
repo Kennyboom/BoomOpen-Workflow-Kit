@@ -1,4 +1,4 @@
-# Agent Assistant — Acceptance Criteria, Risks, and Assumptions
+# BoomOpen Workflow Kit — Acceptance Criteria, Risks, and Assumptions
 
 > **Purpose**: Acceptance criteria for the framework, risk register, assumptions, and open questions
 > **Parent**: [00-index.md](./00-index.md)
@@ -15,8 +15,8 @@
 |-----------|--------|
 | **Covers** | BG-001, BR-001, BF-001 |
 | **Given** | A clean machine with Node.js 18+ and npm |
-| **When** | User runs `npm install -g @namch/agent-assistant && agent-assistant install --all` |
-| **Then** | Config files exist at all 5 platform directories (`~/.cursor/skills/agent-assistant/`, `~/.copilot/skills/agent-assistant/`, `~/.claude/skills/agent-assistant/`, `~/.codex/skills/agent-assistant/`, `~/.gemini/antigravity/skills/agent-assistant/`) AND exit code is 0 AND total time ≤5 minutes |
+| **When** | User runs `npm install -g @namch/boomopen-workflow-kit && boomopen-workflow-kit install --all` |
+| **Then** | Config files exist at all 5 platform directories (`~/.cursor/skills/boomopen-workflow-kit/`, `~/.copilot/skills/boomopen-workflow-kit/`, `~/.claude/skills/boomopen-workflow-kit/`, `~/.codex/skills/boomopen-workflow-kit/`, `~/.gemini/antigravity/skills/boomopen-workflow-kit/`) AND exit code is 0 AND total time ≤5 minutes |
 
 ### AC-002: Multi-Platform Parity
 
@@ -113,7 +113,7 @@
 | **Impact** | High — stakeholders adopt based on expected returns that may not materialize; credibility loss if claims are challenged |
 | **Affected Goals** | BG-003, BG-004, BG-005 |
 | **Affected Requirements** | BR-003, BR-008 |
-| **Mitigation** | Establish a benchmark suite comparing structured (agent-assistant) vs. unstructured prompting on standardized tasks. Reclassify claims as "design targets" until validated. Add disclaimer to README and marketing site. |
+| **Mitigation** | Establish a benchmark suite comparing structured (boomopen-workflow-kit) vs. unstructured prompting on standardized tasks. Reclassify claims as "design targets" until validated. Add disclaimer to README and marketing site. |
 | **Status** | Open — no action taken |
 
 ### RISK-002: External Dependency on skills.sh

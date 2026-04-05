@@ -1,4 +1,4 @@
-# Agent Assistant â€” Project Identity
+# BoomOpen Workflow Kit â€” Project Identity
 
 > **Purpose**: Defines the project's name, version, author, license, purpose, problem/solution, key benefits, and onboarding path
 > **Parent**: [00-index.md](./00-index.md)
@@ -11,15 +11,15 @@
 
 | Field | Value |
 |-------|-------|
-| Name | Agent Assistant |
-| Package | `@namch/agent-assistant` |
+| Name | BoomOpen Workflow Kit |
+| Package | `@namch/boomopen-workflow-kit` |
 | Version | 1.3.0 |
 | Type | Multi-agent orchestration framework for AI coding assistants |
 | Author | NamCH |
 | License | MIT |
-| Repository | https://github.com/hainamchung/agent-assistant |
-| npm Registry | https://www.npmjs.com/package/@namch/agent-assistant |
-| Website | https://agent-assistant-ten.vercel.app |
+| Repository | https://github.com/hainamchung/boomopen-workflow-kit |
+| npm Registry | https://www.npmjs.com/package/@namch/boomopen-workflow-kit |
+| Website | https://boomopen-workflow-kit-ten.vercel.app |
 | Scope | `@namch` (public) |
 | Module System | CommonJS (CLI), ESM (web) |
 | Node.js Requirement | >=18.0.0 |
@@ -28,7 +28,7 @@
 
 ## Purpose
 
-Agent Assistant transforms a single AI coding assistant into a coordinated team of 21 specialist agents. It provides structured workflows, enforced quality gates, and automatic skill injection so that AI-assisted development follows consistent, high-quality patterns across every project and every supported platform.
+BoomOpen Workflow Kit transforms a single AI coding assistant into a coordinated team of 21 specialist agents. It provides structured workflows, enforced quality gates, and automatic skill injection so that AI-assisted development follows consistent, high-quality patterns across every project and every supported platform.
 
 ---
 
@@ -46,7 +46,7 @@ AI coding assistants (Cursor, Copilot, Claude Code, etc.) are powerful but opera
 
 ## Solution
 
-Agent Assistant solves these by:
+BoomOpen Workflow Kit solves these by:
 
 1. **Global one-time installation** â€” Markdown and YAML configurations installed into each AI tool's global directory (`~/.cursor/`, `~/.claude/`, `~/.copilot/`, etc.) apply to all projects automatically.
 2. **Orchestrator pattern** â€” The AI reads a platform entry file that transforms it into an Orchestrator role. It delegates work to specialist agents rather than attempting everything itself.
@@ -95,7 +95,7 @@ Agent Assistant solves these by:
 
 ## First 60 Minutes â€” Onboarding Checklist
 
-This checklist takes a new developer or contributor from zero to productive with Agent Assistant in approximately one hour.
+This checklist takes a new developer or contributor from zero to productive with BoomOpen Workflow Kit in approximately one hour.
 
 ### Minutes 0â€“10: Environment Setup
 
@@ -106,10 +106,10 @@ This checklist takes a new developer or contributor from zero to productive with
 
 ### Minutes 10â€“20: Install and Verify
 
-- [ ] Install globally: `npm install -g @namch/agent-assistant@latest`
-- [ ] Install for your AI tool: `agent-assistant install --all` (or specify one: `agent-assistant install cursor`)
-- [ ] Verify installation: `agent-assistant list`
-- [ ] Confirm files exist in the tool's directory (e.g., `ls ~/.cursor/skills/agent-assistant/` for Cursor)
+- [ ] Install globally: `npm install -g @namch/boomopen-workflow-kit@latest`
+- [ ] Install for your AI tool: `boomopen-workflow-kit install --all` (or specify one: `boomopen-workflow-kit install cursor`)
+- [ ] Verify installation: `boomopen-workflow-kit list`
+- [ ] Confirm files exist in the tool's directory (e.g., `ls ~/.cursor/skills/boomopen-workflow-kit/` for Cursor)
 
 ### Minutes 20â€“30: Read Core Concepts
 

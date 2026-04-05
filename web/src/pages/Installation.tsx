@@ -34,7 +34,7 @@ export default function Installation() {
               Installation
             </h1>
             <p className="text-body text-lg mb-8">
-              Install Agent Assistant globally and start using specialized agents 
+              Install BoomOpen Workflow Kit globally and start using specialized agents 
               in all your projects. Takes less than a minute.
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ export default function Installation() {
       <Section background="primary" spacing="xl">
         <SectionHeader 
           title="Step 1: Global Installation" 
-          description="Install Agent Assistant globally with npm."
+          description="Install BoomOpen Workflow Kit globally with npm."
         />
 
         <motion.div
@@ -86,23 +86,23 @@ export default function Installation() {
         >
           <Terminal
             command={[
-              'npm install -g @namch/agent-assistant',
+              'npm install -g @namch/boomopen-workflow-kit',
             ]}
             title="Installation"
           />
           
           <div className="mt-6">
             <Terminal
-              command="agent-assistant --version"
+              command="boomopen-workflow-kit --version"
               title="Verify"
             >
               <div className="space-y-2">
                 <div className="flex">
                   <span className="text-text-muted select-none mr-2">$</span>
-                  <code className="text-[#00ff88]">agent-assistant --version</code>
+                  <code className="text-[#00ff88]">boomopen-workflow-kit --version</code>
                 </div>
                 <div className="text-gradient-green">
-                  ✓ Agent Assistant v1.0.0 installed
+                  ✓ BoomOpen Workflow Kit v1.0.0 installed
                 </div>
               </div>
             </Terminal>
@@ -222,7 +222,7 @@ export default function Installation() {
                 <code className="text-[#00ff88]">Who are you?</code>
               </div>
               <div className="text-gradient-green mt-2">
-                I am Agent Assistant, your multi-agent orchestrator.
+                I am BoomOpen Workflow Kit, your multi-agent orchestrator.
               </div>
             </div>
           </Terminal>
@@ -238,7 +238,7 @@ export default function Installation() {
                 <code className="text-[#00ff88]">/cook add a hello world endpoint</code>
               </div>
               <div className="text-gradient-green mt-2">
-                ✓ Orchestrator detected Agent Assistant<br />
+                ✓ Orchestrator detected BoomOpen Workflow Kit<br />
                 ✓ Loading specialist agents...<br />
                 ✓ Ready to execute workflow
               </div>
@@ -288,7 +288,7 @@ export default function Installation() {
             <Button 
               variant="secondary" 
               size="lg" 
-              href="https://github.com/anthropics/agent-assistant"
+              href="https://github.com/anthropics/boomopen-workflow-kit"
               target="_blank"
               rel="noopener noreferrer"
             >

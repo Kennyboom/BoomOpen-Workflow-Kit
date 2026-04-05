@@ -1,4 +1,4 @@
-# Agent Assistant — SLA & Handoffs
+# BoomOpen Workflow Kit — SLA & Handoffs
 
 | Field | Value |
 |-------|-------|

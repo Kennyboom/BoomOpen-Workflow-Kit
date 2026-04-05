@@ -1,4 +1,4 @@
-# Agent Assistant — Domain Entities
+# BoomOpen Workflow Kit — Domain Entities
 
 > **Purpose**: Complete per-entity deep dive with attributes, types, constraints, and relationships
 > **Parent**: [00-index.md](./00-index.md)
@@ -421,23 +421,23 @@ Each `SKILL.md` contains domain expertise that the AI agent reads and applies du
 |-----------|------|----------|-------------|
 | `name` | string | yes | Display name (e.g., `Cursor`) |
 | `description` | string | yes | Platform description (e.g., `Cursor AI Editor`) |
-| `paths` | object | yes | Directory paths for the platform (home, skills, agents, commands, agentAssistant) |
+| `paths` | object | yes | Directory paths for the platform (home, skills, agents, commands, boomopenWorkflowKit) |
 | `replacements` | object | yes | Placeholder-to-value map for `{TOOL}`, `{HOME}`, path patterns |
 | `assets` | object | yes | Platform-specific files to copy (rules, entry points, configs) |
 
 ### Platforms
 
-| Tool Key | Name | Home Directory | Agent Assistant Path |
+| Tool Key | Name | Home Directory | BoomOpen Workflow Kit Path |
 |----------|------|----------------|---------------------|
-| `cursor` | Cursor | `~/.cursor/` | `~/.cursor/skills/agent-assistant/` |
-| `copilot` | GitHub Copilot | `~/.copilot/` | `~/.copilot/skills/agent-assistant/` |
-| `antigravity` | Antigravity (Gemini) | `~/.antigravity/` + `~/.gemini/` | `~/.gemini/antigravity/skills/agent-assistant/` |
-| `claude` | Claude Code | `~/.claude/` | `~/.claude/skills/agent-assistant/` |
-| `codex` | Codex | `~/.codex/` | `~/.codex/skills/agent-assistant/` |
+| `cursor` | Cursor | `~/.cursor/` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| `copilot` | GitHub Copilot | `~/.copilot/` | `~/.copilot/skills/boomopen-workflow-kit/` |
+| `antigravity` | Antigravity (Gemini) | `~/.antigravity/` + `~/.gemini/` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| `claude` | Claude Code | `~/.claude/` | `~/.claude/skills/boomopen-workflow-kit/` |
+| `codex` | Codex | `~/.codex/` | `~/.codex/skills/boomopen-workflow-kit/` |
 
 ### Core Directories Copied
 
-The installer copies these directories into each platform's `agentAssistant` path:
+The installer copies these directories into each platform's `boomopenWorkflowKit` path:
 
 | Directory | Contents |
 |-----------|----------|
@@ -453,11 +453,11 @@ During installation, the following placeholders in all Markdown/YAML files are r
 
 | Placeholder | Description | Example (Cursor) |
 |-------------|-------------|-------------------|
-| `~/.{TOOL}/skills/agent-assistant/` | Agent assistant root | `~/.cursor/skills/agent-assistant/` |
-| `{TOOL}/agent-assistant/` | Relative path | `cursor/skills/agent-assistant/` |
+| `~/.{TOOL}/skills/boomopen-workflow-kit/` | boomopen workflow kit root | `~/.cursor/skills/boomopen-workflow-kit/` |
+| `{TOOL}/boomopen-workflow-kit/` | Relative path | `cursor/skills/boomopen-workflow-kit/` |
 | `{TOOL}` | Tool identifier | `cursor` |
 | `{HOME}` | Home directory | `~` |
-| `~/.agent/` | Legacy agent path | `~/.cursor/skills/agent-assistant/` |
+| `~/.agent/` | Legacy agent path | `~/.cursor/skills/boomopen-workflow-kit/` |
 
 ### Relationships
 

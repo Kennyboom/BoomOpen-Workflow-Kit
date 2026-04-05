@@ -28,7 +28,7 @@ export default function Docs() {
               Documentation
             </Badge>
             <h1 className="heading-hero mb-6">
-              Learn Agent Assistant
+              Learn BoomOpen Workflow Kit
             </h1>
             <p className="text-body text-lg mb-8">
               Everything you need to master AI-powered development workflows 
@@ -205,12 +205,12 @@ export default function Docs() {
           <h2 className="heading-section mb-6">Ready to Get Started?</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="primary" size="lg" href="/installation">
-              Install Agent Assistant
+              Install BoomOpen Workflow Kit
             </Button>
             <Button 
               variant="secondary" 
               size="lg" 
-              href="https://github.com/anthropics/agent-assistant"
+              href="https://github.com/anthropics/boomopen-workflow-kit"
               target="_blank"
               rel="noopener noreferrer"
             >

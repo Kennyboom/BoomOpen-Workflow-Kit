@@ -1,4 +1,4 @@
-# Agent Assistant — Key Modules
+# BoomOpen Workflow Kit — Key Modules
 
 > **Purpose**: Per-module breakdown of purpose, exports, dependencies, and internal structure for all major modules in the framework
 > **Parent**: [00-index.md](./00-index.md)
@@ -27,7 +27,7 @@
 
 ## Overview
 
-Agent Assistant operates as a "content framework" — the majority of its modules are Markdown/YAML files interpreted by AI coding tools. Only two modules contain executable code: the CLI installer (`cli/`) and the web marketing site (`web/`). All other modules are declarative configuration consumed by AI assistants at prompt-interpretation time.
+BoomOpen Workflow Kit operates as a "content framework" — the majority of its modules are Markdown/YAML files interpreted by AI coding tools. Only two modules contain executable code: the CLI installer (`cli/`) and the web marketing site (`web/`). All other modules are declarative configuration consumed by AI assistants at prompt-interpretation time.
 
 ---
 
@@ -72,7 +72,7 @@ TOOLS = {
       skills: '~/.cursor/skills',
       agents: '~/.cursor/agents',
       commands: '~/.cursor/commands',
-      agentAssistant: '~/.cursor/skills/agent-assistant'
+      boomopenWorkflowKit: '~/.cursor/skills/boomopen-workflow-kit'
     },
     replacements: { '{TOOL}': 'cursor', ... },
     assets: { rules: '...', cursorRules: '...' }
@@ -267,11 +267,11 @@ Defines the Orchestrator's operating protocol — the "operating system" for the
 **Path Resolution**: Uses `{TOOL}` placeholder replaced at install time:
 | Platform | `{TOOL}` Value | Install Path |
 |----------|---------------|--------------|
-| Cursor | `cursor` | `~/.cursor/skills/agent-assistant/` |
-| Copilot | `copilot` | `~/.copilot/skills/agent-assistant/` |
-| Antigravity | `gemini/antigravity` | `~/.gemini/antigravity/skills/agent-assistant/` |
-| Claude | `claude` | `~/.claude/skills/agent-assistant/` |
-| Codex | `codex` | `~/.codex/skills/agent-assistant/` |
+| Cursor | `cursor` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| Copilot | `copilot` | `~/.copilot/skills/boomopen-workflow-kit/` |
+| Antigravity | `gemini/antigravity` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| Claude | `claude` | `~/.claude/skills/boomopen-workflow-kit/` |
+| Codex | `codex` | `~/.codex/skills/boomopen-workflow-kit/` |
 
 **Tiered Execution** (from AGENTS.md):
 - **Tier 1**: Use sub-agent (isolated context) when `runSubagent` capability exists
@@ -382,7 +382,7 @@ The `find-skills/SKILL.md` skill is referenced by the HSOL `_index.yaml` as the 
 
 ### Dependencies
 - Resolved by: `matrix-skills/` YAML registries via HSOL profile matching
-- Installed to: `~/.{tool}/skills/` (alongside the `agent-assistant/` framework directory)
+- Installed to: `~/.{tool}/skills/` (alongside the `boomopen-workflow-kit/` framework directory)
 
 ---
 
@@ -404,7 +404,7 @@ Stores platform-specific template files and assets that extend the base framewor
 
 | Asset | Purpose |
 |-------|---------|
-| `agent-assistant.agent.md` | Copilot agent mode specification file; installed to VS Code prompts folder |
+| `boomopen-workflow-kit.agent.md` | Copilot agent mode specification file; installed to VS Code prompts folder |
 
 #### antigravity-assistant/
 
@@ -461,7 +461,7 @@ Root-level Markdown files serve as the "boot configuration" for each AI coding t
 ## Module 9: Web Marketing Site (web/)
 
 ### Purpose
-A standalone React 19 + Vite + Tailwind CSS marketing website for the agent-assistant project. Deployed to Vercel. Not part of the published npm package.
+A standalone React 19 + Vite + Tailwind CSS marketing website for the boomopen-workflow-kit project. Deployed to Vercel. Not part of the published npm package.
 
 ### Technology Stack
 

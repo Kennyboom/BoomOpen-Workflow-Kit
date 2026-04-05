@@ -43,7 +43,7 @@ export default function HomePage() {
           {/* Logo */}
           <motion.img
             src="/assets/logo.svg"
-            alt="Agent Assistant Logo"
+            alt="BoomOpen Workflow Kit Logo"
             className="mx-auto mb-6 h-20 w-20 md:h-24 md:w-24"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -71,7 +71,7 @@ export default function HomePage() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <TerminalAnimated
-              command="npm install -g @namch/agent-assistant"
+              command="npm install -g @namch/boomopen-workflow-kit"
               speed={40}
               delay={1000}
             />
@@ -97,7 +97,7 @@ export default function HomePage() {
               variant="secondary" 
               className="w-[202px]"
               size="lg"
-              href="https://github.com/anthropics/agent-assistant"
+              href="https://github.com/anthropics/boomopen-workflow-kit"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -146,7 +146,7 @@ export default function HomePage() {
       {/* Features Section */}
       <Section id="features" background="primary" spacing="xl">
         <SectionHeader 
-          title="Why Agent Assistant?" 
+          title="Why BoomOpen Workflow Kit?" 
           description="Everything you need to orchestrate AI-powered development workflows with specialized agents."
         />
         
@@ -187,7 +187,7 @@ export default function HomePage() {
       <Section background="gradient" spacing="lg">
         <SectionHeader 
           title="Works With Your Favorite Tools" 
-          description="Agent Assistant integrates seamlessly with all major AI coding assistants."
+          description="BoomOpen Workflow Kit integrates seamlessly with all major AI coding assistants."
         />
         
         <PlatformGrid>
@@ -216,7 +216,7 @@ export default function HomePage() {
             Ready to Transform Your Development Workflow?
           </h2>
           <p className="text-body mb-8 text-lg">
-            Join developers who are already using Agent Assistant to ship faster, 
+            Join developers who are already using BoomOpen Workflow Kit to ship faster, 
             with fewer bugs, and dramatically lower token costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

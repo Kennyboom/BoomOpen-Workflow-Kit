@@ -1,4 +1,4 @@
-# Agent Assistant — Workflow Catalog
+# BoomOpen Workflow Kit — Workflow Catalog
 
 | Field | Value |
 |-------|-------|
@@ -24,8 +24,8 @@ All 12 workflows are classified by complexity (Low / Medium / High) and frequenc
 | **ID** | BW-001 |
 | **Name** | Framework Installation |
 | **Actor** | Framework User |
-| **Trigger** | `agent-assistant install <tool>` or `agent-assistant install --all` |
-| **Outcome** | Framework files copied to `~/.{tool}/skills/agent-assistant/` with placeholder replacement applied |
+| **Trigger** | `boomopen-workflow-kit install <tool>` or `boomopen-workflow-kit install --all` |
+| **Outcome** | Framework files copied to `~/.{tool}/skills/boomopen-workflow-kit/` with placeholder replacement applied |
 | **Exception Handling** | Invalid tool → exit 1; missing Node >=18 → error; directory creation failure → exit |
 | **Complexity** | Low |
 | **Frequency** | Rare (once per environment setup) |
@@ -41,7 +41,7 @@ All 12 workflows are classified by complexity (Low / Medium / High) and frequenc
 | **ID** | BW-002 |
 | **Name** | Framework Uninstallation |
 | **Actor** | Framework User |
-| **Trigger** | `agent-assistant uninstall <tool>` or `agent-assistant uninstall --all` |
+| **Trigger** | `boomopen-workflow-kit uninstall <tool>` or `boomopen-workflow-kit uninstall --all` |
 | **Outcome** | Bundled files removed from target directory; custom user files preserved |
 | **Exception Handling** | Non-existent installation → skip with informational message |
 | **Complexity** | Low |

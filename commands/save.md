@@ -2,7 +2,7 @@
 description: Save project knowledge and session state to .brain/ for cross-session continuity. Run after major features, end of day, or before long breaks.
 ---
 
-# /save — Infinite Memory Keeper v2.0
+# /save â€” Infinite Memory Keeper v2.0
 
 $ARGUMENTS
 
@@ -13,7 +13,7 @@ $ARGUMENTS
 Combat AI context drift. Every session generates knowledge
 that MUST be persisted or it's lost forever.
 
-**Rule:** Code changes → Brain changes IMMEDIATELY.
+**Rule:** Code changes â†’ Brain changes IMMEDIATELY.
 
 ---
 
@@ -27,16 +27,16 @@ SCAN for changes since last save:
 
 CLASSIFY each change:
   MAJOR (update brain.json):
-    → New module/service added
-    → Database schema changed
-    → New API endpoint created
-    → New dependency installed
-    → Architecture decision made
+    â†’ New module/service added
+    â†’ Database schema changed
+    â†’ New API endpoint created
+    â†’ New dependency installed
+    â†’ Architecture decision made
 
   MINOR (update session.json only):
-    → Bug fix
-    → Refactor (no behavior change)
-    → Style/UI tweak
+    â†’ Bug fix
+    â†’ Refactor (no behavior change)
+    â†’ Style/UI tweak
 ```
 
 ---
@@ -92,7 +92,7 @@ File: `.brain/brain.json`
 | New API endpoint | api_endpoints[] |
 | DB table change | database_schema.tables[] |
 | New dependency | tech_stack.* |
-| Feature completed | features[].status → "done" |
+| Feature completed | features[].status â†’ "done" |
 | Architecture decision | knowledge_items.patterns[] |
 | Bug workaround found | knowledge_items.gotchas[] |
 
@@ -142,14 +142,14 @@ IF conversation is getting long (50+ messages) OR
    context feels saturated:
 
 1. GENERATE handover summary:
-   "📋 HANDOVER DOCUMENT
-    📍 Working on: [feature]
-    🔢 Phase: [X], Task: [Y]
-    ✅ Done: [list]
-    ⏳ Remaining: [list]
-    🔧 Key Decisions: [list]
-    ⚠️ Watch out: [warnings]
-    📁 Key Files: [list]"
+   "ðŸ“‹ HANDOVER DOCUMENT
+    ðŸ“ Working on: [feature]
+    ðŸ”¢ Phase: [X], Task: [Y]
+    âœ… Done: [list]
+    â³ Remaining: [list]
+    ðŸ”§ Key Decisions: [list]
+    âš ï¸ Watch out: [warnings]
+    ðŸ“ Key Files: [list]"
 
 2. SAVE to .brain/handover.md
 3. RECOMMEND: "Context heavy. Consider /recap
@@ -161,17 +161,17 @@ IF conversation is getting long (50+ messages) OR
 ## Phase 5: Confirmation
 
 ```
-✅ BRAIN SAVED!
+âœ… BRAIN SAVED!
 
-📊 Stats:
+ðŸ“Š Stats:
   brain.json: [X] tables, [Y] APIs, [Z] features
   session.json: [N] pending tasks, [M]% complete
 
-📁 Files updated:
-  .brain/brain.json ← static knowledge
-  .brain/session.json ← current progress
+ðŸ“ Files updated:
+  .brain/brain.json â† static knowledge
+  .brain/session.json â† current progress
 
-💡 Tomorrow: /recap to restore context
+ðŸ’¡ Tomorrow: /recap to restore context
 ```
 
 ---
@@ -180,9 +180,9 @@ IF conversation is getting long (50+ messages) OR
 
 ```
 SAVE after:
-□ Completing a major feature
-□ Making an architecture decision
-□ End of work session
-□ Before a long break
-□ After resolving a tricky bug (save the gotcha!)
+â–¡ Completing a major feature
+â–¡ Making an architecture decision
+â–¡ End of work session
+â–¡ Before a long break
+â–¡ After resolving a tricky bug (save the gotcha!)
 ```
