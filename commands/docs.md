@@ -15,7 +15,7 @@ execution-mode: execute
 
 ## Ã°Å¸â€ºâ€˜ PRE-FLIGHT (DO FIRST Ã¢â‚¬â€ BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/agent-assistant/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 
 1. CORE.md Ã¢â‚¬â€ Identity, Laws, Routing
 2. PHASES.md Ã¢â‚¬â€ Phase Execution
@@ -64,7 +64,7 @@ execution-mode: execute
 
 | Attribute       | Value                                             |
 | --------------- | ------------------------------------------------- |
-| **Sub-Command** | `~/.gemini/antigravity/agent-assistant/commands/docs-core.md` |
+| **Sub-Command** | `~/.gemini/antigravity/boomopen-workflow-kit/commands/docs-core.md` |
 | **Action**      | **LOAD AND FOLLOW** the entire core.md workflow   |
 
 ### Folders to be Created (v3.0 Ã¢â‚¬â€ folder-based):
@@ -83,7 +83,7 @@ execution-mode: execute
 
 | Attribute       | Value                                                 |
 | --------------- | ----------------------------------------------------- |
-| **Sub-Command** | `~/.gemini/antigravity/agent-assistant/commands/docs-business.md` |
+| **Sub-Command** | `~/.gemini/antigravity/boomopen-workflow-kit/commands/docs-business.md` |
 | **Action**      | **LOAD AND FOLLOW** the entire business.md workflow   |
 
 ### Folders to be Created (v4.0 Ã¢â‚¬â€ folder-based):
@@ -101,7 +101,7 @@ execution-mode: execute
 
 | Attribute       | Value                                              |
 | --------------- | -------------------------------------------------- |
-| **Sub-Command** | `~/.gemini/antigravity/agent-assistant/commands/docs-audit.md` |
+| **Sub-Command** | `~/.gemini/antigravity/boomopen-workflow-kit/commands/docs-audit.md` |
 | **Action**      | **LOAD AND FOLLOW** the entire audit.md workflow   |
 
 ### Folders to be Created (v4.0 - folder-based):
