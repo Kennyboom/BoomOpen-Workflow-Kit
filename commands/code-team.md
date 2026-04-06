@@ -1,11 +1,11 @@
 ---
-description: "ðŸ”º Team Code â€” Golden Triangle adversarial collaboration for maximum quality coding"
+description: "🔺 Team Code — Golden Triangle adversarial collaboration for maximum quality coding"
 version: "2.0"
 category: engineering
 execution-mode: execute
 ---
 
-# /code:team â€” Golden Triangle Code Implementation
+# /code:team — Golden Triangle Code Implementation
 
 > **MISSION**: Maximum quality code implementation through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents: Tech Lead (coordinator),
@@ -13,7 +13,7 @@ execution-mode: execute
 > upon consensus after debate.
 >
 > **KEY DIFFERENCE FROM /cook:team**: No research, no design, no planning phases.
-> Pure coding: scope â†’ implement â†’ verify. Use when you know WHAT to build and just need it BUILT RIGHT.
+> Pure coding: scope → implement → verify. Use when you know WHAT to build and just need it BUILT RIGHT.
 
 <task>$ARGUMENTS</task>
 
@@ -22,18 +22,18 @@ execution-mode: execute
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip.**
+> **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` â€” Convergent Analysis detailed protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` â€” Implementation step-by-step (for coding phases)
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
+> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
-## [{TIMESTAMP}] {MESSAGE_TYPE} | {AGENT} â†’ {TARGET}
+## [{TIMESTAMP}] {MESSAGE_TYPE} | {AGENT} → {TARGET}
 **Phase**: {phase number}
 **Task**: {task ID from Shared Task List}
 **Content**:
@@ -66,12 +66,12 @@ execution-mode: execute
 | Phase 3 (Verify)  | `./reports/{topic}/reviews/REVIEW-{task}`            |
 | ALL Phases         | `./reports/{topic}/MAILBOX-{date}.md`                  |
 
-All files in `./reports/{topic}/` â†’ English only.
-**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → English only.
+**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase                     | Requires                         | Blocking    |
 | ------------------------- | -------------------------------- | ----------- |
@@ -79,11 +79,11 @@ All files in `./reports/{topic}/` â†’ English only.
 | P2: Implementation        | Scope + Task List from P1        | **YES**     |
 | P3: Verification          | Code changes from P2             | **YES**     |
 
-**â›” Blocking**: If input missing â†’ STOP â†’ Create it first â†’ Resume
+**⛔ Blocking**: If input missing → STOP → Create it first → Resume
 
 ---
 
-## ðŸŽ­ Phase 1: SCOPE ANALYSIS â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 1: SCOPE ANALYSIS — 🔺 GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -92,96 +92,96 @@ All files in `./reports/{topic}/` â†’ English only.
 | Reviewer  | `reviewer` (Devil's Advocate)        | Challenge: scope correct? Missing dependencies? Breaking changes? |
 
 **Triangle Loop**:
-1. `tech-lead` reads user request â†’ decomposes into scope areas: affected modules, files to change, dependencies, risks
-2. `tech-lead` posts TASK_ASSIGNMENT to Mailbox â†’ dispatches to `scouter`
-3. `scouter` scans codebase deeply â†’ posts SUBMISSION to Mailbox with:
+1. `tech-lead` reads user request → decomposes into scope areas: affected modules, files to change, dependencies, risks
+2. `tech-lead` posts TASK_ASSIGNMENT to Mailbox → dispatches to `scouter`
+3. `scouter` scans codebase deeply → posts SUBMISSION to Mailbox with:
    - Files to create/modify (exact paths)
    - Dependency map (what depends on what)
    - Integration points (APIs, imports, shared state)
    - Existing patterns to follow
    - Potential side effects
-4. `reviewer` reviews SUBMISSION â†’ posts REVIEW to Mailbox:
+4. `reviewer` reviews SUBMISSION → posts REVIEW to Mailbox:
    - Is the scope complete or are files missing?
    - Are there hidden dependencies not mapped?
    - Will these changes break existing functionality?
    - Are there cross-cutting concerns (auth, logging, error handling)?
-5. If REVIEW = FAIL â†’ `scouter` addresses gaps or defends â†’ posts RESUBMISSION/DEFENSE
-6. `reviewer` re-reviews â†’ max 3 rounds â†’ ESCALATION to `tech-lead` if unresolved
+5. If REVIEW = FAIL → `scouter` addresses gaps or defends → posts RESUBMISSION/DEFENSE
+6. `reviewer` re-reviews → max 3 rounds → ESCALATION to `tech-lead` if unresolved
 7. `tech-lead` synthesizes into final Shared Task List for Phase 2
 
 **Deliverable**: Scoped task list with affected files, dependencies, and integration points
 **Exit Criteria**: All affected files identified, dependencies mapped, risks surfaced, task list ready
-**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | scouter âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tech-lead ✓ | scouter ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 2: IMPLEMENTATION â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 2: IMPLEMENTATION — 🔺 GOLDEN TRIANGLE
 
 > **THIS IS THE MOST CRITICAL PHASE.** Every step is detailed. No shortcuts.
 
 ### Team Selection
 
 ```
-IF fullstack (frontend + backend changes) â†’
+IF fullstack (frontend + backend changes) →
   Tech Lead: tech-lead
   Executor: backend-engineer (then frontend-engineer, sequential)
   Reviewer: reviewer
 
-IF backend-only â†’
+IF backend-only →
   Tech Lead: tech-lead
   Executor: backend-engineer
   Reviewer: reviewer
 
-IF frontend-only â†’
+IF frontend-only →
   Tech Lead: tech-lead
   Executor: frontend-engineer
   Reviewer: reviewer
 
-IF game development â†’
+IF game development →
   Tech Lead: tech-lead
   Executor: game-engineer
   Reviewer: reviewer
 
-IF mobile development â†’
+IF mobile development →
   Tech Lead: tech-lead
   Executor: mobile-engineer
   Reviewer: reviewer
 
-IF other domain â†’ Consult TEAMS.md roster for correct triangle
+IF other domain → Consult TEAMS.md roster for correct triangle
 ```
 
 | Role      | Agent                                    | Mission                                                    |
 | --------- | ---------------------------------------- | ---------------------------------------------------------- |
-| Tech Lead | `tech-lead`                              | Load scope â†’ decompose into coding tasks â†’ coordinate all work |
-| Executor  | `backend-engineer` / `frontend-engineer` / `game-engineer` / `mobile-engineer` | Implement code changes â†’ submit via Mailbox |
+| Tech Lead | `tech-lead`                              | Load scope → decompose into coding tasks → coordinate all work |
+| Executor  | `backend-engineer` / `frontend-engineer` / `game-engineer` / `mobile-engineer` | Implement code changes → submit via Mailbox |
 | Reviewer  | `reviewer`                               | Review EVERY submission: correctness, security, performance, style |
 
 **Prerequisite**: **READ** Phase 1 scope output (task list + dependency map) before starting.
 
-### GOLDEN TRIANGLE IMPLEMENTATION LOOP (CRITICAL â€” Step by Step)
+### GOLDEN TRIANGLE IMPLEMENTATION LOOP (CRITICAL — Step by Step)
 
 
-> **â›” See `_ref/convergent-analysis-loop.md` or `_ref/implementation-loop.md` for detailed step-by-step protocol.**
+> **⛔ See `_ref/convergent-analysis-loop.md` or `_ref/implementation-loop.md` for detailed step-by-step protocol.**
 
 
 ### SCOPE ADHERENCE (ENFORCED BY REVIEWER)
 
 ```
-1. READ SCOPE FIRST â€” every task MUST trace to Phase 1 scope
-2. IF task seems wrong â†’ STOP â†’ Executor posts ESCALATION to Mailbox
-   â†’ Tech Lead evaluates â†’ Re-scope or Override
-3. NO scope creep â€” Reviewer explicitly checks for this:
+1. READ SCOPE FIRST — every task MUST trace to Phase 1 scope
+2. IF task seems wrong → STOP → Executor posts ESCALATION to Mailbox
+   → Tech Lead evaluates → Re-scope or Override
+3. NO scope creep — Reviewer explicitly checks for this:
    "Does this SUBMISSION stay within scoped changes? Any additions not in scope?"
-4. Scope creep found by Reviewer â†’ automatic FAIL with:
+4. Scope creep found by Reviewer → automatic FAIL with:
    Severity: CRITICAL | Action: "Remove out-of-scope code or get scope amended"
 ```
 
 **Exit Criteria**: All scoped tasks implemented, all reviews passed, no unauthorized scope creep, integration verified
-**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | {executor} âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 3: VERIFICATION â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 3: VERIFICATION — 🔺 GOLDEN TRIANGLE
 
 | Role      | Agent                                        | Mission                                                    |
 | --------- | -------------------------------------------- | ---------------------------------------------------------- |
@@ -190,44 +190,44 @@ IF other domain â†’ Consult TEAMS.md roster for correct triangle
 | Reviewer  | `security-engineer`                          | Challenge: edge cases, regressions, security implications  |
 
 **Triangle Loop**:
-1. `tester` (as Tech Lead) reads Phase 2 implementation output â†’ decomposes verification into:
+1. `tester` (as Tech Lead) reads Phase 2 implementation output → decomposes verification into:
    - Unit tests for changed/new functions
    - Integration tests for affected endpoints or modules
    - Regression checks for dependent code
    - Edge case validation
 2. `tester` (as Tech Lead) posts TASK_ASSIGNMENT to Mailbox with test plan
-3. `tester` (as Executor) writes and runs tests â†’ posts SUBMISSION per test category:
+3. `tester` (as Executor) writes and runs tests → posts SUBMISSION per test category:
    - Tests written (file list)
    - Tests passed / failed
    - Coverage percentage for changed files
    - Edge cases validated
-4. `security-engineer` reviews test submissions â†’ posts REVIEW:
+4. `security-engineer` reviews test submissions → posts REVIEW:
    - Are security-sensitive paths tested (auth, input validation, injection)?
    - Are edge cases truly edge cases or happy paths in disguise?
    - Are there regression risks in dependent code not covered?
    - Are error paths and failure modes tested?
-5. Debate loop if FAIL â†’ `tester` fixes gaps or defends â†’ max 3 rounds
+5. Debate loop if FAIL → `tester` fixes gaps or defends → max 3 rounds
 6. `tester` (as Tech Lead) synthesizes final verification report
 
 **Deliverable**: `./reports/{topic}/reviews/REVIEW-{task}`
 **Exit Criteria**: All tests pass, changed code covered, security validated, no regressions detected
-**Consensus**: âœ… CONSENSUS: tester âœ“ | tester(exec) âœ“ | security-engineer âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | tester(exec) ✓ | security-engineer ✓
 
 ---
 
-## âœ… COMPLETION
+## ✅ COMPLETION
 
 Present final code implementation report with consensus stamps from ALL phases:
 
 ```markdown
-# ðŸ”º Golden Triangle Code Report: {task}
+# 🔺 Golden Triangle Code Report: {task}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Scope Analysis | tech-lead / scouter / reviewer | âœ… | {n} |
-| P2: Implementation | tech-lead / {executor} / reviewer | âœ… | {n} |
-| P3: Verification | tester / tester / security-engineer | âœ… | {n} |
+| P1: Scope Analysis | tech-lead / scouter / reviewer | ✅ | {n} |
+| P2: Implementation | tech-lead / {executor} / reviewer | ✅ | {n} |
+| P3: Verification | tester / tester / security-engineer | ✅ | {n} |
 
 ## Debate Summary
 - Total submissions: {count}
@@ -242,9 +242,9 @@ Present final code implementation report with consensus stamps from ALL phases:
 Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
 
 ## Next Actions
-1. âœ… **Done** â€” Code complete (triangle-validated across all phases)
-2. ðŸš€ **Deploy** â†’ `/deploy:preview`
-3. ðŸ“ **Docs** â†’ `/docs:core`
-4. âŒ **Changes required** â€” Critical issues found â†’ `/fix:team`
-5. ðŸ§ª **Test gaps** â€” Insufficient coverage â†’ `/test:team`
+1. ✅ **Done** — Code complete (triangle-validated across all phases)
+2. 🚀 **Deploy** → `/deploy:preview`
+3. ðŸ“ **Docs** → `/docs:core`
+4. âŒ **Changes required** — Critical issues found → `/fix:team`
+5. 🧪 **Test gaps** — Insufficient coverage → `/test:team`
 ```

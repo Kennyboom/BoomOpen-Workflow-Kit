@@ -1,11 +1,11 @@
 ---
-description: âš¡âš¡âš¡ Full Feature â€” Complete feature development lifecycle
+description: ⚡⚡⚡ Full Feature — Complete feature development lifecycle
 version: "1.0"
 category: engineering
 execution-mode: execute
 ---
 
-# /cook:hard â€” Complete Feature Development
+# /cook:hard — Complete Feature Development
 
 > **MISSION**: Full feature development with research, design, planning, implementation, validation.
 
@@ -13,21 +13,21 @@ execution-mode: execute
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 
-1. CORE.md â€” Identity, Laws, Routing
-2. PHASES.md â€” Phase Execution
-3. AGENTS.md â€” Tiered Execution
+1. CORE.md — Identity, Laws, Routing
+2. PHASES.md — Phase Execution
+3. AGENTS.md — Tiered Execution
 
-**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
 
 ---
 
-## ðŸ”€ TIERED EXECUTION
+## 🔀 TIERED EXECUTION
 
 > Reference: AGENTS.md (Tiered Execution)`
 
@@ -50,12 +50,12 @@ execution-mode: execute
 | designer     | `./reports/{topic}/designs/DESIGN-{feature}`         |
 | planner      | `./reports/{topic}/plans/PLAN-{feature}`             |
 
-All files in `./reports/{topic}/` â†’ English only.
-**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → English only.
+**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase              | Requires               | Blocking    |
 | ------------------ | ---------------------- | ----------- |
@@ -69,17 +69,17 @@ All files in `./reports/{topic}/` â†’ English only.
 | P7: Testing        | PLAN + Code            | **YES**     |
 | P8: Review         | PLAN + Code + Tests    | **YES**     |
 
-**â›” Blocking**: If input missing â†’ STOP â†’ Create it first â†’ Resume
+**⛔ Blocking**: If input missing → STOP → Create it first → Resume
 
 ---
 
-## â›” INCREMENTAL EXECUTION (MANDATORY)
+## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing). Format: rules/PHASES.md Â§ Phase output structure.
+One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing). Format: rules/PHASES.md § Phase output structure.
 
 ---
 
-## ðŸŽ­ Phase 1: REQUIREMENTS CLARIFICATION
+## 🎭 Phase 1: REQUIREMENTS CLARIFICATION
 
 | Agent | `brainstormer`                                                       |
 | ----- | -------------------------------------------------------------------- |
@@ -88,7 +88,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 2: RESEARCH
+## 🎭 Phase 2: RESEARCH
 
 | Agent | `researcher`                                                               |
 | ----- | -------------------------------------------------------------------------- |
@@ -97,7 +97,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 3: CODEBASE ANALYSIS
+## 🎭 Phase 3: CODEBASE ANALYSIS
 
 | Agent | `scouter`                                                               |
 | ----- | ----------------------------------------------------------------------- |
@@ -106,7 +106,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 3.5: DATABASE DESIGN (IF DATA CHANGES)
+## 🎭 Phase 3.5: DATABASE DESIGN (IF DATA CHANGES)
 
 | Agent   | `database-architect`                                        |
 | ------- | ----------------------------------------------------------- |
@@ -116,7 +116,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 4: DESIGN (IF UI NEEDED)
+## 🎭 Phase 4: DESIGN (IF UI NEEDED)
 
 | Agent   | `designer`                                            |
 | ------- | ----------------------------------------------------- |
@@ -126,7 +126,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 5: PLANNING
+## 🎭 Phase 5: PLANNING
 
 | Agent        | `planner`                                           |
 | ------------ | --------------------------------------------------- |
@@ -137,9 +137,9 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 6: IMPLEMENTATION
+## 🎭 Phase 6: IMPLEMENTATION
 
-| Agent        | `tech-lead` â†’ routes to specialists                     |
+| Agent        | `tech-lead` → routes to specialists                     |
 | ------------ | ------------------------------------------------------- |
 | Prerequisite | **READ and FOLLOW** `./reports/{topic}/plans/PLAN-{feature}` |
 | Goal         | Execute implementation plan                             |
@@ -150,9 +150,9 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 1. READ plan FIRST
 2. FOR EACH step:
    - Implement EXACTLY as specified
-   - Mark step complete: [ ] â†’ [x]
+   - Mark step complete: [ ] → [x]
 3. IF step seems wrong:
-   - STOP â†’ Document â†’ Request Re-Planning
+   - STOP → Document → Request Re-Planning
    - DO NOT implement your own interpretation
 ```
 
@@ -160,7 +160,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 7: TESTING
+## 🎭 Phase 7: TESTING
 
 | Agent        | `tester`                     |
 | ------------ | ---------------------------- |
@@ -172,14 +172,14 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 ```
 FOR EACH checkpoint in PLAN:
   - Write test that verifies criteria
-  - Document: "Checkpoint X â†’ Test Y"
+  - Document: "Checkpoint X → Test Y"
 ```
 
 | Exit | All tests pass, each plan checkpoint has test |
 
 ---
 
-## ðŸŽ­ Phase 8: REVIEW
+## 🎭 Phase 8: REVIEW
 
 | Agent        | `reviewer`                       |
 | ------------ | -------------------------------- |
@@ -200,6 +200,6 @@ FOR EACH checkpoint in PLAN:
 
 Present feature report with:
 
-1. âœ… **Done** â€” Feature complete
-2. ðŸš€ **Deploy** â†’ `/deploy:preview`
-3. ðŸ“ **Docs** â†’ `/docs:core`
+1. ✅ **Done** — Feature complete
+2. 🚀 **Deploy** → `/deploy:preview`
+3. ðŸ“ **Docs** → `/docs:core`

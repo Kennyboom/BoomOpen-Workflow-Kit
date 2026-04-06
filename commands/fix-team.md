@@ -1,11 +1,11 @@
 ---
-description: "ðŸ”º Team Fix â€” Golden Triangle adversarial collaboration for maximum quality issue resolution"
+description: "🔺 Team Fix — Golden Triangle adversarial collaboration for maximum quality issue resolution"
 version: "3.0"
 category: debugging
 execution-mode: execute
 ---
 
-# /fix:team â€” Golden Triangle Issue Resolution
+# /fix:team — Golden Triangle Issue Resolution
 
 > **MISSION**: Maximum quality issue resolution through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents. Output is released ONLY
@@ -15,12 +15,12 @@ execution-mode: execute
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip.**
+> **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` â€” Phase 4 Implementation step-by-step (CRITICAL)
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Phase 4 Implementation step-by-step (CRITICAL)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -36,11 +36,11 @@ execution-mode: execute
 | P5: Testing | `./reports/{topic}/qa/QA-{issue}` |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** â‰¤ 150 lines â†’ `{name}.md`. > 150 lines â†’ `{name}/` folder.
+**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase | Requires | Blocking |
 |-------|----------|----------|
@@ -52,7 +52,7 @@ execution-mode: execute
 
 ---
 
-## ðŸŽ­ Phase 1: INVESTIGATION â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 1: INVESTIGATION — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -62,11 +62,11 @@ execution-mode: execute
 
 **Focus areas**: Reproduction, error tracing, code path analysis, environmental factors, recent changes (git blame)
 **Deliverable**: `INVESTIGATION-{issue}`
-**Consensus**: âœ… CONSENSUS: debugger âœ“ | scouter âœ“ | researcher âœ“
+**Consensus**: ✅ CONSENSUS: debugger ✓ | scouter ✓ | researcher ✓
 
 ---
 
-## ðŸŽ­ Phase 2: ROOT CAUSE ANALYSIS â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 2: ROOT CAUSE ANALYSIS — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -74,15 +74,15 @@ execution-mode: execute
 | Executor | `backend-engineer` or `frontend-engineer` | Deep-dive root cause, validate with code evidence |
 | Reviewer | `reviewer` | Verify root cause correctness, check regression risk |
 
-> Executor selection: server/API/DB bug â†’ backend-engineer. UI/state bug â†’ frontend-engineer.
+> Executor selection: server/API/DB bug → backend-engineer. UI/state bug → frontend-engineer.
 
 **Prerequisite**: READ `INVESTIGATION-{issue}`
-**Deliverable**: `DEBUG-{issue}` â€” confirmed root cause, exact fault lines, impact scope, related issues
-**Consensus**: âœ… CONSENSUS: debugger âœ“ | {executor} âœ“ | reviewer âœ“
+**Deliverable**: `DEBUG-{issue}` — confirmed root cause, exact fault lines, impact scope, related issues
+**Consensus**: ✅ CONSENSUS: debugger ✓ | {executor} ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 3: FIX PLANNING â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 3: FIX PLANNING — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -93,21 +93,21 @@ execution-mode: execute
 **Prerequisite**: READ `DEBUG-{issue}`
 **Key outputs**: Fix approaches compared (patch vs refactor), implementation tasks, rollback steps, acceptance criteria
 **Deliverable**: `PLAN-{issue}`
-**Consensus**: âœ… CONSENSUS: planner âœ“ | researcher âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: planner ✓ | researcher ✓ | tech-lead ✓
 
 ---
 
-## ðŸŽ­ Phase 4: IMPLEMENTATION â€” ðŸ”º GOLDEN TRIANGLE (CRITICAL)
+## 🎭 Phase 4: IMPLEMENTATION — 🔺 GOLDEN TRIANGLE (CRITICAL)
 
-> **â›” READ `_ref/implementation-loop.md` for full step-by-step protocol and team selection.**
+> **⛔ READ `_ref/implementation-loop.md` for full step-by-step protocol and team selection.**
 
 **Prerequisite**: READ and FOLLOW `PLAN-{issue}`
 **Exit Criteria**: All fix tasks implemented, reviews passed, root cause addressed
-**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | {executor} âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 5: TESTING & VERIFICATION â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 5: TESTING & VERIFICATION — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -115,29 +115,29 @@ execution-mode: execute
 | Executor | `tester` (self-implements) | Write fix proofs, regression suite, coverage report |
 | Reviewer | `security-engineer` | Edge cases, security implications, no regressions |
 
-**ROOT CAUSE VERIFICATION** (MANDATORY): For EACH symptom â†’ write test that FAILS without fix, PASSES with fix
-**REGRESSION VERIFICATION** (MANDATORY): For EACH affected component â†’ regression test for adjacent functionality
+**ROOT CAUSE VERIFICATION** (MANDATORY): For EACH symptom → write test that FAILS without fix, PASSES with fix
+**REGRESSION VERIFICATION** (MANDATORY): For EACH affected component → regression test for adjacent functionality
 
 **Deliverable**: `QA-{issue}`
-**Consensus**: âœ… CONSENSUS: tester âœ“ | tester(exec) âœ“ | security-engineer âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | tester(exec) ✓ | security-engineer ✓
 
 ---
 
-## âœ… COMPLETION TEMPLATE
+## ✅ COMPLETION TEMPLATE
 
 ```markdown
-# ðŸ”º Golden Triangle Issue Resolution Report: {issue}
+# 🔺 Golden Triangle Issue Resolution Report: {issue}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Investigation | debugger / scouter / researcher | âœ… | {n} |
-| P2: Root Cause | debugger / {executor} / reviewer | âœ… | {n} |
-| P3: Fix Planning | planner / researcher / tech-lead | âœ… | {n} |
-| P4: Implementation | tech-lead / {executor} / reviewer | âœ… | {n} |
-| P5: Testing | tester / tester / security-engineer | âœ… | {n} |
+| P1: Investigation | debugger / scouter / researcher | ✅ | {n} |
+| P2: Root Cause | debugger / {executor} / reviewer | ✅ | {n} |
+| P3: Fix Planning | planner / researcher / tech-lead | ✅ | {n} |
+| P4: Implementation | tech-lead / {executor} / reviewer | ✅ | {n} |
+| P5: Testing | tester / tester / security-engineer | ✅ | {n} |
 
 ## Next Actions
-1. âœ… **Fixed** â€” Issue resolved (triangle-validated)
-2. ðŸš€ `/deploy:preview` â†’ Deploy to staging
+1. ✅ **Fixed** — Issue resolved (triangle-validated)
+2. 🚀 `/deploy:preview` → Deploy to staging
 ```

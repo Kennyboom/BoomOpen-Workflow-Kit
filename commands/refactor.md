@@ -1,13 +1,13 @@
 ---
 description: >-
-  Code Surgeon v3 â€” SOLID audit, code smell detection,
+  Code Surgeon v3 — SOLID audit, code smell detection,
   Fowler's catalog techniques, health scoring, performance-safe
   refactoring with before/after metrics.
 category: code
 execution-mode: sequential
 ---
 
-# /refactor â€” The Code Surgeon v3.0
+# /refactor — The Code Surgeon v3.0
 
 $ARGUMENTS
 
@@ -15,20 +15,20 @@ $ARGUMENTS
 
 ## IRON RULE
 
-> âš¡ Refactoring MUST NOT reduce performance.
-> ONLY maintain or improve. Any regression â†’ ROLLBACK.
+> ⚡ Refactoring MUST NOT reduce performance.
+> ONLY maintain or improve. Any regression → ROLLBACK.
 
 ---
 
 ## GOLDEN RULES
 
 ```
-1. PERFORMANCE IS SACRED â€” Never trade speed for readability
-2. MEASURE BEFORE SURGERY â€” No refactor without metrics
-3. LOGIC UNCHANGED â€” Only change STRUCTURE, not BEHAVIOR
-4. MICRO-STEPS â€” 1 refactoring = 1 commit, test each step
-5. BEFORE/AFTER â€” Compare metrics and performance
-6. SAFETY FIRST â€” Backup, test baseline, rollback plan
+1. PERFORMANCE IS SACRED — Never trade speed for readability
+2. MEASURE BEFORE SURGERY — No refactor without metrics
+3. LOGIC UNCHANGED — Only change STRUCTURE, not BEHAVIOR
+4. MICRO-STEPS — 1 refactoring = 1 commit, test each step
+5. BEFORE/AFTER — Compare metrics and performance
+6. SAFETY FIRST — Backup, test baseline, rollback plan
 ```
 
 ---
@@ -36,19 +36,19 @@ $ARGUMENTS
 ## Phase 1: Auto-Scope + Mode Selection
 
 ```
-1. Scan source code â†’ count files, functions, components
-2. Run lint + build â†’ current health status
-3. Read recent git log â†’ context
+1. Scan source code → count files, functions, components
+2. Run lint + build → current health status
+3. Read recent git log → context
 
 Report:
-  "ðŸ”ª Found:
+  "🔪 Found:
    [X] source files | [Y] functions
    [Z] lint warnings | Build: [pass/fail]
 
    Choose mode:"
 
 MODES:
-  A) âš¡ Quick Surgery (1 file)
+  A) ⚡ Quick Surgery (1 file)
   B) ðŸ” Deep Surgery (1 module)
   C) ðŸ¥ Full Body Scan (full project)
 ```
@@ -63,17 +63,17 @@ MEASURE EVERYTHING before touching code:
 | Metric | Current | Target | Tool |
 |--------|:-------:|:------:|------|
 | Complexity | [X] | < 10 | ESLint rule |
-| Nesting depth | [X] | â‰¤ 3 | Manual |
-| Lines/function | [X] | â‰¤ 25 | Manual |
-| Lines/file | [X] | â‰¤ 300 | wc -l |
+| Nesting depth | [X] | ≤ 3 | Manual |
+| Lines/function | [X] | ≤ 25 | Manual |
+| Lines/file | [X] | ≤ 300 | wc -l |
 | Lint warnings | [X] | 0 | ESLint |
 | Build status | [X] | Pass | npm build |
 
 CODE HEALTH SCORE: [N]/100
-  90-100: ðŸŸ¢ Healthy
-  70-89:  ðŸŸ¡ Needs attention
-  50-69:  ðŸŸ  Significant debt
-  < 50:   ðŸ”´ Critical â€” refactor before features
+  90-100: 🟢 Healthy
+  70-89:  🟡 Needs attention
+  50-69:  🟠 Significant debt
+  < 50:   🔴 Critical — refactor before features
 ```
 
 ---
@@ -84,35 +84,35 @@ CODE HEALTH SCORE: [N]/100
 SCAN for 5 smell categories:
 
 ðŸ˜ BLOATERS:
-  â–¡ Long Method (> 25 lines)
-  â–¡ Large Class (> 300 lines)
-  â–¡ Long Parameter List (> 4 params)
-  â–¡ Primitive Obsession
+  □ Long Method (> 25 lines)
+  □ Large Class (> 300 lines)
+  □ Long Parameter List (> 4 params)
+  □ Primitive Obsession
 
-ðŸ”¨ OO ABUSERS:
-  â–¡ Switch Statements (should be polymorphism?)
-  â–¡ Temporary Field
-  â–¡ Refused Bequest
+🔨 OO ABUSERS:
+  □ Switch Statements (should be polymorphism?)
+  □ Temporary Field
+  □ Refused Bequest
 
-ðŸš§ CHANGE PREVENTERS:
-  â–¡ Divergent Change (1 class, many reasons to change)
-  â–¡ Shotgun Surgery (1 change, many classes affected)
+🚧 CHANGE PREVENTERS:
+  □ Divergent Change (1 class, many reasons to change)
+  □ Shotgun Surgery (1 change, many classes affected)
 
 ðŸ—‘ï¸ DISPENSABLES:
-  â–¡ Dead Code (unused functions/imports)
-  â–¡ Duplicate Code (3+ occurrences)
-  â–¡ Lazy Class (does almost nothing)
-  â–¡ Comments explaining bad code
+  □ Dead Code (unused functions/imports)
+  □ Duplicate Code (3+ occurrences)
+  □ Lazy Class (does almost nothing)
+  □ Comments explaining bad code
 
-ðŸ”— COUPLERS:
-  â–¡ Feature Envy (method uses other class more)
-  â–¡ Inappropriate Intimacy (classes too intertwined)
+🔗 COUPLERS:
+  □ Feature Envy (method uses other class more)
+  □ Inappropriate Intimacy (classes too intertwined)
 
 Report per smell:
   "ðŸŸ SMELLS FOUND: [N] total
-   ðŸ”´ Critical: [list]
-   ðŸŸ¡ Should fix: [list]
-   ðŸŸ¢ Minor: [list]"
+   🔴 Critical: [list]
+   🟡 Should fix: [list]
+   🟢 Minor: [list]"
 ```
 
 ---
@@ -139,7 +139,7 @@ SOLID SCORE: [/50]
 BEFORE any refactoring:
 
 1. BRANCH: git checkout -b refactor/[scope]-[date]
-2. TEST BASELINE: run tests â†’ record pass/fail count
+2. TEST BASELINE: run tests → record pass/fail count
 3. PERFORMANCE BASELINE: measure execution time
 4. LINT BASELINE: record warning count
 5. ROLLBACK PLAN: git checkout main
@@ -155,15 +155,15 @@ BEFORE any refactoring:
 ```
 For EACH refactoring:
 
-1. ANNOUNCE â€” what technique, which file
-2. SHOW BEFORE â€” code before change
-3. EXECUTE â€” apply Fowler technique
-4. SHOW AFTER â€” code after change
-5. EXPLAIN â€” why this improves health
-6. VERIFY â€” tests pass? lint clean? build OK?
-7. PERFORMANCE CHECK â€” benchmark â‰¥ baseline?
-   IF slower â†’ ðŸ›‘ ROLLBACK IMMEDIATELY
-8. COMMIT â€” git add + commit
+1. ANNOUNCE — what technique, which file
+2. SHOW BEFORE — code before change
+3. EXECUTE — apply Fowler technique
+4. SHOW AFTER — code after change
+5. EXPLAIN — why this improves health
+6. VERIFY — tests pass? lint clean? build OK?
+7. PERFORMANCE CHECK — benchmark ≥ baseline?
+   IF slower → 🛑 ROLLBACK IMMEDIATELY
+8. COMMIT — git add + commit
 
 TECHNIQUES (use official names):
   - Extract Method
@@ -181,7 +181,7 @@ TECHNIQUES (use official names):
 ## Phase 7: Before/After Report
 
 ```markdown
-## ðŸ”ª REFACTOR REPORT
+## 🔪 REFACTOR REPORT
 
 ### Metrics
 | Metric | Before | After | Change |
@@ -206,14 +206,14 @@ TECHNIQUES (use official names):
 ## Guard Rails
 
 ```
-âš ï¸ REFACTOR â‰  REWRITE:
-  Changing > 60% code â†’ STOP â†’ /architect first
+âš ï¸ REFACTOR ≠ REWRITE:
+  Changing > 60% code → STOP → /architect first
 
-âš ï¸ REFACTOR â‰  FEATURE:
-  Adding new logic â†’ STOP â†’ /create instead
+âš ï¸ REFACTOR ≠ FEATURE:
+  Adding new logic → STOP → /create instead
 
-ðŸ”´ PERFORMANCE SACRED:
-  Any slowdown â†’ ROLLBACK â†’ find another approach
+🔴 PERFORMANCE SACRED:
+  Any slowdown → ROLLBACK → find another approach
 ```
 
 ---
@@ -222,7 +222,7 @@ TECHNIQUES (use official names):
 
 ```
 After /refactor, consider:
-  â†’ /test â€” Verify no behavior changed (mandatory)
-  â†’ /review health â€” Check improved code health score
-  â†’ /save â€” Persist refactor decisions to .brain/
+  → /test — Verify no behavior changed (mandatory)
+  → /review health — Check improved code health score
+  → /save — Persist refactor decisions to .brain/
 ```

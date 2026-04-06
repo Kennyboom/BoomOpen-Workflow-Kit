@@ -1,11 +1,11 @@
 ---
-description: ðŸš€ Deploy Router â€” Route to deployment workflows
+description: 🚀 Deploy Router — Route to deployment workflows
 version: "1.0"
 category: operations
 execution-mode: router
 ---
 
-# /deploy â€” Deployment Router
+# /deploy — Deployment Router
 
 > **ROUTER DIRECTIVE**: Analyze deployment target and route to appropriate workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md â€” Identity, Laws, Routing  
-2. PHASES.md â€” Phase Execution  
-3. AGENTS.md â€” Tiered Execution  
+1. CORE.md — Identity, Laws, Routing  
+2. PHASES.md — Phase Execution  
+3. AGENTS.md — Tiered Execution  
 
-**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,16 +28,16 @@ execution-mode: router
 
 ```
 IF target is "check" or "status":
-  â†’ Route to /deploy:check
+  → Route to /deploy:check
 
 IF target is "preview" or "staging":
-  â†’ Route to /deploy:preview
+  → Route to /deploy:preview
 
 IF target is "production" or "prod":
-  â†’ Route to /deploy:production
+  → Route to /deploy:production
 
 IF target is "rollback":
-  â†’ Route to /deploy:rollback
+  → Route to /deploy:rollback
 ```
 
 ---
@@ -56,16 +56,16 @@ IF target is "rollback":
 ## PRESENT OPTIONS
 
 ```markdown
-## ðŸš€ Deployment Mode Selection
+## 🚀 Deployment Mode Selection
 
 **Target**: [parsed target]
 
 **Choose workflow:**
 
-1. âœ… **Check** â†’ `/deploy:check` â€” Readiness verification
-2. ðŸ” **Preview** â†’ `/deploy:preview` â€” Staging deployment
-3. ðŸš€ **Production** â†’ `/deploy:production` â€” Production release
-4. âª **Rollback** â†’ `/deploy:rollback` â€” Revert deployment
+1. ✅ **Check** → `/deploy:check` — Readiness verification
+2. ðŸ” **Preview** → `/deploy:preview` — Staging deployment
+3. 🚀 **Production** → `/deploy:production` — Production release
+4. âª **Rollback** → `/deploy:rollback` — Revert deployment
 
 â³ Awaiting selection...
 ```

@@ -1,11 +1,11 @@
 ---
-description: âš¡âš¡âš¡ Deep Ideation â€” Research-backed exploration
+description: ⚡⚡⚡ Deep Ideation — Research-backed exploration
 version: "1.0"
 category: planning
 execution-mode: execute
 ---
 
-# /brainstorm:hard â€” Deep Ideation
+# /brainstorm:hard — Deep Ideation
 
 > **MISSION**: Generate comprehensive ideas through research, analysis, and systematic exploration.
 
@@ -13,21 +13,21 @@ execution-mode: execute
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 
-1. CORE.md â€” Identity, Laws, Routing
-2. PHASES.md â€” Phase Execution
-3. AGENTS.md â€” Tiered Execution
+1. CORE.md — Identity, Laws, Routing
+2. PHASES.md — Phase Execution
+3. AGENTS.md — Tiered Execution
 
-**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
 
 ---
 
-## ðŸ”€ TIERED EXECUTION PROTOCOL (MANDATORY)
+## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
 
 > **Reference: AGENTS.md (Tiered Execution)`
 
@@ -35,11 +35,11 @@ execution-mode: execute
 tiered_execution:
   principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
   for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists â†’ MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system errorâ€”NOT complexity/preference/speed"
+    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
+    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
   anti_lazy_fallback:
     - âŒ NEVER use Tier 2 when Tier 1 tool is available
-    - âœ… ALWAYS attempt Tier 1 first when tool exists
+    - ✅ ALWAYS attempt Tier 1 first when tool exists
 ```
 
 ---
@@ -59,25 +59,25 @@ enforcement:
   - Synthesis file is the deliverable for downstream phases
 ```
 
-All files in `./reports/{topic}/` â†’ English only.
-**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → English only.
+**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## â›” INCREMENTAL EXECUTION (MANDATORY)
+## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
 
 ---
 
-## ðŸŽ­ Phase 1: REQUIREMENTS DISCOVERY
+## 🎭 Phase 1: REQUIREMENTS DISCOVERY
 
 | Attribute | Value                           |
 | --------- | ------------------------------- |
 | **Agent** | `brainstormer`                  |
 | **Goal**  | Deep requirements clarification |
 
-### âš¡ ADAPTIVE EXECUTION
+### ⚡ ADAPTIVE EXECUTION
 
 **IF platform supports subagents:**
 
@@ -86,7 +86,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 **ELSE (EMBODY fallback):**
 
 > Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] â€” Apply methodology from agent file.
+> EMBODY [brainstormer] — Apply methodology from agent file.
 
 **Exit Criteria:**
 
@@ -98,14 +98,14 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 2: RESEARCH
+## 🎭 Phase 2: RESEARCH
 
 | Attribute | Value                                |
 | --------- | ------------------------------------ |
 | **Agent** | `researcher`                         |
 | **Goal**  | Research best practices and patterns |
 
-### âš¡ TIERED EXECUTION
+### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -114,7 +114,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] â€” Requires logged system error justification.
+> EMBODY [researcher] — Requires logged system error justification.
 
 **MANDATORY**: CREATE `./reports/{topic}/researchers/RESEARCH-{topic}`
 
@@ -128,14 +128,14 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 3: CODEBASE ANALYSIS
+## 🎭 Phase 3: CODEBASE ANALYSIS
 
 | Attribute | Value                                  |
 | --------- | -------------------------------------- |
 | **Agent** | `scouter`                              |
 | **Goal**  | Map existing architecture and patterns |
 
-### âš¡ TIERED EXECUTION
+### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -144,7 +144,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] â€” Requires logged system error justification.
+> EMBODY [scouter] — Requires logged system error justification.
 
 **Exit Criteria:**
 
@@ -155,7 +155,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 4: SOLUTION SYNTHESIS
+## 🎭 Phase 4: SOLUTION SYNTHESIS
 
 | Attribute        | Value                                                                                  |
 | ---------------- | -------------------------------------------------------------------------------------- |
@@ -163,7 +163,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 | **Goal**         | Synthesize ideas with trade-off analysis                                               |
 | **Prerequisite** | READ `./reports/{topic}/researchers/RESEARCH-{topic}` + `./reports/{topic}/scouts/SCOUT-{topic}` |
 
-### âš¡ TIERED EXECUTION
+### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
@@ -172,7 +172,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 **TIER 2 (FALLBACK on system error only):**
 
 > Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] â€” Requires logged system error justification.
+> EMBODY [brainstormer] — Requires logged system error justification.
 
 **MANDATORY**:
 
@@ -193,6 +193,6 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 Present comprehensive analysis with:
 
-1. âœ… **Analysis Complete** â€” Proceed with recommendation
-2. ðŸ“‹ **Plan** â†’ `/plan:hard` for detailed planning
-3. ðŸ”„ **Iterate** â€” Refine based on feedback
+1. ✅ **Analysis Complete** — Proceed with recommendation
+2. 📋 **Plan** → `/plan:hard` for detailed planning
+3. 🔄 **Iterate** — Refine based on feedback

@@ -1,11 +1,11 @@
 ---
-description: "ðŸ”º Team Test â€” Golden Triangle adversarial collaboration for maximum quality testing"
+description: "🔺 Team Test — Golden Triangle adversarial collaboration for maximum quality testing"
 version: "2.0"
 category: testing
 execution-mode: execute
 ---
 
-# /test:team â€” Golden Triangle Test & Quality Assurance
+# /test:team — Golden Triangle Test & Quality Assurance
 
 > **MISSION**: Maximum quality testing through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents: Tech Lead (coordinator),
@@ -19,13 +19,13 @@ execution-mode: execute
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip.**
+> **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` â€” Convergent Analysis detailed protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` â€” Implementation step-by-step (for coding phases)
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
+> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -41,12 +41,12 @@ execution-mode: execute
 | Phase 4          | `./reports/{topic}/qa/QA-{scope}`                    |
 | ALL Phases       | `./reports/{topic}/MAILBOX-{date}.md`                   |
 
-All files in `./reports/{topic}/` â†’ English only.
-**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → English only.
+**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase                           | Requires                            | Blocking    |
 | ------------------------------- | ----------------------------------- | ----------- |
@@ -55,11 +55,11 @@ All files in `./reports/{topic}/` â†’ English only.
 | P3: Test Implementation         | TEST-PLAN from P2                   | **YES**     |
 | P4: Coverage & Verification     | Tests from P3 + code under test     | **YES**     |
 
-**â›” Blocking**: If input missing â†’ STOP â†’ Create it first â†’ Resume
+**⛔ Blocking**: If input missing → STOP → Create it first → Resume
 
 ---
 
-## ðŸŽ­ Phase 1: TEST STRATEGY â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 1: TEST STRATEGY — 🔺 GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -68,19 +68,19 @@ All files in `./reports/{topic}/` â†’ English only.
 | Reviewer  | `tech-lead` (Devil's Advocate)       | Challenge: is strategy complete? Missing test categories? Over-testing? |
 
 **Triangle Loop**:
-1. `tester` decomposes into areas: test pyramid, coverage targets, framework selection, test data needs â†’ TASK_ASSIGNMENT to `scouter`
-2. `scouter` analyzes codebase â†’ SUBMISSION per area: testable units inventory, dependency graph, coverage gaps, complex logic paths, external deps requiring mocks
-3. `tech-lead` reviews â†’ REVIEW: pyramid appropriate? Targets realistic? Missing categories (contract, smoke, regression)? Over-testing low-risk areas? Framework fits CI/CD?
-4. Debate loop if FAIL â†’ max 3 rounds â†’ ESCALATION to `tester` if unresolved
+1. `tester` decomposes into areas: test pyramid, coverage targets, framework selection, test data needs → TASK_ASSIGNMENT to `scouter`
+2. `scouter` analyzes codebase → SUBMISSION per area: testable units inventory, dependency graph, coverage gaps, complex logic paths, external deps requiring mocks
+3. `tech-lead` reviews → REVIEW: pyramid appropriate? Targets realistic? Missing categories (contract, smoke, regression)? Over-testing low-risk areas? Framework fits CI/CD?
+4. Debate loop if FAIL → max 3 rounds → ESCALATION to `tester` if unresolved
 5. `tester` synthesizes approved findings into unified test strategy
 
 **Deliverable**: `./reports/{topic}/tests/TEST-STRATEGY-{scope}`
 **Exit Criteria**: Test pyramid defined, coverage targets set, frameworks chosen, testable units mapped
-**Consensus**: âœ… CONSENSUS: tester âœ“ | scouter âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | scouter ✓ | tech-lead ✓
 
 ---
 
-## ðŸŽ­ Phase 2: TEST PLANNING â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 2: TEST PLANNING — 🔺 GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -91,62 +91,62 @@ All files in `./reports/{topic}/` â†’ English only.
 **Prerequisite**: **READ** `./reports/{topic}/tests/TEST-STRATEGY-{scope}` before starting.
 
 **Triangle Loop**:
-1. `tester` reads strategy â†’ decomposes into: unit test cases, integration scenarios, E2E journeys, security cases, perf benchmarks â†’ TASK_ASSIGNMENT to `researcher`
-2. `researcher` researches patterns â†’ SUBMISSION per area: specific test cases (inputs/outputs/edges), boundary conditions, equivalence partitions, mock strategies, test data approaches
-3. `security-engineer` reviews â†’ REVIEW: injection tests (SQL/XSS/command)? Auth bypass? IDOR/privilege escalation? Input validation (null/overflow/special chars)? Race conditions? Error message leakage?
-4. Debate loop if FAIL â†’ max 3 rounds â†’ ESCALATION to `tester` if unresolved
+1. `tester` reads strategy → decomposes into: unit test cases, integration scenarios, E2E journeys, security cases, perf benchmarks → TASK_ASSIGNMENT to `researcher`
+2. `researcher` researches patterns → SUBMISSION per area: specific test cases (inputs/outputs/edges), boundary conditions, equivalence partitions, mock strategies, test data approaches
+3. `security-engineer` reviews → REVIEW: injection tests (SQL/XSS/command)? Auth bypass? IDOR/privilege escalation? Input validation (null/overflow/special chars)? Race conditions? Error message leakage?
+4. Debate loop if FAIL → max 3 rounds → ESCALATION to `tester` if unresolved
 5. `tester` synthesizes approved test cases into final test plan
 
 **Deliverable**: `./reports/{topic}/tests/TEST-PLAN-{scope}`
 **Exit Criteria**: Every component has specific test cases, edge cases documented, security scenarios covered
-**Consensus**: âœ… CONSENSUS: tester âœ“ | researcher âœ“ | security-engineer âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | researcher ✓ | security-engineer ✓
 
 ---
 
 ---
 
-## ðŸŽ­ Phase 3: TEST IMPLEMENTATION â€” ðŸ”º GOLDEN TRIANGLE (CRITICAL)
+## 🎭 Phase 3: TEST IMPLEMENTATION — 🔺 GOLDEN TRIANGLE (CRITICAL)
 
 > **THIS IS THE MOST CRITICAL PHASE.** Every step is detailed. No shortcuts.
 
 ### Team Selection
 
 ```
-Fullstack â†’ Tech Lead: tester | Executor: backend-engineer then frontend-engineer | Reviewer: reviewer + perf lens
-Backend  â†’ Tech Lead: tester | Executor: backend-engineer | Reviewer: reviewer + perf lens
-Frontend â†’ Tech Lead: tester | Executor: frontend-engineer | Reviewer: reviewer + perf lens
-Self     â†’ Tech Lead: tester | Executor: tester (self) | Reviewer: reviewer + perf lens
+Fullstack → Tech Lead: tester | Executor: backend-engineer then frontend-engineer | Reviewer: reviewer + perf lens
+Backend  → Tech Lead: tester | Executor: backend-engineer | Reviewer: reviewer + perf lens
+Frontend → Tech Lead: tester | Executor: frontend-engineer | Reviewer: reviewer + perf lens
+Self     → Tech Lead: tester | Executor: tester (self) | Reviewer: reviewer + perf lens
 ```
 
 | Role      | Agent                                                    | Mission                                                    |
 | --------- | -------------------------------------------------------- | ---------------------------------------------------------- |
-| Tech Lead | `tester`                                                 | Load TEST-PLAN â†’ decompose into test writing tasks â†’ Shared Task List â†’ coordinate all work |
-| Executor  | `tester` (self) OR `backend-engineer`/`frontend-engineer`| Follow plan EXACTLY â†’ write tests per spec â†’ submit via Mailbox |
-| Reviewer  | `reviewer` + `performance-engineer` lens                 | Review EVERY submission â†’ check test quality, assertions, mocks, coverage |
+| Tech Lead | `tester`                                                 | Load TEST-PLAN → decompose into test writing tasks → Shared Task List → coordinate all work |
+| Executor  | `tester` (self) OR `backend-engineer`/`frontend-engineer`| Follow plan EXACTLY → write tests per spec → submit via Mailbox |
+| Reviewer  | `reviewer` + `performance-engineer` lens                 | Review EVERY submission → check test quality, assertions, mocks, coverage |
 
 **Prerequisite**: **READ and FOLLOW** `./reports/{topic}/tests/TEST-PLAN-{scope}`
 
-### GOLDEN TRIANGLE IMPLEMENTATION LOOP (CRITICAL â€” Step by Step)
+### GOLDEN TRIANGLE IMPLEMENTATION LOOP (CRITICAL — Step by Step)
 
 
-> **â›” See `_ref/convergent-analysis-loop.md` or `_ref/implementation-loop.md` for detailed step-by-step protocol.**
+> **⛔ See `_ref/convergent-analysis-loop.md` or `_ref/implementation-loop.md` for detailed step-by-step protocol.**
 
 
 ### STRICT PLAN ADHERENCE (ENFORCED BY REVIEWER)
 
 ```
-1. READ TEST PLAN FIRST â€” every test MUST trace to a plan test case
-2. IF test case seems wrong â†’ STOP â†’ ESCALATION â†’ Tech Lead evaluates
-3. NO unauthorized test additions â€” Reviewer checks: "Any tests not in plan?"
-4. Unauthorized deviations â†’ automatic FAIL: CRITICAL | "Remove or get plan amended"
+1. READ TEST PLAN FIRST — every test MUST trace to a plan test case
+2. IF test case seems wrong → STOP → ESCALATION → Tech Lead evaluates
+3. NO unauthorized test additions — Reviewer checks: "Any tests not in plan?"
+4. Unauthorized deviations → automatic FAIL: CRITICAL | "Remove or get plan amended"
 ```
 
 **Exit Criteria**: All plan test cases implemented, all reviews passed, no unauthorized deviations, test suite integration verified
-**Consensus**: âœ… CONSENSUS: tester âœ“ | {executor} âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | {executor} ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 4: COVERAGE & VERIFICATION â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 4: COVERAGE & VERIFICATION — 🔺 GOLDEN TRIANGLE
 
 | Role      | Agent                                | Mission                                                    |
 | --------- | ------------------------------------ | ---------------------------------------------------------- |
@@ -155,19 +155,19 @@ Self     â†’ Tech Lead: tester | Executor: tester (self) | Reviewer: review
 | Reviewer  | `tech-lead` (Devil's Advocate)       | Challenge: coverage sufficient? Brittle tests? False positives? |
 
 **Triangle Loop**:
-1. `tester` (Tech Lead) decomposes: test execution, coverage analysis, quality gates, gap identification â†’ TASK_ASSIGNMENT to self
-2. `tester` (Executor) runs full suite â†’ SUBMISSION: pass/fail per category, coverage metrics (line/branch/function), quality gate eval, failure analysis (code bugs vs test flaws vs flaky), plan checkpoint verification
-3. `tech-lead` reviews â†’ REVIEW: gaming metrics with trivial tests? Brittle tests? False positives? Flaky tests (shared state)? Missing negative tests? Maintainable long-term?
-4. Debate loop if FAIL â†’ max 3 rounds â†’ `tester` synthesizes final QA report
+1. `tester` (Tech Lead) decomposes: test execution, coverage analysis, quality gates, gap identification → TASK_ASSIGNMENT to self
+2. `tester` (Executor) runs full suite → SUBMISSION: pass/fail per category, coverage metrics (line/branch/function), quality gate eval, failure analysis (code bugs vs test flaws vs flaky), plan checkpoint verification
+3. `tech-lead` reviews → REVIEW: gaming metrics with trivial tests? Brittle tests? False positives? Flaky tests (shared state)? Missing negative tests? Maintainable long-term?
+4. Debate loop if FAIL → max 3 rounds → `tester` synthesizes final QA report
 
 **PLAN CHECKPOINT VERIFICATION** (if PLAN exists):
 ```
-FOR EACH AC in PLAN-{scope}.md â†’ map to test â†’ tech-lead confirms not trivial â†’ "AC-{id} â†’ Test: {name} â†’ {pass/fail}"
+FOR EACH AC in PLAN-{scope}.md → map to test → tech-lead confirms not trivial → "AC-{id} → Test: {name} → {pass/fail}"
 ```
 
-**QUALITY GATES** (all must pass for âœ…):
+**QUALITY GATES** (all must pass for ✅):
 ```
-Coverage: unit â‰¥ strategy target | integration: critical paths exercised | E2E: journeys pass
+Coverage: unit ≥ strategy target | integration: critical paths exercised | E2E: journeys pass
 Test Health: no flaky | no false positives | assertions meaningful
 Security: injection passed | auth bypass covered | input validation verified
 Performance: no regressions beyond threshold | baselines established
@@ -175,22 +175,22 @@ Performance: no regressions beyond threshold | baselines established
 
 **Deliverable**: `./reports/{topic}/tests/TEST-RESULTS-{scope}` + `./reports/{topic}/qa/QA-{scope}`
 **Exit Criteria**: All tests run, quality gates evaluated, coverage verified, no brittle/flaky tests, report complete
-**Consensus**: âœ… CONSENSUS: tester âœ“ | tester(exec) âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | tester(exec) ✓ | tech-lead ✓
 
 ---
 
-## âœ… COMPLETION
+## ✅ COMPLETION
 
 ```markdown
-# ðŸ”º Golden Triangle Test Report: {scope}
+# 🔺 Golden Triangle Test Report: {scope}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Test Strategy | tester / scouter / tech-lead | âœ… | {n} |
-| P2: Test Planning | tester / researcher / security-engineer | âœ… | {n} |
-| P3: Test Implementation | tester / {executor} / reviewer | âœ… | {n} |
-| P4: Coverage & Verification | tester / tester / tech-lead | âœ… | {n} |
+| P1: Test Strategy | tester / scouter / tech-lead | ✅ | {n} |
+| P2: Test Planning | tester / researcher / security-engineer | ✅ | {n} |
+| P3: Test Implementation | tester / {executor} / reviewer | ✅ | {n} |
+| P4: Coverage & Verification | tester / tester / tech-lead | ✅ | {n} |
 
 ## Summary
 Submissions: {n} | First-pass: {n} | Debates: {n} | Arbitrations: {n}
@@ -198,7 +198,7 @@ Coverage: {pass/fail} | Health: {pass/fail} | Security: {pass/fail} | Perf: {pas
 Mailbox: `./reports/{topic}/MAILBOX-{date}.md`
 
 ## Next Actions
-1. âœ… **All Pass** â†’ quality gates met (triangle-validated)
-2. âš ï¸ **Partial** â†’ failures categorized by severity
-3. ðŸ”§ **Fix** â†’ `/fix:team` | ðŸ“ **Review** â†’ `/review` | ðŸš€ **Deploy** â†’ `/deploy:preview`
+1. ✅ **All Pass** → quality gates met (triangle-validated)
+2. âš ï¸ **Partial** → failures categorized by severity
+3. 🔧 **Fix** → `/fix:team` | ðŸ“ **Review** → `/review` | 🚀 **Deploy** → `/deploy:preview`
 ```

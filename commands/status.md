@@ -41,40 +41,40 @@ Show current project and agent status.
 === Project Status ===
 
 ðŸ“ Project: my-ecommerce
-ðŸ“‚ Path: C:/projects/my-ecommerce
+📂 Path: C:/projects/my-ecommerce
 ðŸ·ï¸ Type: nextjs-ecommerce
-ðŸ“Š Status: active
+📊 Status: active
 
-ðŸ”§ Tech Stack:
+🔧 Tech Stack:
    Framework: next.js
    Database: postgresql
    Auth: clerk
    Payment: stripe
 
-âœ… Features (5):
-   â€¢ product-listing
-   â€¢ cart
-   â€¢ checkout
-   â€¢ user-auth
-   â€¢ order-history
+✅ Features (5):
+   • product-listing
+   • cart
+   • checkout
+   • user-auth
+   • order-history
 
 â³ Pending (2):
-   â€¢ admin-panel
-   â€¢ email-notifications
+   • admin-panel
+   • email-notifications
 
-ðŸ“„ Files: 73 created, 12 modified
+📄 Files: 73 created, 12 modified
 
 === Agent Status ===
 
-âœ… database-architect â†’ Completed
-âœ… backend-specialist â†’ Completed
-ðŸ”„ frontend-specialist â†’ Dashboard components (60%)
-â³ test-engineer â†’ Waiting
+✅ database-architect → Completed
+✅ backend-specialist → Completed
+🔄 frontend-specialist → Dashboard components (60%)
+â³ test-engineer → Waiting
 
 === Preview ===
 
 ðŸŒ URL: http://localhost:3000
-ðŸ’š Health: OK
+💚 Health: OK
 ```
 
 ---

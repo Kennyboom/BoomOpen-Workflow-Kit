@@ -31,11 +31,11 @@ Manage preview server: start, stop, status check.
 /preview start
 
 Response:
-ðŸš€ Starting preview...
+🚀 Starting preview...
    Port: 3000
    Type: Next.js
 
-âœ… Preview ready!
+✅ Preview ready!
    URL: http://localhost:3000
 ```
 
@@ -49,7 +49,7 @@ Response:
 ðŸŒ URL: http://localhost:3000
 ðŸ“ Project: C:/projects/my-app
 ðŸ·ï¸ Type: nextjs
-ðŸ’š Health: OK
+💚 Health: OK
 ```
 
 ### Port Conflict

@@ -1,11 +1,11 @@
 ---
-description: â“ Ask Router â€” Route questions to appropriate answer workflow
+description: â“ Ask Router — Route questions to appropriate answer workflow
 version: "1.0"
 category: knowledge
 execution-mode: router
 ---
 
-# /ask â€” Question Answering Router
+# /ask — Question Answering Router
 
 > **ROUTER DIRECTIVE**: Analyze question complexity and route to appropriate workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md â€” Identity, Laws, Routing  
-2. PHASES.md â€” Phase Execution  
-3. AGENTS.md â€” Tiered Execution  
+1. CORE.md — Identity, Laws, Routing  
+2. PHASES.md — Phase Execution  
+3. AGENTS.md — Tiered Execution  
 
-**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,13 +28,13 @@ execution-mode: router
 
 ```
 IF question is factual (single answer, codebase lookup):
-  â†’ Route to /ask:fast
+  → Route to /ask:fast
 
 IF question requires research (multiple sources, analysis):
-  â†’ Route to /ask:hard
+  → Route to /ask:hard
 
 IF unsure:
-  â†’ Default to /ask:fast (escalate if insufficient)
+  → Default to /ask:fast (escalate if insufficient)
 ```
 
 ---
@@ -57,8 +57,8 @@ IF unsure:
 
 **Choose workflow:**
 
-1. âš¡ **Fast** â†’ `/ask:fast` â€” Quick answer
-2. âš¡âš¡âš¡ **Hard** â†’ `/ask:hard` â€” Research-backed answer
+1. ⚡ **Fast** → `/ask:fast` — Quick answer
+2. ⚡⚡⚡ **Hard** → `/ask:hard` — Research-backed answer
 
 â³ Awaiting selection...
 ```
