@@ -1,11 +1,11 @@
 ---
-description: "ðŸ”º Team Brainstorm â€” Golden Triangle adversarial collaboration for maximum quality ideation"
+description: "🔺 Team Brainstorm — Golden Triangle adversarial collaboration for maximum quality ideation"
 version: "3.0"
 category: ideation
 execution-mode: execute
 ---
 
-# /brainstorm:team â€” Golden Triangle Creative Brainstorming
+# /brainstorm:team — Golden Triangle Creative Brainstorming
 
 > **MISSION**: Maximum quality ideation through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents: Tech Lead (coordinator),
@@ -20,12 +20,12 @@ execution-mode: execute
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip. Do NOT proceed without reading them.**
+> **🔴 YOU MUST READ these reference files NOW. Do NOT skip. Do NOT proceed without reading them.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` â€” Phase 2 detailed step-by-step (CRITICAL)
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Phase 2 detailed step-by-step (CRITICAL)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -40,11 +40,11 @@ execution-mode: execute
 | P3: Synthesize | `./reports/{topic}/brainstorms/BRAINSTORM-{topic}` |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** â‰¤ 150 lines â†’ `{name}.md`. > 150 lines â†’ `{name}/` folder.
+**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase | Requires | Blocking |
 |-------|----------|----------|
@@ -54,7 +54,7 @@ execution-mode: execute
 
 ---
 
-## ðŸŽ­ Phase 1: DIVERGENT THINKING â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 1: DIVERGENT THINKING — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -62,15 +62,15 @@ execution-mode: execute
 | Executor | `researcher` + `scouter` | Generate ideas, research prior art, explore possibilities |
 | Reviewer | `tech-lead` (Devil's Advocate) | Challenge: feasible? Missing categories? Too narrow? |
 
-> **âš¡ REVIEWER MINDSET**: GENERATIVE, not reductive. FAIL = "you stopped too soon"
+> **⚡ REVIEWER MINDSET**: GENERATIVE, not reductive. FAIL = "you stopped too soon"
 > or "you missed an entire category." Push for MORE ideas, not fewer.
 
 **Triangle Loop**:
-1. `brainstormer` defines exploration dimensions â†’ Shared Task List
-2. `brainstormer` posts TASK_ASSIGNMENT â†’ dispatches to `researcher` + `scouter`
-3. `researcher` + `scouter` execute per dimension â†’ post SUBMISSION
-4. `tech-lead` reviews â†’ posts REVIEW (missing categories? hidden assumptions?)
-5. If FAIL â†’ expand or defend â†’ max 3 rounds â†’ ESCALATION if unresolved
+1. `brainstormer` defines exploration dimensions → Shared Task List
+2. `brainstormer` posts TASK_ASSIGNMENT → dispatches to `researcher` + `scouter`
+3. `researcher` + `scouter` execute per dimension → post SUBMISSION
+4. `tech-lead` reviews → posts REVIEW (missing categories? hidden assumptions?)
+5. If FAIL → expand or defend → max 3 rounds → ESCALATION if unresolved
 6. `brainstormer` synthesizes approved explorations into unified idea catalog
 
 **Deliverable**: `./reports/{topic}/brainstorms/IDEAS-{topic}`
@@ -84,13 +84,13 @@ execution-mode: execute
 - [ ] Minimum 8 distinct ideas across multiple dimensions
 - [ ] `IDEAS-{topic}.md` created
 
-**Consensus**: âœ… CONSENSUS: brainstormer âœ“ | researcher+scouter âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: brainstormer ✓ | researcher+scouter ✓ | tech-lead ✓
 
 ---
 
-## ðŸŽ­ Phase 2: CONVERGENT ANALYSIS â€” ðŸ”º GOLDEN TRIANGLE (CRITICAL)
+## 🎭 Phase 2: CONVERGENT ANALYSIS — 🔺 GOLDEN TRIANGLE (CRITICAL)
 
-> **â›” MANDATORY: READ `_ref/convergent-analysis-loop.md` for the full step-by-step protocol.**
+> **⛔ MANDATORY: READ `_ref/convergent-analysis-loop.md` for the full step-by-step protocol.**
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -110,14 +110,14 @@ execution-mode: execute
 - [ ] All ideas evaluated against defined criteria
 - [ ] Evaluation fairness validated (no bias)
 - [ ] Each top candidate has evidence-backed pros/cons
-- [ ] Trade-offs documented â€” no hidden costs
+- [ ] Trade-offs documented — no hidden costs
 - [ ] `ANALYSIS-{topic}.md` created
 
-**Consensus**: âœ… CONSENSUS: brainstormer âœ“ | researcher âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: brainstormer ✓ | researcher ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 3: SYNTHESIS & RECOMMENDATION â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 3: SYNTHESIS & RECOMMENDATION — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -128,10 +128,10 @@ execution-mode: execute
 **Prerequisite**: **READ** `./reports/{topic}/brainstorms/ANALYSIS-{topic}`
 
 **Triangle Loop**:
-1. `brainstormer` decomposes synthesis â†’ Shared Task List
-2. `reporter` writes each section â†’ posts SUBMISSION
-3. `tech-lead` reviews â†’ posts REVIEW
-4. If FAIL â†’ revise or defend â†’ max 3 rounds
+1. `brainstormer` decomposes synthesis → Shared Task List
+2. `reporter` writes each section → posts SUBMISSION
+3. `tech-lead` reviews → posts REVIEW
+4. If FAIL → revise or defend → max 3 rounds
 5. `brainstormer` synthesizes approved sections into final document
 
 **Deliverable**: `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`
@@ -143,27 +143,27 @@ execution-mode: execute
 **Exit Criteria**:
 - [ ] Recommendation clearly stated with rationale
 - [ ] All options fairly presented (Reviewer confirmed)
-- [ ] Document is decision-ready â€” no ambiguity
+- [ ] Document is decision-ready — no ambiguity
 - [ ] `BRAINSTORM-{topic}.md` created
 
-**Consensus**: âœ… CONSENSUS: brainstormer âœ“ | reporter âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: brainstormer ✓ | reporter ✓ | tech-lead ✓
 
 ---
 
-## âœ… COMPLETION TEMPLATE
+## ✅ COMPLETION TEMPLATE
 
 ```markdown
-# ðŸ”º Golden Triangle Brainstorm Report: {topic}
+# 🔺 Golden Triangle Brainstorm Report: {topic}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Divergent Thinking | brainstormer / researcher+scouter / tech-lead | âœ… | {n} |
-| P2: Convergent Analysis | brainstormer / researcher / reviewer | âœ… | {n} |
-| P3: Synthesis | brainstormer / reporter / tech-lead | âœ… | {n} |
+| P1: Divergent Thinking | brainstormer / researcher+scouter / tech-lead | ✅ | {n} |
+| P2: Convergent Analysis | brainstormer / researcher / reviewer | ✅ | {n} |
+| P3: Synthesis | brainstormer / reporter / tech-lead | ✅ | {n} |
 
 ## Next Actions
-1. âœ… **Done** â€” Brainstorm complete (triangle-validated)
-2. ðŸ“‹ `/plan:team` â†’ Plan implementation of top recommendation
-3. ðŸ—ï¸ `/cook:team` â†’ Build chosen approach
+1. ✅ **Done** — Brainstorm complete (triangle-validated)
+2. 📋 `/plan:team` → Plan implementation of top recommendation
+3. ðŸ—ï¸ `/cook:team` → Build chosen approach
 ```

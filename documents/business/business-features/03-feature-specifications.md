@@ -1,4 +1,4 @@
-# BoomOpen Workflow Kit â€” Feature Specifications
+# BoomOpen Workflow Kit — Feature Specifications
 
 > **Purpose**: Per-feature specifications with acceptance criteria (Given/When/Then), technical surface, and dependency details
 > **Parent**: [00-index.md](./00-index.md)
@@ -20,7 +20,7 @@ Each feature specification includes:
 
 ## Must Have Features
 
-### BF-001 â€” One-Time Global Installation
+### BF-001 — One-Time Global Installation
 
 **Description**: CLI installs framework files into the AI tool's global config directory. One installation per platform, zero per-project configuration.
 
@@ -34,14 +34,14 @@ Each feature specification includes:
 | AC-4 | One platform fails | User runs `install --all` | Other platforms install successfully; failed platform reports error |
 
 **Technical Surface**:
-- `cli/install.js` â€” Installer logic, platform path configs, template variable replacement
-- `package.json` â€” npm scripts (`install:cursor`, `install:copilot`, `install:claude`, `install:codex`, `install:antigravity`, `install:all`)
+- `cli/install.js` — Installer logic, platform path configs, template variable replacement
+- `package.json` — npm scripts (`install:cursor`, `install:copilot`, `install:claude`, `install:codex`, `install:antigravity`, `install:all`)
 
 **Dependencies**: Node.js >=18, npm (external)
 
 ---
 
-### BF-002 â€” Multi-Platform Support (5 Platforms)
+### BF-002 — Multi-Platform Support (5 Platforms)
 
 **Description**: Same agent definitions, commands, and skills work identically across Cursor, Copilot, Claude Code, Codex, and Antigravity/Gemini.
 
@@ -54,7 +54,7 @@ Each feature specification includes:
 | AC-3 | Platform entry file exists (CURSOR.md, etc.) | AI tool starts a session | CORE.md is loaded via the platform's discovery mechanism |
 
 **Technical Surface**:
-- `cli/install.js` â€” `TOOLS` configuration object with platform paths
+- `cli/install.js` — `TOOLS` configuration object with platform paths
 - `code-assistants/cursor-assistant/`, `code-assistants/copilot-assistant/`, `code-assistants/claude-assistant/`, `code-assistants/codex-assistant/`, `code-assistants/antigravity-assistant/`
 - `CURSOR.md`, `COPILOT.md`, `CLAUDE.md`, `CODEX.md`, `GEMINI.md`
 
@@ -62,9 +62,9 @@ Each feature specification includes:
 
 ---
 
-### BF-003 â€” Orchestrator Pattern
+### BF-003 — Orchestrator Pattern
 
-**Description**: AI assumes Orchestrator role â€” delegates to specialists, never implements directly. Enforced by mandatory boot sequence in CORE.md.
+**Description**: AI assumes Orchestrator role — delegates to specialists, never implements directly. Enforced by mandatory boot sequence in CORE.md.
 
 **Acceptance Criteria**:
 
@@ -75,14 +75,14 @@ Each feature specification includes:
 | AC-3 | Platform entry file loaded | Session begins | CORE.md is loaded before any other action via mandatory boot sequence |
 
 **Technical Surface**:
-- `rules/CORE.md` â€” Identity section, self-check protocol, prohibition statements
-- Platform entry files â€” Mandatory boot sequence that loads CORE.md
+- `rules/CORE.md` — Identity section, self-check protocol, prohibition statements
+- Platform entry files — Mandatory boot sequence that loads CORE.md
 
 **Dependencies**: CORE.md available in platform install directory
 
 ---
 
-### BF-004 â€” 21 Specialist Agents
+### BF-004 — 21 Specialist Agents
 
 **Description**: Each agent is a Markdown file with defined profile, directive, protocol, and constraints. HSOL injects skills based on the agent's profile.
 
@@ -96,15 +96,15 @@ Each feature specification includes:
 | AC-4 | Agent defines skill profile | HSOL resolves skills | Skills matching the profile's domains are injected |
 
 **Technical Surface**:
-- `agents/*.md` â€” 21 agent definition files
-- `AGENT-TEMPLATE.md` â€” Template format for agent creation
-- `agents/teams/` â€” 17 team directories with 51 team-specific agent files
+- `agents/*.md` — 21 agent definition files
+- `AGENT-TEMPLATE.md` — Template format for agent creation
+- `agents/teams/` — 17 team directories with 51 team-specific agent files
 
 **Dependencies**: BF-003 (Orchestrator must exist to delegate)
 
 ---
 
-### BF-005 â€” 14 Structured Commands
+### BF-005 — 14 Structured Commands
 
 **Description**: Workflow definitions that orchestrate agent collaboration across phases. Each command specifies routing, phases, agents, and exit criteria.
 
@@ -117,23 +117,23 @@ Each feature specification includes:
 | AC-3 | Rules pre-flight completes | Command execution begins | CORE.md laws are active before any phase runs |
 
 **Technical Surface**:
-- `commands/*.md` â€” 14 command files (ask, auto, brainstorm, code, cook, debug, deploy, design, docs, fix, plan, report, review, test)
-- `commands/*/` â€” Variant subdirectories per command
+- `commands/*.md` — 14 command files (ask, auto, brainstorm, code, cook, debug, deploy, design, docs, fix, plan, report, review, test)
+- `commands/*/` — Variant subdirectories per command
 
 **Dependencies**: BF-003 (Orchestrator routes commands), BF-004 (agents execute phases)
 
 ---
 
-### BF-006 â€” 3 Variant Strategies
+### BF-006 — 3 Variant Strategies
 
-**Description**: `:fast` (2â€“3 agents), `:hard` (5â€“8 agents + gates), `:team` (adversarial Golden Triangle).
+**Description**: `:fast` (2–3 agents), `:hard` (5–8 agents + gates), `:team` (adversarial Golden Triangle).
 
 **Acceptance Criteria**:
 
 | # | Given | When | Then |
 |---|-------|------|------|
-| AC-1 | `/cook` command issued | User specifies `:fast` | 2â€“3 agents execute with basic quality gates |
-| AC-2 | `/cook` command issued | User specifies `:hard` | 5â€“8 agents execute with test, review, and security gates |
+| AC-1 | `/cook` command issued | User specifies `:fast` | 2–3 agents execute with basic quality gates |
+| AC-2 | `/cook` command issued | User specifies `:hard` | 5–8 agents execute with test, review, and security gates |
 | AC-3 | `/cook` command issued | User specifies `:team` | Golden Triangle team (Tech Lead + Executor + Reviewer) with debate |
 
 **Technical Surface**:
@@ -144,7 +144,7 @@ Each feature specification includes:
 
 ---
 
-### BF-007 â€” Matrix Skill Discovery (HSOL)
+### BF-007 — Matrix Skill Discovery (HSOL)
 
 **Description**: Automatic skill resolution based on agent profile. 1,430+ skills across 19 domains. Fitness scoring: semantic 35%, specificity 25%, trust 20%, freshness 10%, success 10%.
 
@@ -158,16 +158,16 @@ Each feature specification includes:
 | AC-4 | Fitness score computed | Score < 0.8 in `:hard`/`:team` | Dynamic discovery (BF-013) may trigger |
 
 **Technical Surface**:
-- `rules/SKILLS.md` â€” Resolution algorithm, fitness scoring, thresholds
-- `matrix-skills/_index.yaml` â€” Master index of domains and inheritance
-- `matrix-skills/*.yaml` â€” 19 domain registry files
-- `skills/` â€” 1,430+ skill module directories
+- `rules/SKILLS.md` — Resolution algorithm, fitness scoring, thresholds
+- `matrix-skills/_index.yaml` — Master index of domains and inheritance
+- `matrix-skills/*.yaml` — 19 domain registry files
+- `skills/` — 1,430+ skill module directories
 
 **Dependencies**: BF-004 (agent profiles provide input to HSOL)
 
 ---
 
-### BF-008 â€” Tiered Execution
+### BF-008 — Tiered Execution
 
 **Description**: TIER 1 uses `runSubagent` for isolated parallel execution. TIER 2 falls back to in-context embodiment. TIER 1 is mandatory when available.
 
@@ -180,16 +180,16 @@ Each feature specification includes:
 | AC-3 | TIER 1 is available | Orchestrator selects execution tier | TIER 1 is selected (TIER 2 forbidden when TIER 1 available) |
 
 **Technical Surface**:
-- `rules/CORE.md` â€” Tiered Execution section
-- `rules/AGENTS.md` â€” Agent execution protocol
+- `rules/CORE.md` — Tiered Execution section
+- `rules/AGENTS.md` — Agent execution protocol
 
 **Dependencies**: BF-003 (Orchestrator manages execution tier selection)
 
 ---
 
-### BF-009 â€” 10 Orchestration Laws
+### BF-009 — 10 Orchestration Laws
 
-**Description**: Formal governance â€” L1 (Single Truth), L2 (Requirement Integrity), L3 (Phase Completion), L4 (Agent Specialization), L5 (Transparent Delegation), L6 (No Silent Failures), L7 (Skill Authority), L8 (Output Verification), L9 (Context Preservation), L10 (Minimal Intervention).
+**Description**: Formal governance — L1 (Single Truth), L2 (Requirement Integrity), L3 (Phase Completion), L4 (Agent Specialization), L5 (Transparent Delegation), L6 (No Silent Failures), L7 (Skill Authority), L8 (Output Verification), L9 (Context Preservation), L10 (Minimal Intervention).
 
 **Acceptance Criteria**:
 
@@ -201,13 +201,13 @@ Each feature specification includes:
 | AC-4 | Orchestrator receives implementation task | Self-check runs | Law L10 triggers delegation instead of direct implementation |
 
 **Technical Surface**:
-- `rules/CORE.md` â€” Laws section (all 10 laws)
+- `rules/CORE.md` — Laws section (all 10 laws)
 
 **Dependencies**: BF-003 (laws govern the Orchestrator)
 
 ---
 
-### BF-010 â€” Cognitive Anchoring
+### BF-010 — Cognitive Anchoring
 
 **Description**: Structured identity block in every agent file that reinforces role, expertise, and boundaries at execution start.
 
@@ -220,8 +220,8 @@ Each feature specification includes:
 | AC-3 | New agent created from template | Developer follows AGENT-TEMPLATE.md | Cognitive anchor block is included in the new agent |
 
 **Technical Surface**:
-- `agents/*.md` â€” Cognitive anchor block in each file
-- `AGENT-TEMPLATE.md` â€” Template with anchor block structure
+- `agents/*.md` — Cognitive anchor block in each file
+- `AGENT-TEMPLATE.md` — Template with anchor block structure
 
 **Dependencies**: BF-004 (agent file format)
 
@@ -229,9 +229,9 @@ Each feature specification includes:
 
 ## Should Have Features
 
-### BF-011 â€” 17 Domain Teams (Golden Triangle)
+### BF-011 — 17 Domain Teams (Golden Triangle)
 
-**Description**: Adversarial collaboration â€” Tech Lead + Executor + Reviewer per team. 17 teams covering backend through report domains.
+**Description**: Adversarial collaboration — Tech Lead + Executor + Reviewer per team. 17 teams covering backend through report domains.
 
 **Acceptance Criteria**:
 
@@ -243,17 +243,17 @@ Each feature specification includes:
 | AC-4 | 17 team directories exist | Installation complete | All teams are available for `:team` variant |
 
 **Technical Surface**:
-- `rules/TEAMS.md` â€” Full protocol (530+ lines)
-- `agents/teams/*/` â€” 17 directories Ã— 3 files (techlead.md, executor.md, reviewer.md)
-- `rules/PHASES.md`, `rules/AGENTS.md` â€” Team execution support
+- `rules/TEAMS.md` — Full protocol (530+ lines)
+- `agents/teams/*/` — 17 directories × 3 files (techlead.md, executor.md, reviewer.md)
+- `rules/PHASES.md`, `rules/AGENTS.md` — Team execution support
 
 **Dependencies**: BF-006 (`:team` variant), BF-004 (agents)
 
 ---
 
-### BF-012 â€” Error Self-Healing (E1â€“E4)
+### BF-012 — Error Self-Healing (E1–E4)
 
-**Description**: Classified recovery â€” E1 auto-retry, E2 fallback, E3 user pause, E4 halt with diagnostics.
+**Description**: Classified recovery — E1 auto-retry, E2 fallback, E3 user pause, E4 halt with diagnostics.
 
 **Acceptance Criteria**:
 
@@ -265,13 +265,13 @@ Each feature specification includes:
 | AC-4 | E4 critical error occurs | Unrecoverable state | Execution halts; full diagnostic report generated |
 
 **Technical Surface**:
-- `rules/ERRORS.md` â€” Error classification, recovery protocols
+- `rules/ERRORS.md` — Error classification, recovery protocols
 
 **Dependencies**: None (standalone rules file)
 
 ---
 
-### BF-013 â€” Dynamic Skill Discovery
+### BF-013 — Dynamic Skill Discovery
 
 **Description**: When fitness < 0.8 in `:hard`/`:team`, `find-skills` discovers community skills. Tracked in `_dynamic.yaml`.
 
@@ -281,19 +281,19 @@ Each feature specification includes:
 |---|-------|------|------|
 | AC-1 | HSOL fitness < 0.8 for a domain | `:hard` variant executes | Dynamic discovery triggers and searches for community skills |
 | AC-2 | Community skill found | Skill registered | Entry added to `matrix-skills/_dynamic.yaml` with NEW trust status |
-| AC-3 | Network unavailable | Dynamic discovery triggers | Graceful degradation â€” uses best available bundled skill |
+| AC-3 | Network unavailable | Dynamic discovery triggers | Graceful degradation — uses best available bundled skill |
 
 **Technical Surface**:
-- `rules/SKILLS.md` â€” Dynamic discovery section
-- `matrix-skills/_dynamic.yaml` â€” Dynamic skill manifest
+- `rules/SKILLS.md` — Dynamic discovery section
+- `matrix-skills/_dynamic.yaml` — Dynamic skill manifest
 
 **Dependencies**: BF-007 (HSOL fitness scoring active)
 
 ---
 
-### BF-014 â€” Trust Progression Lifecycle
+### BF-014 — Trust Progression Lifecycle
 
-**Description**: NEW â†’ EVALUATING â†’ VALIDATED â†’ PROMOTED lifecycle for dynamically discovered skills.
+**Description**: NEW → EVALUATING → VALIDATED → PROMOTED lifecycle for dynamically discovered skills.
 
 **Acceptance Criteria**:
 
@@ -305,14 +305,14 @@ Each feature specification includes:
 | AC-4 | Skill fails validation | Poor outcomes | Status remains or reverts; skill does not advance |
 
 **Technical Surface**:
-- `rules/SKILLS.md` â€” Trust lifecycle section
-- `matrix-skills/_dynamic.yaml` â€” Status tracking per skill
+- `rules/SKILLS.md` — Trust lifecycle section
+- `matrix-skills/_dynamic.yaml` — Status tracking per skill
 
 **Dependencies**: BF-013 (skills must be discovered first)
 
 ---
 
-### BF-015 â€” Documentation Generation (/docs)
+### BF-015 — Documentation Generation (/docs)
 
 **Description**: Auto-generates structured docs: Core (5 folders), Business (4+ folders), Audit (4 folders). Uses scouter, business-analyst, and docs-manager agents.
 
@@ -325,15 +325,15 @@ Each feature specification includes:
 | AC-3 | Documentation exists | User runs `/docs` again | Existing docs are updated, not overwritten |
 
 **Technical Surface**:
-- `commands/docs.md` â€” Main routing
-- `commands/docs/*.md` â€” Variants
+- `commands/docs.md` — Main routing
+- `commands/docs/*.md` — Variants
 - `agents/docs-manager.md`, `agents/scouter.md`, `agents/business-analyst.md`
 
 **Dependencies**: BF-004 (scouter, BA, docs-manager agents), BF-005 (`/docs` command)
 
 ---
 
-### BF-016 â€” Debate Mechanism (Mailbox)
+### BF-016 — Debate Mechanism (Mailbox)
 
 **Description**: Append-only mailbox for team communication. Message types: TASK_ASSIGNMENT, SUBMISSION, REVIEW, DEFENSE, ARBITRATION, DECISION. Max 3 rounds.
 
@@ -347,15 +347,15 @@ Each feature specification includes:
 | AC-4 | Mailbox file exists | All messages appended | Full debate trail is preserved and auditable |
 
 **Technical Surface**:
-- `rules/TEAMS.md` â€” Mailbox protocol, message types, round limits
+- `rules/TEAMS.md` — Mailbox protocol, message types, round limits
 
 **Dependencies**: BF-011 (teams must be active)
 
 ---
 
-### BF-017 â€” Natural Language Command Detection
+### BF-017 — Natural Language Command Detection
 
-**Description**: Maps plain language intent to commands. "implement" â†’ `/cook`, "fix" â†’ `/fix`, "plan" â†’ `/plan`.
+**Description**: Maps plain language intent to commands. "implement" → `/cook`, "fix" → `/fix`, "plan" → `/plan`.
 
 **Acceptance Criteria**:
 
@@ -367,13 +367,13 @@ Each feature specification includes:
 | AC-4 | Ambiguous intent | Orchestrator cannot classify | Asks user to clarify or defaults to `/ask` |
 
 **Technical Surface**:
-- `rules/CORE.md` â€” Command routing section, natural language mapping table
+- `rules/CORE.md` — Command routing section, natural language mapping table
 
 **Dependencies**: BF-005 (commands must exist to route to)
 
 ---
 
-### BF-018 â€” Language Compliance (L6)
+### BF-018 — Language Compliance (L6)
 
 **Description**: Responses in user's language. Code, comments, generated files always in English.
 
@@ -386,7 +386,7 @@ Each feature specification includes:
 | AC-3 | `/docs` generates files | Files created | All file content is in English regardless of user language |
 
 **Technical Surface**:
-- `rules/CORE.md` â€” Law L6, language compliance section
+- `rules/CORE.md` — Law L6, language compliance section
 
 **Dependencies**: None (CORE.md law)
 
@@ -394,9 +394,9 @@ Each feature specification includes:
 
 ## Could Have Features
 
-### BF-019 â€” Deployment Workflows (/deploy)
+### BF-019 — Deployment Workflows (/deploy)
 
-**Description**: 4 deployment variants â€” check, preview, production, rollback.
+**Description**: 4 deployment variants — check, preview, production, rollback.
 
 **Acceptance Criteria**:
 
@@ -415,9 +415,9 @@ Each feature specification includes:
 
 ---
 
-### BF-020 â€” Autonomous Execution (/auto)
+### BF-020 — Autonomous Execution (/auto)
 
-**Description**: Self-routing execution â€” tech-lead classifies task and selects command/variant without user pauses.
+**Description**: Self-routing execution — tech-lead classifies task and selects command/variant without user pauses.
 
 **Acceptance Criteria**:
 
@@ -435,7 +435,7 @@ Each feature specification includes:
 
 ---
 
-### BF-021 â€” Reporting System (/report)
+### BF-021 — Reporting System (/report)
 
 **Description**: Generates status reports, sprint summaries, and analysis. Reporter + scouter agents.
 
@@ -455,7 +455,7 @@ Each feature specification includes:
 
 ---
 
-### BF-022 â€” Plan Short-Circuit
+### BF-022 — Plan Short-Circuit
 
 **Description**: Skip research/scout/brainstorm phases when existing plan is referenced.
 
@@ -463,19 +463,19 @@ Each feature specification includes:
 
 | # | Given | When | Then |
 |---|-------|------|------|
-| AC-1 | User says "follow the plan" and PLAN-*.md exists | `/code:hard` executes | Phases 1â€“3 skipped; execution starts at context optimization |
+| AC-1 | User says "follow the plan" and PLAN-*.md exists | `/code:hard` executes | Phases 1–3 skipped; execution starts at context optimization |
 | AC-2 | User references `@PLAN-feature.md` | Plan file found | Plan content loaded; research skipped |
 | AC-3 | User says "follow plan" but no PLAN-*.md exists | Detection runs | No short-circuit; normal phase sequence executes |
 
 **Technical Surface**:
-- `commands/code.md` â€” Detection routing
-- `commands/code-hard.md`, `commands/code-team.md` â€” Skip logic section
+- `commands/code.md` — Detection routing
+- `commands/code-hard.md`, `commands/code-team.md` — Skip logic section
 
 **Dependencies**: BF-005 (`/code` command)
 
 ---
 
-### BF-023 â€” CLI List Command
+### BF-023 — CLI List Command
 
 **Description**: Show installed platforms, versions, and status via CLI.
 
@@ -487,7 +487,7 @@ Each feature specification includes:
 | AC-2 | No platforms installed | User runs CLI list | All platforms show as not installed |
 
 **Technical Surface**:
-- `cli/install.js` â€” Planned addition
+- `cli/install.js` — Planned addition
 
 **Dependencies**: BF-001 (CLI exists)
 
@@ -500,7 +500,7 @@ Each feature specification includes:
 | Source | Path |
 |--------|------|
 | Structured Business Pack | [../../reports/business-analysis/structured-business-pack.md](../../reports/business-analysis/structured-business-pack.md) |
-| Knowledge overview â€” features | [../knowledge-overview/03-features.md](../knowledge-overview/03-features.md) |
+| Knowledge overview — features | [../knowledge-overview/03-features.md](../knowledge-overview/03-features.md) |
 | CORE rules | [../../rules/CORE.md](../../rules/CORE.md) |
 | SKILLS rules | [../../rules/SKILLS.md](../../rules/SKILLS.md) |
 | TEAMS rules | [../../rules/TEAMS.md](../../rules/TEAMS.md) |

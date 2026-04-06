@@ -1,6 +1,6 @@
 ---
 name: boomopen-workflow-kit-plan-team
-description: "ðŸ”º Team Plan â€” Golden Triangle adversarial collaboration. Use when user types /plan:team."
+description: "🔺 Team Plan — Golden Triangle adversarial collaboration. Use when user types /plan:team."
 ---
 
 # /plan:team
@@ -9,7 +9,7 @@ description: "ðŸ”º Team Plan â€” Golden Triangle adversarial collabora
 
 ## Rules
 
-1. **Load first**: `~/.codex/skills/boomopen-workflow-kit/rules/CORE.md` â€” follow all 10 Laws
+1. **Load first**: `~/.codex/skills/boomopen-workflow-kit/rules/CORE.md` — follow all 10 Laws
 2. **Agents**: Spawn via Codex native multi-agent (`~/.codex/agents/`)
 3. **Skills**: Resolve from `~/.codex/skills/boomopen-workflow-kit/matrix-skills/`
 

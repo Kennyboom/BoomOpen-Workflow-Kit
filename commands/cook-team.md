@@ -1,11 +1,11 @@
 ---
-description: "ðŸ”º Team Feature â€” Golden Triangle parallel agent collaboration for maximum quality"
+description: "🔺 Team Feature — Golden Triangle parallel agent collaboration for maximum quality"
 version: "3.0"
 category: engineering
 execution-mode: execute
 ---
 
-# /cook:team â€” Golden Triangle Feature Development
+# /cook:team — Golden Triangle Feature Development
 
 > **MISSION**: Maximum quality feature development through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents: Tech Lead (coordinator),
@@ -16,13 +16,13 @@ execution-mode: execute
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip.**
+> **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` â€” Phase 2 detailed analysis protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` â€” Phase 6 Implementation step-by-step (CRITICAL)
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Phase 2 detailed analysis protocol
+> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Phase 6 Implementation step-by-step (CRITICAL)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -38,11 +38,11 @@ execution-mode: execute
 | P5: Planning | `./reports/{topic}/plans/PLAN-{feature}` |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** â‰¤ 150 lines â†’ `{name}.md`. > 150 lines â†’ `{name}/` folder.
+**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase | Requires | Blocking |
 |-------|----------|----------|
@@ -56,7 +56,7 @@ execution-mode: execute
 
 ---
 
-## ðŸŽ­ Phase 1: REQUIREMENTS & DISCOVERY â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 1: REQUIREMENTS & DISCOVERY — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -64,13 +64,13 @@ execution-mode: execute
 | Executor | `scouter` | Deep codebase analysis, map architecture, integration points |
 | Reviewer | `brainstormer` (Devil's Advocate) | Challenge: missed requirements? Unvalidated assumptions? |
 
-**Triangle Loop**: researcher decomposes â†’ scouter surveys â†’ brainstormer challenges
+**Triangle Loop**: researcher decomposes → scouter surveys → brainstormer challenges
 **Deliverable**: Requirements + discovery report
-**Consensus**: âœ… CONSENSUS: researcher âœ“ | scouter âœ“ | brainstormer âœ“
+**Consensus**: ✅ CONSENSUS: researcher ✓ | scouter ✓ | brainstormer ✓
 
 ---
 
-## ðŸŽ­ Phase 2: RESEARCH & PATTERNS â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 2: RESEARCH & PATTERNS — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -79,11 +79,11 @@ execution-mode: execute
 | Reviewer | `tech-lead` (feasibility critic) | Does pattern fit codebase? Complexity justified? Simpler alternatives? |
 
 **Deliverable**: `RESEARCH-{feature}` + `SCOUT-{feature}`
-**Consensus**: âœ… CONSENSUS: researcher âœ“ | researcher(exec) âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: researcher ✓ | researcher(exec) ✓ | tech-lead ✓
 
 ---
 
-## ðŸŽ­ Phase 3: DATABASE DESIGN (IF DATA CHANGES) â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 3: DATABASE DESIGN (IF DATA CHANGES) — 🔺 GOLDEN TRIANGLE
 
 > **Trigger**: Feature involves database changes. Skip if no data changes.
 
@@ -93,11 +93,11 @@ execution-mode: execute
 | Executor | `database-architect` | Design schema, write migrations, plan indexes |
 | Reviewer | `reviewer` + security/perf lens | SQL injection, N+1 queries, missing indexes, data integrity |
 
-**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | database-architect âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tech-lead ✓ | database-architect ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 4: DESIGN (IF UI NEEDED) â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 4: DESIGN (IF UI NEEDED) — 🔺 GOLDEN TRIANGLE
 
 > **Trigger**: Feature has UI components. Skip if backend-only.
 
@@ -108,11 +108,11 @@ execution-mode: execute
 | Reviewer | `reviewer` + UX/a11y lens | WCAG 2.1 AA, keyboard nav, screen reader, mobile-first |
 
 **Deliverable**: `DESIGN-{feature}`
-**Consensus**: âœ… CONSENSUS: designer âœ“ | frontend-engineer âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: designer ✓ | frontend-engineer ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 5: PLANNING â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 5: PLANNING — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -122,21 +122,21 @@ execution-mode: execute
 
 **Prerequisite**: **READ** RESEARCH + SCOUT + DESIGN files
 **Deliverable**: `PLAN-{feature}`
-**Consensus**: âœ… CONSENSUS: planner âœ“ | researcher âœ“ | tech-lead âœ“
+**Consensus**: ✅ CONSENSUS: planner ✓ | researcher ✓ | tech-lead ✓
 
 ---
 
-## ðŸŽ­ Phase 6: IMPLEMENTATION â€” ðŸ”º GOLDEN TRIANGLE (CRITICAL)
+## 🎭 Phase 6: IMPLEMENTATION — 🔺 GOLDEN TRIANGLE (CRITICAL)
 
-> **â›” MANDATORY: READ `_ref/implementation-loop.md` for the full step-by-step protocol.**
+> **⛔ MANDATORY: READ `_ref/implementation-loop.md` for the full step-by-step protocol.**
 
 **Prerequisite**: **READ and FOLLOW** `./reports/{topic}/plans/PLAN-{feature}`
 **Exit Criteria**: All plan tasks implemented, reviews passed, no unauthorized deviations
-**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | {executor} âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 7: TESTING & REVIEW â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 7: TESTING & REVIEW — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -145,30 +145,30 @@ execution-mode: execute
 | Reviewer | `reviewer` + security/perf lens | Test gaps, missing security tests, perf benchmarks |
 
 **PLAN CHECKPOINT VERIFICATION** (MANDATORY):
-- For EACH acceptance criterion in PLAN â†’ write test â†’ verify â†’ document
+- For EACH acceptance criterion in PLAN → write test → verify → document
 
-**Consensus**: âœ… CONSENSUS: tester âœ“ | tester(exec) âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: tester ✓ | tester(exec) ✓ | reviewer ✓
 
 ---
 
-## âœ… COMPLETION TEMPLATE
+## ✅ COMPLETION TEMPLATE
 
 ```markdown
-# ðŸ”º Golden Triangle Feature Report: {feature}
+# 🔺 Golden Triangle Feature Report: {feature}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Requirements | researcher / scouter / brainstormer | âœ… | {n} |
-| P2: Research | researcher / researcher / tech-lead | âœ… | {n} |
-| P3: Database | tech-lead / database-architect / reviewer | âœ… or SKIPPED | {n} |
-| P4: Design | designer / frontend-engineer / reviewer | âœ… or SKIPPED | {n} |
-| P5: Planning | planner / researcher / tech-lead | âœ… | {n} |
-| P6: Implementation | tech-lead / {executor} / reviewer | âœ… | {n} |
-| P7: Testing | tester / tester / reviewer | âœ… | {n} |
+| P1: Requirements | researcher / scouter / brainstormer | ✅ | {n} |
+| P2: Research | researcher / researcher / tech-lead | ✅ | {n} |
+| P3: Database | tech-lead / database-architect / reviewer | ✅ or SKIPPED | {n} |
+| P4: Design | designer / frontend-engineer / reviewer | ✅ or SKIPPED | {n} |
+| P5: Planning | planner / researcher / tech-lead | ✅ | {n} |
+| P6: Implementation | tech-lead / {executor} / reviewer | ✅ | {n} |
+| P7: Testing | tester / tester / reviewer | ✅ | {n} |
 
 ## Next Actions
-1. âœ… **Done** â€” Feature complete (triangle-validated)
-2. ðŸš€ `/deploy:preview` â†’ Deploy to staging
-3. ðŸ“ `/docs:core` â†’ Generate documentation
+1. ✅ **Done** — Feature complete (triangle-validated)
+2. 🚀 `/deploy:preview` → Deploy to staging
+3. ðŸ“ `/docs:core` → Generate documentation
 ```

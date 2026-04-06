@@ -1,4 +1,4 @@
-# BoomOpen Workflow Kit â€” Project Identity
+# BoomOpen Workflow Kit — Project Identity
 
 > **Purpose**: Defines the project's name, version, author, license, purpose, problem/solution, key benefits, and onboarding path
 > **Parent**: [00-index.md](./00-index.md)
@@ -36,11 +36,11 @@ BoomOpen Workflow Kit transforms a single AI coding assistant into a coordinated
 
 AI coding assistants (Cursor, Copilot, Claude Code, etc.) are powerful but operate as generalists by default. Without structure, they produce inconsistent outputs, miss quality checks, and require extensive manual prompt engineering for each task. Developers waste time re-configuring AI behavior per project and per tool, leading to:
 
-- **Inconsistent quality** â€” No enforced review, testing, or security checks
-- **Repeated setup** â€” Configuration lost between projects and tools
-- **Token waste** â€” Unfocused prompts produce verbose, often incorrect outputs
-- **No specialization** â€” A single agent tries to be backend engineer, tester, and reviewer simultaneously
-- **Platform lock-in** â€” Workflows built for one AI tool don't transfer to another
+- **Inconsistent quality** — No enforced review, testing, or security checks
+- **Repeated setup** — Configuration lost between projects and tools
+- **Token waste** — Unfocused prompts produce verbose, often incorrect outputs
+- **No specialization** — A single agent tries to be backend engineer, tester, and reviewer simultaneously
+- **Platform lock-in** — Workflows built for one AI tool don't transfer to another
 
 ---
 
@@ -48,12 +48,12 @@ AI coding assistants (Cursor, Copilot, Claude Code, etc.) are powerful but opera
 
 BoomOpen Workflow Kit solves these by:
 
-1. **Global one-time installation** â€” Markdown and YAML configurations installed into each AI tool's global directory (`~/.cursor/`, `~/.claude/`, `~/.copilot/`, etc.) apply to all projects automatically.
-2. **Orchestrator pattern** â€” The AI reads a platform entry file that transforms it into an Orchestrator role. It delegates work to specialist agents rather than attempting everything itself.
-3. **21 specialist agents** â€” Each with a defined profile, responsibility scope, and skill set. Examples: `backend-engineer`, `tester`, `security-engineer`, `tech-lead`.
-4. **14 structured commands** â€” `/cook`, `/code`, `/fix`, `/debug`, `/test`, `/plan`, `/design`, `/review`, `/report`, `/brainstorm`, `/docs`, `/deploy`, `/ask`, `/auto` â€” each with variant strategies (fast, hard, team).
-5. **Automatic skill injection (HSOL)** â€” 1,430+ skills across 19 domains resolved by agent profile and request context, with no manual skill selection required.
-6. **Cross-platform parity** â€” The same workflows and agent definitions work across all 5 supported AI coding tools.
+1. **Global one-time installation** — Markdown and YAML configurations installed into each AI tool's global directory (`~/.cursor/`, `~/.claude/`, `~/.copilot/`, etc.) apply to all projects automatically.
+2. **Orchestrator pattern** — The AI reads a platform entry file that transforms it into an Orchestrator role. It delegates work to specialist agents rather than attempting everything itself.
+3. **21 specialist agents** — Each with a defined profile, responsibility scope, and skill set. Examples: `backend-engineer`, `tester`, `security-engineer`, `tech-lead`.
+4. **14 structured commands** — `/cook`, `/code`, `/fix`, `/debug`, `/test`, `/plan`, `/design`, `/review`, `/report`, `/brainstorm`, `/docs`, `/deploy`, `/ask`, `/auto` — each with variant strategies (fast, hard, team).
+5. **Automatic skill injection (HSOL)** — 1,430+ skills across 19 domains resolved by agent profile and request context, with no manual skill selection required.
+6. **Cross-platform parity** — The same workflows and agent definitions work across all 5 supported AI coding tools.
 
 ---
 
@@ -67,7 +67,7 @@ BoomOpen Workflow Kit solves these by:
 | **Zero per-project config** | Global installation means every new project inherits the full framework automatically |
 | **Platform freedom** | Switch between Cursor, Copilot, Claude Code, Codex, or Antigravity without rewriting workflows |
 | **Built-in governance** | 10 Orchestration Laws (Single Point of Truth, Requirement Integrity, etc.) enforce consistent behavior |
-| **Error self-healing** | Classified recovery system (E1â€“E4) prevents silent failures and ensures transparent error handling |
+| **Error self-healing** | Classified recovery system (E1–E4) prevents silent failures and ensures transparent error handling |
 
 ---
 
@@ -86,38 +86,38 @@ BoomOpen Workflow Kit solves these by:
 | Architecture | Plugin-based Orchestrator Framework |
 | Delivery Model | CLI tool + Markdown/YAML configurations |
 | Runtime Dependencies | None (zero production deps) |
-| State Management | Stateless â€” no database, no server, no persistent runtime |
+| State Management | Stateless — no database, no server, no persistent runtime |
 | Distribution | npm public registry + GitHub source |
 | Versioning | Semantic Versioning via semantic-release |
 | Commit Convention | Conventional Commits (v7.0.2) |
 
 ---
 
-## First 60 Minutes â€” Onboarding Checklist
+## First 60 Minutes — Onboarding Checklist
 
 This checklist takes a new developer or contributor from zero to productive with BoomOpen Workflow Kit in approximately one hour.
 
-### Minutes 0â€“10: Environment Setup
+### Minutes 0–10: Environment Setup
 
 - [ ] Verify Node.js >=18.0.0 is installed: `node --version`
 - [ ] Verify npm is available: `npm --version`
 - [ ] Verify git is available: `git --version`
 - [ ] Ensure at least one supported AI tool is installed (Cursor, VS Code with Copilot, Claude Code CLI, Codex, or Antigravity)
 
-### Minutes 10â€“20: Install and Verify
+### Minutes 10–20: Install and Verify
 
 - [ ] Install globally: `npm install -g @namch/boomopen-workflow-kit@latest`
 - [ ] Install for your AI tool: `boomopen-workflow-kit install --all` (or specify one: `boomopen-workflow-kit install cursor`)
 - [ ] Verify installation: `boomopen-workflow-kit list`
 - [ ] Confirm files exist in the tool's directory (e.g., `ls ~/.cursor/skills/boomopen-workflow-kit/` for Cursor)
 
-### Minutes 20â€“30: Read Core Concepts
+### Minutes 20–30: Read Core Concepts
 
-- [ ] Read the README: [../../README.md](../../README.md) â€” understand the value prop, commands, and agents
-- [ ] Read Core Rules: [../../rules/CORE.md](../../rules/CORE.md) â€” understand the Orchestrator identity and 10 Laws
-- [ ] Browse agent definitions: [../../agents/](../../agents/) â€” open 2â€“3 agent files to see their structure (e.g., `backend-engineer.md`, `tester.md`)
+- [ ] Read the README: [../../README.md](../../README.md) — understand the value prop, commands, and agents
+- [ ] Read Core Rules: [../../rules/CORE.md](../../rules/CORE.md) — understand the Orchestrator identity and 10 Laws
+- [ ] Browse agent definitions: [../../agents/](../../agents/) — open 2–3 agent files to see their structure (e.g., `backend-engineer.md`, `tester.md`)
 
-### Minutes 30â€“40: Run Your First Commands
+### Minutes 30–40: Run Your First Commands
 
 - [ ] Open a project in your AI tool (Cursor, VS Code, or Claude Code CLI)
 - [ ] Try a simple build: `/cook:fast "add a hello world endpoint"`
@@ -125,14 +125,14 @@ This checklist takes a new developer or contributor from zero to productive with
 - [ ] Try an ask command: `/ask "explain the project structure"`
 - [ ] Observe how the Orchestrator delegates to specialist agents
 
-### Minutes 40â€“50: Explore the Framework
+### Minutes 40–50: Explore the Framework
 
-- [ ] Browse the commands directory: [../../commands/](../../commands/) â€” see how commands route to variants
+- [ ] Browse the commands directory: [../../commands/](../../commands/) — see how commands route to variants
 - [ ] Open one command variant (e.g., `commands/cook-fast.md`) to understand workflow phases
 - [ ] Browse `matrix-skills/` to see how skills are organized: [../../matrix-skills/_index.yaml](../../matrix-skills/_index.yaml)
 - [ ] Check `skills/` to see the scale of domain knowledge available
 
-### Minutes 50â€“60: Generate Project Documentation
+### Minutes 50–60: Generate Project Documentation
 
 - [ ] Run `/docs:core` in your AI tool to generate technical documentation for your current project
 - [ ] Verify that `./documents/` was created with knowledge files
@@ -145,7 +145,7 @@ This checklist takes a new developer or contributor from zero to productive with
 - [ ] Try `:team` variant for adversarial collaboration: `/cook:team "implement payment processing"`
 - [ ] Read [../../rules/PHASES.md](../../rules/PHASES.md) for understanding workflow phases
 - [ ] Read [../../rules/AGENTS.md](../../rules/AGENTS.md) for tiered execution details
-- [ ] If contributing: read the Contributing section in the README and follow fork â†’ branch â†’ PR workflow
+- [ ] If contributing: read the Contributing section in the README and follow fork → branch → PR workflow
 
 ---
 

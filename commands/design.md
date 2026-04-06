@@ -1,11 +1,11 @@
 ---
-description: ðŸŽ¨ Design Router â€” Route to design workflows
+description: 🎨 Design Router — Route to design workflows
 version: "1.0"
 category: design
 execution-mode: router
 ---
 
-# /design â€” Design Router
+# /design — Design Router
 
 > **ROUTER DIRECTIVE**: Analyze design need and route to appropriate workflow.
 
@@ -13,15 +13,15 @@ execution-mode: router
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 
-1. CORE.md â€” Identity, Laws, Routing
-2. PHASES.md â€” Phase Execution
-3. AGENTS.md â€” Tiered Execution
+1. CORE.md — Identity, Laws, Routing
+2. PHASES.md — Phase Execution
+3. AGENTS.md — Tiered Execution
 
-**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -29,16 +29,16 @@ execution-mode: router
 
 ```
 IF design is simple (component, quick mockup):
-  â†’ Route to /design:fast
+  → Route to /design:fast
 
 IF design is complex (full feature, system):
-  â†’ Route to /design:hard
+  → Route to /design:hard
 
 IF design is complex AND maximum quality with team collaboration needed:
-  â†’ Route to /design:team
+  → Route to /design:team
 
 IF unsure:
-  â†’ Default to /design:fast
+  → Default to /design:fast
 ```
 
 ---
@@ -56,15 +56,15 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## ðŸŽ¨ Design Mode Selection
+## 🎨 Design Mode Selection
 
 **Request**: [parsed request]
 
 **Choose workflow:**
 
-1. âš¡ **Fast** â†’ `/design:fast` â€” Quick design
-2. âš¡âš¡âš¡ **Hard** â†’ `/design:hard` â€” Full design process
-3. ðŸ‘¥ **Team** â†’ `/design:team` â€” Full team collaboration (parallel agents, maximum quality)
+1. ⚡ **Fast** → `/design:fast` — Quick design
+2. ⚡⚡⚡ **Hard** → `/design:hard` — Full design process
+3. 👥 **Team** → `/design:team` — Full team collaboration (parallel agents, maximum quality)
 
 â³ Awaiting selection...
 ```

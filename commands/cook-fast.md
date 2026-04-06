@@ -1,11 +1,11 @@
 ---
-description: âš¡ Quick Feature â€” Rapid feature implementation
+description: ⚡ Quick Feature — Rapid feature implementation
 version: "1.0"
 category: engineering
 execution-mode: execute
 ---
 
-# /cook:fast â€” Rapid Feature Implementation
+# /cook:fast — Rapid Feature Implementation
 
 > **MISSION**: Quickly implement well-defined features with minimal ceremony.
 
@@ -13,21 +13,21 @@ execution-mode: execute
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 
-1. CORE.md â€” Identity, Laws, Routing
-2. PHASES.md â€” Phase Execution
-3. AGENTS.md â€” Tiered Execution
+1. CORE.md — Identity, Laws, Routing
+2. PHASES.md — Phase Execution
+3. AGENTS.md — Tiered Execution
 
-**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
 
 ---
 
-## ðŸ”€ TIERED EXECUTION
+## 🔀 TIERED EXECUTION
 
 | Tier       | When               | Action                       |
 | ---------- | ------------------ | ---------------------------- |
@@ -42,23 +42,23 @@ execution-mode: execute
 
 ```
 IF ./reports/{topic}/plans/PLAN-{feature} exists (.md file or folder):
-  â†’ READ and FOLLOW it
+  → READ and FOLLOW it
 ELSE:
-  â†’ Create micro-plan inline
+  → Create micro-plan inline
 ```
 
-Any files in `./reports/{topic}/` or `./documents/` â†’ English only.
-**âš ï¸ Paths above = base names.** Small (â‰¤ 150 lines) â†’ create as `{name}.md`. Large (> 150 lines or â‰¥ 4 sections) â†’ create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+Any files in `./reports/{topic}/` or `./documents/` → English only.
+**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
-## â›” INCREMENTAL EXECUTION (MANDATORY)
+## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
 
 ---
 
-## ðŸŽ­ Phase 1: CONTEXT SCAN
+## 🎭 Phase 1: CONTEXT SCAN
 
 | Agent | `scouter`                                     |
 | ----- | --------------------------------------------- |
@@ -67,7 +67,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 2: MICRO-PLANNING
+## 🎭 Phase 2: MICRO-PLANNING
 
 | Agent | `planner`                          |
 | ----- | ---------------------------------- |
@@ -76,11 +76,11 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 3: IMPLEMENTATION
+## 🎭 Phase 3: IMPLEMENTATION
 
 | Agent        | Route by domain                                                               |
 | ------------ | ----------------------------------------------------------------------------- |
-| Route        | UI â†’ `frontend-engineer`, API â†’ `backend-engineer`, DB â†’ `database-architect` |
+| Route        | UI → `frontend-engineer`, API → `backend-engineer`, DB → `database-architect` |
 | Prerequisite | READ `./reports/{topic}/plans/PLAN-{feature}` if exists                            |
 | Goal         | Implement feature                                                             |
 | Exit         | Feature implemented, code compiles, basic testing done                        |
@@ -101,6 +101,6 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 Present feature with:
 
-1. âœ… **Done** â€” Feature complete
-2. ðŸ§ª **Test** â†’ `/test`
-3. ðŸ“ **Docs** â†’ `/docs:core`
+1. ✅ **Done** — Feature complete
+2. 🧪 **Test** → `/test`
+3. ðŸ“ **Docs** → `/docs:core`

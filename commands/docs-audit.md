@@ -5,7 +5,7 @@ category: documentation
 execution-mode: execute
 ---
 
-# /docs:audit â€” Security & Compliance Audit Documentation
+# /docs:audit — Security & Compliance Audit Documentation
 
 > **MISSION**: Generate or update **ALL 4 audit folders**, each with `00-index.md` + sub-files.
 > Output must be evidence-backed, scored, and actionable.
@@ -16,23 +16,23 @@ execution-mode: execute
 
 ## PRE-FLIGHT
 
-**LOAD**: CORE.md â†’ PHASES.md â†’ AGENTS.md (path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`)
+**LOAD**: CORE.md → PHASES.md → AGENTS.md (path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`)
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ this reference file NOW. Do NOT skip.**
+> **🔴 YOU MUST READ this reference file NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/docs-recon-protocol.md` â€” Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
 >
 > **Failure to read = incorrect execution. This file contains BINDING protocols.**
 
 ---
 
-## DELIVERABLES â€” 4 Audit Folders
+## DELIVERABLES — 4 Audit Folders
 
-> **â›” MUST CREATE OR UPDATE ALL 4 FOLDERS.** Incomplete = FAILED.
+> **⛔ MUST CREATE OR UPDATE ALL 4 FOLDERS.** Incomplete = FAILED.
 
 ```
 ./documents/audit/
@@ -42,9 +42,9 @@ execution-mode: execute
   audit-recommendations/   # 00-index + 01-critical-remediations + 02-high-priority + 03-medium-low + 04-score-uplift-plan
 ```
 
-**Minimum**: 4 folders Ã— 5 files = **20 files**
+**Minimum**: 4 folders × 5 files = **20 files**
 
-### `00-index.md` Pattern â€” includes: Quick summary, Strict score (numeric/grade/confidence), Sub-files table, Key findings, Cross-refs, Known gaps
+### `00-index.md` Pattern — includes: Quick summary, Strict score (numeric/grade/confidence), Sub-files table, Key findings, Cross-refs, Known gaps
 
 ### Finding ID System
 
@@ -84,7 +84,7 @@ Cross-folder: Same finding = same ID + same severity. `audit-recommendations/` M
 | **Agent** | `security-engineer` |
 | **Goal** | Vulnerability analysis, OWASP Top 10 assessment, compliance mapping, risk scoring |
 
-**Output**: Findings register (ID/title/severity/OWASP/CWE), OWASP assessment, Compliance control matrix (NIST/CIS/ISO), Risk matrix (likelihood Ã— impact), Privacy assessment
+**Output**: Findings register (ID/title/severity/OWASP/CWE), OWASP assessment, Compliance control matrix (NIST/CIS/ISO), Risk matrix (likelihood × impact), Privacy assessment
 
 ---
 
@@ -114,13 +114,13 @@ Cross-folder: Same finding = same ID + same severity. `audit-recommendations/` M
 | **Agent** | `reviewer` |
 | **Goal** | Cross-folder consistency, evidence integrity, production readiness |
 
-**Consistency checks**: Finding IDs consistent âœ“ | Severity alignment âœ“ | Evidence present âœ“ | Score sections âœ“ | No placeholders âœ“ | Framework refs âœ“ | Cross-refs valid âœ“ | No contradictions âœ“
+**Consistency checks**: Finding IDs consistent ✓ | Severity alignment ✓ | Evidence present ✓ | Score sections ✓ | No placeholders ✓ | Framework refs ✓ | Cross-refs valid ✓ | No contradictions ✓
 
 **Per-folder checks**:
-- `audit-security/` â†’ attack-surface + findings register
-- `audit-compliance/` â†’ control-mapping + gap register
-- `audit-dataflow/` â†’ data-flow diagram (Mermaid) + trust boundaries
-- `audit-recommendations/` â†’ prioritized remediation + score uplift plan
+- `audit-security/` → attack-surface + findings register
+- `audit-compliance/` → control-mapping + gap register
+- `audit-dataflow/` → data-flow diagram (Mermaid) + trust boundaries
+- `audit-recommendations/` → prioritized remediation + score uplift plan
 
 ---
 
@@ -144,5 +144,5 @@ Cross-folder: Same finding = same ID + same severity. `audit-recommendations/` M
 2. {action with finding ID}
 
 **Total: 4 folders (20+ files) in `./documents/audit/`**
-**Next** â†’ Address critical findings
+**Next** → Address critical findings
 ```

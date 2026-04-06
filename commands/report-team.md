@@ -1,11 +1,11 @@
 ---
-description: "ðŸ”º Team Report â€” Golden Triangle adversarial collaboration for maximum quality reporting"
+description: "🔺 Team Report — Golden Triangle adversarial collaboration for maximum quality reporting"
 version: "3.0"
 category: reporting
 execution-mode: execute
 ---
 
-# /report:team â€” Golden Triangle Report Generation
+# /report:team — Golden Triangle Report Generation
 
 > **MISSION**: Maximum quality reporting through adversarial collaboration.
 > Each phase spawns a **Golden Triangle** of 3 agents. Output is released ONLY
@@ -15,11 +15,11 @@ execution-mode: execute
 
 ---
 
-## â›” MANDATORY REFERENCE â€” READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
 
-> **ðŸ”´ YOU MUST READ these reference files NOW. Do NOT skip.**
+> **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` â€” Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -34,11 +34,11 @@ execution-mode: execute
 | P3: Final | `./reports/{topic}/general/REPORT-{topic}-{date}` (polished) |
 | ALL | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** â‰¤ 150 lines â†’ `{name}.md`. > 150 lines â†’ `{name}/` folder.
+**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
 ---
 
-## ðŸ”— PHASE DEPENDENCIES
+## 🔗 PHASE DEPENDENCIES
 
 | Phase | Requires | Blocking |
 |-------|----------|----------|
@@ -48,7 +48,7 @@ execution-mode: execute
 
 ---
 
-## ðŸŽ­ Phase 1: DATA COLLECTION & ANALYSIS â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 1: DATA COLLECTION & ANALYSIS — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -57,11 +57,11 @@ execution-mode: execute
 | Reviewer | `business-analyst` (Devil's Advocate) | Data completeness? Metrics meaningful? Selection bias? |
 
 **Deliverable**: `SCOUT-{topic}` + `RESEARCH-{topic}`
-**Consensus**: âœ… CONSENSUS: reporter âœ“ | scouter/researcher âœ“ | business-analyst âœ“
+**Consensus**: ✅ CONSENSUS: reporter ✓ | scouter/researcher ✓ | business-analyst ✓
 
 ---
 
-## ðŸŽ­ Phase 2: REPORT DRAFTING â€” ðŸ”º GOLDEN TRIANGLE (CRITICAL)
+## 🎭 Phase 2: REPORT DRAFTING — 🔺 GOLDEN TRIANGLE (CRITICAL)
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -96,14 +96,14 @@ execution-mode: execute
 | Risk | Probability | Impact | Mitigation |
 ```
 
-**STRICT EVIDENCE ADHERENCE**: Every claim MUST trace to Phase 1 data. Unsupported claims â†’ automatic FAIL.
+**STRICT EVIDENCE ADHERENCE**: Every claim MUST trace to Phase 1 data. Unsupported claims → automatic FAIL.
 
 **Deliverable**: `REPORT-{topic}-{date}`
-**Consensus**: âœ… CONSENSUS: reporter âœ“ | reporter(exec) âœ“ | reviewer âœ“
+**Consensus**: ✅ CONSENSUS: reporter ✓ | reporter(exec) ✓ | reviewer ✓
 
 ---
 
-## ðŸŽ­ Phase 3: REVIEW & DELIVERY â€” ðŸ”º GOLDEN TRIANGLE
+## 🎭 Phase 3: REVIEW & DELIVERY — 🔺 GOLDEN TRIANGLE
 
 | Role | Agent | Mission |
 |------|-------|---------|
@@ -111,27 +111,27 @@ execution-mode: execute
 | Executor | `docs-manager` | Format, polish, executive summary refinement |
 | Reviewer | `business-analyst` | Stakeholder-ready? Actionable next steps? |
 
-**DELIVERY CHECKLIST**: Executive summary standalone âœ“ | Claims evidence-backed âœ“ | Recommendations prioritized âœ“ | Audience-appropriate âœ“ | Formatting professional âœ“ | No contradictions âœ“
+**DELIVERY CHECKLIST**: Executive summary standalone ✓ | Claims evidence-backed ✓ | Recommendations prioritized ✓ | Audience-appropriate ✓ | Formatting professional ✓ | No contradictions ✓
 
 **Deliverable**: `REPORT-{topic}-{date}` (final polished)
-**Consensus**: âœ… CONSENSUS: tech-lead âœ“ | docs-manager âœ“ | business-analyst âœ“
+**Consensus**: ✅ CONSENSUS: tech-lead ✓ | docs-manager ✓ | business-analyst ✓
 
 ---
 
-## âœ… COMPLETION TEMPLATE
+## ✅ COMPLETION TEMPLATE
 
 ```markdown
-# ðŸ”º Golden Triangle Report: {topic}
+# 🔺 Golden Triangle Report: {topic}
 
 ## Phase Results
 | Phase | Triangle | Consensus | Rounds |
 |-------|----------|-----------|--------|
-| P1: Data Collection | reporter / scouter+researcher / business-analyst | âœ… | {n} |
-| P2: Report Drafting | reporter / reporter / reviewer | âœ… | {n} |
-| P3: Review & Delivery | tech-lead / docs-manager / business-analyst | âœ… | {n} |
+| P1: Data Collection | reporter / scouter+researcher / business-analyst | ✅ | {n} |
+| P2: Report Drafting | reporter / reporter / reviewer | ✅ | {n} |
+| P3: Review & Delivery | tech-lead / docs-manager / business-analyst | ✅ | {n} |
 
 ## Next Actions
-1. âœ… **Done** â€” Report complete (triangle-validated)
-2. ðŸ“ `/docs:core` â†’ Update related documentation
-3. ðŸ“¢ Share with stakeholders
+1. ✅ **Done** — Report complete (triangle-validated)
+2. ðŸ“ `/docs:core` → Update related documentation
+3. 📢 Share with stakeholders
 ```

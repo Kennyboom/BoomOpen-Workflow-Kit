@@ -1,11 +1,11 @@
 ---
-description: âš¡âš¡âš¡ Full Review â€” Deep code analysis with architecture review
+description: ⚡⚡⚡ Full Review — Deep code analysis with architecture review
 version: "1.0"
 category: validation
 execution-mode: execute
 ---
 
-# /review:hard â€” Deep Code Review
+# /review:hard — Deep Code Review
 
 > **MISSION**: Comprehensive code and architecture review.
 
@@ -13,20 +13,20 @@ execution-mode: execute
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS PHASE 1)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md â€” Identity, Laws, Routing  
-2. PHASES.md â€” Phase Execution  
-3. AGENTS.md â€” Tiered Execution  
+1. CORE.md — Identity, Laws, Routing  
+2. PHASES.md — Phase Execution  
+3. AGENTS.md — Tiered Execution  
 
-**â›” Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
 
 ---
 
-## ðŸ”€ TIERED EXECUTION
+## 🔀 TIERED EXECUTION
 
 | Tier | When | Action |
 |------|------|--------|
@@ -46,13 +46,13 @@ IF ./reports/{topic}/plans/PLAN-{scope} exists (.md file or folder):
 
 ---
 
-## â›” INCREMENTAL EXECUTION (MANDATORY)
+## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†’ â€¦ in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees whatâ€™s happening (announce before doing).
+One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
 
 ---
 
-## ðŸŽ­ Phase 1: ARCHITECTURE REVIEW
+## 🎭 Phase 1: ARCHITECTURE REVIEW
 
 | Agent | `tech-lead` |
 |-------|-------------|
@@ -61,7 +61,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 2: CODE REVIEW
+## 🎭 Phase 2: CODE REVIEW
 
 | Agent | `reviewer` |
 |-------|------------|
@@ -71,7 +71,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 3: SECURITY REVIEW
+## 🎭 Phase 3: SECURITY REVIEW
 
 | Agent | `security-engineer` |
 |-------|----------------------|
@@ -80,7 +80,7 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 ---
 
-## ðŸŽ­ Phase 4: PERFORMANCE REVIEW
+## 🎭 Phase 4: PERFORMANCE REVIEW
 
 | Agent | `performance-engineer` |
 |-------|------------------------|
@@ -93,6 +93,6 @@ One phase at a time, each phase independent: Phase 1 â†’ then Phase 2 â†
 
 Present review with:
 
-1. âœ… **Approved** â€” Code ready
-2. ðŸ”§ **Fix** â†’ `/fix`
-3. ðŸ§ª **Test** â†’ `/test`
+1. ✅ **Approved** — Code ready
+2. 🔧 **Fix** → `/fix`
+3. 🧪 **Test** → `/test`

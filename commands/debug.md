@@ -1,11 +1,11 @@
 ---
-description: ðŸ› Debug Router â€” Route to debugging workflows
+description: ðŸ› Debug Router — Route to debugging workflows
 version: "1.0"
 category: debugging
 execution-mode: router
 ---
 
-# /debug â€” Debug Router
+# /debug — Debug Router
 
 > **ROUTER DIRECTIVE**: Analyze issue complexity and route to appropriate debugging workflow.
 
@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## ðŸ›‘ PRE-FLIGHT (DO FIRST â€” BLOCKS EXECUTION)
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md â€” Identity, Laws, Routing  
-2. PHASES.md â€” Phase Execution  
-3. AGENTS.md â€” Tiered Execution  
+1. CORE.md — Identity, Laws, Routing  
+2. PHASES.md — Phase Execution  
+3. AGENTS.md — Tiered Execution  
 
-**â›” Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
 ---
 
@@ -28,16 +28,16 @@ execution-mode: router
 
 ```
 IF issue is simple (clear error, reproducible):
-  â†’ Route to /debug:fast
+  → Route to /debug:fast
 
 IF issue is complex (intermittent, unclear cause):
-  â†’ Route to /debug:hard
+  → Route to /debug:hard
 
 IF issue is complex AND maximum quality with team collaboration needed:
-  â†’ Route to /debug:team
+  → Route to /debug:team
 
 IF unsure:
-  â†’ Default to /debug:fast (escalate if needed)
+  → Default to /debug:fast (escalate if needed)
 ```
 
 ---
@@ -61,9 +61,9 @@ IF unsure:
 
 **Choose workflow:**
 
-1. âš¡ **Fast** â†’ `/debug:fast` â€” Quick diagnosis
-2. âš¡âš¡âš¡ **Hard** â†’ `/debug:hard` â€” Deep investigation
-3. ðŸ‘¥ **Team** â†’ `/debug:team` â€” Full team collaboration (parallel agents, maximum quality)
+1. ⚡ **Fast** → `/debug:fast` — Quick diagnosis
+2. ⚡⚡⚡ **Hard** → `/debug:hard` — Deep investigation
+3. 👥 **Team** → `/debug:team` — Full team collaboration (parallel agents, maximum quality)
 
 â³ Awaiting selection...
 ```

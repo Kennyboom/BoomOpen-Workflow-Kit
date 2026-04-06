@@ -13,7 +13,7 @@ execution-mode: execute
 
 ---
 
-## Ã°Å¸â€ºâ€˜ PRE-FLIGHT (DO FIRST Ã¢â‚¬â€ BLOCKS EXECUTION)
+## ðŸ›‘ PRE-FLIGHT (DO FIRST Ã¢â‚¬â€ BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
 
@@ -42,18 +42,18 @@ execution-mode: execute
 ```
 Ã¢â€Å’Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€Â
 Ã¢â€â€š STEP 1: Load & Execute /docs:core                               Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Wait until ALL 5 knowledge folders are created              Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Each folder: 00-index.md + numbered sub-files               Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Verify: knowledge-overview/, architecture/, domain/,        Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™         source-base/, standards/                            Ã¢â€â€š
+Ã¢â€â€š   â†’ Wait until ALL 5 knowledge folders are created              Ã¢â€â€š
+Ã¢â€â€š   â†’ Each folder: 00-index.md + numbered sub-files               Ã¢â€â€š
+Ã¢â€â€š   â†’ Verify: knowledge-overview/, architecture/, domain/,        Ã¢â€â€š
+Ã¢â€â€š   â†’         source-base/, standards/                            Ã¢â€â€š
 Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€Â¤
 Ã¢â€â€š STEP 2: Load & Execute /docs:business                           Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Wait until ALL 4 business folders are created               Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Verify: business-prd/, features/, workflows/, glossary/     Ã¢â€â€š
+Ã¢â€â€š   â†’ Wait until ALL 4 business folders are created               Ã¢â€â€š
+Ã¢â€â€š   â†’ Verify: business-prd/, features/, workflows/, glossary/     Ã¢â€â€š
 Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€Â¤
 Ã¢â€â€š STEP 3: Load & Execute /docs:audit                              Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Wait until ALL 4 audit folders are created                   Ã¢â€â€š
-Ã¢â€â€š   Ã¢â€ â€™ Verify: audit-security, compliance, dataflow,               Ã¢â€â€š
+Ã¢â€â€š   â†’ Wait until ALL 4 audit folders are created                   Ã¢â€â€š
+Ã¢â€â€š   â†’ Verify: audit-security, compliance, dataflow,               Ã¢â€â€š
 Ã¢â€â€š             recommendations                                     Ã¢â€â€š
 Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€Ëœ
 ```
@@ -113,53 +113,53 @@ execution-mode: execute
 
 ---
 
-## Ã¢Å“â€¦ FINAL VERIFICATION (REQUIRED)
+## âœ… FINAL VERIFICATION (REQUIRED)
 
 Before reporting "Done", verify ALL deliverables exist:
 
 ```
 ./documents/
 Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Core (5 folders, 26+ files)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ knowledge-overview/        (00-index + 01~04)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ knowledge-architecture/    (00-index + 01~05)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ knowledge-domain/          (00-index + 01~04)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ knowledge-source-base/     (00-index + 01~04)
-Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ knowledge-standards/       (00-index + 01~04)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… knowledge-overview/        (00-index + 01~04)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… knowledge-architecture/    (00-index + 01~05)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… knowledge-domain/          (00-index + 01~04)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… knowledge-source-base/     (00-index + 01~04)
+Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ âœ… knowledge-standards/       (00-index + 01~04)
 Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Business (4 folders, 22+ files)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ business-prd/          (00-index + 01~04)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ business-features/     (00-index + 01~05)
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ business-workflows/    (00-index + 01~05)
-Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ business-glossary/     (00-index + 01~04)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… business-prd/          (00-index + 01~04)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… business-features/     (00-index + 01~05)
+Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… business-workflows/    (00-index + 01~05)
+Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ âœ… business-glossary/     (00-index + 01~04)
 Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Audit (4 folders, 20+ files)
-    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ audit-security/         (00-index + 01~04)
-    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ audit-compliance/       (00-index + 01~04)
-    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ audit-dataflow/         (00-index + 01~04)
-    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Ã¢Å“â€¦ audit-recommendations/  (00-index + 01~04)
+    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… audit-security/         (00-index + 01~04)
+    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… audit-compliance/       (00-index + 01~04)
+    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ âœ… audit-dataflow/         (00-index + 01~04)
+    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ âœ… audit-recommendations/  (00-index + 01~04)
 ```
 
 ---
 
-## Ã°Å¸â€œÅ  COMPLETION OUTPUT
+## ðŸ“Š COMPLETION OUTPUT
 
 Only output this when ALL deliverables are verified:
 
 ```markdown
-## Ã¢Å“â€¦ Full Documentation Suite Complete
+## âœ… Full Documentation Suite Complete
 
 ### Ã°Å¸â€œÂ All Documents Created
 
 | Type     | Deliverables                                                | Status   |
 | -------- | ----------------------------------------------------------- | -------- |
-| Core     | 5 knowledge folders (overview, architecture, domain, source-base, standards) | Ã¢Å“â€¦ 5/5 folders |
-| Business | 4 business folders (prd, features, workflows, glossary)     | Ã¢Å“â€¦ 4/4 folders |
-| Audit    | 4 audit folders (security, compliance, dataflow, recommendations) | Ã¢Å“â€¦ 4/4 folders |
+| Core     | 5 knowledge folders (overview, architecture, domain, source-base, standards) | âœ… 5/5 folders |
+| Business | 4 business folders (prd, features, workflows, glossary)     | âœ… 4/4 folders |
+| Audit    | 4 audit folders (security, compliance, dataflow, recommendations) | âœ… 4/4 folders |
 
 **Total: 13 folders (68+ files) created in `./documents/`**
 ```
 
 ---
 
-## Ã°Å¸Å¡Â« FORBIDDEN
+## ðŸš« FORBIDDEN
 
 - Ã¢ÂÅ’ Skipping any sub-command
 - Ã¢ÂÅ’ Creating partial deliverables and reporting "Done"
@@ -168,7 +168,7 @@ Only output this when ALL deliverables are verified:
 
 ---
 
-## Ã°Å¸â€œÅ’ INDIVIDUAL ROUTES (Still Available)
+## ðŸ“Œ INDIVIDUAL ROUTES (Still Available)
 
 If you need only ONE type:
 
