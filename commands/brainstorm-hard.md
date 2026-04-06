@@ -38,13 +38,13 @@ tiered_execution:
     TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
     TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
   anti_lazy_fallback:
-    - âŒ NEVER use Tier 2 when Tier 1 tool is available
+    - ❌ NEVER use Tier 2 when Tier 1 tool is available
     - ✅ ALWAYS attempt Tier 1 first when tool exists
 ```
 
 ---
 
-## âš ï¸ CRITICAL: DELIVERABLE FILE RULES
+## ⚠️ CRITICAL: DELIVERABLE FILE RULES
 
 ```yaml
 deliverable_files:
@@ -59,8 +59,23 @@ enforcement:
   - Synthesis file is the deliverable for downstream phases
 ```
 
-All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER run build/test commands
+> - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ ONLY create research/ideation documents
+>
+> If user wants implementation after research, they must EXPLICITLY invoke another workflow.
 
 ---
 
@@ -189,10 +204,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## COMPLETION
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-Present comprehensive analysis with:
-
-1. ✅ **Analysis Complete** — Proceed with recommendation
-2. 📋 **Plan** → `/plan:hard` for detailed planning
-3. 🔄 **Iterate** — Refine based on feedback
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present deliverable files to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Proceed with recommendation
+> 2. 📋 `/plan:hard` → Detailed planning
+> 3. 🏗️ `/code` or `/cook` → Build
+> 4. 🔄 Iterate → Refine based on feedback
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

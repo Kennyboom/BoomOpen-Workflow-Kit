@@ -15,7 +15,7 @@ $ARGUMENTS
 
 ## 🔴 CRITICAL: Minimum Agent Requirement
 
-> âš ï¸ **ORCHESTRATION = MINIMUM 3 DIFFERENT AGENTS**
+> ⚠️ **ORCHESTRATION = MINIMUM 3 DIFFERENT AGENTS**
 > 
 > If you use fewer than 3 agents, you are NOT orchestrating - you're just delegating.
 > 
@@ -44,8 +44,8 @@ $ARGUMENTS
 |--------------|-----------|--------|
 | **plan** | Any | ✅ Proceed with planning-first approach |
 | **edit** | Simple execution | ✅ Proceed directly |
-| **edit** | Complex/multi-file | âš ï¸ Ask: "This task requires planning. Switch to plan mode?" |
-| **ask** | Any | âš ï¸ Ask: "Ready to orchestrate. Switch to edit or plan mode?" |
+| **edit** | Complex/multi-file | ⚠️ Ask: "This task requires planning. Switch to plan mode?" |
+| **ask** | Any | ⚠️ Ask: "Ready to orchestrate. Switch to edit or plan mode?" |
 
 ---
 
@@ -60,7 +60,7 @@ $ARGUMENTS
 
 > 🔴 **NO OTHER AGENTS during planning!** Only project-planner and explorer-agent.
 
-### â¸ï¸ CHECKPOINT: User Approval
+### ⏸️ CHECKPOINT: User Approval
 
 ```
 After PLAN.md is complete, ASK:
@@ -170,7 +170,7 @@ Use the project-planner agent to create PLAN.md:
 **TASK:** Create detailed PLAN.md based on ABOVE decisions. Do NOT infer from folder name.
 ```
 
-> âš ï¸ **VIOLATION:** Invoking subagent without full context = subagent will make wrong assumptions!
+> ⚠️ **VIOLATION:** Invoking subagent without full context = subagent will make wrong assumptions!
 
 
 ### Step 4: Verification (MANDATORY)

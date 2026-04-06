@@ -43,26 +43,26 @@ ASK (only what's needed):
 CREATE project structure:
 
 project-name/
-├── .agent/              â† BOOM-Open (copy from template)
+├── .agent/              ← BOOM-Open (copy from template)
 │   └── ARCHITECTURE.md
-├── .brain/              â† Session persistence
-│   ├── brain.json       â† Static knowledge (populated)
-│   └── session.json     â† Dynamic state (initialized)
-├── docs/                â† Documentation home
-│   ├── specs/           â† Feature specifications
-│   └── BRIEF.md         â† Project brief (from user input)
-├── src/                 â† Source code
-│   ├── components/      â† UI components
-│   ├── services/        â† Business logic
-│   ├── hooks/           â† Custom hooks
-│   ├── types/           â† TypeScript types
-│   ├── utils/           â† Utility functions
-│   └── constants/       â† Named constants
-├── .env.example         â† Environment template
-├── .gitignore           â† Standard ignores
-├── package.json         â† Dependencies
-├── tsconfig.json        â† TypeScript config
-└── README.md            â† Project overview
+├── .brain/              ← Session persistence
+│   ├── brain.json       ← Static knowledge (populated)
+│   └── session.json     ← Dynamic state (initialized)
+├── docs/                ← Documentation home
+│   ├── specs/           ← Feature specifications
+│   └── BRIEF.md         ← Project brief (from user input)
+├── src/                 ← Source code
+│   ├── components/      ← UI components
+│   ├── services/        ← Business logic
+│   ├── hooks/           ← Custom hooks
+│   ├── types/           ← TypeScript types
+│   ├── utils/           ← Utility functions
+│   └── constants/       ← Named constants
+├── .env.example         ← Environment template
+├── .gitignore           ← Standard ignores
+├── package.json         ← Dependencies
+├── tsconfig.json        ← TypeScript config
+└── README.md            ← Project overview
 ```
 
 ---
@@ -163,9 +163,9 @@ VERIFY:
 OUTPUT:
 "✅ PROJECT INITIALIZED!
 
-ðŸ“ [project-name]/ is ready
-ðŸ·ï¸ Stack: [framework] + [db] + [hosting]
-ðŸ“ Brief: docs/BRIEF.md
+📁 [project-name]/ is ready
+🏷️ Stack: [framework] + [db] + [hosting]
+📝 Brief: docs/BRIEF.md
 
 Next steps:
 1. /plan — Define features and specs

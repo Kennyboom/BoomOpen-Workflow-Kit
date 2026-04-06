@@ -66,5 +66,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/fix:hard` — Full resolution
 3. 👥 **Team** → `/fix:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

@@ -70,7 +70,7 @@ All features done AND tests pass:
 ```
 🧭 Project is empty — nothing started yet.
 
-âž¡ï¸ Next: /init to bootstrap your project
+➡️ Next: /init to bootstrap your project
    Or: /brainstorm if you have a rough idea
    Or: /plan if you know exactly what to build
 ```
@@ -79,7 +79,7 @@ All features done AND tests pass:
 ```
 🧭 You have context but no formal plan.
 
-âž¡ï¸ Next: /plan to create detailed specs
+➡️ Next: /plan to create detailed specs
    Tip: A good plan prevents 80% of bugs.
 ```
 
@@ -87,7 +87,7 @@ All features done AND tests pass:
 ```
 🧭 Specs are ready! No technical design yet.
 
-âž¡ï¸ Next: /architect to create technical design
+➡️ Next: /architect to create technical design
    This covers: DB schema, API contracts, state management
 ```
 
@@ -95,7 +95,7 @@ All features done AND tests pass:
 ```
 🧭 Design complete. Time to build!
 
-âž¡ï¸ Next: /create to start coding
+➡️ Next: /create to start coding
    Your specs and design are ready as input.
 ```
 
@@ -106,9 +106,9 @@ All features done AND tests pass:
 📊 Progress:
 ████████░░░░░░░░░░░░ [X]% ([N/M] features)
 
-ðŸ“ Currently: [feature name] — [task]
+📍 Currently: [feature name] — [task]
 
-âž¡ï¸ Next:
+➡️ Next:
   1. Continue coding: /create [current feature]
   2. Hit a bug? /debug
   3. Need a break? /save to persist context
@@ -119,9 +119,9 @@ All features done AND tests pass:
 ```
 🧭 You have unresolved errors from last session.
 
-ðŸ› Error: [description from session.json]
+🐛 Error: [description from session.json]
 
-âž¡ï¸ Next: /debug to investigate
+➡️ Next: /debug to investigate
    Tip: Start with the hypothesis from last session.
 ```
 
@@ -129,7 +129,7 @@ All features done AND tests pass:
 ```
 🧭 All features done! Tests passing!
 
-âž¡ï¸ Next:
+➡️ Next:
   1. /deep-audit — Final quality check (recommended)
   2. /security-audit — Security review
   3. /deploy — Ship it!
@@ -141,10 +141,10 @@ All features done AND tests pass:
 
 ```
 IF uncommitted changes > 5 files:
-  → "âš ï¸ You have [N] uncommitted files. Commit often!"
+  → "⚠️ You have [N] uncommitted files. Commit often!"
 
 IF last commit > 2 hours ago:
-  → "âš ï¸ Last commit was [X] ago. Save your work!"
+  → "⚠️ Last commit was [X] ago. Save your work!"
 
 IF TODO count > 3:
   → "📌 [N] TODOs found in code. Clean up before deploy."
@@ -160,7 +160,7 @@ IF session is long:
 ```
 /init → /brainstorm → /plan → /architect → /create
                                               │
-                                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                                    ┌─────────┼──────────┐
                                     ▼         ▼          ▼
                                  /debug    /test    /enhance
                                     │         │          │
@@ -189,7 +189,7 @@ IF session is long:
 📊 PROGRESS: [if applicable]
 ████████░░░░░░░░░░░░ X%
 
-âž¡ï¸ RECOMMENDED NEXT:
+➡️ RECOMMENDED NEXT:
 [Specific command with explanation]
 
 💡 TIP:

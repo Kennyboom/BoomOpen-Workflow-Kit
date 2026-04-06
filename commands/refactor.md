@@ -49,8 +49,8 @@ Report:
 
 MODES:
   A) ⚡ Quick Surgery (1 file)
-  B) ðŸ” Deep Surgery (1 module)
-  C) ðŸ¥ Full Body Scan (full project)
+  B) 🔍 Deep Surgery (1 module)
+  C) 🏥 Full Body Scan (full project)
 ```
 
 ---
@@ -83,7 +83,7 @@ CODE HEALTH SCORE: [N]/100
 ```
 SCAN for 5 smell categories:
 
-ðŸ˜ BLOATERS:
+🐘 BLOATERS:
   □ Long Method (> 25 lines)
   □ Large Class (> 300 lines)
   □ Long Parameter List (> 4 params)
@@ -98,7 +98,7 @@ SCAN for 5 smell categories:
   □ Divergent Change (1 class, many reasons to change)
   □ Shotgun Surgery (1 change, many classes affected)
 
-ðŸ—‘ï¸ DISPENSABLES:
+🗑️ DISPENSABLES:
   □ Dead Code (unused functions/imports)
   □ Duplicate Code (3+ occurrences)
   □ Lazy Class (does almost nothing)
@@ -109,7 +109,7 @@ SCAN for 5 smell categories:
   □ Inappropriate Intimacy (classes too intertwined)
 
 Report per smell:
-  "ðŸŸ SMELLS FOUND: [N] total
+  "🐟 SMELLS FOUND: [N] total
    🔴 Critical: [list]
    🟡 Should fix: [list]
    🟢 Minor: [list]"
@@ -145,7 +145,7 @@ BEFORE any refactoring:
 5. ROLLBACK PLAN: git checkout main
 6. COMMIT STRATEGY: 1 refactoring = 1 commit
 
-âš ï¸ DO NOT proceed until 6/6 complete.
+⚠️ DO NOT proceed until 6/6 complete.
 ```
 
 ---
@@ -198,7 +198,7 @@ TECHNIQUES (use official names):
 | 1 | [name] | [file] | [improvement] |
 
 ### Verdict
-ðŸ† [IMPROVED / MAINTAINED / NEEDS MORE WORK]
+🏆 [IMPROVED / MAINTAINED / NEEDS MORE WORK]
 ```
 
 ---
@@ -206,10 +206,10 @@ TECHNIQUES (use official names):
 ## Guard Rails
 
 ```
-âš ï¸ REFACTOR ≠ REWRITE:
+⚠️ REFACTOR ≠ REWRITE:
   Changing > 60% code → STOP → /architect first
 
-âš ï¸ REFACTOR ≠ FEATURE:
+⚠️ REFACTOR ≠ FEATURE:
   Adding new logic → STOP → /create instead
 
 🔴 PERFORMANCE SACRED:

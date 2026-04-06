@@ -44,7 +44,7 @@ Baseline Report:
 ```markdown
 | # | Optimization | Before | After | Savings | Status |
 |---|-------------|:------:|:-----:|:-------:|:------:|
-| 1 | [fix] | [X]KB | [Y]KB | [Z]% | â˜ |
+| 1 | [fix] | [X]KB | [Y]KB | [Z]% | ☐ |
 
 📊 TOTAL SAVINGS: [X]KB / [Y]ms
 ```
@@ -191,10 +191,10 @@ Cache Headers:
 ```markdown
 | Check | Requirement | Status |
 |-------|-------------|:------:|
-| Budget Met | All metrics within budget | â˜ |
-| Frontend | Render+Bundle+Images done | â˜ |
-| Backend | DB+API optimized | â˜ |
-| Caching | 6 layers configured | â˜ |
+| Budget Met | All metrics within budget | ☐ |
+| Frontend | Render+Bundle+Images done | ☐ |
+| Backend | DB+API optimized | ☐ |
+| Caching | 6 layers configured | ☐ |
 ```
 
 ---
@@ -204,12 +204,12 @@ Cache Headers:
 ```
 "⚡ PERFORMANCE REPORT
 📊 Lighthouse: [N]/100
-ðŸ–¥ï¸ LCP: [X]s | INP: [Y]ms | CLS: [Z]
+🖥️ LCP: [X]s | INP: [Y]ms | CLS: [Z]
 📦 Bundle: [A]KB | Images: [B]KB
 💾 API p95: [D]ms | DB avg: [E]ms
 ✅ Coverage Audit: ALL PASS
 
-ðŸ† VERDICT: [FAST / OK / NEEDS WORK / CRITICAL]
+🏆 VERDICT: [FAST / OK / NEEDS WORK / CRITICAL]
 
 TOP OPTIMIZATIONS:
 1. [Fix] — Impact: HIGH — Savings: [X]ms

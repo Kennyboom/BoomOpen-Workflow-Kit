@@ -24,14 +24,14 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip. Do NOT proceed without reading them.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Phase 2 detailed step-by-step (CRITICAL)
+> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/global_workflows/_ref/convergent-analysis-loop.md` — Phase 2 detailed step-by-step (CRITICAL)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
 
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Phase | Output |
 |-------|--------|
@@ -40,7 +40,23 @@ execution-mode: execute
 | P3: Synthesize | `./reports/{topic}/brainstorms/BRAINSTORM-{topic}` |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
+**⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER run build/test commands
+> - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ ONLY create ideation/research documents
+> - ✅ Report files MUST be written in the same language the user communicates with you
+>
+> If user wants implementation after research, they must EXPLICITLY invoke another workflow.
 
 ---
 
@@ -150,20 +166,16 @@ execution-mode: execute
 
 ---
 
-## ✅ COMPLETION TEMPLATE
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-```markdown
-# 🔺 Golden Triangle Brainstorm Report: {topic}
-
-## Phase Results
-| Phase | Triangle | Consensus | Rounds |
-|-------|----------|-----------|--------|
-| P1: Divergent Thinking | brainstormer / researcher+scouter / tech-lead | ✅ | {n} |
-| P2: Convergent Analysis | brainstormer / researcher / reviewer | ✅ | {n} |
-| P3: Synthesis | brainstormer / reporter / tech-lead | ✅ | {n} |
-
-## Next Actions
-1. ✅ **Done** — Brainstorm complete (triangle-validated)
-2. 📋 `/plan:team` → Plan implementation of top recommendation
-3. ðŸ—ï¸ `/cook:team` → Build chosen approach
-```
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present deliverable files to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Done — Brainstorm complete
+> 2. 📋 `/plan:team` → Plan implementation of top recommendation
+> 3. 🏗️ `/cook:team` → Build chosen approach
+> 4. 🔄 Iterate → Refine based on feedback
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

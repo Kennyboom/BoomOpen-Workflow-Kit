@@ -95,7 +95,7 @@ ON START: Check .audit file exists?
 
 ```
 "🔬 SESSION [X/N] — SCOPE:
- ðŸ“ Files: [list]
+ 📁 Files: [list]
  🎯 Modules: [list]
  📊 Progress: [checked]/[total] files"
 ```
@@ -104,8 +104,8 @@ ON START: Check .audit file exists?
 
 ```
 MUST view_file EACH FILE. DO NOT:
-  âŒ "I already know this file" → MUST re-read
-  âŒ Skim 800 lines → only read 50 lines
+  ❌ "I already know this file" → MUST re-read
+  ❌ Skim 800 lines → only read 50 lines
 
 AFTER EACH FILE: ✅ file_name.md — read [X lines]
 ```
@@ -134,14 +134,14 @@ MUST have: format, protocol, size at each connection.
 | DIM | Name | What to Check |
 |:---:|------|---------------|
 | 1 | 📡 Data Flow | Trace input→output, format match at boundaries |
-| 2 | â±ï¸ Timing | Parallel processes, delta > 16ms needs sync |
+| 2 | ⏱️ Timing | Parallel processes, delta > 16ms needs sync |
 | 3 | 💥 Crash Recovery | Kill -9 → detect → recover → user sees what |
 | 4 | 🔗 Cross-Module | Module A needs data from B, format match? |
 | 5 | 🧮 Resources | VRAM/RAM/CPU/Disk — SPECIFIC NUMBERS |
-| 6 | ðŸ“ Naming | Cross-file naming consistency |
+| 6 | 📐 Naming | Cross-file naming consistency |
 | 7 | 🔒 Security | Auth, port binding, encryption, isolation |
 | 8 | 📊 Test Coverage | Happy + error + perf + security + integration |
-| 9 | ðŸ“ Spec Complete | User story + AC + edge cases + error handling |
+| 9 | 📝 Spec Complete | User story + AC + edge cases + error handling |
 | 10 | 🧩 Architecture | C4 match IPC? Schema match API? ADR match impl? |
 
 ### DIM-7 Security Checklist
@@ -211,7 +211,7 @@ edge_case_tests / happy_path_tests → MUST ≥ 1.0
 
 ```
 BEFORE writing: files_checked == total_files?
-  âŒ Not yet → "Remaining: [X] files. Run /deep-audit again."
+  ❌ Not yet → "Remaining: [X] files. Run /deep-audit again."
   ✅ Done → write docs/AUDIT-REPORT-{date}.md
 
 Content:
@@ -232,8 +232,8 @@ Content:
 
 ```
 🔬 DEEP AUDIT COMPLETE!
-ðŸ“ Report: docs/AUDIT-REPORT-{date}.md
-ðŸ“ Scope: [X/X] files (100% coverage)
+📍 Report: docs/AUDIT-REPORT-{date}.md
+📐 Scope: [X/X] files (100% coverage)
 📊 Score: [XX]/100
 🔴 Critical: [N] found, [N] fixed
 🟡 Warning: [N] found, [N] fixed

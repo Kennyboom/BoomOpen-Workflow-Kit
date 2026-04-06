@@ -25,6 +25,17 @@ execution-mode: router
 
 ---
 
+## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
+
+> ⛔ **ALL plan workflows produce PLAN FILES ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code
+> - ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` after planning
+> - ✅ Output plan files and STOP. Wait for user's explicit next command.
+> - ✅ Plan files MUST be written in the same language the user communicates with you.
+
+---
+
 ## ROUTING LOGIC
 
 ```
@@ -66,5 +77,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/plan:hard` — Full research-backed plan
 3. 👥 **Team** → `/plan:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

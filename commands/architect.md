@@ -111,7 +111,7 @@ LEVEL 1 — System Context (bird's eye view):
 👤 User ──► [📱 App] ──► [💳 Stripe] / [📧 Email] / [🤖 AI]
 
 LEVEL 2 — Container (inside app):
-┌────────────── [App] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+┌────────────── [App] ──────────────┐
 │ [Frontend] ◄──► [Backend API] ◄──► [Database] │
 │                 [Redis Cache]                   │
 │                 [Job Queue]                     │
@@ -173,7 +173,7 @@ Optimization Checklist:
 
 ```
 📡 POST /api/v1/auth/login
-Auth: âŒ Public | Rate Limit: 5/min/IP
+Auth: ❌ Public | Rate Limit: 5/min/IP
 Request: { email: string, password: string }
 200: { success: true, data: { token, user } }
 401: { success: false, error: { code: "AUTH_FAILED", msg } }
@@ -228,7 +228,7 @@ For EACH screen:
 
 | Type | Tool | Examples |
 |------|------|----------|
-| ðŸŒ Server | TanStack Query | users, orders, products |
+| 🌐 Server | TanStack Query | users, orders, products |
 | 💻 Client | Zustand | UI state, theme, sidebar |
 | 💾 Persistent | localStorage | auth token, preferences |
 | 🔗 URL | searchParams | filters, pagination, tabs |
@@ -286,11 +286,11 @@ Integration Matrix:
 ```markdown
 | Check | Requirement | Status |
 |-------|-------------|--------|
-| Entity Coverage | Every entity has DB schema + indexes | â˜ |
-| API Coverage | Every action has endpoint + error codes | â˜ |
-| Screen Coverage | Every screen has spec (route, auth, states) | â˜ |
-| Error Coverage | All 8 error types have handling defined | â˜ |
-| ADR Coverage | Every tech decision has ADR | â˜ |
+| Entity Coverage | Every entity has DB schema + indexes | ☐ |
+| API Coverage | Every action has endpoint + error codes | ☐ |
+| Screen Coverage | Every screen has spec (route, auth, states) | ☐ |
+| Error Coverage | All 8 error types have handling defined | ☐ |
+| ADR Coverage | Every tech decision has ADR | ☐ |
 
 IF any FAIL → complete design before handover.
 ```
@@ -308,8 +308,8 @@ IF any FAIL → complete design before handover.
 ## After Architecture
 
 ```
-ðŸ—ï¸ TECHNICAL DESIGN COMPLETE!
-ðŸ“ File: docs/DESIGN-{feature}.md
+🏗️ TECHNICAL DESIGN COMPLETE!
+📍 File: docs/DESIGN-{feature}.md
 
 ✅ C4 Architecture (Level 1-3)
 ✅ ADR Records (7+ decisions documented)

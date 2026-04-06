@@ -46,9 +46,9 @@ Response:
 Response:
 === Preview Status ===
 
-ðŸŒ URL: http://localhost:3000
-ðŸ“ Project: C:/projects/my-app
-ðŸ·ï¸ Type: nextjs
+🌐 URL: http://localhost:3000
+📁 Project: C:/projects/my-app
+🏷️ Type: nextjs
 💚 Health: OK
 ```
 
@@ -57,7 +57,7 @@ Response:
 /preview start
 
 Response:
-âš ï¸ Port 3000 is in use.
+⚠️ Port 3000 is in use.
 
 Options:
 1. Start on port 3001

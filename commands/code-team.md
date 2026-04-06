@@ -26,9 +26,9 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
+> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/global_workflows/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
+> 3. `~/.gemini/antigravity/global_workflows/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -57,7 +57,7 @@ execution-mode: execute
 
 ---
 
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Phase / Team      | Output                                          |
 | ----------------- | ----------------------------------------------- |
@@ -66,8 +66,8 @@ execution-mode: execute
 | Phase 3 (Verify)  | `./reports/{topic}/reviews/REVIEW-{task}`            |
 | ALL Phases         | `./reports/{topic}/MAILBOX-{date}.md`                  |
 
-All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
@@ -244,7 +244,7 @@ Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
 ## Next Actions
 1. ✅ **Done** — Code complete (triangle-validated across all phases)
 2. 🚀 **Deploy** → `/deploy:preview`
-3. ðŸ“ **Docs** → `/docs:core`
-4. âŒ **Changes required** — Critical issues found → `/fix:team`
+3. 📝 **Docs** → `/docs:core`
+4. ❌ **Changes required** — Critical issues found → `/fix:team`
 5. 🧪 **Test gaps** — Insufficient coverage → `/test:team`
 ```

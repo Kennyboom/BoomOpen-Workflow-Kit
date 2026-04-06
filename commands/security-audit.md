@@ -36,7 +36,7 @@ $ARGUMENTS
 4. Read DESIGN.md → architecture
 
 Report:
-  "ðŸ” Found:
+  "🔐 Found:
    [X] API endpoints | [Y] source files
    [Z] dependencies | [W] env variables
 
@@ -220,11 +220,11 @@ ZERO TRUST:
 ```markdown
 | Check | Requirement | Status |
 |-------|-------------|--------|
-| OWASP Coverage | 10/10 categories checked | â˜ |
-| STRIDE Coverage | All components modeled | â˜ |
-| File Coverage | 100% files audited | â˜ |
-| Dependencies | npm audit 0 critical | â˜ |
-| Secrets | No hardcoded secrets | â˜ |
+| OWASP Coverage | 10/10 categories checked | ☐ |
+| STRIDE Coverage | All components modeled | ☐ |
+| File Coverage | 100% files audited | ☐ |
+| Dependencies | npm audit 0 critical | ☐ |
+| Secrets | No hardcoded secrets | ☐ |
 
 IF any FAIL → fix before writing report.
 ```
@@ -234,7 +234,7 @@ IF any FAIL → fix before writing report.
 ## Phase 11: Security Report + Handover
 
 ```
-ðŸ” SECURITY REPORT
+🔐 SECURITY REPORT
 🔴 Critical: [X] | 🟡 High: [Y] | 🟠 Medium: [Z]
 📊 Security Score: [N]/100
 

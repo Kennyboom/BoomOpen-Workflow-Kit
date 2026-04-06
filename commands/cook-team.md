@@ -20,15 +20,15 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Phase 2 detailed analysis protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Phase 6 Implementation step-by-step (CRITICAL)
+> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/global_workflows/_ref/convergent-analysis-loop.md` — Phase 2 detailed analysis protocol
+> 3. `~/.gemini/antigravity/global_workflows/_ref/implementation-loop.md` — Phase 6 Implementation step-by-step (CRITICAL)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
 
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Phase | Output |
 |-------|--------|
@@ -38,7 +38,7 @@ execution-mode: execute
 | P5: Planning | `./reports/{topic}/plans/PLAN-{feature}` |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
+**⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
 ---
 
@@ -170,5 +170,5 @@ execution-mode: execute
 ## Next Actions
 1. ✅ **Done** — Feature complete (triangle-validated)
 2. 🚀 `/deploy:preview` → Deploy to staging
-3. ðŸ“ `/docs:core` → Generate documentation
+3. 📝 `/docs:core` → Generate documentation
 ```

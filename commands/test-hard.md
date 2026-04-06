@@ -165,4 +165,4 @@ Present test report with:
 
 1. ✅ **Pass** — All tests green
 2. 🔧 **Fix** → `/fix:fast`
-3. ðŸ“ **Review** → `/review`
+3. 📝 **Review** → `/review`

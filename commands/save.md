@@ -143,13 +143,13 @@ IF conversation is getting long (50+ messages) OR
 
 1. GENERATE handover summary:
    "📋 HANDOVER DOCUMENT
-    ðŸ“ Working on: [feature]
+    📍 Working on: [feature]
     🔢 Phase: [X], Task: [Y]
     ✅ Done: [list]
-    â³ Remaining: [list]
+    ⏳ Remaining: [list]
     🔧 Key Decisions: [list]
-    âš ï¸ Watch out: [warnings]
-    ðŸ“ Key Files: [list]"
+    ⚠️ Watch out: [warnings]
+    📁 Key Files: [list]"
 
 2. SAVE to .brain/handover.md
 3. RECOMMEND: "Context heavy. Consider /recap
@@ -167,9 +167,9 @@ IF conversation is getting long (50+ messages) OR
   brain.json: [X] tables, [Y] APIs, [Z] features
   session.json: [N] pending tasks, [M]% complete
 
-ðŸ“ Files updated:
-  .brain/brain.json â† static knowledge
-  .brain/session.json â† current progress
+📁 Files updated:
+  .brain/brain.json ← static knowledge
+  .brain/session.json ← current progress
 
 💡 Tomorrow: /recap to restore context
 ```

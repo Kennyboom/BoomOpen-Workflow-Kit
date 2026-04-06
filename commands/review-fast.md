@@ -50,18 +50,35 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## ESCALATION
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
 
-| If | Route To |
-|----|----------|
-| Architecture concerns | `/review:hard` |
-| Security concerns | `security-engineer` |
+> **🔴 THIS WORKFLOW PRODUCES REVIEW REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code or fix code directly
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-transition to `/fix`, `/code`, `/cook`
+> - ✅ ONLY produce review report files in `./reports/{topic}/`
+> - ✅ Report files MUST be written in the same language the user communicates with you
+>
+> If user wants fixes after review, they must EXPLICITLY invoke `/fix` workflow.
+
+## ⛔ MANDATORY FILE OUTPUT
+
+> Every completed review MUST be saved to `./reports/{topic}/reviews/REVIEW-{topic}-{YYYY-MM-DD}.md`
+> Chat-only responses for completed reviews are PROHIBITED.
 
 ---
 
-## COMPLETION
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-Present review with:
-
-1. ✅ **Approved** — Code ready
-2. 🔧 **Fix needed** → `/fix:fast`
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present review report file link to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Approved — Code ready
+> 2. 🔍 `/review:hard` → Deeper architecture review
+> 3. 🔧 `/fix` → Fix issues found
+> 4. 🔄 Iterate → Refine review
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

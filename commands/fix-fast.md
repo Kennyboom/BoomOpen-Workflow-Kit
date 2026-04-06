@@ -35,7 +35,7 @@ execution-mode: execute
 
 ---
 
-## âš ï¸ ESCALATION
+## ⚠️ ESCALATION
 
 | If | Route To |
 |----|----------|
