@@ -40,9 +40,9 @@ Show current project and agent status.
 ```
 === Project Status ===
 
-ðŸ“ Project: my-ecommerce
+📁 Project: my-ecommerce
 📂 Path: C:/projects/my-ecommerce
-ðŸ·ï¸ Type: nextjs-ecommerce
+🏷️ Type: nextjs-ecommerce
 📊 Status: active
 
 🔧 Tech Stack:
@@ -58,7 +58,7 @@ Show current project and agent status.
    • user-auth
    • order-history
 
-â³ Pending (2):
+⏳ Pending (2):
    • admin-panel
    • email-notifications
 
@@ -69,11 +69,11 @@ Show current project and agent status.
 ✅ database-architect → Completed
 ✅ backend-specialist → Completed
 🔄 frontend-specialist → Dashboard components (60%)
-â³ test-engineer → Waiting
+⏳ test-engineer → Waiting
 
 === Preview ===
 
-ðŸŒ URL: http://localhost:3000
+🌐 URL: http://localhost:3000
 💚 Health: OK
 ```
 

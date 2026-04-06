@@ -65,5 +65,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/test:hard` — Comprehensive testing
 3. 👥 **Team** → `/test:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

@@ -25,6 +25,17 @@ execution-mode: router
 
 ---
 
+## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
+
+> ⛔ **ALL design workflows produce DESIGN DOCUMENTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code
+> - ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` after designing
+> - ✅ Output design documents and STOP. Wait for user's explicit next command.
+> - ✅ Design files MUST be written in the same language the user communicates with you.
+
+---
+
 ## ROUTING LOGIC
 
 ```
@@ -66,5 +77,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/design:hard` — Full design process
 3. 👥 **Team** → `/design:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

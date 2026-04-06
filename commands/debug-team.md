@@ -23,15 +23,15 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
+> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/global_workflows/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
+> 3. `~/.gemini/antigravity/global_workflows/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
 
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Phase | Output |
 |-------|--------|
@@ -41,7 +41,7 @@ execution-mode: execute
 | P4: Root Cause Report | `./reports/{topic}/debugs/DEBUG-REPORT-{issue}` |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
+**⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
 ---
 
@@ -224,5 +224,5 @@ Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
 1. ✅ **Root Cause** — Identified (triangle-validated across all phases)
 2. 📊 **Report** — `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`
 3. 🔧 **Fix** → `/fix:team` or `/fix:hard`
-4. ðŸ“ **Document** → `/docs:core`
+4. 📝 **Document** → `/docs:core`
 ```

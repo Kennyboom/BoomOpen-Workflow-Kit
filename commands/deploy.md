@@ -63,9 +63,9 @@ IF target is "rollback":
 **Choose workflow:**
 
 1. ✅ **Check** → `/deploy:check` — Readiness verification
-2. ðŸ” **Preview** → `/deploy:preview` — Staging deployment
+2. 🔍 **Preview** → `/deploy:preview` — Staging deployment
 3. 🚀 **Production** → `/deploy:production` — Production release
-4. âª **Rollback** → `/deploy:rollback` — Revert deployment
+4. ⏪ **Rollback** → `/deploy:rollback` — Revert deployment
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

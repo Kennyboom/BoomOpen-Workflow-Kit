@@ -1,5 +1,5 @@
 ---
-description: â“ Ask Router — Route questions to appropriate answer workflow
+description: ❓ Ask Router — Route questions to appropriate answer workflow
 version: "1.0"
 category: knowledge
 execution-mode: router
@@ -51,7 +51,7 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## â“ Question Mode Selection
+## ❓ Question Mode Selection
 
 **Question**: [parsed question]
 
@@ -60,5 +60,5 @@ IF unsure:
 1. ⚡ **Fast** → `/ask:fast` — Quick answer
 2. ⚡⚡⚡ **Hard** → `/ask:hard` — Research-backed answer
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

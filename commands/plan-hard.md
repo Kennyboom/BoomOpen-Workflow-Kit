@@ -125,11 +125,11 @@ Group by role:
 
 ```
 EACH task in plan MUST be:
-â˜ ≤ 2 hours effort (if bigger → SPLIT)
-â˜ 1 file or 1 component scope
-â˜ Has: description + target file + acceptance criteria
+☐ ≤ 2 hours effort (if bigger → SPLIT)
+☐ 1 file or 1 component scope
+☐ Has: description + target file + acceptance criteria
 
-âŒ BAD:  "Build Dashboard page"
+❌ BAD:  "Build Dashboard page"
 ✅ GOOD: "1. Create DashboardLayout (grid 3-col)"
        "2. Create StatsCard component"
        "3. Create RecentTable component"
@@ -153,8 +153,8 @@ Verify column examples:
   "Visual: screenshot comparison"
   "Manual: check email received"
 
-âš ï¸ NO vague AC allowed:
-âŒ "Given user login, When click, Then success"
+⚠️ NO vague AC allowed:
+❌ "Given user login, When click, Then success"
 ✅ "Given user has valid account, When enters email+pass
     and clicks Login, Then redirect to /dashboard in < 2s
     | Verify: Integration test + visual check"
@@ -211,7 +211,7 @@ IF feature has NO API → skip this section.
 |-------|--------|--------------|
 | [name + simple type] | [name + simple type] | [text description] |
 
-âš ï¸ NO function signatures or code blocks. Use TABLE only.
+⚠️ NO function signatures or code blocks. Use TABLE only.
 ```
 
 ---
@@ -234,8 +234,8 @@ IF > 3 features OR > 3 days:
 
 ```
 docs/specs/{feature-name}/
-├── SPECS-{ID}-plan.md          â† Master overview
-├── phase-01-{name}.md          â† Phase detail
+├── SPECS-{ID}-plan.md          ← Master overview
+├── phase-01-{name}.md          ← Phase detail
 ├── phase-02-{name}.md
 └── phase-0N-{name}.md
 ```
@@ -264,7 +264,7 @@ Status: Draft
 
 > **Parent:** [link to SPECS master]
 > **Depends on:** [previous phase]
-> **Status:** Draft | **Effort:** â­â­â­ | **Timeline:** X weeks
+> **Status:** Draft | **Effort:** ⭐⭐⭐ | **Timeline:** X weeks
 
 ## 📌 User Request (VERBATIM)
 > {Copy user's original request EXACTLY as written}
@@ -275,7 +275,7 @@ Status: Draft
 **Patterns**: {coding patterns to follow}
 **Constraints**: {technical/business constraints}
 
-âš ï¸ This phase file MUST be self-contained.
+⚠️ This phase file MUST be self-contained.
 Implementer should execute with ONLY this file — no chat history.
 
 ---
@@ -313,7 +313,7 @@ As [role], I want [action], so that [benefit].
 ### Dependencies
 - Requires [feature X.Y] first
 
-### Effort: â­â­ | Timeline: X days
+### Effort: ⭐⭐ | Timeline: X days
 
 ---
 
@@ -329,7 +329,7 @@ Build order: X.1 → X.2 + X.3 (parallel) → X.4
 
 | Feature | Effort | Timeline |
 |---------|--------|----------|
-| X.1 | â­â­ | X days |
+| X.1 | ⭐⭐ | X days |
 | TOTAL | | ~X days |
 | + Buffer x1.5 | | ~X days |
 ```
@@ -370,7 +370,7 @@ Phase 01 → Phase 02 → Phase 03
 
 MVP = Phase [01+02]: ~X days (~X months with buffer)
 
-âš ï¸ Buffer x1.5 ALWAYS APPLIED
+⚠️ Buffer x1.5 ALWAYS APPLIED
 ```
 
 ---
@@ -400,10 +400,10 @@ Rollback Strategy:
 ```markdown
 | Check | Requirement | Status |
 |-------|-------------|--------|
-| Feature Coverage | Every feature from BRIEF is planned | â˜ |
-| CRUD Check | Every entity has C/R/U/D specs | â˜ |
-| Sub-feature Check | Every button/action has spec | â˜ |
-| Cross-cut Check | Settings, Notifications, Onboarding | â˜ |
+| Feature Coverage | Every feature from BRIEF is planned | ☐ |
+| CRUD Check | Every entity has C/R/U/D specs | ☐ |
+| Sub-feature Check | Every button/action has spec | ☐ |
+| Cross-cut Check | Settings, Notifications, Onboarding | ☐ |
 
 IF any FAIL → add missing specs before handover.
 ```

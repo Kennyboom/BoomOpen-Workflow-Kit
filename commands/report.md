@@ -1,5 +1,5 @@
 ---
-description: ðŸ“ Report Router — Multi-purpose reporting (create report, update docs, or generate from template)
+description: 📝 Report Router — Multi-purpose reporting (create report, update docs, or generate from template)
 version: "1.0"
 category: documentation
 execution-mode: router
@@ -24,6 +24,17 @@ execution-mode: router
 3. AGENTS.md — Tiered Execution
 
 **⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+
+---
+
+## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
+
+> ⛔ **ALL report workflows produce REPORT FILES ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code
+> - ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` after completing report
+> - ✅ Output deliverable report files and STOP. Wait for user's explicit next command.
+> - ✅ Reports MUST be written in the same language the user communicates with you.
 
 ---
 
@@ -75,7 +86,7 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## ðŸ“ Reporting Mode Selection
+## 📝 Reporting Mode Selection
 
 **Task**: [parsed task]
 
@@ -85,5 +96,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/report:hard` — Full analysis, any topic; create report **or** update existing files / use template
 3. 👥 **Team** → `/report:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

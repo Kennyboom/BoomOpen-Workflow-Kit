@@ -35,7 +35,7 @@ execution-mode: execute
 
 ---
 
-## ðŸ“ PLAN COMPLIANCE CHECK
+## 📁 PLAN COMPLIANCE CHECK
 
 ```
 IF ./reports/{topic}/plans/PLAN-{scope} exists (.md file or folder):
@@ -89,10 +89,33 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## COMPLETION
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
 
-Present review with:
+> **🔴 THIS WORKFLOW PRODUCES REVIEW REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code or fix code directly
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-transition to `/fix`, `/code`, `/cook`
+> - ✅ ONLY produce review report files in `./reports/{topic}/`
+> - ✅ Report files MUST be written in the same language the user communicates with you
 
-1. ✅ **Approved** — Code ready
-2. 🔧 **Fix** → `/fix`
-3. 🧪 **Test** → `/test`
+## ⛔ MANDATORY FILE OUTPUT
+
+> Every completed review MUST be saved to `./reports/{topic}/reviews/REVIEW-{topic}-{YYYY-MM-DD}.md`
+> Chat-only responses for completed reviews are PROHIBITED.
+
+---
+
+## ⛔ HARD STOP — AWAIT USER DECISION
+
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present review report file link to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Approved — Code ready
+> 2. 🔧 `/fix` → Fix issues found
+> 3. 🧪 `/test` → Run tests
+> 4. 🔄 Iterate → Refine review
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

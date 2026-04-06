@@ -24,6 +24,19 @@ execution-mode: router
 
 ---
 
+## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
+
+> ⛔ **ALL brainstorm workflows produce REPORTS ONLY. NO CODE.**
+>
+> If the user's request contains ANY of these keywords, the workflow is RESEARCH-ONLY:
+> - "nghiên cứu", "phân tích", "kiểm tra", "đánh giá", "audit", "review"
+> - "research", "analyze", "study", "investigate", "explore"
+>
+> ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` after completing brainstorm.
+> ✅ Output deliverable files and STOP. Wait for user's explicit next command.
+
+---
+
 ## ROUTING LOGIC
 
 ```
@@ -65,5 +78,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/brainstorm:hard` — Deep exploration
 3. 👥 **Team** → `/brainstorm:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

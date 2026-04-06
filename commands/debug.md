@@ -1,5 +1,5 @@
 ---
-description: ðŸ› Debug Router — Route to debugging workflows
+description: 🐛 Debug Router — Route to debugging workflows
 version: "1.0"
 category: debugging
 execution-mode: router
@@ -55,7 +55,7 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## ðŸ› Debug Mode Selection
+## 🐛 Debug Mode Selection
 
 **Issue**: [parsed issue]
 
@@ -65,5 +65,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/debug:hard` — Deep investigation
 3. 👥 **Team** → `/debug:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

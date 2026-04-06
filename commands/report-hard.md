@@ -36,11 +36,11 @@ execution-mode: execute
 | **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
-**âŒ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
+**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
 
 ---
 
-## ðŸ“ DELIVERABLES (Reporter chooses from user intent)
+## 📁 DELIVERABLES (Reporter chooses from user intent)
 
 | User intent | Reporter output |
 | ----------- | ---------------- |
@@ -54,8 +54,21 @@ execution-mode: execute
 | scouter    | `./reports/{topic}/scouts/SCOUT-{task}` (optional)    |
 | reporter   | Per table above — create report **or** update existing **or** generate from template |
 
-All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + section files.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce report/analysis files
+>
+> If user wants implementation, they must EXPLICITLY invoke another workflow.
 
 ---
 
@@ -105,11 +118,15 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## COMPLETION
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-Deliverable per **user intent**:
-
-1. ✅ **Create report** → `./reports/{topic}/general/REPORT-{type}-{date}` (or path user asked)
-2. ✅ **Update existing** → Related files edited; list what was updated
-3. ✅ **From template** → File(s) matching user format; list path(s)
-4. 📢 **Share** → `/internal-comms` (optional)
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present deliverable file links to user and STOP. Wait for explicit user command.
+>
+> Deliverable per **user intent**:
+> 1. ✅ **Create report** → `./reports/{topic}/general/REPORT-{type}-{date}`
+> 2. ✅ **Update existing** → Related files edited; list what was updated
+> 3. ✅ **From template** → File(s) matching user format
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

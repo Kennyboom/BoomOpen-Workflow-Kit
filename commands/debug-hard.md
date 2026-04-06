@@ -38,11 +38,11 @@ Before ANY investigation:
 6. RECENT CHANGES (git log -5, dependency updates?)
 
 Report:
-  "ðŸ” DEBUG SESSION: [Issue Title]
-   ðŸ“ Location: [file:line]
-   â° Started: [when]
+  "🔍 DEBUG SESSION: [Issue Title]
+   📍 Location: [file:line]
+   ⏰ Started: [when]
    🔄 Frequency: [always/intermittent]
-   ðŸ“ Error: [exact message]"
+   📝 Error: [exact message]"
 ```
 
 ---
@@ -60,7 +60,7 @@ MANDATORY before fixing:
 
 2. Confirm reproduction:
    ✅ Reproduced on attempt 1
-   âŒ Cannot reproduce → need more info
+   ❌ Cannot reproduce → need more info
 
 IF cannot reproduce → ask user questions, DO NOT guess fix
 ```
@@ -106,7 +106,7 @@ Test each ONE AT A TIME:
 
 🧪 Testing H1: [hypothesis]
    Action: [what I checked]
-   Result: ✅ CONFIRMED / âŒ ELIMINATED
+   Result: ✅ CONFIRMED / ❌ ELIMINATED
    Evidence: [proof]
 
 → If CONFIRMED: proceed to Phase 5
@@ -173,7 +173,7 @@ After EVERY fix, add prevention:
    WHY: Same bug pattern won't be hit again in new session.
 
 Report:
-  "ðŸ›¡ï¸ REGRESSION PREVENTION:
+  "🛡️ REGRESSION PREVENTION:
    ✅ Test added: [test name]
    ✅ Guard added: [description]
    ✅ Error saved to .brain/
@@ -196,7 +196,7 @@ After /debug:hard, consider:
 ## Debug Output Template
 
 ```markdown
-## ðŸ” Debug: [Issue Title]
+## 🔍 Debug: [Issue Title]
 
 ### 1. Symptom
 [What's happening + exact error]
@@ -223,5 +223,5 @@ Step 2: [action]
 ✅ Regression test added
 
 ### 7. Prevention
-ðŸ›¡ï¸ [What was added to prevent recurrence]
+🛡️ [What was added to prevent recurrence]
 ```

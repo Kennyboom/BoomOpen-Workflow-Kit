@@ -34,8 +34,19 @@ execution-mode: execute
 | **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
-**Deliverables:** All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+**Deliverables:** All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → `{name}.md`. Large (> 150 lines) → `{name}/` folder.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES PLAN FILES ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-implement plans or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce plan files in `./reports/{topic}/plans/`
 
 ---
 
@@ -64,18 +75,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## ESCALATION
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-| If                   | Route To     |
-| -------------------- | ------------ |
-| Complex architecture | `/plan:hard` |
-| Research needed      | `/plan:hard` |
-
----
-
-## COMPLETION
-
-Present plan with:
-
-1. ✅ **Plan Ready** — `./reports/{topic}/plans/PLAN-{task}`
-2. ðŸ³ **Implement** → `/cook:fast`
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present plan file link to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Plan Ready — `./reports/{topic}/plans/PLAN-{task}`
+> 2. 🏗️ `/cook:fast` → Implement plan
+> 3. 🔍 `/plan:hard` → More detailed planning
+> 4. 🔄 Iterate → Refine plan
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

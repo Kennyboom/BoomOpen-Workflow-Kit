@@ -37,13 +37,32 @@ execution-mode: execute
 | **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
-**âŒ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
+**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
 
 ---
 
 ## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
 One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what's happening (announce before doing). Format: rules/PHASES.md § Phase output structure.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce report files in `./reports/{topic}/`
+> - ✅ Report files MUST be written in the same language the user communicates with you
+>
+> If user wants implementation, they must EXPLICITLY invoke another workflow.
+
+## ⛔ MANDATORY FILE OUTPUT
+
+> Every completed report MUST be saved to `./reports/{topic}/general/REPORT-{topic}-{YYYY-MM-DD}`
+> Chat-only responses for completed analysis are PROHIBITED.
 
 ---
 
@@ -65,11 +84,17 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## COMPLETION
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-Present report:
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present deliverable file link to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Report complete
+> 2. 📋 `/report:hard` → More detailed report
+> 3. 🔄 Iterate → Refine based on feedback
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**
 
-1. ✅ **Report Ready** — Displayed in chat
-2. 📄 **Save?** → If user wants to save: `./reports/{topic}/general/REPORT-status-{YYYY-MM-DD}`
-
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+**⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.

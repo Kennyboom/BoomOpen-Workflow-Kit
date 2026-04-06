@@ -62,14 +62,14 @@ tiered_execution:
     TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
 
   anti_lazy_fallback:
-    - âŒ NEVER use Tier 2 when Tier 1 tool is available
+    - ❌ NEVER use Tier 2 when Tier 1 tool is available
     - ✅ ALWAYS attempt Tier 1 first when tool exists
     - ✅ ALWAYS log justification for Tier 2 fallback
 ```
 
 ---
 
-## âš ï¸ CRITICAL: PHASE CONTINUITY RULES
+## ⚠️ CRITICAL: PHASE CONTINUITY RULES
 
 ```yaml
 phase_continuity:
@@ -87,8 +87,8 @@ phase_continuity:
     - If prior phase file missing → Agent MUST create it
 ```
 
-All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ## 🔗 INPUT REQUIREMENTS & VERIFICATION MATRIX
 
@@ -352,4 +352,4 @@ Present implementation report with:
 
 1. ✅ **Done** — Feature complete
 2. 🚀 **Deploy** → `/deploy:preview`
-3. ðŸ“ **Docs** → `/docs:core`
+3. 📝 **Docs** → `/docs:core`

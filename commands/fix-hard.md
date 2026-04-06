@@ -33,19 +33,19 @@ execution-mode: execute
 | **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
 
-**âŒ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
+**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
 
 ---
 
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Agent | Output |
 |-------|--------|
 | debugger | `./reports/{topic}/debugs/DEBUG-{issue}` |
 | researcher | `./reports/{topic}/researchers/RESEARCH-{issue}` |
 
-All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 
@@ -118,4 +118,4 @@ Present fix report with:
 
 1. ✅ **Fixed** — Issue resolved
 2. 🧪 **Test** → `/test`
-3. ðŸ“ **Docs** → `/docs:core`
+3. 📝 **Docs** → `/docs:core`

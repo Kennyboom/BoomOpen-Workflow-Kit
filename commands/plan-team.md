@@ -23,14 +23,14 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
-> 3. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
+> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/antigravity/global_workflows/_ref/convergent-analysis-loop.md` — Convergent Analysis detailed protocol
+> 3. `~/.gemini/antigravity/global_workflows/_ref/implementation-loop.md` — Implementation step-by-step (for coding phases)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Phase / Team     | Output                                          |
 | ---------------- | ----------------------------------------------- |
@@ -40,8 +40,21 @@ execution-mode: execute
 | Phase 4 (Review) | `./reports/{topic}/qa/QA-PLAN-{task}`                |
 | ALL Phases        | `./reports/{topic}/MAILBOX-{date}.md`                  |
 
-All files in `./reports/{topic}/` → English only. If plan has **> 3 phases** or **> 3 days** effort → produce **multiple plan files** (one per phase/milestone), each executable in sequence.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English. If plan has **> 3 phases** or **> 3 days** effort → produce **multiple plan files** (one per phase/milestone), each executable in sequence.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → `{name}.md`. Large (> 150 lines) → `{name}/` folder.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES PLAN FILES ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-implement plans or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce plan/research/design files in `./reports/{topic}/`
+>
+> If user wants implementation after planning, they must EXPLICITLY invoke another workflow.
 
 ---
 
@@ -174,7 +187,7 @@ FOR EACH requirement in BRAINSTORM-{task}.md:
 **Exit Criteria**: Plan validated, technically coherent, security reviewed, business-aligned
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | reviewer ✓ | business-analyst ✓
 
-**âš ï¸ IF VERDICT = NEEDS REVISION:**
+**⚠️ IF VERDICT = NEEDS REVISION:**
 ```
 1. QA-PLAN lists specific amendments
 2. RETURN to Phase 3 → planner addresses amendments
@@ -183,29 +196,20 @@ FOR EACH requirement in BRAINSTORM-{task}.md:
 
 ---
 
-## ✅ COMPLETION
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-```markdown
-# 🔺 Golden Triangle Planning Report: {task}
-
-## Phase Results
-| Phase | Triangle | Consensus | Rounds |
-|-------|----------|-----------|--------|
-| P1: Requirements | researcher / scouter+BA / brainstormer | ✅ | {n} |
-| P2: Architecture | tech-lead / researcher / reviewer | ✅ | {n} |
-| P3: Plan Creation | planner / planner / tech-lead+security | ✅ | {n} |
-| P4: Review | tech-lead / reviewer / business-analyst | ✅ | {n} |
-
-## Debate Summary
-- Total submissions: {count} | First-pass: {count} | Debates: {count} | Arbitrations: {count}
-
-## Deliverables
-1. ✅ **Plan** — `./reports/{topic}/plans/PLAN-{task}` (or multi-phase files)
-2. ✅ **QA** — `./reports/{topic}/qa/QA-PLAN-{task}` confirms PASS
-3. 📬 **Debate** — `./reports/{topic}/MAILBOX-{date}.md`
-
-## Next Actions
-1. ðŸ³ **Implement** → `/cook:team` or `/cook:hard`
-2. ðŸ“ **Docs** → `/docs:core`
-3. 🔄 **Revise** → Re-run Phase 3 with updated requirements
-```
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present deliverable file links to user and STOP. Wait for explicit user command.
+>
+> Deliverables completed:
+> 1. ✅ Plan — `./reports/{topic}/plans/PLAN-{task}` (or multi-phase files)
+> 2. ✅ QA — `./reports/{topic}/qa/QA-PLAN-{task}`
+> 3. 📬 Debate — `./reports/{topic}/MAILBOX-{date}.md`
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. 🏗️ `/cook:team` or `/cook:hard` → Implement
+> 2. 📝 `/docs:core` → Update docs
+> 3. 🔄 Revise → Re-run Phase 3 with updated requirements
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**

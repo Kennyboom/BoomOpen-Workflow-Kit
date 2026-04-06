@@ -38,13 +38,13 @@ tiered_execution:
     TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
     TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
   anti_lazy_fallback:
-    - âŒ NEVER use Tier 2 when Tier 1 tool is available
+    - ❌ NEVER use Tier 2 when Tier 1 tool is available
     - ✅ ALWAYS attempt Tier 1 first when tool exists
 ```
 
 ---
 
-## âš ï¸ CRITICAL: DELIVERABLE FILE RULES
+## ⚠️ CRITICAL: DELIVERABLE FILE RULES
 
 ```yaml
 deliverable_files:
@@ -57,8 +57,8 @@ enforcement:
   - Design file is the deliverable for implementation phases
 ```
 
-All files in `./reports/{topic}/` → English only.
-**âš ï¸ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
 

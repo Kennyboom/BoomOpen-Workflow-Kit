@@ -1,5 +1,5 @@
 ---
-description: ðŸ” Deploy Preview — Staging/Preview deployment
+description: 🔍 Deploy Preview — Staging/Preview deployment
 version: "1.0"
 category: operations
 execution-mode: execute
@@ -33,7 +33,7 @@ tiered_execution:
     TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
     TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
   anti_lazy_fallback:
-    - âŒ NEVER use Tier 2 when Tier 1 tool is available
+    - ❌ NEVER use Tier 2 when Tier 1 tool is available
     - ✅ ALWAYS attempt Tier 1 first when tool exists
 ```
 
@@ -122,4 +122,4 @@ Present deployment result with:
 
 1. ✅ **Success** — Preview ready for testing
 2. 🚀 **Promote** → `/deploy:production`
-3. âª **Rollback** → `/deploy:rollback`
+3. ⏪ **Rollback** → `/deploy:rollback`

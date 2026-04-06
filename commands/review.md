@@ -1,5 +1,5 @@
 ---
-description: ðŸ” Review Router — Route to code review workflows
+description: 🔍 Review Router — Route to code review workflows
 version: "1.0"
 category: validation
 execution-mode: router
@@ -21,6 +21,17 @@ execution-mode: router
 3. AGENTS.md — Tiered Execution  
 
 **⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+
+---
+
+## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
+
+> ⛔ **ALL review workflows produce REVIEW REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write fixes or implementation code
+> - ❌ NEVER auto-transition to `/fix`, `/code`, `/cook` after review
+> - ✅ Output review report files and STOP. Wait for user's explicit next command.
+> - ✅ Reports MUST be written in the same language the user communicates with you.
 
 ---
 
@@ -55,7 +66,7 @@ IF unsure:
 ## PRESENT OPTIONS
 
 ```markdown
-## ðŸ” Review Mode Selection
+## 🔍 Review Mode Selection
 
 **Scope**: [parsed scope]
 
@@ -65,5 +76,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/review:hard` — Deep analysis
 3. 👥 **Team** → `/review:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

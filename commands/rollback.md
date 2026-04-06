@@ -24,19 +24,19 @@ $ARGUMENTS
 ## Phase 1: Incident Assessment
 
 ```
-"âª EMERGENCY RECOVERY — Assessing situation now.
+"⏪ EMERGENCY RECOVERY — Assessing situation now.
 
-1ï¸âƒ£ WHAT BROKE?
+1️⃣ WHAT BROKE?
    A) App won't load (blank page / 500 error)
    B) Recent deploy broke something
    C) Database issue (data loss / query errors)
    D) Code changes broke local development
    E) Other — describe the issue
 
-2ï¸âƒ£ WHO IS AFFECTED?
+2️⃣ WHO IS AFFECTED?
    A) Just me (development)
    B) Team (staging)
-   C) Customers (production) â† HIGHEST PRIORITY"
+   C) Customers (production) ← HIGHEST PRIORITY"
 ```
 
 ### Severity Classification
@@ -102,7 +102,7 @@ GIT-BASED CI/CD:
 ### 2.3 Database Rollback
 
 ```
-âš ï¸ DANGEROUS — Backup current state FIRST!
+⚠️ DANGEROUS — Backup current state FIRST!
 
 A) Revert latest migration
    → prisma migrate reset (careful!)
@@ -111,13 +111,13 @@ A) Revert latest migration
 
 B) Restore from backup
    → pg_restore -d [db_name] [backup_file]
-   → âš ï¸ Data since backup will be LOST
+   → ⚠️ Data since backup will be LOST
 
 C) Point-in-time recovery (managed DBs)
    → AWS RDS / Supabase / PlanetScale support this
    → Restore to exact timestamp
 
-âš ï¸ ALWAYS:
+⚠️ ALWAYS:
   □ Backup before restore
   □ Test on staging first
   □ Notify team before touching production DB
@@ -188,7 +188,7 @@ Affected: [N] users
 ## Phase 6: Handover
 
 ```
-âª RECOVERY COMPLETE!
+⏪ RECOVERY COMPLETE!
 
 📊 Results:
   ✅ System: Online

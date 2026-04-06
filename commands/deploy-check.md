@@ -33,7 +33,7 @@ tiered_execution:
     TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
     TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
   anti_lazy_fallback:
-    - âŒ NEVER use Tier 2 when Tier 1 tool is available
+    - ❌ NEVER use Tier 2 when Tier 1 tool is available
     - ✅ ALWAYS attempt Tier 1 first when tool exists
 ```
 
@@ -146,5 +146,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 Present readiness report with:
 
 1. ✅ **Ready** → `/deploy:preview` or `/deploy:production`
-2. âŒ **Not Ready** — Issues to address
+2. ❌ **Not Ready** — Issues to address
 3. 🔧 **Fix Issues** → Route to appropriate fix workflow

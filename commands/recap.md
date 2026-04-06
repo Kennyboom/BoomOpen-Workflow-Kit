@@ -39,7 +39,7 @@ Parse brain.json for:
 ### If .brain/ NOT found:
 
 ```
-"âŒ No saved context found.
+"❌ No saved context found.
 
 Options:
 1. /plan — Start planning a new feature
@@ -69,11 +69,11 @@ IF git has recent commits:
 ```
 🧠 SESSION RESTORED
 
-ðŸ“ Project: [name] ([type])
-ðŸ·ï¸ Stack: [framework] + [db] + [hosting]
+📁 Project: [name] ([type])
+🏷️ Stack: [framework] + [db] + [hosting]
 📊 Status: [planning|coding|testing]
 
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📊 PROGRESS:
 ████████░░░░░░░░░░░░ [X]% ([N/M] features)
@@ -83,29 +83,29 @@ IF git has recent commits:
   - [Feature B]
 
 🔄 In Progress:
-  - [Feature C] â† YOU ARE HERE
+  - [Feature C] ← YOU ARE HERE
 
 📋 Remaining:
   - [Feature D]
   - [Feature E]
 
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ðŸ“ Key Decisions:
+📝 Key Decisions:
   - [Decision 1]
   - [Decision 2]
 
 🚧 Blockers:
   - [Blocker if any]
 
-âš ï¸ Unresolved Errors:
+⚠️ Unresolved Errors:
   - [Error if any]
 
 📂 Recent Changes:
   - [commit 1]
   - [commit 2]
 
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Ready to continue? Options:
 1. Continue [current feature]

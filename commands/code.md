@@ -69,5 +69,5 @@ IF unsure:
 2. ⚡⚡⚡ **Hard** → `/code:hard` — Full feature development cycle
 3. 👥 **Team** → `/code:team` — Full team collaboration (parallel agents, maximum quality)
 
-â³ Awaiting selection...
+⏳ Awaiting selection...
 ```

@@ -19,13 +19,13 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
 ---
 
-## ðŸ“ DELIVERABLE FILES
+## 📁 DELIVERABLE FILES
 
 | Phase | Output |
 |-------|--------|
@@ -34,7 +34,21 @@ execution-mode: execute
 | P3: Final | `./reports/{topic}/general/REPORT-{topic}-{date}` (polished) |
 | ALL | `./reports/{topic}/MAILBOX-{date}.md` |
 
-**âš ï¸ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
+**⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
+
+---
+
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
+
+> **🔴 THIS WORKFLOW PRODUCES REPORTS ONLY. NO CODE.**
+>
+> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
+> - ❌ NEVER modify source files
+> - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
+> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ Report files MUST be written in the same language the user communicates with you
+>
+> If user wants implementation, they must EXPLICITLY invoke another workflow.
 
 ---
 
@@ -118,20 +132,15 @@ execution-mode: execute
 
 ---
 
-## ✅ COMPLETION TEMPLATE
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-```markdown
-# 🔺 Golden Triangle Report: {topic}
-
-## Phase Results
-| Phase | Triangle | Consensus | Rounds |
-|-------|----------|-----------|--------|
-| P1: Data Collection | reporter / scouter+researcher / business-analyst | ✅ | {n} |
-| P2: Report Drafting | reporter / reporter / reviewer | ✅ | {n} |
-| P3: Review & Delivery | tech-lead / docs-manager / business-analyst | ✅ | {n} |
-
-## Next Actions
-1. ✅ **Done** — Report complete (triangle-validated)
-2. ðŸ“ `/docs:core` → Update related documentation
-3. 📢 Share with stakeholders
-```
+> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
+>
+> Present deliverable file links to user and STOP. Wait for explicit user command.
+>
+> Suggested next steps (USER must explicitly choose):
+> 1. ✅ Done — Report complete (triangle-validated)
+> 2. 📝 `/docs:core` → Update related documentation
+> 3. 🔄 Iterate → Refine based on feedback
+>
+> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**
