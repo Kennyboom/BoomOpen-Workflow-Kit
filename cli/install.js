@@ -527,6 +527,10 @@ function estimateInstallFiles() {
     const skillsDir = path.join(ROOT, 'skills');
     total += countFiles(skillsDir);
     
+    // Count skills library
+    const libDir = path.join(ROOT, 'skills_library');
+    if (fs.existsSync(libDir)) total += countFiles(libDir);
+    
     // Count agents
     const agentsDir = path.join(ROOT, 'agents');
     total += countFiles(agentsDir);
@@ -701,6 +705,13 @@ function installCursor() {
     // --- 3. INSTALL USER SKILLS (~/.cursor/skills/) ---
     total += copyWithReplace(path.join(ROOT, 'skills'), tool.paths.skills, tool.replacements);
 
+    // --- INSTALL SKILLS LIBRARY ---
+    const libSrc = path.join(ROOT, 'skills_library');
+    if (fs.existsSync(libSrc)) {
+        const destLib = tool.paths.skills + '_library';
+        total += copyWithReplace(libSrc, destLib, tool.replacements);
+    }
+
     // --- 4. NATIVE SUBAGENT SUPPORT (~/.cursor/agents/) ---
     // Only copy bundled agents (merge/update)
     total += copyWithReplace(path.join(ROOT, 'agents'), tool.paths.agents, tool.replacements);
@@ -795,6 +806,13 @@ function installCopilot() {
 
     // --- 3. INSTALL USER SKILLS (~/.copilot/skills/) ---
     total += copyWithReplace(path.join(ROOT, 'skills'), tool.paths.skills, tool.replacements);
+
+    // --- INSTALL SKILLS LIBRARY ---
+    const libSrc = path.join(ROOT, 'skills_library');
+    if (fs.existsSync(libSrc)) {
+        const destLib = tool.paths.skills + '_library';
+        total += copyWithReplace(libSrc, destLib, tool.replacements);
+    }
 
     // --- 4. NATIVE SUBAGENT SUPPORT (~/.copilot/agents/) ---
     ensureDir(tool.paths.agents);
@@ -936,6 +954,13 @@ function installAntigravity() {
     // 3.3 Skills (~/.gemini/antigravity/skills)
     total += copyWithReplace(path.join(ROOT, 'skills'), tool.paths.skills, tool.replacements);
 
+    // --- INSTALL SKILLS LIBRARY ---
+    const libSrc = path.join(ROOT, 'skills_library');
+    if (fs.existsSync(libSrc)) {
+        const destLib = tool.paths.skills + '_library';
+        total += copyWithReplace(libSrc, destLib, tool.replacements);
+    }
+
     // Complete progress bar
     completeProgress();
     
@@ -1015,6 +1040,13 @@ function installClaude() {
 
     // --- 3. INSTALL SKILLS (~/.claude/skills) ---
     total += copyWithReplace(path.join(ROOT, 'skills'), tool.paths.skills, tool.replacements);
+
+    // --- INSTALL SKILLS LIBRARY ---
+    const libSrc = path.join(ROOT, 'skills_library');
+    if (fs.existsSync(libSrc)) {
+        const destLib = tool.paths.skills + '_library';
+        total += copyWithReplace(libSrc, destLib, tool.replacements);
+    }
 
     // Complete progress bar
     completeProgress();
@@ -1180,6 +1212,13 @@ function installCodex() {
 
     // --- 3. INSTALL SKILLS (~/.codex/skills) ---
     total += copyWithReplace(path.join(ROOT, 'skills'), tool.paths.skills, tool.replacements);
+
+    // --- INSTALL SKILLS LIBRARY ---
+    const libSrc = path.join(ROOT, 'skills_library');
+    if (fs.existsSync(libSrc)) {
+        const destLib = tool.paths.skills + '_library';
+        total += copyWithReplace(libSrc, destLib, tool.replacements);
+    }
 
     // 3.1 Install Codex-specific command skills (from codex-assistant/skills/)
     if (tool.assets.commandSkillsDir && fs.existsSync(tool.assets.commandSkillsDir)) {
