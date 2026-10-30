@@ -37,7 +37,7 @@ The solution is a **Hybrid Skill Orchestration Layer** (HSOL) that:
 
 ## Prerequisites
 
-Before HSOL can function, the **find-skills** skill must exist at `{SKILLS_PATH}/find-skills/SKILL.md`, where **{SKILLS_PATH}** is the skills path for the **tool the user is currently using** (e.g. Cursor: `~/.cursor/skills/`, Copilot: `~/.copilot/skills/`, Codex: `~/.codex/skills/`, Antigravity: `~/.gemini/antigravity/skills/`). All verify and install actions apply **only to the current tool**; do not verify or install for all tools unless the user explicitly runs `install --all`.
+Before HSOL can function, the **find-skills** skill must exist at `{SKILLS_PATH}/find-skills/SKILL.md`, where **{SKILLS_PATH}** is the skills path for the **tool the user is currently using** (e.g. Cursor: `~/.cursor/skills/`, Copilot: `~/.copilot/skills/`, Codex: `~/.codex/skills/`, Antigravity: `~/.gemini/config/skills/`). All verify and install actions apply **only to the current tool**; do not verify or install for all tools unless the user explicitly runs `install --all`.
 
 **Installation (current tool only, skip confirmation when using npx):**
 
@@ -54,7 +54,7 @@ cp -r skills/find-skills ~/.copilot/skills/
 # For Codex:
 cp -r skills/find-skills ~/.codex/skills/
 # For Antigravity:
-cp -r skills/find-skills ~/.gemini/antigravity/skills/
+cp -r skills/find-skills ~/.gemini/config/skills/
 # Do not copy to all tools unless the user explicitly wants that.
 
 # Option 3: Install from Vercel ecosystem (-g -y = global, skip confirmation)

@@ -102,20 +102,23 @@ const TOOLS = {
         paths: {
             editorHome: path.join(HOME, '.antigravity'),
             gemini: path.join(HOME, '.gemini'),
-            antigravity: path.join(HOME, '.gemini', 'antigravity'),
-            skills: path.join(HOME, '.gemini', 'antigravity', 'skills'),
+            antigravity: path.join(HOME, '.gemini', 'config'),
+            skills: path.join(HOME, '.gemini', 'config', 'skills'),
             agents: path.join(HOME, '.antigravity', 'agents'), // User accessible agents
             globalAgents: path.join(HOME, '.gemini', 'agents'), // Global config
             workflows: path.join(HOME, '.antigravity', 'workflows'),
-            globalWorkflows: path.join(HOME, '.gemini', 'antigravity', 'global_workflows'),
-            frameworkPath: path.join(HOME, '.gemini', 'antigravity', 'skills', 'boomopen-workflow-kit'),
+            globalWorkflows: path.join(HOME, '.gemini', 'config', 'global_workflows'),
+            frameworkPath: path.join(HOME, '.gemini', 'config', 'skills', 'boomopen-workflow-kit'),
         },
         replacements: {
-            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/',
-            '{TOOL}/boomopen-workflow-kit/': 'gemini/antigravity/skills/boomopen-workflow-kit/',
-            '{TOOL}': 'gemini/antigravity',
+            '~/.{TOOL}/skills/boomopen-workflow-kit/': '~/.gemini/config/skills/boomopen-workflow-kit/',
+            '~/.gemini/config/skills/boomopen-workflow-kit/': '~/.gemini/config/skills/boomopen-workflow-kit/',
+            '~/.gemini/config/skills/agent-assistant/': '~/.gemini/config/skills/boomopen-workflow-kit/',
+            '~/.gemini/config/global_workflows/': '~/.gemini/config/global_workflows/',
+            '{TOOL}/boomopen-workflow-kit/': 'gemini/config/skills/boomopen-workflow-kit/',
+            '{TOOL}': 'gemini/config',
             '{HOME}': '~',
-            '~/.agent/': '~/.gemini/antigravity/skills/boomopen-workflow-kit/',
+            '~/.agent/': '~/.gemini/config/skills/boomopen-workflow-kit/',
             'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
@@ -178,7 +181,7 @@ const TOOLS = {
 const CORE_DIRS = ['agents', 'rules', 'documents', 'commands', 'matrix-skills'];
 
 // Root files to copy
-const ROOT_FILES = ['README.md'];
+const ROOT_FILES = ['README.md', 'SKILL.md'];
 
 // List of bundled agent names (for cleanup - only remove our agents, keep user-custom)
 const BUNDLED_AGENTS = [
@@ -374,20 +377,26 @@ function copyWithReplace(src, dest, replacements = {}, trackProgress = true) {
                 const textExtensions = ['.md', '.txt', '.json', '.mdc', '.yaml', '.yml', '.toml'];
                 const ext = path.extname(entry.name).toLowerCase();
 
-                if (textExtensions.includes(ext)) {
-                    let content = fs.readFileSync(srcPath, 'utf8');
-                    // Sort keys by length (longer first) to prevent partial replacements
-                    const keys = Object.keys(replacements).sort((a, b) => b.length - a.length);
-                    for (const search of keys) {
-                        content = content.replaceAll(search, replacements[search]);
+                const isSkillsLib = destPath.includes('skills_library');
+                const alreadyUpToDate = isSkillsLib && fs.existsSync(destPath) && fs.statSync(destPath).size > 0;
+                if (!alreadyUpToDate) {
+                    if (textExtensions.includes(ext)) {
+                        let content = fs.readFileSync(srcPath, 'utf8');
+                        // Sort keys by length (longer first) to prevent partial replacements
+                        const keys = Object.keys(replacements).sort((a, b) => b.length - a.length);
+                        for (const search of keys) {
+                            content = content.replaceAll(search, replacements[search]);
+                        }
+                        const needsWrite = !fs.existsSync(destPath) || fs.readFileSync(destPath, 'utf8') !== content;
+                        if (needsWrite) {
+                            const fd = fs.openSync(destPath, 'w');
+                            fs.writeSync(fd, content);
+                            fs.fsyncSync(fd);
+                            fs.closeSync(fd);
+                        }
+                    } else {
+                        fs.copyFileSync(srcPath, destPath);
                     }
-                    // Write with fsync for reliability
-                    const fd = fs.openSync(destPath, 'w');
-                    fs.writeSync(fd, content);
-                    fs.fsyncSync(fd);
-                    fs.closeSync(fd);
-                } else {
-                    fs.copyFileSync(srcPath, destPath);
                 }
                 
                 // Track copied file for verification
@@ -493,8 +502,13 @@ function removeSubdirectories(dir, trackProgress = true) {
         const entries = fs.readdirSync(dir, { withFileTypes: true });
         for (const entry of entries) {
             if (entry.isDirectory()) {
+                if (entry.name === '_ref') continue;
                 const fullPath = path.join(dir, entry.name);
                 fs.rmSync(fullPath, { recursive: true, force: true });
+                const prefix = fullPath + path.sep;
+                progressState.copiedFiles = progressState.copiedFiles.filter(
+                    (filePath) => !filePath.startsWith(prefix)
+                );
                 if (trackProgress && process.env.DEBUG) {
                     console.log(`  🗑️ Filtered sub-directory for Gemini: ${entry.name}`);
                 }
@@ -876,7 +890,10 @@ function installAntigravity() {
 
         const wrappedContent = `${MARKER_START}\n${bundledContent}\n${MARKER_END}`;
         let existingContent = '';
-        if (fs.existsSync(destFile)) existingContent = fs.readFileSync(destFile, 'utf8');
+        if (fs.existsSync(destFile)) {
+            existingContent = fs.readFileSync(destFile, 'utf8');
+            existingContent = existingContent.replace(/<!-- AGENT-ASSISTANT-START -->[\s\S]*?<!-- AGENT-ASSISTANT-END -->\s*/g, '');
+        }
 
         if (existingContent.includes(MARKER_START)) {
             const regex = new RegExp(`${MARKER_START}[\\s\\S]*?${MARKER_END}`, 'g');
@@ -887,7 +904,7 @@ function installAntigravity() {
         } else {
             const separator = existingContent.trim() === '' ? '' : '\n\n';
             const fd = fs.openSync(destFile, 'w');
-            fs.writeSync(fd, existingContent + separator + wrappedContent);
+            fs.writeSync(fd, existingContent.trimEnd() + separator + wrappedContent + '\n');
             fs.fsyncSync(fd);
             fs.closeSync(fd);
         }
@@ -896,15 +913,15 @@ function installAntigravity() {
         total++;
     }
 
-    // 2.2 Global Config Files (AGENT.md, CLAUDE.md)
-    const globalFiles = ['AGENT.md', 'CLAUDE.md'];
-    for (const file of globalFiles) {
-        const src = path.join(ROOT, file);
-        const dest = path.join(tool.paths.gemini, file);
-        if (fs.existsSync(src)) {
-            if (copyFileWithReplace(src, dest, tool.replacements)) total++;
-        }
+    // 2.2 Remove legacy AGENT.md and CLAUDE.md in ~/.gemini/ to prevent duplicate global rule discovery in Antigravity 2.0
+    const legacyGlobalFiles = ['AGENT.md', 'CLAUDE.md'];
+    for (const file of legacyGlobalFiles) {
+        removeFile(path.join(tool.paths.gemini, file), false);
     }
+
+    // Remove legacy agent-assistant skill folder and legacy global_workflows folder if they exist
+    removeDir(path.join(HOME, '.gemini', 'config', 'skills', 'agent-assistant'), false);
+    removeDir(path.join(HOME, '.gemini', 'antigravity', 'global_workflows'), false);
 
     // 2.3 Global Agents (~/.gemini/agents)
     ensureDir(tool.paths.globalAgents);
@@ -919,12 +936,12 @@ function installAntigravity() {
     total += copyWithReplace(path.join(ROOT, 'agents'), tool.paths.globalAgents, tool.replacements);
 
 
-    // --- 3. INSTALL EXTENSION BRAIN (~/.gemini/antigravity) ---
-    // 3.1 Global Workflows (~/.gemini/antigravity/global_workflows)
+    // --- 3. INSTALL EXTENSION BRAIN (~/.gemini/config) ---
+    // 3.1 Global Workflows (~/.gemini/config/global_workflows)
     ensureDir(tool.paths.globalWorkflows);
     total += copyWithReplace(path.join(ROOT, 'commands'), tool.paths.globalWorkflows, tool.replacements);
     removeSubdirectories(tool.paths.globalWorkflows, true); // 🔴 Bóc tách subdirectories
-    // 3.2 Core Framework (~/.gemini/antigravity/skills/boomopen-workflow-kit)
+    // 3.2 Core Framework (~/.gemini/config/skills/boomopen-workflow-kit)
     if (fs.existsSync(tool.paths.frameworkPath)) {
         fs.rmSync(tool.paths.frameworkPath, { recursive: true, force: true });
     }
@@ -951,7 +968,7 @@ function installAntigravity() {
         }
     }
 
-    // 3.3 Skills (~/.gemini/antigravity/skills)
+    // 3.3 Skills (~/.gemini/config/skills)
     total += copyWithReplace(path.join(ROOT, 'skills'), tool.paths.skills, tool.replacements);
 
     // --- INSTALL SKILLS LIBRARY ---
@@ -1418,13 +1435,13 @@ function uninstallAntigravity() {
         removed++;
     }
 
-    // 3. Remove Extension Brain (~/.gemini/antigravity)
-    // 3.1 Remove Global Workflows (~/.gemini/antigravity/global_workflows)
+    // 3. Remove Extension Brain (~/.gemini/config)
+    // 3.1 Remove Global Workflows (~/.gemini/config/global_workflows)
     if (removeDir(tool.paths.globalWorkflows)) {
         removed++;
     }
 
-    // 3.2 Remove Core Framework (~/.gemini/antigravity/skills/boomopen-workflow-kit)
+    // 3.2 Remove Core Framework (~/.gemini/config/skills/boomopen-workflow-kit)
     if (removeDir(tool.paths.frameworkPath)) {
         removed++;
     }
@@ -1778,6 +1795,21 @@ async function main() {
     }
 }
 
-main().catch(console.error);
+if (require.main === module) {
+    main().catch(console.error);
+}
+
+module.exports = {
+    TOOLS,
+    ROOT_FILES,
+    ensureDir,
+    copyWithReplace,
+    copyFileWithReplace,
+    removeDir,
+    removeFile,
+    removeSubdirectories,
+    countFiles,
+};
+
 
 

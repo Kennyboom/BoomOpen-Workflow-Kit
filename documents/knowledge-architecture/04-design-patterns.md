@@ -451,7 +451,7 @@ The framework uses `{TOOL}` (and related) placeholders throughout all Markdown a
 | GitHub Copilot | `copilot` | `~/.copilot/skills/boomopen-workflow-kit/` |
 | Claude Code | `claude` | `~/.claude/skills/boomopen-workflow-kit/` |
 | Codex | `codex` | `~/.codex/skills/boomopen-workflow-kit/` |
-| Antigravity/Gemini | `gemini/antigravity` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| Antigravity/Gemini | `gemini/antigravity` | `~/.{TOOL}/skills/boomopen-workflow-kit/` |
 
 ### Platform-Specific Assets
 

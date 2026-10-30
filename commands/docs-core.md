@@ -19,8 +19,8 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/global_workflows/_ref/docs-recon-protocol.md` — Phase 1 recon steps + Intelligence Report template
-> 2. `~/.gemini/antigravity/global_workflows/_ref/docs-folder-specs.md` — Folder content requirements + quality gates + verification checklist
+> 1. `~/.gemini/config/global_workflows/_ref/docs-recon-protocol.md` — Phase 1 recon steps + Intelligence Report template
+> 2. `~/.gemini/config/global_workflows/_ref/docs-folder-specs.md` — Folder content requirements + quality gates + verification checklist
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 
@@ -28,7 +28,7 @@ execution-mode: execute
 
 ## PRE-FLIGHT
 
-**LOAD**: CORE.md → PHASES.md → AGENTS.md (path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`)
+**LOAD**: CORE.md → PHASES.md → AGENTS.md (path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`)
 
 ---
 

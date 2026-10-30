@@ -431,7 +431,7 @@ Each `SKILL.md` contains domain expertise that the AI agent reads and applies du
 |----------|------|----------------|---------------------|
 | `cursor` | Cursor | `~/.cursor/` | `~/.cursor/skills/boomopen-workflow-kit/` |
 | `copilot` | GitHub Copilot | `~/.copilot/` | `~/.copilot/skills/boomopen-workflow-kit/` |
-| `antigravity` | Antigravity (Gemini) | `~/.antigravity/` + `~/.gemini/` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| `antigravity` | Antigravity (Gemini) | `~/.antigravity/` + `~/.gemini/` | `~/.{TOOL}/skills/boomopen-workflow-kit/` |
 | `claude` | Claude Code | `~/.claude/` | `~/.claude/skills/boomopen-workflow-kit/` |
 | `codex` | Codex | `~/.codex/` | `~/.codex/skills/boomopen-workflow-kit/` |
 

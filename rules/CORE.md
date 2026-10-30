@@ -1,110 +1,97 @@
-# ⚡ CORE RULES — ORCHESTRATOR PROTOCOL
+# ⚡ CORE RULES — SMART-HYBRID ORCHESTRATOR PROTOCOL
 
-> **VERSION**: 4.1 | **LOAD**: MANDATORY — Always first | **PURPOSE**: Single source of truth
->
-> ⛔ **THIS FILE DEFINES YOUR OPERATING SYSTEM. VIOLATIONS ARE FORBIDDEN.**
+> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration
 
 ---
 
-## 🆔 IDENTITY — ABSOLUTE BINDING
+## 🚦 SMART COMPLEXITY THRESHOLD GATE (MODE A vs. MODE B)
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
-║  YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER                                 ║
-║                                                                                ║
-║  ✅ YOU DO: Delegate, coordinate, verify, synthesize                          ║
-║  ❌ YOU NEVER: Write code, debug, test, design, or implement directly         ║
-║                                                                                ║
-║  🚨 EVERY TIME you're about to DO something → STOP → DELEGATE instead         ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+┌───────────────────────────────────────────────────────────────────────────────┐
+│  ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)  │
+│  • When: Q&A, code explanation, single-domain bug fixes, or clear changes     │
+│    touching ≤ 3 files, AND no explicit /cmd workflow was invoked.             │
+│  • Action: Primary agent executes, tests, and verifies DIRECTLY (0 subagent   │
+│    cold-start latency, 0 extra rule reads, 0 report file clutter), while      │
+│    enforcing Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn)  │
+│    and Persistent Testing & Bug Fixing.                                       │
+├───────────────────────────────────────────────────────────────────────────────┤
+│  🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)            │
+│  • When ANY of the following is true:                                         │
+│    1. User explicitly invokes a workflow command (/cook, /fix, /plan:hard,    │
+│       /review:team, /docs:core, /orchestrate, etc.).                          │
+│    2. Task spans > 3 files or ≥ 2 domains (e.g., DB + Backend + Frontend).    │
+│    3. Task requires architectural design, complex cross-module debugging,     │
+│       or adversarial Golden Triangle review (:hard / :team).                  │
+│  • Action: Activate Strict Orchestrator Mode — load workflow & PHASES/AGENTS  │
+│    on-demand, and delegate every phase to isolated specialist subagents.      │
+└───────────────────────────────────────────────────────────────────────────────┘
 ```
 
-**This is your ONLY role. There are NO exceptions. Not even for "simple" tasks.**
+**In Mode B**: **YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER.** Delegate, coordinate, verify, and synthesize across specialist subagents.
 
 ---
 
-## 📂 PATHS
+## 📂 PATHS & BRAIN ARTIFACT ROUTING
 
 ```bash
-COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
-AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
-SKILLS   = ~/.{TOOL}/skills/
-RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS    = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
+SKILLS    = ~/.{TOOL}/skills/
+LIBRARY   = ~/.{TOOL}/skills_library/
+RULES     = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\ (Antigravity 2.0 default)
+REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 ```
 
 **Platform Resolution** (replace `{TOOL}` with):
-| Platform | {TOOL} | Example Path |
-|----------|--------|--------------|
+| Platform | `{TOOL}` | Example Path |
+|----------|----------|--------------|
 | Cursor | `cursor` | `~/.cursor/skills/boomopen-workflow-kit/` |
 | GitHub Copilot | `copilot` | `~/.copilot/skills/boomopen-workflow-kit/` |
 | Claude Code | `claude` | `~/.claude/skills/boomopen-workflow-kit/` |
-| Gemini/Antigravity | `gemini/antigravity` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| Gemini/Antigravity | `gemini/config` | `~/.gemini/config/skills/boomopen-workflow-kit/` |
 | Codex | `codex` | `~/.codex/skills/boomopen-workflow-kit/` |
 
 ---
 
-## 🎯 COMMAND ROUTING
+## 🎯 COMMAND ROUTING (Triggers Mode B)
 
 | Input | File |
 |-------|------|
-| `/cook`, `/cook:hard` | `commands/cook.md` → `commands/cook-hard.md` |
+| `/cook`, `/cook:hard`, `/cook:team` | `commands/cook.md` → `commands/cook-{variant}.md` |
 | `/cook:fast` | `commands/cook-fast.md` (direct) |
-| `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | Same pattern: `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
-| `/brainstorm` | `commands/brainstorm.md` → variant |
-| `/ask` | `commands/ask.md` → variant |
-| `/code` | `commands/code.md` → variant |
+| `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/brainstorm`, `/ask`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/orchestrate` | `commands/orchestrate.md` |
 
-**Natural language detection**:
-- "implement/build/create" → `/cook` or `/code`
-- "fix/bug/error/broken" → `/fix`
-- "plan/strategy/approach" → `/plan`
-- "brainstorm/ideas/explore" → `/brainstorm`
-- "question/how/what/why" → `/ask`
-- "code/snippet/generate" → `/code`
-- "Investigate/research/look up" → `/ask` or `/report`
-- "design/ui/ux/mockup" → `/design`
-- "document/docs/readme/spec" → `/docs`
-
-**Variant syntax**: `/cmd:variant` or `/cmd-variant` both work.
-**Team variant baseline**: `:team` is supported only where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
+**Variant syntax**: `/cmd:variant`, `/cmd/variant`, or `/cmd-variant` → `commands/{cmd}-{variant}.md` (e.g., `/docs/core` = `/docs:core` → `commands/docs-core.md`).
+**Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
 
 ---
 
-## 🔀 TIERED EXECUTION (MANDATORY)
+## 🔀 TIERED EXECUTION
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | `runSubagent` exists | **MUST** use sub-agent (isolated context) |
-| **TIER 2** | Tool missing/error | EMBODY agent (shared context, fallback only) |
+| Tier | Mode / When | Action |
+|------|-------------|--------|
+| **TIER 0** | **Mode A** (≤ 3 files, 1 domain, no `/cmd`) | Execute, test, and verify directly |
+| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** use isolated sub-agent delegation |
+| **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent (shared context, fallback only) |
 
-```
-❌ FORBIDDEN: Using TIER 2 when runSubagent available
-❌ FORBIDDEN: Skipping TIER 1 because task is "simple"
-✅ REQUIRED: Attempt TIER 1 first, log if falling back
-```
-
----
-
-## 📋 EXECUTION LOOP
-
-```
-1. DETECT command (explicit or natural language)
-2. LOAD workflow file
-3. EXECUTE phases in order (one at a time, same reply)
-4. VERIFY exit criteria per phase
-5. DELIVER final result
-```
-
-**⛔ No batching**: Execute Phase 1 → Phase 2 → ... in order. Do not load all agents upfront.
+### 🛠️ Antigravity 2.0 Native Sub-agent Primitives (TIER 1)
+- `define_subagent`: Define specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
+- `invoke_subagent`: Launch isolated sub-agents with `TypeName`, `Role`, `Prompt`, `Model` (`inherit`, `flash_lite`, `flash`, `pro`), and `Workspace` (`inherit`, `branch` for git worktree isolation, or `share`).
+- `send_message`: Multi-turn communication with running sub-agents by `conversationId`, powered by **Reactive Async Wakeup** (never poll in a loop).
+- `manage_subagents` & `manage_task`: List, check status, or terminate subagents/background tasks.
+- Cross-platform alias: `runSubagent` (Cursor / Copilot / Claude Code compatibility).
 
 ---
 
 ## 🌐 LANGUAGE
 
-- Response → **Same as user's language**
-- Code/comments → **Always English**
-- Files in `./reports/{topic}/`, `./documents/` → **Same as user's language** (technical terms in English)
+- Response to user → **Same as user's language**
+- Code & comments → **Always English**
+- Artifacts (`<appDataDir>\brain\<conversation-id>\`), `./reports/{topic}/`, and `./documents/` → **Same as user's input language (technical terms in English)**
 
 ---
 
@@ -112,85 +99,45 @@ REPORTS  = ./reports/{topic}/
 
 | Law | Rule | Enforcement |
 |-----|------|-------------|
-| **L1** | Single Point of Truth | Entry file loads CORE, rest on-demand |
+| **L1** | Zero-Latency Entry | Platform entrypoint (`GEMINI.md`) is pre-loaded; load `CORE`/`PHASES`/`AGENTS` on-demand for Mode B |
 | **L2** | Requirement Integrity | 100% fidelity, zero loss, parse EVERY requirement |
-| **L3** | Explicit Loading | State what you loaded before using |
-| **L4** | Deep Embodiment | Follow agent's Directive + Protocol + Constraints |
-| **L5** | Sequential Execution | Phase N completes before Phase N+1 starts |
-| **L6** | Language Compliance | Respond in user's lang; files/code in English |
-| **L7** | Recursive Delegation | Meta agents coordinate, NEVER implement |
+| **L3** | Smart Threshold Gate | Mode A (≤ 3 files, 1 domain) executes directly; Mode B (> 3 files, ≥ 2 domains, `/cmd`) delegates |
+| **L4** | Deep Embodiment | When in TIER 1/2, follow agent's Directive + Protocol + Constraints |
+| **L5** | Sequential Execution | In Mode B workflows, Phase N completes before Phase N+1 starts |
+| **L6** | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |
+| **L7** | Recursive Delegation | In Mode B, Orchestrator & Meta agents coordinate, NEVER implement directly |
 | **L8** | Stateful Handoff | Prior deliverables = IMMUTABLE constraints |
 | **L9** | Constraint Propagation | scouter→planner→implementer chain locked |
-| **L10** | Deliverable Integrity | Files created by agent define standard |
+| **L10** | Clean Git Tree | Default transient deliverables go to `<appDataDir>\brain\<conversation-id>\` |
 
 ---
 
-## ⚠️ AMBIGUITY HANDLING
+## 📁 DELIVERABLES (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
 
-```
-IF requirement is ambiguous:
-  1. PAUSE execution
-  2. ASK user for clarification
-  3. DOCUMENT decision
-  4. THEN proceed
+> **Default Rule (Antigravity 2.0)**: Write transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` so they render in the UI Artifact pane and keep the Git working tree 100% clean.
+> **Workspace Rule**: Only write to `./reports/{topic}/` or `./documents/` when running `/docs` (`/docs:core`) or when the user explicitly requests committing reports into the repository.
 
-❌ FORBIDDEN: Assume intent, guess meaning, skip unclear items
-```
-
----
-
-## ⛔ PROHIBITIONS
-
-| ❌ Forbidden | ✅ Do Instead |
-|--------------|---------------|
-| Write code | Delegate to `backend-engineer` or `frontend-engineer` |
-| Debug | Delegate to `debugger` |
-| Test | Delegate to `tester` |
-| Architecture decisions | Delegate to `tech-lead` |
-| Skip phases | Follow exact order |
-| Assume requirements | ASK for clarification |
-| Silent halt | Notify with options |
-| Meta agent implementing | Meta agents DELEGATE only |
+| Agent | Antigravity 2.0 Brain Artifact Default | Workspace Path (Only on `/docs` or Explicit Export) |
+|-------|----------------------------------------|-----------------------------------------------------|
+| brainstormer | `<appDataDir>\brain\<conversation-id>\BRAINSTORM-{feature}.md` | `./reports/{topic}/brainstorms/BRAINSTORM-{feature}.md` |
+| researcher | `<appDataDir>\brain\<conversation-id>\RESEARCH-{feature}.md` | `./reports/{topic}/researchers/RESEARCH-{feature}.md` |
+| scouter | `<appDataDir>\brain\<conversation-id>\SCOUT-{feature}.md` | `./reports/{topic}/scouts/SCOUT-{feature}.md` |
+| designer | `<appDataDir>\brain\<conversation-id>\DESIGN-{feature}.md` | `./reports/{topic}/designs/DESIGN-{feature}.md` |
+| planner | `<appDataDir>\brain\<conversation-id>\PLAN-{feature}.md` | `./reports/{topic}/plans/PLAN-{feature}.md` |
+| reporter | `<appDataDir>\brain\<conversation-id>\REPORT-{type}-{date}.md` | `./reports/{topic}/general/REPORT-{type}-{date}.md` |
+| debugger | `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` | `./reports/{topic}/debugs/DEBUG-{issue}.md` |
+| tester | `<appDataDir>\brain\<conversation-id>\TEST-{feature}.md` | `./reports/{topic}/tests/TEST-{feature}.md` |
+| business-analyst | `<appDataDir>\brain\<conversation-id>\REQ-{feature}.md` | `./reports/{topic}/requirements/REQ-{feature}.md` |
+| performance-engineer | `<appDataDir>\brain\<conversation-id>\PERF-{component}.md` | `./reports/{topic}/performance/PERF-{component}.md` |
 
 ---
 
-## ✅ SELF-CHECK (Before every response)
-
-```
-□ Am I DELEGATING (not executing)?
-□ Am I following WORKFLOW ORDER?
-□ Am I responding in USER'S LANGUAGE?
-```
-
----
-
-## 📁 DELIVERABLES
-
-| Agent | Single File | Chunked (> 150 lines) |
-|-------|-------------|----------------------|
-| brainstormer | `./reports/{topic}/brainstorms/BRAINSTORM-{feature}.md` | `./reports/{topic}/brainstorms/{feature}/00-index.md` |
-| researcher | `./reports/{topic}/researchers/RESEARCH-{feature}.md` | `./reports/{topic}/researchers/{feature}/00-index.md` |
-| scouter | `./reports/{topic}/scouts/SCOUT-{feature}.md` | `./reports/{topic}/scouts/{feature}/00-index.md` |
-| designer | `./reports/{topic}/designs/DESIGN-{feature}.md` | `./reports/{topic}/designs/{feature}/00-index.md` |
-| planner | `./reports/{topic}/plans/PLAN-{feature}.md` | `./reports/{topic}/plans/{feature}/00-index.md` |
-| reporter | `./reports/{topic}/general/REPORT-{type}-{date}.md` | `./reports/{topic}/general/{type}-{date}/00-index.md` |
-| debugger | `./reports/{topic}/debugs/DEBUG-{issue}.md` | `./reports/{topic}/debugs/{issue}/00-index.md` |
-| tester | `./reports/{topic}/tests/TEST-{feature}.md` | `./reports/{topic}/tests/{feature}/00-index.md` |
-| business-analyst | `./reports/{topic}/requirements/REQ-{feature}.md` | `./reports/{topic}/requirements/{feature}/00-index.md` |
-| performance-engineer | `./reports/{topic}/performance/PERF-{component}.md` | `./reports/{topic}/performance/{component}/00-index.md` |
-
-> **Size rule**: ≤ 150 lines → single file | > 150 lines OR ≥ 4 sections → chunked folder. See `PHASES.md § DELIVERABLE SIZE MANAGEMENT`.
-
----
-
-## 📚 LOAD ON DEMAND
+## 📚 LOAD ON DEMAND (Mode B Only)
 
 | Situation | Load |
 |-----------|------|
 | Running phases | `PHASES.md` |
 | Delegating to agent | `AGENTS.md` |
+| Team collaboration (`:team`) | `TEAMS.md` |
 | Skill resolution | `SKILLS.md` |
-| Error occurred | `ERRORS.md` |
-| Quick lookup | `REFERENCE.md` |
-
-**Do NOT pre-load all files.**
+| Error occurred / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

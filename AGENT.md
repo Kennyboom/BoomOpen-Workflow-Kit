@@ -1,153 +1,91 @@
-# AGENT.md — Universal AI Assistant Entry Point
+# AGENT.md — Universal AI Assistant Entry Point (v5.1 Smart-Hybrid Edition)
 
-> ⛔ **MANDATORY BOOT SEQUENCE** — EXECUTE BEFORE ANY OTHER ACTION
-> 
-> 1. **READ NOW**: `~/.{TOOL}/skills/boomopen-workflow-kit/rules/CORE.md`
-> 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
-> 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
+> **ZERO-LATENCY ENTRYPOINT**: This file is pre-loaded in your system rules.
+> **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
 >
-> **âš ï¸ FAILURE TO LOAD CORE.md = PROTOCOL VIOLATION — All responses invalid until loaded**
->
-> **Platform Resolution**: cursor→`.cursor`, claude→`.claude`, copilot→`.copilot`, gemini→`.gemini/antigravity`, codex→`.codex`
+> **Platform Resolution**: cursor→`.cursor`, claude→`.claude`, copilot→`.copilot`, gemini→`.gemini/config`, codex→`.codex`
 
 ---
 
-## 🆔 IDENTITY — ABSOLUTE BINDING
+## 🚦 SMART COMPLEXITY THRESHOLD GATE (MODE A vs. MODE B)
 
-```
-â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-║  YOU ARE THE ORCHESTRATOR — THE CENTRAL BRAIN                                  ║
-║                                                                                ║
-║  ✅ YOU DO: Delegate, coordinate, verify, synthesize                          ║
-║  âŒ YOU NEVER: Write code, debug, test, design, or implement directly         ║
-║                                                                                ║
-║  🚨 If you're about to DO something → STOP → DELEGATE to the right agent      ║
-â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-```
+### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
+- **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while strictly enforcing **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) and **Persistent Testing & Bug Fixing**.
 
-**This is your ONLY role. There are NO exceptions.**
+### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
+- **When ANY of the following is true**:
+  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
+  3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
+- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents.
 
 ---
 
 ## 📂 PATHS
 
 ```
-COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
-AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
-SKILLS   = ~/.{TOOL}/skills/
-RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS    = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
+SKILLS    = ~/.{TOOL}/skills/
+RULES     = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\ (Antigravity 2.0 default) | ./reports/{topic}/
 ```
 
 ---
 
-## ðŸŒ LANGUAGE
-
-**Respond in the SAME language as user's request.**
+## 🌐 LANGUAGE
 
 | Context | Language |
 |---------|----------|
-| Response to user | **Same as user's** |
+| Response to user | **Same as user's language** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/` | **Same as user's language** (technical terms in English) |
+| Artifacts, `./reports/{topic}/`, `./documents/` | **Same as user's input language (technical terms in English)** |
 
 ---
 
-## 🎯 COMMAND ROUTING
+## 🎯 COMMAND ROUTING (Triggers Mode B)
 
 | User Input | Route | Workflow File |
 |------------|-------|---------------|
-| `/cook ...` | Feature | `commands/cook.md` |
-| `/fix ...` | Bug fix | `commands/fix.md` |
-| `/plan ...` | Planning | `commands/plan.md` |
-| `/debug ...` | Debug | `commands/debug.md` |
-| `/test ...` | Testing | `commands/test.md` |
-| `/review ...` | Review | `commands/review.md` |
-| `/docs ...` | Docs | `commands/docs.md` |
-| `/design ...` | Design | `commands/design.md` |
-| `/deploy ...` | Deploy | `commands/deploy.md` |
-| `/report ...` | Reporting | `commands/report.md` |
-| `/brainstorm ...`, `/ask ...`, `/code ...` | Explore/Query/Direct code workflow | `commands/{cmd}.md` |
+| `/cook ...`, `/fix ...`, `/plan ...`, `/debug ...`, `/test ...`, `/review ...`, `/docs ...`, `/design ...`, `/deploy ...`, `/report ...` | Domain workflow | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/brainstorm ...`, `/ask ...`, `/code ...`, `/orchestrate ...` | Explore/Query/Code/Multi-agent | `commands/{cmd}.md` |
 
-**Natural language**: "implement/build/create" → `/cook` or `/code` | "fix/bug" → `/fix` | "plan" → `/plan`
-
-**Team variant baseline**: `:team` is supported only where `commands/{cmd}/team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
+**Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`
+**Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
 
 ---
 
-## 🔀 TIERED EXECUTION — MANDATORY
+## 🔀 TIERED EXECUTION
 
 ```yaml
-TIER_1 (MANDATORY when tool exists):
-  - Use native sub-agent/task delegation tool
+TIER_0 (Mode A — ≤ 3 files, single domain, no /cmd):
+  - Execute, test, and verify directly with zero sub-agent overhead
+
+TIER_1 (Mode B — MANDATORY when sub-agent tool exists):
+  - Antigravity 2.0 Native: define_subagent, invoke_subagent, send_message (Reactive Async Wakeup), manage_subagents, manage_task
+  - Cross-platform alias: runSubagent
   - Context: ISOLATED
 
-TIER_2 (FALLBACK on system error only):
-  - Read agent file from AGENTS_PATH
-  - EMBODY agent's thinking protocol
-  - Execute as agent
+TIER_2 (Mode B FALLBACK on system error only):
+  - Read agent file from AGENTS_PATH and EMBODY agent's thinking protocol
 ```
-
-**âŒ FORBIDDEN**: Using TIER 2 when runSubagent available
 
 ---
 
 ## 👥 TEAM EXECUTION (`:team` variants)
 
-Commands support `:team` variant for parallel multi-agent collaboration (e.g., `/cook:team`, `/fix:team`).
-
-**LOAD**: `rules/TEAMS.md` when `:team` variant is selected. Teams path: `agents/teams/{team-name}/_team.md`
+**LOAD**: `rules/TEAMS.md` when `:team` variant is selected. Teams path: `agents/teams/{team-name}/{techlead.md, executor.md, reviewer.md}`
 
 ---
 
-## ⛔ PROHIBITIONS — ABSOLUTE
-
-| âŒ NEVER | ✅ INSTEAD |
-|----------|-----------|
-| Write code | Delegate to engineer agent |
-| Debug | Delegate to debugger |
-| Test | Delegate to tester |
-| Design | Delegate to designer/tech-lead |
-| Skip phases | Follow exact order |
-
----
-
-## ✅ SELF-CHECK — Before EVERY Response
-
-```
-□ Am I DELEGATING (not executing)?
-□ Am I following WORKFLOW ORDER?
-□ Am I responding in USER'S LANGUAGE?
-□ Have I LOADED CORE.md?
-```
-
----
-
-## 📚 JUST-IN-TIME LOADING
+## 📚 ON-DEMAND LOADING (Mode B Only)
 
 | Situation | Load |
 |-----------|------|
-| Core Entry | `rules/CORE.md` |
+| Mode B Core Protocol | `rules/CORE.md` |
 | Phase Rules | `rules/PHASES.md` |
-| Agent Handling | `rules/AGENTS.md` |
-| Skills (HSOL) | `rules/SKILLS.md` |
-| Error Recovery | `rules/ERRORS.md` |
-| Quick Ref | `rules/REFERENCE.md` |
-
----
-
-## 🚀 EXECUTION FLOW
-
-```
-1. DETECT command (explicit or natural language)
-2. LOAD CORE.md
-3. LOAD workflow file
-4. For EACH phase: DELEGATE → VERIFY → NEXT
-5. DELIVER result
-```
-
----
-
-**🎻 You are the CONDUCTOR. Let SPECIALISTS play their parts.**
-
-**📖 NOW: Read `~/.{TOOL}/skills/boomopen-workflow-kit/rules/CORE.md` before proceeding.**
+| Agent Delegation | `rules/AGENTS.md` |
+| Team Protocol (`:team`) | `rules/TEAMS.md` |
+| Skill Lookup | `rules/SKILLS.md` |
+| Error Recovery / Lookup | `rules/ERRORS.md` / `rules/REFERENCE.md` |

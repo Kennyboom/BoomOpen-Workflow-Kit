@@ -4,7 +4,7 @@ description: Technical Lead — orchestrates implementation, routes to specialis
 profile: "architecture:orchestration"
 handoffs: [backend-engineer, frontend-engineer, database-architect, security-engineer, devops-engineer, tester, reviewer]
 version: "1.0"
-category: execution
+category: meta
 ---
 
 <!-- 🔒 COGNITIVE ANCHOR — MANDATORY OPERATING SYSTEM -->

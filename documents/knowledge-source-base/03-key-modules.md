@@ -269,7 +269,7 @@ Defines the Orchestrator's operating protocol — the "operating system" for the
 |----------|---------------|--------------|
 | Cursor | `cursor` | `~/.cursor/skills/boomopen-workflow-kit/` |
 | Copilot | `copilot` | `~/.copilot/skills/boomopen-workflow-kit/` |
-| Antigravity | `gemini/antigravity` | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| Antigravity | `gemini/antigravity` | `~/.{TOOL}/skills/boomopen-workflow-kit/` |
 | Claude | `claude` | `~/.claude/skills/boomopen-workflow-kit/` |
 | Codex | `codex` | `~/.codex/skills/boomopen-workflow-kit/` |
 

@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
 
 # App Builder - Application Building Orchestrator
 
-> Analyzes user's requests, determines tech stack, plans structure, and coordinates agents.
+> Analyzes user's requests, determines tech stack, plans structure, and coordinates canonical specialist agents.
 
 ## 🎯 Selective Reading Rule
 
@@ -44,15 +44,18 @@ Quick-start scaffolding for new projects. **Read the matching template only!**
 
 ---
 
-## 🔗 Related Agents
+## 🔗 Canonical Agents (`agents/*.md`)
 
 | Agent | Role |
 |-------|------|
-| `project-planner` | Task breakdown, dependency graph |
-| `frontend-specialist` | UI components, pages |
-| `backend-specialist` | API, business logic |
-| `database-architect` | Schema, migrations |
-| `devops-engineer` | Deployment, preview |
+| `planner` | Task breakdown, dependency graph, `PLAN-{feature}.md` |
+| `tech-lead` | Architecture coordination, quality gatekeeping |
+| `frontend-engineer` | UI components, pages, client state |
+| `backend-engineer` | API routes, services, business logic |
+| `database-architect` | Schema design, migrations, queries |
+| `security-engineer` | Auth, vulnerability audit, security review |
+| `tester` | Unit, integration, E2E testing |
+| `devops-engineer` | Deployment, CI/CD, preview environment |
 
 ---
 
@@ -64,12 +67,12 @@ User: "Make an Instagram clone with photo sharing and likes"
 App Builder Process:
 1. Project type: Social Media App
 2. Tech stack: Next.js + Prisma + Cloudinary + Clerk
-3. Create plan:
+3. Create plan via `planner`:
    ├─ Database schema (users, posts, likes, follows)
    ├─ API routes (12 endpoints)
    ├─ Pages (feed, profile, upload)
    └─ Components (PostCard, Feed, LikeButton)
-4. Coordinate agents
+4. Coordinate specialists (`database-architect` → `backend-engineer` + `frontend-engineer` → `tester` + `security-engineer`)
 5. Report progress
-6. Start preview
+6. Start preview via `devops-engineer`
 ```

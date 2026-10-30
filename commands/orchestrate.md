@@ -28,13 +28,13 @@ $ARGUMENTS
 
 | Task Type | REQUIRED Agents (minimum) |
 |-----------|---------------------------|
-| **Web App** | frontend-specialist, backend-specialist, test-engineer |
-| **API** | backend-specialist, security-auditor, test-engineer |
-| **UI/Design** | frontend-specialist, seo-specialist, performance-optimizer |
-| **Database** | database-architect, backend-specialist, security-auditor |
-| **Full Stack** | project-planner, frontend-specialist, backend-specialist, devops-engineer |
-| **Debug** | debugger, explorer-agent, test-engineer |
-| **Security** | security-auditor, penetration-tester, devops-engineer |
+| **Web App** | `frontend-engineer`, `backend-engineer`, `tester` |
+| **API** | `backend-engineer`, `security-engineer`, `tester` |
+| **UI/Design** | `designer`, `frontend-engineer`, `performance-engineer` |
+| **Database** | `database-architect`, `backend-engineer`, `security-engineer` |
+| **Full Stack** | `planner`, `frontend-engineer`, `backend-engineer`, `devops-engineer` |
+| **Debug** | `debugger`, `scouter`, `tester` |
+| **Security** | `security-engineer`, `reviewer`, `devops-engineer` |
 
 ---
 
@@ -55,17 +55,17 @@ $ARGUMENTS
 
 | Step | Agent | Action |
 |------|-------|--------|
-| 1 | `project-planner` | Create docs/PLAN.md |
-| 2 | (optional) `explorer-agent` | Codebase discovery if needed |
+| 1 | `planner` | Create `./reports/{topic}/plans/PLAN-{feature}.md` or `docs/PLAN.md` |
+| 2 | (optional) `scouter` | Codebase discovery if needed |
 
-> 🔴 **NO OTHER AGENTS during planning!** Only project-planner and explorer-agent.
+> 🔴 **NO OTHER AGENTS during planning!** Only `planner` and `scouter`.
 
 ### ⏸️ CHECKPOINT: User Approval
 
 ```
 After PLAN.md is complete, ASK:
 
-"✅ Plan created: docs/PLAN.md
+"✅ Plan created.
 
 Do you approve? (Y/N)
 - Y: Start implementation
@@ -78,32 +78,37 @@ Do you approve? (Y/N)
 
 | Parallel Group | Agents |
 |----------------|--------|
-| Foundation | `database-architect`, `security-auditor` |
-| Core | `backend-specialist`, `frontend-specialist` |
-| Polish | `test-engineer`, `devops-engineer` |
+| Foundation | `database-architect`, `security-engineer` |
+| Core | `backend-engineer`, `frontend-engineer` |
+| Polish | `tester`, `reviewer`, `devops-engineer` |
 
-> ✅ After user approval, invoke multiple agents in PARALLEL.
+> ✅ After user approval, invoke multiple agents in PARALLEL using `invoke_subagent` (or `runSubagent`).
 
-## Available Agents (17 total)
+## Available Canonical Agents (20 total)
 
-| Agent | Domain | Use When |
-|-------|--------|----------|
-| `project-planner` | Planning | Task breakdown, PLAN.md |
-| `explorer-agent` | Discovery | Codebase mapping |
-| `frontend-specialist` | UI/UX | React, Vue, CSS, HTML |
-| `backend-specialist` | Server | API, Node.js, Python |
-| `database-architect` | Data | SQL, NoSQL, Schema |
-| `security-auditor` | Security | Vulnerabilities, Auth |
-| `penetration-tester` | Security | Active testing |
-| `test-engineer` | Testing | Unit, E2E, Coverage |
-| `devops-engineer` | Ops | CI/CD, Docker, Deploy |
-| `mobile-developer` | Mobile | React Native, Flutter |
-| `performance-optimizer` | Speed | Lighthouse, Profiling |
-| `seo-specialist` | SEO | Meta, Schema, Rankings |
-| `documentation-writer` | Docs | README, API docs |
-| `debugger` | Debug | Error analysis |
-| `game-developer` | Games | Unity, Godot |
-| `orchestrator` | Meta | Coordination |
+| Agent | Category | Domain / Use When |
+|-------|----------|-------------------|
+| `tech-lead` | meta | Architecture, technical orchestration |
+| `planner` | meta | Task breakdown, roadmap, PLAN.md |
+| `backend-engineer` | execution | Server, APIs, Node.js, Python, Go |
+| `frontend-engineer` | execution | UI/UX implementation, React, Vue, CSS |
+| `database-architect` | execution | SQL, NoSQL, Schema, Migrations |
+| `mobile-engineer` | execution | iOS, Android, React Native, Flutter |
+| `game-engineer` | execution | Unity, Unreal, Godot, game systems |
+| `tester` | validation | Unit, integration, E2E testing |
+| `reviewer` | validation | Code review, quality gatekeeping |
+| `security-engineer` | validation | Security audit, auth, vulnerability assessment |
+| `performance-engineer` | validation | Profiling, optimization, load testing |
+| `debugger` | validation | Root-cause bug investigation |
+| `researcher` | research | External research, documentation lookup |
+| `scouter` | research | Codebase mapping and discovery |
+| `brainstormer` | research | Ideation, options exploration |
+| `designer` | research | UI/UX design, wireframes, design systems |
+| `docs-manager` | support | README, API docs, technical documentation |
+| `devops-engineer` | support | CI/CD, Docker, infrastructure, deploy |
+| `business-analyst` | support | Business requirements, PRD, user stories |
+| `project-manager` | support | Project coordination, risk, delivery |
+| `reporter` | support | Status reports, summaries, metrics |
 
 ---
 
@@ -112,76 +117,59 @@ Do you approve? (Y/N)
 ### Step 1: Analyze Task Domains
 Identify ALL domains this task touches:
 ```
-□ Security     → security-auditor, penetration-tester
-□ Backend/API  → backend-specialist
-□ Frontend/UI  → frontend-specialist
+□ Security     → security-engineer
+□ Backend/API  → backend-engineer
+□ Frontend/UI  → frontend-engineer, designer
 □ Database     → database-architect
-□ Testing      → test-engineer
+□ Testing      → tester
+□ Code Review  → reviewer
 □ DevOps       → devops-engineer
-□ Mobile       → mobile-developer
-□ Performance  → performance-optimizer
-□ SEO          → seo-specialist
-□ Planning     → project-planner
+□ Mobile       → mobile-engineer
+□ Game         → game-engineer
+□ Performance  → performance-engineer
+□ Docs         → docs-manager
+□ Requirements → business-analyst
+□ Discovery    → scouter, researcher
+□ Planning     → planner, tech-lead
 ```
 
 ### Step 2: Phase Detection
 
 | If Plan Exists | Action |
 |----------------|--------|
-| NO `docs/PLAN.md` | → Go to PHASE 1 (planning only) |
-| YES `docs/PLAN.md` + user approved | → Go to PHASE 2 (implementation) |
+| NO Plan file | → Go to PHASE 1 (planning only via `planner` / `scouter`) |
+| YES Plan file + user approved | → Go to PHASE 2 (implementation) |
 
 ### Step 3: Execute Based on Phase
 
 **PHASE 1 (Planning):**
 ```
-Use the project-planner agent to create PLAN.md
+Delegate to `planner` (and optionally `scouter`) via TIER 1 (`invoke_subagent` / `runSubagent`)
 → STOP after plan is created
 → ASK user for approval
 ```
 
 **PHASE 2 (Implementation - after approval):**
 ```
-Invoke agents in PARALLEL:
-Use the frontend-specialist agent to [task]
-Use the backend-specialist agent to [task]
-Use the test-engineer agent to [task]
+Invoke specialist agents via `invoke_subagent` (with Reactive Async Wakeup):
+- `backend-engineer` for backend/API tasks
+- `frontend-engineer` for UI tasks
+- `tester` and `reviewer` for verification
 ```
 
 **🔴 CRITICAL: Context Passing (MANDATORY)**
 
 When invoking ANY subagent, you MUST include:
-
 1. **Original User Request:** Full text of what user asked
 2. **Decisions Made:** All user answers to Socratic questions
 3. **Previous Agent Work:** Summary of what previous agents did
-4. **Current Plan State:** If plan files exist in workspace, include them
-
-**Example with FULL context:**
-```
-Use the project-planner agent to create PLAN.md:
-
-**CONTEXT:**
-- User Request: "A social platform for students, using mock data"
-- Decisions: Tech=Vue 3, Layout=Grid Widgets, Auth=Mock, Design=Youthful & dynamic
-- Previous Work: Orchestrator asked 6 questions, user chose all options
-- Current Plan: playful-roaming-dream.md exists in workspace with initial structure
-
-**TASK:** Create detailed PLAN.md based on ABOVE decisions. Do NOT infer from folder name.
-```
-
-> ⚠️ **VIOLATION:** Invoking subagent without full context = subagent will make wrong assumptions!
-
+4. **Current Plan State:** Plan file path and constraints
 
 ### Step 4: Verification (MANDATORY)
-The LAST agent must run appropriate verification scripts:
-```bash
-python .agent/skills/vulnerability-scanner/scripts/security_scan.py .
-python .agent/skills/lint-and-validate/scripts/lint_runner.py .
-```
+Delegate to `tester` and `reviewer` (or `security-engineer`) to run project test suites, linters, type checks, and security checks appropriate for the project stack.
 
 ### Step 5: Synthesize Results
-Combine all agent outputs into unified report.
+Combine all agent outputs into a unified report.
 
 ---
 
@@ -193,30 +181,27 @@ Combine all agent outputs into unified report.
 ### Task
 [Original task summary]
 
-### Mode
-[Current Antigravity Agent mode: plan/edit/ask]
-
 ### Agents Invoked (MINIMUM 3)
 | # | Agent | Focus Area | Status |
 |---|-------|------------|--------|
-| 1 | project-planner | Task breakdown | ✅ |
-| 2 | frontend-specialist | UI implementation | ✅ |
-| 3 | test-engineer | Verification scripts | ✅ |
+| 1 | `planner` | Task breakdown | ✅ |
+| 2 | `frontend-engineer` | UI implementation | ✅ |
+| 3 | `tester` | Verification & tests | ✅ |
 
-### Verification Scripts Executed
-- [x] security_scan.py → Pass/Fail
-- [x] lint_runner.py → Pass/Fail
+### Verification Executed
+- [x] Build / Lint / Type-check → Pass/Fail
+- [x] Test Suite / Security Review → Pass/Fail
 
 ### Key Findings
-1. **[Agent 1]**: Finding
-2. **[Agent 2]**: Finding
-3. **[Agent 3]**: Finding
+1. **`planner`**: Finding
+2. **`frontend-engineer`**: Finding
+3. **`tester`**: Finding
 
 ### Deliverables
-- [ ] PLAN.md created
+- [ ] Plan created
 - [ ] Code implemented
 - [ ] Tests passing
-- [ ] Scripts verified
+- [ ] Review verified
 
 ### Summary
 [One paragraph synthesis of all agent work]
@@ -227,13 +212,6 @@ Combine all agent outputs into unified report.
 ## 🔴 EXIT GATE
 
 Before completing orchestration, verify:
-
 1. ✅ **Agent Count:** `invoked_agents >= 3`
-2. ✅ **Scripts Executed:** At least `security_scan.py` ran
+2. ✅ **Verification Executed:** `tester` / `reviewer` verified build and tests
 3. ✅ **Report Generated:** Orchestration Report with all agents listed
-
-> **If any check fails → DO NOT mark orchestration complete. Invoke more agents or run scripts.**
-
----
-
-**Begin orchestration now. Select 3+ agents, execute sequentially, run verification scripts, synthesize results.**

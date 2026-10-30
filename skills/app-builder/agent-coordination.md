@@ -1,37 +1,38 @@
 # Agent Coordination
 
-> How App Builder orchestrates specialist agents.
+> How App Builder orchestrates canonical specialist agents (`agents/*.md`).
 
 ## Agent Pipeline
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   APP BUILDER (Orchestrator)                 │
+│                   APP BUILDER (Orchestrator)                │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                     PROJECT PLANNER                          │
-│  • Task breakdown                                            │
-│  • Dependency graph                                          │
-│  • File structure planning                                   │
-│  • Create {task-slug}.md in project root (MANDATORY)             │
+│                     PLANNER (`planner`)                     │
+│  • Task breakdown                                           │
+│  • Dependency graph                                         │
+│  • File structure planning                                  │
+│  • Create PLAN-{feature}.md (MANDATORY)                     │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              CHECKPOINT: PLAN VERIFICATION                   │
-│  🔴 VERIFY: Does {task-slug}.md exist in project root?       │
-│  🔴 If NO → STOP → Create plan file first                    │
-│  🔴 If YES → Proceed to specialist agents                    │
+│              CHECKPOINT: PLAN VERIFICATION                  │
+│  🔴 VERIFY: Does the plan file exist?                       │
+│  🔴 If NO → STOP → Create plan file first                   │
+│  🔴 If YES → Proceed to specialist agents                   │
 └─────────────────────────────────────────────────────────────┘
                               │
           ┌───────────────────┼───────────────────┐
           ▼                   ▼                   ▼
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
 │ DATABASE        │ │ BACKEND         │ │ FRONTEND        │
-│ ARCHITECT       │ │ SPECIALIST      │ │ SPECIALIST      │
-│                 │ │                 │ │                 │
+│ ARCHITECT       │ │ ENGINEER        │ │ ENGINEER        │
+│ `database-      │ │ `backend-       │ │ `frontend-      │
+│  architect`     │ │  engineer`      │ │  engineer`      │
 │ • Schema design │ │ • API routes    │ │ • Components    │
 │ • Migrations    │ │ • Controllers   │ │ • Pages         │
 │ • Seed data     │ │ • Middleware    │ │ • Styling       │
@@ -40,32 +41,33 @@
           └───────────────────┼───────────────────┘
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                 PARALLEL PHASE (Optional)                    │
-│  • Security Auditor → Vulnerability check                   │
-│  • Test Engineer → Unit tests                               │
-│  • Performance Optimizer → Bundle analysis                  │
+│                 VALIDATION PHASE                            │
+│  • `security-engineer` → Vulnerability & auth check         │
+│  • `tester` → Unit / E2E tests                              │
+│  • `performance-engineer` → Bundle & perf analysis          │
+│  • `reviewer` → Code quality review                         │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                     DEVOPS ENGINEER                          │
-│  • Environment setup                                         │
-│  • Preview deployment                                        │
-│  • Health check                                              │
+│                 DEVOPS ENGINEER (`devops-engineer`)         │
+│  • Environment setup                                        │
+│  • Preview deployment                                       │
+│  • Health check                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ## Execution Order
 
-| Phase | Agent(s) | Parallel? | Prerequisite | CHECKPOINT |
-|-------|----------|-----------|--------------|------------|
-| 0 | Socratic Gate | ❌ | - | ✅ Ask 3 questions |
-| 1 | Project Planner | ❌ | Questions answered | ✅ **PLAN.md created** |
-| 1.5 | **PLAN VERIFICATION** | ❌ | PLAN.md exists | ✅ **File exists in root** |
-| 2 | Database Architect | ❌ | Plan ready | Schema defined |
-| 3 | Backend Specialist | ❌ | Schema ready | API routes created |
-| 4 | Frontend Specialist | ✅ | API ready (partial) | UI components ready |
-| 5 | Security Auditor, Test Engineer | ✅ | Code ready | Tests & audit pass |
-| 6 | DevOps Engineer | ❌ | All code ready | Deployment ready |
+| Phase | Canonical Agent(s) | Parallel? | Prerequisite | CHECKPOINT |
+|-------|--------------------|-----------|--------------|------------|
+| 0 | Socratic Gate (`brainstormer` / `business-analyst`) | ❌ | - | ✅ Clarify requirements |
+| 1 | `planner` | ❌ | Questions answered | ✅ **Plan file created** |
+| 1.5 | **PLAN VERIFICATION** | ❌ | Plan file exists | ✅ **Verified** |
+| 2 | `database-architect` | ❌ | Plan ready | Schema defined |
+| 3 | `backend-engineer` | ❌ | Schema ready | API routes created |
+| 4 | `frontend-engineer` | ✅ | API ready (partial) | UI components ready |
+| 5 | `security-engineer`, `tester`, `reviewer` | ✅ | Code ready | Tests & audit pass |
+| 6 | `devops-engineer` | ❌ | All code ready | Deployment ready |
 
-> 🔴 **CRITICAL:** Phase 1.5 is MANDATORY. No specialist agents proceed without PLAN.md verification.
+> 🔴 **CRITICAL:** Phase 1.5 is MANDATORY. No specialist agents proceed without plan verification.

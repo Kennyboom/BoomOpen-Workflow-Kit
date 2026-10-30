@@ -1,6 +1,6 @@
 ---
 name: boomopen-workflow-kit-deploy-preview
-description: "ðŸ” Deploy Preview — Staging/Preview deployment. Use when user types /deploy:preview."
+description: "🚢  Deploy Preview — Staging/Preview deployment. Use when user types /deploy:preview."
 ---
 
 # /deploy:preview

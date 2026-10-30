@@ -80,7 +80,7 @@ The CLI installer copies framework files into the AI tool's global configuration
 | GitHub Copilot | `~/.copilot/skills/boomopen-workflow-kit/` |
 | Claude Code | `~/.claude/skills/boomopen-workflow-kit/` |
 | Codex | `~/.codex/skills/boomopen-workflow-kit/` |
-| Antigravity/Gemini | `~/.gemini/antigravity/skills/boomopen-workflow-kit/` |
+| Antigravity/Gemini | `~/.{TOOL}/skills/boomopen-workflow-kit/` |
 
 Files installed include: 21 agent definitions, 14 command workflows with variants, 7 rule files, 19 matrix-skill registries, 1,430+ skill modules, and platform-specific entry point files.
 

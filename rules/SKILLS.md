@@ -1,259 +1,83 @@
-# 🎯 SKILLS
+# 🎯 SKILLS — Fast 2-Step Progressive Skill Resolution
 
-> **LOAD**: When skill resolution needed | **PURPOSE**: Hybrid Skill Orchestration Layer (HSOL)
-
----
-
-## OVERVIEW
-
-Skills = Domain knowledge modules in `{SKILLS_PATH}/`.
-
-**Two sources**:
-1. **Matrix Skills** — Pre-curated in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml` (fast, trusted)
-2. **Dynamic Skills** — Community skills via `find-skills` (on-demand)
-
-**Canonical governance source**:
-- Runtime thresholds, trust progression, and promotion gates are defined in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_index.yaml` (`hsol` block).
-- If this file conflicts with `_index.yaml`, `_index.yaml` is the source of truth.
-- Dynamic skill entry governance metadata is declared in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_dynamic.yaml`.
+> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When skill resolution is needed in Mode B | **PURPOSE**: Low-latency Hybrid Skill Orchestration Layer (HSOL)
 
 ---
 
-## RESOLUTION ALGORITHM
+## ⚡ FAST 2-STEP PROGRESSIVE SKILL LOOKUP (DEFAULT)
+
+> **PERFORMANCE RULE**: Do **NOT** manually scan all 19 `matrix-skills/*.yaml` files on every task. Use this fast 2-step lookup instead:
 
 ```
-1. PARSE agent profile from frontmatter
-2. LOAD inherited domains from ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_index.yaml
-3. FILTER skills by relevance_mapping
-4. APPLY priority thresholds (critical≥9, core≥7, minimum≥5)
-5. CALCULATE fitness scores
-6. RETURN sorted skill set
+┌────────────────────────────────────────────────────────────────────────────┐
+│  STEP 1: Check Pre-Loaded <skills> in System Prompt (0 Latency)            │
+│  • Inspect the <skills> catalog already injected into your system context  │
+│    (Progressive Disclosure).                                               │
+│  • If a matching skill is listed, read its SKILL.md directly.              │
+├────────────────────────────────────────────────────────────────────────────┤
+│  STEP 2: Targeted Lookup via skill-seeker (Only for Niche Domains)         │
+│  • If the required niche framework/domain is NOT in <skills>:              │
+│    1. Run a targeted grep_search in ~/.gemini/config/skills_library/       │
+│       (or read only the single relevant matrix-skills/{domain}.yaml file). │
+│    2. Read ONLY the matched SKILL.md file to load its instructions.        │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Fitness Calculation
+---
 
-```
-fitness = 0.35 × SEMANTIC_MATCH
-        + 0.25 × SPECIFICITY
-        + 0.20 × TRUST_LEVEL
-        + 0.10 × FRESHNESS_SCORE
-        + 0.10 × SUCCESS_RATE
+## SKILL SOURCES & GOVERNANCE
 
-Matrix skills: trust = 1.0 (always trusted)
-Dynamic skills: trust = 0.3 - 1.0 (based on history)
-```
+1. **Active Global Skills (`<skills>`)** — Pre-indexed in `~/.{TOOL}/skills/` (`~/.gemini/config/skills/` on Antigravity 2.0) and visible in `<skills>` at turn start.
+2. **Dormant Skills Library (`skill-seeker`)** — 1,400+ specialized skills in `~/.gemini/config/skills_library/` searched on-demand via `grep_search`.
+3. **Domain Matrix (`matrix-skills/{domain}.yaml`)** — Domain-indexed metadata in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/` (governed by `_index.yaml` and `_dynamic.yaml`).
 
 ---
 
 ## SKILL DECISION FLOW
 
-### By Complexity
+### By Task Complexity
 
 | Assessment | Action |
 |------------|--------|
-| `Simple` | Base knowledge sufficient — skip resolution |
-| `Complex` | **⛔ MUST run resolution algorithm** — base knowledge alone is NEVER sufficient |
+| **Simple** | Base knowledge sufficient — skip skill resolution (`🎯 Skills Analysis: Simple → Skipping`) |
+| **Complex** | Run the **Fast 2-Step Lookup** (`<skills>` → `skill-seeker` / single `matrix-skills/{domain}.yaml`) and load matching `SKILL.md` |
 
-**⛔ FORBIDDEN**: Outputting `Complex → Using base knowledge (...)`. If a task is complex, you MUST resolve skills.
+**⛔ FORBIDDEN**: Outputting `Complex → Using base knowledge (...)` without checking `<skills>` and `skill-seeker`.
 
-### By Variant
-
-| Variant | Discovery |
-|---------|----------|
-| `fast` | **Skip** — use matrix only |
-| `hard`, `team` | Check matrix fitness, may trigger discovery |
-
-### By Matrix Fitness
-
-| Fitness | Action |
-|---------|--------|
-| ≥ 0.8 | Execute with matrix (skip discovery) |
-| 0.75-0.8 | **Async**: Execute with matrix, surface recommendation later |
-| < 0.75 | **Blocking**: Wait for discovery → install → execute with new skill |
-
-### Complex Task Resolution (MANDATORY)
+### Complex Task Resolution Algorithm
 
 ```
 WHEN task_complexity == Complex:
-  1. PARSE task keywords and domain
-  2. SCAN ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml for matching skills
-  3. READ matched SKILL.md files
-  4. CALCULATE fitness scores
-  5. IF fitness ≥ 0.8 → Use matched skills
-  6. IF fitness 0.75-0.8 → Use matched + flag for discovery
-  7. IF fitness < 0.75 → BLOCKING discovery (npx skills find)
-  8. IF no skills exist after discovery → Report gap explicitly
-  
-  ⛔ NEVER skip steps 1-4 and default to "base knowledge"
-  ⛔ NEVER invent skill names — use ACTUAL skills from matrix
-  ✅ ALWAYS reference real skill IDs from ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/
+  1. CHECK pre-loaded <skills> in system prompt for matching domain/framework skills.
+  2. IF found in <skills>:
+     → READ the matched SKILL.md directly.
+  3. ELSE (niche framework/tool not in <skills>):
+     → USE skill-seeker: run targeted grep_search in ~/.gemini/config/skills_library/
+       OR check the single relevant ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/{domain}.yaml
+     → READ the matched SKILL.md file.
+  4. IF no local skill exists and variant is :hard or :team:
+     → Optionally discover via `npx skills find "{keywords}"` or report gap explicitly.
 ```
 
 ---
 
-## TRUST PROGRESSION LIFECYCLE
+## FITNESS & TRUST PROGRESSION (HSOL)
 
 ```
-NEW (0.3)        ──▶  EVALUATING (0.5)  ──▶  VALIDATED (0.7)  ──▶  PROMOTED (1.0)
-    │                    │                     │                     │
-    └─ 3 successful      └─ 10 successful      └─ Auto-promote       └─ Added to
-       executions           executions           to matrix              matrix-skills
+fitness = 0.35 × SEMANTIC_MATCH + 0.25 × SPECIFICITY + 0.20 × TRUST_LEVEL + 0.10 × FRESHNESS + 0.10 × SUCCESS_RATE
 ```
 
-**Promotion criteria**:
-- execution_count ≥ 10
-- success_rate ≥ 0.85
-- last_used_within_days ≤ 30
-
-## DYNAMIC MANIFEST GOVERNANCE BASELINE
-
-Dynamic skill entries must preserve these governance fields:
-- `owner`
-- `checksum`
-- `support_state`
-- `promotion_state`
-- `freshness.last_verified`
-- `freshness.stale_after_days`
-- `installed_at`
-- `last_execution`
-
-Allowed support states:
-- `supported`
-- `experimental`
-- `blocked`
-
-Allowed promotion states:
-- `new`
-- `evaluating`
-- `validated`
-- `promoted`
-- `blocked`
+- **Curated / Matrix skills**: `trust = 1.0`
+- **Dynamic skills**: `NEW (0.3) → EVALUATING (0.5, 3 runs) → VALIDATED (0.7, 10 runs) → PROMOTED (1.0, ≥85% success)`
+- Dynamic entries in `_dynamic.yaml` preserve `owner`, `checksum`, `support_state`, `promotion_state`, `freshness`, `installed_at`, and `last_execution`.
 
 ---
 
-## DYNAMIC DISCOVERY (find-skills)
-
-### Trigger
+## DYNAMIC DISCOVERY COMMANDS (Optional Fallback)
 
 ```bash
-npx skills find "{keywords}"
+npx skills find "query"           # Search community skills
+npx skills add owner/repo@skill -g -y
 ```
 
-### Install (always use -g -y for current tool)
-
-```bash
-npx skills add {owner/repo@skill} -g -y
-```
-
-### When to confirm
-
-- **Confirm required**: Low trust (new skill) + needed for current task (fitness < 0.75)
-- **No confirm**: Trusted skill OR optional enhancement
-
----
-
-## AGENT SKILLS SECTION FORMAT
-
-Agents don't list individual skills. They reference HSOL:
-
-```markdown
-## ⚡ Skills
-
-> **MATRIX DISCOVERY**: Auto-injected from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
-> Profile: `{domain}:{category}` | Domains: `{inherit_from}`
-```
-
----
-
-## ADDING NEW SKILLS
-
-```
-1. Create: {SKILLS_PATH}/{skill-id}/SKILL.md
-2. Add to: ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/{domain}.yaml
-3. Do NOT edit agent files (skills resolved by profile)
-```
-
----
-
-## PRIORITY GUIDE
-
-| Score | Category | Usage |
-|-------|----------|-------|
-| 10 | Critical | Always required |
-| 9 | Core | Standard for domain |
-| 8 | Expert | Specialized but common |
-| 7 | Core | Useful in most contexts |
-| 5-6 | Utility | Context-dependent |
-| 1-4 | Rare | Edge cases |
-
----
-
-## EDGE CASES
-
-| Scenario | Action |
-|----------|--------|
-| Network timeout | Proceed with matrix only, log timeout |
-| find-skills unavailable | Use matrix + installed dynamics only |
-| No skills found | Report gap, use general capabilities |
-| Installation fails | Rollback, report, offer matrix alternative |
-| Low trust + task-critical | **Confirm with user before install** |
-
-```
-IF no_relevant_skills:
-  1. Acknowledge: "No specialized skill found for {topic}"
-  2. Offer: "I can proceed with general capabilities"
-  3. Suggest: "You could create your own: npx skills init {name}"
-```
-
----
-
-## ANTI-BYPASS DETECTION
-
-```yaml
-detection:
-  - Outputting "Complex → Using base knowledge" (IMMEDIATE VIOLATION)
-  - Classifying task as Complex but not scanning matrix-skills/
-  - Inventing or fabricating skill names not in ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/*.yaml
-  - Skipping resolution algorithm for non-fast variants
-
-correction:
-  1. STOP
-  2. Log: "⚠️ SKILLS BYPASS DETECTED — Complex task requires skill resolution"
-  3. RUN resolution algorithm (steps 1-8 from Complex Task Resolution)
-  4. Output corrected Skills Analysis with REAL skill references
-
-strict_rules:
-  ❌ NEVER output "Complex → Using base knowledge"
-  ❌ NEVER skip matrix scan for complex tasks
-  ❌ NEVER fabricate skill names — use only what exists in ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/
-  ✅ ALWAYS scan ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/ when task is complex
-  ✅ ALWAYS read relevant SKILL.md files before delegation
-  ✅ IF no matching skills found → report gap explicitly, offer discovery
-```
-
----
-
-## C8 Foundation Enforcement Checkpoints
-
-- `C8-SKILLS-01` (BLOCK): Use HSOL values from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_index.yaml`; do not invent local threshold variants.
-- `C8-SKILLS-02` (BLOCK): For low-trust task-critical discovery (`fitness < 0.75`), user confirmation is mandatory before install.
-- `C8-SKILLS-03` (BLOCK): Promotion to matrix requires all declared promotion gates (executions, success rate, inactivity window).
-- `C8-SKILLS-04` (BLOCK): Dynamic manifest entries must preserve owner/freshness/integrity/support-state metadata from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/_dynamic.yaml`.
-- `C8-SKILLS-05` (BLOCK): Complex tasks MUST resolve skills via HSOL algorithm. "Complex → Using base knowledge" is a protocol violation.
-
----
-
-## QUICK REFERENCE
-
-### Browse skills
-```
-https://skills.sh/
-```
-
-### Commands
-```bash
-npx skills find "query"           # Search
-npx skills add X -g -y            # Install global, no confirm
-npx skills check                  # Check updates
-npx skills update                 # Update all
-```
+- **Low-trust task-critical skill (`fitness < 0.75`)**: Confirm with user before installing external packages.

@@ -36,7 +36,7 @@ BoomOpen Workflow Kit has **no project-wide code formatter**. There is no Pretti
 | Element | Convention | Example |
 |---------|-----------|---------|
 | File name | kebab-case | `cook.md`, `brainstorm.md` |
-| YAML `description` | Sentence with emoji prefix | `"ðŸ³ Cook Router — Route to feature implementation workflows"` |
+| YAML `description` | Sentence with emoji prefix | `"🍳 Cook Router — Route to feature implementation workflows"` |
 | YAML `version` | Quoted semver string | `"1.0"` |
 | YAML `category` | Lowercase word | `engineering`, `quality`, `planning`, `documentation` |
 | YAML `execution-mode` | Lowercase keyword | `router`, `execute` |

@@ -66,7 +66,7 @@ Each phase follows this loop:
 
 ## 🛑 PRE-FLIGHT CHECKLIST
 
-**LOAD now** (path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
+**LOAD now** (path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 1. CORE.md — Identity, Laws, Routing
 2. PHASES.md — Phase Execution
 3. AGENTS.md — Tiered Execution

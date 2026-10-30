@@ -15,7 +15,7 @@ execution-mode: router
 
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 1. CORE.md — Identity, Laws, Routing  
 2. PHASES.md — Phase Execution  
 3. AGENTS.md — Tiered Execution  

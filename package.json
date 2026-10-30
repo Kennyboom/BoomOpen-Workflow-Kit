@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "@boomopen/workflow-kit",
   "version": "1.0.0",
   "description": "BoomOpen Workflow Kit - Multi-agent orchestration framework with Hybrid Skill Orchestration Layer (HSOL) and elite core skills.",
@@ -18,8 +18,8 @@
     "uninstall:codex": "node cli/install.js uninstall codex",
     "uninstall:all": "node cli/install.js uninstall --all",
     "list": "node cli/install.js list",
-    "test": "node --test cli/*.test.js",
-    "lint": "node --check cli/install.js && echo '✅ JavaScript syntax valid'",
+    "test": "node --test cli/install.test.js",
+    "lint": "node --check cli/install.js && echo 'âœ… JavaScript syntax valid'",
     "lint:md": "echo 'Run: npx markdownlint \"**/*.md\" --ignore node_modules' to lint Markdown",
     "semantic-release": "semantic-release",
     "prepare": "husky install || true"
@@ -50,6 +50,7 @@
     "code-assistants/",
     "LICENSE",
     "README.md",
+    "SKILL.md",
     "CHANGELOG.md"
   ],
   "devDependencies": {

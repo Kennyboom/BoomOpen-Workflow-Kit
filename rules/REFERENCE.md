@@ -1,10 +1,19 @@
 # 📚 REFERENCE
 
-> **PURPOSE**: Fast lookup tables
+> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
 
 ---
 
-## COMMAND TABLE
+## 🚦 SMART COMPLEXITY THRESHOLD GATE
+
+| Mode | Tier | Trigger Condition | Action |
+|------|------|-------------------|--------|
+| **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked | Execute, test, and verify **directly** (0 subagent overhead) |
+| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode** & delegate via subagents |
+
+---
+
+## COMMAND TABLE (Triggers Mode B)
 
 | Command | Router | Variants |
 |---------|--------|----------|
@@ -21,10 +30,11 @@
 | `/brainstorm` | `brainstorm.md` | `fast`, `hard` |
 | `/ask` | `ask.md` | `fast`, `hard` |
 | `/code` | `code.md` | `fast`, `hard`, `team` |
+| `/orchestrate` | `orchestrate.md` | Multi-agent domain orchestration |
 
 ---
 
-## AGENT TABLE
+## AGENT TABLE (20 Canonical Agents)
 
 | Agent | Category | Primary Tasks |
 |-------|----------|---------------|
@@ -52,155 +62,44 @@
 
 ---
 
-## NATURAL LANGUAGE DETECTION
+## DELIVERABLE PATHS (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
 
-| User Says | Detect As |
-|-----------|-----------|
-| implement, build, create, add | `/cook` |
-| fix, bug, error, broken | `/fix` |
-| plan, how should, strategy | `/plan` |
-| debug, investigate, why | `/debug` |
-| test, coverage | `/test` |
-| review, PR, check code | `/review` |
-| document, readme | `/docs` |
-| design, UI, UX | `/design` |
-| deploy, release | `/deploy` |
-| report, status, summary | `/report` |
-
----
-
-## DELIVERABLE PATHS
-
-### Single File (≤ 150 lines, < 4 sections)
+> **Default (Antigravity 2.0)**: Write transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git working tree 100% clean.
+> **Workspace Export**: Only write to `./reports/{topic}/` or `./documents/` when running `/docs` or when explicitly requested by the user.
 
 ```yaml
-brainstormer:         ./reports/{topic}/brainstorms/BRAINSTORM-{feature}.md
-researcher:           ./reports/{topic}/researchers/RESEARCH-{feature}.md
-scouter:              ./reports/{topic}/scouts/SCOUT-{feature}.md
-designer:             ./reports/{topic}/designs/DESIGN-{feature}.md
-planner:              ./reports/{topic}/plans/PLAN-{feature}.md
-reporter:             ./reports/{topic}/general/REPORT-{type}-{date}.md
-debugger:             ./reports/{topic}/debugs/DEBUG-{issue}.md
-tester:               ./reports/{topic}/tests/TEST-{feature}.md
-business-analyst:     ./reports/{topic}/requirements/REQ-{feature}.md
-performance-engineer: ./reports/{topic}/performance/PERF-{component}.md
-```
-
-### Chunked Folder (> 150 lines OR ≥ 4 sections)
-
-```yaml
-brainstormer:         ./reports/{topic}/brainstorms/{feature}/00-index.md + sections
-researcher:           ./reports/{topic}/researchers/{feature}/00-index.md + sections
-scouter:              ./reports/{topic}/scouts/{feature}/00-index.md + sections
-designer:             ./reports/{topic}/designs/{feature}/00-index.md + sections
-planner:              ./reports/{topic}/plans/{feature}/00-index.md + sections
-reporter:             ./reports/{topic}/general/{type}-{date}/00-index.md + sections
-debugger:             ./reports/{topic}/debugs/{issue}/00-index.md + sections
-tester:               ./reports/{topic}/tests/{feature}/00-index.md + sections
-business-analyst:     ./reports/{topic}/requirements/{feature}/00-index.md + sections
-performance-engineer: ./reports/{topic}/performance/{component}/00-index.md + sections
-```
-
-> **Rule**: Create `00-index.md` FIRST, then section files SEQUENTIALLY. See `PHASES.md > DELIVERABLE SIZE MANAGEMENT`.
-
----
-
-## DOCUMENTATION PATHS (from /docs:core v2.0 — folder-based)
-
-```yaml
-# Each knowledge area is now a FOLDER with 00-index.md + sub-files
-overview:     ./documents/knowledge-overview/00-index.md       # + 01~04 sub-files
-architecture: ./documents/knowledge-architecture/00-index.md   # + 01~05 sub-files
-domain:       ./documents/knowledge-domain/00-index.md         # + 01~04 sub-files
-source-base:  ./documents/knowledge-source-base/00-index.md    # + 01~04 sub-files
-standards:    ./documents/knowledge-standards/00-index.md       # + 01~04 sub-files
-
-# To get full context: read 00-index.md first, then load specific sub-files
-# To get quick overview: read only 00-index.md files
+brain_artifact_default: <appDataDir>\brain\<conversation-id>\{TYPE}-{feature}.md
+workspace_export_only:  ./reports/{topic}/{type_plural}/{TYPE}-{feature}.md
+docs_suite_workspace:   ./documents/knowledge-*/00-index.md
 ```
 
 ---
 
-## RULES FILES
+## RULES FILES (Load On Demand in Mode B)
 
 | File | Purpose | Load When |
 |------|---------|-----------|
-| `CORE.md` | Entry point, identity, routing | **Always** |
-| `PHASES.md` | Phase execution, output format | Running phases |
-| `AGENTS.md` | Agent handling, tiered execution | Delegating |
-| `SKILLS.md` | Skill resolution (HSOL) | Skill lookups |
+| `CORE.md` | 2-Mode Gate, 10 Laws, deliverable routing | Mode B triggered |
+| `PHASES.md` | Phase execution, chunking, 2-step skill analysis | Running Mode B phases |
+| `AGENTS.md` | Tiered execution (TIER 0 / TIER 1 / TIER 2), roster | Delegating in Mode B |
+| `TEAMS.md` | Golden Triangle 3-agent team protocol | `:team` variants |
+| `SKILLS.md` | Fast 2-Step Progressive Skill Lookup | Complex skill lookups |
 | `ERRORS.md` | Error recovery | Errors occur |
 | `REFERENCE.md` | Lookup tables | Quick lookups |
-
----
-
-## SELF-VERIFICATION CHECKLIST
-
-```
-Before every response:
-□ Am I DELEGATING (not implementing)?
-□ Am I following WORKFLOW ORDER?
-□ Am I responding in USER'S LANGUAGE?
-□ Did I attempt TIER 1 before TIER 2?
-□ Did I output Skills Analysis?
-□ Are prior deliverables treated as immutable?
-□ Did I trace requirements to evidence?
-```
-
----
-
-## TIER DECISION QUICK CHECK
-
-```
-🔍 Tool Discovery: Does runSubagent exist?
-  └─ YES → TIER 1 (MANDATORY)
-  └─ NO  → TIER 2 (EMBODY)
-
-⚠️ If you're about to use TIER 2 when TIER 1 exists:
-  → STOP
-  → Log: "LAZY FALLBACK DETECTED"
-  → Use TIER 1 instead
-```
-
----
-
-## PHASE DEPENDENCY
-
-| Phase | Requires | Produces |
-|-------|----------|----------|
-| Brainstorm | Request | `BRAINSTORM-*.md` |
-| Research | Request | `RESEARCH-*.md` |
-| Scout | Request | `SCOUT-*.md` |
-| Design | Brainstorm + Scout | `DESIGN-*.md` |
-| Plan | Research + Scout | `PLAN-*.md` |
-| Implement | **PLAN (mandatory)** | Code |
-| Test | Code | Test results |
-| Review | Code + Tests | Review verdict |
-
-### Blocking Rules
-
-```
-⛔ Implementation REQUIRES plan first
-⛔ Design REQUIRES brainstorm/scout first
-⛔ Test REQUIRES code to exist
-⛔ Review REQUIRES code + tests
-
-✅ IF missing prerequisite → CREATE first, THEN proceed
-```
 
 ---
 
 ## ORCHESTRATION LAWS (Quick Reference)
 
 | # | Law | One-liner |
-|---|-----|----------|
-| L1 | Single Truth | Entry file → CORE → rest on-demand |
+|---|-----|-----------|
+| L1 | Zero-Latency Entry | `GEMINI.md` pre-loaded; load `CORE`/`PHASES`/`AGENTS` on-demand for Mode B |
 | L2 | Requirement Integrity | 100% fidelity, zero loss |
-| L3 | Explicit Loading | State what you loaded |
+| L3 | Smart Threshold Gate | Mode A (≤ 3 files) direct; Mode B (> 3 files / `/cmd`) orchestrated |
 | L4 | Deep Embodiment | Follow agent's full protocol |
-| L5 | Sequential Execution | Phase N before N+1 |
-| L6 | Language Compliance | User's lang; files in English |
-| L7 | Recursive Delegation | Meta agents never implement |
+| L5 | Sequential Execution | Phase N before N+1 in Mode B |
+| L6 | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |
+| L7 | Recursive Delegation | In Mode B, Orchestrator & Meta agents never implement |
 | L8 | Stateful Handoff | Prior deliverables = locked |
 | L9 | Constraint Propagation | Scout→Planner→Impl chain |
-| L10 | Deliverable Integrity | Agent files define format |
+| L10 | Clean Git Tree | Transient deliverables default to `<appDataDir>\brain\<conversation-id>\` |

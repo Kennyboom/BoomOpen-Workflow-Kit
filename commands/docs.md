@@ -1,5 +1,5 @@
 ---
-description: "ðŸ“ Docs - Full Documentation Suite (executes ALL sub-commands sequentially)"
+description: "📚 Docs - Full Documentation Suite (executes ALL sub-commands sequentially)"
 version: "2.0"
 category: documentation
 execution-mode: execute
@@ -15,17 +15,17 @@ execution-mode: execute
 
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
-**LOAD now** (in order; path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`):
+**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. `CORE.md` — Identity, Laws, Routing
+2. `PHASES.md` — Phase Execution
+3. `AGENTS.md` — Tiered Execution
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. docs-core.md), and execute it.
+**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant (e.g. `docs-core.md`), and execute it.
 
 ---
 
-## âš ï¸ EXECUTION RULES (NON-NEGOTIABLE)
+## ⚠️ EXECUTION RULES (NON-NEGOTIABLE)
 
 > [!CAUTION]
 >
@@ -40,7 +40,7 @@ execution-mode: execute
 ## 🔄 SEQUENTIAL EXECUTION FLOW
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+┌─────────────────────────────────────────────────────────────────┐
 │ STEP 1: Load & Execute /docs:core                               │
 │   → Wait until ALL 5 knowledge folders are created              │
 │   → Each folder: 00-index.md + numbered sub-files               │
@@ -52,7 +52,7 @@ execution-mode: execute
 │   → Verify: business-prd/, features/, workflows/, glossary/     │
 ├─────────────────────────────────────────────────────────────────┤
 │ STEP 3: Load & Execute /docs:audit                              │
-│   → Wait until ALL 4 audit folders are created                   │
+│   → Wait until ALL 4 audit folders are created                  │
 │   → Verify: audit-security, compliance, dataflow,               │
 │             recommendations                                     │
 └─────────────────────────────────────────────────────────────────┘
@@ -62,10 +62,10 @@ execution-mode: execute
 
 ## STEP 1: EXECUTE `/docs:core`
 
-| Attribute       | Value                                             |
-| --------------- | ------------------------------------------------- |
-| **Sub-Command** | `~/.gemini/antigravity/boomopen-workflow-kit/commands/docs-core.md` |
-| **Action**      | **LOAD AND FOLLOW** the entire core.md workflow   |
+| Attribute       | Value                                                          |
+| --------------- | -------------------------------------------------------------- |
+| **Sub-Command** | `~/.{TOOL}/skills/boomopen-workflow-kit/commands/docs-core.md` |
+| **Action**      | **LOAD AND FOLLOW** the entire `docs-core.md` workflow         |
 
 ### Folders to be Created (v3.0 — folder-based):
 
@@ -75,16 +75,16 @@ execution-mode: execute
 - [ ] `./documents/knowledge-source-base/` (00-index.md + 4 sub-files)
 - [ ] `./documents/knowledge-standards/` (00-index.md + 4 sub-files)
 
-**â¸ï¸ PAUSE HERE** — Do NOT proceed to Step 2 until all 5 knowledge folders with sub-files exist.
+**⏸️ PAUSE HERE** — Do NOT proceed to Step 2 until all 5 knowledge folders with sub-files exist.
 
 ---
 
 ## STEP 2: EXECUTE `/docs:business`
 
-| Attribute       | Value                                                 |
-| --------------- | ----------------------------------------------------- |
-| **Sub-Command** | `~/.gemini/antigravity/boomopen-workflow-kit/commands/docs-business.md` |
-| **Action**      | **LOAD AND FOLLOW** the entire business.md workflow   |
+| Attribute       | Value                                                              |
+| --------------- | ------------------------------------------------------------------ |
+| **Sub-Command** | `~/.{TOOL}/skills/boomopen-workflow-kit/commands/docs-business.md` |
+| **Action**      | **LOAD AND FOLLOW** the entire `docs-business.md` workflow         |
 
 ### Folders to be Created (v4.0 — folder-based):
 
@@ -93,16 +93,16 @@ execution-mode: execute
 - [ ] `./documents/business/business-workflows/` (00-index.md + 5 sub-files)
 - [ ] `./documents/business/business-glossary/` (00-index.md + 4 sub-files)
 
-**â¸ï¸ PAUSE HERE** — Do NOT proceed to Step 3 until all 4 business folders with sub-files exist.
+**⏸️ PAUSE HERE** — Do NOT proceed to Step 3 until all 4 business folders with sub-files exist.
 
 ---
 
 ## STEP 3: EXECUTE `/docs:audit`
 
-| Attribute       | Value                                              |
-| --------------- | -------------------------------------------------- |
-| **Sub-Command** | `~/.gemini/antigravity/boomopen-workflow-kit/commands/docs-audit.md` |
-| **Action**      | **LOAD AND FOLLOW** the entire audit.md workflow   |
+| Attribute       | Value                                                           |
+| --------------- | --------------------------------------------------------------- |
+| **Sub-Command** | `~/.{TOOL}/skills/boomopen-workflow-kit/commands/docs-audit.md` |
+| **Action**      | **LOAD AND FOLLOW** the entire `docs-audit.md` workflow         |
 
 ### Folders to be Created (v4.0 - folder-based):
 
@@ -146,7 +146,7 @@ Only output this when ALL deliverables are verified:
 ```markdown
 ## ✅ Full Documentation Suite Complete
 
-### ðŸ“ All Documents Created
+### 📚 All Documents Created
 
 | Type     | Deliverables                                                | Status   |
 | -------- | ----------------------------------------------------------- | -------- |
@@ -161,10 +161,10 @@ Only output this when ALL deliverables are verified:
 
 ## 🚫 FORBIDDEN
 
-- âŒ Skipping any sub-command
-- âŒ Creating partial deliverables and reporting "Done"
-- âŒ Executing sub-commands in parallel (must be sequential)
-- âŒ Reporting "Done" before all deliverables exist
+- ❌ Skipping any sub-command
+- ❌ Creating partial deliverables and reporting "Done"
+- ❌ Executing sub-commands in parallel (must be sequential)
+- ❌ Reporting "Done" before all deliverables exist
 
 ---
 
@@ -175,5 +175,5 @@ If you need only ONE type:
 | Route            | Deliverables Created                           |
 | ---------------- | ---------------------------------------------- |
 | `/docs:core`     | 5 knowledge folders with 00-index + sub-files  |
-| `/docs:business` | 4 business folders with 00-index + sub-files  |
+| `/docs:business` | 4 business folders with 00-index + sub-files   |
 | `/docs:audit`    | 4 audit folders with 00-index + sub-files      |

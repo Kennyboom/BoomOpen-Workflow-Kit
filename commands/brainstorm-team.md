@@ -24,8 +24,8 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip. Do NOT proceed without reading them.**
 >
-> 1. `~/.gemini/antigravity/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
-> 2. `~/.gemini/antigravity/global_workflows/_ref/convergent-analysis-loop.md` — Phase 2 detailed step-by-step (CRITICAL)
+> 1. `~/.gemini/config/global_workflows/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. `~/.gemini/config/global_workflows/_ref/convergent-analysis-loop.md` — Phase 2 detailed step-by-step (CRITICAL)
 >
 > **Failure to read = incorrect execution. These files contain BINDING protocols.**
 

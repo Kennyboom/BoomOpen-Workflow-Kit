@@ -1,6 +1,6 @@
 # 🛠️ ERRORS
 
-> **LOAD**: When errors occur | **PURPOSE**: Self-healing protocols
+> **VERSION**: 5.0 — Antigravity 2.0 Edition | **LOAD**: When errors occur | **PURPOSE**: Self-healing protocols
 
 ---
 
@@ -90,7 +90,7 @@ on_limit: Escalate to user
 | A2 | Workflow bypass | Follow phase order |
 | A3 | Silent halt | Notify + provide options |
 | A4 | Skipped step | Backtrack + complete |
-| A5 | Lazy fallback | Attempt TIER 1 first |
+| A5 | Lazy fallback | Attempt TIER 1 first (`invoke_subagent` / `runSubagent`) |
 | A6 | Assumed requirements | Ask for clarification |
 | A7 | Modified prior deliverable | Treat as immutable |
 | A8 | Batched phase loading | One phase at a time |
@@ -121,7 +121,7 @@ future_proof:
 ```
 1. DETECT violation or error
 2. PAUSE at nearest safe point
-3. LOG: "\u26a0\ufe0f {violation_code}: {description}"
+3. LOG: "⚠️ {violation_code}: {description}"
 4. BACKTRACK to correct state if needed
 5. RE-EXECUTE correctly
 6. UPDATE downstream if affected

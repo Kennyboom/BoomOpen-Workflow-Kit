@@ -1,120 +1,103 @@
 # 🤖 AGENTS
 
-> **LOAD**: When delegating to agents | **PURPOSE**: Agent handling protocol
+> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Agent handling protocol
 
 ---
 
-## TIERED EXECUTION
+## TIERED EXECUTION (SMART COMPLEXITY THRESHOLD GATE)
 
-### TIER 1: Sub-agent (MANDATORY when tool exists)
+### TIER 0: Mode A Direct Execution (Fast Path — Default for Simple Tasks)
 
 ```yaml
-1. Prepare handoff:
-   include: requirements, task, acceptance criteria, constraints
-   exclude: internal reasoning, failed attempts
-
-2. Skills analysis: (output required)
-   "🎯 Skills Analysis: {simple|complex} → {using X | skipping}"
-
-3. Invoke: runSubagent(agent_name, context)
-
-4. Verify: format matches, criteria met
-
-5. On error: fallback to TIER 2, log reason
+when:
+  - Q&A, code explanation, single-domain bug fixes, or clear changes touching ≤ 3 files
+  - AND no explicit multi-agent slash command (/cook, /fix:hard, /cook:team, /orchestrate, etc.) was invoked
+action:
+  - Primary agent executes, tests, and verifies directly (0 subagent cold-start latency, 0 extra rule reads)
+  - Strictly enforce Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn) and Persistent Testing & Bug Fixing
 ```
 
-### TIER 2: EMBODY (Fallback only)
+### TIER 1: Mode B Native Sub-agent Delegation (MANDATORY for Complex Tasks & `/cmd`)
+
+```yaml
+when_any_true:
+  - User explicitly invokes a BoomOpen workflow command (/cook, /fix, /plan:hard, /review:team, /docs:core, /orchestrate, etc.)
+  - Task spans > 3 files or ≥ 2 domains (e.g., Database + Backend + Frontend + Security)
+  - Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (:hard / :team)
+
+execution:
+  1. Prepare handoff:
+     include: requirements, task, acceptance criteria, constraints, deliverable path (<appDataDir>\brain\<conversation-id>\ default)
+     exclude: internal reasoning, failed attempts
+
+  2. Fast 2-Step Skills Analysis: (output required)
+     "🎯 Skills Analysis: {simple|complex} → {using X | skipping}"
+
+  3. Invoke Sub-agent (Antigravity 2.0 Native or Cross-Platform Alias):
+     - Antigravity 2.0:
+       a. define_subagent: Define specialist agent (backend-engineer, frontend-engineer,
+          tester, reviewer, debugger, planner, scouter, researcher, etc.) with EnableWriteTools: true/false
+       b. invoke_subagent: Launch isolated sub-agent with:
+          - TypeName: "research", "self", or custom defined agent name
+          - Role: Specialist persona and mission
+          - Prompt: Clean handoff context + task + exit criteria
+          - Model: "inherit", "flash_lite", "flash", or "pro"
+          - Workspace: "inherit", "branch" (git worktree isolation), or "share"
+       c. send_message: Multi-turn follow-up by conversationId using Reactive Async Wakeup
+          (system automatically wakes Orchestrator when sub-agent replies — NEVER poll in a loop)
+       d. manage_subagents / manage_task: List, inspect status, or terminate sub-agents/tasks
+     - Cursor / Copilot / Claude Code fallback alias:
+       runSubagent(agent_name, context)
+
+  4. Verify: format matches, exit criteria met
+
+  5. On system error: fallback to TIER 2, log reason
+```
+
+### TIER 2: EMBODY (Mode B Fallback only)
 
 ```yaml
 permitted_when:
-  - Tool Discovery found NO sub-agent tools
-  - Sub-agent tool returned system error
-
-forbidden_reasons:
-  - Task seems "simple"
-  - "Save tokens"
-  - "Efficiency"
+  - Mode B triggered AND Tool Discovery found NO sub-agent tools (neither invoke_subagent nor runSubagent)
+  - Sub-agent tool returned unrecoverable system error
 
 execution:
   1. Log: "⚠️ TIER 2: {reason}"
-  2. READ agent file COMPLETELY
+  2. READ agent file COMPLETELY from ~/.{TOOL}/skills/boomopen-workflow-kit/agents/{agent}.md
   3. EXTRACT: Directive, Protocol, Constraints, Format
-  4. ANNOUNCE embodiment (see format below)
-  5. EXECUTE as agent (follow THEIR protocol)
-  6. EXIT embodiment, continue as orchestrator
+  4. ANNOUNCE embodiment:
+     📋 EMBODIED: `{agent}` | **Directive**: {directive} | **Protocol**: {protocol}
+  5. EXECUTE as agent, then EXIT embodiment and continue as orchestrator
 ```
-
-**Embodiment Announcement Format**:
-```markdown
-📋 EMBODIED: `{agent}`
-**Directive**: {core directive verbatim}
-**Protocol**: {thinking protocol summary}
-**Constraints**: {key constraints}
-```
-
----
-
-## TOOL DISCOVERY (First delegation only)
-
-```markdown
-## 🔍 Tool Discovery
-| Check | Result |
-|-------|--------|
-| Sub-agent tool | ✅ / ❌ |
-| Execution tier | TIER 1 / TIER 2 |
-```
-
-**Cache**: Tool discovery result is cached for session. Do not re-check.
 
 ---
 
 ## CONTEXT MODEL COMPARISON
 
-| Aspect | TIER 1: Sub-agent | TIER 2: EMBODY |
-|--------|-------------------|----------------|
-| Priority | ⭐ MANDATORY | 🔄 Fallback |
-| Context | Fresh, isolated | Shared with parent |
-| Quality | ✅ Optimal | ⚠️ Risk of pollution |
-| Parallel | Yes | No (sequential) |
-| Availability | Platform-dependent | Always available |
+| Aspect | TIER 0: Mode A Direct | TIER 1: Mode B Sub-agent | TIER 2: Mode B EMBODY |
+|--------|-----------------------|--------------------------|-----------------------|
+| Trigger | ≤ 3 files, 1 domain, no `/cmd` | > 3 files, ≥ 2 domains, or `/cmd` | TIER 1 tool error |
+| Context | Primary session (zero latency) | Fresh, isolated (`Workspace: inherit/branch/share`) | Shared with parent |
+| Parallel | N/A | Yes (Reactive Async Wakeup) | No (sequential) |
 
 ---
 
-## COMPLETION GUARANTEE
+## AGENT CATEGORIES (20 Canonical Agents)
 
-```yaml
-rule: "EVERY delegation request WILL be fulfilled"
-
-mechanism:
-  - TIER 1 is primary when available
-  - TIER 2 is fallback when TIER 1 fails
-  - EMBODY always works (read + transform)
-
-result:
-  - NO task is ever skipped
-  - NO delegation ever fails completely
-  - System is future-proof
-```
-
----
-
-## AGENT CATEGORIES
-
-| Category | Agents | Purpose |
-|----------|--------|---------|
-| **meta** | tech-lead, planner | Coordinate, never implement |
-| **execution** | backend-engineer, frontend-engineer, mobile-engineer, game-engineer, database-architect | Implementation |
-| **validation** | tester, reviewer, security-engineer, performance-engineer, debugger | QA |
-| **research** | researcher, scouter, brainstormer, designer | Investigation |
-| **support** | docs-manager, devops-engineer, business-analyst, project-manager, reporter | Support |
+| Category | Agents | Write Tools | Purpose |
+|----------|--------|:-----------:|---------|
+| **meta** | `tech-lead`, `planner` | `true` (plans/mailboxes only) | Coordinate, never implement code |
+| **execution** | `backend-engineer`, `frontend-engineer`, `mobile-engineer`, `game-engineer`, `database-architect` | `true` | Implementation |
+| **validation** | `tester`, `reviewer`, `security-engineer`, `performance-engineer`, `debugger` | `true`/`false` | QA, auditing, debugging |
+| **research** | `researcher`, `scouter`, `brainstormer`, `designer` | `true` (reports/artifacts) | Investigation & design specs |
+| **support** | `docs-manager`, `devops-engineer`, `business-analyst`, `project-manager`, `reporter` | `true` | Documentation, infra, reporting |
 
 ---
 
 ## 🔺 AGENT TEAMS — GOLDEN TRIANGLE (`:team` variant only)
 
 > **LOAD**: `TEAMS.md` for full Golden Triangle protocol and debate mechanism.
-> Teams spawn exactly **3 agents per phase**: Tech Lead + Executor + Reviewer.
-> Adversarial collaboration produces higher quality than parallel cooperation.
+> Teams spawn **3 agents per phase**: Tech Lead + Executor + Reviewer.
 
 ### Golden Triangle Roster
 
@@ -138,15 +121,6 @@ result:
 | `project-team` | `project-manager` | `business-analyst` | `tech-lead` (feasibility critic) | Project planning, risk, delivery |
 | `report-team` | `reporter` | `scouter` | `reviewer` (data accuracy + insight) | Status reports, metrics, analytics |
 
-### Golden Triangle vs Single Agent
-
-| When | Use |
-|------|-----|
-| Standard `:fast`, `:hard` variants | Single agent per phase |
-| `:team` variant | Golden Triangle per phase |
-| User explicitly requests team review/collaboration | `:team` variant |
-| Maximum quality with adversarial debate is priority | `:team` variant |
-
 ### Golden Triangle Definitions Location
 
 ```
@@ -155,13 +129,6 @@ agents/teams/{team-name}/
 ├── executor.md    # Builder, implementer, defender
 └── reviewer.md    # Devil's advocate, quality gatekeeper
 ```
-
-### Communication Protocol
-
-- **Shared Task List**: Published by Tech Lead at phase start, tracks task status
-- **Mailbox**: `./reports/{topic}/MAILBOX-{date}.md` — append-only log of all exchanges
-- **Debate**: Max 3 rounds per task → Tech Lead arbitrates
-- **Consensus**: `✅ CONSENSUS: TechLead ✓ | Executor ✓ | Reviewer ✓` required to release output
 
 ---
 
@@ -192,63 +159,13 @@ agents/teams/{team-name}/
 
 ---
 
-## CONTEXT ISOLATION (Clean Handoffs)
+## CONTEXT ISOLATION & ARTIFACT DIRECTIVE
 
 ```
-INCLUDE:
-  - Original requirements (verbatim)
-  - Decisions from prior phases
-  - Concrete deliverables
-  - Current state
-  - Deliverable size directive (single file vs chunked)
-
-EXCLUDE:
-  - Internal reasoning
-  - Failed attempts
-  - Alternatives not selected
-```
-
-### Deliverable Size Directive (MANDATORY in handoff)
-
-```
-WHEN delegating to any agent that produces deliverables:
-  ADD to handoff context:
-    "DELIVERABLE SIZE: If output exceeds 150 lines or has ≥ 4 major sections,
-     use CHUNKED strategy: create folder with 00-index.md first, then each
-     section file sequentially. Never create a single file > 200 lines.
-     Never create multiple files in parallel."
-```
-
----
-
-## RECURSIVE DELEGATION
-
-```
-IF agent.category == "meta" OR agent.handoffs.length > 0:
-  → This is a MANAGER agent
-  → MUST delegate to specialists
-  → NEVER implement directly
-```
-
----
-
-## ANTI-LAZY FALLBACK DETECTION
-
-```yaml
-detection:
-  - Choosing TIER 2 without attempting TIER 1
-  - Justifying EMBODY with "task is simple"
-  - Mentioning "efficiency" when choosing EMBODY
-
-correction:
-  1. STOP
-  2. Log: "⚠️ LAZY FALLBACK DETECTED"
-  3. Attempt TIER 1 first
-  4. Only use TIER 2 if TIER 1 actually fails
-
-strict_rules:
-  ❌ NEVER assess task as "too simple" for sub-agent
-  ❌ NEVER prioritize tokens over context isolation
-  ✅ ALWAYS use sub-agent when tool exists
-  ✅ ALWAYS log sub-agent attempt before any EMBODY
+INCLUDE in Mode B handoff:
+  - Original requirements (verbatim) & decisions from prior phases
+  - Deliverable location: Write transient reports (PLAN, RESEARCH, SCOUT, DEBUG, TEST, MAILBOX)
+    to <appDataDir>\brain\<conversation-id>\ on Antigravity 2.0 (keep Git tree clean).
+    Only write to ./reports/{topic}/ or ./documents/ for /docs or explicit repo export.
+  - Deliverable size directive: If > 150 lines or ≥ 4 sections, use chunked folder with 00-index.md.
 ```

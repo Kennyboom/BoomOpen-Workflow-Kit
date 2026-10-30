@@ -1,0 +1,65 @@
+---
+name: boomopen-workflow-kit
+description: BoomOpen Workflow Kit (v5.1 Antigravity 2.0 Smart-Hybrid Edition) — 2-Mode Smart Complexity Threshold Gate (Mode A Direct vs Mode B Multi-Agent Orchestration), native subagent primitives (define_subagent, invoke_subagent, send_message), Brain Artifact routing, Golden Triangle teams, and 2-step progressive skill lookup.
+---
+
+# ⚡ BoomOpen Workflow Kit (v5.1 — Antigravity 2.0 Smart-Hybrid Edition)
+
+> **PURPOSE**: Root skill entry point for the BoomOpen Workflow Kit Smart-Hybrid multi-agent orchestration framework.
+
+---
+
+## 🚦 Smart Complexity Threshold Gate (Mode A vs. Mode B)
+
+### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
+- **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while strictly enforcing **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) and **Persistent Testing & Bug Fixing**.
+
+### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
+- **When ANY of the following is true**:
+  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
+  3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
+- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent`, `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup).
+
+---
+
+## 📂 Brain Artifacts First (Antigravity 2.0)
+
+- Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `MAILBOX`) are written to the conversation's native **Brain Artifact Directory** (`<appDataDir>\brain\<conversation-id>\`) so they render in the Antigravity UI Artifact pane and keep the project's Git working tree 100% clean.
+- Only write to `./reports/{topic}/` or `./documents/` in the project workspace when running `/docs` (`/docs:core`) or when the user explicitly asks to commit reports into the repository.
+
+---
+
+## 📚 Core Architecture & Rules (`rules/` — Load On Demand in Mode B)
+
+| Rule File | Purpose | When to Load |
+|-----------|---------|--------------|
+| [`rules/CORE.md`](./rules/CORE.md) | 2-Mode Gate, 10 Orchestration Laws, Language Policy, Brain Artifact Routing | On-demand in Mode B |
+| [`rules/AGENTS.md`](./rules/AGENTS.md) | Tiered Execution (TIER 0 Direct / TIER 1 Sub-agent / TIER 2 Embody), Agent Roster | Before delegating to specialist subagents |
+| [`rules/PHASES.md`](./rules/PHASES.md) | Sequential Phase Execution, Deliverable Chunking, 2-Step Skill Analysis | When running multi-phase workflows |
+| [`rules/TEAMS.md`](./rules/TEAMS.md) | Golden Triangle 3-Agent Adversarial Collaboration (`Tech Lead` + `Executor` + `Reviewer`) | When executing `:team` workflow variants |
+| [`rules/SKILLS.md`](./rules/SKILLS.md) | Fast 2-Step Progressive Skill Lookup (`<skills>` → `skill-seeker`) | When resolving domain skills for complex tasks |
+| [`rules/ERRORS.md`](./rules/ERRORS.md) | Self-healing, Error Classification (E1–E4), Anti-Pattern Recovery | When errors or protocol violations occur |
+| [`rules/REFERENCE.md`](./rules/REFERENCE.md) | Quick lookup tables for Commands, Agents, and Deliverable paths | Fast reference |
+
+---
+
+## 🎯 Workflow Commands (`commands/`)
+
+| Command | Router File | Variants |
+|---------|-------------|----------|
+| `/cook` | [`commands/cook.md`](./commands/cook.md) | `fast`, `hard`, `team` |
+| `/fix` | [`commands/fix.md`](./commands/fix.md) | `fast`, `hard`, `team` |
+| `/plan` | [`commands/plan.md`](./commands/plan.md) | `fast`, `hard`, `team` |
+| `/debug` | [`commands/debug.md`](./commands/debug.md) | `fast`, `hard`, `team` |
+| `/test` | [`commands/test.md`](./commands/test.md) | `fast`, `hard`, `team` |
+| `/review` | [`commands/review.md`](./commands/review.md) | `fast`, `hard` |
+| `/docs` | [`commands/docs.md`](./commands/docs.md) | `core`, `business`, `audit` |
+| `/design` | [`commands/design.md`](./commands/design.md) | `fast`, `hard`, `team` |
+| `/deploy` | [`commands/deploy.md`](./commands/deploy.md) | `check`, `preview`, `production`, `rollback` |
+| `/report` | [`commands/report.md`](./commands/report.md) | `fast`, `hard`, `team` |
+| `/brainstorm` | [`commands/brainstorm.md`](./commands/brainstorm.md) | `fast`, `hard` |
+| `/ask` | [`commands/ask.md`](./commands/ask.md) | `fast`, `hard` |
+| `/code` | [`commands/code.md`](./commands/code.md) | `fast`, `hard`, `team` |
+| `/orchestrate` | [`commands/orchestrate.md`](./commands/orchestrate.md) | Multi-agent domain orchestration |

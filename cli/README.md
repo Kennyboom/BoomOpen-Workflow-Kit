@@ -153,10 +153,10 @@ Example output:
 | Content          | Location                                                  |
 | ---------------- | --------------------------------------------------------- |
 | Global Rules     | `~/.gemini/GEMINI.md`                                     |
-| Agent Definition | `~/.gemini/antigravity/agents/AntigravityGlobal.agent.md` |
-| Core Framework   | `~/.gemini/antigravity/skills/boomopen-workflow-kit/`           |
-| Skills           | `~/.gemini/antigravity/skills/`                           |
-| Workflows        | `~/.gemini/antigravity/workflows/`                        |
+| Agent Definition | `~/.gemini/agents/AntigravityGlobal.agent.md` |
+| Core Framework   | `~/.gemini/config/skills/boomopen-workflow-kit/`           |
+| Skills           | `~/.gemini/config/skills/`                           |
+| Workflows        | `~/.gemini/config/global_workflows/`                        |
 
 ### For Claude Code
 
@@ -184,7 +184,7 @@ The installer automatically replaces placeholder paths in all Markdown files:
 
 | Placeholder               | Replacement                                                          |
 | ------------------------- | -------------------------------------------------------------------- |
-| `{TOOL}`                  | Tool-specific path (e.g., `cursor`, `copilot`, `codex`, `gemini/antigravity`) |
+| `{TOOL}`                  | Tool-specific path (e.g., `cursor`, `copilot`, `codex`, `gemini/config`) |
 | `{TOOL}/boomopen-workflow-kit/` | Full path to boomopen-workflow-kit directory                               |
 
 ## Requirements
@@ -208,7 +208,7 @@ ls -la ~/.codex/
 # Create directories if needed
 mkdir -p ~/.cursor/skills
 mkdir -p ~/.copilot/skills
-mkdir -p ~/.gemini/antigravity/skills
+mkdir -p ~/.gemini/config/skills
 mkdir -p ~/.codex/skills
 ```
 

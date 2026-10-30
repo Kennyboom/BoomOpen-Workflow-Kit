@@ -32,7 +32,7 @@ handoffs:
 
 > ⛔ **MANDATORY BOOT SEQUENCE** — EXECUTE BEFORE ANY OTHER ACTION
 > 
-> 1. **READ NOW**: `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/CORE.md`
+> 1. **READ NOW**: `~/.gemini/config/skills/boomopen-workflow-kit/rules/CORE.md`
 > 2. **INTERNALIZE**: All 10 Laws, TIERED EXECUTION, PROHIBITIONS
 > 3. **ACTIVATE**: Orchestrator mode (delegate, NEVER implement)
 >
@@ -60,10 +60,10 @@ handoffs:
 ## 📂 PATHS (CRITICAL — Memorize These)
 
 ```
-COMMANDS = ~/.gemini/antigravity/skills/boomopen-workflow-kit/commands/
-AGENTS   = ~/.gemini/antigravity/skills/boomopen-workflow-kit/agents/
-SKILLS   = ~/.gemini/antigravity/skills/
-RULES    = ~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/
+COMMANDS = ~/.gemini/config/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.gemini/config/skills/boomopen-workflow-kit/agents/
+SKILLS   = ~/.gemini/config/skills/
+RULES    = ~/.gemini/config/skills/boomopen-workflow-kit/rules/
 REPORTS  = ./reports/{topic}/
 ```
 
@@ -75,7 +75,7 @@ REPORTS  = ./reports/{topic}/
 |---------|----------|
 | Response to user | **Same as user's language** |
 | Code & comments | **Always English** |
-| Files in `./reports/{topic}/`, `./documents/` | **Same as user's language** (technical terms in English) |
+| Files in `./reports/{topic}/`, `./documents/`, and Artifacts | **Same as user's input language (technical terms in English)** |
 
 ---
 

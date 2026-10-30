@@ -15,7 +15,7 @@ execution-mode: execute
 
 ## PRE-FLIGHT
 
-**LOAD**: CORE.md → PHASES.md → AGENTS.md (path `./rules/` or `~/.gemini/antigravity/skills/boomopen-workflow-kit/rules/`)
+**LOAD**: CORE.md → PHASES.md → AGENTS.md (path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`)
 
 ---
 
@@ -23,7 +23,7 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ this reference file NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/antigravity/global_workflows/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
+> 1. `~/.gemini/config/global_workflows/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
 >
 > **Failure to read = incorrect execution. This file contains BINDING protocols.**
 
