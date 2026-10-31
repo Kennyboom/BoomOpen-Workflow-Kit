@@ -11,11 +11,8 @@ execution-mode: sequential
 # /architect — Bulletproof Design System v2.0
 
 $ARGUMENTS
-
 ---
-
 ## GOLDEN RULES
-
 ```
 1. NO architecture without C4 Model (Level 1+2 minimum)
 2. NO database without Indexing Strategy
@@ -25,11 +22,8 @@ $ARGUMENTS
 6. NO design without Caching Strategy ("cache what, how long")
 7. NO architecture decision without ADR record
 ```
-
 ---
-
 ## Purpose
-
 ```
 Plan = Know WHAT to build.
 Architect = Know HOW to build it.
@@ -38,13 +32,9 @@ This command creates bulletproof technical design including
 architecture, database schema, API contracts, state management,
 caching, error handling — all verified by mandatory audit.
 ```
-
 ---
-
 ## Phase 1: Context + Component Discovery (MANDATORY)
-
 ### 1.1 Auto-Scope Detection
-
 ```
 1. Read docs/specs/ → ALL features needing technical design
 2. Read docs/BRIEF.md → project context
@@ -62,7 +52,6 @@ Report to user:
 ```
 
 ### 1.2 Component Discovery Engine (MANDATORY)
-
 > ⛔ BEFORE drawing architecture, MUST list ALL components.
 
 **Entities → DB Tables:**
@@ -101,11 +90,8 @@ Create Profile → form fields, validation, submit API
 ```
 
 > ⛔ DO NOT proceed until user approves Component Inventory.
-
 ---
-
 ## Phase 2: C4 Architecture (Level 1-3)
-
 ```
 LEVEL 1 — System Context (bird's eye view):
 👤 User ──► [📱 App] ──► [💳 Stripe] / [📧 Email] / [🤖 AI]
@@ -122,11 +108,8 @@ Routes → Controllers → Services → Models
 Middleware: auth, cors, rateLimit, validation
 Validators: zod schemas
 ```
-
 ---
-
 ## Phase 3: ADR (Architecture Decision Records)
-
 ```markdown
 ## ADR-001: Choose [Technology/Pattern]
 Date: [Date] | Status: ✅ Accepted
@@ -140,11 +123,8 @@ Consequences: [Good / Trade-offs / Risks]
 
 > MANDATORY ADR for: Frontend, Backend, Database,
 > Auth, Hosting, State Management, CSS Framework.
-
 ---
-
 ## Phase 4: Database Design
-
 ```
 For each table:
 - Name + columns + types + constraints + relationships
@@ -166,11 +146,8 @@ Optimization Checklist:
 □ JSON/JSONB for flexible data
 □ Migration strategy defined
 ```
-
 ---
-
 ## Phase 5: API Contract Design
-
 ```
 📡 POST /api/v1/auth/login
 Auth: ❌ Public | Rate Limit: 5/min/IP
@@ -187,11 +164,8 @@ API Checklist:
 □ Filtering: ?status=active&sort=-created_at
 □ CORS: explicit origin whitelist
 ```
-
 ---
-
 ## Phase 6: Screen Specs (ALL screens)
-
 ```markdown
 For EACH screen:
 
@@ -206,11 +180,8 @@ For EACH screen:
 | Error | Toast "Failed to load" + Retry |
 | Responsive | Mobile: stack, Desktop: grid |
 ```
-
 ---
-
 ## Phase 7: User Journey (5 flows)
-
 ```
 1. ONBOARDING: Landing → Sign up → Verify → First action → Dashboard
 2. CORE ACTION: Dashboard → Create → Edit → Confirm → Success
@@ -218,11 +189,8 @@ For EACH screen:
 4. OFFLINE: Action → Lost connection → Queue → Reconnect → Sync
 5. ACCOUNT: Profile → Settings → Billing → Delete account → Confirm
 ```
-
 ---
-
 ## Phase 8: State Management
-
 ```markdown
 4 state types:
 
@@ -240,11 +208,8 @@ Store Slicing:
 | uiStore | theme, sidebar | toggle, setTheme |
 | settingsStore | language, tz | update |
 ```
-
 ---
-
 ## Phase 9: Error Handling (8 types — ALL MANDATORY)
-
 ```markdown
 | Error Type | Response | UI Behavior |
 |------------|----------|-------------|
@@ -257,11 +222,8 @@ Store Slicing:
 | Rate Limit | 429 | Countdown timer |
 | Business | 409/422 | Specific message |
 ```
-
 ---
-
 ## Phase 10: Caching + Integration Matrix
-
 ```markdown
 5 cache layers:
 Browser → CDN → API (TanStack) → Server (Redis) → DB
@@ -276,11 +238,8 @@ Integration Matrix:
 | API | Stripe | Webhook | Queue retry |
 | API | AI | REST | Timeout + fallback |
 ```
-
 ---
-
 ## Phase 11: Design Coverage Audit (MANDATORY)
-
 > ⛔ NO handover if audit FAILS.
 
 ```markdown
@@ -294,19 +253,13 @@ Integration Matrix:
 
 IF any FAIL → complete design before handover.
 ```
-
 ---
-
 ## Output
-
 | Deliverable | Location |
 |-------------|----------|
 | Technical Design | `docs/DESIGN-{feature}.md` |
-
 ---
-
 ## After Architecture
-
 ```
 🏗️ TECHNICAL DESIGN COMPLETE!
 📍 File: docs/DESIGN-{feature}.md

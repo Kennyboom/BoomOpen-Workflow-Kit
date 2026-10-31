@@ -4,6 +4,10 @@ category: orchestration
 execution-mode: sequential
 ---
 
+> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+
+---
+
 # Multi-Agent Orchestration
 
 You are now in **ORCHESTRATION MODE**. Your task: coordinate specialized agents to solve this complex problem.

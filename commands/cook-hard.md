@@ -33,14 +33,16 @@ execution-mode: execute
 
 | Tier       | When                          | Action                       |
 | ---------- | ----------------------------- | ---------------------------- |
-| **TIER 1** | runSubagent/Agent Tool EXISTS | Invoke sub-agent (MANDATORY) |
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING or SYSTEM error  | EMBODY agent file (FALLBACK) |
 
 **❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
 
 ---
 
-## 📁 DELIVERABLE FILES
+## 📁 DELIVERABLE FILES (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
+
+> **Antigravity 2.0 Default**: Write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean. Use `./reports/{topic}/` only on non-Antigravity tools or when explicitly requested.
 
 | Agent        | Output                                          |
 | ------------ | ----------------------------------------------- |

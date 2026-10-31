@@ -114,6 +114,8 @@ RULE: Optimize biggest bottleneck first
 
 ## 📤 Output Format
 
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+
 **Small** (≤ 150 lines): Single file `./reports/{topic}/performance/PERF-{component}.md`
 **Large** (> 150 lines OR ≥ 4 sections): Folder `./reports/{topic}/performance/{component}/` → create `00-index.md` first, then each section `01-*.md`, `02-*.md` sequentially.
 

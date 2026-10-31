@@ -1,6 +1,6 @@
 ---
 description: "📝 Knowledge Folder Specs + Quality Gates — Referenced by docs-core.md"
-version: "1.0"
+version: "5.1"
 type: reference
 ---
 
@@ -74,7 +74,7 @@ type: reference
 ## Per-File Quality Gates
 
 Every sub-file MUST pass:
-- [ ] Written in English only
+- [ ] Written in the user's input language (technical terms in English)
 - [ ] Has project-specific content (not template text)
 - [ ] No placeholders: `{placeholder}`, TODO, TBD
 - [ ] Has `## Evidence Sources` section with actual file paths

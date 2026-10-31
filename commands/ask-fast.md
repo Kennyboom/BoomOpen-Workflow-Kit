@@ -61,7 +61,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `scouter`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -87,7 +87,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke runSubagent for `researcher`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `researcher`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 

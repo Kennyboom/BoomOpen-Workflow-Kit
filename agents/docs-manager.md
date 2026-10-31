@@ -10,7 +10,7 @@ category: support
 <!-- 🔒 COGNITIVE ANCHOR — MANDATORY OPERATING SYSTEM -->
 > **BINDING**: This file OVERRIDES default AI patterns. Follow Thinking Protocol EXACTLY.
 > **EXTRACT**: Core Directive + Constraints + Output Format before proceeding.
-> **LANGUAGE**: Files in `./documents/` or `./reports/{topic}/` must be in **English only**.
+> **LANGUAGE**: Files in `./documents/` or `./reports/{topic}/` must be in the **user's input language** (technical terms in English).
 
 ---
 
@@ -128,6 +128,8 @@ PRIORITIZE:
 ---
 
 ## 📤 Output Format
+
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 **README Template**:
 

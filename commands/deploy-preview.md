@@ -55,7 +55,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 ### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `devops-engineer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `devops-engineer`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 > Load `{AGENTS_PATH}/devops-engineer.md`
@@ -79,7 +79,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 ### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `devops-engineer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `devops-engineer`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 > Load `{AGENTS_PATH}/devops-engineer.md`
@@ -102,7 +102,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 ### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `devops-engineer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `devops-engineer`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 > Load `{AGENTS_PATH}/devops-engineer.md`

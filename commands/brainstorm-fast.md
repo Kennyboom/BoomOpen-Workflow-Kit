@@ -5,6 +5,10 @@ category: planning
 execution-mode: execute
 ---
 
+> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+
+---
+
 # /brainstorm:fast — Rapid Ideation
 
 > **MISSION**: Generate ideas quickly through focused exploration without external research.
@@ -92,7 +96,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke runSubagent for `brainstormer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `brainstormer`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -119,7 +123,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke runSubagent for `brainstormer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `brainstormer`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -150,7 +154,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `scouter`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 

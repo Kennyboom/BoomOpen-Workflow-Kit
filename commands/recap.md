@@ -1,156 +1,74 @@
 ---
-description: Restore session context from .brain/ to resume previous work. Smart context loading with progress tracking.
+description: "🔄 Restore Session Context — Quickly recover project state from Brain Artifacts (<appDataDir>\\brain\\<conversation-id>\\) or .brain/."
+version: "5.1"
+category: session
+execution-mode: execute
 ---
 
-# /recap — Context Restoration v2.0
+# /recap — Smart Context Recovery v5.1
 
-$ARGUMENTS
+<context>$ARGUMENTS</context>
 
 ---
 
-## Phase 1: Load Brain State
+## 🎯 PURPOSE
+
+Restore full project and task context in < 5 seconds without re-reading the entire codebase from scratch.
+
+---
+
+## 🔍 Phase 1: Context Discovery (Priority Order)
+
+Check the following sources in order:
 
 ```
-READ in this order:
-1. .brain/session.json → current working state
-2. .brain/brain.json → project knowledge
-3. .brain/handover.md → if exists, last handover notes
-4. docs/specs/ → active specs
-5. git log --oneline -5 → recent activity
-```
+PRIORITY 1 — Antigravity 2.0 Brain Artifacts (<appDataDir>\brain\<conversation-id>\):
+  ├── SESSION-HANDOVER.md
+  ├── PLAN-*.md / DESIGN-*.md / SCOUT-*.md / DEBUG-*.md
+  └── task.md
 
-### If .brain/ exists:
+PRIORITY 2 — Workspace Memory (.brain/):
+  ├── .brain/session.json   ← Dynamic progress & current task
+  ├── .brain/brain.json     ← Static architecture & stack
+  └── .brain/handover.md    ← Cross-session handover notes
 
-```
-Parse session.json for:
-- working_on (feature, task, status)
-- progress (completed, remaining, percentage)
-- decisions_made
-- blockers
-- errors_encountered (unresolved ones)
-
-Parse brain.json for:
-- project type and tech stack
-- database schema summary
-- API endpoint count
-- active features list
-```
-
-### If .brain/ NOT found:
-
-```
-"❌ No saved context found.
-
-Options:
-1. /plan — Start planning a new feature
-2. /init — Bootstrap a new project
-3. Tell me what you're working on"
+PRIORITY 3 — Git & Docs Auto-Detection (Fallback if no saved state):
+  ├── git status -s & git log --oneline -10
+  ├── README.md / package.json
+  └── ./documents/ or ./reports/
 ```
 
 ---
 
-## Phase 2: Progress Detection
+## 📊 Phase 2: Synthesize & Present Context Summary
 
-```
-IF plan files exist (docs/specs/phase-*.md):
-  Count total phases and completed phases
-  Calculate progress percentage
-  Identify current phase and next tasks
+Output a structured, scannable briefing in the user's language:
 
-IF git has recent commits:
-  Show last 3 commit messages
-  Identify files changed recently
-```
+```markdown
+# 📍 Context Restored: {Project Name}
 
----
+- **Tech Stack**: {Frontend + Backend + DB}
+- **Last Active**: {timestamp or last commit}
+- **Overall Progress**: {X}% ({completed count} done, {remaining count} remaining)
 
-## Phase 3: Context Report
+## 🔥 Currently Working On
+- **Feature**: {feature}
+- **Task**: {task} ({status})
+- **Active Files**: {file links}
 
-```
-🧠 SESSION RESTORED
+## 🔧 Recent Decisions & Gotchas
+- {key decision or constraint to keep in mind}
 
-📁 Project: [name] ([type])
-🏷️ Stack: [framework] + [db] + [hosting]
-📊 Status: [planning|coding|testing]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📊 PROGRESS:
-████████░░░░░░░░░░░░ [X]% ([N/M] features)
-
-✅ Completed:
-  - [Feature A]
-  - [Feature B]
-
-🔄 In Progress:
-  - [Feature C] ← YOU ARE HERE
-
-📋 Remaining:
-  - [Feature D]
-  - [Feature E]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📝 Key Decisions:
-  - [Decision 1]
-  - [Decision 2]
-
-🚧 Blockers:
-  - [Blocker if any]
-
-⚠️ Unresolved Errors:
-  - [Error if any]
-
-📂 Recent Changes:
-  - [commit 1]
-  - [commit 2]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Ready to continue? Options:
-1. Continue [current feature]
-2. /next — See recommended next step
-3. /create — Start coding
-4. /plan — Plan something new
+## ⚠️ Blockers / Uncommitted Changes
+- {list any blockers or uncommitted git changes}
 ```
 
 ---
 
-## Phase 4: Smart Suggestions
+## 🚀 Phase 3: Offer Next Actions (`ask_question`)
 
-Based on restored context, provide targeted advice:
-
-```
-IF status == "debugging":
-  → "Last session had unresolved errors. Try /debug"
-
-IF status == "coding" AND progress > 80%:
-  → "Almost done! Consider /test then /deploy"
-
-IF blockers exist:
-  → "Blocker from last session: [X]. Resolved?"
-
-IF handover.md exists:
-  → "Handover notes from last session: [summary]"
-
-IF no activity for > 7 days:
-  → "It's been a while! Let me re-scan the project..."
-  → Run deeper analysis (git log, file scan)
-```
-
----
-
-## Resilience
-
-```
-IF session.json is corrupted:
-  → Fallback to git log analysis
-  → "Session file damaged. Rebuilding from git history..."
-
-IF brain.json is missing but session.json exists:
-  → Load session only
-  → "Static knowledge missing. Session state loaded."
-
-IF everything is missing:
-  → "Fresh start! Use /init or /plan to begin."
-```
+If Antigravity 2.0's `ask_question` tool is available, present an interactive choice (otherwise list options):
+1. **Continue**: Resume `{current task}` immediately
+2. **Next Task**: Start `{next remaining task}`
+3. **Status / Diff**: Inspect current uncommitted changes (`git diff`)
+4. **New Task**: Specify a different goal

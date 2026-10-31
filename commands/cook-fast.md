@@ -5,6 +5,10 @@ category: engineering
 execution-mode: execute
 ---
 
+> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+
+---
+
 # /cook:fast — Rapid Feature Implementation
 
 > **MISSION**: Quickly implement well-defined features with minimal ceremony.
@@ -31,7 +35,7 @@ execution-mode: execute
 
 | Tier       | When               | Action                       |
 | ---------- | ------------------ | ---------------------------- |
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
 **❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.

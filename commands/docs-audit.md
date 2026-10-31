@@ -24,7 +24,7 @@ execution-mode: execute
 
 > **🔴 YOU MUST READ this reference file NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/config/global_workflows/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
+> 1. `~/.{TOOL}/skills/boomopen-workflow-kit/commands/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
 >
 > **Failure to read = incorrect execution. This file contains BINDING protocols.**
 
@@ -93,7 +93,7 @@ Cross-folder: Same finding = same ID + same severity. `audit-recommendations/` M
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `docs-manager` |
-| **Goal** | Generate/update all 4 audit folders in English only |
+| **Goal** | Generate/update all 4 audit folders in the user's input language (technical terms in English) |
 
 ---
 

@@ -128,6 +128,8 @@ export function Component({ prop }: Props) {
 
 ## 📤 Output Format
 
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+
 ```markdown
 ## Frontend Implementation: {Feature}
 

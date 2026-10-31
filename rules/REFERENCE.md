@@ -22,19 +22,21 @@
 | `/plan` | `plan.md` | `fast`, `hard`, `team` |
 | `/debug` | `debug.md` | `fast`, `hard`, `team` |
 | `/test` | `test.md` | `fast`, `hard`, `team` |
-| `/review` | `review.md` | `fast`, `hard` |
+| `/review` | `review.md` | `fast`, `hard`, `team` |
 | `/docs` | `docs.md` | `core`, `business`, `audit` |
 | `/design` | `design.md` | `fast`, `hard`, `team` |
 | `/deploy` | `deploy.md` | `check`, `preview`, `production`, `rollback` |
 | `/report` | `report.md` | `fast`, `hard`, `team` |
-| `/brainstorm` | `brainstorm.md` | `fast`, `hard` |
+| `/brainstorm` | `brainstorm.md` | `fast`, `hard`, `team` |
 | `/ask` | `ask.md` | `fast`, `hard` |
 | `/code` | `code.md` | `fast`, `hard`, `team` |
 | `/orchestrate` | `orchestrate.md` | Multi-agent domain orchestration |
+| `/save` | `save.md` | Save session state & knowledge to Brain Artifacts / `.brain/` |
+| `/recap` | `recap.md` | Restore session context from Brain Artifacts / `.brain/` |
 
 ---
 
-## AGENT TABLE (20 Canonical Agents)
+## AGENT TABLE (21 Specialist Agents)
 
 | Agent | Category | Primary Tasks |
 |-------|----------|---------------|

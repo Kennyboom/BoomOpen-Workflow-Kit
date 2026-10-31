@@ -121,6 +121,8 @@ Assert: Verify expected outcome
 
 ## 📤 Output Format
 
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+
 **Small** (≤ 150 lines): Single file `./reports/{topic}/tests/TEST-{feature}.md`
 **Large** (> 150 lines OR ≥ 4 sections): Folder `./reports/{topic}/tests/{feature}/` → create `00-index` first, then each section `01-*`, `02-*` sequentially.
 

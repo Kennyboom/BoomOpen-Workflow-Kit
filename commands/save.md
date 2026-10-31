@@ -1,56 +1,49 @@
 ---
-description: Save project knowledge and session state to .brain/ for cross-session continuity. Run after major features, end of day, or before long breaks.
+description: "💾 Save Session & Project Memory — Persist context to Brain Artifacts (<appDataDir>\\brain\\<conversation-id>\\) and/or .brain/ for cross-session continuity."
+version: "5.1"
+category: session
+execution-mode: execute
 ---
 
-# /save — Infinite Memory Keeper v2.0
+# /save — Infinite Memory & Session Keeper v5.1
 
-$ARGUMENTS
-
----
-
-## Purpose
-
-Combat AI context drift. Every session generates knowledge
-that MUST be persisted or it's lost forever.
-
-**Rule:** Code changes → Brain changes IMMEDIATELY.
+<context>$ARGUMENTS</context>
 
 ---
 
-## Phase 1: Change Analysis (Auto-Detect)
+## 🎯 PURPOSE
 
-```
-SCAN for changes since last save:
-1. git diff --stat (files modified)
-2. git log --oneline -5 (recent commits)
-3. Read .brain/session.json (last known state)
+Combat AI context drift across sessions. Capture architectural decisions, completed tasks, active blockers, and gotchas so any future session can resume with 100% context fidelity via `/recap`.
 
-CLASSIFY each change:
-  MAJOR (update brain.json):
-    → New module/service added
-    → Database schema changed
-    → New API endpoint created
-    → New dependency installed
-    → Architecture decision made
-
-  MINOR (update session.json only):
-    → Bug fix
-    → Refactor (no behavior change)
-    → Style/UI tweak
-```
+**Storage Routing (v5.1 Smart-Hybrid)**:
+1. **Antigravity 2.0 Brain Artifact (Clean Git Tree Default)**:
+   - Write `<appDataDir>\brain\<conversation-id>\SESSION-HANDOVER.md` (renders in Antigravity UI Artifact pane, zero Git working tree pollution).
+2. **Workspace `.brain/` Persistence (Cross-Conversation / Team Shared)**:
+   - Update `.brain/session.json`, `.brain/brain.json`, and `.brain/handover.md` when `.brain/` already exists in the repo OR when user wants workspace-persisted memory across new conversations.
 
 ---
 
-## Phase 2: Update brain.json (Static Knowledge)
+## 🔍 Phase 1: Change & Decision Analysis (Auto-Detect)
+
+1. Run `git status -s` and `git diff --stat` (modified/added files).
+2. Run `git log --oneline -5` (recent commits).
+3. Check existing `<appDataDir>\brain\<conversation-id>\` artifacts and `.brain/session.json` (if present).
+4. Classify changes:
+   - **MAJOR** (update static architecture knowledge): New module/service, DB schema change, new API endpoint, new dependency, architectural ADR.
+   - **MINOR** (update dynamic session state): Bug fix, refactor, test addition, UI polish.
+
+---
+
+## 🧠 Phase 2: Update Static Knowledge (`.brain/brain.json` if workspace memory active)
 
 File: `.brain/brain.json`
 
 ```json
 {
   "meta": {
-    "schema_version": "1.0.0",
+    "schema_version": "5.1.0",
     "last_updated": "ISO-date",
-    "project_version": "0.1.0"
+    "project_version": "5.1.0"
   },
   "project": {
     "name": "project-name",
@@ -60,20 +53,8 @@ File: `.brain/brain.json`
   "tech_stack": {
     "frontend": { "framework": "", "styling": "", "state": "" },
     "backend": { "runtime": "", "framework": "", "orm": "" },
-    "database": { "type": "", "provider": "" },
-    "hosting": { "platform": "", "ci_cd": "" }
+    "database": { "type": "", "provider": "" }
   },
-  "database_schema": {
-    "tables": [
-      { "name": "", "columns": [], "indexes": [], "relations": [] }
-    ]
-  },
-  "api_endpoints": [
-    { "method": "", "path": "", "auth": "", "description": "" }
-  ],
-  "business_rules": [
-    "Rule 1: description"
-  ],
   "features": [
     { "name": "", "status": "planned|in-progress|done", "phase": "" }
   ],
@@ -85,23 +66,37 @@ File: `.brain/brain.json`
 }
 ```
 
-### Update Rules
-
-| Trigger | What to Update |
-|---------|---------------|
-| New API endpoint | api_endpoints[] |
-| DB table change | database_schema.tables[] |
-| New dependency | tech_stack.* |
-| Feature completed | features[].status → "done" |
-| Architecture decision | knowledge_items.patterns[] |
-| Bug workaround found | knowledge_items.gotchas[] |
-
 ---
 
-## Phase 3: Update session.json (Dynamic State)
+## 📋 Phase 3: Save Dynamic Session State & Handover Artifact
 
-File: `.brain/session.json`
+### 1. Brain Artifact (`<appDataDir>\brain\<conversation-id>\SESSION-HANDOVER.md`)
+Write or update `SESSION-HANDOVER.md` in the conversation's Brain Artifact directory (and `.brain/handover.md` if workspace `.brain/` is used):
 
+```markdown
+# 📋 Session Handover — {Project / Feature}
+
+> **Saved At**: {ISO-timestamp}
+> **Status**: {planning | coding | testing | debugging | completed}
+
+## 📍 Current Focus
+- **Feature / Task**: {name}
+- **Active Files**: {list of files}
+
+## ✅ Completed This Session
+- {item 1}
+- {item 2}
+
+## ⏳ Remaining / Next Tasks
+1. {next priority task}
+2. {follow-up task}
+
+## 🔧 Key Architectural Decisions & Gotchas
+- **Decision**: {what was chosen & why}
+- **Gotcha**: {tricky bug or constraint discovered}
+```
+
+### 2. Dynamic State JSON (`.brain/session.json` if workspace memory active)
 ```json
 {
   "timestamp": "ISO-date",
@@ -109,80 +104,24 @@ File: `.brain/session.json`
     "feature": "Feature name",
     "task": "Current specific task",
     "status": "planning|coding|testing|debugging",
-    "files": ["files currently being edited"],
+    "files": ["files edited"],
     "notes": "Important context"
   },
   "progress": {
-    "completed": ["Feature A", "Feature B"],
-    "in_progress": ["Feature C"],
-    "remaining": ["Feature D", "Feature E"],
-    "percentage": "42%"
+    "completed": ["Feature A"],
+    "in_progress": ["Feature B"],
+    "remaining": ["Feature C"],
+    "percentage": "75%"
   },
-  "decisions_made": [
-    "Chose Zustand over Redux for state management"
-  ],
-  "blockers": [
-    "External API endpoint not ready"
-  ],
-  "errors_encountered": [
-    { "error": "description", "resolved": true, "fix": "how" }
-  ],
-  "recent_changes": [
-    { "file": "path", "change": "description", "commit": "hash" }
-  ]
+  "decisions_made": ["Key decision"],
+  "blockers": []
 }
 ```
 
 ---
 
-## Phase 4: Proactive Handover Detection
+## ✅ Phase 4: Confirmation
 
-```
-IF conversation is getting long (50+ messages) OR
-   context feels saturated:
-
-1. GENERATE handover summary:
-   "📋 HANDOVER DOCUMENT
-    📍 Working on: [feature]
-    🔢 Phase: [X], Task: [Y]
-    ✅ Done: [list]
-    ⏳ Remaining: [list]
-    🔧 Key Decisions: [list]
-    ⚠️ Watch out: [warnings]
-    📁 Key Files: [list]"
-
-2. SAVE to .brain/handover.md
-3. RECOMMEND: "Context heavy. Consider /recap
-   in a fresh session for peak precision."
-```
-
----
-
-## Phase 5: Confirmation
-
-```
-✅ BRAIN SAVED!
-
-📊 Stats:
-  brain.json: [X] tables, [Y] APIs, [Z] features
-  session.json: [N] pending tasks, [M]% complete
-
-📁 Files updated:
-  .brain/brain.json ← static knowledge
-  .brain/session.json ← current progress
-
-💡 Tomorrow: /recap to restore context
-```
-
----
-
-## Best Practices
-
-```
-SAVE after:
-□ Completing a major feature
-□ Making an architecture decision
-□ End of work session
-□ Before a long break
-□ After resolving a tricky bug (save the gotcha!)
-```
+Output a concise summary of saved artifacts:
+- `SESSION-HANDOVER.md` (Brain Artifact) and/or `.brain/session.json` + `.brain/brain.json`
+- Tip: Run `/recap` in your next session to restore full context immediately.

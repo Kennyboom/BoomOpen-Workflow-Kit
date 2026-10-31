@@ -1,424 +1,133 @@
 ---
-description: >-
-  Master Planner v4 — Feature Discovery Engine, Given/When/Then specs,
-  mandatory Edge Cases, Phase Splitting, and Plan Coverage Audit.
-  NO code writing. Plan files only.
+description: ⚡⚡⚡ Deep Plan — Comprehensive feature discovery, Given/When/Then specs, edge cases, and multi-phase planning
+version: "5.1"
 category: planning
-execution-mode: sequential
+execution-mode: execute
 ---
 
-# /plan:hard — Master Planner v4.0
+# /plan:hard — Comprehensive Technical & Feature Planning
 
-$ARGUMENTS
+> **MISSION**: Produce a complete, self-contained implementation plan with Feature Discovery, Given/When/Then acceptance criteria, ≥5 edge cases per feature, dependency matrix, and risk mitigation. **NO code writing — plan deliverables only.**
 
----
-
-## GOLDEN RULES
-
-```
-1. EVERY FEATURE HAS A SPEC — No code without spec
-2. ACCEPTANCE CRITERIA = Given/When/Then+Verify TABLE
-3. EDGE CASES MINIMUM 5 PER FEATURE — Happy path is NOT enough
-4. EACH PHASE = SEPARATE FILE — No merging, no summarizing
-5. EACH FEATURE MUST HAVE: User Story + AC + Edge Cases + Effort
-6. UI FEATURES MUST HAVE: ASCII wireframe + States table
-7. USER DECIDES SCOPE — AI suggests, user chooses
-8. DEPENDENCY MATRIX AT END OF EACH PHASE — Clear build order
-9. BUFFER x1.5 — Always add time buffer
-10. NO CODE IN PLAN — No TypeScript/Rust/Python code blocks
-11. SELF-CONTAINED — Plan executable with ZERO external context
-```
+<task>$ARGUMENTS</task>
 
 ---
 
-## Phase 1: Context Load + Auto-Scope
+## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
-```
-1. Read CODEBASE.md → OS, stack, existing structure
-2. Read docs/BRIEF*.md OR user request
-3. Read docs/specs/ → check existing specs
-4. Read .brain/ → session context if available
-
-AFTER SCAN: Proceed automatically.
-  DO NOT ask "what do you want to plan?"
-  If BRIEF exists → plan everything.
-  Only ask when genuinely ambiguous.
-```
+**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
+1. `CORE.md` — 2-Mode Gate, 10 Laws, Brain Artifact Routing
+2. `PHASES.md` — Phase Execution
+3. `AGENTS.md` — Tiered Execution (TIER 0 / TIER 1 / TIER 2)
+4. `SKILLS.md` — Fast 2-Step Progressive Skill Lookup
 
 ---
 
-## Phase 2: Feature Discovery Engine (MANDATORY)
+## 🔀 TIERED EXECUTION & DELIVERABLES
 
-> ⛔ BEFORE writing User Stories, AI MUST list ALL features.
+| Tier | When | Action |
+|------|------|--------|
+| **TIER 1** | Antigravity 2.0 Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent per phase (MANDATORY) |
+| **TIER 2** | Tool MISSING or system error | EMBODY agent `.md` file (FALLBACK) |
 
-### Step 1 — Entity Decomposition
-
-```
-Every data entity → 5 CRUD operations:
-
-Profile → Create, Read (list), Read (detail), Edit, Delete
-Campaign → Create, Read, Edit, Delete, List, Report
-Content → Create, Read, Edit, Delete, List, Preview
-```
-
-### Step 2 — Sub-feature Inference
-
-```
-Every feature → infer sub-features:
-
-Profile Manager has "Create Profile" button
-  → MUST plan: Create Profile Form (fields, validation)
-  → MUST plan: Niche Selector (dropdown, custom input)
-  → MUST plan: Avatar Upload (if applicable)
-  → MUST plan: Success/Error feedback
-```
-
-### Step 3 — Cross-cutting Concerns
-
-```
-If login exists    → credentials management, password reset
-If user data       → settings/preferences page
-If events          → notification system
-If errors          → global error handling + recovery
-If new app         → onboarding/first-run experience
-If multiple roles  → permission system + role management
-If file uploads    → storage management + cleanup
-If search          → search index + suggestions + history
-```
-
-### Step 4 — Output: Feature Inventory Table
-
-```markdown
-| # | Feature | Type | Module | Priority | Spec Status |
-|---|---------|------|--------|----------|-------------|
-| 1 | Create Profile | Form | Profile | P0 | Not planned |
-| 2 | Profile Health | Monitor | Profile | P0 | Not planned |
-```
-
-> ⛔ DO NOT write User Stories until Feature Inventory
-> is approved by user OR user says "continue".
+**Deliverable Routing (Antigravity 2.0 Clean Git Tree)**:
+- **Default**: `<appDataDir>\brain\<conversation-id>\{TYPE}-{task}.md` (`BRAINSTORM-{task}.md`, `RESEARCH-{task}.md`, `SCOUT-{task}.md`, `PLAN-{task}.md`)
+- **Workspace Export Fallback**: `./reports/{topic}/{type_plural}/{TYPE}-{task}.md` (only when explicitly requested or on non-Antigravity tools)
+- **Language**: Write all deliverables in the user's input language (technical terms in English).
 
 ---
 
-## Phase 3: Spec Generation (per feature)
+## ⛔ ABSOLUTE PROHIBITION — NO CODE
 
-> 🚨 **MANDATORY:** `view_file` the feature templates reference
-> BEFORE writing any spec:
-> `.agent/workflows/references/plan/feature-templates.md`
->
-> Choose the right template per feature type:
-> UI → Template 1 | API → Template 2 | Full-stack → Template 3
-> AI/LLM → Template 4 | IPC → Template 5 | Security → Template 6
+- ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.) or modify source files.
+- ❌ NEVER auto-transition to `/code`, `/cook`, or `/fix`.
+- ✅ Use `ask_question` (interactive UI multiple-choice widget) when scope or architectural choices require user confirmation.
 
-### 3.1 User Story (MANDATORY)
+---
 
-```
-Format: "As [ROLE], I want [ACTION], so that [BENEFIT]"
+## 🎭 Phase 1: REQUIREMENTS & FEATURE DISCOVERY (`brainstormer`)
 
-Group by role:
-- User (end user)
-- Developer (maintainer)
-- System (automated)
-```
+| Agent | `brainstormer` |
+|-------|----------------|
+| Goal | Discover all explicit + implicit features, CRUD operations, and cross-cutting concerns |
+| Output | `<appDataDir>\brain\<conversation-id>\BRAINSTORM-{task}.md` (or `./reports/{topic}/brainstorms/BRAINSTORM-{task}.md`) |
 
-### 3.1b Atomic Task Decomposition (MANDATORY)
+**Feature Discovery Engine Checklist**:
+1. **Entity Decomposition**: Map every data entity to its required CRUD/List/Search operations.
+2. **Sub-Feature Inference**: Forms, validation, loading/empty/error states, permissions, notifications.
+3. **Interactive Scope Confirmation**: If scope is ambiguous, use `ask_question` to confirm MVP vs. P1/P2 features with the user.
 
-```
-EACH task in plan MUST be:
-☐ ≤ 2 hours effort (if bigger → SPLIT)
-☐ 1 file or 1 component scope
-☐ Has: description + target file + acceptance criteria
+---
 
-❌ BAD:  "Build Dashboard page"
-✅ GOOD: "1. Create DashboardLayout (grid 3-col)"
-       "2. Create StatsCard component"
-       "3. Create RecentTable component"
-       "4. Wire API: GET /api/stats"
-       "5. Add loading/error/empty states"
+## 🎭 Phase 2: CODEBASE & PATTERN ANALYSIS (`scouter` + `researcher`)
 
-WHY: Tasks > 2h cause AI to skip details.
-     Atomic tasks = zero feature loss.
-```
+| Agent | `scouter` (codebase) + `researcher` (patterns/libraries) |
+|-------|----------------------------------------------------------|
+| Goal | Map existing architecture, reusable modules, DB schema, and best practices |
+| Output | `<appDataDir>\brain\<conversation-id>\SCOUT-{task}.md` & `RESEARCH-{task}.md` |
+| Exit | File locations, integration points, and architectural constraints locked |
 
-### 3.2 Acceptance Criteria (MANDATORY — TABLE format)
+---
 
+## 🎭 Phase 3: DETAILED SPECIFICATION & PLAN (`planner`)
+
+| Agent | `planner` |
+|-------|-----------|
+| Prerequisite | **READ** `BRAINSTORM-{task}`, `SCOUT-{task}`, and `RESEARCH-{task}` |
+| Goal | Create self-contained implementation plan with atomic tasks (≤ 2h each) |
+| Output | `<appDataDir>\brain\<conversation-id>\PLAN-{task}.md` (or `./reports/{topic}/plans/PLAN-{task}.md`) |
+
+### Mandatory Plan Structure (Per Feature / Phase)
+
+#### 1. Atomic Task Breakdown
+Every task MUST be ≤ 2 hours effort, scoped to 1–3 files, with target file paths and verification steps.
+
+#### 2. Acceptance Criteria Table (`Given / When / Then / Verify`)
 ```markdown
 | # | Given | When | Then | Verify |
 |:-:|-------|------|------|--------|
-| 1 | [condition] | [action] | [result] | [how to verify] |
-
-Verify column examples:
-  "Unit test: auth.test.ts"
-  "Integration: POST /api/login → 200"
-  "Visual: screenshot comparison"
-  "Manual: check email received"
-
-⚠️ NO vague AC allowed:
-❌ "Given user login, When click, Then success"
-✅ "Given user has valid account, When enters email+pass
-    and clicks Login, Then redirect to /dashboard in < 2s
-    | Verify: Integration test + visual check"
+| 1 | Valid user session | Submits payload X | Returns 200 + updates state | Unit/Integration test |
 ```
 
-### 3.3 Edge Cases (MANDATORY — minimum 5 per feature)
+#### 3. Edge Cases Table (Minimum 5 per feature)
+Cover: Empty state, Network/Server error, Loading state, Boundary/Max limit, Unauthorized/Permission denied, Concurrent mutation.
 
+#### 4. API & Data Contracts (If applicable)
 ```markdown
-| Case | Behavior |
-|------|----------|
-| Empty state: no data | Show illustration + CTA |
-| Error state: network/server | Toast "Connection error" + Retry btn |
-| Loading state: fetching | Skeleton shimmer |
-| Max limit: exceeds X items | Warning + block action |
-| Permission: no access | 403 page + "Contact admin" |
-| Concurrent: 2 users edit | Optimistic lock + conflict modal |
-| Offline: lost connection | Queue offline, sync when online |
+| Endpoint | Method | Request | Response 200 | Error Codes |
+|----------|--------|---------|--------------|-------------|
+| /api/v1/resource | POST | { field } | { id, createdAt } | 400, 401, 409 |
 ```
 
-### 3.4 UI States (MANDATORY for UI features)
-
+#### 5. Dependency Matrix & Effort Estimation (with 1.5x Buffer)
 ```markdown
-| State | UI |
-|-------|-----|
-| Idle | [description] |
-| Loading | Skeleton shimmer |
-| Success | [description] |
-| Error | Toast + Retry |
-| Empty | Illustration + CTA |
+| Phase | Features | Raw Effort | +1.5x Buffer | Priority | Depends On |
+|:-----:|----------|:----------:|:------------:|:--------:|------------|
+| P1 | Foundation & DB | Xh | 1.5Xh | 🔴 MVP | — |
+| P2 | Core API & UI | Yh | 1.5Yh | 🔴 MVP | P1 |
 ```
 
-### 3.5 API Contract (MANDATORY for API features)
-
+#### 6. Risk Matrix & Rollback Strategy
 ```markdown
-IF feature involves API → contract MUST be defined in plan:
-
-| Endpoint | Method | Request | Response 200 | Errors |
-|----------|--------|---------|--------------|--------|
-| /api/users | GET | ?page=1&limit=20 | { users[], meta } | 500 |
-| /api/users | POST | { name, email } | { user } | 422, 409 |
-| /api/users/:id | PUT | { name } | { user } | 404, 422 |
-
-WHY: Frontend mocks from contract.
-     Backend codes from contract.
-     Both work in PARALLEL. Zero integration bugs.
-
-IF feature has NO API → skip this section.
-```
-
-### 3.6 Processing Contract (if non-API backend logic)
-
-```markdown
-| Input | Output | Side Effects |
-|-------|--------|--------------|
-| [name + simple type] | [name + simple type] | [text description] |
-
-⚠️ NO function signatures or code blocks. Use TABLE only.
+| Risk | Prob | Impact | Mitigation | Rollback Step |
+|------|:----:|:------:|------------|---------------|
+| Schema migration issue | M | H | Test on staging | Run down-migration + revert |
 ```
 
 ---
 
-## Phase 4: Phase Splitting — SMART SPLIT (MANDATORY)
+## 🎭 Phase 4: PLAN COVERAGE AUDIT (`reviewer`)
 
-> Split based on complexity. Small tasks = 1 file. Large = many.
-
-### Smart Splitting Rule
-
-```
-IF ≤ 3 features AND ≤ 3 days effort:
-  → SINGLE file: SPECS-{ID}-plan.md (all phases combined)
-
-IF > 3 features OR > 3 days:
-  → SEPARATE files: master + phase-NN-{name}.md
-```
-
-### Directory Structure (multi-file)
-
-```
-docs/specs/{feature-name}/
-├── SPECS-{ID}-plan.md          ← Master overview
-├── phase-01-{name}.md          ← Phase detail
-├── phase-02-{name}.md
-└── phase-0N-{name}.md
-```
-
-### Master Spec File Template
-
-```markdown
-# SPECS-{ID}: {Feature Name}
-Status: Draft
-
-## 1. SUMMARY
-## 2. OBJECTIVES
-## 3. USER STORIES (table, grouped by role)
-## 4. PHASES OVERVIEW (summary table)
-## 5. DEPENDENCY GRAPH (ASCII diagram)
-## 6. EFFORT ESTIMATION (table + buffer x1.5)
-## 7. DATABASE (SQL CREATE TABLE — schema only)
-## 8. MVP CUTOFF (which phases are MVP)
-## 9. NEXT STEPS
-```
-
-### Phase File Template
-
-```markdown
-# Phase {XX}: {Icon} {PHASE NAME}
-
-> **Parent:** [link to SPECS master]
-> **Depends on:** [previous phase]
-> **Status:** Draft | **Effort:** ⭐⭐⭐ | **Timeline:** X weeks
-
-## 📌 User Request (VERBATIM)
-> {Copy user's original request EXACTLY as written}
-> {Do NOT paraphrase or interpret}
-
-## 📋 Context Summary
-**Architecture**: {relevant tech decisions}
-**Patterns**: {coding patterns to follow}
-**Constraints**: {technical/business constraints}
-
-⚠️ This phase file MUST be self-contained.
-Implementer should execute with ONLY this file — no chat history.
+| Agent | `reviewer` |
+|-------|------------|
+| Goal | Verify 100% requirement coverage, constraint compliance, and zero vague acceptance criteria |
+| Exit | All checks pass: Feature coverage ✓ | Atomic tasks ✓ | Given/When/Then ✓ | ≥5 Edge cases ✓ | Rollback defined ✓ |
 
 ---
 
-## Feature {X.1}: {Feature Name}
+## ⛔ HARD STOP — AWAIT USER DECISION
 
-### Summary
-[1-2 sentence description]
-
-### User Story
-As [role], I want [action], so that [benefit].
-
-### Acceptance Criteria
-| # | Given | When | Then | Verify |
-|:-:|-------|------|------|--------|
-| 1 | [specific] | [specific] | [specific] | [method] |
-
-### UI Description (MANDATORY if has interface)
-[ASCII wireframe — detailed layout]
-
-### States (MANDATORY if has UI)
-| State | UI |
-|-------|-----|
-| Idle | [desc] |
-| Loading | Skeleton shimmer |
-| Success | [desc] |
-| Error | Toast + Retry |
-| Empty | Illustration + CTA |
-
-### Edge Cases (MANDATORY, minimum 5)
-| Case | Behavior |
-|------|----------|
-| [case] | [behavior] |
-
-### Dependencies
-- Requires [feature X.Y] first
-
-### Effort: ⭐⭐ | Timeline: X days
-
----
-
-## Dependency Matrix (end of each phase file)
-
-| Feature | Depends On | Required By |
-|---------|-----------|-------------|
-| X.1 | [deps] | [dependents] |
-
-Build order: X.1 → X.2 + X.3 (parallel) → X.4
-
-## Total Effort Phase {XX}
-
-| Feature | Effort | Timeline |
-|---------|--------|----------|
-| X.1 | ⭐⭐ | X days |
-| TOTAL | | ~X days |
-| + Buffer x1.5 | | ~X days |
-```
-
----
-
-## Phase 5: Dependency Mapping
-
-```
-Each feature must specify (IN PHASE FILE):
-□ Prerequisite features
-□ Required libraries
-□ Required APIs (internal / external)
-□ Required data models (tables, schemas)
-□ Required services (auth, email, payment)
-
-Cross-phase dependencies:
-Phase 01 → Phase 02 → Phase 03
-(Foundation)  (Core)     (Polish)
-
-□ No circular dependencies
-□ Each phase can demo independently
-□ Critical path highlighted
-```
-
----
-
-## Phase 6: Effort Estimation
-
-```markdown
-| Phase | Features | Raw Days | + Buffer | Priority |
-|:-----:|:--------:|:--------:|:--------:|:--------:|
-| 01 | X | X days | X days | 🔴 MVP |
-| 02 | X | X days | X days | 🔴 MVP |
-| 03 | X | X days | X days | 🟡 P1 |
-| 04 | X | X days | X days | 🟢 P2 |
-| TOTAL | X | X days | X days | |
-
-MVP = Phase [01+02]: ~X days (~X months with buffer)
-
-⚠️ Buffer x1.5 ALWAYS APPLIED
-```
-
----
-
-## Phase 6.5: Risk Matrix (MANDATORY)
-
-> Every plan MUST assess what could go wrong.
-
-```markdown
-| Risk | Probability | Impact | Mitigation | Rollback |
-|------|:-----------:|:------:|------------|----------|
-| DB migration breaks | M | H | Run staging first | Backup + rollback script |
-| API rate limit | L | M | Implement retry | Cache fallback |
-| 3rd party downtime | L | H | Health check | Feature flag disable |
-
-Rollback Strategy:
-  IF Phase X fails → revert to Phase X-1 state
-  Specific steps: [git revert / DB rollback / config restore]
-```
-
----
-
-## Phase 7: Plan Coverage Audit (MANDATORY)
-
-> ⛔ NO handover if coverage audit FAILS.
-
-```markdown
-| Check | Requirement | Status |
-|-------|-------------|--------|
-| Feature Coverage | Every feature from BRIEF is planned | ☐ |
-| CRUD Check | Every entity has C/R/U/D specs | ☐ |
-| Sub-feature Check | Every button/action has spec | ☐ |
-| Cross-cut Check | Settings, Notifications, Onboarding | ☐ |
-
-IF any FAIL → add missing specs before handover.
-```
-
-### Completion Checklist
-
-Master spec ✓ | Phase files split ✓ | Given/When/Then tables ✓ | Edge cases ≥5 ✓ | ASCII wireframes (UI) ✓ | States table (UI) ✓ | Dependency matrix ✓ | Effort + buffer ✓ | MVP cutoff ✓ | No code blocks ✓
-
----
-
-## Output
-
-| Deliverable | Location |
-|-------------|----------|
-| Master Spec | `docs/specs/{feature}/SPECS-{ID}-plan.md` |
-| Phase Files | `docs/specs/{feature}/phase-{NN}-{name}.md` |
-
-**Next**: `/architect` → Technical design | `/code` → Implement | `/brainstorm` → Explore
+Present the `PLAN-{task}.md` artifact to the user and **STOP**. Offer next steps via `ask_question` or summary:
+1. 🏗️ `/cook:hard` or `/cook:team` → Execute implementation plan
+2. 🔍 `/plan:team` → Run Golden Triangle adversarial review on the plan
+3. 🔄 Refine specific phases or scope

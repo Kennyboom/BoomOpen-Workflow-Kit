@@ -10,35 +10,25 @@ execution-mode: execute
 > **MISSION**: Generate or update **ALL 4 business knowledge folders**, each with `00-index.md` + numbered sub-files. Output must be evidence-backed, traceable, and actionable for product, engineering, and delivery teams.
 
 <scope>$ARGUMENTS</scope>
-
 ---
-
 ## PRE-FLIGHT
-
 **LOAD**: CORE.md → PHASES.md → AGENTS.md (path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`)
-
 ---
-
 ## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
-
 > **🔴 YOU MUST READ this reference file NOW. Do NOT skip.**
 >
-> 1. `~/.gemini/config/global_workflows/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
+> 1. `~/.{TOOL}/skills/boomopen-workflow-kit/commands/_ref/docs-recon-protocol.md` — Reconnaissance scan steps and Intelligence Report template (shared with docs-core)
 >
 > **Failure to read = incorrect execution. This file contains BINDING protocols.**
-
 ---
-
 ## DELIVERABLES - FOLDER-BASED BUSINESS SYSTEM
-
 > [!CAUTION]
 > **MUST CREATE OR UPDATE ALL 4 FOLDERS** with `00-index.md` and sub-files. Incomplete = FAILED execution.
 
 > **DOCUMENT LANGUAGE - NON-NEGOTIABLE**
-> Every file under `./documents/` must be written in **English only**. Do not use the user's language for file content. (CORE LAW 6.)
+> Every file under `./documents/` must be written in the **same language as the user's input** (technical terms in English). (CORE LAW 6.)
 
 ### Folder Structure
-
 ```
 ./documents/business/
   business-prd/
@@ -75,7 +65,6 @@ execution-mode: execute
 **Minimum total**: 4 folders x (1 index + 4-5 sub-files) = **22 files minimum**.
 
 ### `00-index.md` Pattern (MANDATORY)
-
 Every business folder `00-index.md` MUST include:
 
 1. Quick summary (2-3 paragraphs)
@@ -111,17 +100,11 @@ Every business folder `00-index.md` MUST include:
 ## Known Gaps and Open Questions
 - ...
 ```
-
 ---
-
 ## INCREMENTAL EXECUTION (MANDATORY)
-
 One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Phase 4.
-
 ---
-
 ## Phase 1: BUSINESS RECONNAISSANCE
-
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `scouter` |
@@ -129,7 +112,6 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 
 
 ## Business Intelligence Report
-
 ### Execution Plan
 | Business Area | Mode | Notes |
 |---------------|------|-------|
@@ -168,25 +150,20 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 ```
 
 ### Anti-Shallow Guardrails
-
 - NEVER generate content from README alone - must verify with direct file reads
 - Each business area must have at least 2 evidence files in the ledger
 - If evidence is weak (Low confidence), explicitly state it - do NOT guess
 - Unknowns go to `Known Gaps and Open Questions`, not speculative claims
 
 ### Exit Criteria
-
 - [ ] CREATE/UPDATE/MIGRATE mode detected per business area
 - [ ] Stakeholders and actors mapped with evidence
 - [ ] Feature inventory extracted with dependencies
 - [ ] Workflow candidates identified
 - [ ] Domain terms extracted
 - [ ] Business Evidence Ledger complete
-
 ---
-
 ## Phase 2: BUSINESS STRUCTURING AND PRIORITIZATION
-
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `business-analyst` |
@@ -195,7 +172,6 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 
 
 ## Structured Business Pack
-
 ### Goals and Scope
 | Goal ID | Goal | KPI | Priority |
 |---------|------|-----|----------|
@@ -228,25 +204,20 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 ```
 
 ### Exit Criteria
-
 - [ ] Requirements are testable and value-linked
 - [ ] Features prioritized with rationale
 - [ ] Workflows canonicalized
 - [ ] Glossary conflicts resolved
 - [ ] Traceability matrix complete
-
 ---
-
 ## Phase 3: GENERATE BUSINESS FOLDERS
-
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `docs-manager` |
-| **Goal** | Generate or update all 4 business folders in English only |
+| **Goal** | Generate or update all 4 business folders in the user's input language (technical terms in English) |
 
 
 ## Phase 4: QUALITY AND CONSISTENCY REVIEW
-
 | Attribute | Value |
 |-----------|-------|
 | **Agent** | `project-manager` |
@@ -264,20 +235,15 @@ One phase at a time, each phase independent: Phase 1 -> Phase 2 -> Phase 3 -> Ph
 ```
 
 ### Exit Criteria
-
 - [ ] Cross-folder consistency verified
 - [ ] Contradictions resolved
 - [ ] Traceability intact
 - [ ] Delivery readiness confirmed
-
 ---
-
 ## VERIFICATION
-
 Before completion, verify folder existence and quality:
 
 ### Folder Existence
-
 ```
 ./documents/business/
   [ ] business-prd/         (00-index.md + 01~04)
@@ -287,10 +253,9 @@ Before completion, verify folder existence and quality:
 ```
 
 ### Quality Gates
-
 For every business folder and sub-file:
 
-- [ ] English only
+- [ ] Written in user's input language (technical terms in English)
 - [ ] Required sections present
 - [ ] Evidence Sources section present with actual paths
 - [ ] `00-index.md` contains Known Gaps and Open Questions
@@ -299,16 +264,12 @@ For every business folder and sub-file:
 - [ ] TOC links in every `00-index.md` match actual sub-files
 
 ### Cross-Folder Gates
-
 - [ ] IDs consistent (BG/BR/BF/BW)
 - [ ] Same term has one canonical meaning across folders
 - [ ] Feature priorities align with PRD scope
 - [ ] Workflows reflect features and requirements accurately
-
 ---
-
 ## COMPLETION
-
 Report status:
 
 1. **Complete** - All 4 business folders created/updated and consistency-validated

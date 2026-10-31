@@ -1,7 +1,7 @@
-﻿{
+{
   "name": "@boomopen/workflow-kit",
-  "version": "1.0.0",
-  "description": "BoomOpen Workflow Kit - Multi-agent orchestration framework with Hybrid Skill Orchestration Layer (HSOL) and elite core skills.",
+  "version": "5.1.0",
+  "description": "BoomOpen Workflow Kit v5.1 (Antigravity 2.0 Smart-Hybrid Edition) - 2-Mode Smart Complexity Threshold Gate, native subagent primitives, Golden Triangle teams, and 2-step progressive skill lookup.",
   "main": "cli/install.js",
   "bin": {
     "boomopen": "./cli/install.js"
@@ -19,7 +19,7 @@
     "uninstall:all": "node cli/install.js uninstall --all",
     "list": "node cli/install.js list",
     "test": "node --test cli/install.test.js",
-    "lint": "node --check cli/install.js && echo 'âœ… JavaScript syntax valid'",
+    "lint": "node --check cli/install.js && echo '✅ JavaScript syntax valid'",
     "lint:md": "echo 'Run: npx markdownlint \"**/*.md\" --ignore node_modules' to lint Markdown",
     "semantic-release": "semantic-release",
     "prepare": "husky install || true"
