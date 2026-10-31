@@ -4,7 +4,7 @@ role: reviewer
 team: fullstack-team
 domain: fullstack
 description: "Devil's advocate quality gatekeeper — security + performance + cross-stack consistency review lens"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

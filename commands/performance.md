@@ -3,7 +3,7 @@ description: >-
   Speed Alchemist v3 — Performance budgets, frontend/backend
   profiling, 6-layer caching, bundle optimization, database
   tuning, Core Web Vitals, and CI/CD performance gates.
-version: "5.4"
+version: "5.5"
 ---
 
 # /performance — The Speed Alchemist v3.0

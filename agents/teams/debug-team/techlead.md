@@ -4,7 +4,7 @@ role: tech-lead
 team: debug-team
 domain: debugging
 description: "Investigation coordinator, hypothesis arbiter, and root-cause synthesizer for debug team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: debugger
 authority: final

@@ -1,7 +1,29 @@
-# ⚡ BoomOpen Workflow Kit v5.4 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
+# ⚡ BoomOpen Workflow Kit v5.5 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`GEMINI.md`) is pre-loaded in `<user_rules>` on every turn.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
+
+---
+
+## 📏 PRAGMATIC 2-TIER CODING STANDARDS & PERSISTENT VERIFICATION (MANDATORY)
+
+### 🛡️ Tier 1 — Strict Quality & Safety Rules (Zero Tolerance):
+1. **Single Responsibility**: Each file or function solves **1 clear responsibility**.
+2. **NO explicit `any`**: TypeScript MUST use concrete types, `unknown` + Type Guard/Zod, or Generic `<T>`.
+3. **NO leftover `console.log` in Production App**: Use a structured logger (`debug/info/warn/error`) in UI/API/Services; remove temporary debug logs. *(Allowed in CLI tools `cli/*.js`, scripts, and test benchmarks).*
+4. **Error Handling & Named Constants**: Every async/API boundary MUST have `try/catch` + typed error handling; business/config constants use `SCREAMING_SNAKE_CASE`.
+5. **DRY & Clean Imports**: Extract shared logic repeated ≥ 3 times; sort imports (`external → internal → relative`) and remove unused imports.
+
+### 📐 Tier 2 — Flexible Structural Guidelines (Cohesion Over Mechanical Line Cutting):
+| Guideline | Soft Target | When to Split (Pragmatic — Anti-Fragmentation) |
+|-----------|:-----------:|------------------------------------------------|
+| **File length** | **~200–350 lines** *(flexible up to ~400–450 lines)* | Keep intact if serving 1 cohesive responsibility. Split ONLY when exceeding `~450–500` lines **OR** mixing multiple domains. *(Exempt: Test, Schema/Types, CLI, Markdown/Docs).* |
+| **Function length** | **~20–40 lines** *(logic)* / **~40–80 lines** *(UI/Handler)* | Extract sub-functions only for reuse (DRY) or an independent step. Never shatter simple sequential logic. |
+| **Line width** | **~100–120 chars** | Fully flexible for long strings, URLs, Regex, Tailwind CSS classes, or Markdown tables. |
+| **Nesting & Params** | **≤ 3–4 levels** / **≤ 4–5 params** | Prefer Guard Clauses (early returns); use a Config/Options object for multiple optional parameters. |
+
+### 🔄 Persistent Testing & Bug Fixing:
+- Never stop after applying an unverified fix. Always run build/typecheck/tests or reproduction commands end-to-end, iteratively fix any new errors, and report only when verified working.
 
 ---
 
@@ -11,7 +33,7 @@ Before taking action, classify the request through this 2-Mode Gate:
 
 ### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
 - **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
-- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
@@ -26,8 +48,8 @@ Before taking action, classify the request through this 2-Mode Gate:
 
 ## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
 
-- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents. Always inherit the user's selected model (`Model: "inherit"` or `"pro"`) to prevent any drop in reasoning or code quality.
-- **Trivial Chores Only (`Model: "flash"` — Latest Flash High)**: Permitted **ONLY** for trivial mechanical chores (raw log aggregation, simple list formatting, status ping) that require zero architectural or coding judgment. When in doubt, ALWAYS use `Model: "inherit"`.
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents. Always inherit the user's selected model (`Model: "inherit"` or `"pro"`).
+- **Trivial Chores Only (`Model: "flash"` — Latest Flash High)**: Permitted **ONLY** for trivial mechanical chores (raw log aggregation, simple list formatting, status ping). When in doubt, ALWAYS use `Model: "inherit"`.
 - **Forbidden (`flash_lite`)**: **NEVER use `flash_lite`** in any BoomOpen workflow.
 
 ---
@@ -43,8 +65,8 @@ RULES     = ~/.gemini/config/skills/boomopen-workflow-kit/rules/
 ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 ```
 
-- **Brain Artifacts First (Clean Git Tree)**: Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) MUST be written to the conversation's native **Brain Artifact Directory** (`<appDataDir>\brain\<conversation-id>\`) so they render in the Antigravity UI Artifact pane and keep the project's Git working tree 100% clean.
-- **Workspace Docs**: Only write to `./reports/{topic}/` or `./documents/` in the project workspace when running `/docs` (`/docs:core`, `/docs:business`, `/docs:audit`) or when the user explicitly asks to commit reports into the repository.
+- **Brain Artifacts First (Clean Git Tree)**: Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) MUST be written to `<appDataDir>\brain\<conversation-id>\` so they render in the Antigravity UI Artifact pane and keep the Git working tree 100% clean.
+- **Workspace Docs**: Only write to `./reports/{topic}/` or `./documents/` when running `/docs` (`/docs:core`, `/docs:business`, `/docs:audit`) or when explicitly requested.
 
 ---
 
@@ -72,7 +94,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 
 ---
 
-## 🔀 TIERED EXECUTION & INTELLIGENT WORK DISTRIBUTION (v5.4)
+## 🔀 TIERED EXECUTION & INTELLIGENT WORK DISTRIBUTION (v5.5)
 
 | Tier | Mode / Condition | Action |
 |------|------------------|--------|
@@ -80,11 +102,11 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools (DAG Fan-Out + Direct Plan Dispatch + Warm Session Reuse) |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
-### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & v5.4 Dispatch Rules (TIER 1)
+### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & v5.5 Dispatch Rules (TIER 1)
 - `define_subagent`: Register specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
-- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet: `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, `VERIFICATION`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`). Launch independent phases concurrently in a single turn.
-- **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, dispatch tasks **directly** from `PLAN` to domain engineers (`backend-engineer`, `frontend-engineer`, etc.) without a redundant `tech-lead` middleman hop. Reserve `tech-lead` for Architecture Review (`/review:hard`) and `:team` Golden Triangle arbitration.
-- **Stateful Warm Sub-agent Reuse (`send_message`)**: Record each spawned sub-agent's `conversationId` in an **Active Sub-agent Session Registry (`Role → conversationId`)**. For follow-up tasks in the same domain, fix-after-test/review iterations, Golden Triangle debate rounds, or auto-reviving an interrupted sub-agent, **MUST call `send_message(Recipient: conversationId, Message: ...)`** (0s cold-start, 100% context retained) powered by **Reactive Async Wakeup** (never poll in a loop).
+- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet: `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, `VERIFICATION`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`).
+- **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, dispatch tasks **directly** from `PLAN` to domain engineers (`backend-engineer`, `frontend-engineer`, etc.) without a redundant `tech-lead` middleman hop.
+- **Stateful Warm Sub-agent Reuse (`send_message`)**: Record each spawned sub-agent's `conversationId` in an **Active Sub-agent Session Registry (`Role → conversationId`)**. Reuse warm sessions via `send_message(Recipient: conversationId, Message: ...)` (0s cold-start, 100% context retained).
 - `manage_subagents` & `manage_task`: List, inspect status, or terminate subagents/background tasks.
 
 ---

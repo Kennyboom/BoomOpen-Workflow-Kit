@@ -3,7 +3,7 @@ name: tech-lead
 description: Technical Lead — Architecture Design & Review (/review:hard) and Golden Triangle (:team) Coordination & Arbitration
 profile: "architecture:orchestration"
 handoffs: [backend-engineer, frontend-engineer, database-architect, security-engineer, devops-engineer, tester, reviewer]
-version: "5.4"
+version: "5.5"
 category: meta
 ---
 

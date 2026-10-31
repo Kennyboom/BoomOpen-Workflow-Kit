@@ -25,7 +25,7 @@ The Framework User runs the CLI to install framework files into their AI coding 
    b. Create directory structure if not exists
    c. Copy framework files (agents, commands, rules, skills, matrix-skills)
    d. Apply placeholder replacement in copied files
-   e. Copy platform-specific instruction file from `code-assistants/{tool}-assistant/`
+   e. Copy platform-specific instruction file from `platforms/{tool}-assistant/`
 5. Report per-tool success/failure
 6. Exit with code 0 (all succeeded) or 1 (any failed)
 
@@ -603,7 +603,7 @@ When the Framework Maintainer decides to support a new AI coding assistant platf
 2. Add platform to TOOLS configuration in `cli/install.js`
 3. Create install/uninstall mapping for new platform's config directory structure
 4. Add platform to CORE.md resolution table
-5. Create `code-assistants/{platform}-assistant/` directory with platform instruction file
+5. Create `platforms/{platform}-assistant/` directory with platform instruction file
 6. Add npm scripts for the new platform (install/uninstall)
 7. Update README.md with new platform documentation
 8. Test installation and uninstallation for the new platform
@@ -614,7 +614,7 @@ flowchart TD
     A[New platform identified] --> B[Add to TOOLS config]
     B --> C[Create install/uninstall mapping]
     C --> D[Add to CORE.md resolution table]
-    D --> E[Create code-assistants dir]
+    D --> E[Create platforms dir]
     E --> F[Create platform instruction file]
     F --> G[Add npm scripts]
     G --> H[Update README]

@@ -4,7 +4,7 @@ role: executor
 team: devops-team
 domain: devops
 description: "Direct infrastructure implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: backend-engineer
 mode: infrastructure

@@ -204,7 +204,7 @@ All Markdown and YAML files reference paths with `{TOOL}` (e.g., `~/.{TOOL}/skil
 - Single source of truth — one copy of each file with placeholders
 - Install-time resolution is deterministic — no runtime ambiguity
 - Simple text replacement — no complex templating engine needed
-- Platform-specific assets handled separately in `code-assistants/{tool}-assistant/`
+- Platform-specific assets handled separately in `platforms/{tool}-assistant/`
 
 ### Trade-offs
 

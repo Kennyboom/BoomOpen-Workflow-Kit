@@ -4,7 +4,7 @@ role: reviewer
 team: report-team
 domain: reporting-analytics
 description: "Devil's advocate quality gatekeeper — data accuracy + insight validity + actionability review lens"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

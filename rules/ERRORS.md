@@ -88,7 +88,7 @@ on_limit: Escalate to user
 
 ## ANTI-PATTERNS (A1–A12)
 
-| Code | Anti-Pattern | Correct v5.4 Behavior |
+| Code | Anti-Pattern | Correct v5.5 Behavior |
 |------|--------------|-----------------------|
 | **A1** | Orchestrator coding in Mode B | In Mode B (`> 3 files`, `≥ 2 domains`, or `/cmd`), delegate to execution specialists; only execute directly in Mode A (`≤ 3 files`, no `/cmd`) |
 | **A2** | Workflow gate bypass | Respect sequential DAG gates (`Plan` → `Implement` → `Test` → `Review`) |

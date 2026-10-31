@@ -18,7 +18,7 @@
 7. [Matrix Skills](#matrix-skills)
 8. [Skills (Modules)](#skills-modules)
 9. [CLI Installer](#cli-installer)
-10. [Code Assistants (Platform Templates)](#code-assistants-platform-templates)
+10. [Code Assistants (Platform Templates)](#platforms-platform-templates)
 11. [Platform Entry Points](#platform-entry-points)
 12. [Web Application](#web-application)
 13. [Evidence Sources](#evidence-sources)
@@ -347,7 +347,7 @@ The installer replaces these placeholders in all copied Markdown/YAML files:
 |-----------|-------|
 | **Name** | Code Assistants |
 | **Responsibility** | Provide platform-specific assets that are copied alongside the core framework during installation |
-| **Key Files** | `code-assistants/cursor-assistant/`, `code-assistants/copilot-assistant/`, `code-assistants/claude-assistant/`, `code-assistants/codex-assistant/`, `code-assistants/antigravity-assistant/` |
+| **Key Files** | `platforms/cursor/`, `platforms/copilot/`, `platforms/claude/`, `platforms/codex/`, `platforms/antigravity/` |
 | **Interfaces** | Consumed by `cli/install.js` during installation — not used at runtime |
 | **Dependencies** | CLI Installer (consumer) |
 

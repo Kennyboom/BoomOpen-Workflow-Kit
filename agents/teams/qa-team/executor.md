@@ -4,7 +4,7 @@ role: executor
 team: qa-team
 domain: quality-assurance
 description: "Direct test implementer with self-defense capability — writes tests, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tester
 authority: implementation

@@ -1,6 +1,6 @@
 ---
 description: "⚡ Fast bug fix for clear, localized issues with mandatory verification"
-version: "5.4"
+version: "5.5"
 ---
 
 # /fix:fast — Quick Bug Fix

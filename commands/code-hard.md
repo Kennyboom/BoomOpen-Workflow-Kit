@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Development Cycle — Plan → Contract-First Parallel/Sequential Implement → Test → Review
-version: "5.4"
+version: "5.5"
 category: engineering
 execution-mode: execute
 ---

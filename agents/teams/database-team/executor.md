@@ -4,7 +4,7 @@ role: executor
 team: database-team
 domain: database
 description: "Direct database implementer with self-defense capability — architects, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: database-architect
 authority: implementation

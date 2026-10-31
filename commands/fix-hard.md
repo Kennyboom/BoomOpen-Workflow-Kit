@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Fix — Complete issue resolution with parallel root-cause & pattern research and direct fix dispatch
-version: "5.4"
+version: "5.5"
 category: debugging
 execution-mode: execute
 ---

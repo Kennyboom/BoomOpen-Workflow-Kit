@@ -4,7 +4,7 @@ role: tech-lead
 team: qa-team
 domain: quality-assurance
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for QA team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tester
 authority: final

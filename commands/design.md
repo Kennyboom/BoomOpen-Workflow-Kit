@@ -1,6 +1,6 @@
 ---
 description: 🎨 Design Router — Route to design workflows
-version: "5.4"
+version: "5.5"
 category: design
 execution-mode: router
 ---

@@ -1,6 +1,6 @@
 ---
 description: 💡 Brainstorm Router — Route to ideation workflows
-version: "5.4"
+version: "5.5"
 category: planning
 execution-mode: router
 ---

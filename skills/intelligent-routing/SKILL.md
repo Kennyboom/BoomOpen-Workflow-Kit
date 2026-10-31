@@ -1,10 +1,10 @@
 ---
 name: intelligent-routing
-description: Automatic agent selection and intelligent task routing. Analyzes user requests and routes them through the v5.4 2-Mode Smart Complexity Threshold Gate, DAG Parallel Fan-Out, Direct Plan Dispatch, and Warm Sub-agent Reuse.
-version: "5.4.0"
+description: Automatic agent selection and intelligent task routing. Analyzes user requests and routes them through the v5.5 2-Mode Smart Complexity Threshold Gate, DAG Parallel Fan-Out, Direct Plan Dispatch, and Warm Sub-agent Reuse.
+version: "5.5"
 ---
 
-# 🧭 Intelligent Agent Routing (v5.4 — Smart-Hybrid Edition)
+# 🧭 Intelligent Agent Routing (v5.5 — Smart-Hybrid Edition)
 
 **Purpose**: Automatically classify incoming requests through the **2-Mode Smart Complexity Threshold Gate (Mode A vs. Mode B)** and route complex tasks to the right canonical specialist agent(s) from `agents/*.md` with **Quality-First Model Policy (`Model: "inherit"`)**, **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Warm Sub-agent Reuse (`send_message`)**.
 

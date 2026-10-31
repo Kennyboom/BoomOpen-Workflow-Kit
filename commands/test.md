@@ -1,6 +1,6 @@
 ---
 description: 🧪 Test Router — Route to testing workflows
-version: "5.4"
+version: "5.5"
 category: validation
 execution-mode: router
 ---

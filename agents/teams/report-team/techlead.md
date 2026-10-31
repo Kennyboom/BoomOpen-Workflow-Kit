@@ -4,7 +4,7 @@ role: tech-lead
 team: report-team
 domain: reporting-analytics
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for report team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reporter
 authority: final

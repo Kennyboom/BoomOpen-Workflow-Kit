@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Test — Golden Triangle adversarial collaboration for maximum quality testing"
-version: "5.4"
+version: "5.5"
 category: testing
 execution-mode: execute
 ---

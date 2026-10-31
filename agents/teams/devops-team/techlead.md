@@ -4,7 +4,7 @@ role: tech-lead
 team: devops-team
 domain: devops
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for devops team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: devops-engineer
 authority: final

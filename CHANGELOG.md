@@ -5,33 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.5.0] - 2026-10-31
+
+### Added
+- **Unified 5-Platform Architecture (`platforms/{antigravity,claude,codex,copilot,cursor}/`)**:
+  - Standardized all platform configuration bundles under `platforms/<tool>/` and added `install:claude` / `uninstall:claude` scripts in `package.json`.
+  - Upgraded all 5 platform templates (`platforms/antigravity/*`, `platforms/claude/CLAUDE.md`, `platforms/codex/CODEX.md` & `agents/*.toml`, `platforms/copilot/boomopen-workflow-kit.agent.md`, `platforms/cursor/.cursorrules` & `rules/boomopen-workflow-kit.mdc`) and all 6 root entrypoints (`GEMINI.md`, `CLAUDE.md`, `CODEX.md`, `COPILOT.md`, `CURSOR.md`, `AGENT.md`) to 100% `v5.5` Smart-Hybrid parity.
+  - Embedded **Pragmatic 2-Tier Coding Standards**, **Persistent Testing & Bug Fixing**, **2-Mode Smart Complexity Threshold Gate (Mode A vs. Mode B)**, **Quality-First Model Policy (`Model: "inherit"`)**, **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`)**, and flat command routing (`commands/{cmd}-{variant}.md`) across all 5 platforms.
+- **Complete Legacy Name & Path Cleanup (`scripts/*.py`, `documents/**/*.md`, `cli/doctor.js`)**:
+  - Updated `scripts/auto_preview.py`, `scripts/checklist.py`, `scripts/session_manager.py`, and `scripts/verify_all.py` to BoomOpen Workflow Kit branding and real `skills/.../scripts/*.py` paths.
+  - Updated all architecture and source-base documentation (`documents/**/*.md`) to reference `platforms/<tool>/`.
+  - Enhanced `cli/doctor.js` and `cli/install.test.js` to validate all 5 platform bundles and enforce zero legacy directory/branding references across the repository.
+
 ## [5.4.0] - 2026-10-31
 
 ### Added
 - **Pragmatic 2-Tier Coding Standards (`~/.gemini/GEMINI.md`, `GEMINI.md`, `rules/CORE.md`, `documents/knowledge-standards/01-code-style.md`, `skills/clean-code/SKILL.md`)**:
-  - Replaced rigid mechanical line-count limits (`≤ 300` lines/file, `≤ 25` lines/function) with **Pragmatic 2-Tier Coding Standards**:
-    - **Tier 1 (Strict Quality & Safety — Zero Tolerance)**: No `any`, no magic numbers, no leftover debug `console.log`, mandatory `try/catch` + typed errors on async/API boundaries, clean sorted imports, and semantic naming.
-    - **Tier 2 (Flexible Structural Guidelines — Cohesion Over Mechanical Line Cutting)**: Target `~200–350` lines/file with a `~400–450` line soft ceiling for cohesive modules (`>500` lines hard split; test/spec/type files exempt), `~25–40` lines/function (`≤ 60` lines for linear UI JSX, switch reducers, or config builders), and the **Anti-Fragmentation Rule** prohibiting artificial splitting of cohesive classes/components.
+  - Replaced rigid mechanical line-count limits (`≤ 300` lines/file, `≤ 25` lines/function) with **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure with `~200–350` target, `≤ 400–450` soft ceiling, `>500` hard split).
 - **2-Tier CLI Code Checker & Recursive Doctor (`cli/checker.js`, `cli/doctor.js`, `cli/install.test.js`)**:
-  - Updated `cli/checker.js` with `SOFT_FILE_LINES = 400` (warning `401–500` lines) and `HARD_FILE_LINES = 500` (violation `>500` lines), while automatically exempting `*.test.*`, `*.spec.*`, `*.d.ts`, and `install.js`.
-  - Updated `cli/doctor.js` (`MAX_ENTRY_LINES = 350`, `MAX_DOC_LINES = 450`) to recursively validate all `agents/teams/**/*.md` files while preserving 100% of the 14 `agents/teams/*/reviewer.md` review checklists (`322–406` lines).
+  - Updated `cli/checker.js` with `SOFT_FILE_LINES = 400` and `HARD_FILE_LINES = 500` (exempting `*.test.*`, `*.spec.*`, `*.d.ts`, `install.js`), and updated `cli/doctor.js` to recursively validate `agents/teams/**/*.md`.
 - **Synchronized Core Skills (`skills/`) & 5-Whys (SPIE v3.0) Debugging (`agents/debugger.md`, `commands/debug-*.md`)**:
-  - Upgraded `agents/debugger.md`, `skills/debugger/SKILL.md`, `commands/debug-hard.md`, and `commands/debug-fast.md` with the **5-Whys (SPIE v3.0)** causal framework and `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` routing.
-  - Upgraded `skills/clean-code/SKILL.md`, `skills/plan-writing/SKILL.md`, `skills/intelligent-routing/SKILL.md`, `skills/frontend-design/SKILL.md`, `skills/mobile-developer/SKILL.md`, and `skills/doc.md` to v5.4 (removing legacy `.brain/session.json` references, fixing broken relative paths, and enforcing `Model: "inherit"`).
-- **Full v5.4 Synchronization Across All 21 Agents, 51 Team Files & 72 Commands**:
-  - Upgraded `commands/code-fast.md`, `commands/fix-fast.md`, `commands/test-hard.md` (with DAG Parallel Fan-Out for `tester` + `scouter`), `commands/test-fast.md`, `commands/review-fast.md`, and all `agents/teams/*/*.md` mailbox/plan paths to prioritize `<appDataDir>\brain\<conversation-id>\` before `./reports/{topic}/`.
+  - Upgraded `agents/debugger.md`, `skills/debugger/SKILL.md`, `commands/debug-hard.md`, and `commands/debug-fast.md` with the **5-Whys (SPIE v3.0)** causal framework.
 
 ## [5.3.0] - 2026-10-31
 
 ### Added
-- **Direct Plan-to-Executor Dispatch (`rules/AGENTS.md`, `rules/PHASES.md`, `commands/*-hard.md`, `agents/tech-lead.md`)**:
-  - Eliminated the redundant `Orchestrator → tech-lead → domain-engineer` double-hop in `:fast`, `:hard`, and `/orchestrate` workflows once `PLAN-{feature}.md` exists.
-- **Stateful Warm Sub-agent Reuse Registry (`send_message` by `conversationId`)**:
-  - Added the **Active Sub-agent Session Registry (`Role → conversationId`)** across `GEMINI.md`, `rules/CORE.md`, `rules/AGENTS.md`, `rules/PHASES.md`, `rules/TEAMS.md`, and `commands/_ref/implementation-loop.md`.
-- **Contract-First Parallel Dispatch & File Ownership Locks (`SHARED_CONTRACT` + `OWNED_FILES`)**:
-  - Upgraded `agents/planner.md`, `rules/AGENTS.md`, `rules/PHASES.md`, and `commands/orchestrate.md` with the mandatory 5-field **Structured Handoff Packet**.
-- **Warm Sub-agent Auto-Revive (`E0`) in `rules/ERRORS.md`**:
-  - Upgraded `rules/ERRORS.md` to v5.3 with `E0: Sub-agent Interrupted / Server Restart` automatic revival via `send_message(Recipient: conversationId)` and anti-patterns `A1`–`A12`.
+- **Direct Plan-to-Executor Dispatch**, **Stateful Warm Sub-agent Reuse Registry (`send_message` by `conversationId`)**, **Contract-First Parallel Dispatch & File Ownership Locks (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Warm Sub-agent Auto-Revive (`E0`)**.
 
 ## [5.2.0] - 2026-10-31
 

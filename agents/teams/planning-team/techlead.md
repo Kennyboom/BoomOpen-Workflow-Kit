@@ -4,7 +4,7 @@ role: tech-lead
 team: planning-team
 domain: planning
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for planning team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: planner
 authority: final

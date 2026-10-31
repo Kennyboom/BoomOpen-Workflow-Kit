@@ -4,7 +4,7 @@ role: tech-lead
 team: performance-team
 domain: performance-optimization
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for performance team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: performance-engineer
 authority: final

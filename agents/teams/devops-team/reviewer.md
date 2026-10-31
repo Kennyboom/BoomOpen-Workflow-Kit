@@ -4,7 +4,7 @@ role: reviewer
 team: devops-team
 domain: devops
 description: "Security-focused infrastructure reviewer — audits, challenges, and gates every deployment"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: security-engineer
 authority: approval

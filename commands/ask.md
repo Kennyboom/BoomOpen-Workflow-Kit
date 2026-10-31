@@ -1,6 +1,6 @@
 ---
 description: ❓ Ask Router — Route questions to appropriate answer workflow
-version: "5.4"
+version: "5.5"
 category: knowledge
 execution-mode: router
 ---

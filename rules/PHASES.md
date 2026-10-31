@@ -20,7 +20,7 @@
 
 ---
 
-## ⚡ DAG-AWARE PARALLEL FAN-OUT & CONTRACT-FIRST EXECUTION (v5.4)
+## ⚡ DAG-AWARE PARALLEL FAN-OUT & CONTRACT-FIRST EXECUTION (v5.5)
 
 Phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of dependencies with **Direct Plan-to-Executor Dispatch** and **Warm Session Reuse**:
 

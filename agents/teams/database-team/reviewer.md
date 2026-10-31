@@ -4,7 +4,7 @@ role: reviewer
 team: database-team
 description: "Devil's advocate quality gatekeeper — security + performance + data integrity review lens"
 domain: database
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

@@ -4,7 +4,7 @@ role: reviewer
 team: design-team
 domain: design
 description: "Devil's advocate quality gatekeeper — UX fidelity + accessibility + design consistency review lens"
-version: "5.4"
+version: "5.5"
 category: team-role
 authority: approval
 base-agent: reviewer

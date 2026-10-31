@@ -4,7 +4,7 @@ role: executor
 team: report-team
 domain: reporting-analytics
 description: "Direct reporting implementer with self-defense capability — gathers data, analyzes, writes reports, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: scouter
 authority: implementation

@@ -4,7 +4,7 @@ role: tech-lead
 team: mobile-team
 domain: mobile-development
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for mobile team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tech-lead
 authority: final

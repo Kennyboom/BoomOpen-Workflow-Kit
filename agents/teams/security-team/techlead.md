@@ -4,7 +4,7 @@ role: tech-lead
 team: security-team
 domain: security
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for security team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: security-engineer
 authority: final

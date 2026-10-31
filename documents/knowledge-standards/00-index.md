@@ -48,7 +48,7 @@ BoomOpen Workflow Kit (`@namch/boomopen-workflow-kit` v1.3.0) enforces a lean se
 | Matrix skill files | kebab-case `.yaml` | `backend.yaml`, `ai-ml.yaml` |
 | Special matrix files | underscore prefix `.yaml` | `_index.yaml`, `_dynamic.yaml` |
 | Platform entries | UPPER_CASE `.md` | `CLAUDE.md`, `COPILOT.md`, `CURSOR.md` |
-| Code assistant dirs | kebab-case dirs | `cursor-assistant/`, `copilot-assistant/` |
+| Code assistant dirs | kebab-case dirs | `platforms/cursor/`, `platforms/copilot/` |
 | Document directories | kebab-case dirs | `knowledge-overview/`, `knowledge-standards/` |
 | Document files | numbered prefix + kebab-case | `00-index.md`, `01-project-identity.md` |
 | Web components | PascalCase `.tsx` | `App.tsx` |

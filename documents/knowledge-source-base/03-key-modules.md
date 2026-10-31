@@ -16,7 +16,7 @@
 - [Module 4: Rules (rules/)](#module-4-rules-rules)
 - [Module 5: Matrix Skills — HSOL (matrix-skills/)](#module-5-matrix-skills--hsol-matrix-skills)
 - [Module 6: Skills (skills/)](#module-6-skills-skills)
-- [Module 7: Code Assistants (code-assistants/)](#module-7-code-assistants-code-assistants)
+- [Module 7: Code Assistants (platforms/)](#module-7-platforms-platforms)
 - [Module 8: Platform Entry Points (Root Markdown)](#module-8-platform-entry-points-root-markdown)
 - [Module 9: Web Marketing Site (web/)](#module-9-web-marketing-site-web)
 - [Module 10: Documents (documents/)](#module-10-documents-documents)
@@ -386,40 +386,40 @@ The `find-skills/SKILL.md` skill is referenced by the HSOL `_index.yaml` as the 
 
 ---
 
-## Module 7: Code Assistants (code-assistants/)
+## Module 7: Code Assistants (platforms/)
 
 ### Purpose
 Stores platform-specific template files and assets that extend the base framework for each supported AI coding tool. These files handle platform-specific conventions, file formats, and directory structures.
 
 ### Platform Breakdown
 
-#### cursor-assistant/
+#### platforms/cursor/
 
 | Asset | Purpose |
 |-------|---------|
 | `.cursorrules` | Cursor-specific rules file; installed as `CURSOR.md` into `~/.cursor/` |
 | `rules/` | MDC (Markdown Cursor) rule files for Cursor's native rules system |
 
-#### copilot-assistant/
+#### platforms/copilot/
 
 | Asset | Purpose |
 |-------|---------|
 | `boomopen-workflow-kit.agent.md` | Copilot agent mode specification file; installed to VS Code prompts folder |
 
-#### antigravity-assistant/
+#### platforms/antigravity/
 
 | Asset | Purpose |
 |-------|---------|
 | `GEMINI.md` | Gemini-specific entry point; installed to `~/.gemini/` |
 | `AntigravityGlobal.agent.md` | Global agent file; installed to `~/.gemini/agents/` |
 
-#### claude-assistant/
+#### platforms/claude/
 
 | Asset | Purpose |
 |-------|---------|
 | `CLAUDE.md` | Claude Code-specific entry point; installed to `~/.claude/` |
 
-#### codex-assistant/
+#### platforms/codex/
 
 | Asset | Purpose |
 |-------|---------|
@@ -552,7 +552,7 @@ Platform Markdown Files (AGENT.md, CLAUDE.md, etc.)
             └── commands/*.md + commands/*/  (command routing)
 
 cli/install.js (independent entry — copies all above into tool directories)
-    └── code-assistants/*/ (platform-specific assets)
+    └── platforms/*/ (platform-specific assets)
 
 web/ (independent — not connected to framework modules)
 ```
@@ -571,7 +571,7 @@ web/ (independent — not connected to framework modules)
 | `commands/` and `commands/*/` listings | Router files and variant structure |
 | `rules/CORE.md` | Orchestrator identity, path resolution, platform table, tiered execution |
 | `matrix-skills/_index.yaml` | HSOL v1.1 config, total skills, discovery settings, variant applicability |
-| `code-assistants/*/` listings | Per-platform asset files |
+| `platforms/*/` listings | Per-platform asset files |
 | `web/package.json` | Web app dependencies and versions |
 | `web/vite.config.ts` | Build plugins, chunk splitting, targets |
 | `web/tsconfig.app.json` | TypeScript compiler options |

@@ -7,6 +7,18 @@ const MAX_DOC_LINES = 450;
 const MIN_COMPACT_SKILLS = 1000;
 const MOJIBAKE_REGEX = /(?:â•”|ðŸŒ|â Œ|âš\s*ï¸|\ufffd)/;
 
+const REQUIRED_PLATFORM_ASSETS = [
+  'platforms/antigravity/GEMINI.md',
+  'platforms/antigravity/AntigravityGlobal.agent.md',
+  'platforms/antigravity/hooks/validate-tool-call.mjs',
+  'platforms/claude/CLAUDE.md',
+  'platforms/codex/CODEX.md',
+  'platforms/codex/config.toml',
+  'platforms/copilot/boomopen-workflow-kit.agent.md',
+  'platforms/cursor/.cursorrules',
+  'platforms/cursor/rules/boomopen-workflow-kit.mdc',
+];
+
 /**
  * Parse a single domain YAML file into compact skill entries.
  */
@@ -49,7 +61,7 @@ function buildCompactSkillIndex(repoRoot) {
   }
 
   const outputPath = path.join(matrixDir, 'compact-index.json');
-  const payload = { version: '5.4.0', totalSkills: Object.keys(indexMap).length, skills: indexMap };
+  const payload = { version: '5.5.0', totalSkills: Object.keys(indexMap).length, skills: indexMap };
   fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2), 'utf8');
   return { count: payload.totalSkills, outputPath };
 }
@@ -76,10 +88,27 @@ function auditMarkdownDir(dirPath, label, recursive = false) {
     const lineCount = text.split(/\r?\n/).length;
     if (lineCount > MAX_DOC_LINES) issues.push(`${file.relName} (${lineCount} lines)`);
     if (MOJIBAKE_REGEX.test(text)) issues.push(`${file.relName} (mojibake)`);
-    if (text.includes('agent-assistant')) issues.push(`${file.relName} (legacy ref)`);
+    if (text.includes('agent-assistant') || text.includes('code-assistants')) {
+      issues.push(`${file.relName} (legacy ref)`);
+    }
   }
   const detail = issues.length === 0 ? `${mdFiles.length} files OK (≤${MAX_DOC_LINES} lines)` : issues.join('; ');
   return { name: label, passed: issues.length === 0, detail };
+}
+
+/**
+ * Verify all 5 platform asset directories exist and legacy code-assistants is removed.
+ */
+function checkPlatformAssets(repoRoot) {
+  const missing = REQUIRED_PLATFORM_ASSETS.filter(
+    (rel) => !fs.existsSync(path.join(repoRoot, rel))
+  );
+  const hasLegacyDir = fs.existsSync(path.join(repoRoot, 'code-assistants'));
+  const passed = missing.length === 0 && !hasLegacyDir;
+  const detail = passed
+    ? '5 platforms OK (antigravity, claude, codex, copilot, cursor)'
+    : `Missing: ${missing.join(', ')}${hasLegacyDir ? ' (legacy code-assistants exists)' : ''}`;
+  return { name: 'platforms/* (5 platforms)', passed, detail };
 }
 
 /**
@@ -146,6 +175,7 @@ function runDoctor(options = {}) {
   const checks = [
     checkGeminiEntrypoint(homeDir),
     ...checkSkillsManifest(homeDir),
+    checkPlatformAssets(repoRoot),
     auditMarkdownDir(path.join(repoRoot, 'rules'), 'rules/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'commands'), 'commands/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'agents'), 'agents/*.md'),
@@ -158,7 +188,7 @@ function runDoctor(options = {}) {
   ];
   const healthy = checks.every((c) => c.passed);
   if (!options.silent) {
-    console.log('\n🩺 BoomOpen Workflow Kit Doctor (v5.4.0)\n' + '─'.repeat(60));
+    console.log('\n🩺 BoomOpen Workflow Kit Doctor (v5.5.0)\n' + '─'.repeat(60));
     for (const c of checks) console.log(`  ${c.passed ? '✅' : '❌'} ${c.name.padEnd(34)} ${c.detail}`);
     console.log('─'.repeat(60));
   }

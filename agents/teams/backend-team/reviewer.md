@@ -4,7 +4,7 @@ role: reviewer
 team: backend-team
 description: "Devil's advocate quality gatekeeper — security + performance + correctness review lens"
 domain: backend
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

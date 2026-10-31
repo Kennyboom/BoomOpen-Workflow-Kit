@@ -55,7 +55,7 @@ Each feature specification includes:
 
 **Technical Surface**:
 - `cli/install.js` — `TOOLS` configuration object with platform paths
-- `code-assistants/cursor-assistant/`, `code-assistants/copilot-assistant/`, `code-assistants/claude-assistant/`, `code-assistants/codex-assistant/`, `code-assistants/antigravity-assistant/`
+- `platforms/cursor/`, `platforms/copilot/`, `platforms/claude/`, `platforms/codex/`, `platforms/antigravity/`
 - `CURSOR.md`, `COPILOT.md`, `CLAUDE.md`, `CODEX.md`, `GEMINI.md`
 
 **Dependencies**: BF-001 (installation mechanism)

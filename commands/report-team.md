@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Report — Golden Triangle adversarial collaboration for maximum quality reporting"
-version: "5.4"
+version: "5.5"
 category: reporting
 execution-mode: execute
 ---

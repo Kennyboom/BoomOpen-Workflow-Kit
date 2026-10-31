@@ -4,7 +4,7 @@ role: tech-lead
 team: fullstack-team
 domain: fullstack
 description: "Task decomposer, dual-executor coordinator, arbiter, and output synthesizer for fullstack team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tech-lead
 authority: final

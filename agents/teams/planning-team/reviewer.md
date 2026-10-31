@@ -4,7 +4,7 @@ role: reviewer
 team: planning-team
 domain: planning
 description: "Feasibility critic and quality gatekeeper — challenges plans before they reach implementation"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tech-lead
 authority: approval

@@ -2,7 +2,7 @@
 description: Bootstrap a new project. Set up folder structure, git, .brain/, and initial configuration.
 category: setup
 execution-mode: sequential
-version: "5.4"
+version: "5.5"
 ---
 
 # /init — Project Bootstrap v1.0

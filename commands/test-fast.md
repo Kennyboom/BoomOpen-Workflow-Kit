@@ -1,6 +1,6 @@
 ---
 description: "⚡ Quick test execution and targeted regression test authoring"
-version: "5.4"
+version: "5.5"
 ---
 
 # /test:fast — Quick Test

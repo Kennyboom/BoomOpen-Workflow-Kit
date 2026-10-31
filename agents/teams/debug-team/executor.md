@@ -4,7 +4,7 @@ role: executor
 team: debug-team
 domain: debugging
 description: "Direct investigation executor with self-defense capability — traces, collects evidence, defends hypotheses, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: backend-engineer
 mode: investigation

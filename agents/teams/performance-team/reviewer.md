@@ -4,7 +4,7 @@ role: reviewer
 team: performance-team
 description: "Devil's advocate quality gatekeeper — measurement validation + regression prevention + optimization review lens"
 domain: performance-optimization
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

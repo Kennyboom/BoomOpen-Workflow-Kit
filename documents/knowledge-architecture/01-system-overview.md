@@ -177,7 +177,7 @@ The framework is organized into 5 distinct layers. Each layer has a clear respon
 
 | Attribute | Value |
 |-----------|-------|
-| **Files** | `cli/install.js`, `package.json`, `code-assistants/*/` |
+| **Files** | `cli/install.js`, `package.json`, `platforms/*/` |
 | **Responsibility** | Package the framework as an npm module and install to platform-specific directories with `{TOOL}` placeholder substitution |
 | **Boundary** | Operates only at install/uninstall time — has zero runtime presence |
 | **Communicates With** | All layers (copies and transforms all files) |

@@ -3,7 +3,7 @@ name: project-manager
 description: Principal Delivery Manager — project coordination, risk management, delivery
 profile: "management:orchestration"
 handoffs: [tech-lead, planner, business-analyst, all-agents]
-version: "5.4"
+version: "5.5"
 category: orchestration
 ---
 

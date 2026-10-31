@@ -2,7 +2,7 @@
 name: security-team-reviewer
 role: reviewer
 team: security-team
-version: "5.4"
+version: "5.5"
 category: team-role
 domain: security
 authority: approval

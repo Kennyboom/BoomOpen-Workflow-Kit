@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Plan — Golden Triangle adversarial collaboration for maximum quality planning"
-version: "5.4"
+version: "5.5"
 category: planning
 execution-mode: execute
 ---

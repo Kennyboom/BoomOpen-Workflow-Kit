@@ -4,7 +4,7 @@ role: tech-lead
 team: docs-team
 domain: documentation
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for docs team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: docs-manager
 authority: final

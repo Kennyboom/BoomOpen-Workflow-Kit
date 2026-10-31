@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Feature — Golden Triangle parallel agent collaboration for maximum quality"
-version: "5.4"
+version: "5.5"
 category: engineering
 execution-mode: execute
 ---

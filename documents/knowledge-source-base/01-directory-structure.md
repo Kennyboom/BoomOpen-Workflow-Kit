@@ -20,7 +20,7 @@
 
 ## Root Directory Overview
 
-The project root contains 10 top-level directories and 12 root-level files. The framework is organized into a clear separation: **framework content** (agents, commands, rules, skills, matrix-skills) that gets installed into AI tool directories, **CLI tooling** (cli/) that performs the installation, **platform templates** (code-assistants/) with per-tool customizations, **documentation** (documents/), and a **marketing website** (web/) that is an independent sub-project.
+The project root contains 10 top-level directories and 12 root-level files. The framework is organized into a clear separation: **framework content** (agents, commands, rules, skills, matrix-skills) that gets installed into AI tool directories, **CLI tooling** (cli/) that performs the installation, **platform templates** (platforms/) with per-tool customizations, **documentation** (documents/), and a **marketing website** (web/) that is an independent sub-project.
 
 ---
 
@@ -94,20 +94,20 @@ boomopen-workflow-kit/                          # Project root — npm package @
 │   ├── install.test.js.example           # Example test file (not active)
 │   └── README.md                         # CLI usage documentation
 │
-├── code-assistants/                      # Platform-specific installation templates
-│   ├── antigravity-assistant/            # Gemini/Antigravity platform assets
+├── platforms/                      # Platform-specific installation templates
+│   ├── platforms/antigravity/            # Gemini/Antigravity platform assets
 │   │   ├── GEMINI.md                     # Antigravity-specific entry point
 │   │   └── AntigravityGlobal.agent.md    # Global agent config for Antigravity
-│   ├── claude-assistant/                 # Claude Code platform assets
+│   ├── platforms/claude/                 # Claude Code platform assets
 │   │   └── CLAUDE.md                     # Claude-specific entry point
-│   ├── codex-assistant/                  # Codex platform assets
+│   ├── platforms/codex/                  # Codex platform assets
 │   │   ├── CODEX.md                      # Codex-specific entry point
 │   │   ├── config.toml                   # Codex TOML configuration
 │   │   ├── agents/                       # Codex-specific agent TOML files
 │   │   └── skills/                       # Codex-specific skill overrides
-│   ├── copilot-assistant/                # GitHub Copilot platform assets
+│   ├── platforms/copilot/                # GitHub Copilot platform assets
 │   │   └── boomopen-workflow-kit.agent.md      # Copilot agent definition file
-│   └── cursor-assistant/                 # Cursor platform assets
+│   └── platforms/cursor/                 # Cursor platform assets
 │       ├── .cursorrules                  # Cursor rules file (becomes CURSOR.md on install)
 │       └── rules/                        # Cursor MDC rule files
 │
@@ -224,7 +224,7 @@ Contains 21 solo agent Markdown files and a `teams/` subdirectory with 17 team d
 ### `cli/` — Command-Line Interface
 The only directory containing executable code. Houses `install.js` (~600 lines, CommonJS, shebang `#!/usr/bin/env node`) that handles install/uninstall/list operations for all 5 supported platforms. Uses exclusively Node.js built-in modules (fs, path, os, readline). Also contains an example test file and a CLI-specific README.
 
-### `code-assistants/` — Platform Installation Templates
+### `platforms/` — Platform Installation Templates
 Contains 5 subdirectories, one per supported AI coding tool. Each provides platform-specific assets (entry point files, config files, rule files) that are copied during installation. The CLI reads from these directories to customize the installation for each platform's directory structure and file conventions.
 
 ### `commands/` — Command Workflows
@@ -278,7 +278,7 @@ Husky v8 git hooks manager directory. Contains the internal `_/` runtime directo
 | `agents/` (solo) | 21 | Markdown |
 | `agents/teams/` | 51 (17 × 3) | Markdown |
 | `cli/` | 3 | JavaScript, Markdown |
-| `code-assistants/` | ~10 | Markdown, TOML, rules |
+| `platforms/` | ~10 | Markdown, TOML, rules |
 | `commands/` | 61 (14 routers + 47 variants) | Markdown |
 | `documents/` | 2 + knowledge-source-base | Markdown |
 | `matrix-skills/` | 21 | YAML |
@@ -309,4 +309,4 @@ Husky v8 git hooks manager directory. Contains the internal `_/` runtime directo
 | `agents/` directory listing | Counted 21 solo agent files |
 | `agents/teams/` directory listing | Counted 17 team directories, each with 3 role files |
 | `commands/` directory listing | Counted 14 router files and all variant subdirectories |
-| `code-assistants/` directory listing | Confirmed 5 platform template directories and their contents |
+| `platforms/` directory listing | Confirmed 5 platform template directories and their contents |

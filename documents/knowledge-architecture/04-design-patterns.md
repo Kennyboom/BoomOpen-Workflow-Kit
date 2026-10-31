@@ -455,7 +455,7 @@ The framework uses `{TOOL}` (and related) placeholders throughout all Markdown a
 
 ### Platform-Specific Assets
 
-Beyond placeholder substitution, each platform has custom assets in `code-assistants/{tool}-assistant/`:
+Beyond placeholder substitution, each platform has custom assets in `platforms/{tool}-assistant/`:
 
 | Platform | Custom Assets |
 |----------|--------------|

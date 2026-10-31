@@ -4,7 +4,7 @@ role: executor
 team: mobile-team
 domain: mobile-development
 description: "Direct mobile development implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: mobile-engineer
 authority: implementation

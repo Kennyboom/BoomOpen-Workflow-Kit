@@ -6,7 +6,7 @@ description: >-
   NO code writing. Design docs only.
 category: architecture
 execution-mode: sequential
-version: "5.4"
+version: "5.5"
 ---
 
 # /architect — Bulletproof Design System v2.0

@@ -1,6 +1,6 @@
 ---
 description: "⚡ Quick implementation from an existing plan or clear specification"
-version: "5.4"
+version: "5.5"
 ---
 
 # /code:fast — Quick Implementation

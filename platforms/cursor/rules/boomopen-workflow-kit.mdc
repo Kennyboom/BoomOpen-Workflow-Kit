@@ -1,0 +1,82 @@
+---
+name: BoomOpen Workflow Kit Orchestrator
+description: Smart-Hybrid Multi-Agent Orchestrator (v5.5) — Pragmatic 2-Tier Coding Standards, 2-Mode Gate, DAG Parallel Fan-Out, Direct Plan Dispatch & Contract-First Handoffs.
+alwaysApply: true
+priority: 9999
+commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, brainstorm, ask, code, orchestrate, save, recap]
+---
+
+# ⚡ BoomOpen Workflow Kit v5.5 (Smart-Hybrid Edition)
+
+> **ZERO-LATENCY ENTRYPOINT**: Load `rules/CORE.md`, `rules/PHASES.md`, and `rules/AGENTS.md` on-demand when **Mode B** (`> 3 files`, `≥ 2 domains`, or explicit `/cmd`) is triggered.
+
+---
+
+## 📏 PRAGMATIC 2-TIER CODING STANDARDS & PERSISTENT VERIFICATION
+
+1. **Tier 1 — Strict Quality & Safety (Zero Tolerance)**: Single Responsibility, NO explicit `any`, NO leftover debug `console.log` in production code, `try/catch` + typed errors on async/API boundaries, `SCREAMING_SNAKE_CASE` constants, DRY (`≥ 3`), clean sorted imports.
+2. **Tier 2 — Flexible Structural Guidelines (Anti-Fragmentation)**: Cohesive files target `~200–350` lines (flexible up to `~400–450` lines; hard split `>500` lines or multi-domain; tests/types/CLI/docs exempt); functions `~20–40` lines (logic) / `~40–80` lines (UI/Handler); nesting `≤ 3–4`; params `≤ 4–5`.
+3. **Persistent Testing & Bug Fixing**: Always verify fixes end-to-end (build, typecheck, tests) and iterate until zero errors remain.
+
+---
+
+## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
+
+- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
+- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows or tasks spanning **> 3 files** / **≥ 2 domains**, activate Strict Orchestrator Mode (delegate via `runSubagent` / `invoke_subagent` using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
+
+---
+
+## 📂 PATHS
+
+```
+COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
+SKILLS   = ~/.{TOOL}/skills/
+LIBRARY  = ~/.{TOOL}/skills_library/
+RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
+REPORTS  = ./reports/{topic}/
+```
+
+---
+
+## 🌐 LANGUAGE
+
+- Response → **Same as user's language**
+- Code/comments → **Always English**
+- Files in `./reports/{topic}/`, `./documents/`, and Artifacts → **Same as user's input language (technical terms in English)**
+
+---
+
+## 🎯 COMMAND ROUTING
+
+| Input | Route |
+|-------|-------|
+| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap` | `commands/{cmd}.md` |
+
+**Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`
+**Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
+
+---
+
+## 🔀 TIERED EXECUTION
+
+| Tier | When | Action |
+|------|------|--------|
+| **TIER 0** | Mode A (≤ 3 files, no `/cmd`) | Execute, test, and verify directly |
+| **TIER 1** | Mode B (Sub-agent tool exists) | **MUST** use sub-agent (`Model: "inherit"`) with 5-field Structured Handoff Packet (`SHARED_CONTRACT` + `OWNED_FILES`) |
+| **TIER 2** | Mode B fallback (tool error) | EMBODY agent file from `AGENTS` |
+
+---
+
+## 📚 LOAD ON DEMAND (Mode B Only)
+
+| Situation | Load from `RULES/` |
+|-----------|--------------------|
+| Core protocol | `CORE.md` |
+| Running phases & DAG Fan-Out | `PHASES.md` |
+| Delegating & `OWNED_FILES` locks | `AGENTS.md` |
+| Team execution (`:team`) | `TEAMS.md` |
+| Skill resolution (`compact-index.json`) | `SKILLS.md` |
+| Error recovery (`E0`) / Lookup | `ERRORS.md` / `REFERENCE.md` |

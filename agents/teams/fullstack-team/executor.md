@@ -4,7 +4,7 @@ role: executor
 team: fullstack-team
 domain: fullstack
 description: "Dual-executor definition — backend-engineer and frontend-engineer implementations with integration protocol"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent:
   - backend-engineer

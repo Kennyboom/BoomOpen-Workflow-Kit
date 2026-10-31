@@ -1,6 +1,6 @@
 ---
 description: "⚡ Quick code review enforcing Pragmatic 2-Tier Coding Standards and security checks"
-version: "5.4"
+version: "5.5"
 ---
 
 # /review:fast — Quick Code Review

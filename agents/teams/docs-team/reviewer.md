@@ -4,7 +4,7 @@ role: reviewer
 team: docs-team
 description: "Devil's advocate quality gatekeeper — accuracy + completeness + clarity review lens"
 domain: documentation
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

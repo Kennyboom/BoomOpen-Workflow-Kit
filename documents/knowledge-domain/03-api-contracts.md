@@ -147,16 +147,16 @@ The installer copies these directories from the npm package into platform-specif
 
 | Platform | Asset | Source | Destination |
 |----------|-------|--------|-------------|
-| Cursor | Rules directory | `code-assistants/cursor-assistant/rules/` | `~/.cursor/rules/` |
-| Cursor | Cursorrules | `code-assistants/cursor-assistant/.cursorrules` | `~/.cursor/.cursorrules` |
-| Copilot | Agent file | `code-assistants/copilot-assistant/boomopen-workflow-kit.agent.md` | VS Code prompts folder |
-| Antigravity | Gemini config | `code-assistants/antigravity-assistant/GEMINI.md` | `~/.gemini/GEMINI.md` |
-| Antigravity | Agent file | `code-assistants/antigravity-assistant/AntigravityGlobal.agent.md` | `~/.gemini/agents/` |
-| Claude | Claude config | `code-assistants/claude-assistant/CLAUDE.md` | `~/.claude/CLAUDE.md` |
-| Codex | Codex config | `code-assistants/codex-assistant/CODEX.md` | `~/.codex/CODEX.md` |
-| Codex | TOML config | `code-assistants/codex-assistant/config.toml` | `~/.codex/config.toml` |
-| Codex | Agent TOMLs | `code-assistants/codex-assistant/agents/` | `~/.codex/agents/` |
-| Codex | Command skills | `code-assistants/codex-assistant/skills/` | `~/.codex/skills/` |
+| Cursor | Rules directory | `platforms/cursor/rules/` | `~/.cursor/rules/` |
+| Cursor | Cursorrules | `platforms/cursor/.cursorrules` | `~/.cursor/.cursorrules` |
+| Copilot | Agent file | `platforms/copilot/boomopen-workflow-kit.agent.md` | VS Code prompts folder |
+| Antigravity | Gemini config | `platforms/antigravity/GEMINI.md` | `~/.gemini/GEMINI.md` |
+| Antigravity | Agent file | `platforms/antigravity/AntigravityGlobal.agent.md` | `~/.gemini/agents/` |
+| Claude | Claude config | `platforms/claude/CLAUDE.md` | `~/.claude/CLAUDE.md` |
+| Codex | Codex config | `platforms/codex/CODEX.md` | `~/.codex/CODEX.md` |
+| Codex | TOML config | `platforms/codex/config.toml` | `~/.codex/config.toml` |
+| Codex | Agent TOMLs | `platforms/codex/agents/` | `~/.codex/agents/` |
+| Codex | Command skills | `platforms/codex/skills/` | `~/.codex/skills/` |
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: "⚙️ Implementation Loop — Step-by-step Golden Triangle & Warm Session Reuse coding protocol"
-version: "5.4"
+version: "5.5"
 type: reference
 ---
 

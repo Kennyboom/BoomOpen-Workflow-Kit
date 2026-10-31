@@ -2,11 +2,11 @@
 name: clean-code
 description: Pragmatic 2-Tier coding standards — strict type/error safety with cohesive, maintainable file and function structure
 allowed-tools: Read, Write, Edit, Bash
-version: "5.4"
+version: "5.5"
 priority: CRITICAL
 ---
 
-# Clean Code — Pragmatic 2-Tier AI Coding Standards (v5.4)
+# Clean Code — Pragmatic 2-Tier AI Coding Standards (v5.5)
 
 > **CRITICAL SKILL**: Write **clean, type-safe, cohesive, and verified** code. Favor genuine clarity and single responsibility over mechanical file/function fragmentation.
 

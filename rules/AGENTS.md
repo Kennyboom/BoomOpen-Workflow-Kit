@@ -16,7 +16,7 @@
 
 ---
 
-## ⚡ INTELLIGENT WORK DISTRIBUTION (v5.4)
+## ⚡ INTELLIGENT WORK DISTRIBUTION (v5.5)
 
 ### 1. Direct Plan-to-Executor Dispatch (No Middleman Double-Hop)
 - **Once `PLAN-{feature}.md` exists** in `:fast`, `:hard`, or `/orchestrate` workflows, the **Orchestrator dispatches tasks directly from `PLAN` to the execution specialists** (`backend-engineer`, `frontend-engineer`, `database-architect`, `mobile-engineer`, `game-engineer`, `devops-engineer`).

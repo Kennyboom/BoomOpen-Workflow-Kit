@@ -212,7 +212,7 @@ All 12 workflows are classified by complexity (Low / Medium / High) and frequenc
 | **Name** | Platform Integration |
 | **Actor** | Framework Maintainer |
 | **Trigger** | Decision to support a new AI coding assistant platform |
-| **Outcome** | Add to TOOLS config → create install/uninstall scripts → add to CORE.md resolution table → create `code-assistants/` directory → add npm scripts → update README |
+| **Outcome** | Add to TOOLS config → create install/uninstall scripts → add to CORE.md resolution table → create `platforms/` directory → add npm scripts → update README |
 | **Exception Handling** | New platform must follow existing conventions; deviation → design review required |
 | **Complexity** | Medium |
 | **Frequency** | Rare (new platform adoption) |

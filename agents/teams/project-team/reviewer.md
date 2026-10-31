@@ -4,7 +4,7 @@ role: reviewer
 team: project-team
 domain: project-management
 description: "Devil's advocate quality gatekeeper — technical feasibility + estimation accuracy + risk review lens"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tech-lead
 authority: approval

@@ -42,7 +42,7 @@
 
 **Goal Mapping**: BG-002 (Multi-platform)
 
-**Key Files**: `cli/install.js` (TOOLS config), `code-assistants/*/`, platform entry files (CURSOR.md, COPILOT.md, CLAUDE.md, CODEX.md, GEMINI.md)
+**Key Files**: `cli/install.js` (TOOLS config), `platforms/*/`, platform entry files (CURSOR.md, COPILOT.md, CLAUDE.md, CODEX.md, GEMINI.md)
 
 ---
 

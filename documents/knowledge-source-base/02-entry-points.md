@@ -169,9 +169,9 @@ Each platform has a unique installation target structure. The `TOOLS` config obj
 ### Cursor
 ```
 ~/.cursor/
-├── rules/                    # Global MDC rule files (from code-assistants/cursor-assistant/rules/)
+├── rules/                    # Global MDC rule files (from platforms/cursor/rules/)
 ├── commands/                 # Global command suggestions (from commands/)
-├── CURSOR.md                 # Platform entry (from code-assistants/cursor-assistant/.cursorrules)
+├── CURSOR.md                 # Platform entry (from platforms/cursor/.cursorrules)
 ├── AGENT.md                  # Generic entry (from root AGENT.md)
 ├── CLAUDE.md                 # Claude entry (from root CLAUDE.md)
 ├── agents/                   # Native subagent support (from agents/)
@@ -234,8 +234,8 @@ The VS Code prompts folder path varies by OS:
 ├── skills/
 │   └── boomopen-workflow-kit/      # Core framework
 ├── commands/                 # Global commands
-├── agents/                   # Native subagents (TOML format from code-assistants/codex-assistant/agents/)
-└── config.toml               # Codex config (from code-assistants/codex-assistant/config.toml)
+├── agents/                   # Native subagents (TOML format from platforms/codex/agents/)
+└── config.toml               # Codex config (from platforms/codex/config.toml)
 ```
 
 ---

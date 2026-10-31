@@ -4,7 +4,7 @@ role: executor
 team: performance-team
 domain: performance-optimization
 description: "Direct performance optimization implementer with self-defense capability — profiles, optimizes, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: backend-engineer
 authority: implementation

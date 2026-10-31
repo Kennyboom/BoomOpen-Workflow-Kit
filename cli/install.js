@@ -70,8 +70,8 @@ const TOOLS = {
             'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
-            rules: path.join(ROOT, 'code-assistants', 'cursor-assistant', 'rules'),
-            cursorRules: path.join(ROOT, 'code-assistants', 'cursor-assistant', '.cursorrules'),
+            rules: path.join(ROOT, 'platforms', 'cursor', 'rules'),
+            cursorRules: path.join(ROOT, 'platforms', 'cursor', '.cursorrules'),
         }
     },
     copilot: {
@@ -95,7 +95,7 @@ const TOOLS = {
             'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
-            agentFile: path.join(ROOT, 'code-assistants', 'copilot-assistant', 'boomopen-workflow-kit.agent.md'),
+            agentFile: path.join(ROOT, 'platforms', 'copilot', 'boomopen-workflow-kit.agent.md'),
         }
     },
     antigravity: {
@@ -124,8 +124,8 @@ const TOOLS = {
             'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
-            geminiMd: path.join(ROOT, 'code-assistants', 'antigravity-assistant', 'GEMINI.md'),
-            agentFile: path.join(ROOT, 'code-assistants', 'antigravity-assistant', 'AntigravityGlobal.agent.md'),
+            geminiMd: path.join(ROOT, 'platforms', 'antigravity', 'GEMINI.md'),
+            agentFile: path.join(ROOT, 'platforms', 'antigravity', 'AntigravityGlobal.agent.md'),
         }
     },
     claude: {
@@ -147,7 +147,7 @@ const TOOLS = {
             'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
-            claudeMd: path.join(ROOT, 'code-assistants', 'claude-assistant', 'CLAUDE.md'),
+            claudeMd: path.join(ROOT, 'platforms', 'claude', 'CLAUDE.md'),
         }
     },
     codex: {
@@ -169,10 +169,10 @@ const TOOLS = {
             'boomopen-workflow-kit': 'boomopen-workflow-kit',
         },
         assets: {
-            codexMd: path.join(ROOT, 'code-assistants', 'codex-assistant', 'CODEX.md'),
-            configToml: path.join(ROOT, 'code-assistants', 'codex-assistant', 'config.toml'),
-            agentTomlDir: path.join(ROOT, 'code-assistants', 'codex-assistant', 'agents'),
-            commandSkillsDir: path.join(ROOT, 'code-assistants', 'codex-assistant', 'skills'),
+            codexMd: path.join(ROOT, 'platforms', 'codex', 'CODEX.md'),
+            configToml: path.join(ROOT, 'platforms', 'codex', 'config.toml'),
+            agentTomlDir: path.join(ROOT, 'platforms', 'codex', 'agents'),
+            commandSkillsDir: path.join(ROOT, 'platforms', 'codex', 'skills'),
         }
     }
 };
@@ -201,6 +201,7 @@ const BUNDLED_AGENTS = [
     'performance-engineer.md',
     'planner.md',
     'project-manager.md',
+    'reporter.md',
     'researcher.md',
     'reviewer.md',
     'scouter.md',
@@ -1237,7 +1238,7 @@ function installCodex() {
         total += copyWithReplace(libSrc, destLib, tool.replacements);
     }
 
-    // 3.1 Install Codex-specific command skills (from codex-assistant/skills/)
+    // 3.1 Install Codex-specific command skills (from platforms/codex/skills/)
     if (tool.assets.commandSkillsDir && fs.existsSync(tool.assets.commandSkillsDir)) {
         total += copyWithReplace(tool.assets.commandSkillsDir, tool.paths.skills, tool.replacements);
         const cmdSkillCount = fs.readdirSync(tool.assets.commandSkillsDir)

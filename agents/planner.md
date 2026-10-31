@@ -3,7 +3,7 @@ name: planner
 description: Principal Technical Planner — implementation blueprints, Shared Interface Contracts (SHARED_CONTRACT), file ownership locks (OWNED_FILES), and atomic task decomposition
 profile: "planning:analysis"
 handoffs: [backend-engineer, frontend-engineer, database-architect, tech-lead, scouter, researcher, brainstormer]
-version: "5.4"
+version: "5.5"
 category: planning
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Feature — Complete feature development lifecycle with DAG Parallel Fan-Out & Direct Plan Dispatch
-version: "5.4"
+version: "5.5"
 category: engineering
 execution-mode: execute
 ---

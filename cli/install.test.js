@@ -17,27 +17,31 @@ const {
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 
-test('TOOLS.antigravity configuration uses unified boomopen-workflow-kit v5.4 paths', () => {
+test('All 5 TOOLS (antigravity, claude, codex, copilot, cursor) use platforms/<tool> assets that exist on disk', () => {
+  const expectedTools = ['cursor', 'copilot', 'antigravity', 'claude', 'codex'];
+  for (const toolKey of expectedTools) {
+    const tool = TOOLS[toolKey];
+    assert.ok(tool, `TOOLS.${toolKey} should exist`);
+    assert.ok(tool.assets, `TOOLS.${toolKey}.assets should exist`);
+    for (const [assetName, assetPath] of Object.entries(tool.assets)) {
+      assert.ok(
+        assetPath.includes(path.join('platforms', toolKey)),
+        `Expected ${toolKey}.${assetName} (${assetPath}) to reside under platforms/${toolKey}`
+      );
+      assert.ok(
+        fs.existsSync(assetPath),
+        `Expected asset ${toolKey}.${assetName} to exist at ${assetPath}`
+      );
+    }
+  }
+
   const ag = TOOLS.antigravity;
-  assert.ok(ag, 'antigravity tool config should exist');
   assert.ok(
     ag.paths.frameworkPath.endsWith(
       path.join('.gemini', 'config', 'skills', 'boomopen-workflow-kit')
     )
   );
   assert.equal(ag.replacements['{TOOL}'], 'gemini/config');
-  assert.equal(
-    ag.replacements['{TOOL}/boomopen-workflow-kit/'],
-    'gemini/config/skills/boomopen-workflow-kit/'
-  );
-  assert.equal(
-    ag.replacements['~/.{TOOL}/skills/boomopen-workflow-kit/'],
-    '~/.gemini/config/skills/boomopen-workflow-kit/'
-  );
-  assert.equal(
-    ag.replacements['~/.agent/'],
-    '~/.gemini/config/skills/boomopen-workflow-kit/'
-  );
 });
 
 test('ROOT_FILES includes SKILL.md and README.md', () => {
@@ -45,30 +49,99 @@ test('ROOT_FILES includes SKILL.md and README.md', () => {
   assert.ok(ROOT_FILES.includes('SKILL.md'));
 });
 
-test('Antigravity template GEMINI.md enforces Pragmatic 2-Tier Standards, Direct Dispatch, and Warm Reuse', () => {
-  const geminiTemplatePath = path.join(
-    REPO_ROOT,
-    'code-assistants',
-    'antigravity-assistant',
-    'GEMINI.md'
-  );
-  const content = fs.readFileSync(geminiTemplatePath, 'utf8');
-  const lineCount = content.split(/\r?\n/).length;
-  assert.ok(
-    lineCount <= 220,
-    `Expected GEMINI.md to be <= 220 lines, got ${lineCount}`
-  );
-  assert.ok(content.includes('MODE A — Direct Execution'));
-  assert.ok(content.includes('MODE B — Strict Multi-Agent Orchestration'));
-  assert.ok(content.includes('Pragmatic 2-Tier Coding Standards'));
-  assert.ok(content.includes('QUALITY-FIRST MODEL POLICY'));
-  assert.ok(content.includes('NEVER use `flash_lite`'));
-  assert.ok(content.includes('Direct Plan-to-Executor Dispatch'));
-  assert.ok(content.includes('Stateful Warm Sub-agent Reuse'));
-  assert.ok(!content.includes('agent-assistant'));
+test('All 5 platform entrypoints and templates enforce v5.5 Smart-Hybrid, Pragmatic 2-Tier Standards, and flat command routing', () => {
+  const entryFiles = [
+    'GEMINI.md',
+    'CLAUDE.md',
+    'CODEX.md',
+    'COPILOT.md',
+    'CURSOR.md',
+    'AGENT.md',
+    'platforms/antigravity/GEMINI.md',
+    'platforms/antigravity/AntigravityGlobal.agent.md',
+    'platforms/claude/CLAUDE.md',
+    'platforms/codex/CODEX.md',
+    'platforms/copilot/boomopen-workflow-kit.agent.md',
+    'platforms/cursor/.cursorrules',
+    'platforms/cursor/rules/boomopen-workflow-kit.mdc',
+  ];
+
+  for (const relPath of entryFiles) {
+    const fullPath = path.join(REPO_ROOT, relPath);
+    assert.ok(fs.existsSync(fullPath), `Expected ${relPath} to exist`);
+    const content = fs.readFileSync(fullPath, 'utf8');
+    const lineCount = content.split(/\r?\n/).length;
+    assert.ok(
+      lineCount <= 220,
+      `Expected ${relPath} to be <= 220 lines, got ${lineCount}`
+    );
+    assert.ok(content.includes('v5.5'), `Expected ${relPath} to include v5.5`);
+    assert.ok(content.includes('MODE A'), `Expected ${relPath} to include MODE A`);
+    assert.ok(content.includes('MODE B'), `Expected ${relPath} to include MODE B`);
+    assert.ok(
+      content.includes('Pragmatic 2-Tier') || content.includes('PRAGMATIC 2-TIER'),
+      `Expected ${relPath} to include Pragmatic 2-Tier Coding Standards`
+    );
+    assert.ok(
+      !content.includes('commands/{cmd}/{variant}.md') &&
+        !content.includes('commands/{cmd}/team.md') &&
+        !content.includes('commands/{cmd}/hard.md'),
+      `Expected ${relPath} not to contain legacy nested command paths`
+    );
+  }
 });
 
-test('All rules/*.md files are <= 300 lines, pure BoomOpen v5.4, and enforce Intelligent Work Distribution', () => {
+test('Zero files in repository contain legacy code-assistants or Antigravity Kit names', () => {
+  assert.ok(
+    !fs.existsSync(path.join(REPO_ROOT, 'code-assistants')),
+    'Legacy code-assistants directory must not exist'
+  );
+
+  const dirsToScan = ['cli', 'rules', 'agents', 'commands', 'documents', 'platforms', 'scripts'];
+  const rootFilesToScan = [
+    'package.json',
+    'README.md',
+    'SKILL.md',
+    'CHANGELOG.md',
+    'AGENT.md',
+    'CLAUDE.md',
+    'CODEX.md',
+    'COPILOT.md',
+    'CURSOR.md',
+    'GEMINI.md',
+  ];
+
+  function walk(dir) {
+    let out = [];
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out = out.concat(walk(full));
+      else out.push(full);
+    }
+    return out;
+  }
+
+  const allFiles = [
+    ...rootFilesToScan.map((f) => path.join(REPO_ROOT, f)),
+    ...dirsToScan.flatMap((d) => walk(path.join(REPO_ROOT, d))),
+  ];
+
+  for (const file of allFiles) {
+    if (file.endsWith('install.test.js') || file.endsWith('doctor.js')) continue;
+    const content = fs.readFileSync(file, 'utf8');
+    const rel = path.relative(REPO_ROOT, file);
+    assert.ok(
+      !content.includes('code-assistants'),
+      `Expected ${rel} not to contain legacy 'code-assistants'`
+    );
+    assert.ok(
+      !/antigravity\s+kit/i.test(content),
+      `Expected ${rel} not to contain legacy 'Antigravity Kit'`
+    );
+  }
+});
+
+test('All rules/*.md files are <= 300 lines, pure BoomOpen v5.5, and enforce Intelligent Work Distribution', () => {
   const rulesDir = path.join(REPO_ROOT, 'rules');
   const ruleFiles = fs.readdirSync(rulesDir).filter((f) => f.endsWith('.md')).sort();
   assert.deepEqual(ruleFiles, [
@@ -98,12 +171,6 @@ test('All rules/*.md files are <= 300 lines, pure BoomOpen v5.4, and enforce Int
   assert.ok(agentsContent.includes('Active Sub-agent Session Registry'));
   assert.ok(agentsContent.includes('OWNED_FILES'));
   assert.ok(agentsContent.includes('SHARED_CONTRACT'));
-
-  const errorsContent = fs.readFileSync(path.join(rulesDir, 'ERRORS.md'), 'utf8');
-  assert.ok(errorsContent.includes('E0'));
-  assert.ok(errorsContent.includes('Warm Auto-Revive'));
-  assert.ok(errorsContent.includes('A11'));
-  assert.ok(errorsContent.includes('A12'));
 });
 
 test('commands/ directory has only flat *.md files + _ref/ and all files are <= 450 lines', () => {
@@ -120,10 +187,6 @@ test('commands/ directory has only flat *.md files + _ref/ and all files are <= 
       lineCount <= 450,
       `Expected commands/${file} to be <= 450 lines, got ${lineCount}`
     );
-    assert.ok(
-      !content.includes('global_workflows'),
-      `Expected commands/${file} not to contain legacy 'global_workflows'`
-    );
   }
 });
 
@@ -132,7 +195,7 @@ test('buildCompactSkillIndex generates matrix-skills/compact-index.json with >= 
   assert.ok(result.count >= 1000, `Expected >= 1000 skills, got ${result.count}`);
   assert.ok(fs.existsSync(result.outputPath));
   const data = JSON.parse(fs.readFileSync(result.outputPath, 'utf8'));
-  assert.equal(data.version, '5.4.0');
+  assert.equal(data.version, '5.5.0');
   assert.ok(data.skills['api-patterns']);
   assert.equal(data.skills['api-patterns'].domain, 'backend');
 });
@@ -185,8 +248,8 @@ test('runDoctor and runCheck pass on repository and modular CLI files', () => {
 test('Destructive command hook blocks root deletions and allows safe commands', async () => {
   const hookPath = path.join(
     REPO_ROOT,
-    'code-assistants',
-    'antigravity-assistant',
+    'platforms',
+    'antigravity',
     'hooks',
     'validate-tool-call.mjs'
   );

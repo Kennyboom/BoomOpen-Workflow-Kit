@@ -4,7 +4,7 @@ role: executor
 team: docs-team
 domain: documentation
 description: "Direct documentation implementer with self-defense capability — researches, writes, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: researcher
 authority: implementation

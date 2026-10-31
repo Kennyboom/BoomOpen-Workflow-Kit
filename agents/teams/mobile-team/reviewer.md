@@ -4,7 +4,7 @@ role: reviewer
 team: mobile-team
 description: "Devil's advocate quality gatekeeper — UX + platform compliance + performance review lens"
 domain: mobile-development
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

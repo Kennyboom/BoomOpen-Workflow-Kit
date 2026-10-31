@@ -211,7 +211,7 @@ The `.gitignore` excludes:
 ```
 
 - Package is scoped (`@namch/boomopen-workflow-kit`) and published with public access
-- The `files` field in `package.json` explicitly lists included paths: `cli/`, `agents/`, `commands/`, `rules/`, `matrix-skills/`, `skills/`, `documents/`, `code-assistants/`, `LICENSE`, `README.md`, `CHANGELOG.md`
+- The `files` field in `package.json` explicitly lists included paths: `cli/`, `agents/`, `commands/`, `rules/`, `matrix-skills/`, `skills/`, `documents/`, `platforms/`, `LICENSE`, `README.md`, `CHANGELOG.md`
 - The `web/` directory is excluded from the npm package
 
 ---

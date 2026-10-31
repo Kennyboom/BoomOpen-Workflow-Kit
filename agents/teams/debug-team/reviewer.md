@@ -2,7 +2,7 @@
 name: debug-team-reviewer
 role: reviewer
 team: debug-team
-version: "5.4"
+version: "5.5"
 category: team-role
 domain: debugging
 authority: approval

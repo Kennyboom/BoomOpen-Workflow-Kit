@@ -4,7 +4,7 @@ role: tech-lead
 team: project-team
 domain: project-management
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for project team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: project-manager
 authority: final

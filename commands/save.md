@@ -1,6 +1,6 @@
 ---
 description: "💾 Save Session & Project Memory — Persist context to Brain Artifacts (<appDataDir>\\brain\\<conversation-id>\\) and/or .brain/ for cross-session continuity."
-version: "5.4"
+version: "5.5"
 category: session
 execution-mode: execute
 ---

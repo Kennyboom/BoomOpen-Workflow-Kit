@@ -1,6 +1,6 @@
 ---
 description: "⚡⚡⚡ Deep investigation using the 5-Whys (SPIE v3.0) causal framework and Brain Artifact reporting"
-version: "5.4"
+version: "5.5"
 ---
 
 # /debug:hard — Deep Investigation (5-Whys SPIE v3.0)

@@ -132,7 +132,7 @@ function runCheck(targetDir = process.cwd(), options = {}) {
 
   const passed = violations.length === 0;
   if (!options.silent) {
-    console.log('\n📏 BoomOpen Pragmatic 2-Tier Code Check (v5.4.0)\n' + '─'.repeat(60));
+    console.log('\n📏 BoomOpen Pragmatic 2-Tier Code Check (v5.5.0)\n' + '─'.repeat(60));
     console.log(`  📁 Target:   ${resolvedDir}`);
     console.log(`  📄 Scanned:  ${files.length} source files`);
     console.log(`  ❌ Errors:   ${violations.length} (Hard >${HARD_FILE_LINES} lines or explicit 'any')`);

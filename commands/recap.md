@@ -1,6 +1,6 @@
 ---
 description: "🔄 Restore Session Context — Quickly recover project state from Brain Artifacts (<appDataDir>\\brain\\<conversation-id>\\) or .brain/."
-version: "5.4"
+version: "5.5"
 category: session
 execution-mode: execute
 ---

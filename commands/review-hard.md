@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Review — Deep parallel multi-dimension code & architecture review
-version: "5.4"
+version: "5.5"
 category: validation
 execution-mode: execute
 ---

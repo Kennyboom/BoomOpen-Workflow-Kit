@@ -4,7 +4,7 @@ role: executor
 team: frontend-team
 domain: frontend
 description: "Direct frontend implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: frontend-engineer
 authority: implementation

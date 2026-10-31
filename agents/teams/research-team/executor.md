@@ -4,7 +4,7 @@ role: executor
 team: research-team
 domain: research/discovery/analysis
 description: "Direct research investigator with self-defense capability — discovers, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: scouter
 authority: investigation

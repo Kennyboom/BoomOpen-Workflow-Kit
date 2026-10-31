@@ -1,9 +1,9 @@
 ---
 name: boomopen-workflow-kit
-description: BoomOpen Workflow Kit (v5.4 Antigravity 2.0 Smart-Hybrid Edition) — Pragmatic 2-Tier Coding Standards, 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and compact skill index.
+description: BoomOpen Workflow Kit (v5.5 Antigravity 2.0 Smart-Hybrid Edition) — Pragmatic 2-Tier Coding Standards, 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and compact skill index.
 ---
 
-# ⚡ BoomOpen Workflow Kit (v5.4 — Antigravity 2.0 Smart-Hybrid Edition)
+# ⚡ BoomOpen Workflow Kit (v5.5 — Antigravity 2.0 Smart-Hybrid Edition)
 
 > **PURPOSE**: Root skill entry point for the BoomOpen Workflow Kit Smart-Hybrid multi-agent orchestration framework.
 

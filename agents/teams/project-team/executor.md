@@ -4,7 +4,7 @@ role: executor
 team: project-team
 domain: project-management
 description: "Direct project analysis implementer with self-defense capability — analyzes, plans, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: business-analyst
 authority: implementation

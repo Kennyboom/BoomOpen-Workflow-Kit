@@ -1,6 +1,6 @@
 ---
 description: "📚 Docs - Full Documentation Suite (executes ALL sub-commands sequentially)"
-version: "5.4"
+version: "5.5"
 category: documentation
 execution-mode: execute
 ---

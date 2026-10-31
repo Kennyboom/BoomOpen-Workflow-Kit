@@ -4,7 +4,7 @@ role: executor
 team: planning-team
 domain: planning
 description: "Research-driven plan drafter with self-defense capability — investigates, drafts, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: researcher
 authority: implementation

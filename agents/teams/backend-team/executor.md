@@ -4,7 +4,7 @@ role: executor
 team: backend-team
 domain: backend
 description: "Direct backend implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: backend-engineer
 authority: implementation

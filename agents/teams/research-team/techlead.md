@@ -4,7 +4,7 @@ role: tech-lead
 team: research-team
 domain: research/discovery/analysis
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for research team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: researcher
 authority: final

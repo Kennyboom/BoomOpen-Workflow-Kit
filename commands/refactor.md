@@ -5,7 +5,7 @@ description: >-
   refactoring with before/after metrics.
 category: code
 execution-mode: sequential
-version: "5.4"
+version: "5.5"
 ---
 
 # /refactor — The Code Surgeon v3.0

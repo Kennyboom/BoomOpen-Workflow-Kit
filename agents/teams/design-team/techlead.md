@@ -4,7 +4,7 @@ role: tech-lead
 team: design-team
 domain: design
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for design team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: designer
 authority: final

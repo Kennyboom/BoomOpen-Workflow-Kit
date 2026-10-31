@@ -4,7 +4,7 @@ role: executor
 team: design-team
 domain: design
 description: "Direct design implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: frontend-engineer
 authority: implementation

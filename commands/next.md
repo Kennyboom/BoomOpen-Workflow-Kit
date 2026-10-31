@@ -1,6 +1,6 @@
 ---
 description: Smart navigator — detect current state and recommend the next workflow. Use when stuck or unsure what to do next.
-version: "5.4"
+version: "5.5"
 ---
 
 # /next — Smart Navigator v1.0

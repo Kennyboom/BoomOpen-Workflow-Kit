@@ -4,7 +4,7 @@ role: tech-lead
 team: backend-team
 domain: backend
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for backend team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tech-lead
 authority: final

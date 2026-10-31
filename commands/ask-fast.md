@@ -1,6 +1,6 @@
 ---
 description: ⚡ Quick Answer — Direct response from codebase context
-version: "5.4"
+version: "5.5"
 category: knowledge
 execution-mode: execute
 ---
@@ -46,7 +46,7 @@ tiered_execution:
 
 ## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct Plan-to-Executor Dispatch** (`Model: "inherit"`), and **Stateful Warm Sub-agent Reuse** (`send_message`) per `rules/PHASES.md` (v5.4).
+Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct Plan-to-Executor Dispatch** (`Model: "inherit"`), and **Stateful Warm Sub-agent Reuse** (`send_message`) per `rules/PHASES.md` (v5.5).
 
 ---
 

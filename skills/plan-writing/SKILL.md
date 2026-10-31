@@ -2,10 +2,10 @@
 name: plan-writing
 description: Structured task planning with clear breakdowns, dependencies, Shared Interface Contracts (SHARED_CONTRACT), file ownership locks (OWNED_FILES), and verification criteria. Use when implementing features, refactoring, or any multi-step work.
 allowed-tools: Read, Glob, Grep, Write
-version: "5.4"
+version: "5.5"
 ---
 
-# 📋 Plan Writing (v5.4 — Contract-First & Clean Git Tree Edition)
+# 📋 Plan Writing (v5.5 — Contract-First & Clean Git Tree Edition)
 
 ## Overview
 This skill provides the structured methodology for decomposing multi-step features, refactors, or fixes into self-contained, verifiable execution plans that isolated sub-agents can execute in parallel without collisions.

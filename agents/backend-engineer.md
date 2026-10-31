@@ -3,7 +3,7 @@ name: backend-engineer
 description: Principal Backend Architect — server-side logic, API design, scalable systems
 profile: "backend:execution"
 handoffs: [tester, database-architect, performance-engineer, devops-engineer, frontend-engineer, security-engineer]
-version: "5.4"
+version: "5.5"
 category: execution
 ---
 

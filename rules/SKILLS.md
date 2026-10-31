@@ -65,7 +65,7 @@ WHEN task_complexity == Complex:
 
 ## 🛠️ DETERMINISTIC CLI VERIFICATION TOOLS (`doctor` & `check`)
 
-BoomOpen Workflow Kit v5.4 includes built-in CLI verification utilities for `tester`, `reviewer`, and Mode A direct execution:
+BoomOpen Workflow Kit v5.5 includes built-in CLI verification utilities for `tester`, `reviewer`, and Mode A direct execution:
 
 ```bash
 node cli/install.js doctor        # Verify installation health, line limits, and zero mojibake

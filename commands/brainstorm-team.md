@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Brainstorm — Golden Triangle adversarial collaboration for maximum quality ideation"
-version: "5.4"
+version: "5.5"
 category: ideation
 execution-mode: execute
 ---

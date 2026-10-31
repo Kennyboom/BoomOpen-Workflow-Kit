@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Research Answer — Parallel codebase + external research with comprehensive synthesis
-version: "5.4"
+version: "5.5"
 category: knowledge
 execution-mode: execute
 ---

@@ -105,7 +105,7 @@ flowchart TD
             SYNC["fs.sync for reliability"]
         end
         
-        ASSETS["Copy platform-specific assets<br/>from code-assistants/{tool}-assistant/"]
+        ASSETS["Copy platform-specific assets<br/>from platforms/{tool}-assistant/"]
         VERIFY["Verification phase<br/>Check all files written"]
         REPORT["Summary report with statistics"]
     end
@@ -129,7 +129,7 @@ flowchart TD
 | Matrix Skills | `matrix-skills/*.yaml` | `~/.{tool}/skills/boomopen-workflow-kit/matrix-skills/` |
 | Skills | `skills/*/SKILL.md` | `~/.{tool}/skills/*/SKILL.md` (at skills root) |
 | Documents | `documents/**` | `~/.{tool}/skills/boomopen-workflow-kit/documents/` |
-| Platform Assets | `code-assistants/{tool}-assistant/` | Platform-specific locations (varies) |
+| Platform Assets | `platforms/{tool}-assistant/` | Platform-specific locations (varies) |
 
 ### Replacement Table (from cli/install.js)
 

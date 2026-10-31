@@ -4,7 +4,7 @@ role: executor
 team: security-team
 domain: security
 description: "Direct security auditor with self-defense capability — scans, exploits, reports, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: backend-engineer
 base-agent-mode: security-audit

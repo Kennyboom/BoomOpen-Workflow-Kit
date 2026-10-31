@@ -64,7 +64,7 @@ Defines exactly what gets included in the npm tarball:
   "matrix-skills/",
   "skills/",
   "documents/",
-  "code-assistants/",
+  "platforms/",
   "LICENSE",
   "README.md",
   "CHANGELOG.md"
@@ -73,7 +73,7 @@ Defines exactly what gets included in the npm tarball:
 
 **Notably excluded** from npm package:
 - `web/` — Marketing site (independent deployment)
-- `AGENT.md`, `CLAUDE.md`, `COPILOT.md`, `CURSOR.md`, `CODEX.md`, `GEMINI.md` — Root platform files (exist in repo but only the `code-assistants/` versions are published)
+- `AGENT.md`, `CLAUDE.md`, `COPILOT.md`, `CURSOR.md`, `CODEX.md`, `GEMINI.md` — Root platform files (exist in repo but only the `platforms/` versions are published)
 - `AGENT-TEMPLATE.md` — Developer reference only
 - `.releaserc.json`, `.husky/`, `.gitignore` — Development tooling
 
@@ -338,19 +338,19 @@ SPA fallback — all routes rewrite to `index.html` for client-side routing.
 
 ### Codex: config.toml
 
-Located at `code-assistants/codex-assistant/config.toml`. TOML-format configuration specific to the OpenAI Codex CLI. Installed to `~/.codex/` during setup.
+Located at `platforms/codex/config.toml`. TOML-format configuration specific to the OpenAI Codex CLI. Installed to `~/.codex/` during setup.
 
 ### Cursor: .cursorrules
 
-Located at `code-assistants/cursor-assistant/.cursorrules`. Cursor's native rules format. During installation, this file is transformed and installed as `CURSOR.md` in `~/.cursor/`.
+Located at `platforms/cursor/.cursorrules`. Cursor's native rules format. During installation, this file is transformed and installed as `CURSOR.md` in `~/.cursor/`.
 
 ### Cursor: rules/ directory
 
-Located at `code-assistants/cursor-assistant/rules/`. Contains MDC (Markdown Cursor) files installed to `~/.cursor/rules/` for Cursor's native rule system.
+Located at `platforms/cursor/rules/`. Contains MDC (Markdown Cursor) files installed to `~/.cursor/rules/` for Cursor's native rule system.
 
 ### Copilot: boomopen-workflow-kit.agent.md
 
-Located at `code-assistants/copilot-assistant/boomopen-workflow-kit.agent.md`. Installed to the VS Code prompts folder:
+Located at `platforms/copilot/boomopen-workflow-kit.agent.md`. Installed to the VS Code prompts folder:
 - **macOS**: `~/Library/Application Support/Code/User/prompts/`
 - **Windows**: `%APPDATA%/Code/User/prompts/`
 - **Linux**: `~/.config/Code/User/prompts/`
@@ -425,7 +425,7 @@ package.json                    ← Root package config
 │   ├── rules/ERRORS.md
 │   └── rules/REFERENCE.md
 │
-├── code-assistants/*/          ← Platform-specific configs
+├── platforms/*/          ← Platform-specific configs
 │   ├── cursor: .cursorrules, rules/
 │   ├── copilot: boomopen-workflow-kit.agent.md
 │   ├── antigravity: GEMINI.md, AntigravityGlobal.agent.md
@@ -459,9 +459,9 @@ package.json                    ← Root package config
 | `web/tsconfig.app.json` | TypeScript compiler options: target, module, jsx, moduleResolution |
 | `web/eslint.config.js` | ESLint v9 flat config: plugins, extends, file patterns, globals |
 | `web/vercel.json` | SPA rewrite rules |
-| `code-assistants/cursor-assistant/` listing | Cursor-specific assets |
-| `code-assistants/copilot-assistant/` listing | Copilot-specific assets |
-| `code-assistants/antigravity-assistant/` listing | Antigravity-specific assets |
-| `code-assistants/claude-assistant/` listing | Claude-specific assets |
-| `code-assistants/codex-assistant/` listing | Codex-specific assets with TOML and subdirectories |
+| `platforms/cursor/` listing | Cursor-specific assets |
+| `platforms/copilot/` listing | Copilot-specific assets |
+| `platforms/antigravity/` listing | Antigravity-specific assets |
+| `platforms/claude/` listing | Claude-specific assets |
+| `platforms/codex/` listing | Codex-specific assets with TOML and subdirectories |
 | `rules/CORE.md` | Platform resolution table for {TOOL} placeholder mapping |

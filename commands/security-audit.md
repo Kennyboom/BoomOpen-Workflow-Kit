@@ -4,7 +4,7 @@ description: >-
   Auth/Authorization audit, Data Protection, API Security,
   Frontend/Infrastructure hardening, Supply Chain, and Zero Trust.
   Creates Security Report with severity scoring.
-version: "5.4"
+version: "5.5"
 ---
 
 # /security-audit — The Fortress Builder v3.0

@@ -3,7 +3,7 @@ name: reviewer
 description: Principal Code Reviewer — quality assurance and plan compliance verification
 profile: "quality:review"
 handoffs: [tech-lead, backend-engineer, frontend-engineer, security-engineer, tester]
-version: "5.4"
+version: "5.5"
 category: validation
 ---
 

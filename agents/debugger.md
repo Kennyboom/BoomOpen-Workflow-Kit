@@ -4,7 +4,7 @@ description: Debugging specialist for root cause analysis, bug reproduction, and
 role: Bug Investigation & Root Cause Analysis
 tools: Read, Grep, Glob, Bash
 model: inherit
-version: "5.4"
+version: "5.5"
 ---
 
 # Debugger Agent

@@ -1,6 +1,6 @@
 ---
 description: "⚡ Quick debug — Fast root cause trace and actionable fix recommendation"
-version: "5.4"
+version: "5.5"
 ---
 
 # /debug:fast — Quick Debug

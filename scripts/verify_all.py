@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Full Verification Suite - Antigravity Kit
+Full Verification Suite - BoomOpen Workflow Kit
 ==========================================
 
 Runs COMPLETE validation including all checks + performance + E2E.
@@ -63,8 +63,8 @@ VERIFICATION_SUITE = [
     {
         "category": "Security",
         "checks": [
-            ("Security Scan", ".agent/skills/vulnerability-scanner/scripts/security_scan.py", True),
-            ("Dependency Analysis", ".agent/skills/vulnerability-scanner/scripts/dependency_analyzer.py", False),
+            ("Security Scan", "skills/vulnerability-scanner/scripts/security_scan.py", True),
+            ("Dependency Analysis", "skills/vulnerability-scanner/scripts/dependency_analyzer.py", False),
         ]
     },
     
@@ -72,8 +72,8 @@ VERIFICATION_SUITE = [
     {
         "category": "Code Quality",
         "checks": [
-            ("Lint Check", ".agent/skills/lint-and-validate/scripts/lint_runner.py", True),
-            ("Type Coverage", ".agent/skills/lint-and-validate/scripts/type_coverage.py", False),
+            ("API Validation", "skills/api-patterns/scripts/api_validator.py", False),
+            ("Type Coverage", "skills/lint-and-validate/scripts/type_coverage.py", False),
         ]
     },
     
@@ -81,7 +81,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Data Layer",
         "checks": [
-            ("Schema Validation", ".agent/skills/database-design/scripts/schema_validator.py", False),
+            ("Schema Validation", "skills/database-design/scripts/schema_validator.py", False),
         ]
     },
     
@@ -89,7 +89,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Testing",
         "checks": [
-            ("Test Suite", ".agent/skills/testing-patterns/scripts/test_runner.py", False),
+            ("Test Suite", "skills/testing-patterns/scripts/test_runner.py", False),
         ]
     },
     
@@ -97,8 +97,8 @@ VERIFICATION_SUITE = [
     {
         "category": "UX & Accessibility",
         "checks": [
-            ("UX Audit", ".agent/skills/frontend-design/scripts/ux_audit.py", False),
-            ("Accessibility Check", ".agent/skills/frontend-design/scripts/accessibility_checker.py", False),
+            ("UX Audit", "skills/frontend-design/scripts/ux_audit.py", False),
+            ("Accessibility Check", "skills/frontend-design/scripts/accessibility_checker.py", False),
         ]
     },
     
@@ -106,8 +106,8 @@ VERIFICATION_SUITE = [
     {
         "category": "SEO & Content",
         "checks": [
-            ("SEO Check", ".agent/skills/seo-fundamentals/scripts/seo_checker.py", False),
-            ("GEO Check", ".agent/skills/geo-fundamentals/scripts/geo_checker.py", False),
+            ("SEO Check", "skills/seo-fundamentals/scripts/seo_checker.py", False),
+            ("GEO Check", "skills/geo-fundamentals/scripts/geo_checker.py", False),
         ]
     },
     
@@ -116,8 +116,8 @@ VERIFICATION_SUITE = [
         "category": "Performance",
         "requires_url": True,
         "checks": [
-            ("Lighthouse Audit", ".agent/skills/performance-profiling/scripts/lighthouse_audit.py", True),
-            ("Bundle Analysis", ".agent/skills/performance-profiling/scripts/bundle_analyzer.py", False),
+            ("Lighthouse Audit", "skills/performance-profiling/scripts/lighthouse_audit.py", True),
+            ("Bundle Analysis", "skills/performance-profiling/scripts/bundle_analyzer.py", False),
         ]
     },
     
@@ -126,7 +126,7 @@ VERIFICATION_SUITE = [
         "category": "E2E Testing",
         "requires_url": True,
         "checks": [
-            ("Playwright E2E", ".agent/skills/webapp-testing/scripts/playwright_runner.py", False),
+            ("Playwright E2E", "skills/webapp-testing/scripts/playwright_runner.py", False),
         ]
     },
     
@@ -134,7 +134,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Mobile",
         "checks": [
-            ("Mobile Audit", ".agent/skills/mobile-design/scripts/mobile_audit.py", False),
+            ("Mobile Audit", "skills/mobile-design/scripts/mobile_audit.py", False),
         ]
     },
     
@@ -142,7 +142,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Internationalization",
         "checks": [
-            ("i18n Check", ".agent/skills/i18n-localization/scripts/i18n_checker.py", False),
+            ("i18n Check", "skills/i18n-localization/scripts/i18n_checker.py", False),
         ]
     },
 ]
@@ -262,7 +262,7 @@ def print_final_report(results: List[dict], start_time: datetime):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run complete Antigravity Kit verification suite",
+        description="Run complete BoomOpen Workflow Kit verification suite",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -283,7 +283,7 @@ Examples:
         print_error(f"Project path does not exist: {project_path}")
         sys.exit(1)
     
-    print_header("🚀 ANTIGRAVITY KIT - FULL VERIFICATION SUITE")
+    print_header("🚀 BOOMOPEN WORKFLOW KIT - FULL VERIFICATION SUITE")
     print(f"Project: {project_path}")
     print(f"URL: {args.url}")
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")

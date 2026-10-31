@@ -4,7 +4,7 @@ role: reviewer
 team: game-team
 description: "Devil's advocate quality gatekeeper — game performance + correctness + architecture review lens"
 domain: game-development
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: reviewer
 authority: approval

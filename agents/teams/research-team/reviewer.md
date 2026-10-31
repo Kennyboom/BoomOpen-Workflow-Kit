@@ -4,7 +4,7 @@ role: reviewer
 team: research-team
 domain: research/discovery/analysis
 description: "Critical evaluator of research quality — challenges assumptions, exposes gaps, demands rigor"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: brainstormer
 authority: approval

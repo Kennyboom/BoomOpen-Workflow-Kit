@@ -4,7 +4,7 @@ role: executor
 team: game-team
 domain: game-development
 description: "Direct game development implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: game-engineer
 authority: implementation

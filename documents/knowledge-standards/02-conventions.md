@@ -16,12 +16,12 @@ boomopen-workflow-kit/
 ├── agents/                  # 21 specialist agent definitions
 │   └── teams/               # 17 team configurations (3 roles each)
 ├── cli/                     # CLI installer (CommonJS JavaScript)
-├── code-assistants/         # Platform-specific assistant configs
-│   ├── antigravity-assistant/
-│   ├── claude-assistant/
-│   ├── codex-assistant/
-│   ├── copilot-assistant/
-│   └── cursor-assistant/
+├── platforms/         # Platform-specific assistant configs
+│   ├── platforms/antigravity/
+│   ├── platforms/claude/
+│   ├── platforms/codex/
+│   ├── platforms/copilot/
+│   └── platforms/cursor/
 ├── commands/                # 14 command routers + variant subdirs
 │   ├── cook.md              # Router file
 │   └── cook/                # Variant subdirectory
@@ -52,7 +52,7 @@ boomopen-workflow-kit/
 
 | Pattern | Where | Rule |
 |---------|-------|------|
-| kebab-case directories | `agents/teams/`, `commands/*/`, `skills/*/`, `documents/*/`, `code-assistants/*/` | All multi-word directory names use hyphens |
+| kebab-case directories | `agents/teams/`, `commands/*/`, `skills/*/`, `documents/*/`, `platforms/*/` | All multi-word directory names use hyphens |
 | kebab-case `.md` files | `agents/`, `commands/` | Agent and command files match their directory convention |
 | UPPER_CASE `.md` files | Root level, `rules/` | Reserved for platform entries (`CLAUDE.md`) and governance rules (`CORE.md`) |
 | Numbered prefix files | `documents/*/` | All knowledge base files begin with `NN-` (00, 01, 02...) |

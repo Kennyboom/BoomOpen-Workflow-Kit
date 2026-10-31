@@ -4,7 +4,7 @@ role: reviewer
 team: qa-team
 domain: quality-assurance
 description: "Combined security + performance review lens for test suites — validates coverage depth, test quality, and edge case thoroughness"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent:
   - security-engineer

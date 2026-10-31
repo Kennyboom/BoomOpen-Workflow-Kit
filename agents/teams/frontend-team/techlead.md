@@ -4,7 +4,7 @@ role: tech-lead
 team: frontend-team
 domain: frontend
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for frontend team phases"
-version: "5.4"
+version: "5.5"
 category: team-role
 base-agent: tech-lead
 authority: final
