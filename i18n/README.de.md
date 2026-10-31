@@ -1,0 +1,160 @@
+<div align="center">
+  <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
+  <p><strong>Plattformübergreifendes Smart-Hybrid KI-Workforce-Betriebssystem & Multi-Agenten-Orchestrierungs-Framework</strong></p>
+
+  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-7c3aed.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases)
+  [![Platforms: 5 Unified](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg)](#)
+  [![Agents: 21 Specialists + 17 Teams](https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg)](#)
+  [![Skills: 48 Core + 1,430+ Library](https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg)](#)
+  [![Node.js: >=18.0.0](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg)](https://nodejs.org/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+
+  <p>
+    [🇬🇧 English](../README.md) • [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 简体中文](./README.zh-CN.md) • [🇹🇼 繁體中文](./README.zh-TW.md) • [🇯🇵 日本語](./README.ja.md) • [🇰🇷 한국어](./README.ko.md) • [🇪🇸 Español](./README.es.md) • [🇫🇷 Français](./README.fr.md) • **🇩🇪 Deutsch**<br/>
+    [🇧🇷 Português](./README.pt-BR.md) • [🇷🇺 Русский](./README.ru.md) • [🇮🇳 हिन्दी](./README.hi.md) • [🇸🇦 العربية](./README.ar.md) • [🇮🇩 Bahasa Indonesia](./README.id.md) • [🇹🇭 ไทย](./README.th.md) • [🇹🇷 Türkçe](./README.tr.md) • [🇮🇹 Italiano](./README.it.md)
+  </p>
+</div>
+
+---
+
+## 🌟 Was ist das BoomOpen Workflow Kit v5.5?
+
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** ist ein quelloffenes Multi-Agenten-Betriebssystem, das einen einzelnen KI-Coding-Assistenten in eine koordinierte Engineering-Organisation aus **21 Spezialisten-Agenten**, **17 kontradiktorischen Golden-Triangle-Teams**, **48 Kernkompetenzen (Core Skills)** und **über 1.430 Nischen-Skills (`skills_library`)** verwandelt.
+
+Im Gegensatz zu starren Einzel-Prompts oder schwerfälligen Agenten-Wrappern, die bei jeder einfachen Frage Kaltstart-Latenz verursachen, führt BoomOpen v5.5 ein **2-Modus Smart Complexity Threshold Gate** ein:
+- **⚡ Modus A — Direkte Ausführung (0s Kaltstart)**: Einfache Fragen & Antworten (Q&A), Code-Erklärungen, Bugfixes in einer einzelnen Domäne oder klare Änderungen an **≤ 3 Dateien** (ohne `/cmd`-Befehl) werden vom primären Agenten **direkt** ausgeführt, getestet und verifiziert — unter Einhaltung der **Pragmatischen 2-Stufen-Coding-Standards** und **Persistenter Tests & Fehlerbehebung**.
+- **🎻 Modus B — Strikte Multi-Agenten-Orchestrierung**: Komplexe Features (**> 3 Dateien** oder **≥ 2 Domänen**) oder explizite `/cmd`-Workflows aktivieren den strikten Orchestrator-Modus mit **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Dateisperren (`SHARED_CONTRACT` + `OWNED_FILES`)** und **Warm Sub-agent Reuse (`send_message`)**.
+
+---
+
+## 🏗️ Smart-Hybrid-Architektur (v5.5)
+
+```mermaid
+flowchart TD
+    User["👤 Benutzeranfrage / Slash-Befehl"] --> Gate{"🚦 2-Modus Smart Complexity Gate"}
+    Gate -->|"≤ 3 Dateien, 1 Domäne, kein /cmd"| ModeA["⚡ Modus A: Direkte Ausführung (Tier 0)<br/>0s Kaltstart + Pragmatische 2-Stufen-Standards"]
+    Gate -->|"> 3 Dateien, ≥ 2 Domänen, oder /cmd"| ModeB["🎻 Modus B: Multi-Agenten-Orchestrator (Tier 1)<br/>Model: inherit (Standard: Pro High)"]
+
+    ModeB --> FanOut["🔀 Phase 1: DAG Parallel Fan-Out<br/>(researcher + scouter | debugger + researcher)"]
+    FanOut --> Plan["📋 Phase 2: Contract-First-Planung (planner)<br/>Sperrt SHARED_CONTRACT + OWNED_FILES"]
+    Plan --> Dispatch{"🎯 Ausführungsvariante"}
+
+    Dispatch -->|":fast / :hard"| Direct["⚡ Direkter Plan-zu-Engineer-Dispatch<br/>(backend-engineer + frontend-engineer parallel)"]
+    Dispatch -->|":team"| Triangle["🔺 Golden Triangle Prüfungs-Team<br/>(TechLead ⇄ Executor ⇄ Reviewer über MAILBOX)"]
+
+    Direct --> Verify["🧪 Phase 4: Verifizierung & Warm-Session-Reuse<br/>tester + reviewer (send_message 0s-Schleife)"]
+    Triangle --> Verify
+```
+
+---
+
+## 🧠 Die 6 Grundpfeiler von v5.5
+
+1. **🌐 Einheitliche Parität auf 5 Plattformen (`platforms/*`)**:
+   - Erstklassige native Installation für **Google Antigravity 2.0 (Gemini)**, **Claude Code**, **OpenAI Codex**, **Cursor** und **GitHub Copilot** aus einer einzigen vereinheitlichten Architektur.
+2. **📏 Pragmatische 2-Stufen-Coding-Standards (Anti-Fragmentierung)**:
+   - **Stufe 1 — Strikte Qualitäts- & Sicherheitsregeln (Null-Toleranz)**: Single Responsibility, **KEIN explizites `any`**, **KEINE vergessenen Debug-`console.log`** im Produktionscode, zwingendes `try/catch` + typisierte Fehlerbehandlung an Async-/API-Grenzen, `SCREAMING_SNAKE_CASE`-Konstanten, DRY (`≥ 3`) und saubere Imports.
+   - **Stufe 2 — Flexible Strukturrichtlinien (Kohäsion vor Zeilen-Zerstückelung)**: Kohäsive Dateien zielen auf `~200–350 Zeilen` mit einer flexiblen Obergrenze von `~400–450 Zeilen` (Aufteilung erst ab `>500 Zeilen` oder mehreren Domänen; Tests, Typen, CLI und Docs sind ausgenommen). Logikfunktionen `~20–40 Zeilen` (`~40–80 Zeilen` für UI/Handler).
+3. **🎯 Direkter Plan-zu-Executor-Dispatch & Warm Sub-agent Reuse (`send_message`)**:
+   - Sobald `PLAN-{feature}.md` vorliegt, verteilt der Orchestrator Aufgaben **direkt** an die Domänen-Ingenieure (`backend-engineer`, `frontend-engineer`, `database-architect` usw.) ohne unnötigen `tech-lead`-Zwischenschritt.
+   - Aktive Sub-Agenten werden in einer **Active Session Registry (`Role → conversationId`)** gespeichert und per `send_message` mit **0s Kaltstart** und **100% erhaltenem Dateikontext** wiederverwendet.
+4. **🤝 Contract-First Paralleler Dispatch (`SHARED_CONTRACT` + `OWNED_FILES`)**:
+   - Domänenübergreifende Pläne sperren API-Endpunkte, DTO-Schemata und exklusive Dateischreibrechte (`OWNED_FILES` vs. `READ_ONLY_FILES`), bevor Ingenieure parallel starten — Schreibkonflikte werden vollständig verhindert.
+5. **🔍 5-Whys (SPIE v3.0) Ursachen-Debugging & 100% Sauberer Git-Baum**:
+   - `debugger` untersucht jeden Fehler anhand von 3 priorisierten Hypothesen und einer **5-Whys-Kausalkette** (`Why 1 Symptom` → `Why 5 Systemische Grundursache`). Transiente Artefakte (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) werden zuerst unter `<appDataDir>\brain\<conversation-id>\` abgelegt, sodass der Git-Arbeitsbaum 100% sauber bleibt.
+6. **🩺 Integrierte CLI-Diagnose (`doctor` & `check`) & O(1) Skill-Index**:
+   - `npm run doctor` prüft alle 5 Plattform-Bundles, 21 Agenten, 51 Team-Dateien, 72 Befehle und `matrix-skills/compact-index.json` (`1.430+` indizierte Skills). `npm run check <dir>` prüft automatisch die Einhaltung der Stufe-1- und Stufe-2-Standards.
+
+---
+
+## 💻 Unterstützte KI-Plattformen
+
+| Plattform | Unterstützungsgrad | Globaler Einstiegspunkt | Framework-Installationspfad |
+|----------|:-------------:|-------------------|------------------------|
+| **Antigravity (Gemini)** | ✅ Nativ v5.5 | `~/.gemini/GEMINI.md` | `~/.gemini/config/skills/boomopen-workflow-kit/` |
+| **Claude Code** | ✅ Nativ v5.5 | `~/.claude/CLAUDE.md` | `~/.claude/skills/boomopen-workflow-kit/` |
+| **OpenAI Codex** | ✅ Nativ v5.5 | `~/.codex/CODEX.md` & `AGENTS.md` | `~/.codex/skills/boomopen-workflow-kit/` |
+| **Cursor** | ✅ Nativ v5.5 | `~/.cursor/rules/boomopen-workflow-kit.mdc` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| **GitHub Copilot** | ✅ Nativ v5.5 | `~/.copilot/COPILOT.md` | `~/.copilot/skills/boomopen-workflow-kit/` |
+
+---
+
+## 🚀 Schnellstart & Installation
+
+```bash
+# 1. Repository klonen
+git clone https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git
+cd BoomOpen-Workflow-Kit
+
+# 2. Für Ihren KI-Coding-Assistenten installieren (einzeln wählen oder --all)
+npm run install:antigravity   # Google Antigravity 2.0 (Gemini)
+npm run install:claude        # Anthropic Claude Code
+npm run install:codex         # OpenAI Codex CLI
+npm run install:cursor        # Cursor AI Editor
+npm run install:copilot       # GitHub Copilot (VS Code)
+npm run install:all           # All 5 platforms
+
+# 3. Installationsstatus, 2-Stufen-Code-Standards & Test-Suite überprüfen
+npm run doctor
+npm run check ./cli
+npm test
+```
+
+---
+
+## 🎯 Slash-Befehlsreferenz
+
+| Befehl | Varianten | Hauptzweck |
+|---------|----------|-----------------|
+| **`/cook`** | `:fast`, `:hard`, `:team` | End-to-End-Feature-Entwicklung (Research/Scout → Plan → Paralleler Code → Test → Review) |
+| **`/code`** | `:fast`, `:hard`, `:team` | Implementierung direkt anhand eines bestehenden `PLAN-{feature}.md` ausführen |
+| **`/plan`** | `:fast`, `:hard`, `:team` | Implementierungs-Blueprints mit `SHARED_CONTRACT`, `OWNED_FILES` & Given/When/Then-Kriterien erstellen |
+| **`/fix`** | `:fast`, `:hard`, `:team` | Ursachenbasierte Fehlerbehebung mit obligatorischer Regressionstest-Verifizierung |
+| **`/debug`** | `:fast`, `:hard`, `:team` | Ursachenanalyse mit 3 Hypothesen + **5-Whys (SPIE v3.0)**-Kausalkette (`DEBUG-{issue}.md`) |
+| **`/test`** | `:fast`, `:hard`, `:team` | DAG Parallel Fan-Out Test-Ausführung + Suche nach ungetesteten Grenzfällen (`tester` + `scouter`) |
+| **`/review`** | `:fast`, `:hard`, `:team` | Paralleles 4-Wege-Audit (Architektur, Code-Qualität, OWASP-Sicherheit, Performance) |
+| **`/design`** | `:fast`, `:hard`, `:team` | Systemarchitektur, Datenbankschema und UI/UX-Spezifikation (`DESIGN.md`) |
+| **`/docs`** | `:core`, `:business`, `:audit` | Strukturierte 2-stufige Architektur- & Business-Dokumentation generieren oder synchronisieren (`./documents/`) |
+| **`/deploy`** | `:check`, `:preview`, `:production`, `:rollback` | Pre-Deployment-Gates, Preview-Umgebungen, Produktions-Rollout & sicherer Rollback |
+| **`/brainstorm`** | `:fast`, `:hard`, `:team` | Sokratische Anforderungsanalyse, Trade-off-Bewertung & Ideenfindung |
+| **`/report`** | `:fast`, `:hard`, `:team` | Technische & Management-Syntheseberichte mit Metriken und Diagrammen |
+| **`/orchestrate`** | — | Benutzerdefinierte Multi-Agenten-Pipeline-Orchestrierung über mehrere Domänen hinweg |
+| **`/save` / `/recap`** | — | Sitzungsstatus (`SESSION-HANDOVER.md`) sichern und gesamten Kontext in `< 5s` wiederherstellen |
+
+---
+
+## 🤖 21 Spezialisten-Agenten & 17 Golden-Triangle-Teams
+
+| Kategorie | Spezialisten-Agenten (`agents/*.md`) | Golden-Triangle-Teams (`agents/teams/*-team/`) |
+|----------|-----------------------------------|------------------------------------------------|
+| **Engineering & Ausführung** | `backend-engineer`, `frontend-engineer`, `mobile-engineer`, `game-engineer`, `database-architect`, `devops-engineer` | `backend-team`, `frontend-team`, `fullstack-team`, `mobile-team`, `game-team`, `database-team`, `devops-team` |
+| **Architektur & Planung** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
+| **Qualität, Sicherheit & Debugging** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
+| **Forschung & Wissen** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📂 Repository-Struktur
+
+```text
+BoomOpen-Workflow-Kit/
+├── agents/                  # 21 Spezialisten-Agenten-Definitionen + 17 Golden-Triangle-Teams (51 Rollendateien)
+├── cli/                     # Installer (install.js), Health Doctor (doctor.js), 2-Stufen-Checker (checker.js) & Tests
+├── commands/                # 72 Slash-Befehl-Workflows (:fast, :hard, :team) + _ref/-Protokolle
+├── documents/               # 2-stufige Architektur-, Domänen-, Quellcode- & Coding-Standards-Dokumentation
+├── i18n/                    # Internationalisierte Dokumentation (16 vollständige README-Übersetzungen)
+├── matrix-skills/           # Domänen-YAML-Skill-Matrizen + vorkompiliertes compact-index.json (1.430+ Skills)
+├── platforms/               # Vereinheitlichte Vorlagen für alle 5 Plattformen (antigravity/, claude/, codex/, copilot/, cursor/)
+├── rules/                   # On-Demand-Regeln für Modus B (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
+├── scripts/                 # Python-Automatisierungs- & Verifizierungsskripte (checklist.py, verify_all.py usw.)
+├── skills/                  # 48 Kernkompetenzen (clean-code, debugger, plan-writing, frontend-design usw.)
+├── skills_library/          # Über 1.430 Nischen-Skills, bei Bedarf über 2-Stufen-Suche geladen
+└── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
+```
+
+---
+
+## 📄 Lizenz & Sicherheit
+
+- **Lizenz**: Veröffentlicht unter der [MIT-Lizenz](../LICENSE). Copyright © 2026 **Kennyboom (BoomOpen)**.
+- **Sicherheitsrichtlinie**: Informationen zu integrierten Sicherheitsmechanismen und zur Meldung von Schwachstellen finden Sie in [SECURITY.md](../SECURITY.md).

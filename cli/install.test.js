@@ -114,6 +114,7 @@ test('Zero files in repository contain legacy code-assistants, Antigravity Kit, 
     'cli',
     'commands',
     'documents',
+    'i18n',
     'platforms',
     'rules',
     'scripts',
@@ -295,3 +296,64 @@ test('Destructive command hook blocks root deletions and allows safe commands', 
   assert.equal(evaluateCommand('rm -rf /').allowed, false);
   assert.equal(evaluateCommand('npm test').allowed, true);
 });
+
+test('All 16 i18n/README.<lang>.md files exist, have full 9-section content, and are linked from root README.md', () => {
+  const expectedLangs = [
+    'vi', 'zh-CN', 'zh-TW', 'ja', 'ko', 'es', 'fr', 'de',
+    'pt-BR', 'ru', 'hi', 'ar', 'id', 'th', 'tr', 'it',
+  ];
+  const expectedCommands = [
+    '/cook', '/code', '/plan', '/fix', '/debug', '/test', '/review',
+    '/design', '/docs', '/deploy', '/brainstorm', '/report', '/orchestrate', '/save',
+  ];
+  const expectedPlatforms = [
+    'Antigravity (Gemini)',
+    'Claude Code',
+    'OpenAI Codex',
+    'Cursor',
+    'GitHub Copilot',
+  ];
+
+  const rootReadme = fs.readFileSync(path.join(REPO_ROOT, 'README.md'), 'utf8');
+
+  for (const lang of expectedLangs) {
+    const relLink = `./i18n/README.${lang}.md`;
+    assert.ok(
+      rootReadme.includes(relLink),
+      `Expected root README.md to link to ${relLink}`
+    );
+
+    const filePath = path.join(REPO_ROOT, 'i18n', `README.${lang}.md`);
+    assert.ok(fs.existsSync(filePath), `Expected i18n/README.${lang}.md to exist`);
+
+    const content = fs.readFileSync(filePath, 'utf8');
+    const lineCount = content.split(/\r?\n/).length;
+    assert.ok(
+      lineCount >= 130 && lineCount <= 450,
+      `Expected i18n/README.${lang}.md to have between 130 and 450 lines, got ${lineCount}`
+    );
+    assert.ok(
+      content.includes('```mermaid') && content.includes('flowchart TD'),
+      `Expected i18n/README.${lang}.md to include Mermaid architecture flowchart`
+    );
+    assert.ok(
+      content.includes('[🇬🇧 English](../README.md)'),
+      `Expected i18n/README.${lang}.md to link back to ../README.md`
+    );
+
+    for (const cmd of expectedCommands) {
+      assert.ok(
+        content.includes(cmd),
+        `Expected i18n/README.${lang}.md to document command ${cmd}`
+      );
+    }
+
+    for (const plat of expectedPlatforms) {
+      assert.ok(
+        content.includes(plat),
+        `Expected i18n/README.${lang}.md to include platform ${plat}`
+      );
+    }
+  }
+});
+

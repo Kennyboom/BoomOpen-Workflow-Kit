@@ -52,6 +52,7 @@
     "matrix-skills/",
     "skills/",
     "documents/",
+    "i18n/",
     "platforms/",
     "AGENT.md",
     "CLAUDE.md",

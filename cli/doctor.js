@@ -180,6 +180,7 @@ function runDoctor(options = {}) {
     auditMarkdownDir(path.join(repoRoot, 'commands'), 'commands/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'agents'), 'agents/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'agents', 'teams'), 'agents/teams/**/*.md', true),
+    auditMarkdownDir(path.join(repoRoot, 'i18n'), 'i18n/README.*.md'),
     {
       name: 'matrix-skills/compact-index.json',
       passed: compactData.totalSkills >= MIN_COMPACT_SKILLS,

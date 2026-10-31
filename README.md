@@ -10,10 +10,14 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
   <p>
+    **🇬🇧 English** • [🇻🇳 Tiếng Việt](./i18n/README.vi.md) • [🇨🇳 简体中文](./i18n/README.zh-CN.md) • [🇹🇼 繁體中文](./i18n/README.zh-TW.md) • [🇯🇵 日本語](./i18n/README.ja.md) • [🇰🇷 한국어](./i18n/README.ko.md) • [🇪🇸 Español](./i18n/README.es.md) • [🇫🇷 Français](./i18n/README.fr.md) • [🇩🇪 Deutsch](./i18n/README.de.md)<br/>
+    [🇧🇷 Português](./i18n/README.pt-BR.md) • [🇷🇺 Русский](./i18n/README.ru.md) • [🇮🇳 हिन्दी](./i18n/README.hi.md) • [🇸🇦 العربية](./i18n/README.ar.md) • [🇮🇩 Bahasa Indonesia](./i18n/README.id.md) • [🇹🇭 ไทย](./i18n/README.th.md) • [🇹🇷 Türkçe](./i18n/README.tr.md) • [🇮🇹 Italiano](./i18n/README.it.md)
+  </p>
+  <p>
     <a href="#🇬🇧-english-documentation"><b>🇬🇧 English Documentation</b></a> •
     <a href="#🚀-quick-start--installation"><b>🚀 Quick Start</b></a> •
     <a href="#🎯-slash-commands-reference"><b>🎯 Slash Commands</b></a> •
-    <a href="#🇻🇳-tài-liệu-tiếng-việt"><b>🇻🇳 Tài Liệu Tiếng Việt</b></a>
+    <a href="./i18n/README.vi.md"><b>🇻🇳 Tài Liệu Tiếng Việt (Full)</b></a>
   </p>
 </div>
 
@@ -146,6 +150,7 @@ BoomOpen-Workflow-Kit/
 ├── cli/                     # Installer (install.js), Health Doctor (doctor.js), 2-Tier Code Checker (checker.js) & Tests
 ├── commands/                # 72 Slash Command workflows (:fast, :hard, :team) + _ref/ protocols
 ├── documents/               # 2-Tier Architecture, Domain, Source-Base & Coding Standards documentation
+├── i18n/                    # 16 full-length localized READMEs (vi, zh-CN, zh-TW, ja, ko, es, fr, de, pt-BR, ru, hi, ar, id, th, tr, it)
 ├── matrix-skills/           # Domain YAML skill matrices + pre-compiled compact-index.json (1,430+ skills)
 ├── platforms/               # Unified 5-platform templates (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # On-demand Mode B rules (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
