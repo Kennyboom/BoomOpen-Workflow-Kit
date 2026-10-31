@@ -1,6 +1,18 @@
 # 🤖 AGENTS
 
-> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Agent handling protocol
+> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Agent handling, Quality-First Model Policy & DAG Parallel Fan-Out
+
+---
+
+## 🧠 QUALITY-FIRST MODEL POLICY (PRO HIGH DEFAULT — MANDATORY)
+
+> **CRITICAL USER CONSTRAINT**: The vast majority of work **MUST follow the user's selected model (`Model: "inherit"` / Pro High)** to prevent any drop in quality.
+
+| Model Setting | Permitted Scope | Enforcement |
+|---------------|-----------------|-------------|
+| **`Model: "inherit"`** (or `"pro"` — User's Pro High model) | **ALL 21 specialist agents** on engineering, architecture, planning, codebase scouting, debugging, testing, reviewing, security, performance, design, and documentation tasks | **MANDATORY DEFAULT**: Always use `Model: "inherit"` whenever reasoning, code generation, analysis, or review is involved. |
+| **`Model: "flash"`** (Latest Flash High) | **Trivial mechanical chores ONLY** (raw log aggregation, simple list formatting, status ping) | Permitted *strictly* when zero architectural or coding judgment is involved. When in doubt, ALWAYS use `Model: "inherit"`. |
+| **`Model: "flash_lite"`** | **NONE** | **⛔ STRICTLY FORBIDDEN**: Never use `flash_lite` in BoomOpen workflows. |
 
 ---
 
@@ -33,7 +45,7 @@ execution:
   2. Fast 2-Step Skills Analysis: (output required)
      "🎯 Skills Analysis: {simple|complex} → {using X | skipping}"
 
-  3. Invoke Sub-agent (Antigravity 2.0 Native or Cross-Platform Alias):
+  3. Invoke Sub-agent(s) (Antigravity 2.0 Native or Cross-Platform Alias):
      - Antigravity 2.0:
        a. define_subagent: Define specialist agent (backend-engineer, frontend-engineer,
           tester, reviewer, debugger, planner, scouter, researcher, etc.) with EnableWriteTools: true/false
@@ -41,15 +53,18 @@ execution:
           - TypeName: "research", "self", or custom defined agent name
           - Role: Specialist persona and mission
           - Prompt: Clean handoff context + task + exit criteria
-          - Model: "inherit", "flash_lite", "flash", or "pro"
+          - Model: "inherit" (Pro High default) or "pro"; "flash" ONLY for trivial mechanical chores; NEVER "flash_lite"
           - Workspace: "inherit", "branch" (git worktree isolation), or "share"
-       c. send_message: Multi-turn follow-up by conversationId using Reactive Async Wakeup
+       c. DAG Parallel Fan-Out: When multiple phases have no dependency on each other
+          (e.g., researcher + scouter, or tech-lead + reviewer + security-engineer + performance-engineer),
+          call invoke_subagent for ALL independent agents in a SINGLE turn and join via Reactive Async Wakeup.
+       d. send_message: Multi-turn follow-up by conversationId using Reactive Async Wakeup
           (system automatically wakes Orchestrator when sub-agent replies — NEVER poll in a loop)
-       d. manage_subagents / manage_task: List, inspect status, or terminate sub-agents/tasks
+       e. manage_subagents / manage_task: List, inspect status, or terminate sub-agents/tasks
      - Cursor / Copilot / Claude Code fallback alias:
        runSubagent(agent_name, context)
 
-  4. Verify: format matches, exit criteria met
+  4. Verify: format matches, exit criteria met (run `node cli/install.js check <dir>` for code changes)
 
   5. On system error: fallback to TIER 2, log reason
 ```
@@ -78,28 +93,27 @@ execution:
 |--------|-----------------------|--------------------------|-----------------------|
 | Trigger | ≤ 3 files, 1 domain, no `/cmd` | > 3 files, ≥ 2 domains, or `/cmd` | TIER 1 tool error |
 | Context | Primary session (zero latency) | Fresh, isolated (`Workspace: inherit/branch/share`) | Shared with parent |
-| Parallel | N/A | Yes (Reactive Async Wakeup) | No (sequential) |
+| Parallel | N/A | **Yes — DAG Fan-Out** (Reactive Async Wakeup) | No (sequential) |
+| Model | User's Pro High model | `Model: "inherit"` (Pro High default) | User's Pro High model |
 
 ---
 
-## AGENT CATEGORIES (20 Canonical Agents)
+## AGENT CATEGORIES (21 Specialist Agents)
 
-| Category | Agents | Write Tools | Purpose |
-|----------|--------|:-----------:|---------|
-| **meta** | `tech-lead`, `planner` | `true` (plans/mailboxes only) | Coordinate, never implement code |
-| **execution** | `backend-engineer`, `frontend-engineer`, `mobile-engineer`, `game-engineer`, `database-architect` | `true` | Implementation |
-| **validation** | `tester`, `reviewer`, `security-engineer`, `performance-engineer`, `debugger` | `true`/`false` | QA, auditing, debugging |
-| **research** | `researcher`, `scouter`, `brainstormer`, `designer` | `true` (reports/artifacts) | Investigation & design specs |
-| **support** | `docs-manager`, `devops-engineer`, `business-analyst`, `project-manager`, `reporter` | `true` | Documentation, infra, reporting |
+| Category | Agents | Write Tools | Default Model | Purpose |
+|----------|--------|:-----------:|:-------------:|---------|
+| **meta** | `tech-lead`, `planner` | `true` (plans/mailboxes) | `inherit` | Coordinate, never implement code |
+| **execution** | `backend-engineer`, `frontend-engineer`, `mobile-engineer`, `game-engineer`, `database-architect` | `true` | `inherit` | Implementation |
+| **validation** | `tester`, `reviewer`, `security-engineer`, `performance-engineer`, `debugger` | `true`/`false` | `inherit` | QA, auditing, debugging |
+| **research** | `researcher`, `scouter`, `brainstormer`, `designer` | `true` (artifacts) | `inherit` | Investigation & design specs |
+| **support** | `docs-manager`, `devops-engineer`, `business-analyst`, `project-manager`, `reporter` | `true` | `inherit` | Documentation, infra, reporting |
 
 ---
 
 ## 🔺 AGENT TEAMS — GOLDEN TRIANGLE (`:team` variant only)
 
 > **LOAD**: `TEAMS.md` for full Golden Triangle protocol and debate mechanism.
-> Teams spawn **3 agents per phase**: Tech Lead + Executor + Reviewer.
-
-### Golden Triangle Roster
+> Teams spawn **3 agents per phase**: Tech Lead + Executor + Reviewer (`Model: "inherit"`).
 
 | Domain | Tech Lead | Executor | Reviewer | Use When |
 |--------|-----------|----------|----------|----------|
@@ -121,42 +135,6 @@ execution:
 | `project-team` | `project-manager` | `business-analyst` | `tech-lead` (feasibility critic) | Project planning, risk, delivery |
 | `report-team` | `reporter` | `scouter` | `reviewer` (data accuracy + insight) | Status reports, metrics, analytics |
 
-### Golden Triangle Definitions Location
-
-```
-agents/teams/{team-name}/
-├── techlead.md    # Coordinator, decomposer, arbitrator
-├── executor.md    # Builder, implementer, defender
-└── reviewer.md    # Devil's advocate, quality gatekeeper
-```
-
----
-
-## TASK → AGENT MAPPING
-
-| Task | Agent |
-|------|-------|
-| API, backend logic | `backend-engineer` |
-| UI, components | `frontend-engineer` |
-| Database schema | `database-architect` |
-| Security | `security-engineer` |
-| Testing | `tester` |
-| Code review | `reviewer` |
-| Debugging | `debugger` |
-| Planning | `planner` |
-| Research | `researcher` |
-| Codebase analysis | `scouter` |
-| Documentation | `docs-manager` |
-| Deployment | `devops-engineer` |
-| Reports | `reporter` |
-| Project management | `project-manager` |
-| Business analysis | `business-analyst` |
-| Design | `designer` |
-| Brainstorming | `brainstormer` |
-| Game development | `game-engineer` |
-| Mobile development | `mobile-engineer` |
-| Technical leadership | `tech-lead` |
-
 ---
 
 ## CONTEXT ISOLATION & ARTIFACT DIRECTIVE
@@ -164,7 +142,8 @@ agents/teams/{team-name}/
 ```
 INCLUDE in Mode B handoff:
   - Original requirements (verbatim) & decisions from prior phases
-  - Deliverable location: Write transient reports (PLAN, RESEARCH, SCOUT, DEBUG, TEST, MAILBOX)
+  - Model policy: Model: "inherit" (Pro High default; NEVER flash_lite)
+  - Deliverable location: Write transient reports (PLAN, RESEARCH, SCOUT, DEBUG, TEST, REVIEW, REPORT, MAILBOX)
     to <appDataDir>\brain\<conversation-id>\ on Antigravity 2.0 (keep Git tree clean).
     Only write to ./reports/{topic}/ or ./documents/ for /docs or explicit repo export.
   - Deliverable size directive: If > 150 lines or ≥ 4 sections, use chunked folder with 00-index.md.

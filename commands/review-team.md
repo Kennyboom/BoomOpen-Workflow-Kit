@@ -37,9 +37,9 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Scope & Context | `./reports/{topic}/scouts/SCOUT-{scope}` |
-| P3: Improvement Plan | `./reports/{topic}/reviews/REVIEW-REPORT-{scope}` |
-| P4: Final Review | `./reports/{topic}/reviews/REVIEW-{scope}` |
+| P1: Scope & Context | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{scope}` (or `./reports/{topic}/scouts/SCOUT-{scope}`) |
+| P3: Improvement Plan | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-REPORT-{scope}` (or `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`) |
+| P4: Final Review | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{scope}` (or `./reports/{topic}/reviews/REVIEW-{scope}`) |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
@@ -85,7 +85,7 @@ execution-mode: execute
 6. Max 3 rounds → ESCALATION to `reviewer` if unresolved
 7. `reviewer` synthesizes approved findings into unified scope document
 
-**Deliverable**: `./reports/{topic}/scouts/SCOUT-{scope}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{scope}` (or `./reports/{topic}/scouts/SCOUT-{scope}`)
 **Exit Criteria**: Review scope mapped, blast radius assessed, dependencies traced, focus areas flagged
 **Consensus**: ✅ CONSENSUS: reviewer ✓ | scouter ✓ | tech-lead ✓
 
@@ -101,7 +101,7 @@ execution-mode: execute
 | Executor  | `reviewer` (self-implements deep review)                  | Execute: line-by-line code review across ALL dimensions    |
 | Reviewer  | `security-engineer` + `performance-engineer` (combined)   | Challenge: security vulnerabilities? Performance concerns? Code standards? |
 
-**Prerequisite**: **READ** `./reports/{topic}/scouts/SCOUT-{scope}`
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{scope}` (or `./reports/{topic}/scouts/SCOUT-{scope}`)
 
 ### 5 REVIEW DIMENSIONS (ALL MANDATORY)
 
@@ -160,7 +160,7 @@ FOR EACH phase in PLAN-{scope}.md:
 5. Debate loop if FAIL → `planner` adjusts or defends → max 3 rounds
 6. `tech-lead` synthesizes final improvement plan
 
-**Deliverable**: `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\REVIEW-REPORT-{scope}` (or `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`)
 **Exit Criteria**: All findings prioritized, fix recommendations documented, effort estimated, nothing dropped
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | planner ✓ | reviewer ✓
 
@@ -174,7 +174,7 @@ FOR EACH phase in PLAN-{scope}.md:
 | Executor  | `reporter`                           | Execute: executive summary, risk assessment, recommended actions |
 | Reviewer  | `business-analyst`                   | Challenge: business impact? Stakeholder communication? Actionable? |
 
-**Prerequisite**: **READ** `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\REVIEW-REPORT-{scope}` (or `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`)
 
 **Triangle Loop**:
 1. `tech-lead` decomposes summary: verdict, risk matrix, actions, stakeholder brief
@@ -210,7 +210,7 @@ FOR EACH phase in PLAN-{scope}.md:
 5. Debate loop if FAIL → `reporter` adjusts or defends → max 3 rounds
 6. `tech-lead` approves final report
 
-**Deliverable**: `./reports/{topic}/reviews/REVIEW-{scope}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{scope}` (or `./reports/{topic}/reviews/REVIEW-{scope}`)
 **Exit Criteria**: Executive summary complete, verdict issued, all findings actionable, stakeholder-ready
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | reporter ✓ | business-analyst ✓
 

@@ -1,17 +1,13 @@
 ---
-description: ⚡⚡⚡ Full Review — Deep code analysis with architecture review
-version: "1.0"
+description: ⚡⚡⚡ Full Review — Deep parallel multi-dimension code & architecture review
+version: "5.2"
 category: validation
 execution-mode: execute
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+# /review:hard — Deep Multi-Dimension Code Review (DAG Parallel Fan-Out)
 
----
-
-# /review:hard — Deep Code Review
-
-> **MISSION**: Comprehensive code and architecture review.
+> **MISSION**: Comprehensive architecture, code quality, security, and performance review using concurrent specialist sub-agents.
 
 <scope>$ARGUMENTS</scope>
 
@@ -20,106 +16,76 @@ execution-mode: execute
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+1. `CORE.md` — 2-Mode Gate, Quality-First Model Policy, Brain Artifact Routing
+2. `PHASES.md` — DAG-Aware Parallel Fan-Out & Phase Execution
+3. `AGENTS.md` — Tiered Execution (`Model: "inherit"` Pro High Default)
 
 ---
 
-## 🔀 TIERED EXECUTION
+## 🔀 TIERED EXECUTION & QUALITY-FIRST MODEL POLICY
 
 | Tier | When | Action |
 |------|------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agents with `Model: "inherit"` (Pro High default; NEVER `flash_lite`) |
+| **TIER 2** | Tool MISSING or system error | EMBODY agent file (FALLBACK) |
 
 ---
 
 ## 📁 PLAN COMPLIANCE CHECK
 
 ```
-IF ./reports/{topic}/plans/PLAN-{scope} exists (.md file or folder):
-  - Verify code implements plan specification
+IF <appDataDir>\brain\<conversation-id>\PLAN-{scope}.md (or ./reports/{topic}/plans/PLAN-{scope}.md) exists:
+  - Verify code implements plan specification 100%
   - Check for unauthorized deviations
-  - Ensure all phases reflected in code
+  - Ensure all plan phases are reflected in code
 ```
 
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+Also run `node cli/install.js check <target-dir>` to deterministically audit file length (≤ 300 lines) and type safety.
 
 ---
 
-## 🎭 Phase 1: ARCHITECTURE REVIEW
+## ⚡ DAG PARALLEL FAN-OUT: Phases 1–4 (Launch Concurrently in One Turn)
 
-| Agent | `tech-lead` |
-|-------|-------------|
-| Goal | Review architecture decisions |
-| Exit | Architecture assessed, patterns validated |
+> **🚀 PARALLEL REVIEW FAN-OUT**: Because Architecture, Code Quality, Security, and Performance reviews are read-only and independent, launch **ALL 4 specialist sub-agents in parallel in a single turn** (`Model: "inherit"`), wait for all 4 via Reactive Async Wakeup, and synthesize their findings into the unified review deliverable.
 
----
+### 🎭 Phase 1: ARCHITECTURE REVIEW (`tech-lead`)
+- **Agent**: `tech-lead` (`Model: "inherit"`, `EnableWriteTools: false`)
+- **Goal**: Evaluate module boundaries, coupling, SOLID principles, and ADR compliance.
 
-## 🎭 Phase 2: CODE REVIEW
+### 🎭 Phase 2: CODE QUALITY & PLAN COMPLIANCE REVIEW (`reviewer`)
+- **Agent**: `reviewer` (`Model: "inherit"`, `EnableWriteTools: false`)
+- **Goal**: Line-by-line review of logic, error handling, edge cases, naming, and `PLAN-{scope}` compliance.
 
-| Agent | `reviewer` |
-|-------|------------|
-| Prerequisite | READ PLAN file if exists |
-| Goal | Deep code analysis |
-| Exit | Code quality assessed, issues documented |
+### 🎭 Phase 3: SECURITY REVIEW (`security-engineer`)
+- **Agent**: `security-engineer` (`Model: "inherit"`, `EnableWriteTools: false`)
+- **Goal**: Audit input validation, authZ/authN, injection vectors, secrets, and OWASP Top 10 risks.
 
----
-
-## 🎭 Phase 3: SECURITY REVIEW
-
-| Agent | `security-engineer` |
-|-------|----------------------|
-| Goal | Security assessment |
-| Exit | Security reviewed, vulnerabilities documented |
+### 🎭 Phase 4: PERFORMANCE REVIEW (`performance-engineer`)
+- **Agent**: `performance-engineer` (`Model: "inherit"`, `EnableWriteTools: false`)
+- **Goal**: Identify N+1 queries, memory leaks, blocking I/O, algorithmic bottlenecks, and missing indexes.
 
 ---
 
-## 🎭 Phase 4: PERFORMANCE REVIEW
+## 🎭 Phase 5: SYNTHESIS & REPORT GENERATION
 
-| Agent | `performance-engineer` |
-|-------|------------------------|
-| Goal | Performance assessment |
-| Exit | Performance issues identified |
+Combine all findings from Phases 1–4 into a single prioritized review artifact:
+- **Antigravity 2.0 Default (Clean Git Tree)**: `<appDataDir>\brain\<conversation-id>\REVIEW-{scope}-{YYYY-MM-DD}.md`
+- **Workspace Fallback**: `./reports/{topic}/reviews/REVIEW-{scope}-{YYYY-MM-DD}.md` (only on non-Antigravity tools or when explicitly requested)
+- **Language**: Write in the user's input language (technical terms in English).
 
 ---
 
-## ⛔ ABSOLUTE PROHIBITION — NO CODE
+## ⛔ ABSOLUTE PROHIBITION — NO CODE MODIFICATION
 
-> **🔴 THIS WORKFLOW PRODUCES REVIEW REPORTS ONLY. NO CODE.**
->
-> - ❌ NEVER write implementation code or fix code directly
-> - ❌ NEVER modify source files
-> - ❌ NEVER auto-transition to `/fix`, `/code`, `/cook`
-> - ✅ ONLY produce review report files in `./reports/{topic}/`
-> - ✅ Report files MUST be written in the same language the user communicates with you
-
-## ⛔ MANDATORY FILE OUTPUT
-
-> Every completed review MUST be saved to `./reports/{topic}/reviews/REVIEW-{topic}-{YYYY-MM-DD}.md`
-> Chat-only responses for completed reviews are PROHIBITED.
+- ❌ NEVER modify source code files during `/review:hard`.
+- ❌ NEVER auto-transition to `/fix`, `/code`, or `/cook`.
+- ✅ Every completed review MUST be saved to `<appDataDir>\brain\<conversation-id>\REVIEW-{scope}-{YYYY-MM-DD}.md` (or `./reports/{topic}/reviews/`).
 
 ---
 
 ## ⛔ HARD STOP — AWAIT USER DECISION
 
-> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
->
-> Present review report file link to user and STOP. Wait for explicit user command.
->
-> Suggested next steps (USER must explicitly choose):
-> 1. ✅ Approved — Code ready
-> 2. 🔧 `/fix` → Fix issues found
-> 3. 🧪 `/test` → Run tests
-> 4. 🔄 Iterate → Refine review
->
-> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**
+Present the review artifact to the user and **STOP**. Offer next steps:
+1. ✅ **Approved** — Code ready to merge
+2. 🔧 `/fix:hard` or `/fix:fast` → Fix identified issues
+3. 🧪 `/test:hard` → Expand test coverage

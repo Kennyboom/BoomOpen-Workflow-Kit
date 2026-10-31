@@ -1,6 +1,6 @@
 # 🎭 PHASES
 
-> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when running Mode B workflow phases | **PURPOSE**: Phase execution protocol
+> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when running Mode B workflow phases | **PURPOSE**: DAG-Aware Parallel Fan-Out & Phase Execution Protocol
 
 ---
 
@@ -20,15 +20,47 @@
 
 ---
 
+## ⚡ DAG-AWARE PARALLEL FAN-OUT vs. SEQUENTIAL DEPENDENCY
+
+In v5.2, phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of dependencies rather than forcing independent read-only phases into a slow single-file queue:
+
+```
+┌───────────────────────────────────────────────────────────────────────────────┐
+│  🔀 PARALLEL FAN-OUT (When Phases Are Independent)                            │
+│  • Independent read-only or branch-isolated phases MUST be launched           │
+│    concurrently in a SINGLE turn via multiple invoke_subagent calls           │
+│    (using Model: "inherit") and joined via Reactive Async Wakeup:             │
+│    1. Discovery & Analysis (/cook:hard, /plan:hard, /fix:hard, /ask:hard):    │
+│       Launch `researcher` + `scouter` (or `debugger` + `researcher`)          │
+│       in parallel in the same turn.                                           │
+│    2. Multi-Dimension Review (/review:hard):                                  │
+│       Launch `tech-lead` (Architecture) + `reviewer` (Code Quality) +         │
+│       `security-engineer` (Security) + `performance-engineer` (Performance)   │
+│       in parallel in the same turn, then synthesize into REVIEW-{scope}.md.   │
+│    3. Decoupled Module Implementation:                                        │
+│       After PLAN is approved, launch `backend-engineer` + `frontend-engineer` │
+│       in parallel using `Workspace: "branch"` (or `"inherit"` when touching   │
+│       disjoint directories).                                                  │
+├───────────────────────────────────────────────────────────────────────────────┤
+│  ⛓️ SEQUENTIAL GATING (When Phase N+1 Depends on Phase N Output)              │
+│  • Blocking phases MUST wait until all prerequisite deliverables exist:       │
+│    - Planning (`planner`) WAITS for `RESEARCH` + `SCOUT` (+ `DESIGN`)         │
+│    - Implementation (`tech-lead` / engineers) WAITS for `PLAN`                │
+│    - Testing (`tester`) & Final Review (`reviewer`) WAIT for `Implementation` │
+└───────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## PHASE OUTPUT FORMAT (SINGLE SOURCE OF TRUTH)
 
 ### Emit progressively as you go:
 
 ```markdown
-## 🎭 Phase {N}: {name}
+## 🎭 Phase {N}: {name} (or Parallel Fan-Out: Phase {N} + Phase {M})
 
-### Sub-agent: `{agent}` — {role}     ← TIER 1 (`invoke_subagent` / `runSubagent`)
-### Embodying: `{agent}` — {role}     ← TIER 2 (fallback only)
+### Sub-agent: `{agent}` (`Model: inherit`) — {role}   ← TIER 1 (`invoke_subagent` / `runSubagent`)
+### Embodying: `{agent}` — {role}                      ← TIER 2 (fallback only)
 
 {agent work / summary}
 
@@ -42,9 +74,9 @@
 
 **Rules**:
 - TIER 1 → "Sub-agent" line | TIER 2 → "Embodying" line (never both)
-- Emit phase start **before** work, exit criteria **after**
+- Always use `Model: "inherit"` (Pro High default) for specialist sub-agents (never `flash_lite`)
 - When using `invoke_subagent` / `send_message`, rely on **Reactive Async Wakeup** (never poll in a loop)
-- Continue to next phase immediately upon phase completion
+- Advance to the next DAG stage immediately once prerequisite phases complete
 
 ---
 
@@ -90,20 +122,14 @@
 **Deliverable**: {summary}
 ```
 
-**Rules**:
-- ALWAYS 3 agents per phase (Tech Lead + Executor + Reviewer)
-- Mailbox (`<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` on Antigravity 2.0) captures ALL inter-agent exchanges
-- Max 3 debate rounds per task — then Tech Lead arbitrates
-- Output released ONLY with explicit consensus stamp: `✅ CONSENSUS: X ✓ | Y ✓ | Z ✓`
-
 ---
 
-## PHASE EXECUTION & ARTIFACT ROUTING RULES
+## BRAIN ARTIFACTS & DELIVERABLE SIZE MANAGEMENT
 
 ### Brain Artifacts First (Antigravity 2.0 Default)
 
 ```
-DEFAULT TRANSIENT DELIVERABLES (PLAN, RESEARCH, SCOUT, DEBUG, TEST, MAILBOX):
+DEFAULT TRANSIENT DELIVERABLES (PLAN, RESEARCH, SCOUT, DEBUG, TEST, REVIEW, REPORT, MAILBOX):
   → Write to <appDataDir>\brain\<conversation-id>\ so they render in the Antigravity UI
     Artifact pane and keep the user's Git working tree 100% clean.
   → ONLY write to ./reports/{topic}/ or ./documents/ in the project workspace when
@@ -111,46 +137,12 @@ DEFAULT TRANSIENT DELIVERABLES (PLAN, RESEARCH, SCOUT, DEBUG, TEST, MAILBOX):
     asks to commit reports into the repository.
 ```
 
-### One Phase at a Time (No Batching)
-
-```
-FOR Phase N:
-  1. EMIT "## 🎭 Phase N: {name}"
-  2. LOAD only what Phase N needs (agent file, prior deliverables)
-  3. DELEGATE via TIERED EXECUTION (define_subagent + invoke_subagent / runSubagent)
-  4. EMIT exit criteria + completion
-  5. Write deliverable to Brain Artifact Directory (<appDataDir>\brain\<conversation-id>\)
-  6. CONTINUE to Phase N+1
-```
-
----
-
-## DELIVERABLE SIZE MANAGEMENT (Chunked Strategy)
+### Deliverable Size Strategy
 
 | Estimated Size | Strategy |
 |----------------|----------|
 | ≤ 150 lines | **Single file** — e.g. `<appDataDir>\brain\<conversation-id>\PLAN-{feature}.md` |
-| > 150 lines OR ≥ 4 major sections | **Chunked** — split into folder with `00-index.md` + section files |
-
-### Chunked Deliverable Structure
-
-```
-{ARTIFACT_OR_REPORT_DIR}/{type}/{feature}/
-├── 00-index.md              # Overview + table of contents + links
-├── 01-{section-name}.md     # Section 1 (80-150 lines)
-├── 02-{section-name}.md     # Section 2 (80-150 lines)
-└── 03-{section-name}.md     # Section 3 (80-150 lines)
-```
-
-### Creation Rules (MANDATORY)
-
-```
-WHEN creating chunked deliverable:
-  1. CREATE 00-index.md FIRST (with planned sections, status ⏳)
-  2. CREATE each section file ONE BY ONE, SEQUENTIALLY
-  3. After EACH file: update 00-index.md section status → ✅
-  4. NEVER create a single file > 200 lines or create multiple files in parallel
-```
+| > 150 lines OR ≥ 4 major sections | **Chunked** — split into folder with `00-index.md` + `01-*.md`, `02-*.md` section files |
 
 ---
 
@@ -167,23 +159,13 @@ WHEN creating chunked deliverable:
 |----|-----------|--------|----------|
 | AC1 | {criterion from plan} | ✅ | {file:line or test} |
 
-### 📋 Requirements Verification  
-| ID | Requirement | Status | Evidence |
-|----|-------------|--------|----------|
-| R1 | {req} | ✅ | {file:line or deliverable} |
-
 ### 📦 Deliverables
-- {list of outputs with paths}
+- {list of outputs with clickable file:/// paths}
 ```
 
 ---
 
 ## SKILLS ANALYSIS (FAST 2-STEP PROGRESSIVE LOOKUP)
 
-**⛔ Output skills decision for every Mode B phase delegation using the fast 2-step lookup (never scan all 19 `matrix-skills/*.yaml` files manually):**
-
 1. **Step 1 — Check Pre-loaded `<skills>` (Progressive Disclosure)**: Check the `<skills>` list already injected in your system prompt and read the matching `SKILL.md` directly.
-2. **Step 2 — Targeted `skill-seeker` Lookup (Niche Domains Only)**: If a niche framework/domain is not in `<skills>`, use `skill-seeker` (targeted `grep_search` in `~/.gemini/config/skills_library/` or the single relevant `matrix-skills/{domain}.yaml`) to load only the needed `SKILL.md`.
-
-- **Simple task**: `🎯 Skills Analysis: Simple → Skipping (base knowledge sufficient)`
-- **Complex task**: `🎯 Skills Analysis: Complex → Using skill1, skill2 (via <skills> / skill-seeker)`
+2. **Step 2 — Compact Index / `skill-seeker` Lookup (Niche Domains Only)**: If a niche framework/domain is not in `<skills>`, query `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/compact-index.json` (or `skill-seeker` against `~/.gemini/config/skills_library/`) to locate and read only the needed `SKILL.md`.

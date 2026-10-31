@@ -36,14 +36,14 @@ execution-mode: execute
 
 | Phase / Team     | Output                                          |
 | ---------------- | ----------------------------------------------- |
-| Phase 1          | `./reports/{topic}/tests/TEST-STRATEGY-{scope}`      |
-| Phase 2          | `./reports/{topic}/tests/TEST-PLAN-{scope}`          |
+| Phase 1          | `<appDataDir>\\brain\\<conversation-id>\\TEST-STRATEGY-{scope}` (or `./reports/{topic}/tests/TEST-STRATEGY-{scope}`)      |
+| Phase 2          | `<appDataDir>\\brain\\<conversation-id>\\TEST-PLAN-{scope}` (or `./reports/{topic}/tests/TEST-PLAN-{scope}`)          |
 | Phase 3          | Test files written to codebase                  |
-| Phase 4          | `./reports/{topic}/tests/TEST-RESULTS-{scope}`       |
-| Phase 4          | `./reports/{topic}/qa/QA-{scope}`                    |
+| Phase 4          | `<appDataDir>\\brain\\<conversation-id>\\TEST-RESULTS-{scope}` (or `./reports/{topic}/tests/TEST-RESULTS-{scope}`)       |
+| Phase 4          | `<appDataDir>\\brain\\<conversation-id>\\QA-{scope}` (or `./reports/{topic}/qa/QA-{scope}`)                    |
 | ALL Phases       | `./reports/{topic}/MAILBOX-{date}.md`                   |
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -76,7 +76,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 4. Debate loop if FAIL → max 3 rounds → ESCALATION to `tester` if unresolved
 5. `tester` synthesizes approved findings into unified test strategy
 
-**Deliverable**: `./reports/{topic}/tests/TEST-STRATEGY-{scope}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\TEST-STRATEGY-{scope}` (or `./reports/{topic}/tests/TEST-STRATEGY-{scope}`)
 **Exit Criteria**: Test pyramid defined, coverage targets set, frameworks chosen, testable units mapped
 **Consensus**: ✅ CONSENSUS: tester ✓ | scouter ✓ | tech-lead ✓
 
@@ -90,7 +90,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 | Executor  | `researcher`                         | Execute: research testing patterns, edge cases, boundary conditions |
 | Reviewer  | `security-engineer` (Devil's Advocate) | Challenge: security test cases missing? Edge cases not covered? Injection tests? |
 
-**Prerequisite**: **READ** `./reports/{topic}/tests/TEST-STRATEGY-{scope}` before starting.
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\TEST-STRATEGY-{scope}` (or `./reports/{topic}/tests/TEST-STRATEGY-{scope}`) before starting.
 
 **Triangle Loop**:
 1. `tester` reads strategy → decomposes into: unit test cases, integration scenarios, E2E journeys, security cases, perf benchmarks → TASK_ASSIGNMENT to `researcher`
@@ -99,7 +99,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 4. Debate loop if FAIL → max 3 rounds → ESCALATION to `tester` if unresolved
 5. `tester` synthesizes approved test cases into final test plan
 
-**Deliverable**: `./reports/{topic}/tests/TEST-PLAN-{scope}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\TEST-PLAN-{scope}` (or `./reports/{topic}/tests/TEST-PLAN-{scope}`)
 **Exit Criteria**: Every component has specific test cases, edge cases documented, security scenarios covered
 **Consensus**: ✅ CONSENSUS: tester ✓ | researcher ✓ | security-engineer ✓
 
@@ -126,7 +126,7 @@ Self     → Tech Lead: tester | Executor: tester (self) | Reviewer: reviewer + 
 | Executor  | `tester` (self) OR `backend-engineer`/`frontend-engineer`| Follow plan EXACTLY → write tests per spec → submit via Mailbox |
 | Reviewer  | `reviewer` + `performance-engineer` lens                 | Review EVERY submission → check test quality, assertions, mocks, coverage |
 
-**Prerequisite**: **READ and FOLLOW** `./reports/{topic}/tests/TEST-PLAN-{scope}`
+**Prerequisite**: **READ and FOLLOW** `<appDataDir>\\brain\\<conversation-id>\\TEST-PLAN-{scope}` (or `./reports/{topic}/tests/TEST-PLAN-{scope}`)
 
 ### GOLDEN TRIANGLE IMPLEMENTATION LOOP (CRITICAL — Step by Step)
 
@@ -175,7 +175,7 @@ Security: injection passed | auth bypass covered | input validation verified
 Performance: no regressions beyond threshold | baselines established
 ```
 
-**Deliverable**: `./reports/{topic}/tests/TEST-RESULTS-{scope}` + `./reports/{topic}/qa/QA-{scope}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\TEST-RESULTS-{scope}` (or `./reports/{topic}/tests/TEST-RESULTS-{scope}`) + `<appDataDir>\\brain\\<conversation-id>\\QA-{scope}` (or `./reports/{topic}/qa/QA-{scope}`)
 **Exit Criteria**: All tests run, quality gates evaluated, coverage verified, no brittle/flaky tests, report complete
 **Consensus**: ✅ CONSENSUS: tester ✓ | tester(exec) ✓ | tech-lead ✓
 

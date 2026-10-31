@@ -1,13 +1,13 @@
 ---
-description: ⚡⚡⚡ Full Feature — Complete feature development lifecycle
-version: "1.0"
+description: ⚡⚡⚡ Full Feature — Complete feature development lifecycle with DAG Parallel Fan-Out
+version: "5.2"
 category: engineering
 execution-mode: execute
 ---
 
-# /cook:hard — Complete Feature Development
+# /cook:hard — Complete Feature Development (DAG Parallel Fan-Out)
 
-> **MISSION**: Full feature development with research, design, planning, implementation, validation.
+> **MISSION**: Full feature development with research, codebase scouting, design, planning, implementation, and validation.
 
 <feature>$ARGUMENTS</feature>
 
@@ -16,192 +16,135 @@ execution-mode: execute
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
+1. `CORE.md` — 2-Mode Gate, Quality-First Model Policy, Brain Artifact Routing
+2. `PHASES.md` — DAG-Aware Parallel Fan-Out & Phase Execution
+3. `AGENTS.md` — Tiered Execution (`Model: "inherit"` Pro High Default)
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+**Skills Resolution**: When delegating, load `SKILLS.md` on-demand (uses `<skills>` → `matrix-skills/compact-index.json` / `skill-seeker`).
 
 ---
 
-## 🔀 TIERED EXECUTION
+## 🔀 TIERED EXECUTION & QUALITY-FIRST MODEL POLICY
 
-> Reference: AGENTS.md (Tiered Execution)`
-
-| Tier       | When                          | Action                       |
-| ---------- | ----------------------------- | ---------------------------- |
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING or SYSTEM error  | EMBODY agent file (FALLBACK) |
-
-**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
+| Tier | When | Action |
+|------|------|--------|
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent with `Model: "inherit"` (Pro High default; NEVER `flash_lite`) |
+| **TIER 2** | Tool MISSING or system error | EMBODY agent file (FALLBACK) |
 
 ---
 
 ## 📁 DELIVERABLE FILES (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
 
-> **Antigravity 2.0 Default**: Write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean. Use `./reports/{topic}/` only on non-Antigravity tools or when explicitly requested.
+> **Antigravity 2.0 Default**: Write all transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git working tree 100% clean. Use `./reports/{topic}/` only on non-Antigravity tools or when explicitly requested.
 
-| Agent        | Output                                          |
-| ------------ | ----------------------------------------------- |
-| brainstormer | `./reports/{topic}/brainstorms/BRAINSTORM-{feature}` |
-| researcher   | `./reports/{topic}/researchers/RESEARCH-{feature}`   |
-| scouter      | `./reports/{topic}/scouts/SCOUT-{feature}`           |
-| designer     | `./reports/{topic}/designs/DESIGN-{feature}`         |
-| planner      | `./reports/{topic}/plans/PLAN-{feature}`             |
+| Agent | Antigravity 2.0 Brain Artifact (Default) | Workspace Fallback |
+|-------|------------------------------------------|--------------------|
+| `brainstormer` | `<appDataDir>\brain\<conversation-id>\BRAINSTORM-{feature}.md` | `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{feature}.md` (or `./reports/{topic}/brainstorms/BRAINSTORM-{feature}.md`) |
+| `researcher` | `<appDataDir>\brain\<conversation-id>\RESEARCH-{feature}.md` | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{feature}.md` (or `./reports/{topic}/researchers/RESEARCH-{feature}.md`) |
+| `scouter` | `<appDataDir>\brain\<conversation-id>\SCOUT-{feature}.md` | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{feature}.md` (or `./reports/{topic}/scouts/SCOUT-{feature}.md`) |
+| `designer` | `<appDataDir>\brain\<conversation-id>\DESIGN-{feature}.md` | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-{feature}.md` (or `./reports/{topic}/designs/DESIGN-{feature}.md`) |
+| `planner` | `<appDataDir>\brain\<conversation-id>\PLAN-{feature}.md` | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}.md` (or `./reports/{topic}/plans/PLAN-{feature}.md`) |
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
-
----
-
-## 🔗 PHASE DEPENDENCIES
-
-| Phase              | Requires               | Blocking    |
-| ------------------ | ---------------------- | ----------- |
-| P1: Brainstorm     | User request           | No          |
-| P2: Research       | User request           | No          |
-| P3: Scout          | User request           | No          |
-| P3.5: DB Design    | Data requirements      | Conditional |
-| P4: Design         | Scout findings         | Conditional |
-| P5: Planning       | RESEARCH + SCOUT files | **YES**     |
-| P6: Implementation | **PLAN file**          | **YES**     |
-| P7: Testing        | PLAN + Code            | **YES**     |
-| P8: Review         | PLAN + Code + Tests    | **YES**     |
-
-**⛔ Blocking**: If input missing → STOP → Create it first → Resume
+All deliverables → Write in the user's input language (technical terms in English). Code/comments in English.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## 🔗 DAG PHASE DEPENDENCIES & PARALLEL FAN-OUT
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing). Format: rules/PHASES.md § Phase output structure.
-
----
-
-## 🎭 Phase 1: REQUIREMENTS CLARIFICATION
-
-| Agent | `brainstormer`                                                       |
-| ----- | -------------------------------------------------------------------- |
-| Goal  | Full requirements discovery                                          |
-| Exit  | Requirements clear, constraints identified, success criteria defined |
-
----
-
-## 🎭 Phase 2: RESEARCH
-
-| Agent | `researcher`                                                               |
-| ----- | -------------------------------------------------------------------------- |
-| Goal  | Research best practices and patterns                                       |
-| Exit  | Patterns researched, best practices identified, recommendations documented |
+| Stage | Phase(s) | Execution Mode | Requires | Blocking |
+|-------|----------|----------------|----------|:--------:|
+| **Stage 1** | P1: Brainstorm | Sequential (if unclear) | User request | No |
+| **Stage 2** | **P2: Research + P3: Scout** | **⚡ PARALLEL FAN-OUT** (same turn) | User request / P1 | No |
+| **Stage 3** | **P3.5: DB Design + P4: UI Design** | **⚡ PARALLEL FAN-OUT** (if both needed) | P2 + P3 outputs | Conditional |
+| **Stage 4** | P5: Planning | Sequential Gate | `RESEARCH` + `SCOUT` (+ `DESIGN`) | **YES** |
+| **Stage 5** | P6: Implementation | Sequential (or Parallel by decoupled module) | **`PLAN-{feature}.md`** | **YES** |
+| **Stage 6** | P7: Testing | Sequential Gate | `PLAN` + Code | **YES** |
+| **Stage 7** | P8: Review | Sequential Gate | `PLAN` + Code + Tests | **YES** |
 
 ---
 
-## 🎭 Phase 3: CODEBASE ANALYSIS
+## 🎭 Phase 1: REQUIREMENTS CLARIFICATION (`brainstormer`)
 
-| Agent | `scouter`                                                               |
-| ----- | ----------------------------------------------------------------------- |
-| Goal  | Map architecture and integration points                                 |
-| Exit  | Architecture understood, integration points mapped, patterns documented |
-
----
-
-## 🎭 Phase 3.5: DATABASE DESIGN (IF DATA CHANGES)
-
-| Agent   | `database-architect`                                        |
-| ------- | ----------------------------------------------------------- |
-| Trigger | Feature involves database changes/migrations                |
-| Goal    | Schema design and data modeling                             |
-| Exit    | Schema designed, migrations planned, query patterns defined |
+| Agent | `brainstormer` (`Model: "inherit"`) |
+|-------|-------------------------------------|
+| Goal | Full requirements discovery (use `ask_question` UI widget if ambiguous) |
+| Output | `<appDataDir>\brain\<conversation-id>\BRAINSTORM-{feature}.md` |
+| Exit | Requirements clear, constraints identified, success criteria defined |
 
 ---
 
-## 🎭 Phase 4: DESIGN (IF UI NEEDED)
+## ⚡ PARALLEL FAN-OUT: Phase 2 (`researcher`) + Phase 3 (`scouter`)
 
-| Agent   | `designer`                                            |
-| ------- | ----------------------------------------------------- |
-| Trigger | Feature has UI components                             |
-| Goal    | UI/UX design                                          |
-| Exit    | Design created, accessibility considered, specs ready |
+> **🚀 DAG FAN-OUT DIRECTIVE**: Launch `researcher` AND `scouter` **concurrently in a single turn** via two `invoke_subagent` calls (`Model: "inherit"`). Wait for both via Reactive Async Wakeup before advancing to Stage 3/4.
 
----
+### 🎭 Phase 2: RESEARCH (`researcher`)
+- **Goal**: Research best practices, libraries, and architectural patterns.
+- **Output**: `<appDataDir>\brain\<conversation-id>\RESEARCH-{feature}.md`
 
-## 🎭 Phase 5: PLANNING
-
-| Agent        | `planner`                                           |
-| ------------ | --------------------------------------------------- |
-| Prerequisite | **READ** RESEARCH + SCOUT + DESIGN files            |
-| Goal         | Create detailed implementation plan                 |
-| Output       | `./reports/{topic}/plans/PLAN-{feature}`                 |
-| Exit         | Plan file created, phases defined, risks identified |
+### 🎭 Phase 3: CODEBASE ANALYSIS (`scouter`)
+- **Goal**: Map existing architecture, file locations, and integration points.
+- **Output**: `<appDataDir>\brain\<conversation-id>\SCOUT-{feature}.md`
 
 ---
 
-## 🎭 Phase 6: IMPLEMENTATION
+## ⚡ CONDITIONAL PARALLEL FAN-OUT: Phase 3.5 (`database-architect`) + Phase 4 (`designer`)
 
-| Agent        | `tech-lead` → routes to specialists                     |
-| ------------ | ------------------------------------------------------- |
-| Prerequisite | **READ and FOLLOW** `./reports/{topic}/plans/PLAN-{feature}` |
-| Goal         | Execute implementation plan                             |
+> If the feature requires both DB schema changes and UI design, launch `database-architect` and `designer` **in parallel in a single turn** (`Model: "inherit"`).
 
-**STRICT ADHERENCE:**
+### 🎭 Phase 3.5: DATABASE DESIGN (If Data Changes — `database-architect`)
+- **Goal**: Schema design, indexes, and migration strategy.
 
-```
-1. READ plan FIRST
-2. FOR EACH step:
-   - Implement EXACTLY as specified
-   - Mark step complete: [ ] → [x]
-3. IF step seems wrong:
-   - STOP → Document → Request Re-Planning
-   - DO NOT implement your own interpretation
-```
-
-| Exit | All plan phases complete, no unauthorized deviations |
+### 🎭 Phase 4: UI/UX DESIGN (If UI Needed — `designer`)
+- **Goal**: Visual hierarchy, 5 UI states, accessibility, and `generative_ui` / Mermaid flow.
+- **Output**: `<appDataDir>\brain\<conversation-id>\DESIGN-{feature}.md`
 
 ---
 
-## 🎭 Phase 7: TESTING
+## 🎭 Phase 5: PLANNING (`planner`)
 
-| Agent        | `tester`                     |
-| ------------ | ---------------------------- |
-| Prerequisite | **READ** PLAN + Code changes |
-| Goal         | Comprehensive testing        |
-
-**PLAN CHECKPOINT VERIFICATION:**
-
-```
-FOR EACH checkpoint in PLAN:
-  - Write test that verifies criteria
-  - Document: "Checkpoint X → Test Y"
-```
-
-| Exit | All tests pass, each plan checkpoint has test |
+| Agent | `planner` (`Model: "inherit"`) |
+|-------|--------------------------------|
+| Prerequisite | **READ** `RESEARCH-{feature}.md` + `SCOUT-{feature}.md` (+ `DESIGN-{feature}.md`) |
+| Goal | Create detailed, self-contained implementation plan |
+| Output | `<appDataDir>\brain\<conversation-id>\PLAN-{feature}.md` (or `./reports/{topic}/plans/PLAN-{feature}.md`) |
+| Exit | Plan created, atomic tasks defined, risks & rollback identified |
 
 ---
 
-## 🎭 Phase 8: REVIEW
+## 🎭 Phase 6: IMPLEMENTATION (`tech-lead` → Specialists)
 
-| Agent        | `reviewer`                       |
-| ------------ | -------------------------------- |
-| Prerequisite | **READ** PLAN + Code + Tests     |
-| Goal         | Quality review + Plan compliance |
-
-**REVIEW CHECKLIST:**
-
-- Does code implement plan specification?
-- Any unauthorized deviations?
-- All plan phases reflected in code?
-
-| Exit | Code matches plan intent, standards met, approved |
+| Agent | `tech-lead` → routes to `backend-engineer`, `frontend-engineer`, `database-architect` (`Model: "inherit"`) |
+|-------|------------------------------------------------------------------------------------------------------------|
+| Prerequisite | **READ and FOLLOW** `<appDataDir>\brain\<conversation-id>\PLAN-{feature}.md` |
+| Parallelism | If Backend and Frontend modules are decoupled in `PLAN-{feature}.md`, launch `backend-engineer` + `frontend-engineer` in parallel (`Workspace: "branch"` or disjoint paths) |
+| Verification | Run build/typecheck and `node cli/install.js check <dir>` to verify ≤ 300 lines/file and 0 errors |
 
 ---
 
-## COMPLETION
+## 🎭 Phase 7: TESTING (`tester`)
+
+| Agent | `tester` (`Model: "inherit"`) |
+|-------|-------------------------------|
+| Prerequisite | **READ** `PLAN-{feature}.md` + Code changes |
+| Goal | Write and run tests verifying every checkpoint in `PLAN-{feature}.md` |
+| Output | `<appDataDir>\brain\<conversation-id>\TEST-{feature}.md` |
+| Exit | All tests pass, deterministic verification complete |
+
+---
+
+## 🎭 Phase 8: REVIEW (`reviewer`)
+
+| Agent | `reviewer` (`Model: "inherit"`) |
+|-------|---------------------------------|
+| Prerequisite | **READ** `PLAN-{feature}.md` + Code + Test results |
+| Goal | Quality review, security/performance check, and 100% plan compliance |
+| Exit | Code matches plan intent, all standards met, approved |
+
+---
+
+## ✅ COMPLETION
 
 Present feature report with:
-
-1. ✅ **Done** — Feature complete
+1. ✅ **Done** — Feature complete and verified
 2. 🚀 **Deploy** → `/deploy:preview`
 3. 📝 **Docs** → `/docs:core`

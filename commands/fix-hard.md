@@ -1,13 +1,13 @@
 ---
-description: ⚡⚡⚡ Full Fix — Complete issue resolution with research
-version: "1.0"
+description: ⚡⚡⚡ Full Fix — Complete issue resolution with parallel root-cause & pattern research
+version: "5.2"
 category: debugging
 execution-mode: execute
 ---
 
-# /fix:hard — Complete Issue Resolution
+# /fix:hard — Complete Issue Resolution (DAG Parallel Fan-Out)
 
-> **MISSION**: Full resolution workflow with research, planning, and validation.
+> **MISSION**: Full bug resolution workflow with parallel root-cause debugging + solution research, planning, implementation, and regression validation.
 
 <issue>$ARGUMENTS</issue>
 
@@ -16,108 +16,92 @@ execution-mode: execute
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+1. `CORE.md` — 2-Mode Gate, Quality-First Model Policy, Brain Artifact Routing
+2. `PHASES.md` — DAG-Aware Parallel Fan-Out & Phase Execution
+3. `AGENTS.md` — Tiered Execution (`Model: "inherit"` Pro High Default)
 
 ---
 
-## 🔀 TIERED EXECUTION
+## 🔀 TIERED EXECUTION & QUALITY-FIRST MODEL POLICY
 
 | Tier | When | Action |
 |------|------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
-
-**❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent with `Model: "inherit"` (Pro High default; NEVER `flash_lite`) |
+| **TIER 2** | Tool MISSING or system error | EMBODY agent file (FALLBACK) |
 
 ---
 
 ## 📁 DELIVERABLE FILES (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
 
-> **Antigravity 2.0 Default**: Write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean. Use `./reports/{topic}/` only on non-Antigravity tools or when explicitly requested.
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean. Use `./reports/{topic}/` only on non-Antigravity tools or when explicitly requested.
 
-| Agent | Output |
-|-------|--------|
-| debugger | `./reports/{topic}/debugs/DEBUG-{issue}` |
-| researcher | `./reports/{topic}/researchers/RESEARCH-{issue}` |
+| Agent | Antigravity 2.0 Brain Artifact (Default) | Workspace Fallback |
+|-------|------------------------------------------|--------------------|
+| `debugger` | `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` | `<appDataDir>\\brain\\<conversation-id>\\DEBUG-{issue}.md` (or `./reports/{topic}/debugs/DEBUG-{issue}.md`) |
+| `researcher` | `<appDataDir>\brain\<conversation-id>\RESEARCH-{issue}.md` | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{issue}.md` (or `./reports/{topic}/researchers/RESEARCH-{issue}.md`) |
+| `planner` | `<appDataDir>\brain\<conversation-id>\PLAN-{issue}.md` | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{issue}.md` (or `./reports/{topic}/plans/PLAN-{issue}.md`) |
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
-
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing). Format: rules/PHASES.md § Phase output structure.
+All deliverables → Write in the user's input language (technical terms in English). Code comments remain in English.
 
 ---
 
-## 🎭 Phase 1: DEEP ANALYSIS
+## ⚡ PARALLEL FAN-OUT: Phase 1 (`debugger`) + Phase 2 (`researcher`)
 
-| Agent | `debugger` |
-|-------|------------|
-| Goal | Full root cause analysis |
-| Exit | Root cause identified, impact assessed, failure chain documented |
+> **🚀 DAG FAN-OUT DIRECTIVE**: Launch `debugger` (root-cause codebase trace) AND `researcher` (remediation patterns / framework edge cases) **concurrently in a single turn** (`Model: "inherit"`), and join via Reactive Async Wakeup before Phase 3.
 
----
+### 🎭 Phase 1: DEEP ROOT-CAUSE ANALYSIS (`debugger`)
+- **Goal**: Full 5-Whys root cause analysis, failure chain trace, and blast radius assessment.
+- **Output**: `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md`
 
-## 🎭 Phase 2: RESEARCH
-
-| Agent | `researcher` |
-|-------|--------------|
-| Goal | Research solution patterns |
-| Exit | Solutions researched, best approach identified |
+### 🎭 Phase 2: SOLUTION PATTERN RESEARCH (`researcher`)
+- **Goal**: Research proven remediation patterns and framework-specific gotchas.
+- **Output**: `<appDataDir>\brain\<conversation-id>\RESEARCH-{issue}.md`
 
 ---
 
-## 🎭 Phase 3: FIX PLANNING
+## 🎭 Phase 3: FIX PLANNING (`planner` — Sequential Gate)
 
-| Agent | `planner` |
-|-------|-----------|
-| Goal | Create fix strategy with rollback |
-| Exit | Plan created, rollback included |
-
----
-
----
-
-## 🎭 Phase 4: IMPLEMENTATION
-
-| Agent | `tech-lead` → specialists |
-|-------|---------------------------|
-| Goal | Execute fix plan |
-| Exit | Fix implemented, changes documented |
+| Agent | `planner` (`Model: "inherit"`) |
+|-------|--------------------------------|
+| Prerequisite | **READ** `DEBUG-{issue}.md` + `RESEARCH-{issue}.md` |
+| Goal | Create surgical fix plan with atomic steps and rollback strategy |
+| Output | `<appDataDir>\brain\<conversation-id>\PLAN-{issue}.md` |
+| Exit | Fix plan created, rollback strategy documented |
 
 ---
 
-## 🎭 Phase 5: VALIDATION
+## 🎭 Phase 4: IMPLEMENTATION (`tech-lead` → Specialists)
 
-| Agent | `tester` |
-|-------|----------|
-| Goal | Comprehensive validation |
-| Exit | Issue resolved, tests pass, no regression |
-
----
-
-## 🎭 Phase 5.5: ROLLBACK VERIFICATION (IF CRITICAL)
-
-| Agent | `devops-engineer` |
-|-------|-------------------|
-| Trigger | Fix affects production or is critical |
-| Goal | Verify rollback plan |
-| Exit | Rollback documented, tested, recovery time estimated |
+| Agent | `tech-lead` → domain engineer (`backend-engineer`, `frontend-engineer`, etc., `Model: "inherit"`) |
+|-------|---------------------------------------------------------------------------------------------------|
+| Prerequisite | **READ and FOLLOW** `PLAN-{issue}.md` |
+| Goal | Execute surgical fix while enforcing Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn) |
+| Exit | Fix implemented, build/lint passes with 0 errors |
 
 ---
 
-## COMPLETION
+## 🎭 Phase 5: VALIDATION & REGRESSION TESTING (`tester`)
+
+| Agent | `tester` (`Model: "inherit"`) |
+|-------|-------------------------------|
+| Goal | Write regression test reproducing the bug and verify all test suites pass |
+| Output | `<appDataDir>\brain\<conversation-id>\TEST-{issue}.md` |
+| Exit | Original issue resolved, regression test passes, zero new failures |
+
+---
+
+## 🎭 Phase 5.5: ROLLBACK VERIFICATION (If Critical — `devops-engineer`)
+
+| Agent | `devops-engineer` (`Model: "inherit"`) |
+|-------|----------------------------------------|
+| Trigger | Fix affects production deployment, database migrations, or critical infrastructure |
+| Goal | Verify rollback procedure and recovery time |
+
+---
+
+## ✅ COMPLETION
 
 Present fix report with:
-
-1. ✅ **Fixed** — Issue resolved
-2. 🧪 **Test** → `/test`
+1. ✅ **Fixed** — Root cause eliminated and verified by regression tests
+2. 🔍 **Review** → `/review:fast`
 3. 📝 **Docs** → `/docs:core`

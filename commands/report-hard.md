@@ -54,11 +54,11 @@ execution-mode: execute
 
 | Agent      | Output (when creating)                          |
 | ---------- | ------------------------------------------------ |
-| researcher | `./reports/{topic}/researchers/RESEARCH-{task}` (optional) |
-| scouter    | `./reports/{topic}/scouts/SCOUT-{task}` (optional)    |
+| researcher | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{task}` (or `./reports/{topic}/researchers/RESEARCH-{task}`) (optional) |
+| scouter    | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{task}` (or `./reports/{topic}/scouts/SCOUT-{task}`) (optional)    |
 | reporter   | Per table above — create report **or** update existing **or** generate from template |
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + section files.
 
 ---
@@ -87,7 +87,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | Agent  | `researcher`                                                |
 | ------ | ---------------------------------------------------------- |
 | Goal   | Research report scope, audience, and best practices for project/technical reports |
-| Output | `./reports/{topic}/researchers/RESEARCH-{task}` (optional)       |
+| Output | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{task}` (or `./reports/{topic}/researchers/RESEARCH-{task}`) (optional)       |
 | Exit   | Report scope and criteria defined, templates identified   |
 
 ---
@@ -97,7 +97,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | Agent  | `scouter`                         |
 | ------ | --------------------------------- |
 | Goal   | Full codebase structural analysis |
-| Output | `./reports/{topic}/scouts/SCOUT-{task}` |
+| Output | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{task}` (or `./reports/{topic}/scouts/SCOUT-{task}`) |
 | Exit   | Architecture and recent changes documented                 |
 
 ---

@@ -36,13 +36,13 @@ execution-mode: execute
 
 | Phase / Team     | Output                                          |
 | ---------------- | ----------------------------------------------- |
-| Phase 1 (Disc.)  | `./reports/{topic}/brainstorms/BRAINSTORM-{task}` + `./reports/{topic}/scouts/SCOUT-{task}` |
-| Phase 2 (Arch.)  | `./reports/{topic}/researchers/RESEARCH-{task}` + `./reports/{topic}/designs/ADR-{task}` |
-| Phase 3 (Plan)   | `./reports/{topic}/plans/PLAN-{task}` (or `PLAN-{task}-phase1`, …) |
-| Phase 4 (Review) | `./reports/{topic}/qa/QA-PLAN-{task}`                |
+| Phase 1 (Disc.)  | `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{task}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{task}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{task}` (or `./reports/{topic}/scouts/SCOUT-{task}`) |
+| Phase 2 (Arch.)  | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{task}` (or `./reports/{topic}/researchers/RESEARCH-{task}`) + `<appDataDir>\\brain\\<conversation-id>\\ADR-{task}` (or `./reports/{topic}/designs/ADR-{task}`) |
+| Phase 3 (Plan)   | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`) (or `PLAN-{task}-phase1`, …) |
+| Phase 4 (Review) | `<appDataDir>\\brain\\<conversation-id>\\QA-PLAN-{task}` (or `./reports/{topic}/qa/QA-PLAN-{task}`)                |
 | ALL Phases        | `./reports/{topic}/MAILBOX-{date}.md`                  |
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English. If plan has **> 3 phases** or **> 3 days** effort → produce **multiple plan files** (one per phase/milestone), each executable in sequence.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English. If plan has **> 3 phases** or **> 3 days** effort → produce **multiple plan files** (one per phase/milestone), each executable in sequence.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → `{name}.md`. Large (> 150 lines) → `{name}/` folder.
 
 ---
@@ -54,7 +54,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 > - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
 > - ❌ NEVER modify source files
 > - ❌ NEVER auto-implement plans or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce plan/research/design files in `./reports/{topic}/`
+> - ✅ ONLY produce plan/research/design files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 >
 > If user wants implementation after planning, they must EXPLICITLY invoke another workflow.
 
@@ -91,7 +91,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 5. If FAIL → executors address gaps or defend → RESUBMISSION/DEFENSE → max 3 rounds
 6. `researcher` synthesizes all approved findings into unified artifacts
 
-**Deliverable**: `./reports/{topic}/brainstorms/BRAINSTORM-{task}` + `./reports/{topic}/scouts/SCOUT-{task}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{task}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{task}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{task}` (or `./reports/{topic}/scouts/SCOUT-{task}`)
 **Exit Criteria**: All requirements captured, codebase mapped, business context validated, assumptions challenged
 **Consensus**: ✅ CONSENSUS: researcher ✓ | scouter+business-analyst ✓ | brainstormer ✓
 
@@ -118,7 +118,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 
 **CONSTRAINT INHERITANCE**: Architecture decisions MUST reference Phase 1 ("Based on requirement R1...", "Codebase constraint from SCOUT...", "Business rule from BA...")
 
-**Deliverable**: `./reports/{topic}/researchers/RESEARCH-{task}` + `./reports/{topic}/designs/ADR-{task}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{task}` (or `./reports/{topic}/researchers/RESEARCH-{task}`) + `<appDataDir>\\brain\\<conversation-id>\\ADR-{task}` (or `./reports/{topic}/designs/ADR-{task}`)
 **Exit Criteria**: Patterns researched, alternatives documented, ADRs drafted, feasibility validated
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | researcher ✓ | reviewer ✓
 
@@ -151,7 +151,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 4. Deviations from prior phase findings require explicit justification
 ```
 
-**Deliverable**: `./reports/{topic}/plans/PLAN-{task}` (single) or `PLAN-{task}-phase1`, … (multi-phase)
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`) (single) or `PLAN-{task}-phase1`, … (multi-phase)
 **Exit Criteria**: Plan complete, all sections reviewed, security validated, estimates challenged, traceability verified
 **Consensus**: ✅ CONSENSUS: planner ✓ | planner(exec) ✓ | tech-lead+security ✓
 
@@ -185,7 +185,7 @@ FOR EACH requirement in BRAINSTORM-{task}.md:
   → Document: "REQ-{id} → Task: {ref} → AC: {criteria} → ✓/✗"
 ```
 
-**Deliverable**: `./reports/{topic}/qa/QA-PLAN-{task}` — includes: PASS/REVISE verdict, traceability matrix, security summary, business confirmation
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\QA-PLAN-{task}` (or `./reports/{topic}/qa/QA-PLAN-{task}`) — includes: PASS/REVISE verdict, traceability matrix, security summary, business confirmation
 **Exit Criteria**: Plan validated, technically coherent, security reviewed, business-aligned
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | reviewer ✓ | business-analyst ✓
 
@@ -205,8 +205,8 @@ FOR EACH requirement in BRAINSTORM-{task}.md:
 > Present deliverable file links to user and STOP. Wait for explicit user command.
 >
 > Deliverables completed:
-> 1. ✅ Plan — `./reports/{topic}/plans/PLAN-{task}` (or multi-phase files)
-> 2. ✅ QA — `./reports/{topic}/qa/QA-PLAN-{task}`
+> 1. ✅ Plan — `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`) (or multi-phase files)
+> 2. ✅ QA — `<appDataDir>\\brain\\<conversation-id>\\QA-PLAN-{task}` (or `./reports/{topic}/qa/QA-PLAN-{task}`)
 > 3. 📬 Debate — `./reports/{topic}/MAILBOX-{date}.md`
 >
 > Suggested next steps (USER must explicitly choose):

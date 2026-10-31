@@ -65,10 +65,10 @@ execution-mode: execute
 | ----------------- | ----------------------------------------------- |
 | Phase 1 (Scope)   | Shared Task List in Mailbox                     |
 | Phase 2 (Impl.)   | Code changes + review trail in Mailbox          |
-| Phase 3 (Verify)  | `./reports/{topic}/reviews/REVIEW-{task}`            |
+| Phase 3 (Verify)  | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{task}` (or `./reports/{topic}/reviews/REVIEW-{task}`)            |
 | ALL Phases         | `./reports/{topic}/MAILBOX-{date}.md`                  |
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -211,7 +211,7 @@ IF other domain → Consult TEAMS.md roster for correct triangle
 5. Debate loop if FAIL → `tester` fixes gaps or defends → max 3 rounds
 6. `tester` (as Tech Lead) synthesizes final verification report
 
-**Deliverable**: `./reports/{topic}/reviews/REVIEW-{task}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{task}` (or `./reports/{topic}/reviews/REVIEW-{task}`)
 **Exit Criteria**: All tests pass, changed code covered, security validated, no regressions detected
 **Consensus**: ✅ CONSENSUS: tester ✓ | tester(exec) ✓ | security-engineer ✓
 

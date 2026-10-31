@@ -38,7 +38,7 @@ execution-mode: execute
 | **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
-**Deliverables:** All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+**Deliverables:** All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → `{name}.md`. Large (> 150 lines) → `{name}/` folder.
 
 ---
@@ -50,7 +50,7 @@ execution-mode: execute
 > - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
 > - ❌ NEVER modify source files
 > - ❌ NEVER auto-implement plans or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce plan files in `./reports/{topic}/plans/`
+> - ✅ ONLY produce plan files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 
 ---
 
@@ -74,7 +74,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | Agent  | `planner`                          |
 | ------ | ---------------------------------- |
 | Goal   | Create focused implementation plan |
-| Output | `./reports/{topic}/plans/PLAN-{task}`   |
+| Output | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`)   |
 | Exit   | Steps defined, approach clear      |
 
 ---
@@ -86,7 +86,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 > Present plan file link to user and STOP. Wait for explicit user command.
 >
 > Suggested next steps (USER must explicitly choose):
-> 1. ✅ Plan Ready — `./reports/{topic}/plans/PLAN-{task}`
+> 1. ✅ Plan Ready — `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`)
 > 2. 🏗️ `/cook:fast` → Implement plan
 > 3. 🔍 `/plan:hard` → More detailed planning
 > 4. 🔄 Iterate → Refine plan

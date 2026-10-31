@@ -1,6 +1,6 @@
 # 📚 REFERENCE
 
-> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
+> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
 
 ---
 
@@ -9,7 +9,17 @@
 | Mode | Tier | Trigger Condition | Action |
 |------|------|-------------------|--------|
 | **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked | Execute, test, and verify **directly** (0 subagent overhead) |
-| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode** & delegate via subagents |
+| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode** & delegate via subagents (`Model: "inherit"`, DAG Parallel Fan-Out) |
+
+---
+
+## 🧠 QUALITY-FIRST MODEL POLICY
+
+| Model | Permitted Usage | Rule |
+|-------|-----------------|------|
+| `Model: "inherit"` (or `"pro"`) | All 21 specialist agents across engineering, architecture, planning, scouting, debugging, testing, reviewing, security, design, docs | **MANDATORY DEFAULT** (Pro High quality) |
+| `Model: "flash"` | Trivial mechanical chores only (raw log aggregation, simple formatting) | Only when 0 reasoning needed |
+| `Model: "flash_lite"` | **NONE** | **⛔ STRICTLY FORBIDDEN** |
 
 ---
 
@@ -36,7 +46,7 @@
 
 ---
 
-## AGENT TABLE (21 Specialist Agents)
+## AGENT TABLE (21 Specialist Agents — Default `Model: "inherit"`)
 
 | Agent | Category | Primary Tasks |
 |-------|----------|---------------|
@@ -66,7 +76,7 @@
 
 ## DELIVERABLE PATHS (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
 
-> **Default (Antigravity 2.0)**: Write transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git working tree 100% clean.
+> **Default (Antigravity 2.0)**: Write transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git working tree 100% clean.
 > **Workspace Export**: Only write to `./reports/{topic}/` or `./documents/` when running `/docs` or when explicitly requested by the user.
 
 ```yaml
@@ -77,20 +87,6 @@ docs_suite_workspace:   ./documents/knowledge-*/00-index.md
 
 ---
 
-## RULES FILES (Load On Demand in Mode B)
-
-| File | Purpose | Load When |
-|------|---------|-----------|
-| `CORE.md` | 2-Mode Gate, 10 Laws, deliverable routing | Mode B triggered |
-| `PHASES.md` | Phase execution, chunking, 2-step skill analysis | Running Mode B phases |
-| `AGENTS.md` | Tiered execution (TIER 0 / TIER 1 / TIER 2), roster | Delegating in Mode B |
-| `TEAMS.md` | Golden Triangle 3-agent team protocol | `:team` variants |
-| `SKILLS.md` | Fast 2-Step Progressive Skill Lookup | Complex skill lookups |
-| `ERRORS.md` | Error recovery | Errors occur |
-| `REFERENCE.md` | Lookup tables | Quick lookups |
-
----
-
 ## ORCHESTRATION LAWS (Quick Reference)
 
 | # | Law | One-liner |
@@ -98,8 +94,8 @@ docs_suite_workspace:   ./documents/knowledge-*/00-index.md
 | L1 | Zero-Latency Entry | `GEMINI.md` pre-loaded; load `CORE`/`PHASES`/`AGENTS` on-demand for Mode B |
 | L2 | Requirement Integrity | 100% fidelity, zero loss |
 | L3 | Smart Threshold Gate | Mode A (≤ 3 files) direct; Mode B (> 3 files / `/cmd`) orchestrated |
-| L4 | Deep Embodiment | Follow agent's full protocol |
-| L5 | Sequential Execution | Phase N before N+1 in Mode B |
+| L4 | Quality-First Model | Default `Model: "inherit"` (Pro High); `"flash"` only for trivial chores; NEVER `"flash_lite"` |
+| L5 | DAG Parallel Fan-Out | Run independent phases concurrently in one turn; sequential when dependent |
 | L6 | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |
 | L7 | Recursive Delegation | In Mode B, Orchestrator & Meta agents never implement |
 | L8 | Stateful Handoff | Prior deliverables = locked |

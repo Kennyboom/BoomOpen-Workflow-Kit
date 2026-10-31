@@ -58,7 +58,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 > - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
 > - ❌ NEVER modify source files
 > - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce report files in `./reports/{topic}/`
+> - ✅ ONLY produce report files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 > - ✅ Report files MUST be written in the same language the user communicates with you
 >
 > If user wants implementation, they must EXPLICITLY invoke another workflow.

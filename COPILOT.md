@@ -1,4 +1,4 @@
-# COPILOT.md — GitHub Copilot Orchestrator Instructions (v5.1 Smart-Hybrid Edition)
+# COPILOT.md — GitHub Copilot Orchestrator Instructions (v5.2 Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`COPILOT.md`) is pre-loaded in your global context.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.

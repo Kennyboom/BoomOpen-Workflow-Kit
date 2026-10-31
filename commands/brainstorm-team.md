@@ -37,9 +37,9 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Diverge | `./reports/{topic}/brainstorms/IDEAS-{topic}` |
-| P2: Converge | `./reports/{topic}/brainstorms/ANALYSIS-{topic}` |
-| P3: Synthesize | `./reports/{topic}/brainstorms/BRAINSTORM-{topic}` |
+| P1: Diverge | `<appDataDir>\\brain\\<conversation-id>\\IDEAS-{topic}` (or `./reports/{topic}/brainstorms/IDEAS-{topic}`) |
+| P2: Converge | `<appDataDir>\\brain\\<conversation-id>\\ANALYSIS-{topic}` (or `./reports/{topic}/brainstorms/ANALYSIS-{topic}`) |
+| P3: Synthesize | `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`) |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
@@ -54,7 +54,7 @@ execution-mode: execute
 > - ❌ NEVER modify source files
 > - ❌ NEVER run build/test commands
 > - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ ONLY produce report/analysis files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 > - ✅ ONLY create ideation/research documents
 > - ✅ Report files MUST be written in the same language the user communicates with you
 >
@@ -91,7 +91,7 @@ execution-mode: execute
 5. If FAIL → expand or defend → max 3 rounds → ESCALATION if unresolved
 6. `brainstormer` synthesizes approved explorations into unified idea catalog
 
-**Deliverable**: `./reports/{topic}/brainstorms/IDEAS-{topic}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\IDEAS-{topic}` (or `./reports/{topic}/brainstorms/IDEAS-{topic}`)
 - Raw idea catalog (minimum 8-12 distinct ideas across dimensions)
 - Prior art references, codebase context, assumptions stated
 - Each idea tagged: possible / stretch / moonshot
@@ -116,9 +116,9 @@ execution-mode: execute
 | Executor | `researcher` | Deep analysis, pros/cons, feasibility scoring |
 | Reviewer | `reviewer` + `business-analyst` lens | Challenge fairness, bias, hidden risks |
 
-**Prerequisite**: **READ** `./reports/{topic}/brainstorms/IDEAS-{topic}`
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\IDEAS-{topic}` (or `./reports/{topic}/brainstorms/IDEAS-{topic}`)
 
-**Deliverable**: `./reports/{topic}/brainstorms/ANALYSIS-{topic}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\ANALYSIS-{topic}` (or `./reports/{topic}/brainstorms/ANALYSIS-{topic}`)
 - Evaluation criteria and weights
 - Per-idea deep analysis (feasibility, impact, effort, risks)
 - Cross-idea comparison matrix
@@ -143,7 +143,7 @@ execution-mode: execute
 | Executor | `reporter` | Write BRAINSTORM-{topic}.md with recommendations |
 | Reviewer | `tech-lead` | Challenge: recommendation sound? Options fair? Decision-ready? |
 
-**Prerequisite**: **READ** `./reports/{topic}/brainstorms/ANALYSIS-{topic}`
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\ANALYSIS-{topic}` (or `./reports/{topic}/brainstorms/ANALYSIS-{topic}`)
 
 **Triangle Loop**:
 1. `brainstormer` decomposes synthesis → Shared Task List
@@ -152,7 +152,7 @@ execution-mode: execute
 4. If FAIL → revise or defend → max 3 rounds
 5. `brainstormer` synthesizes approved sections into final document
 
-**Deliverable**: `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`)
 - Executive summary and top recommendation
 - Complete idea catalog (explored / shortlisted / recommended)
 - Evidence-backed analysis with comparison matrix

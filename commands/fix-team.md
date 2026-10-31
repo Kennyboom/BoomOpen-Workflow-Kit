@@ -32,10 +32,10 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Investigation | `./reports/{topic}/debugs/INVESTIGATION-{issue}` |
-| P2: Root Cause | `./reports/{topic}/debugs/DEBUG-{issue}` |
-| P3: Fix Planning | `./reports/{topic}/plans/PLAN-{issue}` |
-| P5: Testing | `./reports/{topic}/qa/QA-{issue}` |
+| P1: Investigation | `<appDataDir>\\brain\\<conversation-id>\\INVESTIGATION-{issue}` (or `./reports/{topic}/debugs/INVESTIGATION-{issue}`) |
+| P2: Root Cause | `<appDataDir>\\brain\\<conversation-id>\\DEBUG-{issue}` (or `./reports/{topic}/debugs/DEBUG-{issue}`) |
+| P3: Fix Planning | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{issue}` (or `./reports/{topic}/plans/PLAN-{issue}`) |
+| P5: Testing | `<appDataDir>\\brain\\<conversation-id>\\QA-{issue}` (or `./reports/{topic}/qa/QA-{issue}`) |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.

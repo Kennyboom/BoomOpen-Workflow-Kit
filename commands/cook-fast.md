@@ -45,13 +45,13 @@ execution-mode: execute
 ## 📁 PRIOR PLAN CHECK
 
 ```
-IF ./reports/{topic}/plans/PLAN-{feature} exists (.md file or folder):
+IF `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}.md` (or `./reports/{topic}/plans/PLAN-{feature}`) exists (.md file or folder):
   → READ and FOLLOW it
 ELSE:
   → Create micro-plan inline
 ```
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -85,7 +85,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | Agent        | Route by domain                                                               |
 | ------------ | ----------------------------------------------------------------------------- |
 | Route        | UI → `frontend-engineer`, API → `backend-engineer`, DB → `database-architect` |
-| Prerequisite | READ `./reports/{topic}/plans/PLAN-{feature}` if exists                            |
+| Prerequisite | READ `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`) if exists                            |
 | Goal         | Implement feature                                                             |
 | Exit         | Feature implemented, code compiles, basic testing done                        |
 

@@ -34,10 +34,10 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Discovery | `./reports/{topic}/brainstorms/BRAINSTORM-{feature}` |
-| P2: Research | `./reports/{topic}/researchers/RESEARCH-{feature}` + `./reports/{topic}/scouts/SCOUT-{feature}` |
-| P4: Design | `./reports/{topic}/designs/DESIGN-{feature}` |
-| P5: Planning | `./reports/{topic}/plans/PLAN-{feature}` |
+| P1: Discovery | `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{feature}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{feature}`) |
+| P2: Research | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{feature}` (or `./reports/{topic}/researchers/RESEARCH-{feature}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{feature}` (or `./reports/{topic}/scouts/SCOUT-{feature}`) |
+| P4: Design | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-{feature}` (or `./reports/{topic}/designs/DESIGN-{feature}`) |
+| P5: Planning | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`) |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
@@ -132,7 +132,7 @@ execution-mode: execute
 
 > **⛔ MANDATORY: READ `_ref/implementation-loop.md` for the full step-by-step protocol.**
 
-**Prerequisite**: **READ and FOLLOW** `./reports/{topic}/plans/PLAN-{feature}`
+**Prerequisite**: **READ and FOLLOW** `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`)
 **Exit Criteria**: All plan tasks implemented, reviews passed, no unauthorized deviations
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 

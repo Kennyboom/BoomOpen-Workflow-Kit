@@ -1,4 +1,4 @@
-# ⚡ BoomOpen Workflow Kit v5.1 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
+# ⚡ BoomOpen Workflow Kit v5.2 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`GEMINI.md`) is pre-loaded in `<user_rules>` on every turn.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -20,7 +20,15 @@ Before taking action, classify the request through this 2-Mode Gate:
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
 - **Action**: Activate **Strict Orchestrator Mode**:
   - Load the target command workflow (`commands/{cmd}.md`) and `rules/PHASES.md` / `rules/AGENTS.md` on-demand.
-  - **YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER**: Delegate every phase to isolated specialist subagents via Antigravity 2.0 native primitives.
+  - **YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER**: Delegate every phase to isolated specialist subagents via Antigravity 2.0 native primitives, using **DAG-Aware Parallel Fan-Out** for independent phases.
+
+---
+
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents. Always inherit the user's selected model (`Model: "inherit"` or `"pro"`) to prevent any drop in reasoning or code quality.
+- **Trivial Chores Only (`Model: "flash"` — Latest Flash High)**: Permitted **ONLY** for trivial mechanical chores (raw log aggregation, simple list formatting, status ping) that require zero architectural or coding judgment. When in doubt, ALWAYS use `Model: "inherit"`.
+- **Forbidden (`flash_lite`)**: **NEVER use `flash_lite`** in any BoomOpen workflow.
 
 ---
 
@@ -35,7 +43,7 @@ RULES     = ~/.gemini/config/skills/boomopen-workflow-kit/rules/
 ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 ```
 
-- **Brain Artifacts First (Clean Git Tree)**: Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `MAILBOX`) MUST be written to the conversation's native **Brain Artifact Directory** (`<appDataDir>\brain\<conversation-id>\`) so they render in the Antigravity UI Artifact pane and keep the project's Git working tree 100% clean.
+- **Brain Artifacts First (Clean Git Tree)**: Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) MUST be written to the conversation's native **Brain Artifact Directory** (`<appDataDir>\brain\<conversation-id>\`) so they render in the Antigravity UI Artifact pane and keep the project's Git working tree 100% clean.
 - **Workspace Docs**: Only write to `./reports/{topic}/` or `./documents/` in the project workspace when running `/docs` (`/docs:core`, `/docs:business`, `/docs:audit`) or when the user explicitly asks to commit reports into the repository.
 
 ---
@@ -57,7 +65,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | `/cook`, `/cook:hard`, `/cook:fast`, `/cook:team` | Load `commands/cook.md` → route to `commands/cook-{variant}.md` |
 | `/fix`, `/fix:hard`, `/fix:fast`, `/fix:team` | Load `commands/fix.md` → route to `commands/fix-{variant}.md` |
 | `/plan`, `/debug`, `/test`, `/review`, `/design`, `/report`, `/code` | Load `commands/{cmd}.md` → route to `commands/{cmd}-{variant}.md` |
-| `/docs`, `/deploy`, `/brainstorm`, `/ask`, `/orchestrate` | Load `commands/{cmd}.md` |
+| `/docs`, `/deploy`, `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap` | Load `commands/{cmd}.md` |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`
 **Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
@@ -69,12 +77,12 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | Tier | Mode / Condition | Action |
 |------|------------------|--------|
 | **TIER 0** | **Mode A** (≤ 3 files, 1 domain, no `/cmd`) | Execute, test, and verify directly |
-| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools |
+| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools (with DAG Parallel Fan-Out) |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
 ### 🛠️ Antigravity 2.0 Native Sub-agent Primitives (TIER 1)
 - `define_subagent`: Register specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
-- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt`, `Model` (`inherit`, `flash_lite`, `flash`, `pro`), and `Workspace` (`inherit`, `branch` for git worktree isolation, or `share`).
+- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt`, `Model` (`"inherit"` / `"pro"` default; `"flash"` for trivial chores only; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch` for git worktree isolation, or `share`). Launch independent phases concurrently in a single turn.
 - `send_message`: Multi-turn communication with running sub-agents by `conversationId`, powered by **Reactive Async Wakeup** (never poll in a loop).
 - `manage_subagents` & `manage_task`: List, inspect status, or terminate subagents/background tasks.
 - Cross-platform alias: `runSubagent` (Cursor / Copilot / Claude Code compatibility).
@@ -86,8 +94,8 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | File | Load When |
 |------|-----------|
 | `CORE.md` | Mode B orchestration laws & deliverable table needed |
-| `PHASES.md` | Running multi-phase workflows & chunked deliverables |
-| `AGENTS.md` | Delegating to specialist sub-agents in Mode B |
+| `PHASES.md` | Running multi-phase workflows, DAG Parallel Fan-Out & chunked deliverables |
+| `AGENTS.md` | Delegating to specialist sub-agents & Quality-First Model Policy |
 | `TEAMS.md` | Executing `:team` Golden Triangle adversarial workflows |
-| `SKILLS.md` | Resolving niche skills via 2-step lookup (`<skills>` → `skill-seeker`) |
+| `SKILLS.md` | Resolving niche skills via 2-step lookup (`<skills>` → `compact-index.json` / `skill-seeker`) |
 | `ERRORS.md` / `REFERENCE.md` | Error recovery or fast lookup tables |

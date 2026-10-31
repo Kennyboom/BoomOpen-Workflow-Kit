@@ -27,6 +27,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
 const readline = require('node:readline');
+const { buildCompactSkillIndex, runDoctor } = require('./doctor.js');
+const { runCheck } = require('./checker.js');
 
 // ============================================================================
 // Configuration
@@ -378,7 +380,13 @@ function copyWithReplace(src, dest, replacements = {}, trackProgress = true) {
                 const ext = path.extname(entry.name).toLowerCase();
 
                 const isSkillsLib = destPath.includes('skills_library');
-                const alreadyUpToDate = isSkillsLib && fs.existsSync(destPath) && fs.statSync(destPath).size > 0;
+                const forceInstall = process.argv.includes('--force');
+                let alreadyUpToDate = false;
+                if (isSkillsLib && !forceInstall && fs.existsSync(destPath)) {
+                    const srcStat = fs.statSync(srcPath);
+                    const destStat = fs.statSync(destPath);
+                    alreadyUpToDate = srcStat.size === destStat.size && srcStat.mtimeMs <= destStat.mtimeMs + 1000;
+                }
                 if (!alreadyUpToDate) {
                     if (textExtensions.includes(ext)) {
                         let content = fs.readFileSync(srcPath, 'utf8');
@@ -389,10 +397,7 @@ function copyWithReplace(src, dest, replacements = {}, trackProgress = true) {
                         }
                         const needsWrite = !fs.existsSync(destPath) || fs.readFileSync(destPath, 'utf8') !== content;
                         if (needsWrite) {
-                            const fd = fs.openSync(destPath, 'w');
-                            fs.writeSync(fd, content);
-                            fs.fsyncSync(fd);
-                            fs.closeSync(fd);
+                            fs.writeFileSync(destPath, content, 'utf8');
                         }
                     } else {
                         fs.copyFileSync(srcPath, destPath);
@@ -432,10 +437,7 @@ function copyFileWithReplace(src, dest, replacements = {}, trackProgress = true)
         }
         
         // Write with fsync for reliability
-        const fd = fs.openSync(dest, 'w');
-        fs.writeSync(fd, content);
-        fs.fsyncSync(fd);
-        fs.closeSync(fd);
+        fs.writeFileSync(dest, content, 'utf8');
         
         // Track copied file for verification
         progressState.copiedFiles.push(dest);
@@ -532,6 +534,7 @@ function estimateInstallFiles() {
     let total = 0;
     
     // Count files in core directories
+    try { buildCompactSkillIndex(ROOT); } catch (err) { logError("compact-index", ROOT, err); }
     for (const dir of CORE_DIRS) {
         const srcDir = path.join(ROOT, dir);
         total += countFiles(srcDir);
@@ -1140,10 +1143,7 @@ function mergeCodexConfig(templatePath, userConfigPath) {
     const finalConfig = userConfig.trimEnd() + '\n' + managedBlock;
 
     // Write with fsync
-    const fd = fs.openSync(userConfigPath, 'w');
-    fs.writeSync(fd, finalConfig);
-    fs.fsyncSync(fd);
-    fs.closeSync(fd);
+    fs.writeFileSync(userConfigPath, finalConfig, 'utf8');
 
     return true;
 }
@@ -1789,6 +1789,19 @@ async function main() {
             listTools();
             break;
 
+        case 'doctor': {
+            const report = runDoctor({ repoRoot: ROOT, homeDir: HOME });
+            if (!report.healthy) process.exitCode = 1;
+            break;
+        }
+
+        case 'check': {
+            const checkDir = process.argv[3] || process.cwd();
+            const report = runCheck(checkDir);
+            if (!report.passed) process.exitCode = 1;
+            break;
+        }
+
         default:
             console.log(`❌ Unknown command: ${command}`);
             printUsage();
@@ -1809,6 +1822,9 @@ module.exports = {
     removeFile,
     removeSubdirectories,
     countFiles,
+    buildCompactSkillIndex,
+    runDoctor,
+    runCheck,
 };
 
 

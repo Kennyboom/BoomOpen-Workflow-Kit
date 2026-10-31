@@ -31,7 +31,7 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Data | `./reports/{topic}/scouts/SCOUT-{topic}` + `./reports/{topic}/researchers/RESEARCH-{topic}` |
+| P1: Data | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{topic}` (or `./reports/{topic}/scouts/SCOUT-{topic}`) + `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}` (or `./reports/{topic}/researchers/RESEARCH-{topic}`) |
 | P2: Draft | `./reports/{topic}/general/REPORT-{topic}-{date}` |
 | P3: Final | `./reports/{topic}/general/REPORT-{topic}-{date}` (polished) |
 | ALL | `./reports/{topic}/MAILBOX-{date}.md` |
@@ -47,7 +47,7 @@ execution-mode: execute
 > - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
 > - ❌ NEVER modify source files
 > - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ ONLY produce report/analysis files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 > - ✅ Report files MUST be written in the same language the user communicates with you
 >
 > If user wants implementation, they must EXPLICITLY invoke another workflow.

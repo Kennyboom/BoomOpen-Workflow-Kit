@@ -63,7 +63,7 @@ enforcement:
   - Synthesis file is the deliverable for downstream phases
 ```
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -76,7 +76,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 > - ❌ NEVER modify source files
 > - ❌ NEVER run build/test commands
 > - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ ONLY produce report/analysis files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 > - ✅ ONLY create research/ideation documents
 >
 > If user wants implementation after research, they must EXPLICITLY invoke another workflow.
@@ -135,7 +135,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 > Load `{AGENTS_PATH}/researcher.md`
 > EMBODY [researcher] — Requires logged system error justification.
 
-**MANDATORY**: CREATE `./reports/{topic}/researchers/RESEARCH-{topic}`
+**MANDATORY**: CREATE `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}` (or `./reports/{topic}/researchers/RESEARCH-{topic}`)
 
 **Exit Criteria:**
 
@@ -180,7 +180,7 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 | ---------------- | -------------------------------------------------------------------------------------- |
 | **Agent**        | `brainstormer`                                                                         |
 | **Goal**         | Synthesize ideas with trade-off analysis                                               |
-| **Prerequisite** | READ `./reports/{topic}/researchers/RESEARCH-{topic}` + `./reports/{topic}/scouts/SCOUT-{topic}` |
+| **Prerequisite** | READ `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}` (or `./reports/{topic}/researchers/RESEARCH-{topic}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{topic}` (or `./reports/{topic}/scouts/SCOUT-{topic}`) |
 
 ### ⚡ TIERED EXECUTION
 
@@ -196,11 +196,11 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 **MANDATORY**:
 
 - READ all prior phase deliverables
-- CREATE `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`
+- CREATE `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`)
 
 **Exit Criteria:**
 
-- [ ] Brainstorm file created at `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`
+- [ ] Brainstorm file created at `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`)
 - [ ] Ideas synthesized incorporating research
 - [ ] Trade-offs analyzed
 - [ ] Recommendations provided

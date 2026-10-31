@@ -31,10 +31,10 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Research | `./reports/{topic}/researchers/RESEARCH-{request}` + `./reports/{topic}/scouts/SCOUT-{request}` |
-| P2: Design Spec | `./reports/{topic}/designs/DESIGN-{request}` |
-| P3: Impl Spec | `./reports/{topic}/designs/DESIGN-SPEC-{request}` |
-| P4: Handoff | `./reports/{topic}/reviews/REVIEW-{request}` |
+| P1: Research | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{request}` (or `./reports/{topic}/researchers/RESEARCH-{request}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{request}` (or `./reports/{topic}/scouts/SCOUT-{request}`) |
+| P2: Design Spec | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-{request}` (or `./reports/{topic}/designs/DESIGN-{request}`) |
+| P3: Impl Spec | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-SPEC-{request}` (or `./reports/{topic}/designs/DESIGN-SPEC-{request}`) |
+| P4: Handoff | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{request}` (or `./reports/{topic}/reviews/REVIEW-{request}`) |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.

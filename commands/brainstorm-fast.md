@@ -59,7 +59,7 @@ enforcement:
   - Idea synthesis/analysis → MUST create file
 ```
 
-All files in `./reports/{topic}/` → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -72,7 +72,7 @@ All files in `./reports/{topic}/` → Write in the same language the user commun
 > - ❌ NEVER modify source files
 > - ❌ NEVER run build/test commands
 > - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce report/analysis files in `./reports/{topic}/`
+> - ✅ ONLY produce report/analysis files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
 > - ✅ ONLY create ideation/research documents
 >
 > If user wants implementation after research, they must EXPLICITLY invoke another workflow.
@@ -130,11 +130,11 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 > Load `{AGENTS_PATH}/brainstormer.md`
 > EMBODY [brainstormer] — Requires logged system error justification.
 
-**MANDATORY**: CREATE `./reports/{topic}/brainstorms/BRAINSTORM-{topic}` for synthesis
+**MANDATORY**: CREATE `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`) for synthesis
 
 **Exit Criteria:**
 
-- [ ] Brainstorm file created at `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`
+- [ ] Brainstorm file created at `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`)
 - [ ] Multiple ideas generated
 - [ ] Ideas categorized
 - [ ] Trade-offs noted

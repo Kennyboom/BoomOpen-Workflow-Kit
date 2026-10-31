@@ -1,7 +1,7 @@
 {
   "name": "@boomopen/workflow-kit",
-  "version": "5.1.0",
-  "description": "BoomOpen Workflow Kit v5.1 (Antigravity 2.0 Smart-Hybrid Edition) - 2-Mode Smart Complexity Threshold Gate, native subagent primitives, Golden Triangle teams, and 2-step progressive skill lookup.",
+  "version": "5.2.0",
+  "description": "BoomOpen Workflow Kit v5.2 (Antigravity 2.0 Smart-Hybrid Edition) - 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, compact skill index, and CLI doctor/check.",
   "main": "cli/install.js",
   "bin": {
     "boomopen": "./cli/install.js"
@@ -18,8 +18,10 @@
     "uninstall:codex": "node cli/install.js uninstall codex",
     "uninstall:all": "node cli/install.js uninstall --all",
     "list": "node cli/install.js list",
+    "doctor": "node cli/install.js doctor",
+    "check": "node cli/install.js check",
     "test": "node --test cli/install.test.js",
-    "lint": "node --check cli/install.js && echo '✅ JavaScript syntax valid'",
+    "lint": "node --check cli/install.js && node --check cli/doctor.js && node --check cli/checker.js && echo '✅ JavaScript syntax valid'",
     "lint:md": "echo 'Run: npx markdownlint \"**/*.md\" --ignore node_modules' to lint Markdown",
     "semantic-release": "semantic-release",
     "prepare": "husky install || true"

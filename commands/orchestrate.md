@@ -59,7 +59,7 @@ $ARGUMENTS
 
 | Step | Agent | Action |
 |------|-------|--------|
-| 1 | `planner` | Create `./reports/{topic}/plans/PLAN-{feature}.md` or `docs/PLAN.md` |
+| 1 | `planner` | Create `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}.md` (or `./reports/{topic}/plans/PLAN-{feature}.md`) or `docs/PLAN.md` |
 | 2 | (optional) `scouter` | Codebase discovery if needed |
 
 > 🔴 **NO OTHER AGENTS during planning!** Only `planner` and `scouter`.

@@ -1,13 +1,13 @@
 ---
-description: ⚡⚡⚡ Research Answer — External research with comprehensive analysis
-version: "1.0"
+description: ⚡⚡⚡ Research Answer — Parallel codebase + external research with comprehensive synthesis
+version: "5.2"
 category: knowledge
 execution-mode: execute
 ---
 
-# /ask:hard — Research-Backed Answering
+# /ask:hard — Research-Backed Answering (DAG Parallel Fan-Out)
 
-> **MISSION**: Provide comprehensive, research-backed answers through multi-source analysis.
+> **MISSION**: Provide comprehensive, evidence-backed answers through parallel internal codebase scouting and external research.
 
 <question>$ARGUMENTS</question>
 
@@ -16,148 +16,61 @@ execution-mode: execute
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+1. `CORE.md` — 2-Mode Gate, Quality-First Model Policy, Brain Artifact Routing
+2. `PHASES.md` — DAG-Aware Parallel Fan-Out & Phase Execution
+3. `AGENTS.md` — Tiered Execution (`Model: "inherit"` Pro High Default)
 
 ---
 
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
+## 🔀 TIERED EXECUTION & QUALITY-FIRST MODEL POLICY
 
-> **Reference: AGENTS.md (Tiered Execution)`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
+| Tier | When | Action |
+|------|------|--------|
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent with `Model: "inherit"` (Pro High default; NEVER `flash_lite`) |
+| **TIER 2** | Tool MISSING or system error | EMBODY agent file (FALLBACK) |
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## 🎭 Phase 1: QUESTION DECOMPOSITION (`brainstormer`)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: QUESTION ANALYSIS
-
-| Attribute | Value                                       |
-| --------- | ------------------------------------------- |
-| **Agent** | `brainstormer`                              |
-| **Goal**  | Decompose question into research components |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `brainstormer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
-
-**Exit Criteria:**
-
-- [ ] Question scope defined
-- [ ] Research areas identified
-- [ ] Success criteria established
+| Attribute | Value |
+|-----------|-------|
+| **Agent** | `brainstormer` (`Model: "inherit"`) |
+| **Goal** | Decompose the question into internal codebase queries and external research dimensions (use `ask_question` if ambiguous) |
+| **Exit** | Scope defined, sub-questions listed |
 
 ---
 
-## 🎭 Phase 2: CODEBASE ANALYSIS
+## ⚡ PARALLEL FAN-OUT: Phase 2 (`scouter`) + Phase 3 (`researcher`)
 
-| Attribute | Value                         |
-| --------- | ----------------------------- |
-| **Agent** | `scouter`                     |
-| **Goal**  | Map relevant codebase context |
+> **🚀 DAG FAN-OUT DIRECTIVE**: Launch `scouter` (internal codebase analysis) AND `researcher` (external documentation / best practices) **concurrently in a single turn** (`Model: "inherit"`), and join via Reactive Async Wakeup before Phase 4.
 
-### ⚡ TIERED EXECUTION
+### 🎭 Phase 2: CODEBASE ANALYSIS (`scouter`)
+- **Agent**: `scouter` (`Model: "inherit"`, `EnableWriteTools: false`)
+- **Goal**: Locate relevant files, symbols, and existing architectural patterns in the workspace.
+- **Exit**: Internal codebase evidence gathered with `file:line` references.
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
-
-**Exit Criteria:**
-
-- [ ] Relevant code found
-- [ ] Patterns documented
-- [ ] Internal context complete
+### 🎭 Phase 3: EXTERNAL RESEARCH (`researcher`)
+- **Agent**: `researcher` (`Model: "inherit"`)
+- **Goal**: Consult official docs, benchmarks, and industry best practices.
+- **Exit**: External sources and trade-offs documented.
 
 ---
 
-## 🎭 Phase 3: EXTERNAL RESEARCH
+## 🎭 Phase 4: SYNTHESIS (`researcher` / Orchestrator)
 
-| Attribute | Value                                        |
-| --------- | -------------------------------------------- |
-| **Agent** | `researcher`                                 |
-| **Goal**  | Research external sources and best practices |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `researcher`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] — Requires logged system error justification.
-
-**Exit Criteria:**
-
-- [ ] External sources consulted
-- [ ] Best practices identified
-- [ ] Sources documented
+| Attribute | Value |
+|-----------|-------|
+| **Agent** | `researcher` (`Model: "inherit"`) |
+| **Prerequisite** | Combine Phase 2 (`scouter`) internal findings + Phase 3 (`researcher`) external findings |
+| **Deliverable** | `<appDataDir>\brain\<conversation-id>\RESEARCH-{topic}.md` (if report requested) + direct structured response |
+| **Exit** | Comprehensive answer with clickable `file:///` links, Mermaid diagrams, and actionable recommendations |
 
 ---
 
-## 🎭 Phase 4: SYNTHESIS
+## ✅ COMPLETION
 
-| Attribute | Value                           |
-| --------- | ------------------------------- |
-| **Agent** | `researcher`                    |
-| **Goal**  | Synthesize comprehensive answer |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `researcher`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] — Requires logged system error justification.
-
-**Exit Criteria:**
-
-- [ ] All sources synthesized
-- [ ] Answer comprehensive
-- [ ] Actionable recommendations included
-
----
-
-## COMPLETION
-
-Present research report with:
-
-1. ✅ **Answered** — Question resolved
-2. 📋 **Plan** → `/plan:hard` if implementation needed
-3. 💻 **Implement** → `/code:hard` for complex implementation
+Present the synthesized answer with:
+1. ✅ **Answered** — Question resolved with internal + external evidence
+2. 📋 **Plan** → `/plan:hard` if architectural planning is needed next
+3. 💻 **Implement** → `/cook:hard` or `/code:hard` if implementation is needed

@@ -1,9 +1,9 @@
 ---
 name: boomopen-workflow-kit
-description: BoomOpen Workflow Kit (v5.1 Antigravity 2.0 Smart-Hybrid Edition) — 2-Mode Smart Complexity Threshold Gate (Mode A Direct vs Mode B Multi-Agent Orchestration), native subagent primitives (define_subagent, invoke_subagent, send_message), Brain Artifact routing, Golden Triangle teams, and 2-step progressive skill lookup.
+description: BoomOpen Workflow Kit (v5.2 Antigravity 2.0 Smart-Hybrid Edition) — 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, native subagent primitives, Brain Artifact routing, Golden Triangle teams, and compact skill index.
 ---
 
-# ⚡ BoomOpen Workflow Kit (v5.1 — Antigravity 2.0 Smart-Hybrid Edition)
+# ⚡ BoomOpen Workflow Kit (v5.2 — Antigravity 2.0 Smart-Hybrid Edition)
 
 > **PURPOSE**: Root skill entry point for the BoomOpen Workflow Kit Smart-Hybrid multi-agent orchestration framework.
 
@@ -20,13 +20,21 @@ description: BoomOpen Workflow Kit (v5.1 Antigravity 2.0 Smart-Hybrid Edition) �
   1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent`, `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup).
+- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent`, `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup), using **DAG-Aware Parallel Fan-Out** for independent phases.
+
+---
+
+## 🧠 Quality-First Model Policy (`Model: "inherit"` / Pro High Default)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation tasks. Always follow the user's selected model (`Model: "inherit"` or `"pro"`) to guarantee maximum reasoning and code quality.
+- **Trivial Chores Only (`Model: "flash"` — Latest Flash High)**: Permitted **ONLY** for trivial mechanical chores (raw log aggregation, simple list formatting, status ping) where zero architectural or coding judgment is needed. When in doubt, ALWAYS use `Model: "inherit"`.
+- **Forbidden (`flash_lite`)**: **NEVER use `flash_lite`**.
 
 ---
 
 ## 📂 Brain Artifacts First (Antigravity 2.0)
 
-- Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `MAILBOX`) are written to the conversation's native **Brain Artifact Directory** (`<appDataDir>\brain\<conversation-id>\`) so they render in the Antigravity UI Artifact pane and keep the project's Git working tree 100% clean.
+- Default transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`, `SESSION-HANDOVER`) are written to the conversation's native **Brain Artifact Directory** (`<appDataDir>\brain\<conversation-id>\`) so they render in the Antigravity UI Artifact pane and keep the project's Git working tree 100% clean.
 - Only write to `./reports/{topic}/` or `./documents/` in the project workspace when running `/docs` (`/docs:core`) or when the user explicitly asks to commit reports into the repository.
 
 ---
@@ -35,11 +43,11 @@ description: BoomOpen Workflow Kit (v5.1 Antigravity 2.0 Smart-Hybrid Edition) �
 
 | Rule File | Purpose | When to Load |
 |-----------|---------|--------------|
-| [`rules/CORE.md`](./rules/CORE.md) | 2-Mode Gate, 10 Orchestration Laws, Language Policy, Brain Artifact Routing | On-demand in Mode B |
-| [`rules/AGENTS.md`](./rules/AGENTS.md) | Tiered Execution (TIER 0 Direct / TIER 1 Sub-agent / TIER 2 Embody), Agent Roster | Before delegating to specialist subagents |
-| [`rules/PHASES.md`](./rules/PHASES.md) | Sequential Phase Execution, Deliverable Chunking, 2-Step Skill Analysis | When running multi-phase workflows |
+| [`rules/CORE.md`](./rules/CORE.md) | 2-Mode Gate, 10 Orchestration Laws, Model Policy, Brain Artifact Routing | On-demand in Mode B |
+| [`rules/AGENTS.md`](./rules/AGENTS.md) | Tiered Execution (TIER 0/1/2), Quality-First Model Policy, Agent Roster | Before delegating to specialist subagents |
+| [`rules/PHASES.md`](./rules/PHASES.md) | DAG-Aware Parallel Fan-Out, Deliverable Chunking, 2-Step Skill Analysis | When running multi-phase workflows |
 | [`rules/TEAMS.md`](./rules/TEAMS.md) | Golden Triangle 3-Agent Adversarial Collaboration (`Tech Lead` + `Executor` + `Reviewer`) | When executing `:team` workflow variants |
-| [`rules/SKILLS.md`](./rules/SKILLS.md) | Fast 2-Step Progressive Skill Lookup (`<skills>` → `skill-seeker`) | When resolving domain skills for complex tasks |
+| [`rules/SKILLS.md`](./rules/SKILLS.md) | Fast 2-Step Progressive Skill Lookup (`<skills>` → `compact-index.json` / `skill-seeker`) | When resolving domain skills for complex tasks |
 | [`rules/ERRORS.md`](./rules/ERRORS.md) | Self-healing, Error Classification (E1–E4), Anti-Pattern Recovery | When errors or protocol violations occur |
 | [`rules/REFERENCE.md`](./rules/REFERENCE.md) | Quick lookup tables for Commands, Agents, and Deliverable paths | Fast reference |
 
@@ -54,12 +62,13 @@ description: BoomOpen Workflow Kit (v5.1 Antigravity 2.0 Smart-Hybrid Edition) �
 | `/plan` | [`commands/plan.md`](./commands/plan.md) | `fast`, `hard`, `team` |
 | `/debug` | [`commands/debug.md`](./commands/debug.md) | `fast`, `hard`, `team` |
 | `/test` | [`commands/test.md`](./commands/test.md) | `fast`, `hard`, `team` |
-| `/review` | [`commands/review.md`](./commands/review.md) | `fast`, `hard` |
+| `/review` | [`commands/review.md`](./commands/review.md) | `fast`, `hard`, `team` |
 | `/docs` | [`commands/docs.md`](./commands/docs.md) | `core`, `business`, `audit` |
 | `/design` | [`commands/design.md`](./commands/design.md) | `fast`, `hard`, `team` |
 | `/deploy` | [`commands/deploy.md`](./commands/deploy.md) | `check`, `preview`, `production`, `rollback` |
 | `/report` | [`commands/report.md`](./commands/report.md) | `fast`, `hard`, `team` |
-| `/brainstorm` | [`commands/brainstorm.md`](./commands/brainstorm.md) | `fast`, `hard` |
+| `/brainstorm` | [`commands/brainstorm.md`](./commands/brainstorm.md) | `fast`, `hard`, `team` |
 | `/ask` | [`commands/ask.md`](./commands/ask.md) | `fast`, `hard` |
 | `/code` | [`commands/code.md`](./commands/code.md) | `fast`, `hard`, `team` |
 | `/orchestrate` | [`commands/orchestrate.md`](./commands/orchestrate.md) | Multi-agent domain orchestration |
+| `/save` / `/recap` | [`commands/save.md`](./commands/save.md) / [`commands/recap.md`](./commands/recap.md) | Infinite session memory & context recovery |

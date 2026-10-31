@@ -37,10 +37,10 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Symptom Collection | `./reports/{topic}/debugs/SYMPTOMS-{issue}` |
-| P2: Hypothesis Generation | `./reports/{topic}/debugs/HYPOTHESES-{issue}` |
-| P3: Hypothesis Testing | `./reports/{topic}/debugs/EVIDENCE-{issue}` |
-| P4: Root Cause Report | `./reports/{topic}/debugs/DEBUG-REPORT-{issue}` |
+| P1: Symptom Collection | `<appDataDir>\\brain\\<conversation-id>\\SYMPTOMS-{issue}` (or `./reports/{topic}/debugs/SYMPTOMS-{issue}`) |
+| P2: Hypothesis Generation | `<appDataDir>\\brain\\<conversation-id>\\HYPOTHESES-{issue}` (or `./reports/{topic}/debugs/HYPOTHESES-{issue}`) |
+| P3: Hypothesis Testing | `<appDataDir>\\brain\\<conversation-id>\\EVIDENCE-{issue}` (or `./reports/{topic}/debugs/EVIDENCE-{issue}`) |
+| P4: Root Cause Report | `<appDataDir>\\brain\\<conversation-id>\\DEBUG-REPORT-{issue}` (or `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`) |
 | ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
@@ -85,7 +85,7 @@ execution-mode: execute
 5. If FAIL → `scouter` collects additional data or defends → RESUBMISSION/DEFENSE → max 3 rounds
 6. `debugger` synthesizes approved symptom data into unified symptom catalog
 
-**Deliverable**: `./reports/{topic}/debugs/SYMPTOMS-{issue}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\SYMPTOMS-{issue}` (or `./reports/{topic}/debugs/SYMPTOMS-{issue}`)
 **Exit Criteria**: All symptoms documented, reproduction confirmed, environment captured, data sources exhausted
 **Consensus**: ✅ CONSENSUS: debugger ✓ | scouter ✓ | researcher ✓
 
@@ -99,7 +99,7 @@ execution-mode: execute
 | Executor  | `researcher`                         | Execute: research similar issues, known bugs, pattern matching    |
 | Reviewer  | `brainstormer` (Devil's Advocate)    | Challenge: are hypotheses sufficient? What if root cause is elsewhere? Propose alternatives |
 
-**Prerequisite**: **READ** `./reports/{topic}/debugs/SYMPTOMS-{issue}`
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\SYMPTOMS-{issue}` (or `./reports/{topic}/debugs/SYMPTOMS-{issue}`)
 
 **Triangle Loop**:
 1. `debugger` reads symptoms → decomposes into areas: primary suspects, secondary suspects, environmental causes, interaction effects, known bug patterns
@@ -119,7 +119,7 @@ execution-mode: execute
 5. If FAIL → `researcher` expands research or defends → RESUBMISSION/DEFENSE → max 3 rounds
 6. `debugger` synthesizes approved hypotheses into prioritized hypothesis tree
 
-**Deliverable**: `./reports/{topic}/debugs/HYPOTHESES-{issue}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\HYPOTHESES-{issue}` (or `./reports/{topic}/debugs/HYPOTHESES-{issue}`)
 **Exit Criteria**: Hypothesis tree complete, alternatives explored, priorities assigned, investigation paths defined
 **Consensus**: ✅ CONSENSUS: debugger ✓ | researcher ✓ | brainstormer ✓
 
@@ -135,7 +135,7 @@ execution-mode: execute
 | Executor  | `scouter` + `backend-engineer`                  | Execute: trace code paths, add logging, test hypotheses with evidence |
 | Reviewer  | `reviewer`                                      | Challenge: is evidence conclusive? Correlation vs causation? Solving the right problem? |
 
-**Prerequisite**: **READ** `./reports/{topic}/debugs/HYPOTHESES-{issue}`
+**Prerequisite**: **READ** `<appDataDir>\\brain\\<conversation-id>\\HYPOTHESES-{issue}` (or `./reports/{topic}/debugs/HYPOTHESES-{issue}`)
 
 ### GOLDEN TRIANGLE EVIDENCE LOOP (CRITICAL — Step by Step)
 
@@ -156,7 +156,7 @@ execution-mode: execute
    Severity: CRITICAL | Action: "Provide evidence or downgrade to INCONCLUSIVE"
 ```
 
-**Deliverable**: `./reports/{topic}/debugs/EVIDENCE-{issue}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\EVIDENCE-{issue}` (or `./reports/{topic}/debugs/EVIDENCE-{issue}`)
 **Exit Criteria**: All hypotheses tested with evidence, verdicts debated and consensus-approved, root cause identified or narrowed
 **Consensus**: ✅ CONSENSUS: debugger ✓ | scouter/backend-engineer ✓ | reviewer ✓
 
@@ -192,7 +192,7 @@ execution-mode: execute
 5. Debate loop if FAIL → `reporter` revises or defends → max 3 rounds
 6. `debugger` synthesizes approved sections into final report
 
-**Deliverable**: `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`
+**Deliverable**: `<appDataDir>\\brain\\<conversation-id>\\DEBUG-REPORT-{issue}` (or `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`)
 **Exit Criteria**: Root cause documented, evidence chain complete, fix approaches recommended, impact assessed, report validated
 **Consensus**: ✅ CONSENSUS: debugger ✓ | reporter ✓ | tech-lead ✓
 
@@ -224,7 +224,7 @@ Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
 
 ## Next Actions
 1. ✅ **Root Cause** — Identified (triangle-validated across all phases)
-2. 📊 **Report** — `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`
+2. 📊 **Report** — `<appDataDir>\\brain\\<conversation-id>\\DEBUG-REPORT-{issue}` (or `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`)
 3. 🔧 **Fix** → `/fix:team` or `/fix:hard`
 4. 📝 **Document** → `/docs:core`
 ```

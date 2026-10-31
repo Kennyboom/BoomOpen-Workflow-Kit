@@ -1,4 +1,4 @@
-# CURSOR.md — Cursor Orchestrator Instructions (v5.1 Smart-Hybrid Edition)
+# CURSOR.md — Cursor Orchestrator Instructions (v5.2 Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`CURSOR.md`) is pre-loaded in your global context.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -63,7 +63,7 @@ REPORTS  = ./reports/{topic}/
 
 ---
 
-## 📚 RULES v5.1 — Load On Demand in Mode B
+## 📚 RULES v5.2 — Load On Demand in Mode B
 
 | File | Purpose |
 |------|---------|
