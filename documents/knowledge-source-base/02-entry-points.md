@@ -40,7 +40,7 @@ This is the **sole executable file** in the entire project. It is declared in `p
 - **Size**: ~600 lines
 - **Minimum Runtime**: Node.js >=18.0.0
 
-When installed globally via `npm install -g @namch/boomopen-workflow-kit`, the `boomopen-workflow-kit` binary becomes available system-wide. When invoked via `npx`, it runs directly from the package.
+When installed globally via `npm install -g @boomopen/workflow-kit`, the `boomopen-workflow-kit` binary becomes available system-wide. When invoked via `npx`, it runs directly from the package.
 
 ### Secondary: Platform Entry Point Files (Root)
 
@@ -77,7 +77,7 @@ npm run list               # → node cli/install.js list
 
 # Via npx (after npm publish)
 npx boomopen-workflow-kit install cursor
-npx @namch/boomopen-workflow-kit install --all
+npx @boomopen/workflow-kit install --all
 ```
 
 ### 2. Module Loading

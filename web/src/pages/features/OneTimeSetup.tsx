@@ -135,7 +135,7 @@ export default function OneTimeSetup() {
               </div>
               <div>
                 <span className="text-text-muted">$</span>{' '}
-                <span className="text-text-accent">npm install -g @namch/boomopen-workflow-kit</span>
+                <span className="text-text-accent">npm install -g @boomopen/workflow-kit</span>
               </div>
             </div>
           </div>

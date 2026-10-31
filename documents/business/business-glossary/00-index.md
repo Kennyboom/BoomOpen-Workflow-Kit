@@ -11,7 +11,7 @@
 
 ## Quick Summary
 
-This glossary establishes the **single source of truth** for all domain terminology used across the @namch/boomopen-workflow-kit v1.3.0 framework. It canonicalizes 35+ terms spanning orchestration, agent delegation, skill resolution, team protocols, governance, and error handling. The glossary serves as the authoritative reference for documentation authors, agent definitions, command workflows, and platform integrations.
+This glossary establishes the **single source of truth** for all domain terminology used across the @boomopen/workflow-kit v1.3.0 framework. It canonicalizes 35+ terms spanning orchestration, agent delegation, skill resolution, team protocols, governance, and error handling. The glossary serves as the authoritative reference for documentation authors, agent definitions, command workflows, and platform integrations.
 
 ---
 

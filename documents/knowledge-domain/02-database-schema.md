@@ -111,7 +111,7 @@ Since the AI model is the runtime, "queries" are file reads:
 |-----------|-----------|
 | Create | CLI installer copies files from npm package to `~/.{tool}/skills/boomopen-workflow-kit/` |
 | Read | AI model reads files from the installed directory at runtime |
-| Update | User runs `npm update @namch/boomopen-workflow-kit` then `boomopen-workflow-kit install <tool>` |
+| Update | User runs `npm update @boomopen/workflow-kit` then `boomopen-workflow-kit install <tool>` |
 | Delete | `boomopen-workflow-kit uninstall <tool>` removes installed files |
 
 ### Why No Database

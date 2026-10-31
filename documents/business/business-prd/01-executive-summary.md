@@ -83,7 +83,7 @@ Skill Authors can create and publish domain skills to the community ecosystem. T
 - **Touchpoints**: install.js platform configuration, entry point templates
 - **Goals served**: BG-002 (multi-platform support)
 
-### Governing: Framework Maintainer (NamCH)
+### Governing: Framework Maintainer (Kennyboom)
 
 - **Profile**: Creator and primary maintainer of the boomopen-workflow-kit framework
 - **Need**: Sustainable release cadence, extensible architecture, community growth

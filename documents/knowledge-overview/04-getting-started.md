@@ -36,7 +36,7 @@ This is the simplest method. Install once, use across all projects.
 
 ```bash
 # Step 1: Install the package globally
-npm install -g @namch/boomopen-workflow-kit@latest
+npm install -g @boomopen/workflow-kit@latest
 
 # Step 2: Verify installation
 boomopen-workflow-kit list
@@ -56,7 +56,7 @@ Use this if you want to contribute, inspect the source, or run from a local chec
 
 ```bash
 # Step 1: Clone the repository
-git clone https://github.com/hainamchung/boomopen-workflow-kit.git
+git clone https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git
 
 # Step 2: Navigate into the project
 cd boomopen-workflow-kit
@@ -219,7 +219,7 @@ rm -rf boomopen-workflow-kit
 ### Remove Global Package
 
 ```bash
-npm uninstall -g @namch/boomopen-workflow-kit
+npm uninstall -g @boomopen/workflow-kit
 ```
 
 ---
@@ -334,10 +334,10 @@ mkdir -p ~/.npm-global
 npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
 source ~/.zshrc
-npm install -g @namch/boomopen-workflow-kit@latest
+npm install -g @boomopen/workflow-kit@latest
 
 # Option B: Use npx (no global install)
-npx @namch/boomopen-workflow-kit install --all
+npx @boomopen/workflow-kit install --all
 ```
 
 ### "Files not appearing in AI tool"

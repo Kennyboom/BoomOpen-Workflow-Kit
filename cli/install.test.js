@@ -91,19 +91,44 @@ test('All 5 platform entrypoints and templates enforce v5.5 Smart-Hybrid, Pragma
   }
 });
 
-test('Zero files in repository contain legacy code-assistants or Antigravity Kit names', () => {
+test('Zero files in repository contain legacy code-assistants, Antigravity Kit, personal paths, or leaked secrets', () => {
   assert.ok(
     !fs.existsSync(path.join(REPO_ROOT, 'code-assistants')),
     'Legacy code-assistants directory must not exist'
   );
+  assert.ok(
+    !fs.existsSync(path.join(REPO_ROOT, 'global_replace.py')),
+    'Scratch global_replace.py must not exist at root'
+  );
+  assert.ok(
+    !fs.existsSync(path.join(REPO_ROOT, 'test-boom')),
+    'Scratch test-boom directory must not exist at root'
+  );
+  assert.ok(
+    fs.existsSync(path.join(REPO_ROOT, 'SECURITY.md')),
+    'SECURITY.md must exist at repository root'
+  );
 
-  const dirsToScan = ['cli', 'rules', 'agents', 'commands', 'documents', 'platforms', 'scripts'];
+  const dirsToScan = [
+    'agents',
+    'cli',
+    'commands',
+    'documents',
+    'platforms',
+    'rules',
+    'scripts',
+    'skills',
+    'web/src',
+  ];
   const rootFilesToScan = [
     'package.json',
+    'LICENSE',
+    'SECURITY.md',
     'README.md',
     'SKILL.md',
     'CHANGELOG.md',
     'AGENT.md',
+    'AGENT-TEMPLATE.md',
     'CLAUDE.md',
     'CODEX.md',
     'COPILOT.md',
@@ -112,32 +137,44 @@ test('Zero files in repository contain legacy code-assistants or Antigravity Kit
   ];
 
   function walk(dir) {
+    if (!fs.existsSync(dir)) return [];
     let out = [];
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) out = out.concat(walk(full));
-      else out.push(full);
+      else if (/\.(md|js|ts|tsx|json|py|toml|yaml|yml|mdc)$/i.test(entry.name)) out.push(full);
     }
     return out;
   }
 
   const allFiles = [
-    ...rootFilesToScan.map((f) => path.join(REPO_ROOT, f)),
+    ...rootFilesToScan.map((f) => path.join(REPO_ROOT, f)).filter((f) => fs.existsSync(f)),
     ...dirsToScan.flatMap((d) => walk(path.join(REPO_ROOT, d))),
+  ];
+
+  // Build patterns dynamically so this test file itself doesn't trigger self-matches
+  const forbiddenChecks = [
+    { label: 'code-assistants', regex: /code-assistants/ },
+    { label: 'Antigravity Kit', regex: /antigravity\s+kit/i },
+    { label: 'Personal path (Kelly Clark)', regex: /Kelly\s+Clark/i },
+    { label: 'Personal Windows user path', regex: /C:\\Users\\[A-Za-z]/ },
+    { label: 'Legacy author NamCH', regex: /\bNamCH\b/ },
+    { label: 'Legacy scope @namch', regex: /@namch\b/i },
+    { label: 'Legacy repo hainamchung', regex: /hainamchung/i },
+    { label: 'Legacy repo anthropics/boomopen-workflow-kit', regex: /anthropics\/boomopen-workflow-kit/i },
+    { label: 'Secret token pattern', regex: /(?:ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AIza[0-9A-Za-z-_]{35}|AKIA[0-9A-Z]{16}|BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY)/ },
   ];
 
   for (const file of allFiles) {
     if (file.endsWith('install.test.js') || file.endsWith('doctor.js')) continue;
     const content = fs.readFileSync(file, 'utf8');
     const rel = path.relative(REPO_ROOT, file);
-    assert.ok(
-      !content.includes('code-assistants'),
-      `Expected ${rel} not to contain legacy 'code-assistants'`
-    );
-    assert.ok(
-      !/antigravity\s+kit/i.test(content),
-      `Expected ${rel} not to contain legacy 'Antigravity Kit'`
-    );
+    for (const chk of forbiddenChecks) {
+      assert.ok(
+        !chk.regex.test(content),
+        `Expected ${rel} not to match forbidden pattern: ${chk.label}`
+      );
+    }
   }
 });
 

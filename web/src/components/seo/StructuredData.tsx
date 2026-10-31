@@ -42,12 +42,12 @@ export function SoftwareApplicationSchema({
       priceCurrency: offers.priceCurrency,
     },
     url: SITE_URL,
-    downloadUrl: 'https://www.npmjs.com/package/@namch/boomopen-workflow-kit',
+    downloadUrl: 'https://www.npmjs.com/package/@boomopen/workflow-kit',
     softwareVersion: '1.0.0',
     author: {
       '@type': 'Organization',
-      name: 'NamCH',
-      url: 'https://github.com/hainamchung/boomopen-workflow-kit.git',
+      name: 'Kennyboom',
+      url: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -69,12 +69,12 @@ export function SoftwareApplicationSchema({
 
 // Organization Schema
 export function OrganizationSchema({
-  name = 'NamCH',
-  url = 'https://github.com/hainamchung/boomopen-workflow-kit.git',
+  name = 'Kennyboom',
+  url = 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git',
   logo = `${SITE_URL}/assets/logo.png`,
   description = 'AI safety company building reliable, interpretable, and steerable AI systems.',
   sameAs = [
-    'https://github.com/hainamchung/boomopen-workflow-kit.git',
+    'https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git',
   ],
 }: Partial<OrganizationData> = {}) {
   const schema = {

@@ -11,13 +11,22 @@ node_modules
 .DS_Store
 Thumbs.db
 
-# Environment files
+# Environment & Secrets
 .env
 .env.*
 !.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.secret
 
-# Generated reports (user-specific)
+# Generated reports & session memory (user-specific)
 reports/
+.brain/
+test-boom/
 
 # Logs
 *.log
@@ -27,19 +36,21 @@ npm-debug.log*
 coverage/
 .nyc_output/
 
-# IDE
+# IDE & Editor state
 .idea/
 *.swp
 *.swo
+.vscode
 
 # Temporary files
 *.tmp
 *.temp
 
-# DS Store
-.DS_Store
-
-# AI settings
-.vscode
-.cursor
-.claude
+# AI Assistant local directories
+.cursor/
+.claude/
+.gemini/
+.codex/
+.copilot/
+.antigravity/
+.agent/

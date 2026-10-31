@@ -26,22 +26,22 @@ const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/hainamchung/boomopen-workflow-kit',
+        href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit',
         external: true,
       },
       {
         label: 'License',
-        href: 'https://github.com/hainamchung/boomopen-workflow-kit/blob/main/LICENSE',
+        href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/blob/main/LICENSE',
         external: true,
       },
       {
         label: 'Issues',
-        href: 'https://github.com/hainamchung/boomopen-workflow-kit/issues',
+        href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/issues',
         external: true,
       },
       {
         label: 'Contributing',
-        href: 'https://github.com/hainamchung/boomopen-workflow-kit/blob/main/README.md',
+        href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/blob/main/README.md',
         external: true,
       },
     ],
@@ -95,7 +95,7 @@ export function Footer({ className }: FooterProps) {
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com/hainamchung/boomopen-workflow-kit"
+                href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
@@ -224,7 +224,7 @@ export function Footer({ className }: FooterProps) {
         <div className="mt-12 pt-8 border-t border-[rgba(255,255,255,0.1)]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-[var(--color-text-muted)]">
-              © 2026 NamCH. MIT License.
+              © 2026 Kennyboom. MIT License.
             </p>
             <p className="text-sm text-[var(--color-text-muted)]">
               Built with{' '}

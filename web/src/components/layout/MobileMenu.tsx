@@ -305,7 +305,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             {/* Footer */}
             <div className="p-4 border-t border-[var(--color-border-primary)]">
               <p className="text-sm text-[var(--color-text-muted)] text-center">
-                © 2026 NamCH. MIT License.
+                © 2026 Kennyboom. MIT License.
               </p>
             </div>
           </motion.div>

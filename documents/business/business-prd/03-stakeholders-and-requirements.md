@@ -69,7 +69,7 @@
 | **Success Criteria** | Framework installs and loads correctly on their platform |
 | **Pain Points Addressed** | Third-party frameworks breaking on platform updates |
 
-### S6: Framework Maintainer (NamCH)
+### S6: Framework Maintainer (Kennyboom)
 
 | Attribute | Detail |
 |-----------|--------|
@@ -105,7 +105,7 @@
 | BR-002 | Framework supports 5 platforms: Cursor, Copilot, Claude Code, Codex, Antigravity/Gemini | Must | 24/30 | S5 | BG-002 |
 | BR-023 | CLI list command shows installed platforms and status | Should | 27/30 | S1 | BG-001 |
 
-**Acceptance Criteria (BR-001)**: Given a clean machine with Node.js 18+, when user runs `npm install -g @namch/boomopen-workflow-kit && boomopen-workflow-kit install --all`, then config files exist at `~/.cursor/`, `~/.copilot/`, `~/.claude/`, `~/.codex/`, `~/.gemini/antigravity/` and exit code is 0.
+**Acceptance Criteria (BR-001)**: Given a clean machine with Node.js 18+, when user runs `npm install -g @boomopen/workflow-kit && boomopen-workflow-kit install --all`, then config files exist at `~/.cursor/`, `~/.copilot/`, `~/.claude/`, `~/.codex/`, `~/.gemini/antigravity/` and exit code is 0.
 
 **Acceptance Criteria (BR-002)**: Given the framework is installed, when user runs `boomopen-workflow-kit install {platform}` for each platform, then each platform's entry point file is created and the orchestrator instructions are loadable by that platform's AI runtime.
 

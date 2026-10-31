@@ -210,7 +210,7 @@ export default function Docs() {
             <Button 
               variant="secondary" 
               size="lg" 
-              href="https://github.com/anthropics/boomopen-workflow-kit"
+              href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit"
               target="_blank"
               rel="noopener noreferrer"
             >

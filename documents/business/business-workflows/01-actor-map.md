@@ -18,7 +18,7 @@ The framework recognizes 7 distinct actor types operating across 12 business wor
 | A-01 | Framework User | Human | CLI interaction, command invocation |
 | A-02 | AI Model (Orchestrator) | AI Runtime | Coordination, delegation, verification |
 | A-03 | Skill Author | Human | Skill creation and publishing |
-| A-04 | Framework Maintainer (NamCH) | Human | Framework evolution, releases |
+| A-04 | Framework Maintainer (Kennyboom) | Human | Framework evolution, releases |
 | A-05 | Contributor | Human | Agents, commands, skills additions |
 | A-06 | HSOL System | Automated | Skill resolution, trust management |
 | A-07 | Team Agents | AI Runtime | Specialized execution in team context |
@@ -131,7 +131,7 @@ The framework recognizes 7 distinct actor types operating across 12 business wor
 
 ---
 
-## A-04: Framework Maintainer (NamCH)
+## A-04: Framework Maintainer (Kennyboom)
 
 **Definition**: The framework owner who evolves architecture, manages releases, defines platform integrations, and maintains core rules, agents, and command definitions.
 

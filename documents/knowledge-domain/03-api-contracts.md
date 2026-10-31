@@ -39,7 +39,7 @@ There is also an internal resolution protocol — the HSOL (Hybrid Skill Orchest
 | Entry point | `cli/install.js` |
 | Runtime | Node.js >= 18.0.0 |
 | Dependencies | Zero (uses only `node:fs`, `node:path`, `node:os`, `node:readline`) |
-| Package | `@namch/boomopen-workflow-kit` on npm |
+| Package | `@boomopen/workflow-kit` on npm |
 
 ### Commands
 

@@ -8,7 +8,7 @@
 
 ## Quick Summary
 
-BoomOpen Workflow Kit (`@namch/boomopen-workflow-kit` v1.3.0) is a multi-agent orchestration framework that transforms a single AI coding assistant into a coordinated team of 21 specialist agents. It operates across five platforms — Cursor, GitHub Copilot, Claude Code, Codex, and Antigravity/Gemini — by installing Markdown and YAML configuration files into each tool's global directory. The framework uses a Hybrid Skill Orchestration Layer (HSOL) to dynamically resolve and inject skills from a matrix of 1,430+ skill definitions across 19 domains, requiring zero manual configuration per project.
+BoomOpen Workflow Kit (`@boomopen/workflow-kit` v1.3.0) is a multi-agent orchestration framework that transforms a single AI coding assistant into a coordinated team of 21 specialist agents. It operates across five platforms — Cursor, GitHub Copilot, Claude Code, Codex, and Antigravity/Gemini — by installing Markdown and YAML configuration files into each tool's global directory. The framework uses a Hybrid Skill Orchestration Layer (HSOL) to dynamically resolve and inject skills from a matrix of 1,430+ skill definitions across 19 domains, requiring zero manual configuration per project.
 
 The core value proposition is efficiency at scale: one-time global installation provides structured workflows for every project a developer works on. The Orchestrator pattern enforces 10 governance laws, delegates to specialist agents via 14 commands (with 4 variant strategies each), and supports sub-agent spawning for parallel task execution on compatible platforms. The project claims 70% faster time-to-production, 70% bug reduction, and 85% token cost savings.
 
@@ -41,15 +41,15 @@ Built with Node.js >=18.0.0 using only built-in modules (fs, path, os, readline)
 
 | Key | Value |
 |-----|-------|
-| Package Name | `@namch/boomopen-workflow-kit` |
+| Package Name | `@boomopen/workflow-kit` |
 | Version | 1.3.0 |
 | Type | Multi-agent orchestration framework |
 | Language | JavaScript (CommonJS for CLI, ESM for web) |
 | Runtime | Node.js >=18.0.0 |
 | License | MIT |
-| Author | NamCH |
-| Repository | https://github.com/hainamchung/boomopen-workflow-kit |
-| npm | https://www.npmjs.com/package/@namch/boomopen-workflow-kit |
+| Author | Kennyboom |
+| Repository | https://github.com/Kennyboom/BoomOpen-Workflow-Kit |
+| npm | https://www.npmjs.com/package/@boomopen/workflow-kit |
 | Website | https://boomopen-workflow-kit-ten.vercel.app |
 | Production Dependencies | 0 (zero) |
 | Dev Dependencies | 9 (semantic-release ecosystem + husky) |

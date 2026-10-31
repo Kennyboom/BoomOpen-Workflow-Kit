@@ -90,7 +90,7 @@ The CLI installer is the distribution mechanism — it copies framework files fr
 
 ```mermaid
 flowchart TD
-    START["npm install @namch/boomopen-workflow-kit<br/>or npx boomopen-workflow-kit install {tool}"]
+    START["npm install @boomopen/workflow-kit<br/>or npx boomopen-workflow-kit install {tool}"]
     
     PARSE["Parse CLI arguments<br/>install | uninstall | list"]
     RESOLVE["Resolve target platform(s)<br/>cursor | copilot | antigravity | codex | --all"]

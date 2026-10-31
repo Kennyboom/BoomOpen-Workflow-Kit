@@ -86,7 +86,7 @@ export default function Installation() {
         >
           <Terminal
             command={[
-              'npm install -g @namch/boomopen-workflow-kit',
+              'npm install -g @boomopen/workflow-kit',
             ]}
             title="Installation"
           />
@@ -288,7 +288,7 @@ export default function Installation() {
             <Button 
               variant="secondary" 
               size="lg" 
-              href="https://github.com/anthropics/boomopen-workflow-kit"
+              href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit"
               target="_blank"
               rel="noopener noreferrer"
             >

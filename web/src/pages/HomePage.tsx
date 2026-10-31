@@ -71,7 +71,7 @@ export default function HomePage() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <TerminalAnimated
-              command="npm install -g @namch/boomopen-workflow-kit"
+              command="npm install -g @boomopen/workflow-kit"
               speed={40}
               delay={1000}
             />
@@ -97,7 +97,7 @@ export default function HomePage() {
               variant="secondary" 
               className="w-[202px]"
               size="lg"
-              href="https://github.com/anthropics/boomopen-workflow-kit"
+              href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit"
               target="_blank"
               rel="noopener noreferrer"
             >

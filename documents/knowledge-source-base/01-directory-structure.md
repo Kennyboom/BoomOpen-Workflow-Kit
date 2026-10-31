@@ -27,7 +27,7 @@ The project root contains 10 top-level directories and 12 root-level files. The 
 ## Annotated Directory Tree
 
 ```
-boomopen-workflow-kit/                          # Project root — npm package @namch/boomopen-workflow-kit
+boomopen-workflow-kit/                          # Project root — npm package @boomopen/workflow-kit
 │
 ├── package.json                          # npm manifest: scripts, deps, engines, bin, files
 ├── package-lock.json                     # Locked dependency tree

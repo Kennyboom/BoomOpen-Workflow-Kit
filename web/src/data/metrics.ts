@@ -105,7 +105,7 @@ export const docSections = [
     links: [
       { label: 'Agent Overview', href: '/features/specialist-agents' },
       { label: 'Agent Collaboration', href: '/features/sub-agent-orchestration' },
-      { label: 'Custom Agents', href: 'https://github.com/anthropics/boomopen-workflow-kit/docs/custom-agents', external: true },
+      { label: 'Custom Agents', href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/docs/custom-agents', external: true },
     ],
   },
   {
@@ -115,7 +115,7 @@ export const docSections = [
     links: [
       { label: 'Skills Overview', href: '/features/matrix-skills' },
       { label: 'Skill Domains', href: '/features/matrix-skills#domains' },
-      { label: 'Custom Skills', href: 'https://github.com/anthropics/boomopen-workflow-kit/docs/custom-skills', external: true },
+      { label: 'Custom Skills', href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/docs/custom-skills', external: true },
     ],
   },
   {
@@ -124,7 +124,7 @@ export const docSections = [
     description: 'Customize BoomOpen Workflow Kit to fit your workflow.',
     links: [
       { label: 'Global Config', href: '/features/one-time-setup' },
-      { label: 'Project Overrides', href: 'https://github.com/anthropics/boomopen-workflow-kit/docs/project-config', external: true },
+      { label: 'Project Overrides', href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/docs/project-config', external: true },
       { label: 'Platform Config', href: '/features/multi-platform-support' },
     ],
   },
@@ -136,28 +136,28 @@ export const resources = [
     title: 'GitHub Repository',
     description: 'Source code, issues, and contributions.',
     icon: '🐙',
-    href: 'https://github.com/anthropics/boomopen-workflow-kit',
+    href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit',
     external: true,
   },
   {
     title: 'Release Notes',
     description: 'Latest updates and changelog.',
     icon: '📋',
-    href: 'https://github.com/anthropics/boomopen-workflow-kit/releases',
+    href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases',
     external: true,
   },
   {
     title: 'Discussions',
     description: 'Community Q&A and feature requests.',
     icon: '💬',
-    href: 'https://github.com/anthropics/boomopen-workflow-kit/discussions',
+    href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/discussions',
     external: true,
   },
   {
     title: 'Report Issues',
     description: 'Found a bug? Let us know.',
     icon: '🐛',
-    href: 'https://github.com/anthropics/boomopen-workflow-kit/issues/new',
+    href: 'https://github.com/Kennyboom/BoomOpen-Workflow-Kit/issues/new',
     external: true,
   },
 ]

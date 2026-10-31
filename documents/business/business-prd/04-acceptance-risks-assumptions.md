@@ -15,7 +15,7 @@
 |-----------|--------|
 | **Covers** | BG-001, BR-001, BF-001 |
 | **Given** | A clean machine with Node.js 18+ and npm |
-| **When** | User runs `npm install -g @namch/boomopen-workflow-kit && boomopen-workflow-kit install --all` |
+| **When** | User runs `npm install -g @boomopen/workflow-kit && boomopen-workflow-kit install --all` |
 | **Then** | Config files exist at all 5 platform directories (`~/.cursor/skills/boomopen-workflow-kit/`, `~/.copilot/skills/boomopen-workflow-kit/`, `~/.claude/skills/boomopen-workflow-kit/`, `~/.codex/skills/boomopen-workflow-kit/`, `~/.{TOOL}/skills/boomopen-workflow-kit/`) AND exit code is 0 AND total time ≤5 minutes |
 
 ### AC-002: Multi-Platform Parity

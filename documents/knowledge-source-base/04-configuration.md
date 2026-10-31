@@ -41,14 +41,14 @@ The project has zero production dependencies. All config files serve either the 
 
 | Field | Value | Purpose |
 |-------|-------|---------|
-| `name` | `@namch/boomopen-workflow-kit` | Scoped npm package name |
+| `name` | `@boomopen/workflow-kit` | Scoped npm package name |
 | `version` | `1.3.0` | Current version (managed by semantic-release) |
 | `description` | Multi-agent orchestration framework... | npm registry description |
 | `main` | `cli/install.js` | Default module entry for `require()` |
 | `bin.boomopen-workflow-kit` | `./cli/install.js` | CLI binary name for `npx` invocation |
 | `engines.node` | `>=18.0.0` | Minimum Node.js version constraint |
 | `license` | `MIT` | Open source license |
-| `author` | `NamCH` | Package author |
+| `author` | `Kennyboom` | Package author |
 | `publishConfig.access` | `public` | npm publish visibility |
 
 ### files Array (Published Contents)

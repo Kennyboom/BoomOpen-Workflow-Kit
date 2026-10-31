@@ -8,7 +8,7 @@
 
 ## Quick Summary
 
-BoomOpen Workflow Kit (`@namch/boomopen-workflow-kit` v1.3.0) enforces a lean set of standards primarily through convention and tooling defaults rather than exhaustive configuration. The project uses Conventional Commits via semantic-release for versioning and publishing, Husky for git hooks, and Node.js built-in syntax checking for the CLI. The web sub-project adds ESLint 9 and TypeScript. There is no project-wide formatter (no Prettier), no CI/CD pipeline, no commitlint, no lint-staged, no editorconfig, and no test coverage tooling. Standards are largely implicit — derived from observed naming patterns, directory structure conventions, and YAML frontmatter schemas repeated consistently across hundreds of agent and command files.
+BoomOpen Workflow Kit (`@boomopen/workflow-kit` v1.3.0) enforces a lean set of standards primarily through convention and tooling defaults rather than exhaustive configuration. The project uses Conventional Commits via semantic-release for versioning and publishing, Husky for git hooks, and Node.js built-in syntax checking for the CLI. The web sub-project adds ESLint 9 and TypeScript. There is no project-wide formatter (no Prettier), no CI/CD pipeline, no commitlint, no lint-staged, no editorconfig, and no test coverage tooling. Standards are largely implicit — derived from observed naming patterns, directory structure conventions, and YAML frontmatter schemas repeated consistently across hundreds of agent and command files.
 
 ---
 

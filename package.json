@@ -42,7 +42,7 @@
     "agent-orchestration",
     "multi-agent"
   ],
-  "author": "NamCH",
+  "author": "Kennyboom",
   "license": "MIT",
   "files": [
     "cli/",
@@ -81,5 +81,13 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git"
+  },
+  "homepage": "https://github.com/Kennyboom/BoomOpen-Workflow-Kit#readme",
+  "bugs": {
+    "url": "https://github.com/Kennyboom/BoomOpen-Workflow-Kit/issues"
   }
 }

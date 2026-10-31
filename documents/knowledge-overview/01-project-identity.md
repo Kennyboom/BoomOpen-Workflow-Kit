@@ -12,15 +12,15 @@
 | Field | Value |
 |-------|-------|
 | Name | BoomOpen Workflow Kit |
-| Package | `@namch/boomopen-workflow-kit` |
+| Package | `@boomopen/workflow-kit` |
 | Version | 1.3.0 |
 | Type | Multi-agent orchestration framework for AI coding assistants |
-| Author | NamCH |
+| Author | Kennyboom |
 | License | MIT |
-| Repository | https://github.com/hainamchung/boomopen-workflow-kit |
-| npm Registry | https://www.npmjs.com/package/@namch/boomopen-workflow-kit |
+| Repository | https://github.com/Kennyboom/BoomOpen-Workflow-Kit |
+| npm Registry | https://www.npmjs.com/package/@boomopen/workflow-kit |
 | Website | https://boomopen-workflow-kit-ten.vercel.app |
-| Scope | `@namch` (public) |
+| Scope | `@boomopen` (public) |
 | Module System | CommonJS (CLI), ESM (web) |
 | Node.js Requirement | >=18.0.0 |
 
@@ -106,7 +106,7 @@ This checklist takes a new developer or contributor from zero to productive with
 
 ### Minutes 10–20: Install and Verify
 
-- [ ] Install globally: `npm install -g @namch/boomopen-workflow-kit@latest`
+- [ ] Install globally: `npm install -g @boomopen/workflow-kit@latest`
 - [ ] Install for your AI tool: `boomopen-workflow-kit install --all` (or specify one: `boomopen-workflow-kit install cursor`)
 - [ ] Verify installation: `boomopen-workflow-kit list`
 - [ ] Confirm files exist in the tool's directory (e.g., `ls ~/.cursor/skills/boomopen-workflow-kit/` for Cursor)

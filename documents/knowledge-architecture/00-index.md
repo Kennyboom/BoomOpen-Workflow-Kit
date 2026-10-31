@@ -45,7 +45,7 @@ graph TB
 
     subgraph "Distribution"
         CLI["CLI Installer<br/>cli/install.js"]
-        PKG["npm Package<br/>@namch/boomopen-workflow-kit"]
+        PKG["npm Package<br/>@boomopen/workflow-kit"]
     end
 
     CLAUDE & COPILOT & CURSOR & CODEX & GEMINI --> CORE

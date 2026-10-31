@@ -1,88 +1,208 @@
 <div align="center">
-  <h1>🚀 BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Multi-Platform Unified & Smart-Hybrid Multi-Agent Orchestration Framework for AI Coding Assistants</strong></p>
-  
-  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-purple.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-  [![Node.js 18+](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
+  <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
+  <p><strong>Multi-Platform Smart-Hybrid AI Workforce Operating System & Multi-Agent Orchestration Framework</strong></p>
+
+  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-7c3aed.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases)
+  [![Platforms: 5 Unified](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg)](#💻-supported-ai-platforms)
+  [![Agents: 21 Specialists + 17 Teams](https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg)](#🤖-21-specialist-agents--17-golden-triangle-teams)
+  [![Skills: 48 Core + 1,430+ Library](https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg)](#🧠-6-core-pillars-of-v55)
+  [![Node.js: >=18.0.0](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg)](https://nodejs.org/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
+  <p>
+    <a href="#🇬🇧-english-documentation"><b>🇬🇧 English Documentation</b></a> •
+    <a href="#🚀-quick-start--installation"><b>🚀 Quick Start</b></a> •
+    <a href="#🎯-slash-commands-reference"><b>🎯 Slash Commands</b></a> •
+    <a href="#🇻🇳-tài-liệu-tiếng-việt"><b>🇻🇳 Tài Liệu Tiếng Việt</b></a>
+  </p>
 </div>
 
 ---
 
-*(Vietnamese document is available below / Bản tiếng Việt ở bên dưới)*
-
 ## 🇬🇧 English Documentation
 
-### What is BoomOpen Workflow Kit v5.5?
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** is an open-source AI workforce operating system that transforms a single AI coding assistant into a coordinated team of **21 specialist agents** with **48 Core Skills** and **1,467+ Niche Library Skills**. Built for 100% unified parity across **Google Antigravity 2.0 (Gemini)**, **Claude Code**, **OpenAI Codex**, **Cursor**, and **GitHub Copilot**.
+### 🌟 What is BoomOpen Workflow Kit?
 
-### ⚡ What's New in v5.5.0 (Multi-Platform Unified Edition)
-1. **🌐 Unified 5-Platform Architecture (`platforms/{antigravity,claude,codex,copilot,cursor}/`)**:
-   - Standardized all 5 platform templates under `platforms/<tool>/` and upgraded every root entrypoint (`GEMINI.md`, `CLAUDE.md`, `CODEX.md`, `COPILOT.md`, `CURSOR.md`, `AGENT.md`) to 100% `v5.5` Smart-Hybrid parity — including embedded **Pragmatic 2-Tier Coding Standards**, **Persistent Testing & Bug Fixing**, **2-Mode Complexity Gate**, and flat `commands/{cmd}-{variant}.md` routing.
-2. **📏 Pragmatic 2-Tier Coding Standards (Anti-Fragmentation & Strict Safety)**:
-   - **Tier 1 — Strict Quality & Safety (Zero Tolerance)**: Zero `any`, named constants for magic numbers, structured logger (no debug `console.log`), `try/catch` + typed errors on async/API boundaries, clean sorted imports.
-   - **Tier 2 — Flexible Structural Guidelines (Cohesion Over Mechanical Line Cutting)**: Target `~200–350` lines/file with a `~400–450` line soft ceiling for cohesive modules (`>500` lines hard split; tests/types exempt) and `~25–40` lines/function (`≤ 60` for linear UI/switch/config).
-3. **🔍 Unified 5-Whys (SPIE v3.0) Debugging & Synchronized Core Skills**:
-   - Upgraded `agents/debugger.md`, `skills/debugger/SKILL.md`, `/debug:hard`, and `/debug:fast` with the **5-Whys (SPIE v3.0)** causal framework.
-4. **🎯 Direct Plan-to-Executor Dispatch & Stateful Warm Sub-agent Reuse (`send_message`)**:
-   - Once `PLAN-{feature}.md` exists, the Orchestrator dispatches tasks directly to domain engineers (`backend-engineer`, `frontend-engineer`, etc.) and reuses warm sub-agent sessions via `send_message(Recipient: conversationId)` with **0s cold-start latency** and **100% preserved file context**.
-5. **🩺 Multi-Platform CLI Diagnostics (`doctor` & `check`)**:
-   - `node cli/install.js doctor` verifies all 5 platform asset bundles (`platforms/*`), 21 agents, 51 team files (`agents/teams/**/*.md`), 72 commands, and `compact-index.json`; `node cli/install.js check [dir]` enforces Tier 1 (`any` / `console.log`) and Tier 2 (`400` soft warning / `500` hard ceiling).
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** is an open-source multi-agent operating system that transforms a single AI coding assistant into an orchestrated engineering organization of **21 specialist agents**, **17 adversarial Golden Triangle teams**, **48 Core Skills**, and **1,430+ Niche Library Skills**.
 
-### 💻 Supported AI Platforms (`platforms/*`)
-| Platform | Support Level | Global Entrypoint | Framework Path |
-|----------|--------------|-------------------|----------------|
-| **Antigravity (Gemini)** | ✅ Full Native v5.5 | `~/.gemini/GEMINI.md` | `~/.gemini/config/skills/boomopen-workflow-kit/` |
-| **Claude Code** | ✅ Full Native v5.5 | `~/.claude/CLAUDE.md` | `~/.claude/skills/boomopen-workflow-kit/` |
-| **OpenAI Codex** | ✅ Full Native v5.5 | `~/.codex/CODEX.md` & `AGENTS.md` | `~/.codex/skills/boomopen-workflow-kit/` |
-| **Cursor** | ✅ Full Native v5.5 | `~/.cursor/rules/boomopen-workflow-kit.mdc` | `~/.cursor/skills/boomopen-workflow-kit/` |
-| **GitHub Copilot** | ✅ Full Native v5.5 | `~/.copilot/COPILOT.md` | `~/.copilot/skills/boomopen-workflow-kit/` |
+Unlike rigid single-prompt templates or heavyweight agent wrappers that add cold-start latency to every trivial question, BoomOpen v5.5 introduces a **2-Mode Smart Complexity Threshold Gate**:
+- **⚡ Mode A — Direct Execution (0s Cold-Start)**: Simple Q&A, code explanations, and localized changes (`≤ 3 files`, single domain, no `/cmd`) execute directly in the primary agent while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
+- **🎻 Mode B — Strict Multi-Agent Orchestration**: Complex features (`> 3 files` or `≥ 2 domains`) or explicit `/cmd` workflows activate full multi-agent orchestration with **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First File Locks (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Stateful Warm Sub-agent Reuse (`send_message`)**.
 
 ---
 
-### ⚙️ Installation & Verification
+### 🏗️ Smart-Hybrid Architecture (v5.5)
 
-```bash
-git clone https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git
-cd BoomOpen-Workflow-Kit
+```mermaid
+flowchart TD
+    User["👤 User Request / Slash Command"] --> Gate{"🚦 2-Mode Smart Complexity Gate"}
+    Gate -->|"≤ 3 files, 1 domain, no /cmd"| ModeA["⚡ Mode A: Direct Execution (Tier 0)<br/>0s Cold-Start + Pragmatic 2-Tier Standards"]
+    Gate -->|"> 3 files, ≥ 2 domains, or /cmd"| ModeB["🎻 Mode B: Multi-Agent Orchestrator (Tier 1)<br/>Model: inherit (Pro High Default)"]
 
-# Install for a specific platform (antigravity | claude | codex | cursor | copilot) or --all
-node cli/install.js install antigravity
-node cli/install.js install claude
-node cli/install.js install codex
-node cli/install.js install cursor
-node cli/install.js install copilot
+    ModeB --> FanOut["🔀 Phase 1: DAG Parallel Fan-Out<br/>(researcher + scouter | debugger + researcher)"]
+    FanOut --> Plan["📋 Phase 2: Contract-First Planning (planner)<br/>Locks SHARED_CONTRACT + OWNED_FILES"]
+    Plan --> Dispatch{"🎯 Execution Variant"}
 
-# Run health diagnostics & Pragmatic 2-Tier code standards check
-node cli/install.js doctor
-node cli/install.js check ./src
+    Dispatch -->|":fast / :hard"| Direct["⚡ Direct Plan-to-Executor Dispatch<br/>(backend-engineer + frontend-engineer in parallel)"]
+    Dispatch -->|":team"| Triangle["🔺 Golden Triangle Adversarial Team<br/>(TechLead ⇄ Executor ⇄ Reviewer via MAILBOX)"]
+
+    Direct --> Verify["🧪 Phase 4: Verification & Warm Reuse<br/>tester + reviewer (send_message 0s warm loop)"]
+    Triangle --> Verify
 ```
 
 ---
 
-## 🇻🇳 Hướng Dẫn Sử Dụng (Tiếng Việt)
+### 🧠 6 Core Pillars of v5.5
 
-### BoomOpen Workflow Kit v5.5 là gì?
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** là hệ điều hành đa tác tử (Multi-Agent) mã nguồn mở dành cho AI coding assistant, đồng bộ 100% sức mạnh trên cả **5 nền tảng (Antigravity, Claude Code, Codex, Cursor, Copilot)** với **21 Đặc vụ Chuyên gia**, **48 Core Skills**, **1.467+ Niche Skills (`skills_library`)**, Chuẩn Code Thực Dụng 2 Tầng, khóa quyền sở hữu file (`OWNED_FILES`), và tái sử dụng phiên Sub-agent nóng (`send_message`).
+1. **🌐 5-Platform Unified Parity (`platforms/*`)**:
+   - First-class native installation for **Google Antigravity 2.0 (Gemini)**, **Claude Code**, **OpenAI Codex**, **Cursor**, and **GitHub Copilot** from a single unified architecture.
+2. **📏 Pragmatic 2-Tier Coding Standards (Anti-Fragmentation)**:
+   - **Tier 1 — Strict Quality & Safety (Zero Tolerance)**: Single Responsibility, **NO explicit `any`**, **NO leftover debug `console.log`** in production apps, mandatory `try/catch` + typed error handling on async/API boundaries, `SCREAMING_SNAKE_CASE` constants, DRY (`≥ 3`), and clean sorted imports.
+   - **Tier 2 — Flexible Structural Guidelines (Cohesion First)**: Cohesive files target `~200–350 lines` with a `~400–450 line` soft ceiling (`>500 lines` hard split; tests/types/CLI/docs exempt). Functions target `~20–40 lines` (`~40–80 lines` for UI/Handlers) — preventing artificial file shattering.
+3. **🎯 Direct Plan-to-Executor Dispatch & Warm Sub-agent Reuse (`send_message`)**:
+   - Once `PLAN-{feature}.md` exists, the Orchestrator dispatches tasks **directly** to domain engineers (`backend-engineer`, `frontend-engineer`, `database-architect`, etc.) without a redundant `tech-lead` middleman hop.
+   - Active sub-agents are tracked in an **Active Session Registry (`Role → conversationId`)** and reused via `send_message` with **0s cold-start latency** and **100% retained file context**.
+4. **🤝 Contract-First Parallel Dispatch (`SHARED_CONTRACT` + `OWNED_FILES`)**:
+   - Multi-domain plans lock API endpoints, DTO schemas, and disjoint file ownership (`OWNED_FILES` vs. `READ_ONLY_FILES`) before launching parallel engineers, eliminating write collisions and integration mismatches.
+5. **🔍 5-Whys (SPIE v3.0) Root-Cause Debugging & Clean Git Tree**:
+   - `debugger` traces every bug through 3 ranked hypotheses and a 5-Whys causal chain (`Why 1 Symptom` → `Why 5 Systemic Root Cause`). Transient artifacts (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) route to `<appDataDir>\brain\<conversation-id>\` first so your Git working tree stays 100% clean.
+6. **🩺 Built-In CLI Diagnostics (`doctor` & `check`) & O(1) Skill Index**:
+   - `npm run doctor` validates all 5 platform bundles, 21 agents, 51 team files, 72 commands, and `matrix-skills/compact-index.json` (`1,430+` indexed skills). `npm run check <dir>` deterministically audits Tier 1 & Tier 2 coding standards.
 
-### ⚡ Đột phá trong phiên bản v5.5.0
-1. **🌐 Đồng Bộ Toàn Diện 5 Nền Tảng (`platforms/{antigravity,claude,codex,copilot,cursor}/`)**:
-   - Chuẩn hóa toàn bộ thư mục cấu hình nền tảng về `platforms/<tool>/` và nâng cấp đồng bộ cả 6 file entrypoint gốc (`GEMINI.md`, `CLAUDE.md`, `CODEX.md`, `COPILOT.md`, `CURSOR.md`, `AGENT.md`) lên chuẩn **v5.5 Smart-Hybrid** (tích hợp sẵn Pragmatic 2-Tier Coding Standards, Persistent Testing & Bug Fixing, 2-Mode Gate, và đường dẫn lệnh phẳng `commands/{cmd}-{variant}.md`).
+---
+
+### 💻 Supported AI Platforms
+
+| Platform | Support Level | Global Entrypoint | Framework Install Path |
+|----------|:-------------:|-------------------|------------------------|
+| **Antigravity (Gemini)** | ✅ Native v5.5 | `~/.gemini/GEMINI.md` | `~/.gemini/config/skills/boomopen-workflow-kit/` |
+| **Claude Code** | ✅ Native v5.5 | `~/.claude/CLAUDE.md` | `~/.claude/skills/boomopen-workflow-kit/` |
+| **OpenAI Codex** | ✅ Native v5.5 | `~/.codex/CODEX.md` & `AGENTS.md` | `~/.codex/skills/boomopen-workflow-kit/` |
+| **Cursor** | ✅ Native v5.5 | `~/.cursor/rules/boomopen-workflow-kit.mdc` | `~/.cursor/skills/boomopen-workflow-kit/` |
+| **GitHub Copilot** | ✅ Native v5.5 | `~/.copilot/COPILOT.md` | `~/.copilot/skills/boomopen-workflow-kit/` |
+
+---
+
+### 🚀 Quick Start & Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Kennyboom/BoomOpen-Workflow-Kit.git
+cd BoomOpen-Workflow-Kit
+
+# 2. Install for your AI coding assistant (choose one or --all)
+npm run install:antigravity   # Google Antigravity 2.0 (Gemini)
+npm run install:claude        # Anthropic Claude Code
+npm run install:codex         # OpenAI Codex CLI
+npm run install:cursor        # Cursor AI Editor
+npm run install:copilot       # GitHub Copilot (VS Code)
+npm run install:all           # Install across all 5 platforms
+
+# 3. Verify installation health, Pragmatic 2-Tier code standards & test suite
+npm run doctor                # Diagnose entrypoints, 5 platforms, agents, commands & skill index
+npm run check ./cli           # Audit source code against Pragmatic 2-Tier Coding Standards
+npm test                      # Run the 10-suite automated regression test runner
+```
+
+---
+
+### 🎯 Slash Commands Reference
+
+| Command | Variants | Primary Purpose |
+|---------|----------|-----------------|
+| **`/cook`** | `:fast`, `:hard`, `:team` | End-to-end feature development (Research/Scout → Plan → Parallel Code → Test → Review) |
+| **`/code`** | `:fast`, `:hard`, `:team` | Execute implementation directly from an existing `PLAN-{feature}.md` |
+| **`/plan`** | `:fast`, `:hard`, `:team` | Create implementation blueprints with `SHARED_CONTRACT`, `OWNED_FILES` & Given/When/Then criteria |
+| **`/fix`** | `:fast`, `:hard`, `:team` | Root-cause bug resolution with mandatory regression test verification |
+| **`/debug`** | `:fast`, `:hard`, `:team` | 3-Hypothesis + **5-Whys (SPIE v3.0)** causal root-cause investigation (`DEBUG-{issue}.md`) |
+| **`/test`** | `:fast`, `:hard`, `:team` | DAG Parallel Fan-Out test suite execution + uncovered edge-case scouting (`tester` + `scouter`) |
+| **`/review`** | `:fast`, `:hard`, `:team` | 4-way parallel audit (Architecture, Code Quality, Security OWASP, Performance) |
+| **`/design`** | `:fast`, `:hard`, `:team` | System architecture, database schema, and UI/UX specification (`DESIGN.md`) |
+| **`/docs`** | `:core`, `:business`, `:audit` | Generate or synchronize structured 2-tier architecture & business documentation (`./documents/`) |
+| **`/deploy`** | `:check`, `:preview`, `:production`, `:rollback` | Pre-deployment readiness gates, preview environments, production rollout & safe rollback |
+| **`/brainstorm`** | `:fast`, `:hard`, `:team` | Socratic requirements discovery, trade-off analysis & ideation |
+| **`/report`** | `:fast`, `:hard`, `:team` | Executive & technical synthesis reports with metrics and diagrams |
+| **`/orchestrate`** | — | Custom multi-agent pipeline orchestration across multiple domains |
+| **`/save` / `/recap`** | — | Persist session state (`SESSION-HANDOVER.md`) and restore full context in `< 5s` |
+
+---
+
+### 🤖 21 Specialist Agents & 17 Golden Triangle Teams
+
+| Category | Specialist Agents (`agents/*.md`) | Golden Triangle Teams (`agents/teams/*-team/`) |
+|----------|-----------------------------------|------------------------------------------------|
+| **Engineering & Execution** | `backend-engineer`, `frontend-engineer`, `mobile-engineer`, `game-engineer`, `database-architect`, `devops-engineer` | `backend-team`, `frontend-team`, `fullstack-team`, `mobile-team`, `game-team`, `database-team`, `devops-team` |
+| **Architecture & Planning** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
+| **Quality, Security & Debug** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
+| **Research & Knowledge** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+### 📂 Repository Structure
+
+```text
+BoomOpen-Workflow-Kit/
+├── agents/                  # 21 Specialist Agent definitions + 17 Golden Triangle Teams (51 role files)
+├── cli/                     # Installer (install.js), Health Doctor (doctor.js), 2-Tier Code Checker (checker.js) & Tests
+├── commands/                # 72 Slash Command workflows (:fast, :hard, :team) + _ref/ protocols
+├── documents/               # 2-Tier Architecture, Domain, Source-Base & Coding Standards documentation
+├── matrix-skills/           # Domain YAML skill matrices + pre-compiled compact-index.json (1,430+ skills)
+├── platforms/               # Unified 5-platform templates (antigravity/, claude/, codex/, copilot/, cursor/)
+├── rules/                   # On-demand Mode B rules (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
+├── scripts/                 # Python automation & verification runners (checklist.py, verify_all.py, etc.)
+├── skills/                  # 48 Core Skills (clean-code, debugger, plan-writing, frontend-design, etc.)
+├── skills_library/          # 1,430+ dormant niche skills loaded on-demand via 2-step lookup
+└── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
+```
+
+---
+
+## 🇻🇳 Tài Liệu Tiếng Việt
+
+### 🌟 BoomOpen Workflow Kit v5.5 là gì?
+
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** là hệ điều hành đa tác tử (Multi-Agent) mã nguồn mở dành cho các AI Coding Assistant, kết hợp **21 Đặc vụ Chuyên gia (Specialist Agents)**, **17 Đội hình Tam Giác Vàng (Golden Triangle Teams)**, **48 Kỹ năng Lõi (Core Skills)** và **1.430+ Kỹ năng Chuyên sâu (`skills_library`)** trên cả **5 nền tảng**: **Google Antigravity 2.0 (Gemini)**, **Claude Code**, **OpenAI Codex**, **Cursor**, và **GitHub Copilot**.
+
+### ⚡ 6 Trụ Cột Cốt Lõi Của Phiên Bản v5.5
+
+1. **🚦 Cổng Phân Loại Độ Phức Tập Thông Minh 2 Chế Độ (Mode A vs. Mode B)**:
+   - **⚡ Mode A — Thực Thi Trực Tiếp (Độ trễ khởi động = 0 giây)**: Với câu hỏi Q&A, giải thích code, hoặc sửa lỗi/thay đổi nhỏ chạm **≤ 3 files** trong 1 domain (không gọi lệnh `/cmd`), Agent chính xử lý và kiểm thử **trực tiếp**, tuân thủ nghiêm ngặt **Chuẩn Code Thực Dụng 2 Tầng**.
+   - **🎻 Mode B — Điều Phối Đa Tác Tử Nghiêm Ngặt (Multi-Agent Orchestration)**: Khi người dùng gọi lệnh `/cmd` (`/cook`, `/fix:hard`, `/review:team`,...) hoặc tác vụ chạm **> 3 files** / **≥ 2 domains**, hệ thống kích hoạt chế độ Orchestrator chuyên sâu.
 2. **📏 Chuẩn Code Thực Dụng 2 Tầng (Pragmatic 2-Tier Coding Standards)**:
-   - **Tầng 1 — Bắt Buộc Tuyệt Đối (Strict Quality & Safety)**: Cấm `any`, cấm magic numbers, dùng logger chuẩn (không để sót `console.log` rác), bắt buộc `try/catch` + typed error cho mọi lời gọi async/API.
-   - **Tầng 2 — Linh Hoạt Theo Ngữ Cảnh (Cohesion Over Mechanical Line Cutting)**: Mục tiêu `~200–350` dòng/file, trần mềm `~400–450` dòng cho module gắn kết chặt, chỉ bắt buộc tách khi `>500` dòng hoặc ôm `≥ 2` trách nhiệm độc lập (miễn trừ file test/type).
+   - **🛡️ Tầng 1 — Bắt Buộc Tuyệt Đối (Strict Quality & Safety)**: Mỗi file/hàm giải quyết trọn vẹn 1 trách nhiệm (Single Responsibility); **CẤM `any` tường minh**; **CẤM để sót `console.log` tạm** trong code ứng dụng; mọi lời gọi async/API phải có `try/catch` + typed error; hằng số đặt tên `SCREAMING_SNAKE_CASE`; DRY (`≥ 3` lần lặp).
+   - **📐 Tầng 2 — Ngưỡng Cấu Trúc Linh Hoạt (Chống Cắt Vụn File Máy Móc)**: File code hướng tới **`~200–350 dòng`** (linh hoạt tới **`~400–450 dòng`** nếu vẫn phục vụ 1 trách nhiệm mạch lạc; chỉ bắt buộc tách khi `>500 dòng` hoặc ôm đồm nhiều domain; miễn trừ cho file Test, Schema/Types, CLI, Docs). Hàm logic `~20–40 dòng` / hàm UI & Handler `~40–80 dòng`.
 3. **🎯 Điều Phối Trực Tiếp Từ Plan & Tái Sử Dụng Sub-agent Nóng (`send_message`)**:
-   - Giao việc trực tiếp từ `PLAN` tới kỹ sư chuyên môn (`Model: "inherit"`) và tái sử dụng phiên sub-agent nóng qua `send_message(Recipient: conversationId)` giúp **độ trễ khởi động = 0 giây** và **giữ nguyên 100% ngữ cảnh**.
-4. **🩺 Công Cụ Chẩn Đoán Đa Nền Tảng (`doctor` & `check`)**:
-   - Kiểm tra toàn diện 5 nền tảng `platforms/*`, 21 agents, 51 team files (`agents/teams/*/*.md`), 72 commands và kiểm định chuẩn code 2 tầng (`npm run doctor` & `npm run check`).
+   - Khi đã có `PLAN-{feature}.md`, Orchestrator giao việc **trực tiếp** cho các kỹ sư thực thi (`backend-engineer`, `frontend-engineer`, `database-architect`) mà không tốn bước trung gian qua `tech-lead`.
+   - Lưu danh bạ phiên **`Role → conversationId`** và gọi `send_message` để tái sử dụng sub-agent đang nóng với **0 giây cold-start** và **giữ nguyên 100% ngữ cảnh file đã đọc**.
+4. **🤝 Giao Việc Song Song Theo Hợp Đồng (`SHARED_CONTRACT`) & Khóa Quyền Ghi File (`OWNED_FILES`)**:
+   - `planner` khóa trước hợp đồng giao tiếp API/DTO (`SHARED_CONTRACT`) và danh sách file được phép sửa (`OWNED_FILES`) trước khi chạy song song nhiều kỹ sư, triệt tiêu hoàn toàn lỗi ghi đè file.
+5. **🔍 Truy Nguyên Nhân Gốc Rễ 5-Whys (SPIE v3.0) & Giữ Sạch Git Tree 100%**:
+   - Đặc vụ `debugger` phân tích tối thiểu 3 giả thuyết và truy chuỗi nhân quả **5-Whys** trước khi đề xuất bản vá. Toàn bộ báo cáo trung gian (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) được ghi vào `<appDataDir>\brain\<conversation-id>\` giúp nhánh Git của dự án luôn sạch tuyệt đối.
+6. **🌐 Đồng Bộ 100% Trên 5 Nền Tảng (`platforms/*`) & Chẩn Đoán Tự Động (`doctor` / `check`)**:
+   - Hỗ trợ cài đặt và kiểm tra sức khỏe tự động cho cả **Antigravity, Claude Code, Codex, Cursor, và Copilot**.
 
-### 🚀 Các Tập Lệnh Chính
-- `/cook:fast`, `/cook:hard`, `/cook:team` — Phát triển tính năng (DAG Parallel Fan-Out, Contract-First & Golden Triangle).
-- `/plan:fast`, `/plan:hard`, `/plan:team` — Lập kế hoạch chi tiết (`SHARED_CONTRACT`, `OWNED_FILES`, Given/When/Then).
-- `/fix:fast`, `/fix:hard`, `/fix:team` & `/debug:hard` — Điều tra nguyên nhân gốc rễ 5-Whys (SPIE v3.0) và sửa lỗi dứt điểm.
-- `/review:fast`, `/review:hard`, `/review:team` — Kiểm định 4 chiều song song (Architecture, Code, Security, Performance).
-- `/docs:core`, `/docs:business`, `/docs:audit` & `/save`, `/recap` — Tài liệu kiến trúc và quản lý trí nhớ phiên làm việc.
+---
 
-<div align="center">
-  <b>BoomOpen Workflow Kit v5.5.0</b> — <i>5 Platforms Unified. Pragmatic Standards. Warm Sub-Agent Speed.</i>
-</div>
+### ⚙️ Hướng Dẫn Cài Đặt & Kiểm Định
+
+```bash
+# Cài đặt cho công cụ bạn đang sử dụng (hoặc cài tất cả với install:all)
+npm run install:antigravity   # Google Antigravity 2.0 (Gemini)
+npm run install:claude        # Claude Code
+npm run install:codex         # OpenAI Codex
+npm run install:cursor        # Cursor AI
+npm run install:copilot       # GitHub Copilot
+npm run install:all           # Cài đặt cả 5 nền tảng
+
+# Chạy kiểm tra sức khỏe hệ thống & kiểm định chuẩn code 2 tầng
+npm run doctor
+npm run check ./cli
+npm test
+```
+
+---
+
+### 📄 License & Security
+
+- **License**: Distributed under the [MIT License](./LICENSE). Copyright © 2026 **Kennyboom (BoomOpen)**.
+- **Security Policy**: Please see [SECURITY.md](./SECURITY.md) for built-in security guardrails and vulnerability reporting guidelines.

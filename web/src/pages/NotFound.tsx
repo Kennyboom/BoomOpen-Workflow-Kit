@@ -74,7 +74,7 @@ export default function NotFound() {
                   Commands
                 </Link>
                 <a 
-                  href="https://github.com/hainamchung/boomopen-workflow-kit"
+                  href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-text-accent hover:text-text-primary transition-colors flex items-center gap-1"

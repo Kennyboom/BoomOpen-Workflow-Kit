@@ -1,6 +1,6 @@
 # Knowledge Source Base
 
-> **Purpose**: Comprehensive technical knowledge base for the @namch/boomopen-workflow-kit project — a multi-agent orchestration framework for AI coding assistants
+> **Purpose**: Comprehensive technical knowledge base for the @boomopen/workflow-kit project — a multi-agent orchestration framework for AI coding assistants
 > **Sub-files**: 4
 > **Last Updated**: 2026-03-26
 
@@ -41,10 +41,10 @@ The project also includes a separate React 19 + Vite + Tailwind marketing websit
 
 | Key | Value |
 |-----|-------|
-| Package Name | `@namch/boomopen-workflow-kit` |
+| Package Name | `@boomopen/workflow-kit` |
 | Version | 1.3.0 |
 | License | MIT |
-| Author | NamCH |
+| Author | Kennyboom |
 | Runtime | Node.js >=18.0.0 |
 | Module System | CommonJS (CLI), ESM (web) |
 | Production Dependencies | 0 (zero) |

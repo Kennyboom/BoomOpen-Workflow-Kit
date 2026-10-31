@@ -21,7 +21,7 @@ profile: "{domain}:{category}"
 #   priority_threshold: 7            # Min priority (default: 5)
 tools: [{tool1}, {tool2}]
 handoffs: [{agent1}, {agent2}]
-version: "1.0"
+version: "5.5"
 category: {execution|planning|validation|research|debugging|orchestration}
 ---
 ```
@@ -80,7 +80,7 @@ category: {execution|planning|validation|research|debugging|orchestration}
 ```markdown
 ## ⚡ Skills
 
-> **MATRIX DISCOVERY (HSOL)**: Skills auto-injected from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/` (domain files + `_dynamic.yaml`). Profile: `{domain}:{category}` | Domains: `{primary}`, `{secondary}`, `{tertiary}`. Dynamic discovery (find-skills) may add skills for `hard`/`focus` when matrix fitness &lt; 0.8.
+> **MATRIX DISCOVERY (HSOL)**: Skills auto-injected from `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/` (domain files + `_dynamic.yaml`). Profile: `{domain}:{category}` | Domains: `{primary}`, `{secondary}`, `{tertiary}`. Dynamic discovery (find-skills) may add skills for `hard` when matrix fitness &lt; 0.8.
 
 | Domain File | Key Skills |
 |-------------|------------|
@@ -176,7 +176,7 @@ description: Principal Backend Architect — server-side logic, API design, scal
 profile: "backend:execution"
 tools: [Read, Grep, Glob, Bash, Write, Edit, list_code_usages, semantic_search]
 handoffs: [tester, database-architect, performance-engineer, devops-engineer, frontend-engineer, security-engineer]
-version: "1.0"
+version: "5.5"
 category: execution
 ---
 
@@ -222,7 +222,7 @@ category: execution
 ### Step 0: CONTEXT CHECK (MANDATORY)
 ```
 1. CHECK PROJECT DOCS → Use as constraints
-2. CHECK: ./reports/{topic}/plans/PLAN-{feature}.md → Follow EXACTLY
+2. CHECK: <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (or ./reports/{topic}/plans/PLAN-{feature}.md) → Follow EXACTLY
 3. SCOUT codebase → Follow existing patterns
 ```
 

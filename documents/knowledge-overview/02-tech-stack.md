@@ -86,7 +86,7 @@ The CLI has no production dependencies. All npm packages listed in `package.json
 
 | Technology | Version | Role | Evidence |
 |-----------|---------|------|----------|
-| npm Registry | N/A | Package distribution (public scoped: `@namch`) | [../../package.json](../../package.json) — `publishConfig.access: "public"` |
+| npm Registry | N/A | Package distribution (public scoped: `@boomopen`) | [../../package.json](../../package.json) — `publishConfig.access: "public"` |
 | GitHub | N/A | Source code hosting, issue tracking, releases | [../../README.md](../../README.md) — repository links |
 | Vercel | N/A | Marketing website hosting | [../../README.md](../../README.md) — website URL `boomopen-workflow-kit-ten.vercel.app` |
 
