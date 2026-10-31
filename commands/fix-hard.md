@@ -1,13 +1,13 @@
 ---
-description: ⚡⚡⚡ Full Fix — Complete issue resolution with parallel root-cause & pattern research
-version: "5.2"
+description: ⚡⚡⚡ Full Fix — Complete issue resolution with parallel root-cause & pattern research and direct fix dispatch
+version: "5.3"
 category: debugging
 execution-mode: execute
 ---
 
-# /fix:hard — Complete Issue Resolution (DAG Parallel Fan-Out)
+# /fix:hard — Complete Issue Resolution (DAG Parallel Fan-Out & Direct Plan Dispatch)
 
-> **MISSION**: Full bug resolution workflow with parallel root-cause debugging + solution research, planning, implementation, and regression validation.
+> **MISSION**: Full bug resolution workflow with parallel root-cause debugging + solution research, surgical planning, direct engineer implementation, and regression validation (`Model: "inherit"` Pro High default).
 
 <issue>$ARGUMENTS</issue>
 
@@ -17,16 +17,16 @@ execution-mode: execute
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 1. `CORE.md` — 2-Mode Gate, Quality-First Model Policy, Brain Artifact Routing
-2. `PHASES.md` — DAG-Aware Parallel Fan-Out & Phase Execution
-3. `AGENTS.md` — Tiered Execution (`Model: "inherit"` Pro High Default)
+2. `PHASES.md` — DAG-Aware Parallel Fan-Out, Direct Plan Dispatch & Warm Session Reuse
+3. `AGENTS.md` — Tiered Execution (`Model: "inherit"`), Structured Handoff Packet (`OWNED_FILES`)
 
 ---
 
-## 🔀 TIERED EXECUTION & QUALITY-FIRST MODEL POLICY
+## 🔀 TIERED EXECUTION, MODEL POLICY & WARM SESSION REUSE
 
 | Tier | When | Action |
 |------|------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent with `Model: "inherit"` (Pro High default; NEVER `flash_lite`) |
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent with `Model: "inherit"` (Pro High default; NEVER `flash_lite`). Record `conversationId` and reuse warm sessions via `send_message`. |
 | **TIER 2** | Tool MISSING or system error | EMBODY agent file (FALLBACK) |
 
 ---
@@ -37,9 +37,9 @@ execution-mode: execute
 
 | Agent | Antigravity 2.0 Brain Artifact (Default) | Workspace Fallback |
 |-------|------------------------------------------|--------------------|
-| `debugger` | `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` | `<appDataDir>\\brain\\<conversation-id>\\DEBUG-{issue}.md` (or `./reports/{topic}/debugs/DEBUG-{issue}.md`) |
-| `researcher` | `<appDataDir>\brain\<conversation-id>\RESEARCH-{issue}.md` | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{issue}.md` (or `./reports/{topic}/researchers/RESEARCH-{issue}.md`) |
-| `planner` | `<appDataDir>\brain\<conversation-id>\PLAN-{issue}.md` | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{issue}.md` (or `./reports/{topic}/plans/PLAN-{issue}.md`) |
+| `debugger` | `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` | `./reports/{topic}/debugs/DEBUG-{issue}.md` |
+| `researcher` | `<appDataDir>\brain\<conversation-id>\RESEARCH-{issue}.md` | `./reports/{topic}/researchers/RESEARCH-{issue}.md` |
+| `planner` | `<appDataDir>\brain\<conversation-id>\PLAN-{issue}.md` | `./reports/{topic}/plans/PLAN-{issue}.md` |
 
 All deliverables → Write in the user's input language (technical terms in English). Code comments remain in English.
 
@@ -64,19 +64,20 @@ All deliverables → Write in the user's input language (technical terms in Engl
 | Agent | `planner` (`Model: "inherit"`) |
 |-------|--------------------------------|
 | Prerequisite | **READ** `DEBUG-{issue}.md` + `RESEARCH-{issue}.md` |
-| Goal | Create surgical fix plan with atomic steps and rollback strategy |
+| Goal | Create surgical fix plan with atomic steps, explicit `OWNED_FILES`, and rollback strategy |
 | Output | `<appDataDir>\brain\<conversation-id>\PLAN-{issue}.md` |
-| Exit | Fix plan created, rollback strategy documented |
+| Exit | Fix plan created, `OWNED_FILES` and rollback strategy documented |
 
 ---
 
-## 🎭 Phase 4: IMPLEMENTATION (`tech-lead` → Specialists)
+## 🎭 Phase 4: DIRECT IMPLEMENTATION (Orchestrator → Domain Engineer)
 
-| Agent | `tech-lead` → domain engineer (`backend-engineer`, `frontend-engineer`, etc., `Model: "inherit"`) |
-|-------|---------------------------------------------------------------------------------------------------|
-| Prerequisite | **READ and FOLLOW** `PLAN-{issue}.md` |
-| Goal | Execute surgical fix while enforcing Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn) |
-| Exit | Fix implemented, build/lint passes with 0 errors |
+| Agent | Orchestrator dispatches **directly** from `PLAN-{issue}.md` to domain engineer (`backend-engineer`, `frontend-engineer`, etc., `Model: "inherit"`) — **no middleman `tech-lead` hop** |
+|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prerequisite | **READ and FOLLOW** `PLAN-{issue}.md` + `DEBUG-{issue}.md` |
+| Handoff Packet | Provide `MISSION`, `OWNED_FILES`, `READ_ONLY_FILES`, and `VERIFICATION`; record engineer's `conversationId` |
+| Goal | Execute surgical fix while enforcing Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn) and running `node cli/install.js check <dir>` |
+| Exit | Fix implemented, build/lint/check passes with 0 errors |
 
 ---
 
@@ -84,7 +85,7 @@ All deliverables → Write in the user's input language (technical terms in Engl
 
 | Agent | `tester` (`Model: "inherit"`) |
 |-------|-------------------------------|
-| Goal | Write regression test reproducing the bug and verify all test suites pass |
+| Goal | Write regression test reproducing the bug and verify all test suites pass. If any test fails, send fix request to the warm engineer via `send_message(Recipient: conversationId)`. |
 | Output | `<appDataDir>\brain\<conversation-id>\TEST-{issue}.md` |
 | Exit | Original issue resolved, regression test passes, zero new failures |
 

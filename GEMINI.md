@@ -1,4 +1,4 @@
-# ⚡ BoomOpen Workflow Kit v5.2 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
+# ⚡ BoomOpen Workflow Kit v5.3 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`GEMINI.md`) is pre-loaded in `<user_rules>` on every turn.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -20,7 +20,7 @@ Before taking action, classify the request through this 2-Mode Gate:
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
 - **Action**: Activate **Strict Orchestrator Mode**:
   - Load the target command workflow (`commands/{cmd}.md`) and `rules/PHASES.md` / `rules/AGENTS.md` on-demand.
-  - **YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER**: Delegate every phase to isolated specialist subagents via Antigravity 2.0 native primitives, using **DAG-Aware Parallel Fan-Out** for independent phases.
+  - **YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER**: Delegate every phase to isolated specialist subagents via Antigravity 2.0 native primitives using **DAG-Aware Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Stateful Warm Sub-agent Reuse (`send_message`)**.
 
 ---
 
@@ -72,20 +72,20 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 
 ---
 
-## 🔀 TIERED EXECUTION & NATIVE SUB-AGENT PRIMITIVES
+## 🔀 TIERED EXECUTION & INTELLIGENT WORK DISTRIBUTION (v5.3)
 
 | Tier | Mode / Condition | Action |
 |------|------------------|--------|
 | **TIER 0** | **Mode A** (≤ 3 files, 1 domain, no `/cmd`) | Execute, test, and verify directly |
-| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools (with DAG Parallel Fan-Out) |
+| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools (DAG Fan-Out + Direct Plan Dispatch + Warm Session Reuse) |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
-### 🛠️ Antigravity 2.0 Native Sub-agent Primitives (TIER 1)
+### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & v5.3 Dispatch Rules (TIER 1)
 - `define_subagent`: Register specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
-- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt`, `Model` (`"inherit"` / `"pro"` default; `"flash"` for trivial chores only; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch` for git worktree isolation, or `share`). Launch independent phases concurrently in a single turn.
-- `send_message`: Multi-turn communication with running sub-agents by `conversationId`, powered by **Reactive Async Wakeup** (never poll in a loop).
+- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet: `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, `VERIFICATION`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`). Launch independent phases concurrently in a single turn.
+- **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, dispatch tasks **directly** from `PLAN` to domain engineers (`backend-engineer`, `frontend-engineer`, etc.) without a redundant `tech-lead` middleman hop. Reserve `tech-lead` for Architecture Review (`/review:hard`) and `:team` Golden Triangle arbitration.
+- **Stateful Warm Sub-agent Reuse (`send_message`)**: Record each spawned sub-agent's `conversationId` in an **Active Sub-agent Session Registry (`Role → conversationId`)**. For follow-up tasks in the same domain, fix-after-test/review iterations, Golden Triangle debate rounds, or auto-reviving an interrupted sub-agent, **MUST call `send_message(Recipient: conversationId, Message: ...)`** (0s cold-start, 100% context retained) powered by **Reactive Async Wakeup** (never poll in a loop).
 - `manage_subagents` & `manage_task`: List, inspect status, or terminate subagents/background tasks.
-- Cross-platform alias: `runSubagent` (Cursor / Copilot / Claude Code compatibility).
 
 ---
 
@@ -94,8 +94,8 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | File | Load When |
 |------|-----------|
 | `CORE.md` | Mode B orchestration laws & deliverable table needed |
-| `PHASES.md` | Running multi-phase workflows, DAG Parallel Fan-Out & chunked deliverables |
-| `AGENTS.md` | Delegating to specialist sub-agents & Quality-First Model Policy |
+| `PHASES.md` | Running multi-phase workflows, DAG Parallel Fan-Out & Contract-First dispatch |
+| `AGENTS.md` | Delegating to specialist sub-agents, File Ownership Locks & Warm Reuse |
 | `TEAMS.md` | Executing `:team` Golden Triangle adversarial workflows |
 | `SKILLS.md` | Resolving niche skills via 2-step lookup (`<skills>` → `compact-index.json` / `skill-seeker`) |
-| `ERRORS.md` / `REFERENCE.md` | Error recovery or fast lookup tables |
+| `ERRORS.md` / `REFERENCE.md` | Error recovery (`E0` warm auto-revive) or fast lookup tables |

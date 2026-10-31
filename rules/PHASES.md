@@ -1,6 +1,6 @@
 # 🎭 PHASES
 
-> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when running Mode B workflow phases | **PURPOSE**: DAG-Aware Parallel Fan-Out & Phase Execution Protocol
+> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when running Mode B workflow phases | **PURPOSE**: DAG-Aware Parallel Fan-Out, Contract-First Dispatch, Direct Plan Execution & Warm Sub-agent Reuse
 
 ---
 
@@ -20,33 +20,43 @@
 
 ---
 
-## ⚡ DAG-AWARE PARALLEL FAN-OUT vs. SEQUENTIAL DEPENDENCY
+## ⚡ DAG-AWARE PARALLEL FAN-OUT & CONTRACT-FIRST EXECUTION (v5.3)
 
-In v5.2, phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of dependencies rather than forcing independent read-only phases into a slow single-file queue:
+Phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of dependencies with **Direct Plan-to-Executor Dispatch** and **Warm Session Reuse**:
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────┐
-│  🔀 PARALLEL FAN-OUT (When Phases Are Independent)                            │
-│  • Independent read-only or branch-isolated phases MUST be launched           │
-│    concurrently in a SINGLE turn via multiple invoke_subagent calls           │
-│    (using Model: "inherit") and joined via Reactive Async Wakeup:             │
-│    1. Discovery & Analysis (/cook:hard, /plan:hard, /fix:hard, /ask:hard):    │
-│       Launch `researcher` + `scouter` (or `debugger` + `researcher`)          │
-│       in parallel in the same turn.                                           │
-│    2. Multi-Dimension Review (/review:hard):                                  │
-│       Launch `tech-lead` (Architecture) + `reviewer` (Code Quality) +         │
-│       `security-engineer` (Security) + `performance-engineer` (Performance)   │
-│       in parallel in the same turn, then synthesize into REVIEW-{scope}.md.   │
-│    3. Decoupled Module Implementation:                                        │
-│       After PLAN is approved, launch `backend-engineer` + `frontend-engineer` │
-│       in parallel using `Workspace: "branch"` (or `"inherit"` when touching   │
-│       disjoint directories).                                                  │
+│  🔀 1. PARALLEL FAN-OUT (When Phases Are Independent)                         │
+│  • Launch independent phases concurrently in a SINGLE turn via multiple       │
+│    invoke_subagent calls (Model: "inherit") and join via Reactive Wakeup:     │
+│    - Discovery (/cook:hard, /plan:hard, /fix:hard, /ask:hard):                │
+│      Launch `researcher` + `scouter` (or `debugger` + `researcher`) together. │
+│    - 4-Way Review (/review:hard):                                             │
+│      Launch `tech-lead` + `reviewer` + `security-engineer` +                  │
+│      `performance-engineer` in parallel in a single turn.                     │
+│    - Contract-First Parallel Implementation (≥ 2 Domains):                    │
+│      Once `PLAN-{feature}.md` locks `SHARED_CONTRACT` and disjoint            │
+│      `OWNED_FILES`, launch `backend-engineer` + `frontend-engineer` in        │
+│      parallel in a single turn (`Workspace: "inherit"` for disjoint files,    │
+│      or `Workspace: "branch"` if isolated worktrees are needed).              │
 ├───────────────────────────────────────────────────────────────────────────────┤
-│  ⛓️ SEQUENTIAL GATING (When Phase N+1 Depends on Phase N Output)              │
-│  • Blocking phases MUST wait until all prerequisite deliverables exist:       │
-│    - Planning (`planner`) WAITS for `RESEARCH` + `SCOUT` (+ `DESIGN`)         │
-│    - Implementation (`tech-lead` / engineers) WAITS for `PLAN`                │
-│    - Testing (`tester`) & Final Review (`reviewer`) WAIT for `Implementation` │
+│  🎯 2. DIRECT PLAN-TO-EXECUTOR DISPATCH (No Middleman Hop)                    │
+│  • Once `PLAN-{feature}.md` is approved in :fast, :hard, or /orchestrate:     │
+│    Orchestrator dispatches tasks DIRECTLY from `PLAN` to `backend-engineer`,  │
+│    `frontend-engineer`, `database-architect`, etc. using the 5-field          │
+│    Structured Handoff Packet (`OWNED_FILES`, `READ_ONLY_FILES`,               │
+│    `SHARED_CONTRACT`). Do NOT spawn `tech-lead` as a middleman router.        │
+├───────────────────────────────────────────────────────────────────────────────┤
+│  ♻️ 3. STATEFUL WARM SUB-AGENT REUSE (`send_message` by `conversationId`)     │
+│  • Record each spawned sub-agent's `conversationId` in the Active Sub-agent   │
+│    Session Registry. When `tester` or `reviewer` finds an issue, or when      │
+│    Phase N+2 needs the same specialist again, call `send_message(Recipient:   │
+│    conversationId)` to reuse the warm agent with 0s cold-start latency.       │
+├───────────────────────────────────────────────────────────────────────────────┤
+│  ⛓️ 4. SEQUENTIAL GATING (When Phase N+1 Depends on Phase N Output)           │
+│  • Planning (`planner`) WAITS for `RESEARCH` + `SCOUT` (+ `DESIGN`).          │
+│  • Parallel Implementation WAITS for `PLAN` (with locked `SHARED_CONTRACT`).  │
+│  • Testing (`tester`) & Final Review (`reviewer`) WAIT for Implementation.    │
 └───────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -59,10 +69,10 @@ In v5.2, phase execution follows the workflow's **Directed Acyclic Graph (DAG)**
 ```markdown
 ## 🎭 Phase {N}: {name} (or Parallel Fan-Out: Phase {N} + Phase {M})
 
-### Sub-agent: `{agent}` (`Model: inherit`) — {role}   ← TIER 1 (`invoke_subagent` / `runSubagent`)
-### Embodying: `{agent}` — {role}                      ← TIER 2 (fallback only)
+### Sub-agent: `{agent}` (`Model: inherit`, `Session: new | reused`) — {role}   ← TIER 1
+### Embodying: `{agent}` — {role}                                               ← TIER 2 (fallback only)
 
-{agent work / summary}
+{agent work / summary — Owned Files: {list}}
 
 ### Exit Criteria
 - [x] {criterion_1}
@@ -75,30 +85,30 @@ In v5.2, phase execution follows the workflow's **Directed Acyclic Graph (DAG)**
 **Rules**:
 - TIER 1 → "Sub-agent" line | TIER 2 → "Embodying" line (never both)
 - Always use `Model: "inherit"` (Pro High default) for specialist sub-agents (never `flash_lite`)
-- When using `invoke_subagent` / `send_message`, rely on **Reactive Async Wakeup** (never poll in a loop)
-- Advance to the next DAG stage immediately once prerequisite phases complete
+- Reuse existing `conversationId` via `send_message` whenever calling a previously spawned specialist role
+- Rely on **Reactive Async Wakeup** (never poll in a loop)
 
 ---
 
 ## 🔺 GOLDEN TRIANGLE PHASE OUTPUT FORMAT (`:team` variant only)
 
 > **LOAD**: `TEAMS.md` for full Golden Triangle protocol.
-> Each `:team` phase spawns **3 agents**: Tech Lead + Executor + Reviewer.
+> Spawn the 3 roles (`Tech Lead` + `Executor` + `Reviewer`) once for the phase and conduct multi-turn rounds via `send_message(Recipient: conversationId)`.
 
 ```markdown
 ## 🎭 Phase {N}: {name} — 🔺 GOLDEN TRIANGLE
 
 ### 🔺 Triangle Assignment
-| Role | Agent | Mission |
-|------|-------|---------|
-| Tech Lead | `{agent}` | {coordination mission} |
-| Executor | `{agent}` | {implementation mission} |
-| Reviewer | `{agent}` | {review mission} |
+| Role | Agent | Session ID | Mission |
+|------|-------|------------|---------|
+| Tech Lead | `{agent}` | `{convId}` | {coordination & arbitration} |
+| Executor | `{agent}` | `{convId}` | {implementation & defense} |
+| Reviewer | `{agent}` | `{convId}` | {adversarial review} |
 
 ### 📋 Shared Task List
-| # | Task | Owner | Status | Round |
-|---|------|-------|--------|-------|
-| 1 | {task} | `{executor}` | ✅/🔄/⏳ | 1/3 |
+| # | Task | Owner | Owned Files | Status | Round |
+|---|------|-------|-------------|--------|-------|
+| 1 | {task} | `{executor}` | `{paths}` | ✅/🔄/⏳ | 1/3 |
 
 ### 📬 Mailbox Exchanges (`<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md`)
 | # | From → To | Type | Summary |
@@ -146,7 +156,7 @@ DEFAULT TRANSIENT DELIVERABLES (PLAN, RESEARCH, SCOUT, DEBUG, TEST, REVIEW, REPO
 
 ---
 
-## WORKFLOW COMPLETION
+## WORKFLOW COMPLETION & SKILLS ANALYSIS
 
 ```markdown
 ## ✅ Workflow Complete
@@ -163,9 +173,5 @@ DEFAULT TRANSIENT DELIVERABLES (PLAN, RESEARCH, SCOUT, DEBUG, TEST, REVIEW, REPO
 - {list of outputs with clickable file:/// paths}
 ```
 
----
-
-## SKILLS ANALYSIS (FAST 2-STEP PROGRESSIVE LOOKUP)
-
-1. **Step 1 — Check Pre-loaded `<skills>` (Progressive Disclosure)**: Check the `<skills>` list already injected in your system prompt and read the matching `SKILL.md` directly.
-2. **Step 2 — Compact Index / `skill-seeker` Lookup (Niche Domains Only)**: If a niche framework/domain is not in `<skills>`, query `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/compact-index.json` (or `skill-seeker` against `~/.gemini/config/skills_library/`) to locate and read only the needed `SKILL.md`.
+1. **Step 1 — Check Pre-loaded `<skills>`**: Read matching `SKILL.md` directly from `<skills>`.
+2. **Step 2 — Compact Index Lookup**: For niche domains not in `<skills>`, query `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/compact-index.json` (or `skill-seeker`).

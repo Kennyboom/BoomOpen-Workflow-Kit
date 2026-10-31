@@ -48,7 +48,7 @@ function buildCompactSkillIndex(repoRoot) {
   }
 
   const outputPath = path.join(matrixDir, 'compact-index.json');
-  const payload = { version: '5.2.0', totalSkills: Object.keys(indexMap).length, skills: indexMap };
+  const payload = { version: '5.3.0', totalSkills: Object.keys(indexMap).length, skills: indexMap };
   fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2), 'utf8');
   return { count: payload.totalSkills, outputPath };
 }
@@ -137,6 +137,7 @@ function runDoctor(options = {}) {
     ...checkSkillsManifest(homeDir),
     auditMarkdownDir(path.join(repoRoot, 'rules'), 'rules/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'commands'), 'commands/*.md'),
+    auditMarkdownDir(path.join(repoRoot, 'agents'), 'agents/*.md'),
     {
       name: 'matrix-skills/compact-index.json',
       passed: compactData.totalSkills >= MIN_COMPACT_SKILLS,
@@ -145,7 +146,7 @@ function runDoctor(options = {}) {
   ];
   const healthy = checks.every((c) => c.passed);
   if (!options.silent) {
-    console.log('\n🩺 BoomOpen Workflow Kit Doctor (v5.2.0)\n' + '─'.repeat(60));
+    console.log('\n🩺 BoomOpen Workflow Kit Doctor (v5.3.0)\n' + '─'.repeat(60));
     for (const c of checks) console.log(`  ${c.passed ? '✅' : '❌'} ${c.name.padEnd(34)} ${c.detail}`);
     console.log('─'.repeat(60));
   }

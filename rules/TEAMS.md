@@ -1,6 +1,6 @@
 # 🔺 TEAMS — Golden Triangle Architecture
 
-> **VERSION**: 5.1 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When `:team` variant is invoked | **PURPOSE**: 3-agent adversarial collaboration protocol
+> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When `:team` variant is invoked | **PURPOSE**: 3-agent adversarial collaboration with Warm Session Reuse (`send_message`)
 
 ---
 
@@ -34,7 +34,7 @@ Every team phase spawns **3 agent roles** — no more, no less. Quality emerges 
 │          └──────────┘  └───────────┘                         │
 │                  ▲          ▲                                 │
 │                  └──── 📬 ──┘                                │
-│                    MAILBOX                                    │
+│            MAILBOX + send_message                            │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -45,21 +45,22 @@ Every team phase spawns **3 agent roles** — no more, no less. Quality emerges 
 | Role | File | Function & Authority |
 |------|------|----------------------|
 | **Tech Lead** | `techlead.md` | Task decomposer, coordinator, arbitrator, synthesizer. **FINAL AUTHORITY** on all disputes. |
-| **Executor** | `executor.md` | Direct implementer. Builds deliverables, posts `SUBMISSION`, and **DEFENDS** valid work with technical evidence when Reviewer is wrong. |
+| **Executor** | `executor.md` | Direct implementer. Builds deliverables within locked `OWNED_FILES`, posts `SUBMISSION`, and **DEFENDS** valid work with technical evidence when Reviewer is wrong. |
 | **Reviewer** | `reviewer.md` | Devil's Advocate quality gatekeeper. Reviews submissions (`PASS`/`FAIL`), challenges assumptions, checks security/performance/edge cases. |
 
 ---
 
-## THE DEBATE MECHANISM
+## THE DEBATE MECHANISM & WARM SESSION REUSE (`send_message`)
 
 ```
 Executor implements ──► Reviewer critiques (PASS / FAIL)
      │                       │
      ▼                       ▼
-Executor DEFENDS (with evidence) OR FIXES ──► Reviewer re-checks (max 3 rounds) ──► Tech Lead ARBITRATES (binding)
+Executor DEFENDS (with evidence) OR FIXES via send_message ──► Reviewer re-checks (max 3 rounds) ──► Tech Lead ARBITRATES
 ```
 
-**Defense rules**:
+**Defense & Session Reuse rules**:
+- **Spawn Once, Converse Many (`send_message`)**: Spawn Tech Lead, Executor, and Reviewer **once** per phase (`Model: "inherit"`), record their `conversationId`s, and conduct all round-2/round-3 fixes, defenses, and re-reviews via `send_message(Recipient: conversationId)` — preserving 100% file context with 0s cold-start latency.
 - Executor MUST defend with **technical evidence** (benchmarks, specs, code references). Disagreement without proof = automatic FAIL.
 - Reviewer MUST consider valid evidence. Rejecting proven-correct work = escalation to Tech Lead.
 - Max **3 debate rounds** per task. After round 3, Tech Lead issues a binding `DECISION`.
@@ -70,14 +71,14 @@ Executor DEFENDS (with evidence) OR FIXES ──► Reviewer re-checks (max 3 ro
 
 | Artifact | Owner | Default Location (Antigravity 2.0) |
 |----------|-------|------------------------------------|
-| **Shared Task List** | Tech Lead | Published in phase output & Mailbox (`⏳`/`🔄`/`✅`/`❌`/`🔁`, round `1`–`3`) |
+| **Shared Task List** | Tech Lead | Published in phase output & Mailbox (`⏳`/`🔄`/`✅`/`❌`/`🔁`, round `1`–`3`, with `OWNED_FILES` per task) |
 | **Mailbox** | All agents (append-only) | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (keeps Git working tree clean; use `./reports/{topic}/MAILBOX-{date}.md` only when user explicitly requests repo export) |
 
 ```
-1. Tech Lead decomposes task → Publishes Shared Task List → Posts TASK_ASSIGNMENT to Mailbox
+1. Tech Lead decomposes task → Publishes Shared Task List (with OWNED_FILES & SHARED_CONTRACT) → Posts TASK_ASSIGNMENT to Mailbox
 2. Executor implements deliverable → Posts SUBMISSION to Mailbox
 3. Reviewer inspects submission → Posts REVIEW (✅ PASS or ❌ FAIL) to Mailbox
-4. IF FAIL (up to 3 rounds):
+4. IF FAIL (up to 3 rounds, reusing warm sessions via send_message):
    - Executor either FIXES and resubmits OR DEFENDS with technical evidence via Mailbox
    - Reviewer re-checks → PASS or FAIL (or escalates to Tech Lead)
 5. IF PASS (or round 3 reached):
@@ -100,7 +101,7 @@ Output is released **ONLY** when one of these conditions is met:
 
 ---
 
-## TEAM ROSTER (Agent-to-Role Mapping per Domain)
+## TEAM ROSTER (Agent-to-Role Mapping per Domain — Default `Model: "inherit"`)
 
 | Team Domain | Tech Lead Agent | Executor Agent | Reviewer Focus |
 |-------------|-----------------|----------------|----------------|
@@ -126,20 +127,20 @@ Output is released **ONLY** when one of these conditions is met:
 
 ## TIERED EXECUTION FOR GOLDEN TRIANGLE
 
-### TIER 1 — Antigravity 2.0 Native Sub-agent Spawn (MANDATORY when available)
+### TIER 1 — Antigravity 2.0 Native Sub-agent Spawn + Warm `send_message` Reuse (MANDATORY)
 
 ```yaml
 1. Define Triangle Roles (if not already registered):
    - Use define_subagent for tech-lead, executor, and reviewer roles (with EnableWriteTools: true/false)
-2. Invoke Sub-agents via invoke_subagent:
-   - Spawn Tech Lead (Model: inherit/pro, Workspace: inherit/share)
-   - Spawn Executor (Model: inherit/pro, Workspace: inherit/branch/share)
-   - Spawn Reviewer (Model: inherit/pro, Workspace: inherit/share)
+2. Initial Spawn via invoke_subagent (or reuse from Active Sub-agent Session Registry):
+   - Spawn Tech Lead (Model: "inherit", Workspace: inherit/share) → save conversationId
+   - Spawn Executor (Model: "inherit", Workspace: inherit/branch/share) → save conversationId
+   - Spawn Reviewer (Model: "inherit", Workspace: inherit/share) → save conversationId
    - Cross-platform fallback alias: runSubagent(agent_name, context)
 3. Multi-turn Debate via send_message + Brain Artifact Mailbox:
-   - Coordinate rounds using send_message(Recipient: conversationId) and <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
+   - Coordinate all subsequent tasks and debate rounds using send_message(Recipient: conversationId)
+     and <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md (NEVER cold re-spawn for Round 2/3!)
    - Rely on Reactive Async Wakeup (never poll in a loop)
-   - Monitor/cleanup via manage_subagents and manage_task
 4. Tech Lead synthesizes final output with CONSENSUS stamp and returns to Orchestrator
 ```
 
@@ -160,57 +161,15 @@ Output is released **ONLY** when one of these conditions is met:
 ```markdown
 # 📬 MAILBOX — {Phase Name} — {date}
 
-## Exchange #1
-| From | To | Type | Timestamp |
-|------|----|------|-----------|
-| `tech-lead` | `all` | TASK_ASSIGNMENT | {time} |
+## Exchange #1 (`TASK_ASSIGNMENT` — `tech-lead` → `all`)
+**Content:** [Shared Task List with `OWNED_FILES`, `READ_ONLY_FILES`, `SHARED_CONTRACT`]
 
-**Content:** [Shared Task List with assignments and context]
+## Exchange #2 (`SUBMISSION` — `executor` → `reviewer`)
+**Content:** [Implemented files, verification output]
 
----
+## Exchange #3 (`REVIEW` — `reviewer` → `executor`)
+**Status:** ✅ PASS / ❌ FAIL | **Findings:** [Specific findings or approval]
 
-## Exchange #2
-| From | To | Type | Timestamp |
-|------|----|------|-----------|
-| `executor` | `reviewer` | SUBMISSION | {time} |
-
-**Content:** [Implemented files, approach, verification]
-
----
-
-## Exchange #3
-| From | To | Type | Timestamp |
-|------|----|------|-----------|
-| `reviewer` | `executor` | REVIEW | {time} |
-
-**Status:** ✅ PASS / ❌ FAIL
-**Findings:** [Specific findings or approval]
-
----
-
-## Exchange #4
-| From | To | Type | Timestamp |
-|------|----|------|-----------|
-| `tech-lead` | `all` | DECISION | {time} |
-
-**Status:** ✅ CONSENSUS REACHED
-**Signatures:** TechLead ✓ | Executor ✓ | Reviewer ✓
-```
-
----
-
-## ERROR HANDLING & SELF-CHECK
-
-| Error | Recovery |
-|-------|----------|
-| Executor fails to submit | Tech Lead re-dispatches or produces minimal viable output |
-| Reviewer rejects valid work 3x | Tech Lead arbitrates based on evidence and documents override |
-| Reviewer rubber-stamps | Tech Lead rejects empty PASS and re-invokes Reviewer with checklist |
-| TIER 1 spawn fails | Fallback to TIER 2 for the failed agent only and log reason |
-
-```
-□ Exactly 3 roles assigned (Tech Lead + Executor + Reviewer)?
-□ Shared Task List published and Mailbox initialized at <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md?
-□ TIER 1 (invoke_subagent / define_subagent / runSubagent) attempted first?
-□ Debate capped at 3 rounds and consensus stamp present before release?
+## Exchange #4 (`DECISION` — `tech-lead` → `all`)
+**Status:** ✅ CONSENSUS REACHED | **Signatures:** TechLead ✓ | Executor ✓ | Reviewer ✓
 ```

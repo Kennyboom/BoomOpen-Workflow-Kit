@@ -1,9 +1,9 @@
 ---
 name: boomopen-workflow-kit
-description: BoomOpen Workflow Kit (v5.2 Antigravity 2.0 Smart-Hybrid Edition) — 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, native subagent primitives, Brain Artifact routing, Golden Triangle teams, and compact skill index.
+description: BoomOpen Workflow Kit (v5.3 Antigravity 2.0 Smart-Hybrid Edition) — 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and compact skill index.
 ---
 
-# ⚡ BoomOpen Workflow Kit (v5.2 — Antigravity 2.0 Smart-Hybrid Edition)
+# ⚡ BoomOpen Workflow Kit (v5.3 — Antigravity 2.0 Smart-Hybrid Edition)
 
 > **PURPOSE**: Root skill entry point for the BoomOpen Workflow Kit Smart-Hybrid multi-agent orchestration framework.
 
@@ -20,7 +20,11 @@ description: BoomOpen Workflow Kit (v5.2 Antigravity 2.0 Smart-Hybrid Edition) �
   1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent`, `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup), using **DAG-Aware Parallel Fan-Out** for independent phases.
+- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent`, `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup), using:
+  - **DAG-Aware Parallel Fan-Out** for independent phases
+  - **Direct Plan-to-Executor Dispatch** (no middleman `tech-lead` hop once `PLAN` exists)
+  - **Contract-First Parallel Handoffs (`SHARED_CONTRACT` + disjoint `OWNED_FILES`)**
+  - **Stateful Warm Sub-agent Reuse (`send_message` by `conversationId`)**
 
 ---
 
@@ -44,11 +48,11 @@ description: BoomOpen Workflow Kit (v5.2 Antigravity 2.0 Smart-Hybrid Edition) �
 | Rule File | Purpose | When to Load |
 |-----------|---------|--------------|
 | [`rules/CORE.md`](./rules/CORE.md) | 2-Mode Gate, 10 Orchestration Laws, Model Policy, Brain Artifact Routing | On-demand in Mode B |
-| [`rules/AGENTS.md`](./rules/AGENTS.md) | Tiered Execution (TIER 0/1/2), Quality-First Model Policy, Agent Roster | Before delegating to specialist subagents |
-| [`rules/PHASES.md`](./rules/PHASES.md) | DAG-Aware Parallel Fan-Out, Deliverable Chunking, 2-Step Skill Analysis | When running multi-phase workflows |
+| [`rules/AGENTS.md`](./rules/AGENTS.md) | Tiered Execution (TIER 0/1/2), Warm Sub-agent Reuse, Structured Handoff Packet (`OWNED_FILES`) | Before delegating to specialist subagents |
+| [`rules/PHASES.md`](./rules/PHASES.md) | DAG-Aware Parallel Fan-Out, Contract-First Dispatch, Direct Plan Execution | When running multi-phase workflows |
 | [`rules/TEAMS.md`](./rules/TEAMS.md) | Golden Triangle 3-Agent Adversarial Collaboration (`Tech Lead` + `Executor` + `Reviewer`) | When executing `:team` workflow variants |
 | [`rules/SKILLS.md`](./rules/SKILLS.md) | Fast 2-Step Progressive Skill Lookup (`<skills>` → `compact-index.json` / `skill-seeker`) | When resolving domain skills for complex tasks |
-| [`rules/ERRORS.md`](./rules/ERRORS.md) | Self-healing, Error Classification (E1–E4), Anti-Pattern Recovery | When errors or protocol violations occur |
+| [`rules/ERRORS.md`](./rules/ERRORS.md) | Self-healing, Error Classification (`E0` warm auto-revive – `E4`), Anti-Patterns (`A1`–`A12`) | When errors or protocol violations occur |
 | [`rules/REFERENCE.md`](./rules/REFERENCE.md) | Quick lookup tables for Commands, Agents, and Deliverable paths | Fast reference |
 
 ---

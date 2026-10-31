@@ -1,6 +1,6 @@
 # ⚡ CORE RULES — SMART-HYBRID ORCHESTRATOR PROTOCOL
 
-> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration
+> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration & Intelligent Work Distribution
 
 ---
 
@@ -25,7 +25,8 @@
 │       or adversarial Golden Triangle review (:hard / :team).                  │
 │  • Action: Activate Strict Orchestrator Mode — load workflow & PHASES/AGENTS  │
 │    on-demand, and delegate phases to isolated specialist subagents using      │
-│    DAG-Aware Parallel Fan-Out for independent phases.                         │
+│    DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Contract-First     │
+│    Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`), and Warm Session Reuse.      │
 └───────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -80,18 +81,19 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 
 ---
 
-## 🔀 TIERED EXECUTION & DAG PARALLEL FAN-OUT
+## 🔀 TIERED EXECUTION, DIRECT DISPATCH & WARM SUB-AGENT REUSE
 
 | Tier | Mode / When | Action |
 |------|-------------|--------|
 | **TIER 0** | **Mode A** (≤ 3 files, 1 domain, no `/cmd`) | Execute, test, and verify directly |
-| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** use isolated sub-agent delegation (launch independent phases in parallel) |
+| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** use isolated sub-agent delegation (DAG Parallel Fan-Out + Warm Session Reuse) |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent (shared context, fallback only) |
 
-### 🛠️ Antigravity 2.0 Native Sub-agent Primitives (TIER 1)
+### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & Intelligent Dispatch (TIER 1)
 - `define_subagent`: Define specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
-- `invoke_subagent`: Launch isolated sub-agents with `TypeName`, `Role`, `Prompt`, `Model` (`"inherit"` / `"pro"` default; `"flash"` for trivial chores only; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch` for git worktree isolation, or `share`).
-- `send_message`: Multi-turn communication with running sub-agents by `conversationId`, powered by **Reactive Async Wakeup** (never poll in a loop).
+- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet with `OWNED_FILES`, `READ_ONLY_FILES`, `SHARED_CONTRACT`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`). Record `conversationId` in the **Active Sub-agent Session Registry**.
+- `send_message`: **Warm Sub-agent Reuse** — multi-turn communication with running or completed sub-agents by `conversationId` (0s cold-start latency, 100% preserved file context), powered by **Reactive Async Wakeup** (never poll in a loop).
+- **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, the Orchestrator dispatches tasks directly to execution engineers without a middleman `tech-lead` hop.
 - `manage_subagents` & `manage_task`: List, check status, or terminate subagents/background tasks.
 - Cross-platform alias: `runSubagent` (Cursor / Copilot / Claude Code compatibility).
 
@@ -113,19 +115,16 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 | **L2** | Requirement Integrity | 100% fidelity, zero loss, parse EVERY requirement |
 | **L3** | Smart Threshold Gate | Mode A (≤ 3 files, 1 domain) executes directly; Mode B (> 3 files, ≥ 2 domains, `/cmd`) delegates |
 | **L4** | Quality-First Model | Default `Model: "inherit"` (Pro High); `"flash"` only for trivial chores; NEVER `"flash_lite"` |
-| **L5** | DAG Parallel Fan-Out | Run independent phases concurrently in one turn (`researcher` + `scouter`); enforce sequential order when dependent (`Plan` → `Implement` → `Test`) |
+| **L5** | DAG & Contract-First | Run independent phases concurrently; lock `SHARED_CONTRACT` + disjoint `OWNED_FILES` before parallel coding |
 | **L6** | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |
-| **L7** | Recursive Delegation | In Mode B, Orchestrator & Meta agents coordinate, NEVER implement directly |
-| **L8** | Stateful Handoff | Prior deliverables = IMMUTABLE constraints |
-| **L9** | Constraint Propagation | scouter→planner→implementer chain locked |
+| **L7** | Direct Plan Dispatch | In Mode B, Orchestrator dispatches directly from `PLAN` to domain engineers (no middleman hop) |
+| **L8** | Warm Session Reuse | Track `Role → conversationId`; reuse warm sub-agents via `send_message` for follow-ups & fixes |
+| **L9** | Constraint Propagation | `scouter` → `planner` (`SHARED_CONTRACT`) → `engineer` (`OWNED_FILES`) chain locked |
 | **L10** | Clean Git Tree | Default transient deliverables go to `<appDataDir>\brain\<conversation-id>\` |
 
 ---
 
 ## 📁 DELIVERABLES (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
-
-> **Default Rule (Antigravity 2.0)**: Write transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` so they render in the UI Artifact pane and keep the Git working tree 100% clean.
-> **Workspace Rule**: Only write to `./reports/{topic}/` or `./documents/` when running `/docs` (`/docs:core`) or when the user explicitly requests committing reports into the repository.
 
 | Agent | Antigravity 2.0 Brain Artifact Default | Workspace Path (Only on `/docs` or Explicit Export) |
 |-------|----------------------------------------|-----------------------------------------------------|
@@ -140,15 +139,3 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 | reviewer | `<appDataDir>\brain\<conversation-id>\REVIEW-{scope}.md` | `./reports/{topic}/reviews/REVIEW-{scope}.md` |
 | business-analyst | `<appDataDir>\brain\<conversation-id>\REQ-{feature}.md` | `./reports/{topic}/requirements/REQ-{feature}.md` |
 | performance-engineer | `<appDataDir>\brain\<conversation-id>\PERF-{component}.md` | `./reports/{topic}/performance/PERF-{component}.md` |
-
----
-
-## 📚 LOAD ON DEMAND (Mode B Only)
-
-| Situation | Load |
-|-----------|------|
-| Running phases & DAG Parallel Fan-Out | `PHASES.md` |
-| Delegating to agent & Model Policy | `AGENTS.md` |
-| Team collaboration (`:team`) | `TEAMS.md` |
-| Skill resolution | `SKILLS.md` |
-| Error occurred / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

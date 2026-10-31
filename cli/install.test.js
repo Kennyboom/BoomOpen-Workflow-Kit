@@ -12,7 +12,7 @@ const {
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 
-test('TOOLS.antigravity configuration uses unified boomopen-workflow-kit v5.2 paths', () => {
+test('TOOLS.antigravity configuration uses unified boomopen-workflow-kit v5.3 paths', () => {
   const ag = TOOLS.antigravity;
   assert.ok(ag, 'antigravity tool config should exist');
   assert.ok(
@@ -40,7 +40,7 @@ test('ROOT_FILES includes SKILL.md and README.md', () => {
   assert.ok(ROOT_FILES.includes('SKILL.md'));
 });
 
-test('Antigravity template GEMINI.md enforces Quality-First Model Policy and DAG Parallel Fan-Out', () => {
+test('Antigravity template GEMINI.md enforces Quality-First Model Policy, Direct Dispatch, and Warm Reuse', () => {
   const geminiTemplatePath = path.join(
     REPO_ROOT,
     'code-assistants',
@@ -57,11 +57,12 @@ test('Antigravity template GEMINI.md enforces Quality-First Model Policy and DAG
   assert.ok(content.includes('MODE B — Strict Multi-Agent Orchestration'));
   assert.ok(content.includes('QUALITY-FIRST MODEL POLICY'));
   assert.ok(content.includes('NEVER use `flash_lite`'));
-  assert.ok(content.includes('DAG-Aware Parallel Fan-Out'));
+  assert.ok(content.includes('Direct Plan-to-Executor Dispatch'));
+  assert.ok(content.includes('Stateful Warm Sub-agent Reuse'));
   assert.ok(!content.includes('agent-assistant'));
 });
 
-test('All rules/*.md files are <= 300 lines, pure BoomOpen v5.2, and enforce Model: inherit', () => {
+test('All rules/*.md files are <= 300 lines, pure BoomOpen v5.3, and enforce Intelligent Work Distribution', () => {
   const rulesDir = path.join(REPO_ROOT, 'rules');
   const ruleFiles = fs.readdirSync(rulesDir).filter((f) => f.endsWith('.md')).sort();
   assert.deepEqual(ruleFiles, [
@@ -87,7 +88,16 @@ test('All rules/*.md files are <= 300 lines, pure BoomOpen v5.2, and enforce Mod
   }
   const agentsContent = fs.readFileSync(path.join(rulesDir, 'AGENTS.md'), 'utf8');
   assert.ok(agentsContent.includes('QUALITY-FIRST MODEL POLICY'));
-  assert.ok(agentsContent.includes('DAG Parallel Fan-Out'));
+  assert.ok(agentsContent.includes('Direct Plan-to-Executor Dispatch'));
+  assert.ok(agentsContent.includes('Active Sub-agent Session Registry'));
+  assert.ok(agentsContent.includes('OWNED_FILES'));
+  assert.ok(agentsContent.includes('SHARED_CONTRACT'));
+
+  const errorsContent = fs.readFileSync(path.join(rulesDir, 'ERRORS.md'), 'utf8');
+  assert.ok(errorsContent.includes('E0'));
+  assert.ok(errorsContent.includes('Warm Auto-Revive'));
+  assert.ok(errorsContent.includes('A11'));
+  assert.ok(errorsContent.includes('A12'));
 });
 
 test('commands/ directory has only flat *.md files + _ref/ and all files are <= 300 lines', () => {
@@ -116,7 +126,7 @@ test('buildCompactSkillIndex generates matrix-skills/compact-index.json with >= 
   assert.ok(result.count >= 1000, `Expected >= 1000 skills, got ${result.count}`);
   assert.ok(fs.existsSync(result.outputPath));
   const data = JSON.parse(fs.readFileSync(result.outputPath, 'utf8'));
-  assert.equal(data.version, '5.2.0');
+  assert.equal(data.version, '5.3.0');
   assert.ok(data.skills['api-patterns']);
   assert.equal(data.skills['api-patterns'].domain, 'backend');
 });

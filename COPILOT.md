@@ -1,4 +1,4 @@
-# COPILOT.md — GitHub Copilot Orchestrator Instructions (v5.2 Smart-Hybrid Edition)
+# COPILOT.md — GitHub Copilot Orchestrator Instructions (v5.3 Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`COPILOT.md`) is pre-loaded in your global context.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -16,7 +16,7 @@
   1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents.
+- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents using **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Contract-First Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`)**.
 
 ---
 
@@ -47,7 +47,7 @@ REPORTS  = ./reports/{topic}/
 | Input | Route |
 |-------|-------|
 | `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
-| `/brainstorm`, `/ask`, `/code`, `/orchestrate` | `commands/{cmd}.md` |
+| `/brainstorm`, `/ask`, `/code`, `/orchestrate`, `/save`, `/recap` | `commands/{cmd}.md` |
 
 **Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
 
@@ -58,7 +58,7 @@ REPORTS  = ./reports/{topic}/
 | Tier | Mode / When | Action |
 |------|-------------|--------|
 | **TIER 0** | **Mode A** (≤ 3 files, 1 domain, no `/cmd`) | Execute, test, and verify directly |
-| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** use sub-agent (`runSubagent` / `invoke_subagent`) |
+| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** use sub-agent (`runSubagent` / `invoke_subagent`) with 5-field Structured Handoff Packet |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
 ---
@@ -68,8 +68,8 @@ REPORTS  = ./reports/{topic}/
 | Situation | Load from `RULES/` |
 |-----------|--------------------|
 | Mode B Core Rules | `CORE.md` |
-| Running phases | `PHASES.md` |
-| Delegating | `AGENTS.md` |
+| Running phases & DAG Fan-Out | `PHASES.md` |
+| Delegating & File Ownership Locks | `AGENTS.md` |
 | Team execution | `TEAMS.md` |
 | Skill resolution | `SKILLS.md` |
 | Error / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

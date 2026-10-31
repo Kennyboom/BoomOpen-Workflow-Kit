@@ -75,6 +75,7 @@ function inspectSourceFile(filePath, baseDir) {
   }
   const isCliOrTest =
     relPath.startsWith('cli') ||
+    filePath.includes(`${path.sep}cli${path.sep}`) ||
     fileName.includes('.test.') ||
     fileName.includes('.spec.');
   if (!isCliOrTest && /\bconsole\.log\s*\(/.test(content)) {
@@ -103,7 +104,7 @@ function runCheck(targetDir = process.cwd(), options = {}) {
 
   const passed = violations.length === 0;
   if (!options.silent) {
-    console.log('\n📏 BoomOpen Code Standards Check (v5.2.0)\n' + '─'.repeat(60));
+    console.log('\n📏 BoomOpen Code Standards Check (v5.3.0)\n' + '─'.repeat(60));
     console.log(`  📁 Target:   ${resolvedDir}`);
     console.log(`  📄 Scanned:  ${files.length} source files`);
     console.log(`  ❌ Errors:   ${violations.length}`);

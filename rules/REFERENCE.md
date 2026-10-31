@@ -1,6 +1,6 @@
 # 📚 REFERENCE
 
-> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
+> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
 
 ---
 
@@ -9,7 +9,7 @@
 | Mode | Tier | Trigger Condition | Action |
 |------|------|-------------------|--------|
 | **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked | Execute, test, and verify **directly** (0 subagent overhead) |
-| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode** & delegate via subagents (`Model: "inherit"`, DAG Parallel Fan-Out) |
+| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode**: Direct Plan-to-Executor Dispatch, DAG Parallel Fan-Out, Contract-First `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse (`send_message`) |
 
 ---
 
@@ -50,12 +50,12 @@
 
 | Agent | Category | Primary Tasks |
 |-------|----------|---------------|
-| `tech-lead` | meta | Architecture, orchestration |
-| `planner` | meta | Task breakdown, roadmap |
-| `backend-engineer` | execution | APIs, services, logic |
-| `frontend-engineer` | execution | UI, components, styling |
+| `tech-lead` | meta | Architecture Design/Review (`/review:hard`) & `:team` Golden Triangle Arbitration |
+| `planner` | meta | Task breakdown, `SHARED_CONTRACT`, `OWNED_FILES` allocation |
+| `backend-engineer` | execution | APIs, services, server logic |
+| `frontend-engineer` | execution | UI, components, client state |
 | `database-architect` | execution | Schema, queries, migrations |
-| `mobile-engineer` | execution | iOS, Android, React Native |
+| `mobile-engineer` | execution | iOS, Android, React Native, Flutter |
 | `game-engineer` | execution | Game logic, Unity, Unreal |
 | `tester` | validation | Unit, integration, E2E tests |
 | `reviewer` | validation | Code review, PR feedback |
@@ -76,9 +76,6 @@
 
 ## DELIVERABLE PATHS (BRAIN ARTIFACTS FIRST ON ANTIGRAVITY 2.0)
 
-> **Default (Antigravity 2.0)**: Write transient deliverables (`PLAN`, `RESEARCH`, `SCOUT`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git working tree 100% clean.
-> **Workspace Export**: Only write to `./reports/{topic}/` or `./documents/` when running `/docs` or when explicitly requested by the user.
-
 ```yaml
 brain_artifact_default: <appDataDir>\brain\<conversation-id>\{TYPE}-{feature}.md
 workspace_export_only:  ./reports/{topic}/{type_plural}/{TYPE}-{feature}.md
@@ -95,9 +92,9 @@ docs_suite_workspace:   ./documents/knowledge-*/00-index.md
 | L2 | Requirement Integrity | 100% fidelity, zero loss |
 | L3 | Smart Threshold Gate | Mode A (≤ 3 files) direct; Mode B (> 3 files / `/cmd`) orchestrated |
 | L4 | Quality-First Model | Default `Model: "inherit"` (Pro High); `"flash"` only for trivial chores; NEVER `"flash_lite"` |
-| L5 | DAG Parallel Fan-Out | Run independent phases concurrently in one turn; sequential when dependent |
+| L5 | DAG & Contract-First | Run independent phases concurrently; lock `SHARED_CONTRACT` + disjoint `OWNED_FILES` before parallel coding |
 | L6 | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |
-| L7 | Recursive Delegation | In Mode B, Orchestrator & Meta agents never implement |
-| L8 | Stateful Handoff | Prior deliverables = locked |
-| L9 | Constraint Propagation | Scout→Planner→Impl chain |
+| L7 | Direct Plan Dispatch | In Mode B, Orchestrator dispatches directly from `PLAN` to domain engineers (no middleman hop) |
+| L8 | Warm Session Reuse | Track `Role → conversationId`; reuse warm sub-agents via `send_message` for follow-ups & fixes |
+| L9 | Constraint Propagation | `scouter` → `planner` (`SHARED_CONTRACT`) → `engineer` (`OWNED_FILES`) chain locked |
 | L10 | Clean Git Tree | Transient deliverables default to `<appDataDir>\brain\<conversation-id>\` |

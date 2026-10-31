@@ -1,6 +1,6 @@
 # 🎯 SKILLS — Fast 2-Step Progressive Skill Resolution & Compact Index
 
-> **VERSION**: 5.2 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When skill resolution is needed in Mode B | **PURPOSE**: Millisecond Hybrid Skill Orchestration Layer (HSOL)
+> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When skill resolution is needed in Mode B | **PURPOSE**: Millisecond Hybrid Skill Orchestration Layer (HSOL)
 
 ---
 
@@ -18,7 +18,7 @@
 │  STEP 2: Compact Index / skill-seeker Lookup (Only for Niche Domains)      │
 │  • If the required niche framework/domain is NOT in <skills>:              │
 │    1. Query ~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/          │
-│       compact-index.json (pre-compiled O(1) lookup across 1,467+ skills)   │
+│       compact-index.json (pre-compiled O(1) lookup across 1,430+ skills)   │
 │       OR run a targeted grep_search in ~/.gemini/config/skills_library/.   │
 │    2. Read ONLY the matched SKILL.md file to load its instructions.        │
 └────────────────────────────────────────────────────────────────────────────┘
@@ -65,7 +65,7 @@ WHEN task_complexity == Complex:
 
 ## 🛠️ DETERMINISTIC CLI VERIFICATION TOOLS (`doctor` & `check`)
 
-BoomOpen Workflow Kit v5.2 includes built-in CLI verification utilities for `tester`, `reviewer`, and Mode A direct execution:
+BoomOpen Workflow Kit v5.3 includes built-in CLI verification utilities for `tester`, `reviewer`, and Mode A direct execution:
 
 ```bash
 node cli/install.js doctor        # Verify installation health, line limits, and zero mojibake

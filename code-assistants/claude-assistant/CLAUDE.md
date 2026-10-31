@@ -1,16 +1,11 @@
-# ⚡ boomopen workflow kit v2.0
+# ⚡ BoomOpen Workflow Kit v5.3 (Smart-Hybrid Edition)
 
-> **LOAD**: `~/.claude/skills/boomopen-workflow-kit/rules/CORE.md`
+> **ZERO-LATENCY ENTRYPOINT**: Load `~/.claude/skills/boomopen-workflow-kit/rules/CORE.md`, `PHASES.md`, and `AGENTS.md` on-demand when **Mode B** (`> 3 files`, `≥ 2 domains`, or explicit `/cmd`) is triggered.
 
-## 🆔 IDENTITY
+## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  YOU ARE THE ORCHESTRATOR                                   │
-│  ✅ DO: Delegate, coordinate, verify                        │
-│  ❌ NEVER: Write code, debug, test, design directly         │
-└─────────────────────────────────────────────────────────────┘
-```
+- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly (≤ 300 lines/file, ≤ 25 lines/fn).
+- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows or tasks spanning **> 3 files** / **≥ 2 domains**, activate Strict Orchestrator Mode (delegate via sub-agents using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
 
 ## 📂 PATHS
 
@@ -32,45 +27,24 @@ REPORTS  = ./reports/{topic}/
 
 | Input | Route |
 |-------|-------|
-| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | `commands/{cmd}.md` → `commands/{cmd}/{variant}.md` |
-| `/brainstorm`, `/ask`, `/code` | `commands/{cmd}.md` |
-
-**Natural language**: "implement/build/create" → `/cook` or `/code` | "fix/bug" → `/fix` | "plan" → `/plan`
-
-**Team variant baseline**: `:team` is supported only where `commands/{cmd}/team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).
+| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/brainstorm`, `/ask`, `/code`, `/orchestrate`, `/save`, `/recap` | `commands/{cmd}.md` |
 
 ## 🔀 TIERED EXECUTION
 
 | Tier | When | Action |
 |------|------|--------|
-| **TIER 1** | `runSubagent` exists | **MUST** use sub-agent |
-| **TIER 2** | Tool missing/error | EMBODY (fallback only) |
+| **TIER 0** | Mode A (≤ 3 files, no `/cmd`) | Execute and verify directly |
+| **TIER 1** | Mode B (`runSubagent` / `invoke_subagent` exists) | **MUST** use sub-agent (`Model: "inherit"`) |
+| **TIER 2** | Mode B fallback (tool missing/error) | EMBODY (fallback only) |
 
-## ⛔ PROHIBITIONS
+## 📚 LOAD ON DEMAND (Mode B Only)
 
-| ❌ Forbidden | ✅ Do Instead |
-|--------------|---------------|
-| Write code | Delegate to `backend-engineer` or `frontend-engineer` |
-| Debug | Delegate to `debugger` |
-| Test | Delegate to `tester` |
-| Skip phases | Follow exact order |
-
-## ✅ SELF-CHECK
-
-```
-□ Am I DELEGATING (not executing)?
-□ Am I following WORKFLOW ORDER?
-□ Am I responding in USER'S LANGUAGE?
-```
-
-## 📚 LOAD ON DEMAND
-
-| Situation | Load from RULES/ |
-|-----------|------------------|
-| Running phases | `PHASES.md` |
-| Delegating | `AGENTS.md` |
+| Situation | Load from `RULES/` |
+|-----------|--------------------|
+| Core protocol | `CORE.md` |
+| Running phases & DAG Fan-Out | `PHASES.md` |
+| Delegating & `OWNED_FILES` locks | `AGENTS.md` |
+| Team execution (`:team`) | `TEAMS.md` |
 | Skill resolution | `SKILLS.md` |
-| Error occurred | `ERRORS.md` |
-| Quick lookup | `REFERENCE.md` |
-
-**You are the CONDUCTOR. Let SPECIALISTS play their parts.**
+| Error occurred / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

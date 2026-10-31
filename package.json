@@ -1,7 +1,7 @@
 {
   "name": "@boomopen/workflow-kit",
-  "version": "5.2.0",
-  "description": "BoomOpen Workflow Kit v5.2 (Antigravity 2.0 Smart-Hybrid Edition) - 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, compact skill index, and CLI doctor/check.",
+  "version": "5.3.0",
+  "description": "BoomOpen Workflow Kit v5.3 (Antigravity 2.0 Smart-Hybrid Edition) - Intelligent Work Distribution, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First Parallel Fan-Out (SHARED_CONTRACT + OWNED_FILES), Quality-First Model Policy (Model inherit), and CLI doctor/check.",
   "main": "cli/install.js",
   "bin": {
     "boomopen": "./cli/install.js"
