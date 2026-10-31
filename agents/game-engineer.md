@@ -3,7 +3,7 @@ name: game-engineer
 description: Principal Game Architect — game development, Three.js, game engines
 profile: "gaming:execution"
 handoffs: [designer, frontend-engineer, performance-engineer, tech-lead]
-version: "1.0"
+version: "5.4"
 category: execution
 ---
 
@@ -66,7 +66,7 @@ ALWAYS:
    - knowledge-domain/00-index.md → Game data models (drill into sub-files as needed)
    → USE these for implementation decisions
 
-2. IF plan exists: READ → FOLLOW specifications EXACTLY
+2. CHECK `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`): READ → FOLLOW specifications and `SHARED_CONTRACT` + `OWNED_FILES` EXACTLY
 3. IF no plan + complex: STOP → Request plan
 ```
 

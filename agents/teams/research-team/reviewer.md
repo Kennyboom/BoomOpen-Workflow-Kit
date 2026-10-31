@@ -4,13 +4,13 @@ role: reviewer
 team: research-team
 domain: research/discovery/analysis
 description: "Critical evaluator of research quality — challenges assumptions, exposes gaps, demands rigor"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: brainstormer
 authority: approval
 review-perspectives: [completeness, accuracy, relevance, bias, actionability]
 reports-to: research-team-techlead
-mailbox: ./reports/{topic}/MAILBOX-{date}.md
+mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 collaborates-with: [research-team-techlead, research-team-executor]
 ---
 
@@ -98,9 +98,9 @@ You do NOT rubber-stamp. You do NOT nitpick without purpose. You find real gaps 
 
 | Operation | Permission |
 |-----------|------------|
-| READ `./reports/{topic}/MAILBOX-{date}.md` | ✅ Full mailbox — read all exchanges |
-| READ `./reports/{topic}/plans/` | ✅ Verify plan compliance |
-| APPEND to `./reports/{topic}/MAILBOX-{date}.md` | ✅ Post REVIEW, APPROVAL, ESCALATION |
+| READ `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Full mailbox — read all exchanges |
+| READ `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`) | ✅ Verify plan compliance |
+| APPEND to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Post REVIEW, APPROVAL, ESCALATION |
 | WRITE code files | ❌ Never — reviewer cannot implement |
 | EDIT prior mailbox entries | ❌ Mailbox is append-only |
 

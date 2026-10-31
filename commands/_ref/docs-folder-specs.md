@@ -1,6 +1,6 @@
 ---
 description: "📝 Knowledge Folder Specs + Quality Gates — Referenced by docs-core.md"
-version: "5.1"
+version: "5.4"
 type: reference
 ---
 

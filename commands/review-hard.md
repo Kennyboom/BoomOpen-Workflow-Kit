@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Review — Deep parallel multi-dimension code & architecture review
-version: "5.2"
+version: "5.4"
 category: validation
 execution-mode: execute
 ---
@@ -40,7 +40,7 @@ IF <appDataDir>\brain\<conversation-id>\PLAN-{scope}.md (or ./reports/{topic}/pl
   - Ensure all plan phases are reflected in code
 ```
 
-Also run `node cli/install.js check <target-dir>` to deterministically audit file length (≤ 300 lines) and type safety.
+Also run `node cli/install.js check <target-dir>` to deterministically audit Pragmatic 2-Tier Coding Standards (≤ 400 soft / ≤ 500 hard lines/file, 0 `any`).
 
 ---
 

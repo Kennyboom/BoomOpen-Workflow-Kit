@@ -4,7 +4,7 @@ role: executor
 team: security-team
 domain: security
 description: "Direct security auditor with self-defense capability — scans, exploits, reports, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: backend-engineer
 base-agent-mode: security-audit
@@ -51,7 +51,7 @@ If you reported it, you can prove it. If it's a false positive, retract it. If i
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

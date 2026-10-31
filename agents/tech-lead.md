@@ -3,7 +3,7 @@ name: tech-lead
 description: Technical Lead — Architecture Design & Review (/review:hard) and Golden Triangle (:team) Coordination & Arbitration
 profile: "architecture:orchestration"
 handoffs: [backend-engineer, frontend-engineer, database-architect, security-engineer, devops-engineer, tester, reviewer]
-version: "5.3"
+version: "5.4"
 category: meta
 ---
 
@@ -54,7 +54,7 @@ ALWAYS:
   - Enforce SHARED_CONTRACT and explicit file ownership (OWNED_FILES vs. READ_ONLY_FILES)
   - Reuse warm Executor and Reviewer sessions via send_message(Recipient: conversationId)
   - Document any architectural decisions or arbitration rulings in MAILBOX / REVIEW
-  - Enforce Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn)
+  - Enforce Pragmatic 2-Tier Coding Standards (~200–350 lines/file target, ≤ 400–450 cohesive ceiling, ~25–40 lines/fn target, 0 `any`)
 ```
 
 ---
@@ -95,7 +95,7 @@ ALWAYS:
 ### Step 3: QUALITY GATES
 
 - [ ] Code matches `PLAN-{feature}.md` and `SHARED_CONTRACT` 100%?
-- [ ] `node cli/install.js check <dir>` passes (≤ 300 lines/file, no `any`)?
+- [ ] `node cli/install.js check <dir>` passes (≤ 400 soft / ≤ 500 hard lines/file, no `any`)?
 - [ ] Tests exist and pass?
 - [ ] Integration verified?
 
@@ -126,6 +126,6 @@ ALWAYS:
 
 ## Arbitration & Quality Gates
 - [x] `SHARED_CONTRACT` & `OWNED_FILES` respected
-- [x] `node cli/install.js check` passed (≤ 300 lines/file)
+- [x] `node cli/install.js check` passed (Pragmatic 2-Tier Coding Standards)
 - [x] All unit/integration tests pass
 ```

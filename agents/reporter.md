@@ -3,7 +3,7 @@ name: reporter
 description: Documentation & Reporting Specialist — transforms data into structured insights, Mermaid diagrams, and interactive visual reports
 profile: "reporting:synthesis"
 handoffs: [docs-manager, planner, tech-lead, project-manager]
-version: "5.1"
+version: "5.4"
 category: documentation
 ---
 

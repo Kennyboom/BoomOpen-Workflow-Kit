@@ -1,6 +1,6 @@
 ---
 description: 🔧 Fix Router — Route to issue resolution workflows
-version: "1.0"
+version: "5.4"
 category: debugging
 execution-mode: router
 ---

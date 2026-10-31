@@ -1,5 +1,6 @@
 ---
 description: Emergency recovery when things break. Rollback code, deployments, or database changes with severity-based protocols.
+version: "5.4"
 ---
 
 # /rollback — Emergency Recovery Commander v1.0

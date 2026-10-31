@@ -4,7 +4,7 @@ role: reviewer
 team: fullstack-team
 domain: fullstack
 description: "Devil's advocate quality gatekeeper — security + performance + cross-stack consistency review lens"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: reviewer
 authority: approval
@@ -19,7 +19,7 @@ collaborates-with:
   - fullstack-team-techlead
   - fullstack-team-backend-executor
   - fullstack-team-frontend-executor
-mailbox: ./reports/{topic}/MAILBOX-{date}.md
+mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 ---
 
 # 🔍 Fullstack Team — Reviewer (Devil's Advocate)
@@ -146,9 +146,9 @@ You do NOT rubber-stamp. You do NOT nitpick without purpose. You review backend 
 
 | Operation | Permission |
 |-----------|------------|
-| READ `./reports/{topic}/MAILBOX-{date}.md` | ✅ Full mailbox — read all exchanges |
-| READ `./reports/{topic}/plans/` | ✅ Verify plan compliance |
-| APPEND to `./reports/{topic}/MAILBOX-{date}.md` | ✅ Post REVIEW, APPROVAL, ESCALATION |
+| READ `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Full mailbox — read all exchanges |
+| READ `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`) | ✅ Verify plan compliance |
+| APPEND to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Post REVIEW, APPROVAL, ESCALATION |
 | WRITE code files | ❌ Never — reviewer cannot implement |
 | EDIT prior mailbox entries | ❌ Mailbox is append-only |
 

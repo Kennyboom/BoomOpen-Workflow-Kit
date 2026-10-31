@@ -1,6 +1,6 @@
 ---
 description: 🚀 Deploy Router — Route to deployment workflows
-version: "1.0"
+version: "5.4"
 category: operations
 execution-mode: router
 ---

@@ -3,7 +3,7 @@ name: business-analyst
 description: Principal Business Analyst — requirements, stakeholder management, domain modeling
 profile: "planning:business"
 handoffs: [brainstormer, planner, project-manager, tech-lead]
-version: "1.0"
+version: "5.4"
 category: research
 ---
 

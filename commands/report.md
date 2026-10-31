@@ -1,6 +1,6 @@
 ---
 description: 📝 Report Router — Multi-purpose reporting (create report, update docs, or generate from template)
-version: "1.0"
+version: "5.4"
 category: documentation
 execution-mode: router
 ---

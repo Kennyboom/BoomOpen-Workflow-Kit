@@ -4,7 +4,7 @@ role: tech-lead
 team: debug-team
 domain: debugging
 description: "Investigation coordinator, hypothesis arbiter, and root-cause synthesizer for debug team phases"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: debugger
 authority: final
@@ -62,7 +62,7 @@ Status flow: ⏳ Pending → 🔄 In Progress → ✅ Approved → ❌ Blocked �
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

@@ -1,10 +1,10 @@
-# ⚡ BoomOpen Workflow Kit v5.3 (Smart-Hybrid Edition)
+# ⚡ BoomOpen Workflow Kit v5.4 (Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: Load `~/.claude/skills/boomopen-workflow-kit/rules/CORE.md`, `PHASES.md`, and `AGENTS.md` on-demand when **Mode B** (`> 3 files`, `≥ 2 domains`, or explicit `/cmd`) is triggered.
 
 ## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
 
-- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly (≤ 300 lines/file, ≤ 25 lines/fn).
+- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
 - **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows or tasks spanning **> 3 files** / **≥ 2 domains**, activate Strict Orchestrator Mode (delegate via sub-agents using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
 
 ## 📂 PATHS

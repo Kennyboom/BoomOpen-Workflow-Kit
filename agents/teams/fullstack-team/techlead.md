@@ -4,7 +4,7 @@ role: tech-lead
 team: fullstack-team
 domain: fullstack
 description: "Task decomposer, dual-executor coordinator, arbiter, and output synthesizer for fullstack team phases"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: tech-lead
 authority: final
@@ -111,7 +111,7 @@ After BOTH Executors are individually approved, verify:
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

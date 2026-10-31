@@ -6,6 +6,7 @@ description: >-
   Finds LOGIC holes, not just TEXT holes.
 category: audit
 execution-mode: sequential
+version: "5.4"
 ---
 
 # /deep-audit — The Ruthless Inspector v2.0

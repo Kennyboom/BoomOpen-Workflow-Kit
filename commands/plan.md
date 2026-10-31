@@ -1,6 +1,6 @@
 ---
 description: 📋 Plan Router — Route to planning workflows
-version: "1.0"
+version: "5.4"
 category: planning
 execution-mode: router
 ---

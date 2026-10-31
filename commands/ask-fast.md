@@ -1,6 +1,6 @@
 ---
 description: ⚡ Quick Answer — Direct response from codebase context
-version: "1.0"
+version: "5.4"
 category: knowledge
 execution-mode: execute
 ---
@@ -46,7 +46,7 @@ tiered_execution:
 
 ## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct Plan-to-Executor Dispatch** (`Model: "inherit"`), and **Stateful Warm Sub-agent Reuse** (`send_message`) per `rules/PHASES.md` (v5.4).
 
 ---
 

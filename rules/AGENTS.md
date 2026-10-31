@@ -1,6 +1,6 @@
 # 🤖 AGENTS
 
-> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Intelligent Work Distribution, Quality-First Model Policy, Warm Sub-agent Reuse & File Ownership Locks
+> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Intelligent Work Distribution, Quality-First Model Policy, Warm Sub-agent Reuse & File Ownership Locks
 
 ---
 
@@ -16,7 +16,7 @@
 
 ---
 
-## ⚡ INTELLIGENT WORK DISTRIBUTION (v5.3)
+## ⚡ INTELLIGENT WORK DISTRIBUTION (v5.4)
 
 ### 1. Direct Plan-to-Executor Dispatch (No Middleman Double-Hop)
 - **Once `PLAN-{feature}.md` exists** in `:fast`, `:hard`, or `/orchestrate` workflows, the **Orchestrator dispatches tasks directly from `PLAN` to the execution specialists** (`backend-engineer`, `frontend-engineer`, `database-architect`, `mobile-engineer`, `game-engineer`, `devops-engineer`).
@@ -67,7 +67,7 @@ Every `invoke_subagent` prompt or `send_message` task brief in Mode B **MUST** i
 
 ### TIER 0: Mode A Direct Execution (Fast Path — Default for Simple Tasks)
 - **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit `/cmd` workflow was invoked.
-- **Action**: Primary agent executes, tests, and verifies directly (0 subagent latency), enforcing **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) and **Persistent Testing & Bug Fixing**.
+- **Action**: Primary agent executes, tests, and verifies directly (0 subagent latency), enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure `~200–350 lines` target, `≤ 400–450` cohesive soft ceiling) and **Persistent Testing & Bug Fixing**.
 
 ### TIER 1: Mode B Native Sub-agent Delegation (MANDATORY for Complex Tasks & `/cmd`)
 1. **Prepare Structured Handoff Packet** (Mission, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, Verification).

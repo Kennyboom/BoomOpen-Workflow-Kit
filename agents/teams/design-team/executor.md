@@ -4,7 +4,7 @@ role: executor
 team: design-team
 domain: design
 description: "Direct design implementer with self-defense capability — builds, submits, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: frontend-engineer
 authority: implementation
@@ -48,7 +48,7 @@ If I submitted it, I own it. If the spacing is wrong, I fix it. If the approach 
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

@@ -4,7 +4,7 @@ role: executor
 team: qa-team
 domain: quality-assurance
 description: "Direct test implementer with self-defense capability — writes tests, submits, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: tester
 authority: implementation
@@ -47,7 +47,7 @@ If you submitted it, you own it. If there's a gap, fill it. If your coverage is 
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

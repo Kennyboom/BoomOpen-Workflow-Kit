@@ -1,6 +1,6 @@
 # 📚 REFERENCE
 
-> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
+> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Mode | Tier | Trigger Condition | Action |
 |------|------|-------------------|--------|
-| **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked | Execute, test, and verify **directly** (0 subagent overhead) |
+| **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked | Execute, test, and verify **directly** (0 subagent overhead, Pragmatic 2-Tier Coding Standards) |
 | **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode**: Direct Plan-to-Executor Dispatch, DAG Parallel Fan-Out, Contract-First `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse (`send_message`) |
 
 ---

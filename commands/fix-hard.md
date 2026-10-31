@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Fix — Complete issue resolution with parallel root-cause & pattern research and direct fix dispatch
-version: "5.3"
+version: "5.4"
 category: debugging
 execution-mode: execute
 ---
@@ -76,7 +76,7 @@ All deliverables → Write in the user's input language (technical terms in Engl
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Prerequisite | **READ and FOLLOW** `PLAN-{issue}.md` + `DEBUG-{issue}.md` |
 | Handoff Packet | Provide `MISSION`, `OWNED_FILES`, `READ_ONLY_FILES`, and `VERIFICATION`; record engineer's `conversationId` |
-| Goal | Execute surgical fix while enforcing Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn) and running `node cli/install.js check <dir>` |
+| Goal | Execute surgical fix while enforcing Pragmatic 2-Tier Coding Standards (~200–350 lines/file target, ≤ 400–450 cohesive ceiling, 0 `any`) and running `node cli/install.js check <dir>` |
 | Exit | Fix implemented, build/lint/check passes with 0 errors |
 
 ---

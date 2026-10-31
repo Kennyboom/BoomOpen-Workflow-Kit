@@ -1,6 +1,6 @@
 ---
 description: "🔄 Convergent Analysis Loop — Shared protocol for deep code/bug/perf/security analysis in *:team workflows"
-version: "5.1"
+version: "5.4"
 type: reference
 ---
 

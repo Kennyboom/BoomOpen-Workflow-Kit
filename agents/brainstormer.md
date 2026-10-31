@@ -3,7 +3,7 @@ name: brainstormer
 description: Principal Requirements Architect — requirements discovery, Socratic clarification, interactive ideation
 profile: "planning:discovery"
 handoffs: [planner, researcher, tech-lead, designer]
-version: "5.1"
+version: "5.4"
 category: research
 ---
 

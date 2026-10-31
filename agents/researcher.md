@@ -3,7 +3,7 @@ name: researcher
 description: Principal Research Analyst — technical research, documentation discovery, best practices
 profile: "research:analysis"
 handoffs: [planner, tech-lead, brainstormer, backend-engineer, frontend-engineer]
-version: "1.0"
+version: "5.4"
 category: research
 ---
 

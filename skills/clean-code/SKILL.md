@@ -1,201 +1,93 @@
 ---
 name: clean-code
-description: Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments
-allowed-tools: Read, Write, Edit
-version: 2.0
+description: Pragmatic 2-Tier coding standards — strict type/error safety with cohesive, maintainable file and function structure
+allowed-tools: Read, Write, Edit, Bash
+version: "5.4"
 priority: CRITICAL
 ---
 
-# Clean Code - Pragmatic AI Coding Standards
+# Clean Code — Pragmatic 2-Tier AI Coding Standards (v5.4)
 
-> **CRITICAL SKILL** - Be **concise, direct, and solution-focused**.
+> **CRITICAL SKILL**: Write **clean, type-safe, cohesive, and verified** code. Favor genuine clarity and single responsibility over mechanical file/function fragmentation.
 
 ---
 
-## Core Principles
+## 1. Core Principles
 
 | Principle | Rule |
 |-----------|------|
-| **SRP** | Single Responsibility - each function/class does ONE thing |
-| **DRY** | Don't Repeat Yourself - extract duplicates, reuse |
-| **KISS** | Keep It Simple - simplest solution that works |
-| **YAGNI** | You Aren't Gonna Need It - don't build unused features |
-| **Boy Scout** | Leave code cleaner than you found it |
+| **SRP (Single Responsibility)** | Each file, class, or function addresses ONE cohesive responsibility or domain concept |
+| **DRY (Don't Repeat Yourself)** | Extract logic repeated ≥ 3 times into a shared helper; do not over-abstract 2-line snippets |
+| **KISS (Keep It Simple)** | Prefer the simplest, most direct implementation that solves the problem |
+| **YAGNI** | Do not build speculative abstractions or unused configuration layers |
+| **Boy Scout Rule** | Leave every touched file cleaner and better-typed than you found it |
 
 ---
 
-## Naming Rules
+## 2. Pragmatic 2-Tier Coding Standards
 
-| Element | Convention |
-|---------|------------|
-| **Variables** | Reveal intent: `userCount` not `n` |
-| **Functions** | Verb + noun: `getUserById()` not `user()` |
-| **Booleans** | Question form: `isActive`, `hasPermission`, `canEdit` |
-| **Constants** | SCREAMING_SNAKE: `MAX_RETRY_COUNT` |
+### 🛡️ Tier 1 — Strict Quality & Safety Rules (MANDATORY — Zero Exceptions)
 
-> **Rule:** If you need a comment to explain a name, rename it.
+1. **NO Explicit `any` in TypeScript**:
+   - Always define concrete interfaces/types, use `unknown` with Type Guards / Zod schemas, or use Generics `<T>`.
+2. **NO Leftover `console.log` in Production Application Code**:
+   - Use a structured logger (`debug`/`info`/`warn`/`error`) in UI, API, and service modules.
+   - Delete temporary debug `console.log` calls before completing your task. *(CLI scripts `cli/*.js` and test benchmarks are exempt).*
+3. **Comprehensive Error Handling & Named Constants**:
+   - Wrap all async/API/database calls in `try/catch` blocks with typed errors and meaningful context.
+   - Extract business/configuration magic numbers into `SCREAMING_SNAKE_CASE` constants.
+4. **Clean Imports & Dependent File Integrity**:
+   - Group imports (`external` → `internal` → `relative`) and remove unused imports.
+   - When changing a function signature or exported type, update all callers in the same turn.
 
----
+### 📐 Tier 2 — Flexible Structural Guidelines (Cohesion Over Mechanical Splitting)
 
-## Function Rules
-
-| Rule | Description |
-|------|-------------|
-| **Small** | Max 20 lines, ideally 5-10 |
-| **One Thing** | Does one thing, does it well |
-| **One Level** | One level of abstraction per function |
-| **Few Args** | Max 3 arguments, prefer 0-2 |
-| **No Side Effects** | Don't mutate inputs unexpectedly |
-
----
-
-## Code Structure
-
-| Pattern | Apply |
-|---------|-------|
-| **Guard Clauses** | Early returns for edge cases |
-| **Flat > Nested** | Avoid deep nesting (max 2 levels) |
-| **Composition** | Small functions composed together |
-| **Colocation** | Keep related code close |
+| Dimension | Recommended Target (Soft) | Pragmatic Ceiling & When to Split |
+|-----------|:-------------------------:|-----------------------------------|
+| **File length** | **~200–350 lines** | Up to **~400–450 lines** is completely acceptable if the file serves a single cohesive responsibility (`cli/checker.js` warns at `>400` and errors at `>500`). Only split when a file exceeds ~450–500 lines **or** mixes unrelated domains. *(Tests, `.d.ts`/schemas, CLI installers, and Markdown docs are exempt).* |
+| **Function length** | **~20–40 lines** (logic)<br>**~40–80 lines** (UI / Route Handler) | Extract sub-functions when reusing logic (DRY) or isolating a distinct conceptual phase. Do **not** chop a readable sequential flow into tiny 10-line fragments. |
+| **Line width** | **~100–120 chars** | Wrap long expressions naturally; do not force-wrap URLs, Regex patterns, Tailwind CSS class strings, or Markdown tables. |
+| **Nesting & Params** | **≤ 3–4 levels** / **≤ 4–5 params** | Use **Guard Clauses** (early returns) at the top of functions; group `> 4–5` parameters into a typed options/config object. |
 
 ---
 
-## AI Coding Style
+## 3. Naming Conventions
 
-| Situation | Action |
-|-----------|--------|
-| User asks for feature | Write it directly |
-| User reports bug | Fix it, don't explain |
-| No clear requirement | Ask, don't assume |
+| Element | Convention | Examples |
+|---------|------------|----------|
+| **Variables** | Descriptive noun | `userCount`, `activeSession`, `maxRetries` |
+| **Functions** | Verb + noun | `fetchUserById()`, `calculateOrderTotal()`, `validateToken()` |
+| **Booleans** | `is` / `has` / `can` / `should` prefix | `isReady`, `hasPermission`, `canEdit` |
+| **Constants** | `SCREAMING_SNAKE_CASE` | `MAX_RETRY_COUNT`, `API_TIMEOUT_MS` |
 
----
-
-## Anti-Patterns (DON'T)
-
-| ❌ Pattern | ✅ Fix |
-|-----------|-------|
-| Comment every line | Delete obvious comments |
-| Helper for one-liner | Inline the code |
-| Factory for 2 objects | Direct instantiation |
-| utils.ts with 1 function | Put code where used |
-| "First we import..." | Just write code |
-| Deep nesting | Guard clauses |
-| Magic numbers | Named constants |
-| God functions | Split by responsibility |
+> **Rule**: Avoid vague placeholders (`temp`, `thing`, `val1`) in domain logic. Standard short identifiers (`i`, `err`, `req`, `res`, `ctx`) are fine in their idiomatic scope.
 
 ---
 
-## 🔴 Before Editing ANY File (THINK FIRST!)
+## 4. Before Editing Any File (Impact Check)
 
-**Before changing a file, ask yourself:**
-
-| Question | Why |
-|----------|-----|
-| **What imports this file?** | They might break |
-| **What does this file import?** | Interface changes |
-| **What tests cover this?** | Tests might fail |
-| **Is this a shared component?** | Multiple places affected |
-
-**Quick Check:**
-```
-File to edit: UserService.ts
-└── Who imports this? → UserController.ts, AuthController.ts
-└── Do they need changes too? → Check function signatures
-```
-
-> 🔴 **Rule:** Edit the file + all dependent files in the SAME task.
-> 🔴 **Never leave broken imports or missing updates.**
+1. **Respect File Ownership (`OWNED_FILES` vs. `READ_ONLY_FILES`)**: In Mode B multi-agent workflows, only modify files assigned in your `OWNED_FILES` lock.
+2. **Trace Callers & Imports**: Check what modules import the file you are editing so no broken signatures or type mismatches are introduced.
+3. **Preserve Existing Comments & Contracts**: Maintain valid JSDoc/docstrings and adhere strictly to `SHARED_CONTRACT`.
 
 ---
 
-## Summary
+## 5. Persistent Self-Verification & Auto-Fix Loop (MANDATORY)
 
-| Do | Don't |
-|----|-------|
-| Write code directly | Write tutorials |
-| Let code self-document | Add obvious comments |
-| Fix bugs immediately | Explain the fix first |
-| Inline small things | Create unnecessary files |
-| Name things clearly | Use abbreviations |
-| Keep functions small | Write 100+ line functions |
+> **NEVER stop at a failing check and ask the user whether to fix your own errors.** Take full ownership of verification and fix issues iteratively until everything passes.
 
-> **Remember: The user wants working code, not a programming lesson.**
+### Canonical Verification Commands
 
----
+| Role / Domain | Verification Command |
+|---------------|----------------------|
+| **All Code Changes (`backend-engineer`, `frontend-engineer`, etc.)** | `node cli/install.js check <target_dir>` + project typecheck/lint/build (`npm run lint`, `tsc --noEmit`) |
+| **Frontend (`frontend-engineer`, `designer`)** | `python ~/.gemini/config/skills/frontend-design/scripts/ux_audit.py <project_path>` |
+| **Backend (`backend-engineer`)** | `python ~/.gemini/config/skills/api-patterns/scripts/api_validator.py <project_path>` |
+| **Database (`database-architect`)** | `python ~/.gemini/config/skills/database-design/scripts/schema_validator.py <project_path>` |
+| **Testing (`tester`)** | Project test suite (`npm test`) or `python ~/.gemini/config/skills/testing-patterns/scripts/test_runner.py <project_path>` |
 
-## 🔴 Self-Check Before Completing (MANDATORY)
-
-**Before saying "task complete", verify:**
-
-| Check | Question |
-|-------|----------|
-| ✅ **Goal met?** | Did I do exactly what user asked? |
-| ✅ **Files edited?** | Did I modify all necessary files? |
-| ✅ **Code works?** | Did I test/verify the change? |
-| ✅ **No errors?** | Lint and TypeScript pass? |
-| ✅ **Nothing forgotten?** | Any edge cases missed? |
-
-> 🔴 **Rule:** If ANY check fails, fix it before completing.
-
----
-
-## Verification Scripts (MANDATORY)
-
-> 🔴 **CRITICAL:** Each agent runs ONLY their own skill's scripts after completing work.
-
-### Agent → Script Mapping
-
-| Agent | Script | Command |
-|-------|--------|---------|
-| **frontend-specialist** | UX Audit | `python .agent/skills/frontend-design/scripts/ux_audit.py .` |
-| **frontend-specialist** | A11y Check | `python .agent/skills/frontend-design/scripts/accessibility_checker.py .` |
-| **backend-specialist** | API Validator | `python .agent/skills/api-patterns/scripts/api_validator.py .` |
-| **mobile-developer** | Mobile Audit | `python .agent/skills/mobile-design/scripts/mobile_audit.py .` |
-| **database-architect** | Schema Validate | `python .agent/skills/database-design/scripts/schema_validator.py .` |
-| **security-auditor** | Security Scan | `python .agent/skills/vulnerability-scanner/scripts/security_scan.py .` |
-| **seo-specialist** | SEO Check | `python .agent/skills/seo-fundamentals/scripts/seo_checker.py .` |
-| **seo-specialist** | GEO Check | `python .agent/skills/geo-fundamentals/scripts/geo_checker.py .` |
-| **performance-optimizer** | Lighthouse | `python .agent/skills/performance-profiling/scripts/lighthouse_audit.py <url>` |
-| **test-engineer** | Test Runner | `python .agent/skills/testing-patterns/scripts/test_runner.py .` |
-| **test-engineer** | Playwright | `python .agent/skills/webapp-testing/scripts/playwright_runner.py <url>` |
-| **Any agent** | Lint Check | `python .agent/skills/lint-and-validate/scripts/lint_runner.py .` |
-| **Any agent** | Type Coverage | `python .agent/skills/lint-and-validate/scripts/type_coverage.py .` |
-| **Any agent** | i18n Check | `python .agent/skills/i18n-localization/scripts/i18n_checker.py .` |
-
-> ❌ **WRONG:** `test-engineer` running `ux_audit.py`
-> ✅ **CORRECT:** `frontend-specialist` running `ux_audit.py`
-
----
-
-### 🔴 Script Output Handling (READ → SUMMARIZE → ASK)
-
-**When running a validation script, you MUST:**
-
-1. **Run the script** and capture ALL output
-2. **Parse the output** - identify errors, warnings, and passes
-3. **Summarize to user** in this format:
-
-```markdown
-## Script Results: [script_name.py]
-
-### ❌ Errors Found (X items)
-- [File:Line] Error description 1
-- [File:Line] Error description 2
-
-### ⚠️ Warnings (Y items)
-- [File:Line] Warning description
-
-### ✅ Passed (Z items)
-- Check 1 passed
-- Check 2 passed
-
-**Should I fix the X errors?**
-```
-
-4. **Wait for user confirmation** before fixing
-5. **After fixing** → Re-run script to confirm
-
-> 🔴 **VIOLATION:** Running script and ignoring output = FAILED task.
-> 🔴 **VIOLATION:** Auto-fixing without asking = Not allowed.
-> 🔴 **Rule:** Always READ output → SUMMARIZE → ASK → then fix.
-
+### Auto-Fix Loop
+1. **Run Verification**: Execute the relevant check/build/test commands after editing.
+2. **Inspect Output**: If any Tier 1 error, type error, build error, or test failure appears, **immediately diagnose and fix it**.
+3. **Re-Verify**: Re-run the verification command until **0 errors** remain.
+4. **Report**: Only mark the task complete once you have tangible proof (command output) that all checks pass.

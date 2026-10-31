@@ -1,6 +1,6 @@
 ---
 description: "📊 Intelligence Report Template + Recon Steps — Referenced by docs-core.md"
-version: "1.0"
+version: "5.4"
 type: reference
 ---
 

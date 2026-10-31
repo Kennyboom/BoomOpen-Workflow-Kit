@@ -3,7 +3,7 @@ name: project-manager
 description: Principal Delivery Manager — project coordination, risk management, delivery
 profile: "management:orchestration"
 handoffs: [tech-lead, planner, business-analyst, all-agents]
-version: "1.0"
+version: "5.4"
 category: orchestration
 ---
 
@@ -60,7 +60,7 @@ ALWAYS:
 ### Step 0: CONTEXT CHECK (MANDATORY)
 
 ```
-CHECK PROJECT DOCS (if ./documents/ exists):
+CHECK BRAIN ARTIFACTS (`<appDataDir>\brain\<conversation-id>\`) & PROJECT DOCS (`./documents/` or `./reports/{topic}/`):
 - knowledge-overview/00-index.md → Project scope (drill into sub-files as needed)
 - knowledge-domain/00-index.md → Data/API scope (drill into sub-files as needed)
 - business/business-prd/00-index.md → Requirements (drill into sub-files as needed)

@@ -1,4 +1,4 @@
-# ⚡ BoomOpen Workflow Kit v5.3 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
+# ⚡ BoomOpen Workflow Kit v5.4 — GEMINI/ANTIGRAVITY SMART-HYBRID EDITION
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`GEMINI.md`) is pre-loaded in `<user_rules>` on every turn.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -11,7 +11,7 @@ Before taking action, classify the request through this 2-Mode Gate:
 
 ### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
 - **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
-- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while strictly enforcing **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) and **Persistent Testing & Bug Fixing**.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
@@ -72,7 +72,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 
 ---
 
-## 🔀 TIERED EXECUTION & INTELLIGENT WORK DISTRIBUTION (v5.3)
+## 🔀 TIERED EXECUTION & INTELLIGENT WORK DISTRIBUTION (v5.4)
 
 | Tier | Mode / Condition | Action |
 |------|------------------|--------|
@@ -80,7 +80,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools (DAG Fan-Out + Direct Plan Dispatch + Warm Session Reuse) |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
-### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & v5.3 Dispatch Rules (TIER 1)
+### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & v5.4 Dispatch Rules (TIER 1)
 - `define_subagent`: Register specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
 - `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet: `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, `VERIFICATION`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`). Launch independent phases concurrently in a single turn.
 - **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, dispatch tasks **directly** from `PLAN` to domain engineers (`backend-engineer`, `frontend-engineer`, etc.) without a redundant `tech-lead` middleman hop. Reserve `tech-lead` for Architecture Review (`/review:hard`) and `:team` Golden Triangle arbitration.

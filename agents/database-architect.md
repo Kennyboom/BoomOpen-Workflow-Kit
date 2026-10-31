@@ -3,7 +3,7 @@ name: database-architect
 description: Principal Database Architect — schema design, query optimization, data integrity
 profile: "data:execution"
 handoffs: [backend-engineer, security-engineer, performance-engineer, devops-engineer, tech-lead]
-version: "1.0"
+version: "5.4"
 category: execution
 ---
 

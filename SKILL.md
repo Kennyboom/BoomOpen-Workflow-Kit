@@ -1,9 +1,9 @@
 ---
 name: boomopen-workflow-kit
-description: BoomOpen Workflow Kit (v5.3 Antigravity 2.0 Smart-Hybrid Edition) — 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and compact skill index.
+description: BoomOpen Workflow Kit (v5.4 Antigravity 2.0 Smart-Hybrid Edition) — Pragmatic 2-Tier Coding Standards, 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and compact skill index.
 ---
 
-# ⚡ BoomOpen Workflow Kit (v5.3 — Antigravity 2.0 Smart-Hybrid Edition)
+# ⚡ BoomOpen Workflow Kit (v5.4 — Antigravity 2.0 Smart-Hybrid Edition)
 
 > **PURPOSE**: Root skill entry point for the BoomOpen Workflow Kit Smart-Hybrid multi-agent orchestration framework.
 
@@ -13,7 +13,7 @@ description: BoomOpen Workflow Kit (v5.3 Antigravity 2.0 Smart-Hybrid Edition) �
 
 ### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
 - **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
-- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while strictly enforcing **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) and **Persistent Testing & Bug Fixing**.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
 - **When ANY of the following is true**:

@@ -2,7 +2,8 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
-const MAX_MARKDOWN_LINES = 300;
+const MAX_ENTRY_LINES = 350;
+const MAX_DOC_LINES = 450;
 const MIN_COMPACT_SKILLS = 1000;
 const MOJIBAKE_REGEX = /(?:â•”|ðŸŒ|â Œ|âš\s*ï¸|\ufffd)/;
 
@@ -48,26 +49,36 @@ function buildCompactSkillIndex(repoRoot) {
   }
 
   const outputPath = path.join(matrixDir, 'compact-index.json');
-  const payload = { version: '5.3.0', totalSkills: Object.keys(indexMap).length, skills: indexMap };
+  const payload = { version: '5.4.0', totalSkills: Object.keys(indexMap).length, skills: indexMap };
   fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2), 'utf8');
   return { count: payload.totalSkills, outputPath };
 }
 
 /**
- * Audit a directory of Markdown files for line limits, mojibake, and legacy paths.
+ * Audit a directory (or nested subdirectories) of Markdown files for line limits, mojibake, and legacy paths.
  */
-function auditMarkdownDir(dirPath, label) {
+function auditMarkdownDir(dirPath, label, recursive = false) {
   if (!fs.existsSync(dirPath)) return { name: label, passed: false, detail: 'Directory missing' };
-  const files = fs.readdirSync(dirPath).filter((f) => f.endsWith('.md'));
-  const issues = [];
-  for (const file of files) {
-    const text = fs.readFileSync(path.join(dirPath, file), 'utf8');
-    const lineCount = text.split(/\r?\n/).length;
-    if (lineCount > MAX_MARKDOWN_LINES) issues.push(`${file} (${lineCount} lines)`);
-    if (MOJIBAKE_REGEX.test(text)) issues.push(`${file} (mojibake)`);
-    if (text.includes('agent-assistant')) issues.push(`${file} (legacy ref)`);
+  const mdFiles = [];
+  function walk(currentDir, prefix = '') {
+    for (const entry of fs.readdirSync(currentDir, { withFileTypes: true })) {
+      if (entry.isDirectory() && recursive) {
+        walk(path.join(currentDir, entry.name), `${prefix}${entry.name}/`);
+      } else if (entry.isFile() && entry.name.endsWith('.md')) {
+        mdFiles.push({ fullPath: path.join(currentDir, entry.name), relName: `${prefix}${entry.name}` });
+      }
+    }
   }
-  const detail = issues.length === 0 ? `${files.length} files OK` : issues.join('; ');
+  walk(dirPath);
+  const issues = [];
+  for (const file of mdFiles) {
+    const text = fs.readFileSync(file.fullPath, 'utf8');
+    const lineCount = text.split(/\r?\n/).length;
+    if (lineCount > MAX_DOC_LINES) issues.push(`${file.relName} (${lineCount} lines)`);
+    if (MOJIBAKE_REGEX.test(text)) issues.push(`${file.relName} (mojibake)`);
+    if (text.includes('agent-assistant')) issues.push(`${file.relName} (legacy ref)`);
+  }
+  const detail = issues.length === 0 ? `${mdFiles.length} files OK (≤${MAX_DOC_LINES} lines)` : issues.join('; ');
   return { name: label, passed: issues.length === 0, detail };
 }
 
@@ -82,8 +93,8 @@ function checkGeminiEntrypoint(homeDir) {
   const lines = fs.readFileSync(geminiMd, 'utf8').split(/\r?\n/).length;
   return {
     name: '~/.gemini/GEMINI.md',
-    passed: lines <= MAX_MARKDOWN_LINES,
-    detail: `${lines} lines (limit ${MAX_MARKDOWN_LINES})`,
+    passed: lines <= MAX_ENTRY_LINES,
+    detail: `${lines} lines (limit ${MAX_ENTRY_LINES})`,
   };
 }
 
@@ -138,6 +149,7 @@ function runDoctor(options = {}) {
     auditMarkdownDir(path.join(repoRoot, 'rules'), 'rules/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'commands'), 'commands/*.md'),
     auditMarkdownDir(path.join(repoRoot, 'agents'), 'agents/*.md'),
+    auditMarkdownDir(path.join(repoRoot, 'agents', 'teams'), 'agents/teams/**/*.md', true),
     {
       name: 'matrix-skills/compact-index.json',
       passed: compactData.totalSkills >= MIN_COMPACT_SKILLS,
@@ -146,11 +158,16 @@ function runDoctor(options = {}) {
   ];
   const healthy = checks.every((c) => c.passed);
   if (!options.silent) {
-    console.log('\n🩺 BoomOpen Workflow Kit Doctor (v5.3.0)\n' + '─'.repeat(60));
+    console.log('\n🩺 BoomOpen Workflow Kit Doctor (v5.4.0)\n' + '─'.repeat(60));
     for (const c of checks) console.log(`  ${c.passed ? '✅' : '❌'} ${c.name.padEnd(34)} ${c.detail}`);
     console.log('─'.repeat(60));
   }
   return { healthy, checks };
 }
 
-module.exports = { buildCompactSkillIndex, runDoctor };
+module.exports = {
+  MAX_ENTRY_LINES,
+  MAX_DOC_LINES,
+  buildCompactSkillIndex,
+  runDoctor,
+};

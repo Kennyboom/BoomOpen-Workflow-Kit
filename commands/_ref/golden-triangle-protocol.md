@@ -1,6 +1,6 @@
 ---
 description: "🔺 Golden Triangle Core Protocol — Shared reference for all *:team workflows"
-version: "5.1"
+version: "5.4"
 type: reference
 ---
 

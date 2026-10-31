@@ -1,142 +1,89 @@
-# Antigravity Skills
+# Antigravity Skills Guide (v5.4)
 
-> **Guide to creating and using Skills in the Boom Antigravity Kit**
+> **Guide to creating and using Skills in the BoomOpen Workflow Kit**
 
 ---
 
 ## 📋 Overview
 
-While Antigravity's base models (like Gemini) are powerful generalists, they don't know your specific project context or your team's standards. Loading every rule or tool into the agent's context window leads to "tool bloat," higher costs, latency, and confusion.
+While base models (like Gemini Pro High) are powerful generalists, loading every domain rule or tool into the context window on Turn 1 causes context bloat and latency.
 
-**Antigravity Skills** solve this through **Progressive Disclosure**. A Skill is a package of specialized knowledge that remains dormant until needed. This information is only loaded into the agent's context when your specific request matches the skill's description.
+**Antigravity Skills** solve this through **Progressive Disclosure** and the **Fast 2-Step Skill Lookup**:
+1. **Step 1 — Active Global Skills (`<skills>`)**: 48 core skills installed in `~/.gemini/config/skills/` have their YAML frontmatter (`name` + `description`) pre-indexed in `<skills>`. When a task matches, the agent reads the skill's `SKILL.md` on-demand.
+2. **Step 2 — Compact Index & Library (`matrix-skills/compact-index.json` / `skills_library`)**: 1,430+ niche domain skills are indexed in `~/.gemini/config/skills/boomopen-workflow-kit/matrix-skills/compact-index.json` and stored in `~/.gemini/config/skills_library/` for millisecond O(1) lookup when needed.
 
 ---
 
 ## 📁 Structure and Scope
 
-Skills are folder-based packages. You can define these scopes based on your needs:
+Skills are folder-based packages placed in either the global skill directory or your project workspace:
 
-| Scope         | Path                              | Description                          |
-| ------------- | --------------------------------- | ------------------------------------ |
-| **Workspace** | `<workspace-root>/.agent/skills/` | Available only in a specific project |
+| Scope | Path | Description |
+|-------|------|-------------|
+| **Global Active Skills** | `~/.gemini/config/skills/<skill-name>/` | Pre-indexed in `<skills>` across all projects |
+| **Global Dormant Library** | `~/.gemini/config/skills_library/<skill-name>/` | Searched on-demand via `compact-index.json` / `skill-seeker` |
+| **Workspace Skills** | `<workspace-root>/.gemini/skills/<skill-name>/` | Project-specific skills scoped to the current repository |
 
 ### Skill Directory Structure
 
 ```
 my-skill/
-├── SKILL.md      # (Required) Metadata & instructions
-├── scripts/      # (Optional) Python or Bash scripts
-├── references/   # (Optional) Text, documentation, templates
-└── assets/       # (Optional) Images or logos
+├── SKILL.md      # (Required) YAML frontmatter + instructions
+├── scripts/      # (Optional) Python or Node.js validation scripts
+├── references/   # (Optional) Deep-dive documentation or checklists
+└── resources/    # (Optional) Templates or schemas
 ```
 
 ---
 
-## 🔍 Example 1: Code Review Skill
+## 🔍 Example 1: Custom Code Review Skill
 
-This is an instruction-only skill; you only need to create the `SKILL.md` file.
-
-### Step 1: Create the directory
+### Step 1: Create the skill directory
 
 ```bash
-mkdir -p .agent/skills/code-review
+mkdir -p ~/.gemini/config/skills/custom-review
 ```
 
-### Step 2: Create SKILL.md
+### Step 2: Create `SKILL.md`
 
 ```markdown
 ---
-name: code-review
-description: Reviews code changes for bugs, style issues, and best practices. Use when reviewing PRs or checking code quality.
+name: custom-review
+description: Reviews code changes against Pragmatic 2-Tier Coding Standards, security, and performance checklists.
 ---
 
-# Code Review Skill
+# Custom Code Review Skill
 
-When reviewing code, follow these steps:
-
-## Review checklist
-
-1. **Correctness**: Does the code do what it's supposed to?
-2. **Edge cases**: Are error conditions handled?
-3. **Style**: Does it follow project conventions?
-4. **Performance**: Are there obvious inefficiencies?
-
-## How to provide feedback
-
-- Be specific about what needs to change
-- Explain why, not just what
-- Suggest alternatives when possible
+## Review Checklist
+1. **Tier 1 Strict Safety**: Zero explicit `any`, proper `try/catch` error handling, no leftover `console.log` in production code.
+2. **Tier 2 Cohesive Structure**: Cohesive file responsibility (~200–350 lines target, ≤450 soft ceiling) and clean guard clauses.
+3. **Contract Compliance**: Matches `SHARED_CONTRACT` and touches only `OWNED_FILES`.
 ```
-
-> **Note**: The `SKILL.md` file contains metadata (name, description) at the top, followed by the instructions. The agent will only read the metadata and load the full instructions only when needed.
-
-### Try it out
-
-Create a file `demo_bad_code.py`:
-
-```python
-import time
-
-def get_user_data(users, id):
-    # Find user by ID
-    for u in users:
-        if u['id'] == id:
-            return u
-    return None
-
-def process_payments(items):
-    total = 0
-    for i in items:
-        # Calculate tax
-        tax = i['price'] * 0.1
-        total = total + i['price'] + tax
-        time.sleep(0.1)  # Simulate slow network call
-    return total
-
-def run_batch():
-    users = [{'id': 1, 'name': 'Alice'}, {'id': 2, 'name': 'Bob'}]
-    items = [{'price': 10}, {'price': 20}, {'price': 100}]
-
-    u = get_user_data(users, 3)
-    print("User found: " + u['name'])  # Will crash if None
-
-    print("Total: " + str(process_payments(items)))
-
-if __name__ == "__main__":
-    run_batch()
-```
-
-**Prompt**: `review the @demo_bad_code.py file`
-
-The Agent will automatically identify the `code-review` skill, load the information, and follow the instructions.
 
 ---
 
-## 📄 Example 2: License Header Skill
-
-This skill uses a reference file in the `resources/` (or `references/`) directory.
+## 📄 Example 2: Skill with Reference Template
 
 ### Step 1: Create the directory
 
 ```bash
-mkdir -p .agent/skills/license-header-adder/resources
+mkdir -p <workspace-root>/.gemini/skills/license-header-adder/resources
 ```
 
 ### Step 2: Create the template file
 
-**`.agent/skills/license-header-adder/resources/HEADER.txt`**:
+**`<workspace-root>/.gemini/skills/license-header-adder/resources/HEADER.txt`**:
 
 ```
 /*
  * Copyright (c) 2026 YOUR_COMPANY_NAME LLC.
  * All rights reserved.
- * This code is proprietary and confidential.
  */
 ```
 
-### Step 3: Create SKILL.md
+### Step 3: Create `SKILL.md`
 
-**`.agent/skills/license-header-adder/SKILL.md`**:
+**`<workspace-root>/.gemini/skills/license-header-adder/SKILL.md`**:
 
 ```markdown
 ---
@@ -146,32 +93,6 @@ description: Adds the standard corporate license header to new source files.
 
 # License Header Adder
 
-This skill ensures that all new source files have the correct copyright header.
-
-## Instructions
-
-1. **Read the Template**: Read the content of `resources/HEADER.txt`.
-2. **Apply to File**: When creating a new file, prepend this exact content.
-3. **Adapt Syntax**:
-   - For C-style languages (Java, TS), keep the `/* */` block.
-   - For Python/Shell, convert to `#` comments.
+1. **Read Template**: Read `resources/HEADER.txt`.
+2. **Prepend**: Add the header to newly created source files using the language's comment syntax.
 ```
-
-### Try it out
-
-**Prompt**: `Create a new Python script named data_processor.py that prints 'Hello World'.`
-
-The Agent will read the template, convert the comments to Python style, and automatically add it to the top of the file.
-
----
-
-## 🎯 Conclusion
-
-By creating Skills, you transform a general AI model into an expert for your project:
-
-- ✅ Systematize best practices
-- ✅ Adhere to code review rules
-- ✅ Automatically add license headers
-- ✅ The Agent automatically knows how to work with your team
-
-Instead of constantly reminding the AI to "remember to add the license" or "fix the commit format," now the Agent will do it automatically!

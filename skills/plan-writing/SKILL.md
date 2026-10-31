@@ -1,152 +1,94 @@
 ---
 name: plan-writing
-description: Structured task planning with clear breakdowns, dependencies, and verification criteria. Use when implementing features, refactoring, or any multi-step work.
-allowed-tools: Read, Glob, Grep
+description: Structured task planning with clear breakdowns, dependencies, Shared Interface Contracts (SHARED_CONTRACT), file ownership locks (OWNED_FILES), and verification criteria. Use when implementing features, refactoring, or any multi-step work.
+allowed-tools: Read, Glob, Grep, Write
+version: "5.4"
 ---
 
-# Plan Writing
-
-> Source: obra/superpowers
+# 📋 Plan Writing (v5.4 — Contract-First & Clean Git Tree Edition)
 
 ## Overview
-This skill provides a framework for breaking down work into clear, actionable tasks with verification criteria.
-
-## Task Breakdown Principles
-
-### 1. Small, Focused Tasks
-- Each task should take 2-5 minutes
-- One clear outcome per task
-- Independently verifiable
-
-### 2. Clear Verification
-- How do you know it's done?
-- What can you check/test?
-- What's the expected output?
-
-### 3. Logical Ordering
-- Dependencies identified
-- Parallel work where possible
-- Critical path highlighted
-- **Phase X: Verification is always LAST**
-
-### 4. Dynamic Naming in Project Root
-- Plan files are saved as `{task-slug}.md` in the PROJECT ROOT
-- Name derived from task (e.g., "add auth" → `auth-feature.md`)
-- **NEVER** inside `.claude/`, `docs/`, or temp folders
-
-## Planning Principles (NOT Templates!)
-
-> 🔴 **NO fixed templates. Each plan is UNIQUE to the task.**
-
-### Principle 1: Keep It SHORT
-
-| ❌ Wrong | ✅ Right |
-|----------|----------|
-| 50 tasks with sub-sub-tasks | 5-10 clear tasks max |
-| Every micro-step listed | Only actionable items |
-| Verbose descriptions | One-line per task |
-
-> **Rule:** If plan is longer than 1 page, it's too long. Simplify.
+This skill provides the structured methodology for decomposing multi-step features, refactors, or fixes into self-contained, verifiable execution plans that isolated sub-agents can execute in parallel without collisions.
 
 ---
 
-### Principle 2: Be SPECIFIC, Not Generic
+## 1. Core Task Breakdown Principles
 
-| ❌ Wrong | ✅ Right |
-|----------|----------|
-| "Set up project" | "Run `npx create-next-app`" |
-| "Add authentication" | "Install next-auth, create `/api/auth/[...nextauth].ts`" |
-| "Style the UI" | "Add Tailwind classes to `Header.tsx`" |
+### 1. Atomic, Independently Verifiable Tasks
+- Break work into focused tasks (typically 1–3 cohesive files per task).
+- Assign the canonical specialist agent (`backend-engineer`, `frontend-engineer`, `database-architect`, `tester`, etc.) with `Model: "inherit"`.
+- Every task must specify a concrete verification command.
 
-> **Rule:** Each task should have a clear, verifiable outcome.
+### 2. Contract-First Planning for Parallel Execution (`SHARED_CONTRACT`)
+Whenever a plan spans **≥ 2 domains** (e.g., Database + Backend + Frontend):
+- Define a locked **`## 🤝 Shared Interface Contracts (SHARED_CONTRACT)`** section **before** the task list.
+- Include exact API endpoints, HTTP methods, request/response DTO schemas, shared TypeScript interfaces, and error envelopes so `backend-engineer` and `frontend-engineer` can implement in parallel with zero mismatch.
 
----
+### 3. Explicit File Ownership Locks (`OWNED_FILES` vs. `READ_ONLY_FILES`)
+Every task in a multi-agent plan MUST declare:
+- **`OWNED_FILES (Write Permitted)`**: Exact files/directories this task is authorized to create or modify.
+- **`READ_ONLY_FILES (Do Not Edit)`**: Context files the agent may read but must not modify.
+- Tasks marked `Parallelizable: Yes` **MUST** have 100% disjoint `OWNED_FILES`.
 
-### Principle 3: Dynamic Content Based on Project Type
-
-**For NEW PROJECT:**
-- What tech stack? (decide first)
-- What's the MVP? (minimal features)
-- What's the file structure?
-
-**For FEATURE ADDITION:**
-- Which files are affected?
-- What dependencies needed?
-- How to verify it works?
-
-**For BUG FIX:**
-- What's the root cause?
-- What file/line to change?
-- How to test the fix?
+### 4. Brain Artifact Routing (Keep Git Working Tree 100% Clean)
+- **Antigravity 2.0 Default**: Always save plan files to the conversation's native Brain Artifact Directory:
+  `<appDataDir>\brain\<conversation-id>\PLAN-{task-slug}.md`
+- **Workspace Fallback**: On non-Antigravity tools or when the user explicitly requests committing plans to the repo, save to `./reports/{topic}/plans/PLAN-{task-slug}.md`.
+- **⛔ NEVER** dump transient `{task-slug}.md` plan files into the project root directory.
 
 ---
 
-### Principle 4: Scripts Are Project-Specific
+## 2. Planning Principles
 
-> 🔴 **DO NOT copy-paste script commands. Choose based on project type.**
+### Principle 1: Specific & Actionable (No Vague Placeholders)
 
-| Project Type | Relevant Scripts |
-|--------------|------------------|
-| Frontend/React | `ux_audit.py`, `accessibility_checker.py` |
-| Backend/API | `api_validator.py`, `security_scan.py` |
-| Mobile | `mobile_audit.py` |
-| Database | `schema_validator.py` |
-| Full-stack | Mix of above based on what you touched |
+| ❌ Vague (Wrong) | ✅ Specific & Verifiable (Right) |
+|------------------|----------------------------------|
+| "Set up authentication" | "Create `src/auth/jwtService.ts` with `signAccessToken` and `verifyAccessToken`" |
+| "Update UI components" | "Edit `src/components/LoginForm.tsx` to call `POST /api/v1/auth/login`" |
+| "Verify the API works" | "Run `npm test -- src/auth/jwtService.test.ts` and `node cli/install.js check src/auth`" |
 
-**Wrong:** Adding all scripts to every plan
-**Right:** Only scripts relevant to THIS task
+### Principle 2: Project-Specific Verification Scripts
+Only include verification commands and scripts that actually exist in the project or BoomOpen skill library:
 
----
-
-### Principle 5: Verification is Simple
-
-| ❌ Wrong | ✅ Right |
-|----------|----------|
-| "Verify the component works correctly" | "Run `npm run dev`, click button, see toast" |
-| "Test the API" | "curl localhost:3000/api/users returns 200" |
-| "Check styles" | "Open browser, verify dark mode toggle works" |
+| Domain | Verification Command / Script |
+|--------|-------------------------------|
+| **All Source Code** | `node cli/install.js check <dir>` + project build/lint (`npm run build`, `npm run lint`) |
+| **Frontend / UI** | `python ~/.gemini/config/skills/frontend-design/scripts/ux_audit.py <project_path>` |
+| **Backend / API** | `python ~/.gemini/config/skills/api-patterns/scripts/api_validator.py <project_path>` |
+| **Database** | `python ~/.gemini/config/skills/database-design/scripts/schema_validator.py <project_path>` |
+| **Unit / Integration Tests** | `npm test` or `python ~/.gemini/config/skills/testing-patterns/scripts/test_runner.py <project_path>` |
+| **E2E Web Tests** | `python ~/.gemini/config/skills/webapp-testing/scripts/playwright_runner.py <url>` |
 
 ---
 
-## Plan Structure (Flexible, Not Fixed!)
+## 3. Standard Plan Structure (`<appDataDir>\brain\<conversation-id>\PLAN-{task}.md`)
 
+```markdown
+# Implementation Plan: {Task Name}
+
+## 📌 User Request (VERBATIM)
+> {Exact user request}
+
+## 🎯 Acceptance Criteria & Edge Cases
+| ID | Given | When | Then | Verify |
+|----|-------|------|------|--------|
+| AC1 | {context} | {action} | {expected outcome} | {test/check command} |
+
+## 🤝 Shared Interface Contracts (`SHARED_CONTRACT`)
+- **Endpoints / Signatures**: `{exact routes or function signatures}`
+- **DTO / TypeScript Interfaces**: `{shared request/response types}`
+- **Error Format**: `{status codes and error structure}`
+
+## 📋 Tasks (`Parallelizable: Yes | No`)
+- [ ] **Task 1**: {Specific action}
+  - **Agent**: `{canonical-agent}` (`Model: "inherit"`)
+  - **OWNED_FILES (Write Permitted)**: `{exact paths}`
+  - **READ_ONLY_FILES (Do Not Edit)**: `{context paths}`
+  - **Verify**: `{exact test/build/check command}`
+
+## 🛡️ Risks & Rollback Strategy
+| Risk | Impact | Mitigation | Rollback |
+|------|--------|------------|----------|
+| {risk} | H/M/L | {mitigation} | {undo steps} |
 ```
-# [Task Name]
-
-## Goal
-One sentence: What are we building/fixing?
-
-## Tasks
-- [ ] Task 1: [Specific action] → Verify: [How to check]
-- [ ] Task 2: [Specific action] → Verify: [How to check]
-- [ ] Task 3: [Specific action] → Verify: [How to check]
-
-## Done When
-- [ ] [Main success criteria]
-```
-
-> **That's it.** No phases, no sub-sections unless truly needed.
-> Keep it minimal. Add complexity only when required.
-
-## Notes
-[Any important considerations]
-```
-
----
-
-## Best Practices (Quick Reference)
-
-1. **Start with goal** - What are we building/fixing?
-2. **Max 10 tasks** - If more, break into multiple plans
-3. **Each task verifiable** - Clear "done" criteria
-4. **Project-specific** - No copy-paste templates
-5. **Update as you go** - Mark `[x]` when complete
-
----
-
-## When to Use
-
-- New project from scratch
-- Adding a feature
-- Fixing a bug (if complex)
-- Refactoring multiple files

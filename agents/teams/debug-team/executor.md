@@ -4,7 +4,7 @@ role: executor
 team: debug-team
 domain: debugging
 description: "Direct investigation executor with self-defense capability — traces, collects evidence, defends hypotheses, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: backend-engineer
 mode: investigation
@@ -51,7 +51,7 @@ If you submitted it, you own the evidence chain. If the evidence is weak, collec
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

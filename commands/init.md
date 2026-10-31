@@ -2,6 +2,7 @@
 description: Bootstrap a new project. Set up folder structure, git, .brain/, and initial configuration.
 category: setup
 execution-mode: sequential
+version: "5.4"
 ---
 
 # /init — Project Bootstrap v1.0
@@ -87,9 +88,11 @@ INSTALL core dependencies:
 
 ---
 
-## Phase 4: Initialize .brain/
+## Phase 4: Initialize Session & Project Context
 
-Create `.brain/brain.json`:
+> **Antigravity 2.0 Default**: Write session state to `<appDataDir>\brain\<conversation-id>\SESSION-HANDOVER.md` first to keep the Git tree clean. Create `.brain/brain.json` and `.brain/session.json` only when workspace-persisted memory is desired:
+
+Create `.brain/brain.json` (optional workspace memory):
 ```json
 {
   "meta": { "schema_version": "1.0.0" },

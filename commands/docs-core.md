@@ -1,6 +1,6 @@
 ---
 description: "Core Docs - Generate 5 knowledge folders with evidence-backed sub-files"
-version: "3.0"
+version: "5.4"
 category: documentation
 execution-mode: execute
 ---

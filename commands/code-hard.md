@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Development Cycle — Plan → Contract-First Parallel/Sequential Implement → Test → Review
-version: "5.3"
+version: "5.4"
 category: engineering
 execution-mode: execute
 ---
@@ -101,7 +101,7 @@ Before starting Phase 1, check whether the user is coding from an existing plan:
 | **Prerequisite** | **READ and FOLLOW** `<appDataDir>\brain\<conversation-id>\PLAN-{task}.md` |
 | **Handoff Packet** | Include `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES (Write Permitted)`, `READ_ONLY_FILES (Do Not Edit)`, and `VERIFICATION`. Save `conversationId` in Active Sub-agent Registry. |
 | **DAG Parallelism** | When `PLAN-{task}.md` defines locked `SHARED_CONTRACT` and disjoint `OWNED_FILES` for Backend and Frontend, launch `backend-engineer` + `frontend-engineer` **in parallel in a single turn** (`Workspace: "inherit"` or `"branch"`) |
-| **Goal** | Execute plan steps with **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) |
+| **Goal** | Execute plan steps with **Pragmatic 2-Tier Coding Standards** (~200–350 lines/file target, ≤ 400–450 cohesive ceiling, ~25–40 lines/fn target, 0 `any`) |
 
 ### ⚡ Strict Adherence & Verification Directive
 1. **READ** `PLAN-{task}.md` completely before modifying any code.

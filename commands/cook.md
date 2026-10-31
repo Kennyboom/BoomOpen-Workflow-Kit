@@ -1,6 +1,6 @@
 ---
 description: 🍳 Cook Router — Route to feature implementation workflows
-version: "2.0"
+version: "5.4"
 category: engineering
 execution-mode: router
 ---

@@ -1,6 +1,6 @@
 # 🎯 SKILLS — Fast 2-Step Progressive Skill Resolution & Compact Index
 
-> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When skill resolution is needed in Mode B | **PURPOSE**: Millisecond Hybrid Skill Orchestration Layer (HSOL)
+> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When skill resolution is needed in Mode B | **PURPOSE**: Millisecond Hybrid Skill Orchestration Layer (HSOL)
 
 ---
 
@@ -65,11 +65,11 @@ WHEN task_complexity == Complex:
 
 ## 🛠️ DETERMINISTIC CLI VERIFICATION TOOLS (`doctor` & `check`)
 
-BoomOpen Workflow Kit v5.3 includes built-in CLI verification utilities for `tester`, `reviewer`, and Mode A direct execution:
+BoomOpen Workflow Kit v5.4 includes built-in CLI verification utilities for `tester`, `reviewer`, and Mode A direct execution:
 
 ```bash
 node cli/install.js doctor        # Verify installation health, line limits, and zero mojibake
-node cli/install.js check [dir]   # Audit source code against Professional Coding Standards (≤300 lines, no any)
+node cli/install.js check [dir]   # Audit source code against Pragmatic 2-Tier Coding Standards (no any, soft 400 / hard 500 lines)
 ```
 
 ---

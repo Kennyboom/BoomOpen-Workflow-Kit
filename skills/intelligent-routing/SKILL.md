@@ -1,104 +1,69 @@
 ---
 name: intelligent-routing
-description: Automatic agent selection and intelligent task routing. Analyzes user requests and automatically selects the best specialist agent(s) without requiring explicit user mentions.
-version: 2.0.0
+description: Automatic agent selection and intelligent task routing. Analyzes user requests and routes them through the v5.4 2-Mode Smart Complexity Threshold Gate, DAG Parallel Fan-Out, Direct Plan Dispatch, and Warm Sub-agent Reuse.
+version: "5.4.0"
 ---
 
-# Intelligent Agent Routing
+# 🧭 Intelligent Agent Routing (v5.4 — Smart-Hybrid Edition)
 
-**Purpose**: Automatically analyze user requests and route them to the most appropriate canonical specialist agent(s) from `agents/*.md` without requiring explicit user mentions.
+**Purpose**: Automatically classify incoming requests through the **2-Mode Smart Complexity Threshold Gate (Mode A vs. Mode B)** and route complex tasks to the right canonical specialist agent(s) from `agents/*.md` with **Quality-First Model Policy (`Model: "inherit"`)**, **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Warm Sub-agent Reuse (`send_message`)**.
 
-## Core Principle
+---
 
-> **The AI acts as a Strict Orchestrator & Project Manager**, analyzing each request and automatically delegating to the best specialist(s) via TIER 1 (`define_subagent`, `invoke_subagent`, `send_message`, `runSubagent`).
-
-## How It Works
-
-### 1. Request Analysis
-
-Before responding to ANY user request, perform automatic analysis:
+## 1. 2-Mode Smart Complexity Threshold Gate (Evaluate First!)
 
 ```mermaid
-graph TD
-    A["User Request: Add login"] --> B["ANALYZE"]
-    B --> C["Keywords"]
-    B --> D["Domains"]
-    B --> E["Complexity"]
-    C --> F["SELECT CANONICAL AGENT"]
-    D --> F
-    E --> F
-    F --> G["security-engineer + backend-engineer"]
-    G --> H["DELEGATE via TIER 1"]
+flowchart TD
+    A["Incoming User Request"] --> B{"Explicit /cmd OR > 3 files OR >= 2 domains?"}
+    B -- "NO (Simple Task <= 3 files, 1 domain)" --> C["⚡ MODE A: Direct Execution (TIER 0)"]
+    C --> D["Primary Agent executes & verifies directly (0 subagent latency)"]
+    B -- "YES (Complex Task or /cmd)" --> E["🎻 MODE B: Strict Multi-Agent Orchestration (TIER 1)"]
+    E --> F["DAG Parallel Fan-Out + Direct Plan Dispatch + Warm Session Reuse (Model: inherit)"]
 ```
 
-### 2. Canonical Agent Selection Matrix (20 Agents)
+### ⚡ MODE A — Direct Execution (`TIER 0` Fast Path)
+- **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 sub-agent cold-start latency, 0 report file clutter), enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
 
-| User Intent | Keywords | Selected Canonical Agent(s) | Auto-invoke? |
-|-------------|----------|-----------------------------|--------------|
-| **Authentication** | "login", "auth", "signup", "password", "jwt" | `security-engineer` + `backend-engineer` | ✅ YES |
-| **UI Component** | "button", "card", "layout", "style", "react" | `frontend-engineer` | ✅ YES |
-| **UI/UX Design** | "wireframe", "design system", "ux", "mockup" | `designer` | ✅ YES |
-| **Mobile UI** | "screen", "navigation", "react native", "flutter" | `mobile-engineer` | ✅ YES |
-| **API Endpoint** | "endpoint", "route", "API", "POST", "GET" | `backend-engineer` | ✅ YES |
-| **Database** | "schema", "migration", "query", "table", "sql" | `database-architect` + `backend-engineer` | ✅ YES |
-| **Bug Fix** | "error", "bug", "not working", "broken", "crash" | `debugger` | ✅ YES |
-| **Testing** | "test", "coverage", "unit", "e2e", "playwright" | `tester` | ✅ YES |
-| **Code Review** | "review", "PR", "refactor", "quality" | `reviewer` | ✅ YES |
-| **Deployment** | "deploy", "production", "CI/CD", "docker" | `devops-engineer` | ✅ YES |
-| **Security Review** | "security", "vulnerability", "exploit", "audit" | `security-engineer` | ✅ YES |
-| **Performance** | "slow", "optimize", "performance", "speed" | `performance-engineer` | ✅ YES |
-| **Product / PRD** | "requirements", "user story", "backlog", "MVP" | `business-analyst` | ✅ YES |
-| **Project / Risk** | "timeline", "milestone", "coordination", "risk" | `project-manager` | ✅ YES |
-| **Documentation** | "readme", "docs", "architecture doc", "guide" | `docs-manager` | ✅ YES |
-| **Codebase Scout** | "explore", "find where", "structure", "map" | `scouter` | ✅ YES |
-| **External Research** | "research", "compare libraries", "best practice" | `researcher` | ✅ YES |
-| **Ideation** | "brainstorm", "ideas", "options" | `brainstormer` | ✅ YES |
-| **Game Dev** | "unity", "unreal", "godot", "phaser", "ecs" | `game-engineer` | ✅ YES |
-| **Reporting** | "status report", "metrics summary", "analytics" | `reporter` | ✅ YES |
-| **New Feature** | "build", "create", "implement", "new app" | `tech-lead` / `planner` → multi-agent | ⚠️ PLAN FIRST |
+### 🎻 MODE B — Strict Multi-Agent Orchestration (`TIER 1` Deep Path)
+- **When ANY is true**:
+  1. User explicitly invokes a BoomOpen command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  2. Task spans **> 3 files** or **≥ 2 domains** (e.g., DB + Backend + Frontend + Security).
+  3. Task requires architectural design, cross-module debugging, or Golden Triangle review (`:hard` / `:team`).
+- **Action**: Activate **Strict Orchestrator Mode** and delegate to canonical specialists using `Model: "inherit"` (Pro High default; NEVER `flash_lite`).
 
 ---
 
-## 3. Domain Detection Rules
+## 2. Canonical Agent Selection Matrix (21 Specialist Agents — `Model: "inherit"`)
 
-### Single-Domain Tasks
-
-| Domain | Patterns | Canonical Agent |
-|--------|----------|-----------------|
-| **Security** | auth, login, jwt, password, hash, token, owasp | `security-engineer` |
-| **Frontend** | component, react, vue, css, html, tailwind | `frontend-engineer` |
-| **Backend** | api, server, express, fastapi, node, go | `backend-engineer` |
-| **Mobile** | react native, flutter, ios, android, expo | `mobile-engineer` |
-| **Database** | prisma, sql, mongodb, schema, migration | `database-architect` |
-| **Testing** | test, jest, vitest, playwright, cypress | `tester` |
-| **Review** | review, pr, code quality, lint | `reviewer` |
-| **DevOps** | docker, kubernetes, ci/cd, pm2, nginx | `devops-engineer` |
-| **Debug** | error, bug, crash, not working, issue | `debugger` |
-| **Performance** | slow, lag, optimize, cache, performance | `performance-engineer` |
-| **Documentation** | docs, readme, api spec, changelog | `docs-manager` |
-| **Game** | unity, godot, phaser, game, multiplayer | `game-engineer` |
-| **Design** | ui/ux, figma, theme, accessibility | `designer` |
-| **Discovery** | scout, codebase, trace, locate | `scouter` |
-| **Research** | benchmark, evaluate, documentation | `researcher` |
-| **Requirements** | prd, user story, acceptance criteria | `business-analyst` |
-| **Planning** | plan, roadmap, breakdown, architecture | `planner` / `tech-lead` |
-
-### Multi-Domain Tasks
-
-If a request spans **2+ domains**, coordinate via `planner` + `tech-lead` and invoke the matching canonical agents (`security-engineer`, `backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, etc.).
+| User Intent | Keywords | Selected Canonical Agent(s) | Dispatch Mode |
+|-------------|----------|-----------------------------|---------------|
+| **Authentication / Authz** | "login", "auth", "jwt", "oauth", "rbac" | `security-engineer` + `backend-engineer` | Mode B (≥ 2 domains) |
+| **UI Component / Styling** | "button", "card", "layout", "tailwind", "react" | `frontend-engineer` | Mode A (≤3 files) or Mode B |
+| **UI/UX Design Spec** | "wireframe", "design system", "ux", "mockup" | `designer` | Mode B (`DESIGN-{feature}.md`) |
+| **Mobile App** | "react native", "flutter", "ios", "android", "expo" | `mobile-engineer` | Mode A or Mode B |
+| **API / Server Logic** | "endpoint", "route", "controller", "service", "rest" | `backend-engineer` | Mode A (≤3 files) or Mode B |
+| **Database / Schema** | "schema", "migration", "query", "index", "prisma", "sql" | `database-architect` | Mode A or Mode B |
+| **Root-Cause Debugging** | "error", "bug", "crash", "race condition", "5 whys" | `debugger` | Mode A (simple) or Mode B |
+| **Testing / QA** | "test", "coverage", "unit", "e2e", "playwright" | `tester` | Mode A or Mode B |
+| **Code / Arch Review** | "review", "PR", "audit", "quality" | `reviewer` (+ `tech-lead`, `security-engineer`, `performance-engineer` in `:hard`) | Mode B (Parallel Fan-Out) |
+| **CI/CD & Deployment** | "deploy", "docker", "kubernetes", "github actions" | `devops-engineer` | Mode A or Mode B |
+| **Security Audit** | "vulnerability", "owasp", "xss", "csrf", "pentest" | `security-engineer` | Mode B |
+| **Performance Tuning** | "slow", "profil", "latency", "memory leak", "bundle" | `performance-engineer` | Mode B |
+| **Business Requirements** | "prd", "user story", "acceptance criteria", "kpi" | `business-analyst` | Mode B |
+| **Project Coordination** | "roadmap", "milestone", "risk register", "timeline" | `project-manager` | Mode B |
+| **Documentation Suite** | "readme", "architecture docs", "/docs:core" | `docs-manager` | Mode B |
+| **Codebase Discovery** | "scout", "explore", "map architecture", "locate" | `scouter` | Mode B (Parallel with `researcher`) |
+| **External Research** | "research", "compare libraries", "best practices" | `researcher` | Mode B (Parallel with `scouter`) |
+| **Ideation / Discovery** | "brainstorm", "options", "trade-offs" | `brainstormer` | Mode B (`ask_question` widget) |
+| **Game Development** | "unity", "unreal", "godot", "phaser", "ecs" | `game-engineer` | Mode A or Mode B |
+| **Status / Analytics Report**| "status report", "executive summary", "metrics" | `reporter` | Mode B |
+| **Full Feature / App** | "build feature", "end-to-end", "new module" | `scouter` + `researcher` → `planner` → Direct Engineer Dispatch | Mode B (Full DAG) |
 
 ---
 
-## 4. Complexity Assessment
+## 3. Intelligent Work Distribution Rules (Mode B)
 
-- **SIMPLE (1 domain, clear spec)**: Delegate directly to the matching canonical specialist agent via TIER 1 (`invoke_subagent` / `runSubagent`).
-- **MODERATE (2 domains, clear spec)**: Delegate sequentially to the relevant canonical agents.
-- **COMPLEX (multi-domain / architectural)**: Route through `scouter` → `planner` → `tech-lead` → execution & validation specialists.
-
----
-
-## 5. Integration with GEMINI.md & CORE.md Rules
-
-- **Priority**: `GEMINI.md` and `rules/CORE.md` rules take precedence.
-- **Strict Delegation**: Never implement directly; always delegate to canonical agents in `agents/*.md`.
-- **Override Capability**: If the user explicitly requests `@backend-engineer` or `/cook:team`, honor the explicit selection.
+1. **DAG Parallel Fan-Out**: Launch independent phases concurrently in a single turn (`researcher` + `scouter`; 4-way `/review:hard`; `backend-engineer` + `frontend-engineer` when `SHARED_CONTRACT` and disjoint `OWNED_FILES` are locked).
+2. **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, dispatch tasks **directly** from `PLAN` to domain engineers without a middleman `tech-lead` hop. Reserve `tech-lead` for Architecture Review and `:team` Golden Triangle arbitration.
+3. **Warm Sub-agent Session Reuse (`send_message`)**: Record each spawned sub-agent's `conversationId` in the **Active Sub-agent Session Registry**. Reuse warm sessions via `send_message(Recipient: conversationId)` for follow-up tasks, review/test fixes, and debate rounds (0s cold-start, 100% context retained).

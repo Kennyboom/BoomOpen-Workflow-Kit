@@ -1,5 +1,6 @@
 ---
 description: Smart navigator — detect current state and recommend the next workflow. Use when stuck or unsure what to do next.
+version: "5.4"
 ---
 
 # /next — Smart Navigator v1.0
@@ -21,7 +22,7 @@ Analyze current state and recommend the EXACT next action.
 
 ```
 READ (in priority order):
-1. .brain/session.json → working_on, status, pending
+1. <appDataDir>\brain\<conversation-id>\ (SESSION-HANDOVER.md, PLAN-*.md, task.md) or .brain/session.json → working_on, status, pending
 2. .brain/brain.json → project type, features
 3. docs/specs/ → spec files exist?
 4. docs/DESIGN*.md → design docs exist?

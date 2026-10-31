@@ -1,6 +1,6 @@
 ---
 description: ⚡ Detailed Report — Comprehensive project analysis and documentation
-version: "1.0"
+version: "5.4"
 category: documentation
 execution-mode: execute
 ---
@@ -78,7 +78,7 @@ All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{t
 
 ## ⛔ INCREMENTAL EXECUTION (MANDATORY)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what's happening (announce before doing). Format: rules/PHASES.md § Phase output structure.
+Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct Plan-to-Executor Dispatch** (`Model: "inherit"`), and **Stateful Warm Sub-agent Reuse** (`send_message`) per `rules/PHASES.md` (v5.4).
 
 ---
 

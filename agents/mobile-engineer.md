@@ -3,7 +3,7 @@ name: mobile-engineer
 description: Principal Mobile Architect — iOS, Android, React Native, Flutter
 profile: "mobile:execution"
 handoffs: [designer, backend-engineer, tester, tech-lead]
-version: "1.0"
+version: "5.4"
 category: execution
 ---
 
@@ -66,7 +66,7 @@ ALWAYS:
    - knowledge-domain/00-index.md → API contracts, data shapes (drill into sub-files as needed)
    → USE these as constraints for implementation
 
-2. IF plan exists: READ → FOLLOW EXACTLY
+2. CHECK `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`): READ → FOLLOW specifications and `SHARED_CONTRACT` + `OWNED_FILES` EXACTLY
 3. IF no plan + complex: STOP → Request plan
 ```
 

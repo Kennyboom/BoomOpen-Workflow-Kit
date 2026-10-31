@@ -5,6 +5,7 @@ description: >-
   refactoring with before/after metrics.
 category: code
 execution-mode: sequential
+version: "5.4"
 ---
 
 # /refactor — The Code Surgeon v3.0
@@ -64,8 +65,8 @@ MEASURE EVERYTHING before touching code:
 |--------|:-------:|:------:|------|
 | Complexity | [X] | < 10 | ESLint rule |
 | Nesting depth | [X] | ≤ 3 | Manual |
-| Lines/function | [X] | ≤ 25 | Manual |
-| Lines/file | [X] | ≤ 300 | wc -l |
+| Lines/function | [X] | ~25–40 (≤ 60 linear) | Manual |
+| Lines/file | [X] | ~200–350 (≤ 400–450 cohesive) | wc -l |
 | Lint warnings | [X] | 0 | ESLint |
 | Build status | [X] | Pass | npm build |
 
@@ -84,8 +85,8 @@ CODE HEALTH SCORE: [N]/100
 SCAN for 5 smell categories:
 
 🐘 BLOATERS:
-  □ Long Method (> 25 lines)
-  □ Large Class (> 300 lines)
+  □ Long Method (> 40–60 lines)
+  □ Large Class / File (> 400–500 lines)
   □ Long Parameter List (> 4 params)
   □ Primitive Obsession
 

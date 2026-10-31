@@ -1,4 +1,4 @@
-# AGENT.md — Universal AI Assistant Entry Point (v5.3 Smart-Hybrid Edition)
+# AGENT.md — Universal AI Assistant Entry Point (v5.4 Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: This file is pre-loaded in your system rules.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -11,7 +11,7 @@
 
 ### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
 - **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
-- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while strictly enforcing **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn) and **Persistent Testing & Bug Fixing**.
+- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
@@ -49,7 +49,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\ (Antigravity 2.0 default) | ./
 | User Input | Route | Workflow File |
 |------------|-------|---------------|
 | `/cook ...`, `/fix ...`, `/plan ...`, `/debug ...`, `/test ...`, `/review ...`, `/docs ...`, `/design ...`, `/deploy ...`, `/report ...` | Domain workflow | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
-| `/brainstorm ...`, `/ask ...`, `/code ...`, `/orchestrate ...` | Explore/Query/Code/Multi-agent | `commands/{cmd}.md` |
+| `/brainstorm ...`, `/ask ...`, `/code ...`, `/orchestrate ...`, `/save`, `/recap` | Explore/Query/Code/Multi-agent | `commands/{cmd}.md` |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`
 **Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).

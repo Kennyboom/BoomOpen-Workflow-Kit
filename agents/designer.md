@@ -3,7 +3,7 @@ name: designer
 description: Principal Design Architect — UI/UX design, design systems, interactive generative_ui prototypes
 profile: "design:creative"
 handoffs: [frontend-engineer, mobile-engineer, researcher, tech-lead]
-version: "5.1"
+version: "5.4"
 category: design
 ---
 

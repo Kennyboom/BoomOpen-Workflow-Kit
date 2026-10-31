@@ -3,7 +3,7 @@ name: tester
 description: Principal QA Architect — test strategy, automation, quality assurance
 profile: "quality:validation"
 handoffs: [backend-engineer, frontend-engineer, reviewer, debugger, security-engineer, tech-lead]
-version: "1.0"
+version: "5.4"
 category: validation
 ---
 

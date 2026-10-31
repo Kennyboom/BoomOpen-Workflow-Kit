@@ -4,7 +4,7 @@ role: reviewer
 team: docs-team
 description: "Devil's advocate quality gatekeeper — accuracy + completeness + clarity review lens"
 domain: documentation
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: reviewer
 authority: approval
@@ -17,7 +17,7 @@ reports-to: docs-team-techlead
 collaborates-with:
   - docs-team-techlead
   - docs-team-executor
-mailbox: ./reports/{topic}/MAILBOX-{date}.md
+mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 ---
 
 # 🔍 Docs Team — Reviewer (Devil's Advocate)
@@ -124,9 +124,9 @@ You do NOT rubber-stamp. You do NOT nitpick without purpose. You find real probl
 
 | Operation | Permission |
 |-----------|------------|
-| READ `./reports/{topic}/MAILBOX-{date}.md` | ✅ Full mailbox — read all exchanges |
-| READ `./reports/{topic}/plans/` | ✅ Verify plan compliance |
-| APPEND to `./reports/{topic}/MAILBOX-{date}.md` | ✅ Post REVIEW, APPROVAL, ESCALATION |
+| READ `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Full mailbox — read all exchanges |
+| READ `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`) | ✅ Verify plan compliance |
+| APPEND to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Post REVIEW, APPROVAL, ESCALATION |
 | WRITE code files | ❌ Never — reviewer cannot implement |
 | EDIT prior mailbox entries | ❌ Mailbox is append-only |
 

@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Full Feature — Complete feature development lifecycle with DAG Parallel Fan-Out & Direct Plan Dispatch
-version: "5.3"
+version: "5.4"
 category: engineering
 execution-mode: execute
 ---
@@ -118,7 +118,7 @@ All deliverables → Write in the user's input language (technical terms in Engl
 | Prerequisite | **READ and FOLLOW** `<appDataDir>\brain\<conversation-id>\PLAN-{feature}.md` |
 | Handoff Packet | Pass `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES (Write Permitted)`, `READ_ONLY_FILES`, and `VERIFICATION` to each engineer and save their `conversationId` |
 | Parallelism | When Backend and Frontend tasks have locked `SHARED_CONTRACT` and disjoint `OWNED_FILES`, launch `backend-engineer` + `frontend-engineer` **in parallel in a single turn** (`Workspace: "inherit"` or `"branch"`) |
-| Verification | Run build/typecheck and `node cli/install.js check <dir>` to verify ≤ 300 lines/file and 0 errors |
+| Verification | Run build/typecheck and `node cli/install.js check <dir>` to verify Pragmatic 2-Tier Coding Standards (≤ 400 soft / ≤ 500 hard lines, 0 `any`) |
 
 ---
 

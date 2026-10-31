@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Deep Plan — Parallel codebase + pattern discovery, Given/When/Then specs, edge cases, and multi-phase planning
-version: "5.2"
+version: "5.4"
 category: planning
 execution-mode: execute
 ---

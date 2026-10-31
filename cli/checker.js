@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const MAX_FILE_LINES = 300;
+const SOFT_FILE_LINES = 400;
+const HARD_FILE_LINES = 500;
 const CODE_EXTENSIONS = new Set([
   '.js',
   '.mjs',
@@ -53,24 +54,51 @@ function collectSourceFiles(currentDir, accumulator = []) {
 }
 
 /**
- * Inspect a single source file against Professional Coding Standards.
+ * Check if a file is exempt from line-count limits (test files, .d.ts, or CLI installer).
+ * @param {string} fileName
+ * @returns {boolean}
+ */
+function isLineCountExempt(fileName) {
+  return (
+    EXEMPT_FILES.has(fileName) ||
+    fileName.includes('.test.') ||
+    fileName.includes('.spec.') ||
+    fileName.endsWith('.d.ts')
+  );
+}
+
+/**
+ * Inspect a single source file against Pragmatic 2-Tier Coding Standards.
  * @param {string} filePath
  * @param {string} baseDir
+ * @param {string} [overrideContent]
  * @returns {{violations: string[], warnings: string[]}}
  */
-function inspectSourceFile(filePath, baseDir) {
+function inspectSourceFile(filePath, baseDir, overrideContent) {
   const relPath = path.relative(baseDir, filePath) || path.basename(filePath);
   const fileName = path.basename(filePath);
   const ext = path.extname(fileName).toLowerCase();
-  const content = fs.readFileSync(filePath, 'utf8');
+  const content = overrideContent ?? fs.readFileSync(filePath, 'utf8');
   const lines = content.split(/\r?\n/);
   const violations = [];
   const warnings = [];
 
-  if (lines.length > MAX_FILE_LINES && !EXEMPT_FILES.has(fileName)) {
-    violations.push(`${relPath}: ${lines.length} lines (exceeds ${MAX_FILE_LINES})`);
+  if (!isLineCountExempt(fileName)) {
+    if (lines.length > HARD_FILE_LINES) {
+      violations.push(
+        `${relPath}: ${lines.length} lines (exceeds hard ceiling ${HARD_FILE_LINES})`
+      );
+    } else if (lines.length > SOFT_FILE_LINES) {
+      warnings.push(
+        `${relPath}: ${lines.length} lines (exceeds soft target ${SOFT_FILE_LINES}, OK if single responsibility)`
+      );
+    }
   }
-  if (TS_EXTENSIONS.has(ext) && /(?::\s*any\b|\bas\s+any\b|<any>)/.test(content)) {
+  if (
+    TS_EXTENSIONS.has(ext) &&
+    !fileName.endsWith('.d.ts') &&
+    /(?::\s*any\b|\bas\s+any\b|<any>)/.test(content)
+  ) {
     violations.push(`${relPath}: explicit 'any' type detected`);
   }
   const isCliOrTest =
@@ -104,11 +132,11 @@ function runCheck(targetDir = process.cwd(), options = {}) {
 
   const passed = violations.length === 0;
   if (!options.silent) {
-    console.log('\n📏 BoomOpen Code Standards Check (v5.3.0)\n' + '─'.repeat(60));
+    console.log('\n📏 BoomOpen Pragmatic 2-Tier Code Check (v5.4.0)\n' + '─'.repeat(60));
     console.log(`  📁 Target:   ${resolvedDir}`);
     console.log(`  📄 Scanned:  ${files.length} source files`);
-    console.log(`  ❌ Errors:   ${violations.length}`);
-    console.log(`  ⚠️  Warnings: ${warnings.length}`);
+    console.log(`  ❌ Errors:   ${violations.length} (Hard >${HARD_FILE_LINES} lines or explicit 'any')`);
+    console.log(`  ⚠️  Warnings: ${warnings.length} (Soft >${SOFT_FILE_LINES} lines or console.log)`);
     for (const v of violations) console.log(`     ❌ ${v}`);
     for (const w of warnings) console.log(`     ⚠️  ${w}`);
     console.log('─'.repeat(60));
@@ -116,4 +144,9 @@ function runCheck(targetDir = process.cwd(), options = {}) {
   return { passed, scannedFiles: files.length, violations, warnings };
 }
 
-module.exports = { runCheck };
+module.exports = {
+  SOFT_FILE_LINES,
+  HARD_FILE_LINES,
+  inspectSourceFile,
+  runCheck,
+};

@@ -1,6 +1,6 @@
 # 🔺 TEAMS — Golden Triangle Architecture
 
-> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When `:team` variant is invoked | **PURPOSE**: 3-agent adversarial collaboration with Warm Session Reuse (`send_message`)
+> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When `:team` variant is invoked | **PURPOSE**: 3-agent adversarial collaboration with Warm Session Reuse (`send_message`)
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 description: Preview server start, stop, and status check. Local development server management.
+version: "5.4"
 ---
 
 # /preview - Preview Management

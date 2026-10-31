@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Review — Golden Triangle adversarial collaboration for maximum quality code review"
-version: "2.0"
+version: "5.4"
 category: quality
 execution-mode: execute
 ---

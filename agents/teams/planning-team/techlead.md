@@ -4,7 +4,7 @@ role: tech-lead
 team: planning-team
 domain: planning
 description: "Task decomposer, coordinator, arbiter, and output synthesizer for planning team phases"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: planner
 authority: final
@@ -60,7 +60,7 @@ Status flow: ⏳ Pending → 🔄 In Progress → ✅ Approved → ❌ Blocked �
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

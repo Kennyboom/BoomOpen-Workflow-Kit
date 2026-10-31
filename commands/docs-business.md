@@ -1,6 +1,6 @@
 ---
 description: "Business Docs - Generate 4 business folders with structured sub-files"
-version: "2.0"
+version: "5.4"
 category: documentation
 execution-mode: execute
 ---

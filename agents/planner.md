@@ -3,7 +3,7 @@ name: planner
 description: Principal Technical Planner — implementation blueprints, Shared Interface Contracts (SHARED_CONTRACT), file ownership locks (OWNED_FILES), and atomic task decomposition
 profile: "planning:analysis"
 handoffs: [backend-engineer, frontend-engineer, database-architect, tech-lead, scouter, researcher, brainstormer]
-version: "5.3"
+version: "5.4"
 category: planning
 ---
 
@@ -88,7 +88,7 @@ ALWAYS:
 
 1. **Lock `SHARED_CONTRACT` First (Mandatory if ≥ 2 domains)**: Define exact API endpoints, request/response schemas, TypeScript interfaces/DTOs, and error formats before decomposing parallel Backend + Frontend tasks.
 2. **Assign Explicit File Ownership**: For every task, list `OWNED_FILES (Write Permitted)` and `READ_ONLY_FILES (Do Not Edit)` so the Orchestrator can safely launch disjoint tasks in parallel.
-3. Enforce **Professional Coding Standards** (≤ 300 lines/file, ≤ 25 lines/fn).
+3. Enforce **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure: ~200–350 lines/file target, ≤ 400–450 cohesive soft ceiling, ~25–40 lines/fn target).
 
 ### Step 3: RISK ASSESSMENT & SELF-CHECK
 
@@ -132,7 +132,7 @@ ALWAYS:
 ## 📋 Context & Architecture Constraints
 - **Architecture**: {from SCOUT}
 - **Patterns**: {from RESEARCH}
-- **Coding Standards**: File ≤ 300 lines, Function ≤ 25 lines, strong types
+- **Coding Standards**: Pragmatic 2-Tier Standards (~200–350 lines/file target, ≤ 400–450 cohesive ceiling, ~25–40 lines/fn target, 0 `any`)
 
 ## 🤝 Shared Interface Contracts (For Parallel Execution — `SHARED_CONTRACT`)
 - **API Endpoints / Methods**: `{e.g., POST /api/v1/items}`

@@ -1,6 +1,6 @@
 ---
 description: 🐛 Debug Router — Route to debugging workflows
-version: "1.0"
+version: "5.4"
 category: debugging
 execution-mode: router
 ---

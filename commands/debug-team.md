@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Debug — Golden Triangle adversarial collaboration for maximum quality investigation"
-version: "2.0"
+version: "5.4"
 category: debugging
 execution-mode: execute
 ---

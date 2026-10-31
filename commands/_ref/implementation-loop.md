@@ -1,6 +1,6 @@
 ---
 description: "⚙️ Implementation Loop — Step-by-step Golden Triangle & Warm Session Reuse coding protocol"
-version: "5.3"
+version: "5.4"
 type: reference
 ---
 
@@ -44,7 +44,7 @@ For EACH implementation phase/module in the Plan:
 ### STEP 2 — CODE EXECUTION (`{domain-engineer}` via `invoke_subagent` or warm `send_message`)
 - Reads `[TASK_BRIEF]` + `PLAN-{feature}.md`
 - Modifies **ONLY** files listed in `OWNED_FILES` (`write_file` / `edit_file`)
-- Runs build/typecheck/linter AND `node cli/install.js check <dir>` (`run_command`) to verify ≤ 300 lines/file and 0 errors
+- Runs build/typecheck/linter AND `node cli/install.js check <dir>` (`run_command`) to verify Pragmatic 2-Tier Coding Standards (≤ 400 soft / ≤ 500 hard lines/file, 0 `any`)
 - Marks completed step in `PLAN-{feature}.md`: `[ ]` → `[x]`
 - Appends `[REPORT]` (files changed + verification output) to `MAILBOX-{date}.md`
 
@@ -55,7 +55,7 @@ For EACH implementation phase/module in the Plan:
   2. **Correctness & Edge Cases**: Null/undefined handling, async error handling, race conditions?
   3. **Security**: Input validation, auth checks, injection prevention, no hardcoded secrets?
   4. **Performance**: No N+1 queries, no blocking loops, proper memoization/indexing?
-  5. **Code Quality**: File ≤ 300 lines? Function ≤ 25 lines? Strong types (no `any`)?
+  5. **Code Quality (Pragmatic 2-Tier)**: Cohesive file (~200–350 target, ≤ 400–450 soft ceiling)? Focused functions (~25–40 lines)? Strong types (no `any`)?
 - If ANY gate fails (🔴 CRITICAL or 🟠 HIGH):
   - Appends `[CRITIQUE]` with exact `File:Line` and required fix to `MAILBOX-{date}.md`
 - If ALL gates pass:

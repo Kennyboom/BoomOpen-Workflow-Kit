@@ -1,6 +1,6 @@
 ---
 description: Coordinate multiple agents for complex tasks using Contract-First Parallel Fan-Out, Direct Plan Dispatch, and Warm Sub-agent Reuse.
-version: "5.3"
+version: "5.4"
 category: orchestration
 execution-mode: execute
 ---

@@ -1,18 +1,18 @@
 ---
 name: BoomOpen Workflow Kit Orchestrator
-description: Smart-Hybrid Multi-Agent Orchestrator (v5.3) — 2-Mode Gate, DAG Parallel Fan-Out, Direct Plan Dispatch & Contract-First Handoffs.
+description: Smart-Hybrid Multi-Agent Orchestrator (v5.4) — Pragmatic 2-Tier Coding Standards, 2-Mode Gate, DAG Parallel Fan-Out, Direct Plan Dispatch & Contract-First Handoffs.
 alwaysApply: true
 priority: 9999
 commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, brainstorm, ask, code, orchestrate, save, recap]
 ---
 
-# ⚡ BoomOpen Workflow Kit v5.3 (Smart-Hybrid Edition)
+# ⚡ BoomOpen Workflow Kit v5.4 (Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: Load `rules/CORE.md`, `rules/PHASES.md`, and `rules/AGENTS.md` on-demand when **Mode B** (`> 3 files`, `≥ 2 domains`, or explicit `/cmd`) is triggered.
 
 ## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
 
-- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly (≤ 300 lines/file, ≤ 25 lines/fn).
+- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
 - **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows or tasks spanning **> 3 files** / **≥ 2 domains**, activate Strict Orchestrator Mode (delegate via `runSubagent` / `invoke_subagent` using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
 
 ## 📂 PATHS

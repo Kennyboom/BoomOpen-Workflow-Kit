@@ -1,6 +1,6 @@
 ---
 description: "Audit Docs - Generate 4 audit folders with structured sub-files"
-version: "3.0"
+version: "5.4"
 category: documentation
 execution-mode: execute
 ---

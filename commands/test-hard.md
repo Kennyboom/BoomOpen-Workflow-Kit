@@ -1,168 +1,48 @@
 ---
-description: ⚡⚡⚡ Full Test — Comprehensive QA and TDD Workflow
-version: "3.0"
-category: validation
-execution-mode: execute
+description: "⚡⚡⚡ Comprehensive testing with DAG Parallel Fan-Out (Unit/Integration/E2E + Coverage Gap Analysis)"
+version: "5.4"
 ---
 
-# /test:hard — Test Engineer v3.0
+# /test:hard — Comprehensive Testing
 
-> **MISSION**: Full QA workflow with quality gates, complete coverage reporting, and TDD enforcement.
-
-<scope>$ARGUMENTS</scope>
+> **Skill Notice**: Load `rules/CORE.md`, `rules/PHASES.md`, and `rules/AGENTS.md` on-demand for Mode B orchestration.
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## PRE-FLIGHT
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+1. **Inspect Context**: Check `<appDataDir>\brain\<conversation-id>\` for `PLAN-*.md` or `DEBUG-*.md` to identify changed modules and acceptance criteria.
+2. **Session Registry**: Reuse warm `tester` or `scouter` sessions via `send_message` if already active in this conversation.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Phase 1 & Phase 2: DAG Parallel Fan-Out (`tester` + `scouter`)
 
-| Tier       | When               | Action                       |
-| ---------- | ------------------ | ---------------------------- |
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
+Launch both independent discovery/execution tracks concurrently in a single turn:
 
----
+### Track A — Test Suite Execution (`tester`)
+> - **Sub-agent**: `tester` (`EnableWriteTools: true`, `Model: "inherit"`)
+> - **MISSION**: Run existing unit, integration, and E2E test suites; capture pass/fail counts, coverage metrics, and exact failure stack traces.
+> - **OWNED_FILES**: Existing/new `*.test.*` / `*.spec.*` files and `<appDataDir>\brain\<conversation-id>\TEST-{topic}.md`.
 
-## GOLDEN RULES
-
-```
-1. TEST BEHAVIOR, NOT IMPLEMENTATION — Refactor-proof tests
-2. ONE ASSERTION PER TEST — Clear failure messages
-3. ARRANGE-ACT-ASSERT — Consistent structure
-4. TEST PYRAMID — Many unit, some integration, few E2E
-5. NO FLAKY TESTS — Deterministic, no timing deps
-6. REGRESSION FIRST — Add test for bugs BEFORE fixing
-```
+### Track B — Uncovered Edge-Case & Risk Scouting (`scouter`)
+> - **Sub-agent**: `scouter` (`EnableWriteTools: false`, `Model: "inherit"`)
+> - **MISSION**: Scan recently modified modules (`git diff`) for untested boundary conditions, error paths, race conditions, and security/input validation gaps.
+> - **READ_ONLY_FILES**: Changed source files and existing test files.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## Phase 3: Write Missing Tests & Re-Verify (`tester`)
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: Test Strategy & Spec Traceability
-
-| Agent | `tester`                                |
-| ----- | --------------------------------------- |
-| Goal  | Design test strategy from Specs         |
-| Rules | MUST map specs to test files            |
-| Exit  | Strategy defined, test types identified |
-
-```
-BEFORE writing tests:
-
-1. SCAN project:
-   □ Test framework detected (Jest/Vitest/Playwright?)
-   □ Existing test count and coverage
-   □ Test patterns already in use
-
-2. CLASSIFY target:
-   □ Pure function → Unit test
-   □ Component with state → Component test
-   □ API endpoint → Integration test
-   □ User flow → E2E test
-
-3. SPEC TRACEABILITY (Check if specs exist e.g. plans/)
-   □ Map each AC -> test file
-   □ Report Gaps
-```
+Reuse the warm `tester` sub-agent via `send_message(Recipient: testerConversationId, Message: ...)`:
+1. Write unit/integration/E2E tests for all high-priority gaps identified in Track A & Track B.
+2. Follow the **AAA Pattern (Arrange-Act-Assert)** and test behavior rather than implementation details.
+3. Re-run the full test suite to verify 100% pass rate.
+4. Write the final report to `<appDataDir>\brain\<conversation-id>\TEST-{topic}.md` (fallback to `./reports/{topic}/test/TEST-{topic}.md` only when workspace docs are requested).
 
 ---
 
-## 🎭 Phase 2: DEPENDENCY MAPPING & COVERAGE
-
-| Agent | `scouter`                              |
-| ----- | -------------------------------------- |
-| Goal  | Map test dependencies & plan coverage  |
-| Exit  | Dependencies mapped, environment ready |
-
-```
-COVERAGE BUDGET TARGETS:
-| Layer | Target | Minimum | Tool |
-|-------|:------:|:-------:|------|
-| Statements | 80% | 70% | Framework Coverage |
-| Branches | 75% | 65% | Framework Coverage |
-
-PRIORITY (what to test FIRST):
-1. Business logic / utils (highest ROI)
-2. API route handlers
-3. Complex components with state
-4. Edge cases from bug history
-```
-
----
-
-## 🎭 Phase 3: TEST EXECUTION (TDD Workflow)
-
-| Agent        | `tester`                                                        |
-| ------------ | --------------------------------------------------------------- |
-| Prerequisite | READ PLAN file if exists                                        |
-| Goal         | Run/write full test suite following TDD workflow                |
-| Exit         | All tests run, coverage measured, checkpoint mapping documented |
-
-```
-TDD WORKFLOW (Red → Green → Refactor):
-🔴 RED — Write FAILING test first.
-🟢 GREEN — Minimal code to pass.
-🔵 REFACTOR — Clean without breaking.
-
-PATTERNS:
-- Use describes for grouping.
-- Use Arrange-Act-Assert.
-- Edge cases and Error Paths should be explicitly tested.
-```
-
----
-
-## 🎭 Phase 4: FAILURE ANALYSIS (IF FAILURES)
-
-| Agent   | `debugger`             |
-| ------- | ---------------------- |
-| Trigger | If failures exist      |
-| Goal    | Analyze failures       |
-| Exit    | Root causes identified |
-
----
-
-## 🎭 Phase 5: QUALITY GATES
-
-| Agent | `tester`                          |
-| ----- | --------------------------------- |
-| Goal  | Verify quality gates              |
-| Exit  | All gates pass, coverage adequate |
-
-```
-BEFORE submitting tests:
-□ Tests are independent (no shared state)
-□ No hardcoded waits (use waitFor/findBy)
-□ Mocks reset between tests (afterEach)
-□ Edge cases covered (null, empty, max, min)
-□ Error paths covered (network, validation, auth)
-□ No console.log left in tests
-□ Coverage meets targets
-```
-
----
-
-## COMPLETION
-
-Present test report with:
-
-1. ✅ **Pass** — All tests green
-2. 🔧 **Fix** → `/fix:fast`
-3. 📝 **Review** → `/review`
+## Gate
+- [ ] All unit, integration, and E2E tests pass (`0` failures)
+- [ ] Coverage meets or exceeds target (`≥ 80%` on changed modules)
+- [ ] `<appDataDir>\brain\<conversation-id>\TEST-{topic}.md` generated with concrete command output

@@ -1,86 +1,24 @@
 ---
-description: ⚡ Quick Fix — Rapid issue resolution
-version: "1.0"
-category: debugging
-execution-mode: execute
+description: "⚡ Fast bug fix for clear, localized issues with mandatory verification"
+version: "5.4"
 ---
 
-# /fix:fast — Rapid Issue Fix
+# /fix:fast — Quick Bug Fix
 
-> **MISSION**: Quickly diagnose and fix simple issues with minimal overhead.
-
-<issue>$ARGUMENTS</issue>
-
----
-
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
+> **Mode Gate**:
+> - **Mode A (Direct Execution)**: If localized (`≤ 3 files`, single domain), diagnose, fix, and test directly.
+> - **Mode B (Tier 1 Delegation)**: If spanning `> 3 files` or following a `DEBUG-{issue}.md` artifact in `<appDataDir>\brain\<conversation-id>\`, dispatch directly to the domain engineer (`backend-engineer` / `frontend-engineer`, `Model: "inherit"`) or reuse the warm engineer session via `send_message`.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Execution Protocol
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
-
----
-
-## ⚠️ ESCALATION
-
-| If | Route To |
-|----|----------|
-| Complex issue | `/fix:hard` |
-| Research needed | `/fix:hard` |
-
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: DIAGNOSIS
-
-| Agent | `debugger` |
-|-------|------------|
-| Goal | Identify root cause |
-| Exit | Root cause identified, complexity assessed |
-
----
-
-## 🎭 Phase 2: FIX IMPLEMENTATION
-
-| Agent | Route by domain |
-|-------|-----------------|
-| Route | UI → `frontend-engineer`, API → `backend-engineer` |
-| Goal | Implement fix |
-| Exit | Fix implemented, minimal changes, code compiles |
-
----
-
-## 🎭 Phase 3: VALIDATION
-
-| Agent | `tester` |
-|-------|----------|
-| Goal | Verify fix |
-| Exit | Issue resolved, no regression |
-
----
-
-## COMPLETION
-
-Present fix with:
-
-1. ✅ **Fixed** — Issue resolved
-2. 🧪 **Test more** → `/test`
+1. **Read Context & Root Cause**:
+   - Check `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` if a prior debug step ran; otherwise trace the stack trace to the exact `[file:line]` root cause.
+2. **Apply Minimal Root-Cause Fix**:
+   - Fix the underlying cause (not just masking the symptom).
+   - Enforce **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure).
+3. **Persistent Verification**:
+   - Run the failing test or reproduction command to prove the bug is gone.
+   - Add or update a regression test covering the fixed edge case.
+   - Run typecheck/linter to confirm zero regressions.

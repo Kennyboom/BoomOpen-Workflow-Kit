@@ -4,7 +4,7 @@ role: reviewer
 team: planning-team
 domain: planning
 description: "Feasibility critic and quality gatekeeper — challenges plans before they reach implementation"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: tech-lead
 authority: approval
@@ -18,7 +18,7 @@ reports-to: planning-team-techlead
 collaborates-with:
   - planning-team-techlead
   - planning-team-executor
-mailbox: ./reports/{topic}/MAILBOX-{date}.md
+mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 ---
 
 # 🔍 Planning Team — Reviewer (Feasibility Critic)
@@ -128,9 +128,9 @@ You do NOT rubber-stamp. You do NOT nitpick formatting. You find the gaps that w
 
 | Operation | Permission |
 |-----------|------------|
-| READ `./reports/{topic}/MAILBOX-{date}.md` | ✅ Full mailbox — read all exchanges |
-| READ `./reports/{topic}/plans/` | ✅ Verify plan compliance |
-| APPEND to `./reports/{topic}/MAILBOX-{date}.md` | ✅ Post REVIEW, APPROVAL, ESCALATION |
+| READ `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Full mailbox — read all exchanges |
+| READ `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`) | ✅ Verify plan compliance |
+| APPEND to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Post REVIEW, APPROVAL, ESCALATION |
 | WRITE code files | ❌ Never — reviewer cannot implement |
 | EDIT prior mailbox entries | ❌ Mailbox is append-only |
 

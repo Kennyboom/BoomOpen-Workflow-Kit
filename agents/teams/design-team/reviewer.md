@@ -4,7 +4,7 @@ role: reviewer
 team: design-team
 domain: design
 description: "Devil's advocate quality gatekeeper — UX fidelity + accessibility + design consistency review lens"
-version: "2.0"
+version: "5.4"
 category: team-role
 authority: approval
 base-agent: reviewer
@@ -18,7 +18,7 @@ reports-to: design-team-techlead
 collaborates-with:
   - design-team-techlead
   - design-team-executor
-mailbox: ./reports/{topic}/MAILBOX-{date}.md
+mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 ---
 
 # 🔍 Design Team — Reviewer (UX + Accessibility)
@@ -122,9 +122,9 @@ You do NOT rubber-stamp. You do NOT nitpick pixel differences invisible at 100% 
 
 | Operation | Permission |
 |-----------|------------|
-| READ `./reports/{topic}/MAILBOX-{date}.md` | ✅ Full mailbox — read all exchanges |
-| READ `./reports/{topic}/plans/` | ✅ Verify plan compliance |
-| APPEND to `./reports/{topic}/MAILBOX-{date}.md` | ✅ Post REVIEW, APPROVAL, ESCALATION |
+| READ `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Full mailbox — read all exchanges |
+| READ `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`) | ✅ Verify plan compliance |
+| APPEND to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Post REVIEW, APPROVAL, ESCALATION |
 | WRITE code files | ❌ Never — reviewer cannot implement |
 | EDIT prior mailbox entries | ❌ Mailbox is append-only |
 

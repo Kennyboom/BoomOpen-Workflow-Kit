@@ -1,88 +1,27 @@
 ---
-description: ⚡ Quick Review — Fast PR/file review
-version: "1.0"
-category: validation
-execution-mode: execute
----
-
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
-
+description: "⚡ Quick code review enforcing Pragmatic 2-Tier Coding Standards and security checks"
+version: "5.4"
 ---
 
 # /review:fast — Quick Code Review
 
-> **MISSION**: Fast review for PRs or specific files.
-
-<scope>$ARGUMENTS</scope>
-
----
-
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
+> **Mode Gate**:
+> - **Mode A (Direct Execution)**: For small diffs (`≤ 3 files`), review directly against the Pragmatic 2-Tier Coding Standards.
+> - **Mode B (Tier 1 Delegation)**: For larger diffs, delegate to `reviewer` (`EnableWriteTools: false`, `Model: "inherit"`) or reuse the warm `reviewer` session via `send_message`.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Review Checklist
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
-
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: CODE REVIEW
-
-| Agent | `reviewer` |
-|-------|------------|
-| Goal | Review code quality |
-| Exit | Issues documented, recommendations provided |
-
----
-
-## ⛔ ABSOLUTE PROHIBITION — NO CODE
-
-> **🔴 THIS WORKFLOW PRODUCES REVIEW REPORTS ONLY. NO CODE.**
->
-> - ❌ NEVER write implementation code or fix code directly
-> - ❌ NEVER modify source files
-> - ❌ NEVER auto-transition to `/fix`, `/code`, `/cook`
-> - ✅ ONLY produce review report files in `./reports/{topic}/`
-> - ✅ Report files MUST be written in the same language the user communicates with you
->
-> If user wants fixes after review, they must EXPLICITLY invoke `/fix` workflow.
-
-## ⛔ MANDATORY FILE OUTPUT
-
-> Every completed review MUST be saved to `./reports/{topic}/reviews/REVIEW-{topic}-{YYYY-MM-DD}.md`
-> Chat-only responses for completed reviews are PROHIBITED.
-
----
-
-## ⛔ HARD STOP — AWAIT USER DECISION
-
-> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
->
-> Present review report file link to user and STOP. Wait for explicit user command.
->
-> Suggested next steps (USER must explicitly choose):
-> 1. ✅ Approved — Code ready
-> 2. 🔍 `/review:hard` → Deeper architecture review
-> 3. 🔧 `/fix` → Fix issues found
-> 4. 🔄 Iterate → Refine review
->
-> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**
+1. **Tier 1 Strict Quality & Safety (Zero Tolerance)**:
+   - No explicit `any` types (`TypeScript`)
+   - No magic numbers or hardcoded secrets
+   - No leftover debug `console.log` in production code
+   - Proper `try/catch` and typed error handling on all async/API calls
+   - Security: Input validation at boundaries, parameterized queries, authz checks
+2. **Tier 2 Cohesive Structure (Pragmatic Judgment)**:
+   - File cohesion (`~200–350` lines target, `≤ 400–450` cohesive soft ceiling, `>500` lines split)
+   - Function clarity (`~25–40` lines target, guard clauses, `≤ 3` nesting depth, `≤ 4` params)
+   - Zero anti-fragmentation (no artificial splitting of cohesive state machines or UI components)
+3. **Deliverable**:
+   - Write findings to `<appDataDir>\brain\<conversation-id>\REVIEW-{topic}.md` (or inline for small Mode A reviews) with severity (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) and clickable `[file:line]` links.

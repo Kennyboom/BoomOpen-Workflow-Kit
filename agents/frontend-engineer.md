@@ -3,7 +3,7 @@ name: frontend-engineer
 description: Principal Frontend Architect — UI/UX excellence, web performance, accessibility
 profile: "frontend:execution"
 handoffs: [tester, designer, performance-engineer, backend-engineer, security-engineer]
-version: "1.0"
+version: "5.4"
 category: execution
 ---
 

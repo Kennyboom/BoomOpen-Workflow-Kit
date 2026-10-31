@@ -1,67 +1,25 @@
 ---
-description: ⚡ Quick Debug — Fast diagnosis for simple bugs
-version: "1.0"
-category: debugging
-execution-mode: execute
+description: "⚡ Quick debug — Fast root cause trace and actionable fix recommendation"
+version: "5.4"
 ---
 
-# /debug:fast — Quick Diagnosis
+# /debug:fast — Quick Debug
 
-> **MISSION**: Fast diagnosis for clear, reproducible issues.
-
-<issue>$ARGUMENTS</issue>
-
----
-
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
+> **Mode Gate**:
+> - **Mode A (Direct Execution)**: If single-domain and `≤ 3 files`, execute directly using the `debugger` skill mindset (`skills/debugger/SKILL.md`).
+> - **Mode B (Tier 1 Delegation)**: If multi-domain or part of a multi-agent workflow, delegate to `debugger` (`Model: "inherit"`) or reuse a warm `debugger` session via `send_message`.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Workflow
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
-
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: QUICK DIAGNOSIS
-
-| Agent | `debugger` |
-|-------|------------|
-| Goal | Fast root cause identification |
-| Exit | Root cause identified |
-
----
-
-## ESCALATION
-
-| If | Route To |
-|----|----------|
-| Complex/intermittent | `/debug:hard` |
-| Multiple causes | `/debug:hard` |
-
----
-
-## COMPLETION
-
-Present findings with:
-
-1. ✅ **Root Cause** — Identified
-2. 🔧 **Fix** → `/fix:fast`
+1. **Symptom & Stack Trace**: Read the exact error message and inspect the top stack trace frames (`[file:line]`).
+2. **Recent Changes Check**: Run `git diff` / `git log --oneline -5` if the bug is a regression.
+3. **Rapid Causal Trace (Mini 5-Whys)**:
+   - Identify the immediate trigger (`Why 1`) and underlying root cause (`Why 5`).
+   - Verify whether an upstream caller or missing boundary check caused the invalid state.
+4. **Output**:
+   - Write `<appDataDir>\brain\<conversation-id>\DEBUG-{issue}.md` (or report inline if trivial single-file Q&A) with:
+     - **Root Cause**: Exact `[file:line]` and causal explanation
+     - **Recommended Fix**: Minimal change adhering to **Pragmatic 2-Tier Coding Standards**
+     - **Verification Command**: Exact test or reproduction command to confirm the fix

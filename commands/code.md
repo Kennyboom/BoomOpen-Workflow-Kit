@@ -1,6 +1,6 @@
 ---
 description: 💻 Code Router — Route to feature and implementation workflows
-version: "1.0"
+version: "5.4"
 category: engineering
 execution-mode: router
 ---

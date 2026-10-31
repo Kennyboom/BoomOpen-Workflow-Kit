@@ -4,7 +4,7 @@ role: executor
 team: performance-team
 domain: performance-optimization
 description: "Direct performance optimization implementer with self-defense capability — profiles, optimizes, submits, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: backend-engineer
 authority: implementation
@@ -48,7 +48,7 @@ If you submitted it, you own the measurements. If it regressed, fix it. If it's 
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

@@ -1,6 +1,6 @@
 ---
 description: 🔍 Review Router — Route to code review workflows
-version: "1.0"
+version: "5.4"
 category: validation
 execution-mode: router
 ---

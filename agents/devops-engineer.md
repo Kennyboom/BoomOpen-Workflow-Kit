@@ -3,7 +3,7 @@ name: devops-engineer
 description: Principal DevOps Architect — CI/CD, infrastructure as code, deployment automation
 profile: "devops:execution"
 handoffs: [backend-engineer, security-engineer, performance-engineer, database-architect, tech-lead]
-version: "1.0"
+version: "5.4"
 category: execution
 ---
 

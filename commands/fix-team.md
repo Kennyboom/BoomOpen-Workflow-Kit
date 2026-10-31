@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Fix — Golden Triangle adversarial collaboration for maximum quality issue resolution"
-version: "3.0"
+version: "5.4"
 category: debugging
 execution-mode: execute
 ---

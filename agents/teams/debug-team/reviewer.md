@@ -2,7 +2,7 @@
 name: debug-team-reviewer
 role: reviewer
 team: debug-team
-version: "2.0"
+version: "5.4"
 category: team-role
 domain: debugging
 authority: approval
@@ -17,7 +17,7 @@ reports-to: debug-team-techlead
 collaborates-with:
   - debug-team-techlead
   - debug-team-executor
-mailbox: ./reports/{topic}/MAILBOX-{date}.md
+mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 ---
 
 # 🔍 Debug Team — Reviewer (Root-Cause Validator)
@@ -118,9 +118,9 @@ _Will the proposed fix solve the root cause without creating new problems?_
 
 | Operation | Permission |
 |-----------|------------|
-| READ `./reports/{topic}/MAILBOX-{date}.md` | ✅ Full mailbox — read all exchanges |
-| READ `./reports/{topic}/plans/` | ✅ Verify plan compliance |
-| APPEND to `./reports/{topic}/MAILBOX-{date}.md` | ✅ Post REVIEW, APPROVAL, ESCALATION |
+| READ `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Full mailbox — read all exchanges |
+| READ `<appDataDir>\brain\<conversation-id>\PLAN-*.md` (or `./reports/{topic}/plans/`) | ✅ Verify plan compliance |
+| APPEND to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) | ✅ Post REVIEW, APPROVAL, ESCALATION |
 | WRITE code files | ❌ Never — reviewer cannot implement |
 | EDIT prior mailbox entries | ❌ Mailbox is append-only |
 
@@ -163,7 +163,7 @@ Send to executor when findings exist (verdict REVISE or first-round feedback).
 
 ---
 
-**Next Step**: Address all 🔴 BLOCKERs. Defend or address 🟡 WARNINGs. Re-submit via `./reports/{topic}/MAILBOX-{date}.md`.
+**Next Step**: Address all 🔴 BLOCKERs. Defend or address 🟡 WARNINGs. Re-submit via `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`).
 ```
 
 ### APPROVAL Message Format

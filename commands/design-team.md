@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Design — Golden Triangle adversarial collaboration for maximum quality design"
-version: "3.0"
+version: "5.4"
 category: design
 execution-mode: execute
 ---

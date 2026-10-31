@@ -4,7 +4,7 @@ role: executor
 team: fullstack-team
 domain: fullstack
 description: "Dual-executor definition — backend-engineer and frontend-engineer implementations with integration protocol"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent:
   - backend-engineer
@@ -152,7 +152,7 @@ If the Frontend Executor discovers the approved backend API does NOT match the c
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

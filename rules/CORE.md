@@ -1,6 +1,6 @@
 # ⚡ CORE RULES — SMART-HYBRID ORCHESTRATOR PROTOCOL
 
-> **VERSION**: 5.3 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration & Intelligent Work Distribution
+> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration & Pragmatic 2-Tier Coding Standards
 
 ---
 
@@ -13,8 +13,8 @@
 │    touching ≤ 3 files, AND no explicit /cmd workflow was invoked.             │
 │  • Action: Primary agent executes, tests, and verifies DIRECTLY (0 subagent   │
 │    cold-start latency, 0 extra rule reads, 0 report file clutter), while      │
-│    enforcing Professional Coding Standards (≤ 300 lines/file, ≤ 25 lines/fn)  │
-│    and Persistent Testing & Bug Fixing.                                       │
+│    enforcing Pragmatic 2-Tier Coding Standards (Tier 1 strict type/error      │
+│    safety + Tier 2 cohesive structure) and Persistent Testing & Bug Fixing.   │
 ├───────────────────────────────────────────────────────────────────────────────┤
 │  🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)            │
 │  • When ANY of the following is true:                                         │

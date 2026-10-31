@@ -3,7 +3,7 @@ name: performance-engineer
 description: Principal Performance Architect — profiling, optimization, load testing
 profile: "performance:validation"
 handoffs: [backend-engineer, frontend-engineer, database-architect, devops-engineer, tech-lead]
-version: "1.0"
+version: "5.4"
 category: validation
 ---
 

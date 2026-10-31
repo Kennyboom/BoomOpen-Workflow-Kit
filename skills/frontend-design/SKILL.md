@@ -35,7 +35,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 | Script | Purpose | Usage |
 |--------|---------|-------|
-| `scripts/ux_audit.py` | UX Psychology & Accessibility Audit | `python scripts/ux_audit.py <project_path>` |
+| `scripts/ux_audit.py` | UX Psychology & Accessibility Audit | `python ~/.gemini/config/skills/frontend-design/scripts/ux_audit.py <project_path>` |
 
 ---
 
@@ -398,7 +398,7 @@ For deeper guidance on specific areas:
 | Skill | When to Use |
 |-------|-------------|
 | **frontend-design** (this) | Before coding - Learn design principles (color, typography, UX psychology) |
-| **[web-design-guidelines](../web-design-guidelines/SKILL.md)** | After coding - Audit for accessibility, performance, and best practices |
+| **[frontend-architecture](../frontend-architecture/SKILL.md)** | After coding - Audit for accessibility, performance, and best practices |
 
 ## Post-Design Workflow
 
@@ -419,7 +419,7 @@ After implementing your design, run the audit:
 
 ---
 
-## 5. Next.js 16+ Modern Form Patterns
+## 11. Next.js 16+ Modern Form Patterns
 
 > [!IMPORTANT]
 > For Next.js 16+ projects, use the native `next/form` component instead of standard HTML `<form>` for all GET-based search/filter operations.

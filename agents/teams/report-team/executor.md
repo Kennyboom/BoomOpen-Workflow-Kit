@@ -4,7 +4,7 @@ role: executor
 team: report-team
 domain: reporting-analytics
 description: "Direct reporting implementer with self-defense capability — gathers data, analyzes, writes reports, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: scouter
 authority: implementation
@@ -48,7 +48,7 @@ Every number is sourced. Every trend is evidence-based. If you submitted it, you
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

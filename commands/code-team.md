@@ -1,6 +1,6 @@
 ---
 description: "🔺 Team Code — Golden Triangle adversarial collaboration for maximum quality coding"
-version: "2.0"
+version: "5.4"
 category: engineering
 execution-mode: execute
 ---

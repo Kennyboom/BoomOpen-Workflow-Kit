@@ -4,7 +4,7 @@ role: executor
 team: research-team
 domain: research/discovery/analysis
 description: "Direct research investigator with self-defense capability — discovers, submits, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: scouter
 authority: investigation
@@ -48,7 +48,7 @@ If you submitted it, you stand behind it. If it has gaps, fill them. If it's sol
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

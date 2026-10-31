@@ -4,7 +4,7 @@ role: executor
 team: docs-team
 domain: documentation
 description: "Direct documentation implementer with self-defense capability — researches, writes, submits, defends, and iterates"
-version: "2.0"
+version: "5.4"
 category: team-role
 base-agent: researcher
 authority: implementation
@@ -50,7 +50,7 @@ If you submitted it, you own it. If it's inaccurate, fix it. If it's correct, pr
 
 ## 📬 MAILBOX PROTOCOL
 
-**Location**: `./reports/{topic}/MAILBOX-{date}.md` — append-only, never edit prior exchanges.
+**Location**: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md` fallback) — append-only, never edit prior exchanges.
 
 | Permission | Scope |
 |------------|-------|

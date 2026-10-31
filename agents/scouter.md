@@ -3,7 +3,7 @@ name: scouter
 description: Principal Codebase Analyst — code exploration and pattern discovery
 profile: "research:exploration"
 handoffs: [planner, tech-lead, researcher, backend-engineer, frontend-engineer]
-version: "1.0"
+version: "5.4"
 category: research
 ---
 
