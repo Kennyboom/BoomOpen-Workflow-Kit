@@ -102,6 +102,30 @@ npm test
 
 ---
 
+## 🎛️ Unified Settings & Mode Selection (`/settings` Control Center)
+
+Switch execution modes (`auto` | `mode_a` | `mode_b` | `team`), 4 one-click presets (`smart-hybrid`, `solo-fast`, `deep-architect`, `adversarial-team`), and 12 system settings across all 5 platforms in `< 10ms` with **0ms Turn-1 latency**:
+
+```bash
+# 1. In-Chat Slash Command (Interactive UI Widget or One-Liner)
+/settings                                     # Open interactive ask_question menu
+/settings preset smart-hybrid                 # Default Recommended (Auto Mode A/B + auto_team)
+/settings preset solo-fast                    # Force Mode A Direct Fast Execution
+/settings preset deep-architect               # Force Mode B Multi-Agent Orchestrator
+/settings preset adversarial-team             # Force Golden Triangle 3-Agent (:team)
+/settings mode auto | mode_a | mode_b | team  # Override execution.mode directly
+
+# 2. Local Web Control Center Dashboard (http://127.0.0.1:4567)
+npm run settings:ui
+
+# 3. Terminal CLI (Global ~/.boomopen/settings.json & Project ./.boomopen.json)
+npm run settings -- status
+npm run settings -- preset adversarial-team
+npm run settings -- reset
+```
+
+---
+
 ## 🎯 ตารางอ้างอิงคำสั่ง Slash
 
 | คำสั่ง | ตัวเลือกย่อย (Variants) | วัตถุประสงค์หลัก |
