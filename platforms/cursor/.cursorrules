@@ -2,12 +2,22 @@ name: BoomOpen Workflow Kit Orchestrator
 description: Smart-Hybrid Multi-Agent Orchestrator (v5.5) — Pragmatic 2-Tier Coding Standards, 2-Mode Gate, DAG Parallel Fan-Out, Direct Plan Dispatch & Warm Sub-agent Reuse.
 alwaysApply: true
 priority: Critical
-commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, brainstorm, ask, code, orchestrate, save, recap]
+commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, brainstorm, ask, code, orchestrate, save, recap, settings]
 ---
 
 # ⚡ BoomOpen Workflow Kit v5.5 (Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
+
+<!-- BOOMOPEN-SETTINGS-START -->
+## 🎛️ ACTIVE USER SETTINGS OVERRIDE (Managed via `/settings` & `~/.boomopen/settings.json`)
+> **PRECEDENCE**: `1. Explicit Turn Command (/cmd:variant, @fast/@deep/@team)` > `2. Workspace ./.boomopen.json` > `3. Active Settings Below` > `4. Default File Rules`.
+- **Active Preset**: `smart-hybrid` | **Execution Mode (`execution.mode`)**: `auto` (`auto` = Mode A when `≤ 3 files` & `1 domain`, else Mode B; `mode_a` = Force Direct Solo Mode unless `:hard`/`:team`/`/orchestrate`; `mode_b` = Force Multi-Agent Orchestrator; `team` = Force Golden Triangle 3-Agent `:team`)
+- **Workflows**: `defaultVariant = auto` (`auto`|`fast`|`hard`|`team`|`ask`) | `naturalLanguageResearchTrigger = auto_team` (`auto_team` routes NL research/ideation to `/brainstorm:team` Golden Triangle | `auto_hard` → `/brainstorm:hard` | `ask_first` | `off`)
+- **Intelligence & Research**: `models.subagentPolicy = quality_first` (`inherit` Pro High default; never `flash_lite`) | `research.depth = 5_lens_deep` | `clarification.style = autonomous_first` | `teams.maxDebateRounds = 3`
+- **Standards & Verification**: `codingStandards.preset = pragmatic` (Soft `400` / Hard `500` lines, `forbidExplicitAny = true`, `warnConsoleLog = true`) | `verification.level = strict_e2e`
+- **Deliverables & Language**: `deliverables.routing = brain_artifacts` (`<appDataDir>\brain\<conversation-id>\` default) | `language.response = auto`
+<!-- BOOMOPEN-SETTINGS-END -->
 
 ---
 
@@ -22,7 +32,7 @@ commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, b
 ## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
 
 - **⚡ MODE A — Direct Execution (TIER 0)**: For simple factual Q&A, explanation, or single-domain changes touching **≤ 3 files** (no `/cmd` and NOT an open-ended research/ideation request), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
-- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows, tasks spanning **> 3 files** / **≥ 2 domains**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*), activate Strict Orchestrator Mode (route research/ideation to `commands/brainstorm-hard.md` and delegate via `runSubagent` / `invoke_subagent` using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
+- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows, tasks spanning **> 3 files** / **≥ 2 domains**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*), activate Strict Orchestrator Mode (route research/ideation by default `auto_team` to `commands/brainstorm-team.md` Golden Triangle, or `commands/brainstorm-hard.md` when `auto_hard`, and delegate via `runSubagent` / `invoke_subagent` using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
 
 ---
 
@@ -52,7 +62,7 @@ REPORTS  = ./reports/{topic}/
 | Input | Route |
 |-------|-------|
 | `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
-| `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap` | `commands/{cmd}.md` |
+| `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap`, `/settings` (`/config`) | `commands/{cmd}.md` (`commands/settings.md` for `/settings` & `/config`) |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`
 **Team variant baseline**: `:team` is supported where `commands/{cmd}-team.md` exists. Deploy uses specialized variants (`check`, `preview`, `production`, `rollback`).

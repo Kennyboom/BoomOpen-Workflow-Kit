@@ -40,17 +40,20 @@ execution-mode: router
 ## ROUTING LOGIC
 
 ```
-IF topic is a product/game/system idea, competitor/market analysis, or deep research request ("nghiên cứu", "phân tích", "đề xuất ý tưởng", "đề xuất thêm", "research", "deep dive"):
-  → Route IMMEDIATELY to /brainstorm:hard (load commands/brainstorm-hard.md and execute Phase 1A + Phase 1B in parallel)
+IF topic is a product/game/system idea, competitor/market analysis, or deep research request ("nghiên cứu", "phân tích", "khám phá ý tưởng", "đề xuất ý tưởng", "đề xuất thêm", "research", "deep dive", "brainstorm"):
+  → Check active `workflows.naturalLanguageResearchTrigger` setting (default: `auto_team`):
+    - IF `auto_team` (DEFAULT): Route IMMEDIATELY to `/brainstorm:team` (`commands/brainstorm-team.md` — Golden Triangle 3-Agent Adversarial Collaboration)
+    - IF `auto_hard`: Route to `/brainstorm:hard` (`commands/brainstorm-hard.md` — 5-Lens Research + Deep Blueprint)
+    - IF `ask_first`: Ask user to choose between `/brainstorm:team`, `/brainstorm:hard`, or `/brainstorm:fast`
 
-IF topic is complex AND maximum adversarial quality with Golden Triangle team collaboration is explicitly requested:
-  → Route to /brainstorm:team
+IF user explicitly specifies `/brainstorm:hard`:
+  → Route to `/brainstorm:hard` (`commands/brainstorm-hard.md`)
 
-IF topic is a quick, narrow single-feature question:
-  → Route to /brainstorm:fast
+IF topic is a quick, narrow single-feature question (or `/brainstorm:fast`):
+  → Route to `/brainstorm:fast` (`commands/brainstorm-fast.md`)
 
 IF unsure:
-  → Default to /brainstorm:hard for thorough research-backed ideation
+  → Default to `/brainstorm:team` (`commands/brainstorm-team.md`) when `naturalLanguageResearchTrigger = auto_team` (or `/brainstorm:hard` when `auto_hard`)
 ```
 
 ---
@@ -60,5 +63,5 @@ IF unsure:
 | Route              | When to Use                                                                 |
 | ------------------ | --------------------------------------------------------------------------- |
 | `/brainstorm:fast` | Quick single-feature ideation                                               |
-| `/brainstorm:hard` | **Default for product/idea/market research**: 5-Lens Research + Deep Blueprint |
-| `/brainstorm:team` | Maximum quality with Golden Triangle adversarial agent team collaboration   |
+| `/brainstorm:hard` | 5-Lens Deep Research + Product Blueprint (`naturalLanguageResearchTrigger = auto_hard`) |
+| `/brainstorm:team` | **Default (`auto_team`)**: Golden Triangle 3-Agent Adversarial Research & Ideation |

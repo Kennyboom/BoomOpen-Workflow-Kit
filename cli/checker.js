@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { CODING_STANDARDS_PRESETS, loadSettings } = require('./settings.js');
 
 const SOFT_FILE_LINES = 400;
 const HARD_FILE_LINES = 500;
@@ -68,13 +69,40 @@ function isLineCountExempt(fileName) {
 }
 
 /**
+ * Resolve coding standards from a preset name, custom object, or default 400/500 limits.
+ */
+function resolveCodingStandards(customStandards) {
+  if (typeof customStandards === 'string' && CODING_STANDARDS_PRESETS[customStandards]) {
+    return CODING_STANDARDS_PRESETS[customStandards];
+  }
+  if (customStandards && typeof customStandards === 'object') {
+    const presetBase =
+      CODING_STANDARDS_PRESETS[customStandards.preset] || CODING_STANDARDS_PRESETS.pragmatic;
+    return {
+      softFileLines: customStandards.softFileLines ?? presetBase.softFileLines,
+      hardFileLines: customStandards.hardFileLines ?? presetBase.hardFileLines,
+      forbidExplicitAny: customStandards.forbidExplicitAny ?? presetBase.forbidExplicitAny,
+      warnConsoleLog: customStandards.warnConsoleLog ?? presetBase.warnConsoleLog,
+    };
+  }
+  return {
+    softFileLines: SOFT_FILE_LINES,
+    hardFileLines: HARD_FILE_LINES,
+    forbidExplicitAny: true,
+    warnConsoleLog: true,
+  };
+}
+
+/**
  * Inspect a single source file against Pragmatic 2-Tier Coding Standards.
  * @param {string} filePath
  * @param {string} baseDir
  * @param {string} [overrideContent]
+ * @param {object|string} [customStandards]
  * @returns {{violations: string[], warnings: string[]}}
  */
-function inspectSourceFile(filePath, baseDir, overrideContent) {
+function inspectSourceFile(filePath, baseDir, overrideContent, customStandards) {
+  const std = resolveCodingStandards(customStandards);
   const relPath = path.relative(baseDir, filePath) || path.basename(filePath);
   const fileName = path.basename(filePath);
   const ext = path.extname(fileName).toLowerCase();
@@ -84,17 +112,18 @@ function inspectSourceFile(filePath, baseDir, overrideContent) {
   const warnings = [];
 
   if (!isLineCountExempt(fileName)) {
-    if (lines.length > HARD_FILE_LINES) {
+    if (lines.length > std.hardFileLines) {
       violations.push(
-        `${relPath}: ${lines.length} lines (exceeds hard ceiling ${HARD_FILE_LINES})`
+        `${relPath}: ${lines.length} lines (exceeds hard ceiling ${std.hardFileLines})`
       );
-    } else if (lines.length > SOFT_FILE_LINES) {
+    } else if (lines.length > std.softFileLines) {
       warnings.push(
-        `${relPath}: ${lines.length} lines (exceeds soft target ${SOFT_FILE_LINES}, OK if single responsibility)`
+        `${relPath}: ${lines.length} lines (exceeds soft target ${std.softFileLines}, OK if single responsibility)`
       );
     }
   }
   if (
+    std.forbidExplicitAny !== false &&
     TS_EXTENSIONS.has(ext) &&
     !fileName.endsWith('.d.ts') &&
     /(?::\s*any\b|\bas\s+any\b|<any>)/.test(content)
@@ -106,7 +135,7 @@ function inspectSourceFile(filePath, baseDir, overrideContent) {
     filePath.includes(`${path.sep}cli${path.sep}`) ||
     fileName.includes('.test.') ||
     fileName.includes('.spec.');
-  if (!isCliOrTest && /\bconsole\.log\s*\(/.test(content)) {
+  if (std.warnConsoleLog !== false && !isCliOrTest && /\bconsole\.log\s*\(/.test(content)) {
     warnings.push(`${relPath}: leftover console.log() detected`);
   }
   return { violations, warnings };
@@ -115,17 +144,24 @@ function inspectSourceFile(filePath, baseDir, overrideContent) {
 /**
  * Run deterministic code quality checks on targetDir.
  * @param {string} targetDir
- * @param {{silent?: boolean}} options
+ * @param {{silent?: boolean, codingStandards?: object|string}} options
  * @returns {{passed: boolean, scannedFiles: number, violations: string[], warnings: string[]}}
  */
 function runCheck(targetDir = process.cwd(), options = {}) {
   const resolvedDir = path.resolve(targetDir);
+  const workspaceConfigPath = path.join(resolvedDir, '.boomopen.json');
+  const activeStandards =
+    options.codingStandards ||
+    (fs.existsSync(workspaceConfigPath)
+      ? loadSettings({ cwd: resolvedDir }).codingStandards
+      : undefined);
+  const std = resolveCodingStandards(activeStandards);
   const files = collectSourceFiles(resolvedDir);
   const violations = [];
   const warnings = [];
 
   for (const filePath of files) {
-    const report = inspectSourceFile(filePath, resolvedDir);
+    const report = inspectSourceFile(filePath, resolvedDir, undefined, std);
     violations.push(...report.violations);
     warnings.push(...report.warnings);
   }
@@ -135,8 +171,8 @@ function runCheck(targetDir = process.cwd(), options = {}) {
     console.log('\n📏 BoomOpen Pragmatic 2-Tier Code Check (v5.5.0)\n' + '─'.repeat(60));
     console.log(`  📁 Target:   ${resolvedDir}`);
     console.log(`  📄 Scanned:  ${files.length} source files`);
-    console.log(`  ❌ Errors:   ${violations.length} (Hard >${HARD_FILE_LINES} lines or explicit 'any')`);
-    console.log(`  ⚠️  Warnings: ${warnings.length} (Soft >${SOFT_FILE_LINES} lines or console.log)`);
+    console.log(`  ❌ Errors:   ${violations.length} (Hard >${std.hardFileLines} lines or explicit 'any')`);
+    console.log(`  ⚠️  Warnings: ${warnings.length} (Soft >${std.softFileLines} lines or console.log)`);
     for (const v of violations) console.log(`     ❌ ${v}`);
     for (const w of warnings) console.log(`     ⚠️  ${w}`);
     console.log('─'.repeat(60));

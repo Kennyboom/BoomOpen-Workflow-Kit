@@ -1,6 +1,6 @@
 # 📚 REFERENCE
 
-> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
+> **VERSION**: 5.5 — Antigravity 2.0 Smart-Hybrid Edition | **PURPOSE**: Fast lookup tables
 
 ---
 
@@ -8,8 +8,8 @@
 
 | Mode | Tier | Trigger Condition | Action |
 |------|------|-------------------|--------|
-| **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked | Execute, test, and verify **directly** (0 subagent overhead, Pragmatic 2-Tier Coding Standards) |
-| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, or `:hard`/`:team` | Activate **Strict Orchestrator Mode**: Direct Plan-to-Executor Dispatch, DAG Parallel Fan-Out, Contract-First `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse (`send_message`) |
+| **⚡ MODE A (Direct)** | **TIER 0** | Q&A, explanation, single-domain fix, or clear change touching **≤ 3 files**, AND no `/cmd` invoked, AND NOT a research/ideation request | Execute, test, and verify **directly** (0 subagent overhead, Pragmatic 2-Tier Coding Standards) |
+| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **> 3 files**, **≥ 2 domains**, architectural design, `:hard`/`:team`, OR natural-language research/ideation (`auto_team` → `/brainstorm:team`) | Activate **Strict Orchestrator Mode**: Direct Plan-to-Executor Dispatch, DAG Parallel Fan-Out, Contract-First `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse (`send_message`) |
 
 ---
 
@@ -43,6 +43,7 @@
 | `/orchestrate` | `orchestrate.md` | Multi-agent domain orchestration |
 | `/save` | `save.md` | Save session state & knowledge to Brain Artifacts / `.brain/` |
 | `/recap` | `recap.md` | Restore session context from Brain Artifacts / `.brain/` |
+| `/settings` (`/config`) | `settings.md` | Unified Settings & Control Center (`preset`, `mode`, `set`, `get`, `reset`, `--ui`) |
 
 ---
 

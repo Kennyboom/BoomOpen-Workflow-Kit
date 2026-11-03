@@ -29,6 +29,19 @@ const os = require('node:os');
 const readline = require('node:readline');
 const { buildCompactSkillIndex, runDoctor } = require('./doctor.js');
 const { runCheck } = require('./checker.js');
+const {
+    loadSettings,
+    saveSettings,
+    setSettingByKey,
+    getSettingByKey,
+    applyPreset,
+    resetSettings,
+    renderActiveSettingsMarkdown,
+    injectSettingsBlockIntoText,
+    syncSettingsToInstalledPlatforms,
+    runSettingsCommand,
+} = require('./settings.js');
+const { startSettingsUiServer } = require('./settings-ui.js');
 
 // ============================================================================
 // Configuration
@@ -180,7 +193,7 @@ const TOOLS = {
 // Core directories to copy for boomopen-workflow-kit framework
 // Note: 'workflows' used to exist but was merged into 'rules'
 // We copy 'commands' to both 'commands' and 'workflows' for backward compatibility
-const CORE_DIRS = ['agents', 'rules', 'documents', 'commands', 'matrix-skills'];
+const CORE_DIRS = ['agents', 'rules', 'documents', 'commands', 'matrix-skills', 'cli'];
 
 // Root files to copy
 const ROOT_FILES = ['README.md', 'SKILL.md'];
@@ -638,6 +651,7 @@ function printSummary(toolName, operation = 'install') {
     console.log('─'.repeat(60));
     
     if (operation === 'install' && verification && verification.success && progressState.errors.length === 0) {
+        syncSettingsToInstalledPlatforms(loadSettings({ homeDir: HOME }), { homeDir: HOME, repoRoot: ROOT });
         console.log('✅ Installation completed successfully!');
     } else if (operation === 'uninstall' && progressState.errors.length === 0) {
         console.log('✅ Uninstallation completed successfully!');
@@ -1582,12 +1596,17 @@ Commands:
   install [tool]     Install for a specific tool (cursor, copilot, antigravity, claude, codex)
   install --all      Install for all supported tools
   uninstall [tool]   Uninstall from a specific tool
+  settings [subcmd]  Configure workflow presets, execution mode, or launch Web UI (--ui)
+  doctor             Run framework health & entrypoint diagnostics
+  check [dir]        Audit source files against Pragmatic 2-Tier Coding Standards
   list               List supported tools and installation status
   help               Show this help message
 
 Examples:
   npx boomopen-workflow-kit install cursor
   npx boomopen-workflow-kit install --all
+  npx boomopen-workflow-kit settings preset adversarial-team
+  npx boomopen-workflow-kit settings --ui --port 4567
   npx boomopen-workflow-kit uninstall copilot
   npx boomopen-workflow-kit list
 `);
@@ -1803,6 +1822,12 @@ async function main() {
             break;
         }
 
+        case 'settings':
+        case 'config': {
+            await runSettingsCommand(args.slice(1), { homeDir: HOME, cwd: process.cwd(), repoRoot: ROOT });
+            break;
+        }
+
         default:
             console.log(`❌ Unknown command: ${command}`);
             printUsage();
@@ -1826,6 +1851,17 @@ module.exports = {
     buildCompactSkillIndex,
     runDoctor,
     runCheck,
+    loadSettings,
+    saveSettings,
+    setSettingByKey,
+    getSettingByKey,
+    applyPreset,
+    resetSettings,
+    renderActiveSettingsMarkdown,
+    injectSettingsBlockIntoText,
+    syncSettingsToInstalledPlatforms,
+    runSettingsCommand,
+    startSettingsUiServer,
 };
 
 

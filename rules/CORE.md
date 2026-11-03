@@ -26,10 +26,12 @@
 │       or adversarial Golden Triangle review (:hard / :team).                  │
 │    4. Natural-Language Deep Research, Product/Game/System Ideation,           │
 │       Competitor Analysis, or Architecture Discovery ("nghiên cứu", "phân     │
-│       tích chuyên sâu", "đánh giá", "khám phá ý tưởng", "đề xuất thêm",       │
-│       "research", "deep dive", "analyze", "brainstorm", "investigate",        │
-│       "audit") — EVEN IF 0 code files are modified and no /cmd is typed       │
-│       → route to `commands/brainstorm-hard.md` (or `commands/plan-hard.md`).  │
+│       tích chuyên sâu", "đánh giá", "khám phá ý tưởng", "đề xuất ý tưởng",   │
+│       "đề xuất thêm", "research", "deep dive", "analyze", "brainstorm",       │
+│       "investigate", "audit") — EVEN IF 0 code files are modified and no      │
+│       /cmd is typed → route by default (`naturalLanguageResearchTrigger =     │
+│       "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team`      │
+│       Golden Triangle), or `commands/brainstorm-hard.md` when `"auto_hard"`.  │
 │  • Action: Activate Strict Orchestrator Mode — load workflow & PHASES/AGENTS  │
 │    on-demand, and delegate phases to isolated specialist subagents using      │
 │    DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Contract-First     │
@@ -83,6 +85,7 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 | `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/brainstorm`, `/ask`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/orchestrate`, `/save`, `/recap` | `commands/orchestrate.md`, `commands/save.md`, `commands/recap.md` |
+| `/settings`, `/config` | `commands/settings.md` (Unified Settings & Control Center: `ask_question` UI, CLI & `--ui` Web Dashboard) |
 
 **Variant syntax**: `/cmd:variant`, `/cmd/variant`, or `/cmd-variant` → `commands/{cmd}-{variant}.md` (e.g., `/docs/core` = `/docs:core` → `commands/docs-core.md`).
 

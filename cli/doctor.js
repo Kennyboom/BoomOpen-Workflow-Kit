@@ -1,6 +1,13 @@
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const {
+  SETTINGS_MARKER_START,
+  SETTINGS_MARKER_END,
+  DEFAULT_SETTINGS,
+  loadSettings,
+  renderActiveSettingsMarkdown,
+} = require('./settings.js');
 
 const MAX_ENTRY_LINES = 350;
 const MAX_DOC_LINES = 450;
@@ -164,6 +171,33 @@ function checkSkillsManifest(homeDir) {
 }
 
 /**
+ * Verify Settings Engine and active configuration profile.
+ */
+function checkSettingsIntegrity(homeDir) {
+  try {
+    const active = loadSettings({ homeDir });
+    const block = renderActiveSettingsMarkdown(active);
+    const valid =
+      DEFAULT_SETTINGS.workflows.naturalLanguageResearchTrigger === 'auto_team' &&
+      block.startsWith(SETTINGS_MARKER_START) &&
+      block.endsWith(SETTINGS_MARKER_END);
+    return {
+      name: 'Settings Engine & Active Profile',
+      passed: valid,
+      detail: valid
+        ? `preset=${active.preset}, mode=${active.execution.mode}, nlResearch=${active.workflows.naturalLanguageResearchTrigger}`
+        : 'Invalid settings engine state',
+    };
+  } catch (err) {
+    return {
+      name: 'Settings Engine & Active Profile',
+      passed: false,
+      detail: err instanceof Error ? err.message : String(err),
+    };
+  }
+}
+
+/**
  * Run full BoomOpen Workflow Kit doctor diagnostics.
  */
 function runDoctor(options = {}) {
@@ -186,6 +220,7 @@ function runDoctor(options = {}) {
       passed: compactData.totalSkills >= MIN_COMPACT_SKILLS,
       detail: `${compactData.totalSkills} skills indexed`,
     },
+    checkSettingsIntegrity(homeDir),
   ];
   const healthy = checks.every((c) => c.passed);
   if (!options.silent) {
