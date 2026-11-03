@@ -44,8 +44,8 @@ handoffs:
 
 ## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
 
-- **⚡ MODE A — Direct Execution (TIER 0)**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files** with no `/cmd` → execute, test, and verify **directly**.
-- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: Explicit `/cmd` workflow OR task spanning **> 3 files** / **≥ 2 domains** → activate **Strict Orchestrator Mode** (`Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse via `send_message`).
+- **⚡ MODE A — Direct Execution (TIER 0)**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files** with no `/cmd` (and NOT an open-ended research/ideation request) → execute, test, and verify **directly**.
+- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: Explicit `/cmd` workflow, task spanning **> 3 files** / **≥ 2 domains**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) → activate **Strict Orchestrator Mode** (`Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse via `send_message`). For web research on Antigravity, register `define_subagent(Name: "researcher" | "brainstormer")` or use `TypeName: "self"` (never built-in `TypeName: "research"` which has no network access).
 
 ---
 

@@ -1,6 +1,6 @@
 # 🤖 AGENTS
 
-> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Intelligent Work Distribution, Quality-First Model Policy, Warm Sub-agent Reuse & File Ownership Locks
+> **VERSION**: 5.5 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When delegating to agents in Mode B | **PURPOSE**: Intelligent Work Distribution, Quality-First Model Policy, Warm Sub-agent Reuse & File Ownership Locks
 
 ---
 
@@ -66,15 +66,16 @@ Every `invoke_subagent` prompt or `send_message` task brief in Mode B **MUST** i
 ## TIERED EXECUTION (SMART COMPLEXITY THRESHOLD GATE)
 
 ### TIER 0: Mode A Direct Execution (Fast Path — Default for Simple Tasks)
-- **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit `/cmd` workflow was invoked.
+- **When**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, **AND** no explicit `/cmd` workflow was invoked, **AND** NOT an open-ended research, product ideation, or architecture discovery request.
 - **Action**: Primary agent executes, tests, and verifies directly (0 subagent latency), enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure `~200–350 lines` target, `≤ 400–450` cohesive soft ceiling) and **Persistent Testing & Bug Fixing**.
 
-### TIER 1: Mode B Native Sub-agent Delegation (MANDATORY for Complex Tasks & `/cmd`)
+### TIER 1: Mode B Native Sub-agent Delegation (MANDATORY for Complex Tasks, Deep Research/Ideation & `/cmd`)
 1. **Prepare Structured Handoff Packet** (Mission, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, Verification).
 2. **Fast 2-Step Skills Analysis**: Output `"🎯 Skills Analysis: {simple|complex} → {using X | skipping}"`.
 3. **Dispatch or Reuse Sub-agent(s)**:
    - If role is already in `active_subagents` registry → `send_message(Recipient: conversationId, Message: packet)`.
    - If role is not yet spawned → `define_subagent` (if custom) + `invoke_subagent` (`Model: "inherit"`, `Workspace: "inherit" | "branch"`), then save `conversationId` in `active_subagents`.
+   - **⚠️ Antigravity Web-Search Subagent Rule**: Never use Antigravity's built-in `TypeName: "research"` subagent for live web/competitor/market research (it runs in a sandbox with `no network access` and cannot call `search_web`). Instead, define `researcher` / `brainstormer` via `define_subagent(Name: "researcher", EnableWriteTools: true, ...)` or invoke `TypeName: "self"` so the subagent inherits full `search_web` access.
    - Launch independent DAG phases concurrently in a **single turn** and join via **Reactive Async Wakeup** (never poll in a loop).
    - Cross-platform fallback alias: `runSubagent(agent_name, packet)`.
 4. **Verify**: Check exit criteria and run `node cli/install.js check <dir>` for code changes.

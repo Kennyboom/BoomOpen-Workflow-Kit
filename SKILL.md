@@ -12,15 +12,16 @@ description: BoomOpen Workflow Kit (v5.5 Antigravity 2.0 Smart-Hybrid Edition) �
 ## 🚦 Smart Complexity Threshold Gate (Mode A vs. Mode B)
 
 ### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
-- **When**: Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, AND no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked.
+- **When**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, **AND** no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked, **AND** NOT an open-ended research, product ideation, or architecture discovery request.
 - **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
-  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent`, `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup), using:
+  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** — whenever the user asks in natural language to research, analyze, or propose an idea/product/architecture (*"nghiên cứu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"brainstorm"*, *"investigate"*, *"audit"*), **EVEN IF 0 code files are modified and no `/cmd` is typed** → route to `commands/brainstorm-hard.md` (or `commands/plan-hard.md`) and launch parallel subagents (`researcher` + `brainstormer` + `scouter`/domain specialist).
+- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent` (never use built-in `TypeName: "research"` for web research as it has no network access), `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup), using:
   - **DAG-Aware Parallel Fan-Out** for independent phases
   - **Direct Plan-to-Executor Dispatch** (no middleman `tech-lead` hop once `PLAN` exists)
   - **Contract-First Parallel Handoffs (`SHARED_CONTRACT` + disjoint `OWNED_FILES`)**

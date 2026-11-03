@@ -1,17 +1,18 @@
 ---
-description: ⚡⚡⚡ Deep Ideation — Research-backed exploration
+description: ⚡⚡⚡ Deep Ideation — Multi-Agent 5-Lens Research, Competitor Teardown & Product/Architecture Synthesis
 version: "5.5"
 category: planning
 execution-mode: execute
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+> **📂 Deliverable Routing (v5.5)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ---
 
-# /brainstorm:hard — Deep Ideation
+# /brainstorm:hard — Deep Multi-Agent Research & Ideation
 
-> **MISSION**: Generate comprehensive ideas through research, analysis, and systematic exploration.
+> **MISSION**: Conduct exhaustive multi-agent research (5-Lens market/competitor teardown, technical architecture, unit economics at scale, and pre-mortem risks) and synthesize a complete, decision-ready Product & Architecture Blueprint (`RESEARCH-{topic}.md` + `BRAINSTORM-{topic}.md`).
+> **AUTO-TRIGGERED BY NATURAL LANGUAGE**: Whenever the user asks in natural language to *"nghiên cứu"*, *"phân tích chuyên sâu"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng / đề xuất thêm"*, *"research"*, *"deep dive"*, or *"brainstorm"* an idea, product, game, or system architecture.
 
 <topic>$ARGUMENTS</topic>
 
@@ -21,29 +22,24 @@ execution-mode: execute
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
+1. `CORE.md` — Identity, 2-Mode Gate, Laws, Routing
+2. `PHASES.md` — DAG Parallel Fan-Out & Phase Output Format
+3. `AGENTS.md` — Tiered Execution, `Model: "inherit"`, Antigravity Web-Search Subagent Rule
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files.
 
 ---
 
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference: AGENTS.md (Tiered Execution)`
+## 🔀 TIERED EXECUTION & ANTIGRAVITY WEB-SEARCH SUBAGENT RULE (MANDATORY)
 
 ```yaml
 tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
+  principle: "Sub-agent FIRST (Tier 1, Model: inherit). EMBODY ONLY on system failure (Tier 2)."
+  antigravity_web_search_rule:
+    - "⚠️ CRITICAL: Antigravity's built-in `TypeName: 'research'` subagent runs in a read-only sandbox with NO network access (cannot call `search_web`)."
+    - "✅ ALWAYS register custom subagents via `define_subagent(Name: 'researcher' | 'brainstormer', EnableWriteTools: true, ...)` or invoke `TypeName: 'self'` so subagents have full `search_web` and artifact writing capabilities."
+  dag_parallel_fan_out:
+    - "Launch Phase 1A (`researcher`) and Phase 1B (`scouter` for existing repo OR domain specialist like `game-engineer`/`tech-lead` for greenfield ideas) CONCURRENTLY in a single turn."
 ```
 
 ---
@@ -52,172 +48,100 @@ tiered_execution:
 
 ```yaml
 deliverable_files:
-  brainstormer_clarify: # Chat output OK for questions
-  researcher: "./reports/{topic}/researchers/RESEARCH-{topic}"
-  scouter: "./reports/{topic}/scouts/SCOUT-{topic}"
-  brainstormer_synthesis: "./reports/{topic}/brainstorms/BRAINSTORM-{topic}" # MANDATORY OUTPUT
+  researcher: "<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}.md" # (or ./reports/{topic}/researchers/RESEARCH-{topic}.md)
+  scouter_or_specialist: "<appDataDir>\\brain\\<conversation-id>\\SCOUT-{topic}.md" # (optional for greenfield if merged into RESEARCH, mandatory if codebase exists)
+  brainstormer_synthesis: "<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}.md" # MANDATORY FINAL BLUEPRINT
 
 enforcement:
-  - Research phase MUST create file
-  - Final synthesis MUST create file
-  - Synthesis file is the deliverable for downstream phases
+  - Phase 1A (`researcher`) MUST execute 5–10+ web searches across the 5 Mandatory Lenses and create `RESEARCH-{topic}.md`
+  - Phase 2 (`brainstormer`) MUST read `RESEARCH-{topic}.md` (and `SCOUT-{topic}.md`) and create `BRAINSTORM-{topic}.md`
 ```
 
-All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
-**⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
+All deliverables in `<appDataDir>\brain\<conversation-id>\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you (technical terms in English).
 
 ---
 
-## ⛔ ABSOLUTE PROHIBITION — NO CODE
+## ⛔ ABSOLUTE PROHIBITION — NO APPLICATION CODE
 
-> **🔴 THIS WORKFLOW PRODUCES REPORTS ONLY. NO CODE.**
+> **🔴 THIS WORKFLOW PRODUCES DEEP RESEARCH & PRODUCT/ARCHITECTURE BLUEPRINTS ONLY. NO APPLICATION CODE.**
 >
-> - ❌ NEVER write implementation code (TypeScript, Python, Rust, etc.)
-> - ❌ NEVER modify source files
-> - ❌ NEVER run build/test commands
-> - ❌ NEVER auto-implement findings or auto-transition to `/code`, `/cook`, `/fix`
-> - ✅ ONLY produce report/analysis files in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`)
-> - ✅ ONLY create research/ideation documents
+> - ❌ NEVER write application implementation code or modify project source files
+> - ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` without explicit user approval
+> - ✅ ONLY produce exhaustive `RESEARCH-{topic}.md`, `SCOUT-{topic}.md`, and `BRAINSTORM-{topic}.md` artifacts
+
+---
+
+## 🎭 Phase 1 (DAG Parallel Fan-Out): 5-LENS DEEP RESEARCH + ARCHITECTURE/CODEBASE SCOUTING
+
+Launch **Phase 1A (`researcher`)** and **Phase 1B (`scouter` or Domain Specialist)** concurrently in a **single turn** (`Model: "inherit"`):
+
+### 🔬 Phase 1A: 5-Lens Market, Competitor & Technical Deep Dive (`researcher`)
+
+| Attribute | Value |
+| --------- | ----- |
+| **Agent** | `researcher` (`Model: "inherit"`, registered via `define_subagent` or `TypeName: "self"` for full `search_web` access) |
+| **Goal**  | Execute 5–10+ targeted web searches across the 5 Mandatory Lenses and write `RESEARCH-{topic}.md` |
+
+**Mandatory 5 Lenses for `researcher`** (from `agents/researcher.md`):
+1. **Lens 1 — Phenomenon & Behavioral Psychology Teardown** (Hook Model: Trigger → Action → Variable Reward → Investment, cultural/viral hooks).
+2. **Lens 2 — Competitor & Benchmark Matrix (Minimum 5 Benchmarks)** (local & global competitors, core loops, monetization, and **fatal weaknesses**).
+3. **Lens 3 — Deep Technical & System Architecture** (rendering/frontend, realtime multiplayer/state sync, database/caching, anti-cheat/security).
+4. **Lens 4 — Unit Economics, Latency & Cost Modeling at Scale** (concrete server + bandwidth + AI token cost math at 1,000 CCU / 10,000 DAU, plus 80–90% cost optimization via Hybrid Rule Engine + targeted LLM).
+5. **Lens 5 — Pre-Mortem Failure Modes & Risk Mitigation** (why 90% of similar projects fail at D7/D30 and concrete countermeasures).
+
+**Exit Criteria (Phase 1A):**
+- [ ] `RESEARCH-{topic}.md` created in `<appDataDir>\brain\<conversation-id>\`
+- [ ] ≥ 5 real-world competitors/benchmarks analyzed in a comparison matrix
+- [ ] Concrete architecture trade-offs and unit economics / cost math at scale documented
+- [ ] Primary sources cited with URLs
+
+---
+
+### 🧭 Phase 1B: Codebase Scouting OR Domain Specialist Architecture Audit (`scouter` / `game-engineer` / `tech-lead`)
+
+| Attribute | Value |
+| --------- | ----- |
+| **Agent** | `scouter` (if existing codebase) OR Domain Specialist (`game-engineer` / `tech-lead` / `database-architect` for greenfield product/game ideation) |
+| **Goal**  | Map existing repo constraints OR design domain-specific technical mechanics (`SCOUT-{topic}.md`) |
+
+- **If workspace has an existing codebase**: Spawn `scouter` to map architecture, reusable modules, schemas, and integration points into `SCOUT-{topic}.md`.
+- **If greenfield idea (e.g., new 3D game, new SaaS platform, new AI system)**: Spawn the matching domain specialist (`game-engineer` for games/3D worlds, `tech-lead` for SaaS/distributed systems) in parallel with `researcher` to audit rendering budgets (WebGPU/Three.js, mobile FPS/battery), multiplayer state authority, and data schema constraints into `SCOUT-{topic}.md`.
+
+**Exit Criteria (Phase 1B):**
+- [ ] `SCOUT-{topic}.md` created with concrete technical constraints, architecture diagrams, and performance/security guardrails
+
+---
+
+## 🎭 Phase 2: DEEP PRODUCT, KILLER FEATURES & ARCHITECTURE SYNTHESIS (`brainstormer`)
+
+| Attribute        | Value |
+| ---------------- | ----- |
+| **Agent**        | `brainstormer` (`Model: "inherit"`) |
+| **Goal**         | Synthesize `RESEARCH-{topic}.md` + `SCOUT-{topic}.md` into a comprehensive `BRAINSTORM-{topic}.md` blueprint |
+| **Prerequisite** | Wait for Phase 1A (`RESEARCH-{topic}.md`) and Phase 1B (`SCOUT-{topic}.md`) to complete |
+
+**Mandatory Sections in `BRAINSTORM-{topic}.md`** (from `agents/brainstormer.md`):
+1. **Vision, Cultural Wave & Unfair Positioning**
+2. **Core Loop & Retention Engine (Micro Loop 1–5m → Daily D1–D7 → Macro/Endgame D30+ → Viral K-Factor Engine)**
+3. **5–7 Killer Features (Counter-Positioning vs. Competitors, exact UX mechanics, viral shareability, and low-cost technical implementation)**
+4. **Core Domain Entities (8–12 entities), State Machines, Economy Sink/Faucet Balance & Edge Cases**
+5. **Recommended Production Tech & Hybrid AI Architecture**
+6. **Phased Delivery Roadmap (Phase 1 Viral MVP → Phase 2 Social/Depth → Phase 3 Scale)**
+
+**Exit Criteria (Phase 2):**
+- [ ] `BRAINSTORM-{topic}.md` created at `<appDataDir>\brain\<conversation-id>\BRAINSTORM-{topic}.md`
+- [ ] 5–7 Killer Features designed with concrete mechanics and cost/feasibility proof
+- [ ] Complete Core Loop (D1/D7/D30) and 8+ Domain Entities documented
+- [ ] Phased MVP → V1 → V2 roadmap defined
+
+---
+
+## ⛔ HARD STOP — PRESENT ARTIFACTS & AWAIT USER DECISION
+
+> **WORKFLOW COMPLETE. DO NOT WRITE CODE AUTOMATICALLY.**
 >
-> If user wants implementation after research, they must EXPLICITLY invoke another workflow.
-
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct Plan-to-Executor Dispatch** (`Model: "inherit"`), and **Stateful Warm Sub-agent Reuse** (`send_message`) per `rules/PHASES.md` (v5.5).
-
----
-
-## 🎭 Phase 1: REQUIREMENTS DISCOVERY
-
-| Attribute | Value                           |
-| --------- | ------------------------------- |
-| **Agent** | `brainstormer`                  |
-| **Goal**  | Deep requirements clarification |
-
-### ⚡ ADAPTIVE EXECUTION
-
-**IF platform supports subagents:**
-
-> Delegate to `brainstormer` subagent. Do NOT read agent file directly.
-
-**ELSE (EMBODY fallback):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Apply methodology from agent file.
-
-**Exit Criteria:**
-
-- [ ] Requirements fully understood
-- [ ] Stakeholders identified
-- [ ] Constraints documented
-- [ ] Success metrics defined
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol (Socratic questioning, assumption surfacing)
-
----
-
-## 🎭 Phase 2: RESEARCH
-
-| Attribute | Value                                |
-| --------- | ------------------------------------ |
-| **Agent** | `researcher`                         |
-| **Goal**  | Research best practices and patterns |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `researcher`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] — Requires logged system error justification.
-
-**MANDATORY**: CREATE `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}` (or `./reports/{topic}/researchers/RESEARCH-{topic}`)
-
-**Exit Criteria:**
-
-- [ ] Research file created
-- [ ] Industry patterns researched
-- [ ] Best practices documented
-- [ ] Sources cited
-- [ ] **METHODOLOGY CHECK**: Output aligns with `researcher` Thinking Protocol (sources cited, cross-referenced, evidence-based)
-
----
-
-## 🎭 Phase 3: CODEBASE ANALYSIS
-
-| Attribute | Value                                  |
-| --------- | -------------------------------------- |
-| **Agent** | `scouter`                              |
-| **Goal**  | Map existing architecture and patterns |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
-
-**Exit Criteria:**
-
-- [ ] Architecture understood
-- [ ] Existing patterns documented
-- [ ] Integration points identified
-- [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol (file locations, patterns as constraints)
-
----
-
-## 🎭 Phase 4: SOLUTION SYNTHESIS
-
-| Attribute        | Value                                                                                  |
-| ---------------- | -------------------------------------------------------------------------------------- |
-| **Agent**        | `brainstormer`                                                                         |
-| **Goal**         | Synthesize ideas with trade-off analysis                                               |
-| **Prerequisite** | READ `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}` (or `./reports/{topic}/researchers/RESEARCH-{topic}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{topic}` (or `./reports/{topic}/scouts/SCOUT-{topic}`) |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `brainstormer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
-
-**MANDATORY**:
-
-- READ all prior phase deliverables
-- CREATE `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`)
-
-**Exit Criteria:**
-
-- [ ] Brainstorm file created at `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`)
-- [ ] Ideas synthesized incorporating research
-- [ ] Trade-offs analyzed
-- [ ] Recommendations provided
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol (structured analysis, trade-off documentation)
-
----
-
-## ⛔ HARD STOP — AWAIT USER DECISION
-
-> **WORKFLOW COMPLETE. DO NOT PROCEED FURTHER.**
->
-> Present deliverable files to user and STOP. Wait for explicit user command.
->
-> Suggested next steps (USER must explicitly choose):
-> 1. ✅ Proceed with recommendation
-> 2. 📋 `/plan:hard` → Detailed planning
-> 3. 🏗️ `/code` or `/cook` → Build
-> 4. 🔄 Iterate → Refine based on feedback
->
-> **⛔ DO NOT auto-transition to any workflow. YIELD control to user.**
+> Present clickable links to `RESEARCH-{topic}.md`, `SCOUT-{topic}.md`, and `BRAINSTORM-{topic}.md`, highlight the top breakthroughs, and offer next steps:
+> 1. 📋 `/plan:hard` → Decompose the approved MVP into an actionable multi-agent engineering plan (`PLAN-{topic}.md`)
+> 2. 🎨 `/design:hard` → Create the UI/UX & 3D visual design system (`DESIGN-{topic}.md`)
+> 3. 🚀 `/cook:hard` → End-to-end multi-agent implementation of the MVP
+> 4. 🔄 Refine specific Killer Features or mechanics based on user feedback

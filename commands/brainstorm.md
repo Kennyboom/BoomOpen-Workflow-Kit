@@ -1,13 +1,13 @@
 ---
-description: 💡 Brainstorm Router — Route to ideation workflows
+description: 💡 Brainstorm Router — Route to ideation & deep research workflows
 version: "5.5"
 category: planning
 execution-mode: router
 ---
 
-# /brainstorm — Ideation Router
+# /brainstorm — Ideation & Deep Research Router
 
-> **ROUTER DIRECTIVE**: Analyze ideation need and route to appropriate brainstorming workflow.
+> **ROUTER DIRECTIVE**: Analyze ideation/research need and route to the appropriate brainstorming workflow.
 
 <topic>$ARGUMENTS</topic>
 
@@ -16,9 +16,9 @@ execution-mode: router
 ## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. CORE.md — Identity, Laws, Routing  
-2. PHASES.md — Phase Execution  
-3. AGENTS.md — Tiered Execution  
+1. `CORE.md` — Identity, Laws, Routing
+2. `PHASES.md` — Phase Execution & DAG Parallel Fan-Out
+3. `AGENTS.md` — Tiered Execution & Antigravity Web-Search Subagent Rule
 
 **⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
 
@@ -26,57 +26,39 @@ execution-mode: router
 
 ## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
 
-> ⛔ **ALL brainstorm workflows produce REPORTS ONLY. NO CODE.**
+> ⛔ **ALL brainstorm workflows produce REPORTS/BLUEPRINTS ONLY. NO APPLICATION CODE.**
 >
-> If the user's request contains ANY of these keywords, the workflow is RESEARCH-ONLY:
-> - "nghiên cứu", "phân tích", "kiểm tra", "đánh giá", "audit", "review"
-> - "research", "analyze", "study", "investigate", "explore"
+> If the user's request contains ANY of these keywords, the workflow is RESEARCH/IDEATION-ONLY:
+> - "nghiên cứu", "phân tích", "kiểm tra", "đánh giá", "khám phá ý tưởng", "đề xuất ý tưởng", "đề xuất thêm", "audit", "review"
+> - "research", "analyze", "study", "investigate", "explore", "deep dive", "brainstorm"
 >
 > ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` after completing brainstorm.
-> ✅ Output deliverable files and STOP. Wait for user's explicit next command.
+> ✅ Output deliverable files (`RESEARCH-{topic}.md`, `SCOUT-{topic}.md`, `BRAINSTORM-{topic}.md`) and STOP. Wait for user's explicit next command.
 
 ---
 
 ## ROUTING LOGIC
 
 ```
-IF topic is clear (quick ideas, simple exploration):
-  → Route to /brainstorm:fast
+IF topic is a product/game/system idea, competitor/market analysis, or deep research request ("nghiên cứu", "phân tích", "đề xuất ý tưởng", "đề xuất thêm", "research", "deep dive"):
+  → Route IMMEDIATELY to /brainstorm:hard (load commands/brainstorm-hard.md and execute Phase 1A + Phase 1B in parallel)
 
-IF topic is complex (research needed, deep analysis):
-  → Route to /brainstorm:hard
-
-IF topic is complex AND maximum quality with team collaboration needed:
+IF topic is complex AND maximum adversarial quality with Golden Triangle team collaboration is explicitly requested:
   → Route to /brainstorm:team
 
+IF topic is a quick, narrow single-feature question:
+  → Route to /brainstorm:fast
+
 IF unsure:
-  → Default to /brainstorm:fast
+  → Default to /brainstorm:hard for thorough research-backed ideation
 ```
 
 ---
 
 ## AVAILABLE ROUTES
 
-| Route              | When to Use                            |
-| ------------------ | -------------------------------------- |
-| `/brainstorm:fast` | Quick ideation, simple exploration     |
-| `/brainstorm:hard` | Research-backed ideation with analysis |
-| `/brainstorm:team` | Maximum quality with parallel agent team collaboration |
-
----
-
-## PRESENT OPTIONS
-
-```markdown
-## 💡 Brainstorm Mode Selection
-
-**Topic**: [parsed topic]
-
-**Choose workflow:**
-
-1. ⚡ **Fast** → `/brainstorm:fast` — Quick ideation
-2. ⚡⚡⚡ **Hard** → `/brainstorm:hard` — Deep exploration
-3. 👥 **Team** → `/brainstorm:team` — Full team collaboration (parallel agents, maximum quality)
-
-⏳ Awaiting selection...
-```
+| Route              | When to Use                                                                 |
+| ------------------ | --------------------------------------------------------------------------- |
+| `/brainstorm:fast` | Quick single-feature ideation                                               |
+| `/brainstorm:hard` | **Default for product/idea/market research**: 5-Lens Research + Deep Blueprint |
+| `/brainstorm:team` | Maximum quality with Golden Triangle adversarial agent team collaboration   |

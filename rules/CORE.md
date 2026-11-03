@@ -1,6 +1,6 @@
 # ⚡ CORE RULES — SMART-HYBRID ORCHESTRATOR PROTOCOL
 
-> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration & Pragmatic 2-Tier Coding Standards
+> **VERSION**: 5.5 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when **Mode B** or `/cmd` is triggered | **PURPOSE**: Single source of truth for Multi-Agent Orchestration & Pragmatic 2-Tier Coding Standards
 
 ---
 
@@ -9,8 +9,9 @@
 ```
 ┌───────────────────────────────────────────────────────────────────────────────┐
 │  ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)  │
-│  • When: Q&A, code explanation, single-domain bug fixes, or clear changes     │
-│    touching ≤ 3 files, AND no explicit /cmd workflow was invoked.             │
+│  • When: Simple factual Q&A, code explanation, single-domain bug fixes, or    │
+│    clear changes touching ≤ 3 files, AND no explicit /cmd workflow was        │
+│    invoked, AND NOT an open-ended research / product ideation request.        │
 │  • Action: Primary agent executes, tests, and verifies DIRECTLY (0 subagent   │
 │    cold-start latency, 0 extra rule reads, 0 report file clutter), while      │
 │    enforcing Pragmatic 2-Tier Coding Standards (Tier 1 strict type/error      │
@@ -19,10 +20,16 @@
 │  🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)            │
 │  • When ANY of the following is true:                                         │
 │    1. User explicitly invokes a workflow command (/cook, /fix, /plan:hard,    │
-│       /review:team, /docs:core, /orchestrate, etc.).                          │
+│       /brainstorm:hard, /review:team, /docs:core, /orchestrate, etc.).        │
 │    2. Task spans > 3 files or ≥ 2 domains (e.g., DB + Backend + Frontend).    │
 │    3. Task requires architectural design, complex cross-module debugging,     │
 │       or adversarial Golden Triangle review (:hard / :team).                  │
+│    4. Natural-Language Deep Research, Product/Game/System Ideation,           │
+│       Competitor Analysis, or Architecture Discovery ("nghiên cứu", "phân     │
+│       tích chuyên sâu", "đánh giá", "khám phá ý tưởng", "đề xuất thêm",       │
+│       "research", "deep dive", "analyze", "brainstorm", "investigate",        │
+│       "audit") — EVEN IF 0 code files are modified and no /cmd is typed       │
+│       → route to `commands/brainstorm-hard.md` (or `commands/plan-hard.md`).  │
 │  • Action: Activate Strict Orchestrator Mode — load workflow & PHASES/AGENTS  │
 │    on-demand, and delegate phases to isolated specialist subagents using      │
 │    DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Contract-First     │
@@ -90,7 +97,8 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent (shared context, fallback only) |
 
 ### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & Intelligent Dispatch (TIER 1)
-- `define_subagent`: Define specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, etc.) with `EnableWriteTools: true/false`.
+- `define_subagent`: Define specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, `brainstormer`, etc.) with `EnableWriteTools: true/false`.
+- **⚠️ Antigravity Web-Search Subagent Rule**: Antigravity's built-in `TypeName: "research"` subagent runs in a read-only sandbox with **no network access** (cannot call `search_web`). For web/market/competitor/documentation research, **ALWAYS** register `define_subagent(Name: "researcher" | "brainstormer", EnableWriteTools: true, ...)` or invoke `TypeName: "self"` so the subagent has full `search_web` access.
 - `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet with `OWNED_FILES`, `READ_ONLY_FILES`, `SHARED_CONTRACT`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`). Record `conversationId` in the **Active Sub-agent Session Registry**.
 - `send_message`: **Warm Sub-agent Reuse** — multi-turn communication with running or completed sub-agents by `conversationId` (0s cold-start latency, 100% preserved file context), powered by **Reactive Async Wakeup** (never poll in a loop).
 - **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, the Orchestrator dispatches tasks directly to execution engineers without a middleman `tech-lead` hop.

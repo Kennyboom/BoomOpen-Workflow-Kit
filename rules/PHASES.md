@@ -1,6 +1,6 @@
 # 🎭 PHASES
 
-> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when running Mode B workflow phases | **PURPOSE**: DAG-Aware Parallel Fan-Out, Contract-First Dispatch, Direct Plan Execution & Warm Sub-agent Reuse
+> **VERSION**: 5.5 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: On-demand when running Mode B workflow phases | **PURPOSE**: DAG-Aware Parallel Fan-Out, Contract-First Dispatch, Direct Plan Execution & Warm Sub-agent Reuse
 
 ---
 
@@ -29,9 +29,11 @@ Phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of depen
 │  🔀 1. PARALLEL FAN-OUT (When Phases Are Independent)                         │
 │  • Launch independent phases concurrently in a SINGLE turn via multiple       │
 │    invoke_subagent calls (Model: "inherit") and join via Reactive Wakeup:     │
-│    - Discovery (/cook:hard, /plan:hard, /fix:hard, /ask:hard, /test:hard):    │
-│      Launch `researcher` + `scouter` (or `debugger` + `researcher`, or        │
-│      `tester` + `scouter`) together.                                          │
+│    - Discovery (/brainstorm:hard, /cook:hard, /plan:hard, /fix:hard,          │
+│      /ask:hard, /test:hard):                                                  │
+│      Launch `researcher` + `scouter` (or `researcher` + domain specialist     │
+│      like `game-engineer`/`tech-lead` for greenfield ideation) together in    │
+│      a single turn.                                                           │
 │    - 4-Way Review (/review:hard):                                             │
 │      Launch `tech-lead` + `reviewer` + `security-engineer` +                  │
 │      `performance-engineer` in parallel in a single turn.                     │

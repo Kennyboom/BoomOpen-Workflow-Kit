@@ -21,8 +21,8 @@ commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, b
 
 ## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
 
-- **⚡ MODE A — Direct Execution (TIER 0)**: For Q&A, explanation, or simple changes touching **≤ 3 files** (no `/cmd`), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
-- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows or tasks spanning **> 3 files** / **≥ 2 domains**, activate Strict Orchestrator Mode (delegate via `runSubagent` / `invoke_subagent` using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
+- **⚡ MODE A — Direct Execution (TIER 0)**: For simple factual Q&A, explanation, or single-domain changes touching **≤ 3 files** (no `/cmd` and NOT an open-ended research/ideation request), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
+- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: For explicit `/cmd` workflows, tasks spanning **> 3 files** / **≥ 2 domains**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*), activate Strict Orchestrator Mode (route research/ideation to `commands/brainstorm-hard.md` and delegate via `runSubagent` / `invoke_subagent` using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, and `OWNED_FILES` locks).
 
 ---
 
