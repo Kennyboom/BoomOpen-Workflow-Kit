@@ -17,6 +17,21 @@
 
 ---
 
+## 🎬 Official Launch Trailer (Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
+    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
+    &nbsp;|&nbsp;
+    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+  </p>
+</div>
+
+---
+
 ## 🌟 Apa itu BoomOpen Workflow Kit v5.5?
 
 **BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** adalah sistem operasi multi-agen sumber terbuka (open-source) yang mengubah satu asisten coding AI menjadi organisasi rekayasa perangkat lunak terkoordinasi yang terdiri dari **21 agen spesialis**, **17 tim adversarial Golden Triangle**, **48 keahlian inti (Core Skills)**, dan **1.430+ keahlian pustaka khusus (`skills_library`)**.

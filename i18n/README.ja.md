@@ -17,6 +17,21 @@
 
 ---
 
+## 🎬 Official Launch Trailer (Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
+    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
+    &nbsp;|&nbsp;
+    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+  </p>
+</div>
+
+---
+
 ## 🌟 BoomOpen Workflow Kit v5.5 とは？
 
 **BoomOpen Workflow Kit v5.5（Multi-Platform Unified & Smart-Hybrid Edition）** は、単一の AI コーディングアシスタントを **21 名の専門エージェント（Specialist Agents）**、**17 組のゴールデントライアングル・チーム（Golden Triangle Teams）**、**48 個のコアスキル（Core Skills）**、および **1,430 以上の専門ライブラリスキル（`skills_library`）** から成るエンジニアリング組織へと進化させるオープンソースのマルチエージェント OS です。

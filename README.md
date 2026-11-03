@@ -26,6 +26,19 @@
 
 ## 🇬🇧 English Documentation
 
+### 🎬 Official Launch Trailer (English — Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
+    <img src="./assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official English Launch Trailer" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Click Here to Watch / Stream the Full HD English Launch Trailer (MP4 with Studio Voiceover)</b></a>
+    &nbsp;|&nbsp;
+    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Video Bản Tiếng Việt</b></a>
+  </p>
+</div>
+
 ### 🌟 What is BoomOpen Workflow Kit?
 
 **BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** is an open-source multi-agent operating system that transforms a single AI coding assistant into an orchestrated engineering organization of **21 specialist agents**, **17 adversarial Golden Triangle teams**, **48 Core Skills**, and **1,430+ Niche Library Skills**.
@@ -207,6 +220,19 @@ BoomOpen-Workflow-Kit/
 ---
 
 ## 🇻🇳 Tài Liệu Tiếng Việt
+
+### 🎬 Video Giới Thiệu Chính Thức (Tiếng Việt — Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4">
+    <img src="./assets/media/poster_vi.png" alt="Xem Video Giới Thiệu BoomOpen Workflow Kit v5.5 (Tiếng Việt)" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Bấm Vào Đây Để Xem / Tải Video Giới Thiệu Bản Tiếng Việt (Full HD 1080p — Thuyết Minh Studio)</b></a>
+    &nbsp;|&nbsp;
+    🇬🇧 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch English Version</b></a>
+  </p>
+</div>
 
 ### 🌟 BoomOpen Workflow Kit v5.5 là gì?
 

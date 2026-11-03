@@ -17,6 +17,21 @@
 
 ---
 
+## 🎬 Official Launch Trailer (Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
+    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
+    &nbsp;|&nbsp;
+    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+  </p>
+</div>
+
+---
+
 ## 🌟 BoomOpen Workflow Kit v5.5 क्या है?
 
 **BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** एक ओपन-सोर्स मल्टी-एजेंट ऑपरेटिंग सिस्टम है जो एक सिंगल AI कोडिंग असिस्टेंट को **21 विशेषज्ञ एजेंटों (Specialist Agents)**, **17 गोल्डन ट्रायंगल टीमों (Golden Triangle Teams)**, **48 कोर स्किल्स (Core Skills)** और **1,430+ विशिष्ट लाइब्रेरी स्किल्स (`skills_library`)** के एक समन्वित इंजीनियरिंग संगठन में बदल देता है।

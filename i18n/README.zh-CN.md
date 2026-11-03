@@ -17,6 +17,21 @@
 
 ---
 
+## 🎬 Official Launch Trailer (Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
+    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
+    &nbsp;|&nbsp;
+    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+  </p>
+</div>
+
+---
+
 ## 🌟 什么是 BoomOpen Workflow Kit v5.5？
 
 **BoomOpen Workflow Kit v5.5（跨平台统一与智能混合版）** 是一个开源的多智能体（Multi-Agent）研发操作系统，能够将单一的 AI 编程助手升级为由 **21 位专家级智能体（Specialist Agents）**、**17 支黄金三角对抗团队（Golden Triangle Teams）**、**48 项核心技能（Core Skills）** 以及 **1,430+ 项垂直领域技能库（`skills_library`）** 组成的协同工程团队。

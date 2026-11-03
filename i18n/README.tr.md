@@ -17,6 +17,21 @@
 
 ---
 
+## 🎬 Official Launch Trailer (Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
+    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
+    &nbsp;|&nbsp;
+    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+  </p>
+</div>
+
+---
+
 ## 🌟 BoomOpen Workflow Kit v5.5 Nedir?
 
 **BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)**, tek bir yapay zeka kodlama asistanını **21 uzman ajan (Specialist Agents)**, **17 çapraz denetimli Altın Üçgen ekibi (Golden Triangle Teams)**, **48 temel yetenek (Core Skills)** ve **1.430’dan fazla niş kütüphane yeteneğinden (`skills_library`)** oluşan koordine bir mühendislik organizasyonuna dönüştüren açık kaynaklı bir çoklu ajan işletim sistemidir.

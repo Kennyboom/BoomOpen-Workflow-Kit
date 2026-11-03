@@ -17,6 +17,21 @@
 
 ---
 
+## 🎬 Video Giới Thiệu Chính Thức (Tiếng Việt — Full HD 1080p)
+
+<div align="center">
+  <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4">
+    <img src="../assets/media/poster_vi.png" alt="Xem Video Giới Thiệu BoomOpen Workflow Kit v5.5 (Tiếng Việt)" width="92%" />
+  </a>
+  <p>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Bấm Vào Đây Để Xem / Tải Video Giới Thiệu Bản Tiếng Việt (Full HD 1080p — Thuyết Minh Studio)</b></a>
+    &nbsp;|&nbsp;
+    🇬🇧 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch English Trailer</b></a>
+  </p>
+</div>
+
+---
+
 ## 🌟 BoomOpen Workflow Kit v5.5 là gì?
 
 **BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** là hệ điều hành đa tác tử (Multi-Agent) mã nguồn mở giúp biến một AI Coding Assistant đơn lẻ thành một tổ chức kỹ thuật hoàn chỉnh gồm **21 Đặc vụ Chuyên gia (Specialist Agents)**, **17 Đội hình Tam Giác Vàng (Golden Triangle Teams)**, **48 Kỹ năng Lõi (Core Skills)** và **1.430+ Kỹ năng Chuyên sâu (`skills_library`)**.
