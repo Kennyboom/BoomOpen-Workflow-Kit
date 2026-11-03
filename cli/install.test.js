@@ -107,6 +107,10 @@ test('All 5 platform entrypoints and templates enforce v5.5 Smart-Hybrid, Pragma
       `Expected ${relPath} to contain BOOMOPEN-SETTINGS-START/END markers`
     );
     assert.ok(
+      !content.includes('0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter'),
+      `Expected ${relPath} not to contain legacy solo-bias phrase`
+    );
+    assert.ok(
       !content.includes('commands/{cmd}/{variant}.md') &&
         !content.includes('commands/{cmd}/team.md') &&
         !content.includes('commands/{cmd}/hard.md'),
@@ -416,7 +420,13 @@ test('All 16 i18n/README.<lang>.md files exist, have full 9-section content, and
 test('Unified Settings schema defaults naturalLanguageResearchTrigger to auto_team and covers all 12 settings across 4 categories', () => {
   assert.equal(DEFAULT_SETTINGS.version, '5.5.0');
   assert.equal(DEFAULT_SETTINGS.preset, 'smart-hybrid');
+  assert.equal(DEFAULT_SETTINGS.execution.modeAThresholdFiles, 2);
+  assert.ok(ALLOWED_ENUMS['execution.modeAThresholdFiles'].includes(2));
   assert.equal(DEFAULT_SETTINGS.workflows.naturalLanguageResearchTrigger, 'auto_team');
+
+  const mdBlock = renderActiveSettingsMarkdown(DEFAULT_SETTINGS);
+  assert.ok(mdBlock.includes('Proactive Sub-agent First'));
+  assert.ok(mdBlock.includes('Turn 1'));
 
   const expected12Keys = [
     'execution.mode',

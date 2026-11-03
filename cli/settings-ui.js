@@ -17,8 +17,12 @@ const CATEGORY_SCHEMA = [
     title: '1. Orchestration & Execution Mode',
     badge: '🚦 Gate & Dispatch',
     fields: [
-      { key: 'execution.mode', label: 'Execution Mode (Mode A vs Mode B)' },
-      { key: 'execution.modeAThresholdFiles', label: 'Mode A Max Files Threshold' },
+      { key: 'execution.mode', label: 'Execution Mode (Proactive Sub-agent First vs Mode A/B)' },
+      {
+        key: 'execution.modeAThresholdFiles',
+        label: 'Known-Target Micro-Edit File Threshold (Proactive Sub-agents above this)',
+        options: [1, 2, 3, 5, 10],
+      },
       { key: 'workflows.defaultVariant', label: 'Default Slash Command Variant' },
       { key: 'workflows.naturalLanguageResearchTrigger', label: 'Natural-Language Research Trigger' },
     ],
@@ -115,7 +119,7 @@ function renderDashboardHtml() {
   <script>
     const SCHEMA = ${schemaJson};
     const PRESET_META = [
-      { id: 'smart-hybrid', title: '⚡ Smart-Hybrid (Default v5.5)', desc: 'Mode A ≤3 files, NL Research → /brainstorm:team Golden Triangle, Pragmatic 400/500 lines.' },
+      { id: 'smart-hybrid', title: '⚡ Smart-Hybrid (Default v5.5)', desc: 'Proactive Sub-agent First (>2 files / unknown scope), Mode A micro-edits ≤2 files, NL Research → /brainstorm:team.' },
       { id: 'solo-fast', title: '🚀 Solo-Fast (Direct Mode A)', desc: 'Force Mode A Direct Execution (≤10 files), :fast variant, Relaxed 600/800 lines.' },
       { id: 'deep-architect', title: '🧠 Deep-Architect (Strict Mode B)', desc: 'Force Mode B Multi-Agent Orchestrator, :hard variant, Strict 300/400 lines.' },
       { id: 'adversarial-team', title: '🔺 Adversarial-Team (Golden Triangle)', desc: 'Force 3-Agent Golden Triangle :team on all workflows, Strict 300/400 lines.' }

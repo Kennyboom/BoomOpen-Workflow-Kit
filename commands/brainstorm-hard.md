@@ -18,7 +18,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 
@@ -26,7 +26,7 @@ execution-mode: execute
 2. `PHASES.md` — DAG Parallel Fan-Out & Phase Output Format
 3. `AGENTS.md` — Tiered Execution, `Model: "inherit"`, Antigravity Web-Search Subagent Rule
 
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files.
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
 
 ---
 

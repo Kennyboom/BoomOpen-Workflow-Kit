@@ -9,23 +9,27 @@ description: BoomOpen Workflow Kit (v5.5 Antigravity 2.0 Smart-Hybrid Edition) �
 
 ---
 
-## 🚦 Smart Complexity Threshold Gate (Mode A vs. Mode B)
+## 🚦 Proactive Sub-agent First Gate (Turn-1 Zero-Tax Fan-Out, Mode B & Mode A)
 
-### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
-- **When**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, **AND** no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked, **AND** NOT an open-ended research, product ideation, or architecture discovery request.
-- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
+### 🚫 Anti-Solo-Crawling Rule (MANDATORY)
+- If the exact target files are **NOT already known on Turn 1**, OR if a task requires exploring/auditing/reading **`> 2 files`** across the codebase, **NEVER crawl files sequentially in the primary agent!** **IMMEDIATELY spawn parallel subagents on Turn 1** so the parent context window stays 100% clean.
 
-### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
+### 🚀 Fast Parallel Sub-agents (Turn-1 Zero-Tax Fan-Out — Codebase Exploration, Repo Audits, Bug Hunts & Multi-File Fixes without `/cmd`)
+- Spawn subagents **immediately on Turn 1** with **0 pre-flight rule-file reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter**:
+  - **Read-Only Local Codebase Scouting/Grep/Mapping**: `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)`
+  - **Parallel Code Edits, Testing, Debugging, or Live Web Research (`search_web`)**: `invoke_subagent(TypeName: "self", Role: "Backend Engineer" | "Frontend Engineer" | "QA Tester" | "Deep Researcher", Model: "inherit", Prompt: ...)`
+
+### 🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
   1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
-  2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
+  2. Task spans **`> 2 files`** or **`≥ 2 domains`** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
   4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** — whenever the user asks in natural language to research, analyze, or propose an idea/product/architecture (*"nghiên cứu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"brainstorm"*, *"investigate"*, *"audit"*), **EVEN IF 0 code files are modified and no `/cmd` is typed** → route by default (`workflows.naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when configured as `"auto_hard"`, launching parallel subagents (`researcher` + `brainstormer` + `scouter`/domain specialist).
-- **Action**: Activate **Strict Orchestrator Mode** — load the workflow & `rules/PHASES.md` / `rules/AGENTS.md` on-demand, and delegate every phase to isolated specialist subagents via Antigravity 2.0 native `define_subagent` (never use built-in `TypeName: "research"` for web research as it has no network access), `invoke_subagent` (`Workspace: "inherit" | "branch"`), and `send_message` (Reactive Async Wakeup), using:
-  - **DAG-Aware Parallel Fan-Out** for independent phases
-  - **Direct Plan-to-Executor Dispatch** (no middleman `tech-lead` hop once `PLAN` exists)
-  - **Contract-First Parallel Handoffs (`SHARED_CONTRACT` + disjoint `OWNED_FILES`)**
-  - **Stateful Warm Sub-agent Reuse (`send_message` by `conversationId`)**
+- **Turn-1 Instant Dispatch Action**: Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) is pre-embedded in the entrypoint. When `/cmd` is invoked, read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch**, using **DAG-Aware Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Parallel Handoffs (`SHARED_CONTRACT` + disjoint `OWNED_FILES`)**, and **Stateful Warm Sub-agent Reuse (`send_message` by `conversationId`)**.
+
+### ⚡ MODE A — Known-Target Micro-Direct (TIER 0 — `≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
+- **When**: Strictly for simple factual Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, AND no `/cmd` workflow was invoked, AND NOT an open-ended research or ideation request.
+- **Action**: Primary agent executes, tests, and verifies directly while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure) and **Persistent Testing & Bug Fixing**.
 
 ---
 

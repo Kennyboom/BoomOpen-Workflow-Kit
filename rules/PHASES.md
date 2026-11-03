@@ -20,12 +20,21 @@
 
 ---
 
-## ⚡ DAG-AWARE PARALLEL FAN-OUT & CONTRACT-FIRST EXECUTION (v5.5)
+## ⚡ DAG-AWARE PARALLEL FAN-OUT, TURN-1 ZERO-TAX DISPATCH & CONTRACT-FIRST EXECUTION (v5.5)
 
-Phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of dependencies with **Direct Plan-to-Executor Dispatch** and **Warm Session Reuse**:
+Phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of dependencies with **Turn-1 Zero-Tax Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Warm Session Reuse**:
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────┐
+│  🚀 0. TURN-1 ZERO-TAX PARALLEL DISPATCH (No Pre-Flight Bottleneck)           │
+│  • Never waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` +           │
+│    `rules/AGENTS.md` before spawning subagents! Core laws and the 5-Field     │
+│    Handoff Packet are pre-embedded in the platform entrypoint.                │
+│  • Launch Phase 1 subagents immediately on Turn 1 via                         │
+│    `invoke_subagent(TypeName: "self", Role: "<specialist>", Model: "inherit")`│
+│    (0-Turn Fast-Track with full write + `run_command` + `search_web`), or     │
+│    `TypeName: "research"` for read-only local codebase scouting.              │
+├───────────────────────────────────────────────────────────────────────────────┤
 │  🔀 1. PARALLEL FAN-OUT (When Phases Are Independent)                         │
 │  • Launch independent phases concurrently in a SINGLE turn via multiple       │
 │    invoke_subagent calls (Model: "inherit") and join via Reactive Wakeup:     │

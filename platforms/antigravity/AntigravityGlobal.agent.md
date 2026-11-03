@@ -35,7 +35,7 @@ handoffs:
 <!-- BOOMOPEN-SETTINGS-START -->
 ## 🎛️ ACTIVE USER SETTINGS OVERRIDE (Managed via `/settings` & `~/.boomopen/settings.json`)
 > **PRECEDENCE**: `1. Explicit Turn Command (/cmd:variant, @fast/@deep/@team)` > `2. Workspace ./.boomopen.json` > `3. Active Settings Below` > `4. Default File Rules`.
-- **Active Preset**: `smart-hybrid` | **Execution Mode (`execution.mode`)**: `auto` (`auto` = Mode A when `≤ 3 files` & `1 domain`, else Mode B; `mode_a` = Force Direct Solo Mode unless `:hard`/`:team`/`/orchestrate`; `mode_b` = Force Multi-Agent Orchestrator; `team` = Force Golden Triangle 3-Agent `:team`)
+- **Active Preset**: `smart-hybrid` | **Execution Mode (`execution.mode`)**: `auto` (`auto` = **Proactive Sub-agent First**: Spawn parallel subagents on Turn 1 via `invoke_subagent(TypeName: "self" | "research")` whenever scope is unknown, requires scouting/audit/research across > 2 files, or spans ≥ 2 domains; use Mode A Direct ONLY for known-target micro-edits ≤ 2 files or simple Q&A; `mode_a` = Force Direct Solo Mode unless `:hard`/`:team`/`/orchestrate`; `mode_b` = Force Multi-Agent Orchestrator; `team` = Force Golden Triangle 3-Agent `:team`)
 - **Workflows**: `defaultVariant = auto` (`auto`|`fast`|`hard`|`team`|`ask`) | `naturalLanguageResearchTrigger = auto_team` (`auto_team` routes NL research/ideation to `/brainstorm:team` Golden Triangle | `auto_hard` → `/brainstorm:hard` | `ask_first` | `off`)
 - **Intelligence & Research**: `models.subagentPolicy = quality_first` (`inherit` Pro High default; never `flash_lite`) | `research.depth = 5_lens_deep` | `clarification.style = autonomous_first` | `teams.maxDebateRounds = 3`
 - **Standards & Verification**: `codingStandards.preset = pragmatic` (Soft `400` / Hard `500` lines, `forbidExplicitAny = true`, `warnConsoleLog = true`) | `verification.level = strict_e2e`
@@ -52,10 +52,14 @@ handoffs:
 
 ---
 
-## 🚦 2-MODE SMART COMPLEXITY THRESHOLD GATE
+## 🚦 PROACTIVE SUB-AGENT FIRST GATE (TURN-1 ZERO-TAX FAN-OUT, MODE B & MODE A)
 
-- **⚡ MODE A — Direct Execution (TIER 0)**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files** with no `/cmd` (and NOT an open-ended research/ideation request) → execute, test, and verify **directly**.
-- **🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1)**: Explicit `/cmd` workflow, task spanning **> 3 files** / **≥ 2 domains**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) → activate **Strict Orchestrator Mode** (route NL research/ideation by default `auto_team` to `commands/brainstorm-team.md` Golden Triangle, or `commands/brainstorm-hard.md` when `auto_hard`, using `Model: "inherit"`, DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, `SHARED_CONTRACT` + `OWNED_FILES`, Warm Sub-agent Reuse via `send_message`). For web research on Antigravity, register `define_subagent(Name: "researcher" | "brainstormer")` or use `TypeName: "self"` (never built-in `TypeName: "research"` which has no network access).
+- **🚫 Anti-Solo-Crawling Rule (MANDATORY)**: If exact target files are NOT already known on Turn 1, OR a task requires exploring/auditing/reading **`> 2 files`**, **NEVER** crawl files sequentially in the primary agent! **IMMEDIATELY spawn parallel subagents on Turn 1** so the parent context window stays 100% clean.
+- **🚀 Fast Parallel Sub-agents (Turn-1 Zero-Tax Fan-Out — Exploration, Audits, Bug Hunts & Multi-File Fixes without `/cmd`)**: Spawn subagents **immediately on Turn 1** with **0 pre-flight rule reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter**:
+  - Read-only local codebase scouting/grep: `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)`
+  - Parallel code edits, testing, debugging, or live web research (`search_web`): `invoke_subagent(TypeName: "self", Role: "Backend Engineer" | "Frontend Engineer" | "QA Tester" | "Deep Researcher", Model: "inherit", Prompt: ...)`
+- **🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1)**: Explicit `/cmd` workflow, task spanning **`> 2 files`** / **`≥ 2 domains`**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) → **Turn-1 Instant Dispatch**: read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch** (route NL research by default `auto_team` to `commands/brainstorm-team.md` Golden Triangle, or `commands/brainstorm-hard.md` when `auto_hard`). Never use `TypeName: "research"` for `search_web` (`no network access`).
+- **⚡ MODE A — Known-Target Micro-Direct (TIER 0)**: Strictly for simple Q&A, code explanation, or micro-edits where the **exact 1–2 target files are already known on Turn 1** (0 exploration needed, no `/cmd`) → execute, test, and verify directly.
 
 ---
 
@@ -98,8 +102,8 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 
 | Tier | Condition | Action |
 |------|-----------|--------|
-| **TIER 0** | Mode A (`≤ 3 files`, 1 domain, no `/cmd`) | Execute, test, and verify directly |
-| **TIER 1** | Mode B (`invoke_subagent` / `send_message`) | **MUST** delegate with `Model: "inherit"` (NEVER `flash_lite`), 5-field Handoff Packet (`SHARED_CONTRACT`, `OWNED_FILES`), Direct Plan-to-Executor Dispatch & Warm Session Reuse |
+| **TIER 1** | Proactive Sub-agent First / Mode B (`invoke_subagent` / `send_message`) | **MUST** delegate on Turn 1 with `TypeName: "self"` (0-Turn Fast-Track: full write + `run_command` + `search_web`) or `TypeName: "research"` (read-only local scouting), `Model: "inherit"` (NEVER `flash_lite`), Pre-Embedded 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`), Direct Plan-to-Executor Dispatch & Warm Session Reuse |
+| **TIER 0** | Mode A (`≤ 2 known files`, 1 domain, 0 exploration, no `/cmd`) | Execute, test, and verify directly |
 | **TIER 2** | Mode B fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
 ---

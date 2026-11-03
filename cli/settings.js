@@ -14,7 +14,7 @@ const CODING_STANDARDS_PRESETS = {
 const ALLOWED_ENUMS = {
   preset: ['smart-hybrid', 'solo-fast', 'deep-architect', 'adversarial-team', 'custom'],
   'execution.mode': ['auto', 'mode_a', 'mode_b', 'team'],
-  'execution.modeAThresholdFiles': [1, 3, 5, 10],
+  'execution.modeAThresholdFiles': [1, 2, 3, 5, 10],
   'workflows.defaultVariant': ['auto', 'fast', 'hard', 'team', 'ask'],
   'workflows.naturalLanguageResearchTrigger': ['auto_team', 'auto_hard', 'ask_first', 'off'],
   'models.subagentPolicy': ['quality_first', 'strict_inherit', 'balanced_speed'],
@@ -30,7 +30,7 @@ const ALLOWED_ENUMS = {
 const DEFAULT_SETTINGS = {
   version: '5.5.0',
   preset: 'smart-hybrid',
-  execution: { mode: 'auto', modeAThresholdFiles: 3 },
+  execution: { mode: 'auto', modeAThresholdFiles: 2 },
   workflows: { defaultVariant: 'auto', naturalLanguageResearchTrigger: 'auto_team' },
   models: { subagentPolicy: 'quality_first' },
   research: { depth: '5_lens_deep' },
@@ -170,7 +170,7 @@ function renderActiveSettingsMarkdown(settings = DEFAULT_SETTINGS) {
     SETTINGS_MARKER_START,
     '## 🎛️ ACTIVE USER SETTINGS OVERRIDE (Managed via `/settings` & `~/.boomopen/settings.json`)',
     '> **PRECEDENCE**: `1. Explicit Turn Command (/cmd:variant, @fast/@deep/@team)` > `2. Workspace ./.boomopen.json` > `3. Active Settings Below` > `4. Default File Rules`.',
-    `- **Active Preset**: \`${s.preset}\` | **Execution Mode (\`execution.mode\`)**: \`${s.execution.mode}\` (\`auto\` = Mode A when \`≤ ${s.execution.modeAThresholdFiles} files\` & \`1 domain\`, else Mode B; \`mode_a\` = Force Direct Solo Mode unless \`:hard\`/\`:team\`/\`/orchestrate\`; \`mode_b\` = Force Multi-Agent Orchestrator; \`team\` = Force Golden Triangle 3-Agent \`:team\`)`,
+    `- **Active Preset**: \`${s.preset}\` | **Execution Mode (\`execution.mode\`)**: \`${s.execution.mode}\` (\`auto\` = **Proactive Sub-agent First**: Spawn parallel subagents on Turn 1 via \`invoke_subagent(TypeName: "self" | "research")\` whenever scope is unknown, requires scouting/audit/research across > ${s.execution.modeAThresholdFiles} files, or spans ≥ 2 domains; use Mode A Direct ONLY for known-target micro-edits ≤ ${s.execution.modeAThresholdFiles} files or simple Q&A; \`mode_a\` = Force Direct Solo Mode unless \`:hard\`/\`:team\`/\`/orchestrate\`; \`mode_b\` = Force Multi-Agent Orchestrator; \`team\` = Force Golden Triangle 3-Agent \`:team\`)`,
     `- **Workflows**: \`defaultVariant = ${s.workflows.defaultVariant}\` (\`auto\`|\`fast\`|\`hard\`|\`team\`|\`ask\`) | \`naturalLanguageResearchTrigger = ${s.workflows.naturalLanguageResearchTrigger}\` (\`auto_team\` routes NL research/ideation to \`/brainstorm:team\` Golden Triangle | \`auto_hard\` → \`/brainstorm:hard\` | \`ask_first\` | \`off\`)`,
     `- **Intelligence & Research**: \`models.subagentPolicy = ${s.models.subagentPolicy}\` (\`inherit\` Pro High default; never \`flash_lite\`) | \`research.depth = ${s.research.depth}\` | \`clarification.style = ${s.clarification.style}\` | \`teams.maxDebateRounds = ${s.teams.maxDebateRounds}\``,
     `- **Standards & Verification**: \`codingStandards.preset = ${cs.preset}\` (Soft \`${cs.softFileLines}\` / Hard \`${cs.hardFileLines}\` lines, \`forbidExplicitAny = ${cs.forbidExplicitAny}\`, \`warnConsoleLog = ${cs.warnConsoleLog}\`) | \`verification.level = ${s.verification.level}\``,

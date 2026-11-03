@@ -6,7 +6,7 @@
 <!-- BOOMOPEN-SETTINGS-START -->
 ## 🎛️ ACTIVE USER SETTINGS OVERRIDE (Managed via `/settings` & `~/.boomopen/settings.json`)
 > **PRECEDENCE**: `1. Explicit Turn Command (/cmd:variant, @fast/@deep/@team)` > `2. Workspace ./.boomopen.json` > `3. Active Settings Below` > `4. Default File Rules`.
-- **Active Preset**: `smart-hybrid` | **Execution Mode (`execution.mode`)**: `auto` (`auto` = Mode A when `≤ 3 files` & `1 domain`, else Mode B; `mode_a` = Force Direct Solo Mode unless `:hard`/`:team`/`/orchestrate`; `mode_b` = Force Multi-Agent Orchestrator; `team` = Force Golden Triangle 3-Agent `:team`)
+- **Active Preset**: `smart-hybrid` | **Execution Mode (`execution.mode`)**: `auto` (`auto` = **Proactive Sub-agent First**: Spawn parallel subagents on Turn 1 via `invoke_subagent(TypeName: "self" | "research")` whenever scope is unknown, requires scouting/audit/research across > 2 files, or spans ≥ 2 domains; use Mode A Direct ONLY for known-target micro-edits ≤ 2 files or simple Q&A; `mode_a` = Force Direct Solo Mode unless `:hard`/`:team`/`/orchestrate`; `mode_b` = Force Multi-Agent Orchestrator; `team` = Force Golden Triangle 3-Agent `:team`)
 - **Workflows**: `defaultVariant = auto` (`auto`|`fast`|`hard`|`team`|`ask`) | `naturalLanguageResearchTrigger = auto_team` (`auto_team` routes NL research/ideation to `/brainstorm:team` Golden Triangle | `auto_hard` → `/brainstorm:hard` | `ask_first` | `off`)
 - **Intelligence & Research**: `models.subagentPolicy = quality_first` (`inherit` Pro High default; never `flash_lite`) | `research.depth = 5_lens_deep` | `clarification.style = autonomous_first` | `teams.maxDebateRounds = 3`
 - **Standards & Verification**: `codingStandards.preset = pragmatic` (Soft `400` / Hard `500` lines, `forbidExplicitAny = true`, `warnConsoleLog = true`) | `verification.level = strict_e2e`
@@ -37,23 +37,27 @@
 
 ---
 
-## 🚦 SMART COMPLEXITY THRESHOLD GATE (MODE A vs. MODE B)
+## 🚦 PROACTIVE SUB-AGENT FIRST GATE (TURN-1 ZERO-TAX FAN-OUT, MODE B & MODE A)
 
-Before taking action, classify the request through this 2-Mode Gate:
+### 🚫 Anti-Solo-Crawling Rule (MANDATORY)
+- If the exact target files are **NOT already known on Turn 1**, OR if a task requires exploring/auditing/reading **`> 2 files`** across the codebase, **NEVER crawl files sequentially in the primary agent!** **IMMEDIATELY spawn parallel subagents on Turn 1** so the parent context window stays 100% clean.
 
-### ⚡ MODE A — Direct Execution (TIER 0 — Fast Path, Default for Simple Tasks)
-- **When**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, **AND** no explicit multi-agent slash command (`/cook`, `/fix:hard`, `/cook:team`, `/orchestrate`, etc.) was invoked, **AND** NOT an open-ended research, product ideation, or architecture discovery request.
-- **Action**: Primary agent executes, tests, and verifies **directly** (0 subagent cold-start latency, 0 extra rule file reads, 0 report file clutter), while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
+### 🚀 Fast Parallel Sub-agents (Turn-1 Zero-Tax Fan-Out — Codebase Exploration, Repo Audits, Bug Hunts & Multi-File Fixes without `/cmd`)
+- Spawn subagents **immediately on Turn 1** with **0 pre-flight rule-file reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter**:
+  - **Read-Only Local Codebase Scouting/Grep/Mapping**: `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)`
+  - **Parallel Code Edits, Testing, Debugging, or Live Web Research (`search_web`)**: `invoke_subagent(TypeName: "self", Role: "Backend Engineer" | "Frontend Engineer" | "QA Tester" | "Deep Researcher", Model: "inherit", Prompt: ...)`
 
-### 🎻 MODE B — Strict Multi-Agent Orchestration (TIER 1 — Deep Path)
+### 🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
   1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
-  2. Task spans **> 3 files** or **≥ 2 domains** (e.g., Database + Backend + Frontend + Security).
+  2. Task spans **`> 2 files`** or **`≥ 2 domains`** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
   4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** — whenever the user asks in natural language to research, analyze, or propose an idea/product/architecture (e.g., *"nghiên cứu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng/đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"brainstorm"*, *"investigate"*, *"audit"*), **EVEN IF 0 code files are modified and no `/cmd` is typed** → MUST activate Mode B and route by default (`workflows.naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when configured as `"auto_hard"`, launching parallel subagents (`researcher` + `brainstormer` + `scouter`/domain specialist).
-- **Action**: Activate **Strict Orchestrator Mode**:
-  - Load the target command workflow (`commands/{cmd}.md`) and `rules/PHASES.md` / `rules/AGENTS.md` on-demand.
-  - **YOU ARE THE ORCHESTRATOR — NOT AN IMPLEMENTER**: Delegate every phase to isolated specialist subagents via Antigravity 2.0 native primitives using **DAG-Aware Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Stateful Warm Sub-agent Reuse (`send_message`)**.
+- **Turn-1 Instant Dispatch**: Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet is pre-embedded below. When `/cmd` is invoked, read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch**, using **DAG-Aware Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Warm Sub-agent Session Reuse (`send_message` by `conversationId`)**.
+
+### ⚡ MODE A — Known-Target Micro-Direct (TIER 0 — `≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
+- **When**: Strictly for simple factual Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, 0 exploration is needed, no `/cmd` was invoked, and NOT an open-ended research or ideation request.
+- **Action**: Execute, test, and verify directly while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
 
 ---
 
@@ -109,17 +113,15 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 
 | Tier | Mode / Condition | Action |
 |------|------------------|--------|
-| **TIER 0** | **Mode A** (≤ 3 files, 1 domain, no `/cmd`) | Execute, test, and verify directly |
-| **TIER 1** | **Mode B** (> 3 files, ≥ 2 domains, or `/cmd`) | **MUST** delegate via Antigravity 2.0 sub-agent tools (DAG Fan-Out + Direct Plan Dispatch + Warm Session Reuse) |
+| **TIER 1** | **Proactive Sub-agent First / Mode B** (Unscoped exploration, `> 2 files`, `≥ 2 domains`, NL research, or `/cmd`) | **MUST** spawn sub-agents on Turn 1 (`TypeName: "self"` 0-Turn Fast-Track or `TypeName: "research"` read-only; `Model: "inherit"`) + Direct Plan Dispatch + Warm Session Reuse (`send_message`) |
+| **TIER 0** | **Mode A** (`≤ 2 known files`, 1 domain, 0 exploration, no `/cmd`) | Execute, test, and verify directly |
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
-### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & v5.5 Dispatch Rules (TIER 1)
-- `define_subagent`: Register specialist agents (`backend-engineer`, `frontend-engineer`, `tester`, `reviewer`, `debugger`, `planner`, `scouter`, `researcher`, `brainstormer`, etc.) with `EnableWriteTools: true/false`.
-- **⚠️ Antigravity Web-Search Subagent Rule**: Antigravity's built-in `TypeName: "research"` subagent runs in a read-only sandbox with **no network access** (cannot call `search_web`). For any web/market/competitor/documentation research, **ALWAYS** register `define_subagent(Name: "researcher" | "brainstormer", EnableWriteTools: true, ...)` or invoke `TypeName: "self"` so the subagent has full `search_web` access.
-- `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet: `MISSION`, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, `VERIFICATION`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`).
-- **Direct Plan-to-Executor Dispatch**: Once `PLAN-{feature}.md` exists in `:fast`, `:hard`, or `/orchestrate`, dispatch tasks **directly** from `PLAN` to domain engineers (`backend-engineer`, `frontend-engineer`, etc.) without a redundant `tech-lead` middleman hop.
-- **Stateful Warm Sub-agent Reuse (`send_message`)**: Record each spawned sub-agent's `conversationId` in an **Active Sub-agent Session Registry (`Role → conversationId`)**. Reuse warm sessions via `send_message(Recipient: conversationId, Message: ...)` (0s cold-start, 100% context retained).
-- `manage_subagents` & `manage_task`: List, inspect status, or terminate subagents/background tasks.
+### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & Pre-Embedded 5-Field Handoff Packet (TIER 1)
+- **⚡ `TypeName: "self"` (0-Turn Fast-Track Default)**: `invoke_subagent(TypeName: "self", Role: "<specialist>", Model: "inherit", Prompt: ...)` inherits full write tools + `run_command` + `search_web` immediately on Turn 1 without needing a prior `define_subagent` turn!
+- **🔍 `TypeName: "research"` (Fast Read-Only Local Codebase Explorer)**: Use `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)` for fast read-only local codebase scouting/grep (`no network access` — never use for `search_web`).
+- **📦 Pre-Embedded 5-Field Handoff Packet (Include in `Prompt`)**: `1. MISSION & ACCEPTANCE CRITERIA` | `2. SHARED_CONTRACT` (API/schema/types when ≥2 domains) | `3. OWNED_FILES` (write lock) | `4. READ_ONLY_FILES` (do not edit) | `5. VERIFICATION & DELIVERABLE`.
+- **Direct Plan-to-Executor Dispatch & Warm Session Reuse (`send_message`)**: Dispatch directly from `PLAN` to domain engineers (no `tech-lead` middleman hop) and record `Role → conversationId` to reuse warm sub-agents via `send_message(Recipient: conversationId, Message: ...)`.
 
 ---
 

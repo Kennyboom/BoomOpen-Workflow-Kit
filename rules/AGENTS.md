@@ -63,22 +63,28 @@ Every `invoke_subagent` prompt or `send_message` task brief in Mode B **MUST** i
 
 ---
 
-## TIERED EXECUTION (SMART COMPLEXITY THRESHOLD GATE)
+## TIERED EXECUTION (PROACTIVE SUB-AGENT FIRST GATE)
 
-### TIER 0: Mode A Direct Execution (Fast Path — Default for Simple Tasks)
-- **When**: Simple factual Q&A, code explanation, single-domain bug fixes, or clear changes touching **≤ 3 files**, **AND** no explicit `/cmd` workflow was invoked, **AND** NOT an open-ended research, product ideation, or architecture discovery request.
-- **Action**: Primary agent executes, tests, and verifies directly (0 subagent latency), enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure `~200–350 lines` target, `≤ 400–450` cohesive soft ceiling) and **Persistent Testing & Bug Fixing**.
+### 🚫 Anti-Solo-Crawling Rule (MANDATORY)
+- If the exact target files are **NOT already known on Turn 1**, OR if a task requires exploring/auditing/reading **`> 2 files`** across the codebase, **NEVER crawl files sequentially in the primary agent!** **IMMEDIATELY spawn parallel subagents on Turn 1** so the parent context window stays 100% clean.
 
-### TIER 1: Mode B Native Sub-agent Delegation (MANDATORY for Complex Tasks, Deep Research/Ideation & `/cmd`)
-1. **Prepare Structured Handoff Packet** (Mission, `SHARED_CONTRACT`, `OWNED_FILES`, `READ_ONLY_FILES`, Verification).
-2. **Fast 2-Step Skills Analysis**: Output `"🎯 Skills Analysis: {simple|complex} → {using X | skipping}"`.
-3. **Dispatch or Reuse Sub-agent(s)**:
-   - If role is already in `active_subagents` registry → `send_message(Recipient: conversationId, Message: packet)`.
-   - If role is not yet spawned → `define_subagent` (if custom) + `invoke_subagent` (`Model: "inherit"`, `Workspace: "inherit" | "branch"`), then save `conversationId` in `active_subagents`.
-   - **⚠️ Antigravity Web-Search Subagent Rule**: Never use Antigravity's built-in `TypeName: "research"` subagent for live web/competitor/market research (it runs in a sandbox with `no network access` and cannot call `search_web`). Instead, define `researcher` / `brainstormer` via `define_subagent(Name: "researcher", EnableWriteTools: true, ...)` or invoke `TypeName: "self"` so the subagent inherits full `search_web` access.
+### TIER 1: Proactive Sub-agent First & Mode B Native Delegation (DEFAULT for Exploration, `> 2 files`, `≥ 2 domains`, NL Research/Ideation & `/cmd`)
+1. **🚀 Fast Parallel Sub-agents (Turn-1 Zero-Tax Fan-Out — Without `/cmd`)**:
+   - Spawn subagents **immediately on Turn 1** with **0 pre-flight rule-file reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter**:
+     - **Read-only local codebase scouting/grep/mapping**: `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)`
+     - **Parallel code edits, testing, debugging, or live web research (`search_web`)**: `invoke_subagent(TypeName: "self", Role: "Backend Engineer" | "Frontend Engineer" | "QA Tester" | "Deep Researcher", Model: "inherit", Prompt: ...)`
+2. **🎻 Mode B Turn-1 Instant Dispatch (Explicit `/cmd`, `:hard`, `:team`, `> 2 files` / `≥ 2 domains`, or NL Research `auto_team`)**:
+   - Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) is pre-embedded in the entrypoint.
+   - Read `commands/{cmd}.md` AND launch Phase 1 sub-agents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch**.
+   - **⚡ `TypeName: "self"` (0-Turn Fast-Track Default)**: Inherits full write tools + `run_command` + `search_web` immediately without a prior `define_subagent` turn. Never use `TypeName: "research"` when `search_web` or file writing is needed (`TypeName: "research"` is read-only local codebase exploration with `no network access`).
+   - If role is already in `active_subagents` registry → `send_message(Recipient: conversationId, Message: packet)` (Warm Session Reuse).
    - Launch independent DAG phases concurrently in a **single turn** and join via **Reactive Async Wakeup** (never poll in a loop).
    - Cross-platform fallback alias: `runSubagent(agent_name, packet)`.
-4. **Verify**: Check exit criteria and run `node cli/install.js check <dir>` for code changes.
+3. **Verify**: Check exit criteria and run `node cli/install.js check <dir>` for code changes.
+
+### TIER 0: Mode A Known-Target Micro-Direct (`≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
+- **When**: Strictly for simple factual Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, AND no `/cmd` workflow was invoked, AND NOT an open-ended research or ideation request.
+- **Action**: Primary agent executes, tests, and verifies directly while enforcing **Pragmatic 2-Tier Coding Standards** (Tier 1 strict type/error safety + Tier 2 cohesive structure `~200–350 lines` target, `≤ 400–450` cohesive soft ceiling) and **Persistent Testing & Bug Fixing**.
 
 ### TIER 2: EMBODY (Mode B Fallback only on tool error)
 1. Log `"⚠️ TIER 2: {reason}"`, read `~/.{TOOL}/skills/boomopen-workflow-kit/agents/{agent}.md` completely, announce `📋 EMBODIED: {agent}`, execute, then exit embodiment.

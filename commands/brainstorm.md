@@ -13,14 +13,14 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
+## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 1. `CORE.md` — Identity, Laws, Routing
 2. `PHASES.md` — Phase Execution & DAG Parallel Fan-Out
 3. `AGENTS.md` — Tiered Execution & Antigravity Web-Search Subagent Rule
 
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
 
 ---
 

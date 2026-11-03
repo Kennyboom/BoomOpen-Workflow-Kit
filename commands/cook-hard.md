@@ -13,7 +13,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
 **LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
 1. `CORE.md` — 2-Mode Gate, Quality-First Model Policy, Brain Artifact Routing
