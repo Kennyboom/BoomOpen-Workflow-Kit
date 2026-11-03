@@ -102,6 +102,48 @@ npm test
 
 ---
 
+## 🎛️ Hướng Dẫn Lựa Chọn Chế Độ & Bảng Cài Đặt (`/settings` Control Center)
+
+Mặc định ngay sau khi cài đặt, BoomOpen v5.5 tự động kích hoạt cấu hình **Recommended (`⚡ smart-hybrid`)** lưu tại `~/.boomopen/settings.json` và nhúng trực tiếp vào `~/.gemini/GEMINI.md` (cùng 4 nền tảng còn lại) với **độ trễ Turn 1 = 0ms**. Bạn có thể tùy ý chuyển đổi giữa **4 Chế Độ Vận Hành (Presets)** hoặc tinh chỉnh **12 thông số hệ thống** qua 3 cách:
+
+### 1️⃣ Bảng 4 Chế Độ Vận Hành (Preset Profiles)
+
+| Bộ Cấu Hình (`Preset`) | Chế Độ Thực Thi (`execution.mode`) | Biến Thể Lệnh Mặc Định | Khi Hỏi "Nghiên cứu / Ý tưởng" Tự Nhiên (`naturalLanguageResearchTrigger`) | Chuẩn Code (`codingStandards`) | Khi Nào Nên Dùng? |
+|:-----------------------|:-----------------------------------|:----------------------:|:-------------------------------------------------------------------------:|:------------------------------:|:------------------|
+| **⚡ `smart-hybrid`** *(Mặc định Recommended)* | **`auto`** (Việc nhỏ `≤ 3 files` chạy **Mode A** siêu tốc; việc lớn `> 3 files` hoặc `/cmd` chạy **Mode B Multi-Agent**) | `auto` | **`auto_team`** *(Tự động kích hoạt hội đồng 3-Agent `/brainstorm:team` Golden Triangle)* | `pragmatic` (`400/500` dòng) | Chế độ cân bằng hoàn hảo cho công việc hàng ngày: nhanh ở task nhỏ, cực sâu khi nghiên cứu & làm tính năng lớn |
+| **🚀 `solo-fast`** | **`mode_a`** *(Ép chạy trực tiếp 1 Agent, tắt gọi sub-agent để phản hồi tức thì)* | `fast` | `off` *(Trả lời trực tiếp trong chat trừ khi gõ `/brainstorm`)* | `relaxed` (`600/800` dòng) | Khi cần sửa gấp hotfix, làm prototype nhanh, viết script nhỏ hoặc tiết kiệm tối đa token |
+| **🧠 `deep-architect`** | **`mode_b`** *(Luôn bật điều phối Đa Tác Tử Mode B cho mọi tác vụ)* | `hard` | `auto_hard` *(Tự động chạy `/brainstorm:hard` 5-Lens Research)* | `strict` (`300/400` dòng) | Khi thiết kế kiến trúc hệ thống phức tạp, dự án mới hoặc refactor đa tầng |
+| **🔺 `adversarial-team`** | **`team`** *(Luôn bật hội đồng 3-Agent đối kháng Golden Triangle `:team`)* | `team` | **`auto_team`** *(Hội đồng 3-Agent phản biện chéo qua `MAILBOX`)* | `strict` (`300/400` dòng) | Dự án trọng điểm (Fintech, Core Platform, Game 3D lớn) đòi hỏi chất lượng & bảo mật tuyệt đối |
+
+### 2️⃣ Ba Cách Chuyển Đổi Chế Độ (Chat, Web UI, CLI)
+
+1. **💬 Cách 1 — Gõ trực tiếp `/settings` ngay trong khung Chat (Nhanh & Tiện nhất)**:
+   ```text
+   /settings                                     # Mở bảng trạng thái + Menu chọn tương tác (ask_question UI)
+   /settings preset smart-hybrid                 # Chuyển về chế độ Mặc định Recommended (Auto Mode A/B + auto_team)
+   /settings preset solo-fast                    # Chuyển sang Mode A (Chạy trực tiếp siêu nhanh)
+   /settings preset deep-architect               # Chuyển sang Mode B (Chuyên sâu Multi-Agent)
+   /settings preset adversarial-team             # Chuyển sang Golden Triangle 3-Agent (:team)
+   /settings mode auto | mode_a | mode_b | team  # Đổi riêng chế độ thực thi (Execution Mode)
+   /settings ui                                  # Khởi chạy giao diện Web Control Center trên trình duyệt
+   ```
+2. **🌐 Cách 2 — Mở Bảng Điều Khiển Giao Diện Web (`http://127.0.0.1:4567`)**:
+   > **Lưu ý**: Để mở trang Web local `http://127.0.0.1:4567`, bạn cần chạy lệnh khởi động server bên dưới trong Terminal (hoặc gõ `/settings ui` trong chat):
+   ```bash
+   npm run settings:ui
+   # Hoặc chạy trực tiếp từ bất kỳ thư mục nào:
+   node ~/.gemini/config/skills/boomopen-workflow-kit/cli/install.js settings --ui
+   ```
+3. **⌨️ Cách 3 — Chạy lệnh Terminal CLI (Hỗ trợ cả Global `~/.boomopen/settings.json` & từng Project `./.boomopen.json`)**:
+   ```bash
+   npm run settings -- status                                  # Xem bảng 12 thông số đang kích hoạt
+   npm run settings -- preset adversarial-team                 # Đổi preset toàn cục & đồng bộ cả 5 IDE trong <10ms
+   npm run settings -- set execution.mode mode_a --project     # Ghi đè chế độ riêng cho thư mục dự án hiện tại
+   npm run settings -- reset                                   # Khôi phục về mặc định Recommended (smart-hybrid)
+   ```
+
+---
+
 ## 🎯 Bảng Tham Chiếu Lệnh Slash
 
 | Lệnh | Biến Thể | Mục Đích Chính |
@@ -119,6 +161,7 @@ npm test
 | **`/brainstorm`** | `:fast`, `:hard`, `:team` | Khám phá yêu cầu theo phương pháp Socratic, phân tích đánh đổi & ý tưởng |
 | **`/report`** | `:fast`, `:hard`, `:team` | Tổng hợp báo cáo kỹ thuật và điều hành kèm số liệu & sơ đồ |
 | **`/orchestrate`** | — | Điều phối đường ống đa tác tử tùy chỉnh xuyên suốt nhiều miền (domains) |
+| **`/settings` / `/config`** | `preset`, `mode`, `set`, `ui` | Trung tâm điều khiển: đổi chế độ `Auto` / `Mode A` / `Mode B` / `Team`, chọn Preset, hoặc mở Web UI (`--ui`) |
 | **`/save` / `/recap`** | — | Lưu trạng thái phiên (`SESSION-HANDOVER.md`) và khôi phục ngữ cảnh trong `< 5 giây` |
 
 ---

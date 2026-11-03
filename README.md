@@ -16,6 +16,7 @@
   <p>
     <a href="#🇬🇧-english-documentation"><b>🇬🇧 English Documentation</b></a> •
     <a href="#🚀-quick-start--installation"><b>🚀 Quick Start</b></a> •
+    <a href="#🎛️-unified-settings--mode-selection-settings"><b>🎛️ Mode & Settings</b></a> •
     <a href="#🎯-slash-commands-reference"><b>🎯 Slash Commands</b></a> •
     <a href="./i18n/README.vi.md"><b>🇻🇳 Tài Liệu Tiếng Việt (Full)</b></a>
   </p>
@@ -105,8 +106,50 @@ npm run install:all           # Install across all 5 platforms
 # 3. Verify installation health, Pragmatic 2-Tier code standards & test suite
 npm run doctor                # Diagnose entrypoints, 5 platforms, agents, commands & skill index
 npm run check ./cli           # Audit source code against Pragmatic 2-Tier Coding Standards
-npm test                      # Run the 10-suite automated regression test runner
+npm test                      # Run the 17-suite automated regression test runner
 ```
+
+---
+
+### 🎛️ Unified Settings & Mode Selection (`/settings`)
+
+BoomOpen v5.5 includes a **Zero-Latency Unified Control Center** that lets you switch execution modes (`Auto`, `Mode A`, `Mode B`, `Golden Triangle Team`), research triggers, model policies, and coding standards across all **5 platforms** in `< 10ms` with **0ms Turn-1 latency** (via AOT `<!-- BOOMOPEN-SETTINGS-START -->` injection into `GEMINI.md`, `CLAUDE.md`, `CODEX.md`, `CURSOR.md`, and `COPILOT.md`).
+
+#### 1️⃣ Four One-Click Preset Profiles & Execution Modes
+
+| Preset Profile | Execution Mode (`execution.mode`) | Default `/cmd` Variant | Natural-Language Research (`naturalLanguageResearchTrigger`) | Coding Standards | Best Used For |
+|:---------------|:----------------------------------|:----------------------:|:------------------------------------------------------------:|:----------------:|:--------------|
+| **⚡ `smart-hybrid`** *(Default Recommended)* | **`auto`** (`≤ 3 files` → Mode A Direct; `> 3 files` or `/cmd` → Mode B) | `auto` | **`auto_team`** *(Auto-routes NL research/ideation to `/brainstorm:team` Golden Triangle)* | `pragmatic` (`400/500` lines) | Daily full-stack engineering — fast on small tasks, deep on complex architectures |
+| **🚀 `solo-fast`** | **`mode_a`** *(Force Direct Solo Execution, 0s sub-agent latency)* | `fast` | `off` *(Direct chat reply unless `/brainstorm` is typed)* | `relaxed` (`600/800` lines) | Urgent hotfixes, rapid prototyping, scripts & minimal token usage |
+| **🧠 `deep-architect`** | **`mode_b`** *(Force Strict Multi-Agent Orchestrator on every task)* | `hard` | `auto_hard` *(Auto-routes NL research to `/brainstorm:hard` 5-Lens)* | `strict` (`300/400` lines) | Complex system architecture, greenfield design & multi-domain refactors |
+| **🔺 `adversarial-team`** | **`team`** *(Force 3-Agent Golden Triangle `:team` on all workflows)* | `team` | **`auto_team`** *(3-Agent adversarial ideation & review)* | `strict` (`300/400` lines) | Mission-critical production code, security audits & zero-defect releases |
+
+#### 2️⃣ Three Ways to Switch Modes & Customize Settings
+
+- **💬 Surface 1 — In-Chat `/settings` Command (Interactive UI Widget or One-Liner)**:
+  ```text
+  /settings                                     # Open interactive clickable menu (via native ask_question UI)
+  /settings preset smart-hybrid                 # Switch to Smart-Hybrid default (Recommended)
+  /settings preset solo-fast                    # Switch to Mode A Solo Fast mode
+  /settings preset deep-architect               # Switch to Mode B Multi-Agent Architect mode
+  /settings preset adversarial-team             # Switch to Golden Triangle 3-Agent Team mode
+  /settings mode auto | mode_a | mode_b | team  # Directly override execution.mode
+  /settings set workflows.naturalLanguageResearchTrigger auto_team
+  /settings ui                                  # Launch the Local Web Control Center in your browser
+  ```
+- **🌐 Surface 2 — Local Web Control Center Dashboard (`--ui` at `http://127.0.0.1:4567`)**:
+  ```bash
+  npm run settings:ui
+  # Or directly from anywhere:
+  node ~/.gemini/config/skills/boomopen-workflow-kit/cli/install.js settings --ui
+  ```
+- **⌨️ Surface 3 — Terminal CLI (Global `~/.boomopen/settings.json` & Project `./.boomopen.json`)**:
+  ```bash
+  npm run settings -- status                                  # View all 12 active settings & platform sync status
+  npm run settings -- preset adversarial-team                 # Apply a preset globally & hot-sync all 5 IDEs
+  npm run settings -- set execution.mode mode_a --project     # Override mode for the current project workspace only
+  npm run settings -- reset                                   # Restore recommended v5.5 defaults
+  ```
 
 ---
 
@@ -127,6 +170,7 @@ npm test                      # Run the 10-suite automated regression test runne
 | **`/brainstorm`** | `:fast`, `:hard`, `:team` | Socratic requirements discovery, trade-off analysis & ideation |
 | **`/report`** | `:fast`, `:hard`, `:team` | Executive & technical synthesis reports with metrics and diagrams |
 | **`/orchestrate`** | — | Custom multi-agent pipeline orchestration across multiple domains |
+| **`/settings` / `/config`** | `preset`, `mode`, `set`, `ui` | Unified Control Center: switch `Auto` / `Mode A` / `Mode B` / `Team`, presets, or open Web UI (`--ui`) |
 | **`/save` / `/recap`** | — | Persist session state (`SESSION-HANDOVER.md`) and restore full context in `< 5s` |
 
 ---
@@ -204,6 +248,48 @@ npm run doctor
 npm run check ./cli
 npm test
 ```
+
+---
+
+### 🎛️ Hướng Dẫn Lựa Chọn Chế Độ & Bảng Cài Đặt (`/settings` Control Center)
+
+Mặc định ngay sau khi cài đặt, BoomOpen v5.5 tự động kích hoạt cấu hình **Recommended (`⚡ smart-hybrid`)** lưu tại `~/.boomopen/settings.json` và nhúng trực tiếp vào `~/.gemini/GEMINI.md` (cùng 4 nền tảng còn lại) với **độ trễ Turn 1 = 0ms**. Bạn có thể tùy ý chuyển đổi giữa **4 Chế Độ Vận Hành (Presets)** hoặc tinh chỉnh **12 thông số hệ thống** qua 3 cách:
+
+#### 1️⃣ Bảng 4 Chế Độ Vận Hành (Preset Profiles)
+
+| Bộ Cấu Hình (`Preset`) | Chế Độ Thực Thi (`execution.mode`) | Biến Thể Lệnh Mặc Định | Khi Hỏi "Nghiên cứu / Ý tưởng" Tự Nhiên (`naturalLanguageResearchTrigger`) | Chuẩn Code (`codingStandards`) | Khi Nào Nên Dùng? |
+|:-----------------------|:-----------------------------------|:----------------------:|:-------------------------------------------------------------------------:|:------------------------------:|:------------------|
+| **⚡ `smart-hybrid`** *(Mặc định Recommended)* | **`auto`** (Việc nhỏ `≤ 3 files` chạy **Mode A** siêu tốc; việc lớn `> 3 files` hoặc `/cmd` chạy **Mode B Multi-Agent**) | `auto` | **`auto_team`** *(Tự động kích hoạt hội đồng 3-Agent `/brainstorm:team` Golden Triangle)* | `pragmatic` (`400/500` dòng) | Chế độ cân bằng hoàn hảo cho công việc hàng ngày: nhanh ở task nhỏ, cực sâu khi nghiên cứu & làm tính năng lớn |
+| **🚀 `solo-fast`** | **`mode_a`** *(Ép chạy trực tiếp 1 Agent, tắt gọi sub-agent để phản hồi tức thì)* | `fast` | `off` *(Trả lời trực tiếp trong chat trừ khi gõ `/brainstorm`)* | `relaxed` (`600/800` dòng) | Khi cần sửa gấp hotfix, làm prototype nhanh, viết script nhỏ hoặc tiết kiệm tối đa token |
+| **🧠 `deep-architect`** | **`mode_b`** *(Luôn bật điều phối Đa Tác Tử Mode B cho mọi tác vụ)* | `hard` | `auto_hard` *(Tự động chạy `/brainstorm:hard` 5-Lens Research)* | `strict` (`300/400` dòng) | Khi thiết kế kiến trúc hệ thống phức tạp, dự án mới hoặc refactor đa tầng |
+| **🔺 `adversarial-team`** | **`team`** *(Luôn bật hội đồng 3-Agent đối kháng Golden Triangle `:team`)* | `team` | **`auto_team`** *(Hội đồng 3-Agent phản biện chéo qua `MAILBOX`)* | `strict` (`300/400` dòng) | Dự án trọng điểm (Fintech, Core Platform, Game 3D lớn) đòi hỏi chất lượng & bảo mật tuyệt đối |
+
+#### 2️⃣ Ba Cách Chuyển Đổi Chế Độ (Chat, Web UI, CLI)
+
+1. **💬 Cách 1 — Gõ trực tiếp `/settings` ngay trong khung Chat (Nhanh & Tiện nhất)**:
+   ```text
+   /settings                                     # Mở bảng trạng thái + Menu chọn tương tác (ask_question UI)
+   /settings preset smart-hybrid                 # Chuyển về chế độ Mặc định Recommended (Auto Mode A/B + auto_team)
+   /settings preset solo-fast                    # Chuyển sang Mode A (Chạy trực tiếp siêu nhanh)
+   /settings preset deep-architect               # Chuyển sang Mode B (Chuyên sâu Multi-Agent)
+   /settings preset adversarial-team             # Chuyển sang Golden Triangle 3-Agent (:team)
+   /settings mode auto | mode_a | mode_b | team  # Đổi riêng chế độ thực thi (Execution Mode)
+   /settings ui                                  # Khởi chạy giao diện Web Control Center trên trình duyệt
+   ```
+2. **🌐 Cách 2 — Mở Bảng Điều Khiển Giao Diện Web (`http://127.0.0.1:4567`)**:
+   > **Lưu ý**: Để mở trang Web local `http://127.0.0.1:4567`, bạn cần chạy lệnh khởi động server bên dưới trong Terminal (hoặc gõ `/settings ui` trong chat):
+   ```bash
+   npm run settings:ui
+   # Hoặc chạy trực tiếp từ bất kỳ thư mục nào:
+   node ~/.gemini/config/skills/boomopen-workflow-kit/cli/install.js settings --ui
+   ```
+3. **⌨️ Cách 3 — Chạy lệnh Terminal CLI (Hỗ trợ cả Global `~/.boomopen/settings.json` & từng Project `./.boomopen.json`)**:
+   ```bash
+   npm run settings -- status                                  # Xem bảng 12 thông số đang kích hoạt
+   npm run settings -- preset adversarial-team                 # Đổi preset toàn cục & đồng bộ cả 5 IDE trong <10ms
+   npm run settings -- set execution.mode mode_a --project     # Ghi đè chế độ riêng cho thư mục dự án hiện tại
+   npm run settings -- reset                                   # Khôi phục về mặc định Recommended (smart-hybrid)
+   ```
 
 ---
 

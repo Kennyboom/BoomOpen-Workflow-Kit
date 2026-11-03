@@ -20,10 +20,12 @@
     "uninstall:codex": "node cli/install.js uninstall codex",
     "uninstall:all": "node cli/install.js uninstall --all",
     "list": "node cli/install.js list",
+    "settings": "node cli/install.js settings",
+    "settings:ui": "node cli/install.js settings --ui",
     "doctor": "node cli/install.js doctor",
     "check": "node cli/install.js check",
     "test": "node --test cli/install.test.js",
-    "lint": "node --check cli/install.js && node --check cli/doctor.js && node --check cli/checker.js && echo '✅ JavaScript syntax valid'",
+    "lint": "node --check cli/install.js && node --check cli/doctor.js && node --check cli/checker.js && node --check cli/settings.js && node --check cli/settings-ui.js && echo '✅ JavaScript syntax valid'",
     "lint:md": "echo 'Run: npx markdownlint \"**/*.md\" --ignore node_modules' to lint Markdown",
     "semantic-release": "semantic-release",
     "prepare": "husky install || true"
