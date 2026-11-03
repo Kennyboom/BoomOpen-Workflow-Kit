@@ -2,31 +2,31 @@
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
   <p><strong>멀티 플랫폼 스마트 하이브리드 (Smart-Hybrid) AI 워크포스 운영체제 & 멀티 에이전트 오케스트레이션 프레임워크</strong></p>
 
-  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-7c3aed.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases)
-  [![Platforms: 5 Unified](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg)](#)
-  [![Agents: 21 Specialists + 17 Teams](https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg)](#)
-  [![Skills: 48 Core + 1,430+ Library](https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg)](#)
-  [![Node.js: >=18.0.0](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg)](https://nodejs.org/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+  <p>
+    <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
+    <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
+    <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
+    <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  </p>
 
   <p>
-    [🇬🇧 English](../README.md) • [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 简体中文](./README.zh-CN.md) • [🇹🇼 繁體中文](./README.zh-TW.md) • [🇯🇵 日本語](./README.ja.md) • **🇰🇷 한국어** • [🇪🇸 Español](./README.es.md) • [🇫🇷 Français](./README.fr.md) • [🇩🇪 Deutsch](./README.de.md)<br/>
-    [🇧🇷 Português](./README.pt-BR.md) • [🇷🇺 Русский](./README.ru.md) • [🇮🇳 हिन्दी](./README.hi.md) • [🇸🇦 العربية](./README.ar.md) • [🇮🇩 Bahasa Indonesia](./README.id.md) • [🇹🇭 ไทย](./README.th.md) • [🇹🇷 Türkçe](./README.tr.md) • [🇮🇹 Italiano](./README.it.md)
+    <a href="../README.md">🇬🇧 English</a> • <a href="./README.vi.md">🇻🇳 Tiếng Việt</a> • <a href="./README.zh-CN.md">🇨🇳 简体中文</a> • <a href="./README.zh-TW.md">🇹🇼 繁體中文</a> • <a href="./README.ja.md">🇯🇵 日本語</a> • <b>🇰🇷 한국어</b> • <a href="./README.es.md">🇪🇸 Español</a> • <a href="./README.fr.md">🇫🇷 Français</a> • <a href="./README.de.md">🇩🇪 Deutsch</a><br/>
+    <a href="./README.pt-BR.md">🇧🇷 Português</a> • <a href="./README.ru.md">🇷🇺 Русский</a> • <a href="./README.hi.md">🇮🇳 हिन्दी</a> • <a href="./README.ar.md">🇸🇦 العربية</a> • <a href="./README.id.md">🇮🇩 Bahasa Indonesia</a> • <a href="./README.th.md">🇹🇭 ไทย</a> • <a href="./README.tr.md">🇹🇷 Türkçe</a> • <a href="./README.it.md">🇮🇹 Italiano</a>
   </p>
 </div>
 
 ---
 
-## 🎬 Official Launch Trailer (Full HD 1080p)
+## 🎬 공식 런칭 트레일러 (Full HD 1080p)
 
 <div align="center">
   <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
-    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+    <img src="../assets/media/poster_en.png" alt="BoomOpen Workflow Kit v5.5 공식 런칭 트레일러 (Full HD 1080p)" width="92%" />
   </a>
   <p>
-    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
-    &nbsp;|&nbsp;
-    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>여기를 클릭하여 Full HD 1080p 공식 런칭 트레일러 재생 / 스트리밍 (스튜디오 보이스오버 MP4)</b></a>
   </p>
 </div>
 
@@ -107,7 +107,7 @@ npm run install:claude        # Anthropic Claude Code
 npm run install:codex         # OpenAI Codex CLI
 npm run install:cursor        # Cursor AI Editor
 npm run install:copilot       # GitHub Copilot (VS Code)
-npm run install:all           # All 5 platforms
+npm run install:all           # 5개 플랫폼 전체 일괄 설치
 
 # 3. 설치 상태 진단, 2계층 코드 표준 검사 및 자동화 테스트 실행
 npm run doctor
@@ -117,23 +117,32 @@ npm test
 
 ---
 
-## 🎛️ Unified Settings & Mode Selection (`/settings` Control Center)
+## 🎛️ 통합 설정 및 실행 모드 선택 (`/settings` 컨트롤 센터)
 
-Switch execution modes (`auto` | `mode_a` | `mode_b` | `team`), 4 one-click presets (`smart-hybrid`, `solo-fast`, `deep-architect`, `adversarial-team`), and 12 system settings across all 5 platforms in `< 10ms` with **0ms Turn-1 latency**:
+BoomOpen v5.5는 **제로 레이턴시 통합 컨트롤 센터**를 제공하여 실행 모드(`auto`, `mode_a`, `mode_b`, `team`), 4가지 원클릭 프리셋 및 12가지 시스템 설정을 **5개 플랫폼** 전체에 `< 10ms`(첫 턴 지연 시간 **0ms**)로 동기화합니다:
+
+| 프리셋 (`Preset`) | 실행 모드 (`execution.mode`) | 기본 변형 | 자연어 심층 리서치 (`naturalLanguageResearchTrigger`) | 코딩 표준 (`codingStandards`) | 권장 사용 환경 |
+|:---|:---|:---:|:---:|:---:|:---|
+| **⚡ `smart-hybrid`** *(기본 권장)* | **`auto`** (`≤ 3개 파일` → Mode A 즉시 실행; `> 3개 파일` 또는 `/cmd` → Mode B) | `auto` | **`auto_team`** *(`/brainstorm:team` 골든 트라이앵글 3인 팀으로 자동 라우팅)* | `pragmatic` (`400/500`줄) | 일상적인 풀스택 개발 — 소규모 작업은 초고속, 대규모 아키텍처는 심층 분석 |
+| **🚀 `solo-fast`** | **`mode_a`** *(서브 에이전트 없이 단일 에이전트 직접 실행 강제)* | `fast` | `off` *(`/brainstorm` 입력 시에만 실행, 기본은 즉시 답변)* | `relaxed` (`600/800`줄) | 긴급 핫픽스, 빠른 프로토타이핑, 스크립트 작성 및 토큰 절약 |
+| **🧠 `deep-architect`** | **`mode_b`** *(모든 작업에 Mode B 멀티 에이전트 오케스트레이션 강제)* | `hard` | `auto_hard` *(`/brainstorm:hard` 5-렌즈 심층 리서치 자동 실행)* | `strict` (`300/400`줄) | 복잡한 시스템 아키텍처 설계, 신규 프로젝트 및 다중 도메인 리팩토링 |
+| **🔺 `adversarial-team`** | **`team`** *(모든 워크플로우에 3-에이전트 골든 트라이앵글 `:team` 강제)* | `team` | **`auto_team`** *(`MAILBOX` 기반 3-에이전트 교차 검증 및 토론)* | `strict` (`300/400`줄) | 미션 크리티컬 프로덕션 코드, 보안 감사 및 무결점 릴리스 |
+
+### 모드 전환 및 설정 변경의 3가지 방법 (채팅 `/settings`, 로컬 웹 UI, CLI)
 
 ```bash
-# 1. In-Chat Slash Command (Interactive UI Widget or One-Liner)
-/settings                                     # Open interactive ask_question menu
-/settings preset smart-hybrid                 # Default Recommended (Auto Mode A/B + auto_team)
-/settings preset solo-fast                    # Force Mode A Direct Fast Execution
-/settings preset deep-architect               # Force Mode B Multi-Agent Orchestrator
-/settings preset adversarial-team             # Force Golden Triangle 3-Agent (:team)
-/settings mode auto | mode_a | mode_b | team  # Override execution.mode directly
+# 1. 채팅창 슬래시 명령어 (대화형 메뉴 또는 한 줄 명령)
+/settings                                     # 대화형 선택 메뉴 열기 (ask_question UI)
+/settings preset smart-hybrid                 # 기본 권장 모드로 전환 (Auto Mode A/B + auto_team)
+/settings preset solo-fast                    # Mode A 단일 에이전트 초고속 직접 실행으로 전환
+/settings preset deep-architect               # Mode B 멀티 에이전트 오케스트레이터로 전환
+/settings preset adversarial-team             # 골든 트라이앵글 3-에이전트 팀 (:team)으로 전환
+/settings mode auto | mode_a | mode_b | team  # 실행 모드 (execution.mode) 직접 지정
 
-# 2. Local Web Control Center Dashboard (http://127.0.0.1:4567)
+# 2. 로컬 웹 컨트롤 센터 대시보드 실행 (http://127.0.0.1:4567)
 npm run settings:ui
 
-# 3. Terminal CLI (Global ~/.boomopen/settings.json & Project ./.boomopen.json)
+# 3. 터미널 CLI (전역 ~/.boomopen/settings.json 및 프로젝트 ./.boomopen.json)
 npm run settings -- status
 npm run settings -- preset adversarial-team
 npm run settings -- reset
@@ -158,6 +167,7 @@ npm run settings -- reset
 | **`/brainstorm`** | `:fast`, `:hard`, `:team` | 소크라테스식 요구사항 탐색, 트레이드오프 분석 및 아이디어 도출 |
 | **`/report`** | `:fast`, `:hard`, `:team` | 지표 및 다이어그램이 포함된 기술·경영 종합 보고서 생성 |
 | **`/orchestrate`** | — | 여러 도메인에 걸친 맞춤형 멀티 에이전트 파이프라인 오케스트레이션 |
+| **`/settings` / `/config`** | `preset`, `mode`, `set`, `ui` | 통합 컨트롤 센터: `Auto` / `Mode A` / `Mode B` / `Team` 전환, 프리셋 적용 및 웹 UI(`--ui`) 실행 |
 | **`/save` / `/recap`** | — | 세션 상태(`SESSION-HANDOVER.md`) 저장 및 `< 5초` 이내 전체 컨텍스트 복원 |
 
 ---

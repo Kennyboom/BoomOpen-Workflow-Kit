@@ -2,31 +2,31 @@
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
   <p><strong>跨平台智能混合 (Smart-Hybrid) AI 研发操作系统与多智能体协同编排框架</strong></p>
 
-  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-7c3aed.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases)
-  [![Platforms: 5 Unified](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg)](#)
-  [![Agents: 21 Specialists + 17 Teams](https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg)](#)
-  [![Skills: 48 Core + 1,430+ Library](https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg)](#)
-  [![Node.js: >=18.0.0](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg)](https://nodejs.org/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+  <p>
+    <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
+    <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
+    <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
+    <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  </p>
 
   <p>
-    [🇬🇧 English](../README.md) • [🇻🇳 Tiếng Việt](./README.vi.md) • **🇨🇳 简体中文** • [🇹🇼 繁體中文](./README.zh-TW.md) • [🇯🇵 日本語](./README.ja.md) • [🇰🇷 한국어](./README.ko.md) • [🇪🇸 Español](./README.es.md) • [🇫🇷 Français](./README.fr.md) • [🇩🇪 Deutsch](./README.de.md)<br/>
-    [🇧🇷 Português](./README.pt-BR.md) • [🇷🇺 Русский](./README.ru.md) • [🇮🇳 हिन्दी](./README.hi.md) • [🇸🇦 العربية](./README.ar.md) • [🇮🇩 Bahasa Indonesia](./README.id.md) • [🇹🇭 ไทย](./README.th.md) • [🇹🇷 Türkçe](./README.tr.md) • [🇮🇹 Italiano](./README.it.md)
+    <a href="../README.md">🇬🇧 English</a> • <a href="./README.vi.md">🇻🇳 Tiếng Việt</a> • <b>🇨🇳 简体中文</b> • <a href="./README.zh-TW.md">🇹🇼 繁體中文</a> • <a href="./README.ja.md">🇯🇵 日本語</a> • <a href="./README.ko.md">🇰🇷 한국어</a> • <a href="./README.es.md">🇪🇸 Español</a> • <a href="./README.fr.md">🇫🇷 Français</a> • <a href="./README.de.md">🇩🇪 Deutsch</a><br/>
+    <a href="./README.pt-BR.md">🇧🇷 Português</a> • <a href="./README.ru.md">🇷🇺 Русский</a> • <a href="./README.hi.md">🇮🇳 हिन्दी</a> • <a href="./README.ar.md">🇸🇦 العربية</a> • <a href="./README.id.md">🇮🇩 Bahasa Indonesia</a> • <a href="./README.th.md">🇹🇭 ไทย</a> • <a href="./README.tr.md">🇹🇷 Türkçe</a> • <a href="./README.it.md">🇮🇹 Italiano</a>
   </p>
 </div>
 
 ---
 
-## 🎬 Official Launch Trailer (Full HD 1080p)
+## 🎬 官方发布宣传片 (Full HD 1080p)
 
 <div align="center">
   <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
-    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+    <img src="../assets/media/poster_en.png" alt="观看 BoomOpen Workflow Kit v5.5 官方发布宣传片 (Full HD 1080p)" width="92%" />
   </a>
   <p>
-    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
-    &nbsp;|&nbsp;
-    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>点击此处在线观看 / 播放 Full HD 1080p 官方宣传片 (MP4 专业配音版)</b></a>
   </p>
 </div>
 
@@ -107,7 +107,7 @@ npm run install:claude        # Anthropic Claude Code
 npm run install:codex         # OpenAI Codex CLI
 npm run install:cursor        # Cursor AI Editor
 npm run install:copilot       # GitHub Copilot (VS Code)
-npm run install:all           # All 5 platforms
+npm run install:all           # 一键安装全部 5 大平台
 
 # 3. 运行健康诊断、双层编码规范检查与自动化测试套件
 npm run doctor
@@ -117,23 +117,32 @@ npm test
 
 ---
 
-## 🎛️ Unified Settings & Mode Selection (`/settings` Control Center)
+## 🎛️ 统一设置与执行模式选择 (`/settings` 控制中心)
 
-Switch execution modes (`auto` | `mode_a` | `mode_b` | `team`), 4 one-click presets (`smart-hybrid`, `solo-fast`, `deep-architect`, `adversarial-team`), and 12 system settings across all 5 platforms in `< 10ms` with **0ms Turn-1 latency**:
+BoomOpen v5.5 内置**零延迟统一控制中心**，支持在 `< 10ms` 内跨全部 **5 大平台**切换执行模式（`auto`、`mode_a`、`mode_b`、`team`）、4 套一键预设与 12 项系统参数（首轮对话延迟为 **0ms**）：
+
+| 预设配置 (`Preset`) | 执行模式 (`execution.mode`) | 默认变体 | 自然语言深度调研 (`naturalLanguageResearchTrigger`) | 代码规范 (`codingStandards`) | 适用场景 |
+|:---|:---|:---:|:---:|:---:|:---|
+| **⚡ `smart-hybrid`** *(默认推荐)* | **`auto`**（`≤ 3 个文件` 走 Mode A 极速直连；`> 3 个文件` 或 `/cmd` 走 Mode B 多智能体） | `auto` | **`auto_team`** *(自动路由至 `/brainstorm:team` 黄金三角三人组)* | `pragmatic` (`400/500` 行) | 日常全栈研发首选：小任务零延迟，大架构深度协同 |
+| **🚀 `solo-fast`** | **`mode_a`** *(强制单智能体直接执行，0 秒子代理开销)* | `fast` | `off` *(直接回复，除非显式输入 `/brainstorm`)* | `relaxed` (`600/800` 行) | 紧急热修复、快速原型验证、小型脚本与极致节省 Token |
+| **🧠 `deep-architect`** | **`mode_b`** *(所有任务强制启用 Mode B 多智能体编排)* | `hard` | `auto_hard` *(自动运行 `/brainstorm:hard` 五维深度调研)* | `strict` (`300/400` 行) | 复杂系统架构设计、从零新建项目与跨领域重构 |
+| **🔺 `adversarial-team`** | **`team`** *(所有工作流强制启用 3 智能体黄金三角 `:team`)* | `team` | **`auto_team`** *(3 智能体经由 `MAILBOX` 交叉对抗评审)* | `strict` (`300/400` 行) | 核心生产系统、金融级安全审计与零缺陷交付 |
+
+### 三种切换方式（聊天框 `/settings`、本地 Web 面板、终端 CLI）
 
 ```bash
-# 1. In-Chat Slash Command (Interactive UI Widget or One-Liner)
-/settings                                     # Open interactive ask_question menu
-/settings preset smart-hybrid                 # Default Recommended (Auto Mode A/B + auto_team)
-/settings preset solo-fast                    # Force Mode A Direct Fast Execution
-/settings preset deep-architect               # Force Mode B Multi-Agent Orchestrator
-/settings preset adversarial-team             # Force Golden Triangle 3-Agent (:team)
-/settings mode auto | mode_a | mode_b | team  # Override execution.mode directly
+# 1. 聊天框内直接输入斜杠命令（弹出交互式选择菜单或单行速设）
+/settings                                     # 打开交互式选择菜单 (ask_question UI)
+/settings preset smart-hybrid                 # 切换为默认推荐模式 (Auto Mode A/B + auto_team)
+/settings preset solo-fast                    # 切换为 Mode A 极速单代理直接执行
+/settings preset deep-architect               # 切换为 Mode B 多智能体深度编排
+/settings preset adversarial-team             # 切换为黄金三角 3 智能体对抗团队 (:team)
+/settings mode auto | mode_a | mode_b | team  # 单独覆盖执行模式 (execution.mode)
 
-# 2. Local Web Control Center Dashboard (http://127.0.0.1:4567)
+# 2. 启动本地 Web 可视化控制中心 (http://127.0.0.1:4567)
 npm run settings:ui
 
-# 3. Terminal CLI (Global ~/.boomopen/settings.json & Project ./.boomopen.json)
+# 3. 终端 CLI 命令（支持全局 ~/.boomopen/settings.json 与项目级 ./.boomopen.json）
 npm run settings -- status
 npm run settings -- preset adversarial-team
 npm run settings -- reset
@@ -158,6 +167,7 @@ npm run settings -- reset
 | **`/brainstorm`** | `:fast`, `:hard`, `:team` | 苏格拉底式需求澄清、架构权衡分析与方案头脑风暴 |
 | **`/report`** | `:fast`, `:hard`, `:team` | 生成包含指标统计与架构图表的技术及管理总结报告 |
 | **`/orchestrate`** | — | 跨多个领域的自定义多智能体流水线协同编排 |
+| **`/settings` / `/config`** | `preset`, `mode`, `set`, `ui` | 统一控制中心：切换 `Auto` / `Mode A` / `Mode B` / `Team`、应用预设或打开本地 Web 界面 (`--ui`) |
 | **`/save` / `/recap`** | — | 保存会话交接状态（`SESSION-HANDOVER.md`）并在 `< 5秒` 内快速恢复项目上下文 |
 
 ---

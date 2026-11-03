@@ -2,31 +2,31 @@
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
   <p><strong>Sistema Operativo AI Smart-Hybrid Multipiattaforma e Framework di Orchestrazione Multi-Agente</strong></p>
 
-  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-7c3aed.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases)
-  [![Platforms: 5 Unified](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg)](#)
-  [![Agents: 21 Specialists + 17 Teams](https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg)](#)
-  [![Skills: 48 Core + 1,430+ Library](https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg)](#)
-  [![Node.js: >=18.0.0](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg)](https://nodejs.org/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+  <p>
+    <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
+    <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
+    <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
+    <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  </p>
 
   <p>
-    [🇬🇧 English](../README.md) • [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 简体中文](./README.zh-CN.md) • [🇹🇼 繁體中文](./README.zh-TW.md) • [🇯🇵 日本語](./README.ja.md) • [🇰🇷 한국어](./README.ko.md) • [🇪🇸 Español](./README.es.md) • [🇫🇷 Français](./README.fr.md) • [🇩🇪 Deutsch](./README.de.md)<br/>
-    [🇧🇷 Português](./README.pt-BR.md) • [🇷🇺 Русский](./README.ru.md) • [🇮🇳 हिन्दी](./README.hi.md) • [🇸🇦 العربية](./README.ar.md) • [🇮🇩 Bahasa Indonesia](./README.id.md) • [🇹🇭 ไทย](./README.th.md) • [🇹🇷 Türkçe](./README.tr.md) • **🇮🇹 Italiano**
+    <a href="../README.md">🇬🇧 English</a> • <a href="./README.vi.md">🇻🇳 Tiếng Việt</a> • <a href="./README.zh-CN.md">🇨🇳 简体中文</a> • <a href="./README.zh-TW.md">🇹🇼 繁體中文</a> • <a href="./README.ja.md">🇯🇵 日本語</a> • <a href="./README.ko.md">🇰🇷 한국어</a> • <a href="./README.es.md">🇪🇸 Español</a> • <a href="./README.fr.md">🇫🇷 Français</a> • <a href="./README.de.md">🇩🇪 Deutsch</a><br/>
+    <a href="./README.pt-BR.md">🇧🇷 Português</a> • <a href="./README.ru.md">🇷🇺 Русский</a> • <a href="./README.hi.md">🇮🇳 हिन्दी</a> • <a href="./README.ar.md">🇸🇦 العربية</a> • <a href="./README.id.md">🇮🇩 Bahasa Indonesia</a> • <a href="./README.th.md">🇹🇭 ไทย</a> • <a href="./README.tr.md">🇹🇷 Türkçe</a> • <b>🇮🇹 Italiano</b>
   </p>
 </div>
 
 ---
 
-## 🎬 Official Launch Trailer (Full HD 1080p)
+## 🎬 Trailer Ufficiale di Lancio (Full HD 1080p)
 
 <div align="center">
   <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4">
-    <img src="../assets/media/poster_en.png" alt="Watch BoomOpen Workflow Kit v5.5 Official Launch Trailer" width="92%" />
+    <img src="../assets/media/poster_en.png" alt="Guarda il Trailer Ufficiale di Lancio di BoomOpen Workflow Kit v5.5 (Full HD 1080p)" width="92%" />
   </a>
   <p>
-    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch / Stream Full HD English Trailer (MP4)</b></a>
-    &nbsp;|&nbsp;
-    🇻🇳 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Xem Bản Tiếng Việt</b></a>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Clicca qui per guardare / riprodurre il Trailer Ufficiale in Full HD 1080p (MP4 con voiceover da studio)</b></a>
   </p>
 </div>
 
@@ -107,7 +107,7 @@ npm run install:claude        # Anthropic Claude Code
 npm run install:codex         # OpenAI Codex CLI
 npm run install:cursor        # Cursor AI Editor
 npm run install:copilot       # GitHub Copilot (VS Code)
-npm run install:all           # All 5 platforms
+npm run install:all           # Installa su tutte le 5 piattaforme contemporaneamente
 
 # 3. Verifica lo stato dell’installazione, gli standard a 2 livelli e la suite di test
 npm run doctor
@@ -117,23 +117,32 @@ npm test
 
 ---
 
-## 🎛️ Unified Settings & Mode Selection (`/settings` Control Center)
+## 🎛️ Impostazioni Unificate e Selezione Modalità (`/settings` Control Center)
 
-Switch execution modes (`auto` | `mode_a` | `mode_b` | `team`), 4 one-click presets (`smart-hybrid`, `solo-fast`, `deep-architect`, `adversarial-team`), and 12 system settings across all 5 platforms in `< 10ms` with **0ms Turn-1 latency**:
+BoomOpen v5.5 include un **Centro di Controllo Unificato a Latenza Zero** che permette di cambiare modalità di esecuzione (`auto`, `mode_a`, `mode_b`, `team`), 4 profili predefiniti e 12 impostazioni di sistema su tutte le **5 piattaforme** in `< 10ms` (**0ms di latenza al Turno 1**):
+
+| Profilo (`Preset`) | Modalità di Esecuzione (`execution.mode`) | Variante Predefinita | Ricerca in Linguaggio Naturale (`naturalLanguageResearchTrigger`) | Standard di Codice (`codingStandards`) | Utilizzo Ideale |
+|:---|:---|:---:|:---:|:---:|:---|
+| **⚡ `smart-hybrid`** *(Consigliato Predefinito)* | **`auto`** (`≤ 3 file` → Mode A Diretto; `> 3 file` o `/cmd` → Mode B) | `auto` | **`auto_team`** *(Indirizza automaticamente ricerca/ideazione a `/brainstorm:team` Golden Triangle)* | `pragmatic` (`400/500` righe) | Sviluppo full-stack quotidiano: istantaneo sui piccoli task, profondo sulle architetture complesse |
+| **🚀 `solo-fast`** | **`mode_a`** *(Forza l’esecuzione diretta in solitaria, 0s di latenza sub-agent)* | `fast` | `off` *(Risposta diretta in chat salvo digitazione di `/brainstorm`)* | `relaxed` (`600/800` righe) | Hotfix urgenti, prototipazione rapida, script e massimo risparmio di token |
+| **🧠 `deep-architect`** | **`mode_b`** *(Forza l’Orchestratore Multi-Agente Mode B su ogni attività)* | `hard` | `auto_hard` *(Avvia automaticamente `/brainstorm:hard` a 5 lenti)* | `strict` (`300/400` righe) | Architettura di sistemi complessi, progetti greenfield e refactoring multi-dominio |
+| **🔺 `adversarial-team`** | **`team`** *(Forza il team avversario a 3 agenti Golden Triangle `:team`)* | `team` | **`auto_team`** *(Dibattito e revisione incrociata a 3 agenti via `MAILBOX`)* | `strict` (`300/400` righe) | Codice di produzione mission-critical, audit di sicurezza e rilasci zero-defect |
+
+### Tre Modi per Cambiare Modalità (Chat `/settings`, Dashboard Web Locale e CLI)
 
 ```bash
-# 1. In-Chat Slash Command (Interactive UI Widget or One-Liner)
-/settings                                     # Open interactive ask_question menu
-/settings preset smart-hybrid                 # Default Recommended (Auto Mode A/B + auto_team)
-/settings preset solo-fast                    # Force Mode A Direct Fast Execution
-/settings preset deep-architect               # Force Mode B Multi-Agent Orchestrator
-/settings preset adversarial-team             # Force Golden Triangle 3-Agent (:team)
-/settings mode auto | mode_a | mode_b | team  # Override execution.mode directly
+# 1. Comando Slash in Chat (Menu interattivo o comando rapido)
+/settings                                     # Apri il menu interattivo (ask_question UI)
+/settings preset smart-hybrid                 # Passa alla modalità predefinita consigliata (Auto Mode A/B + auto_team)
+/settings preset solo-fast                    # Passa all’esecuzione diretta veloce (Mode A)
+/settings preset deep-architect               # Passa all’Orchestratore Multi-Agente (Mode B)
+/settings preset adversarial-team             # Passa al team Golden Triangle a 3 agenti (:team)
+/settings mode auto | mode_a | mode_b | team  # Sovrascrivi direttamente la modalità di esecuzione
 
-# 2. Local Web Control Center Dashboard (http://127.0.0.1:4567)
+# 2. Dashboard Web Locale del Centro di Controllo (http://127.0.0.1:4567)
 npm run settings:ui
 
-# 3. Terminal CLI (Global ~/.boomopen/settings.json & Project ./.boomopen.json)
+# 3. Terminale CLI (Globale ~/.boomopen/settings.json e Progetto ./.boomopen.json)
 npm run settings -- status
 npm run settings -- preset adversarial-team
 npm run settings -- reset
@@ -158,6 +167,7 @@ npm run settings -- reset
 | **`/brainstorm`** | `:fast`, `:hard`, `:team` | Scoperta socratica dei requisiti, analisi dei trade-off e ideazione |
 | **`/report`** | `:fast`, `:hard`, `:team` | Report di sintesi esecutivi e tecnici completi di metriche e diagrammi |
 | **`/orchestrate`** | — | Orchestrazione personalizzata di pipeline multi-agente attraverso più domini |
+| **`/settings` / `/config`** | `preset`, `mode`, `set`, `ui` | Centro di Controllo Unificato: cambia `Auto` / `Mode A` / `Mode B` / `Team`, preset o apri Web UI (`--ui`) |
 | **`/save` / `/recap`** | — | Salva lo stato della sessione (`SESSION-HANDOVER.md`) e ripristina l’intero contesto in `< 5s` |
 
 ---

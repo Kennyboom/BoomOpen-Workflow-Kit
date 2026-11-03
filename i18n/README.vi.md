@@ -1,32 +1,57 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Hệ Điều Hành Nhân Sự AI Đa Nền Tảng & Khung Điều Phối Đa Tác Tử Thông Minh (Smart-Hybrid)</strong></p>
-
-  [![Version: 5.5.0](https://img.shields.io/badge/Version-5.5.0-7c3aed.svg)](https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases)
-  [![Platforms: 5 Unified](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg)](#)
-  [![Agents: 21 Specialists + 17 Teams](https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg)](#)
-  [![Skills: 48 Core + 1,430+ Library](https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg)](#)
-  [![Node.js: >=18.0.0](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg)](https://nodejs.org/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+  <p><strong>Hệ Điều Hành Nhân Sự AI Đa Nền Tảng &amp; Khung Điều Phối Đa Tác Tử Thông Minh (Smart-Hybrid)</strong></p>
 
   <p>
-    [🇬🇧 English](../README.md) • **🇻🇳 Tiếng Việt** • [🇨🇳 简体中文](./README.zh-CN.md) • [🇹🇼 繁體中文](./README.zh-TW.md) • [🇯🇵 日本語](./README.ja.md) • [🇰🇷 한국어](./README.ko.md) • [🇪🇸 Español](./README.es.md) • [🇫🇷 Français](./README.fr.md) • [🇩🇪 Deutsch](./README.de.md)<br/>
-    [🇧🇷 Português](./README.pt-BR.md) • [🇷🇺 Русский](./README.ru.md) • [🇮🇳 हिन्दी](./README.hi.md) • [🇸🇦 العربية](./README.ar.md) • [🇮🇩 Bahasa Indonesia](./README.id.md) • [🇹🇭 ไทย](./README.th.md) • [🇹🇷 Türkçe](./README.tr.md) • [🇮🇹 Italiano](./README.it.md)
+    <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
+    <a href="#-các-nền-tảng-ai-được-hỗ-trợ"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
+    <a href="#-21-đặc-vụ-chuyên-gia--17-đội-hình-tam-giác-vàng"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
+    <a href="#-6-trụ-cột-cốt-lõi-của-v55"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
+    <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  </p>
+
+  <p>
+    <a href="../README.md">🇬🇧 English</a> •
+    <b>🇻🇳 Tiếng Việt</b> •
+    <a href="./README.zh-CN.md">🇨🇳 简体中文</a> •
+    <a href="./README.zh-TW.md">🇹🇼 繁體中文</a> •
+    <a href="./README.ja.md">🇯🇵 日本語</a> •
+    <a href="./README.ko.md">🇰🇷 한국어</a> •
+    <a href="./README.es.md">🇪🇸 Español</a> •
+    <a href="./README.fr.md">🇫🇷 Français</a> •
+    <a href="./README.de.md">🇩🇪 Deutsch</a><br/>
+    <a href="./README.pt-BR.md">🇧🇷 Português</a> •
+    <a href="./README.ru.md">🇷🇺 Русский</a> •
+    <a href="./README.hi.md">🇮🇳 हिन्दी</a> •
+    <a href="./README.ar.md">🇸🇦 العربية</a> •
+    <a href="./README.id.md">🇮🇩 Bahasa Indonesia</a> •
+    <a href="./README.th.md">🇹🇭 ไทย</a> •
+    <a href="./README.tr.md">🇹🇷 Türkçe</a> •
+    <a href="./README.it.md">🇮🇹 Italiano</a>
+  </p>
+
+  <p>
+    <a href="#-video-giới-thiệu-chính-thức-full-hd-1080p"><b>🎬 Video Giới Thiệu</b></a> •
+    <a href="#-boomopen-workflow-kit-v55-là-gì"><b>🌟 Tổng Quan</b></a> •
+    <a href="#-kiến-trúc-smart-hybrid-v55"><b>🏗️ Kiến Trúc</b></a> •
+    <a href="#-cài-đặt-nhanh--kiểm-định"><b>🚀 Cài Đặt Nhanh</b></a> •
+    <a href="#-hướng-dẫn-lựa-chọn-chế-độ--bảng-cài-đặt-settings-control-center"><b>🎛️ Chế Độ &amp; Cài Đặt</b></a> •
+    <a href="#-bảng-tham-chiếu-lệnh-slash"><b>🎯 Lệnh Slash</b></a> •
+    <a href="#-21-đặc-vụ-chuyên-gia--17-đội-hình-tam-giác-vàng"><b>🤖 21 Agents &amp; 17 Teams</b></a>
   </p>
 </div>
 
 ---
 
-## 🎬 Video Giới Thiệu Chính Thức (Tiếng Việt — Full HD 1080p)
+## 🎬 Video Giới Thiệu Chính Thức (Full HD 1080p)
 
 <div align="center">
   <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4">
-    <img src="../assets/media/poster_vi.png" alt="Xem Video Giới Thiệu BoomOpen Workflow Kit v5.5 (Tiếng Việt)" width="92%" />
+    <img src="../assets/media/poster_vi.png" alt="Xem Video Giới Thiệu BoomOpen Workflow Kit v5.5 (Full HD 1080p)" width="92%" />
   </a>
   <p>
-    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Bấm Vào Đây Để Xem / Tải Video Giới Thiệu Bản Tiếng Việt (Full HD 1080p — Thuyết Minh Studio)</b></a>
-    &nbsp;|&nbsp;
-    🇬🇧 <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_en.mp4"><b>Watch English Trailer</b></a>
+    ▶️ <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/raw/main/assets/media/boomopen_v55_trailer_vi.mp4"><b>Bấm Vào Đây Để Xem / Tải Video Giới Thiệu Chính Thức (Full HD 1080p — Thuyết Minh Studio)</b></a>
   </p>
 </div>
 
@@ -38,7 +63,7 @@
 
 Khác với các bộ prompt đơn lẻ hoặc các wrapper nặng nề luôn gây độ trễ khởi động cho mọi câu hỏi nhỏ, BoomOpen v5.5 giới thiệu **Cổng Phân Loại Độ Phức Tập Thông Minh 2 Chế Độ (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ Mode A — Thực Thi Trực Tiếp (0 giây Cold-Start)**: Các câu hỏi Q&A, giải thích code, hoặc sửa lỗi/thay đổi cục bộ (`≤ 3 files`, 1 domain, không gọi lệnh `/cmd`) được Agent chính thực thi và kiểm thử **trực tiếp**, tuân thủ nghiêm ngặt **Chuẩn Code Thực Dụng 2 Tầng (Pragmatic 2-Tier Coding Standards)** và **Kiểm Thử & Sửa Lỗi Bền Bỉ (Persistent Testing & Bug Fixing)**.
-- **🎻 Mode B — Điều Phối Đa Tác Tử Nghiêm Ngặt (Strict Multi-Agent Orchestration)**: Các tính năng phức tạp (`> 3 files` hoặc `≥ 2 domains`) hoặc khi gọi lệnh `/cmd` tường minh sẽ kích hoạt chế độ điều phối đa tác tử với **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Khóa Hợp Đồng & Quyền Ghi File (`SHARED_CONTRACT` + `OWNED_FILES`)**, và **Tái Sử Dụng Sub-agent Nóng (`send_message`)**.
+- **🎻 Mode B — Điều Phối Đa Tác Tử Nghiêm Ngặt (Strict Multi-Agent Orchestration)**: Các tính năng phức tạp (`> 3 files` hoặc `≥ 2 domains`), yêu cầu nghiên cứu/phân tích chuyên sâu bằng ngôn ngữ tự nhiên, hoặc khi gọi lệnh `/cmd` tường minh sẽ kích hoạt chế độ điều phối đa tác tử với **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Khóa Hợp Đồng & Quyền Ghi File (`SHARED_CONTRACT` + `OWNED_FILES`)**, và **Tái Sử Dụng Sub-agent Nóng (`send_message`)**.
 
 ---
 
@@ -48,7 +73,7 @@ Khác với các bộ prompt đơn lẻ hoặc các wrapper nặng nề luôn g�
 flowchart TD
     User["👤 Yêu Cầu Người Dùng / Lệnh Slash"] --> Gate{"🚦 Cổng Độ Phức Tập 2 Chế Độ"}
     Gate -->|"≤ 3 files, 1 domain, không /cmd"| ModeA["⚡ Mode A: Thực Thi Trực Tiếp (Tier 0)<br/>0s Cold-Start + Chuẩn Code 2 Tầng"]
-    Gate -->|"> 3 files, ≥ 2 domains, hoặc /cmd"| ModeB["🎻 Mode B: Điều Phối Đa Tác Tử (Tier 1)<br/>Model: inherit (Mặc định Pro High)"]
+    Gate -->|"> 3 files, ≥ 2 domains, Nghiên cứu sâu, hoặc /cmd"| ModeB["🎻 Mode B: Điều Phối Đa Tác Tử (Tier 1)<br/>Model: inherit (Mặc định Pro High)"]
 
     ModeB --> FanOut["🔀 Pha 1: DAG Parallel Fan-Out<br/>(researcher + scouter | debugger + researcher)"]
     FanOut --> Plan["📋 Pha 2: Lập Kế Hoạch Theo Hợp Đồng (planner)<br/>Khóa SHARED_CONTRACT + OWNED_FILES"]
@@ -107,7 +132,7 @@ npm run install:claude        # Anthropic Claude Code
 npm run install:codex         # OpenAI Codex CLI
 npm run install:cursor        # Cursor AI Editor
 npm run install:copilot       # GitHub Copilot (VS Code)
-npm run install:all           # All 5 platforms
+npm run install:all           # Cài đặt đồng loạt cho cả 5 nền tảng
 
 # 3. Kiểm tra sức khỏe cài đặt, chuẩn code 2 tầng & bộ test tự động
 npm run doctor

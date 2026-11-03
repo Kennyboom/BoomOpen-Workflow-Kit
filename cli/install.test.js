@@ -344,12 +344,24 @@ test('All 16 i18n/README.<lang>.md files exist, have full 9-section content, and
   ];
 
   const rootReadme = fs.readFileSync(path.join(REPO_ROOT, 'README.md'), 'utf8');
+  assert.ok(
+    !rootReadme.includes('## 🇻🇳 Tài Liệu Tiếng Việt') &&
+      !rootReadme.includes('Xem Video Bản Tiếng Việt'),
+    'Expected root README.md to be 100% pure English without embedded Vietnamese sections'
+  );
+  const rootPBlocks = rootReadme.match(/<p>[\s\S]*?<\/p>/g) || [];
+  for (const pBlock of rootPBlocks) {
+    assert.ok(
+      !/\]\(\.\//.test(pBlock) && !/\*\*[^*]+\*\*/.test(pBlock),
+      'Expected root README.md <p> blocks to use pure HTML <a>/<b> tags instead of raw Markdown'
+    );
+  }
 
   for (const lang of expectedLangs) {
-    const relLink = `./i18n/README.${lang}.md`;
+    const relLink = `<a href="./i18n/README.${lang}.md">`;
     assert.ok(
       rootReadme.includes(relLink),
-      `Expected root README.md to link to ${relLink}`
+      `Expected root README.md to link to ${relLink} via valid HTML <a> tag`
     );
 
     const filePath = path.join(REPO_ROOT, 'i18n', `README.${lang}.md`);
@@ -366,11 +378,26 @@ test('All 16 i18n/README.<lang>.md files exist, have full 9-section content, and
       `Expected i18n/README.${lang}.md to include Mermaid architecture flowchart`
     );
     assert.ok(
-      content.includes('[🇬🇧 English](../README.md)'),
-      `Expected i18n/README.${lang}.md to link back to ../README.md`
+      content.includes('<a href="../README.md">🇬🇧 English</a>'),
+      `Expected i18n/README.${lang}.md to link back to ../README.md using valid HTML <a> tag`
     );
+    const pBlocks = content.match(/<p>[\s\S]*?<\/p>/g) || [];
+    for (const pBlock of pBlocks) {
+      assert.ok(
+        !/\]\(\.\.?\//.test(pBlock) && !/\*\*[^*]+\*\*/.test(pBlock),
+        `Expected i18n/README.${lang}.md <p> blocks to use pure HTML <a>/<b> tags`
+      );
+    }
+    if (lang !== 'vi') {
+      assert.ok(
+        !content.includes('Xem Bản Tiếng Việt') &&
+          !content.includes('## 🎬 Official Launch Trailer') &&
+          !content.includes('## 🎛️ Unified Settings & Mode Selection'),
+        `Expected i18n/README.${lang}.md to have fully localized trailer & settings headers without Vietnamese/English mix`
+      );
+    }
 
-    for (const cmd of expectedCommands) {
+    for (const cmd of [...expectedCommands, '/settings']) {
       assert.ok(
         content.includes(cmd),
         `Expected i18n/README.${lang}.md to document command ${cmd}`
