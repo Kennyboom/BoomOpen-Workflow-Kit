@@ -58,7 +58,7 @@ handoffs:
 - **🚀 Fast Parallel Sub-agents (Turn-1 Zero-Tax Fan-Out — Exploration, Audits, Bug Hunts & Multi-File Fixes without `/cmd`)**: Spawn subagents **immediately on Turn 1** with **0 pre-flight rule reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter**:
   - Read-only local codebase scouting/grep: `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)`
   - Parallel code edits, testing, debugging, or live web research (`search_web`): `invoke_subagent(TypeName: "self", Role: "Backend Engineer" | "Frontend Engineer" | "QA Tester" | "Deep Researcher", Model: "inherit", Prompt: ...)`
-- **🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1)**: Explicit `/cmd` workflow, task spanning **`> 2 files`** / **`≥ 2 domains`**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) → **Turn-1 Instant Dispatch**: read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch** (route NL research by default `auto_team` to `commands/brainstorm-team.md` Golden Triangle, or `commands/brainstorm-hard.md` when `auto_hard`). Never use `TypeName: "research"` for `search_web` (`no network access`).
+- **🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1)**: Explicit `/cmd` workflow, task spanning **`> 2 files`** / **`≥ 2 domains`**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) → **Turn-1 Instant Dispatch**: read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch** (route NL research by default `auto_team` to `commands/research-team.md` `/research:team` or `commands/brainstorm-team.md` `/brainstorm:team` for ideation, or `research-hard.md` / `brainstorm-hard.md` when `auto_hard`). ⚠️ Always use `TypeName: "self"` for `researcher`, `research-team`, or `scouter` writing `SCOUT-*.md` (`TypeName: "research"` has NO `search_web` and NO `write_file`).
 - **⚡ MODE A — Known-Target Micro-Direct (TIER 0)**: Strictly for simple Q&A, code explanation, or micro-edits where the **exact 1–2 target files are already known on Turn 1** (0 exploration needed, no `/cmd`) → execute, test, and verify directly.
 
 ---
@@ -97,7 +97,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 
 | Input | Action |
 |-------|--------|
-| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/design`, `/report`, `/code` | Load `commands/{cmd}.md` → route to `commands/{cmd}-{variant}.md` |
+| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/design`, `/report`, `/research`, `/code` | Load `commands/{cmd}.md` → route to `commands/{cmd}-{variant}.md` |
 | `/docs`, `/deploy`, `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap`, `/settings` (`/config`) | Load `commands/{cmd}.md` (`commands/settings.md` for `/settings` & `/config`) |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`

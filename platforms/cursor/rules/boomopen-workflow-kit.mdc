@@ -3,7 +3,7 @@ name: BoomOpen Workflow Kit Orchestrator
 description: Smart-Hybrid Multi-Agent Orchestrator (v5.5) — Pragmatic 2-Tier Coding Standards, 2-Mode Gate, DAG Parallel Fan-Out, Direct Plan Dispatch & Contract-First Handoffs.
 alwaysApply: true
 priority: 9999
-commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, brainstorm, ask, code, orchestrate, save, recap, settings]
+commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, research, brainstorm, ask, code, orchestrate, save, recap, settings]
 ---
 
 # ⚡ BoomOpen Workflow Kit v5.5 (Smart-Hybrid Edition)
@@ -34,7 +34,7 @@ commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, b
 
 - **🚫 Anti-Solo-Crawling Rule (MANDATORY)**: If exact target files are NOT already known on Turn 1, OR a task requires exploring/auditing/reading **`> 2 files`**, **NEVER** crawl files sequentially in the primary agent! **IMMEDIATELY spawn parallel subagents on Turn 1** so the parent context window stays 100% clean.
 - **🚀 Fast Parallel Sub-agents (Turn-1 Zero-Tax Fan-Out — Exploration, Audits, Bug Hunts & Multi-File Fixes without `/cmd`)**: Spawn subagents **immediately on Turn 1** with **0 pre-flight rule reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter** (`runSubagent` / `invoke_subagent(TypeName: "research")` for read-only local scouting; `TypeName: "self"` for edits, tests, or `search_web`; `Model: "inherit"`).
-- **🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1)**: For explicit `/cmd` workflows, tasks spanning **`> 2 files`** / **`≥ 2 domains`**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*), execute **Turn-1 Instant Dispatch** (read `commands/{cmd}.md` AND launch Phase 1 subagents `TypeName: "self"`, `Model: "inherit"` in the same Turn-1 batch; route research/ideation by default `auto_team` to `commands/brainstorm-team.md` Golden Triangle, or `commands/brainstorm-hard.md` when `auto_hard`).
+- **🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1)**: For explicit `/cmd` workflows, tasks spanning **`> 2 files`** / **`≥ 2 domains`**, OR **natural-language deep research / product ideation / competitor analysis / architecture discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*), execute **Turn-1 Instant Dispatch** (read `commands/{cmd}.md` AND launch Phase 1 subagents `TypeName: "self"`, `Model: "inherit"` in the same Turn-1 batch; route research/ideation by default `auto_team` to `commands/research-team.md` `/research:team` or `commands/brainstorm-team.md` `/brainstorm:team`, or `research-hard.md` / `brainstorm-hard.md` when `auto_hard`; always use `TypeName: "self"` for `researcher`/`research-team` and `scouter` writing `SCOUT-*.md`).
 - **⚡ MODE A — Known-Target Micro-Direct (TIER 0)**: Strictly for simple Q&A, explanation, or micro-edits where the **exact 1–2 target files are already known on Turn 1** (0 exploration needed, no `/cmd`), execute, test, and verify directly using **Pragmatic 2-Tier Coding Standards**.
 
 ---
@@ -72,7 +72,7 @@ REPORTS   = ./reports/{topic}/
 
 | Input | Route |
 |-------|-------|
-| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/research`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap`, `/settings` (`/config`) | `commands/{cmd}.md` (`commands/settings.md` for `/settings` & `/config`) |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`

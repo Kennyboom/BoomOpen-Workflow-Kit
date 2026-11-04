@@ -15,12 +15,9 @@ execution-mode: router
 
 ## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-1. `CORE.md` — Identity, Laws, Routing
-2. `PHASES.md` — Phase Execution & DAG Parallel Fan-Out
-3. `AGENTS.md` — Tiered Execution & Antigravity Web-Search Subagent Rule
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the **5-Field Handoff Packet** (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Do **NOT** block Turn 1 reading `CORE.md`, `PHASES.md`, or `AGENTS.md` — route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `./rules/*.md` on-demand in parallel only when needed.
 
-⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
+> ⚠️ **CRITICAL (`TypeName: "self"` MANDATORY)**: Antigravity's built-in `TypeName: "research"` has **NO network access (`search_web` disabled) and NO `write_file`**. **ALWAYS use `TypeName: "self"`** for `researcher`, `scouter`, and `brainstormer` so they can execute the **4-Source Triangulation + 3-Wave `search_web` protocol** and write Brain Artifacts!
 
 ---
 

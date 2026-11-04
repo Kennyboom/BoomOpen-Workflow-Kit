@@ -32,14 +32,16 @@
 │    2. Task spans > 2 files or ≥ 2 domains (e.g., DB + Backend + Frontend).    │
 │    3. Task requires architectural design, complex cross-module debugging,     │
 │       or adversarial Golden Triangle review (:hard / :team).                  │
-│    4. Natural-Language Deep Research, Product/Game/System Ideation,           │
-│       Competitor Analysis, or Architecture Discovery ("nghiên cứu", "phân     │
-│       tích chuyên sâu", "đánh giá", "khám phá ý tưởng", "đề xuất ý tưởng",   │
-│       "đề xuất thêm", "research", "deep dive", "analyze", "brainstorm",       │
-│       "investigate", "audit") — EVEN IF 0 code files are modified and no      │
+│    4. Natural-Language Deep Research, Technical/Documentation Investigation,  │
+│       Competitor Analysis, or Architecture/Product Discovery ("nghiên cứu",   │
+│       "tìm hiểu sâu", "phân tích chuyên sâu", "đánh giá", "khám phá ý tưởng", │
+│       "đề xuất ý tưởng", "research", "deep dive", "analyze", "investigate",   │
+│       "brainstorm", "audit") — EVEN IF 0 code files are modified and no       │
 │       /cmd is typed → route by default (`naturalLanguageResearchTrigger =     │
-│       "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team`      │
-│       Golden Triangle), or `commands/brainstorm-hard.md` when `"auto_hard"`.  │
+│       "auto_team"`) to `commands/research-team.md` (`/research:team`) or      │
+│       `commands/brainstorm-team.md` (`/brainstorm:team` when ideation is      │
+│       requested), or `commands/research-hard.md` / `brainstorm-hard.md`       │
+│       when `"auto_hard"`.                                                     │
 │  • Turn-1 Instant Dispatch: Do NOT waste Turn 1 reading `rules/CORE.md` +     │
 │    `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The       │
 │    5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`,                │
@@ -99,7 +101,7 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 |-------|------|
 | `/cook`, `/cook:hard`, `/cook:team` | `commands/cook.md` → `commands/cook-{variant}.md` |
 | `/cook:fast` | `commands/cook-fast.md` (direct) |
-| `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/research` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/brainstorm`, `/ask`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/orchestrate`, `/save`, `/recap` | `commands/orchestrate.md`, `commands/save.md`, `commands/recap.md` |
 | `/settings`, `/config` | `commands/settings.md` (Unified Settings & Control Center: `ask_question` UI, CLI & `--ui` Web Dashboard) |
@@ -118,7 +120,7 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 
 ### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & Turn-1 Zero-Tax Dispatch (TIER 1)
 - **⚡ `TypeName: "self"` (0-Turn Fast-Track Default)**: Calling `invoke_subagent(TypeName: "self", Role: "<specialist>", Model: "inherit", Prompt: ...)` spawns an isolated sub-agent on Turn 1 that **immediately inherits full write tools + `run_command` + `search_web`** without needing a prior `define_subagent` turn!
-- **🔍 `TypeName: "research"` (Fast Read-Only Local Codebase Explorer)**: Use `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)` for fast read-only local codebase scouting/grep/mapping (`no network access` — never use `TypeName: "research"` when `search_web` is needed).
+- **⚠️ `TypeName: "research"` Limitation**: Antigravity's built-in `TypeName: "research"` has **NO network access (`search_web` disabled) and NO `write_file` tool**. **ALWAYS use `TypeName: "self"`** for `researcher`, `research-team`, any sub-agent needing `search_web`, or any `scouter` that writes `SCOUT-*.md`! Use `TypeName: "research"` strictly for ephemeral read-only local codebase grep when no file output is needed.
 - `define_subagent`: Optional custom tool-scoped registration when strict read/write sandboxing is desired.
 - `invoke_subagent`: Spawn isolated sub-agents with `TypeName`, `Role`, `Prompt` (5-field Structured Handoff Packet: `1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`), `Model` (`"inherit"` default; NEVER `"flash_lite"`), and `Workspace` (`inherit`, `branch`, or `share`). Record `conversationId` in the **Active Sub-agent Session Registry**.
 - `send_message`: **Warm Sub-agent Reuse** — multi-turn communication with running or completed sub-agents by `conversationId` (0s cold-start, 100% preserved file context), powered by **Reactive Async Wakeup** (never poll in a loop).

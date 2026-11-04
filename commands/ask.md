@@ -25,11 +25,11 @@ execution-mode: router
 IF question is factual (single answer, codebase lookup):
   → Route to /ask:fast
 
-IF question requires research (multiple sources, analysis):
-  → Route to /ask:hard
+IF question requires multi-source research, official documentation verification, or architectural trade-offs:
+  → Route to /ask:hard (or `/research:team` / `/research:hard` for exhaustive multi-wave technical/documentation deep-dives)
 
 IF unsure:
-  → Default to /ask:fast (escalate if insufficient)
+  → Default to /ask:fast (escalate to `/ask:hard` or `/research:team` if insufficient)
 ```
 
 ---

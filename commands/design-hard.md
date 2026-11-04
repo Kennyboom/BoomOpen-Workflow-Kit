@@ -109,7 +109,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 > Spawn **BOTH** sub-agents in parallel in the same tool call batch:
 > 1. `invoke_subagent(TypeName: "self", Role: "UX Researcher", Model: "inherit")` → writes `<appDataDir>\brain\<conversation-id>\RESEARCH-{request}.md` (loads `skills_library/ux-researcher-designer/SKILL.md`).
-> 2. `invoke_subagent(TypeName: "research", Role: "Codebase Design Scouter", Model: "inherit")` → writes `<appDataDir>\brain\<conversation-id>\SCOUT-{request}.md` (audits existing CSS/Tailwind tokens, components, and layouts).
+> 2. `invoke_subagent(TypeName: "self", Role: "Codebase Design Scouter", Model: "inherit")` → writes `<appDataDir>\brain\<conversation-id>\SCOUT-{request}.md` (audits existing CSS/Tailwind tokens, components, and layouts; MUST use `TypeName: "self"` so `scouter` has `write_file` access).
 
 **TIER 2 (FALLBACK on system error only):**
 

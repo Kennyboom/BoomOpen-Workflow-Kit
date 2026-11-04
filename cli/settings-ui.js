@@ -119,7 +119,7 @@ function renderDashboardHtml() {
   <script>
     const SCHEMA = ${schemaJson};
     const PRESET_META = [
-      { id: 'smart-hybrid', title: '⚡ Smart-Hybrid (Default v5.5)', desc: 'Mode A <= 2 known files; Proactive Sub-agent First for > 2 files, unscoped exploration, or /cmd; NL Research → /brainstorm:team.' },
+      { id: 'smart-hybrid', title: '⚡ Smart-Hybrid (Default v5.5)', desc: 'Mode A <= 2 known files; Proactive Sub-agent First on Turn 1 for > 2 files, unscoped exploration, or /cmd; NL Research → /research:team & /brainstorm:team.' },
       { id: 'solo-fast', title: '🚀 Solo-Fast (Direct Mode A)', desc: 'Force Mode A Direct Execution (≤10 files), :fast variant, Relaxed 600/800 lines.' },
       { id: 'deep-architect', title: '🧠 Deep-Architect (Strict Mode B)', desc: 'Force Mode B Multi-Agent Orchestrator, :hard variant, Strict 300/400 lines.' },
       { id: 'adversarial-team', title: '🔺 Adversarial-Team (Golden Triangle)', desc: 'Force 3-Agent Golden Triangle :team on all workflows, Strict 300/400 lines.' }

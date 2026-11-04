@@ -73,10 +73,10 @@ Every `invoke_subagent` prompt or `send_message` task brief in Mode B **MUST** i
    - Spawn subagents **immediately on Turn 1** with **0 pre-flight rule-file reads**, **0 `define_subagent` overhead**, and **0 mandatory `.md` report clutter**:
      - **Read-only local codebase scouting/grep/mapping**: `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)`
      - **Parallel code edits, testing, debugging, or live web research (`search_web`)**: `invoke_subagent(TypeName: "self", Role: "Backend Engineer" | "Frontend Engineer" | "QA Tester" | "Deep Researcher", Model: "inherit", Prompt: ...)`
-2. **🎻 Mode B Turn-1 Instant Dispatch (Explicit `/cmd`, `:hard`, `:team`, `> 2 files` / `≥ 2 domains`, or NL Research `auto_team`)**:
+2. **🎻 Mode B Turn-1 Instant Dispatch (Explicit `/cmd`, `:hard`, `:team`, `> 2 files` / `≥ 2 domains`, or NL Research `auto_team` → `/research:team` / `/brainstorm:team`)**:
    - Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) is pre-embedded in the entrypoint.
    - Read `commands/{cmd}.md` AND launch Phase 1 sub-agents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch**.
-   - **⚡ `TypeName: "self"` (0-Turn Fast-Track Default)**: Inherits full write tools + `run_command` + `search_web` immediately without a prior `define_subagent` turn. Never use `TypeName: "research"` when `search_web` or file writing is needed (`TypeName: "research"` is read-only local codebase exploration with `no network access`).
+   - **⚡ `TypeName: "self"` (0-Turn Fast-Track Default) & ⚠️ `TypeName: "research"` Warning**: `TypeName: "self"` inherits full `write_file` + `run_command` + `search_web` immediately without a prior `define_subagent` turn. Antigravity's built-in `TypeName: "research"` has **NO network access (`search_web` disabled) and NO `write_file` tool** — **ALWAYS use `TypeName: "self"`** for `researcher`, `research-team`, any sub-agent needing `search_web`, or any `scouter` that writes `SCOUT-*.md`!
    - If role is already in `active_subagents` registry → `send_message(Recipient: conversationId, Message: packet)` (Warm Session Reuse).
    - Launch independent DAG phases concurrently in a **single turn** and join via **Reactive Async Wakeup** (never poll in a loop).
    - Cross-platform fallback alias: `runSubagent(agent_name, packet)`.

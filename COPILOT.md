@@ -52,7 +52,7 @@
   1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **`> 2 files`** or **`≥ 2 domains`** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) — EVEN IF 0 code files are modified and no `/cmd` is typed → route by default (`naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when `"auto_hard"`.
+  4. **Natural-Language Deep Research, Technical/Documentation Investigation, Competitor Analysis, or Architecture/Product Discovery** (*"nghiên cứu"*, *"tìm hiểu sâu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"research"*, *"deep dive"*, *"analyze"*, *"investigate"*, *"brainstorm"*, *"audit"*) — EVEN IF 0 code files are modified and no `/cmd` is typed → route by default (`naturalLanguageResearchTrigger = "auto_team"`) to `commands/research-team.md` (`/research:team`) or `commands/brainstorm-team.md` (`/brainstorm:team` when ideation/brainstorming is requested), or `commands/research-hard.md` / `commands/brainstorm-hard.md` when `"auto_hard"`. (⚠️ Always use `TypeName: "self"` for `researcher`/`research-team` and `scouter` writing `SCOUT-*.md`; `TypeName: "research"` has NO `search_web` and NO `write_file`).
 - **Turn-1 Instant Dispatch**: Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) is pre-embedded below. Read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"` / `~/.copilot/agents/*.md`, `Model: "inherit"`) in the **same Turn-1 tool batch**, using **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Warm Sub-agent Reuse (`send_message`)**.
 
 ### ⚡ MODE A — Known-Target Micro-Direct (TIER 0 — `≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
@@ -96,7 +96,7 @@ REPORTS   = ./reports/{topic}/
 
 | Input | Route |
 |-------|-------|
-| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
+| `/cook`, `/fix`, `/plan`, `/debug`, `/test`, `/review`, `/docs`, `/design`, `/deploy`, `/report`, `/research`, `/code` | `commands/{cmd}.md` → `commands/{cmd}-{variant}.md` |
 | `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap`, `/settings` (`/config`) | `commands/{cmd}.md` (`commands/settings.md` for `/settings` & `/config`) |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`

@@ -25,19 +25,20 @@ execution-mode: execute
 
 ---
 
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
+## 🔀 TIERED EXECUTION & 4-SOURCE TRIANGULATION PROTOCOL (MANDATORY)
 
-> **Reference: AGENTS.md (Tiered Execution)`
+> **Reference: AGENTS.md (Tiered Execution)**
 
 ```yaml
 tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
+  principle: "Sub-agent FIRST (Tier 1, TypeName: 'self', Model: 'inherit'). EMBODY ONLY on system failure (Tier 2)."
+  antigravity_subagent_rule:
+    - "⚠️ NEVER use `TypeName: 'research'` (which disables `search_web` and `write_file`). ALWAYS use `invoke_subagent(TypeName: 'self', Model: 'inherit')` for `brainstormer`, `researcher`, and `scouter`."
+  rapid_triangulation_and_search:
+    - "When external facts or docs are needed, execute 4-Source Triangulation (Workspace manifests + 1,471 Skills Vault `compact-index.json` + Official Docs via `search_web` + Benchmarks/Issues) and multi-wave `search_web` verification."
   anti_lazy_fallback:
     - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
+    - ✅ ALWAYS attempt Tier 1 (`TypeName: "self"`) first when tool exists
 ```
 
 ---

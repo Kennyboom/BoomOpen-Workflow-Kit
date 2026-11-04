@@ -20,13 +20,7 @@ execution-mode: execute
 
 ## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-
-1. `CORE.md` — Identity, 2-Mode Gate, Laws, Routing
-2. `PHASES.md` — DAG Parallel Fan-Out & Phase Output Format
-3. `AGENTS.md` — Tiered Execution, `Model: "inherit"`, Antigravity Web-Search Subagent Rule
-
-⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the **5-Field Handoff Packet** (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Do **NOT** block Turn 1 reading `CORE.md`, `PHASES.md`, or `AGENTS.md` — launch Phase 1A (`researcher`) and Phase 1B (`scouter` / domain specialist) **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `./rules/*.md` on-demand in parallel only when needed.
 
 ---
 
@@ -36,10 +30,12 @@ execution-mode: execute
 tiered_execution:
   principle: "Sub-agent FIRST (Tier 1, Model: inherit). EMBODY ONLY on system failure (Tier 2)."
   antigravity_web_search_rule:
-    - "⚠️ CRITICAL: Antigravity's built-in `TypeName: 'research'` subagent runs in a read-only sandbox with NO network access (cannot call `search_web`)."
-    - "✅ ALWAYS register custom subagents via `define_subagent(Name: 'researcher' | 'brainstormer', EnableWriteTools: true, ...)` or invoke `TypeName: 'self'` so subagents have full `search_web` and artifact writing capabilities."
+    - "⚠️ CRITICAL: Antigravity's built-in `TypeName: 'research'` subagent runs in a read-only sandbox with NO network access (`search_web` disabled) and NO `write_file`."
+    - "✅ ALWAYS use `invoke_subagent(TypeName: 'self', Role: ..., Model: 'inherit', Prompt: ...)` for BOTH `researcher` AND `scouter`/`brainstormer` so they have full `search_web` and Brain Artifact `write_file` capabilities."
+  four_source_triangulation_and_3_wave_search:
+    - "Phase 1A (`researcher`) MUST execute 4-Source Triangulation (Workspace manifests/docs + 1,471 Skills Vault `compact-index.json` + Official Docs via `search_web` + Benchmarks/Issues) and a 3-Wave Multi-Hop Search Loop (`Wave 1: Official Docs & Versions` → `Gap Reflection` → `Wave 2: Deep Internals & Benchmarks` → `Wave 3: Failure Modes & Edge Cases`, `8–12+` queries)."
   dag_parallel_fan_out:
-    - "Launch Phase 1A (`researcher`) and Phase 1B (`scouter` for existing repo OR domain specialist like `game-engineer`/`tech-lead` for greenfield ideas) CONCURRENTLY in a single turn."
+    - "Launch Phase 1A (`researcher`) and Phase 1B (`scouter` for existing repo OR domain specialist like `game-engineer`/`tech-lead` for greenfield ideas) CONCURRENTLY in a single turn via `TypeName: 'self'`."
 ```
 
 ---

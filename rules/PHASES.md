@@ -32,17 +32,19 @@ Phase execution follows the workflow's **Directed Acyclic Graph (DAG)** of depen
 │    Handoff Packet are pre-embedded in the platform entrypoint.                │
 │  • Launch Phase 1 subagents immediately on Turn 1 via                         │
 │    `invoke_subagent(TypeName: "self", Role: "<specialist>", Model: "inherit")`│
-│    (0-Turn Fast-Track with full write + `run_command` + `search_web`), or     │
-│    `TypeName: "research"` for read-only local codebase scouting.              │
+│    (0-Turn Fast-Track with full `write_file` + `run_command` + `search_web`). │
+│    ⚠️ NEVER use `TypeName: "research"` for `researcher`, `research-team`,     │
+│    or `scouter` writing `SCOUT-*.md` (`TypeName: "research"` disables         │
+│    `search_web` and `write_file`!).                                           │
 ├───────────────────────────────────────────────────────────────────────────────┤
 │  🔀 1. PARALLEL FAN-OUT (When Phases Are Independent)                         │
 │  • Launch independent phases concurrently in a SINGLE turn via multiple       │
 │    invoke_subagent calls (Model: "inherit") and join via Reactive Wakeup:     │
-│    - Discovery (/brainstorm:hard, /cook:hard, /plan:hard, /fix:hard,          │
+│    - Discovery & Deep Research (/research:team, /research:hard,               │
+│      /brainstorm:team, /brainstorm:hard, /cook:hard, /plan:hard, /fix:hard,   │
 │      /ask:hard, /test:hard):                                                  │
-│      Launch `researcher` + `scouter` (or `researcher` + domain specialist     │
-│      like `game-engineer`/`tech-lead` for greenfield ideation) together in    │
-│      a single turn.                                                           │
+│      Launch `researcher` + `scouter` (or 3-vector `research-team`) via        │
+│      `TypeName: "self"` together in a single turn.                            │
 │    - 4-Way Review (/review:hard):                                             │
 │      Launch `tech-lead` + `reviewer` + `security-engineer` +                  │
 │      `performance-engineer` in parallel in a single turn.                     │

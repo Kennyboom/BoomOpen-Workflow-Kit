@@ -27,13 +27,15 @@ execution-mode: execute
 
 ```yaml
 tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
+  principle: "Sub-agent FIRST (Tier 1, TypeName: 'self', Model: 'inherit'). EMBODY ONLY on system failure (Tier 2)."
+  antigravity_subagent_rule:
+    - "⚠️ NEVER use `TypeName: 'research'` when `search_web` or `write_file` is needed. ALWAYS use `invoke_subagent(TypeName: 'self', Model: 'inherit')` for `researcher` and `scouter`."
   for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
+    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION (TypeName: 'self')"
     TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
   anti_lazy_fallback:
     - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
+    - ✅ ALWAYS attempt Tier 1 (`TypeName: "self"`) first when tool exists
 ```
 
 ---

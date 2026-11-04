@@ -49,10 +49,10 @@
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
-  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/research`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **`> 2 files`** or **`≥ 2 domains`** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** (*"nghiên cứu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"brainstorm"*, *"investigate"*, *"audit"*) — EVEN IF 0 code files are modified and no `/cmd` is typed → route by default (`naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when `"auto_hard"`.
+  4. **Natural-Language Deep Research, Technical/Documentation Investigation, Competitor Analysis, or Architecture/Product Discovery** (*"nghiên cứu"*, *"tìm hiểu sâu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"investigate"*, *"brainstorm"*, *"audit"*) — EVEN IF 0 code files are modified and no `/cmd` is typed → route by default (`naturalLanguageResearchTrigger = "auto_team"`) to `commands/research-team.md` (`/research:team` 3-Vector Deep Research) or `commands/brainstorm-team.md` (`/brainstorm:team` when ideation/brainstorming is requested), or `commands/research-hard.md` / `commands/brainstorm-hard.md` when `"auto_hard"`.
 - **Turn-1 Instant Dispatch**: Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet is pre-embedded below. When `/cmd` is invoked, read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the **same Turn-1 tool batch**, using **DAG-Aware Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Handoffs (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Warm Sub-agent Session Reuse (`send_message` by `conversationId`)**.
 
 ### ⚡ MODE A — Known-Target Micro-Direct (TIER 0 — `≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
@@ -101,7 +101,7 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 |-------|--------|
 | `/cook`, `/cook:hard`, `/cook:fast`, `/cook:team` | Load `commands/cook.md` → route to `commands/cook-{variant}.md` |
 | `/fix`, `/fix:hard`, `/fix:fast`, `/fix:team` | Load `commands/fix.md` → route to `commands/fix-{variant}.md` |
-| `/plan`, `/debug`, `/test`, `/review`, `/design`, `/report`, `/code` | Load `commands/{cmd}.md` → route to `commands/{cmd}-{variant}.md` |
+| `/plan`, `/debug`, `/test`, `/review`, `/design`, `/report`, `/research`, `/code` | Load `commands/{cmd}.md` → route to `commands/{cmd}-{variant}.md` |
 | `/docs`, `/deploy`, `/brainstorm`, `/ask`, `/orchestrate`, `/save`, `/recap`, `/settings` (`/config`) | Load `commands/{cmd}.md` (`commands/settings.md` for `/settings` & `/config`) |
 
 **Variant syntax**: `/docs/core` = `/docs:core` → Load `commands/docs-core.md`
@@ -118,8 +118,8 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | **TIER 2** | **Mode B** fallback (tool missing/error) | EMBODY agent from `AGENTS` path |
 
 ### 🛠️ Antigravity 2.0 Native Sub-agent Primitives & Pre-Embedded 5-Field Handoff Packet (TIER 1)
-- **⚡ `TypeName: "self"` (0-Turn Fast-Track Default)**: `invoke_subagent(TypeName: "self", Role: "<specialist>", Model: "inherit", Prompt: ...)` inherits full write tools + `run_command` + `search_web` immediately on Turn 1 without needing a prior `define_subagent` turn!
-- **🔍 `TypeName: "research"` (Fast Read-Only Local Codebase Explorer)**: Use `invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit", Prompt: ...)` for fast read-only local codebase scouting/grep (`no network access` — never use for `search_web`).
+- **⚡ `TypeName: "self"` (0-Turn Fast-Track Default)**: `invoke_subagent(TypeName: "self", Role: "<specialist>", Model: "inherit", Prompt: ...)` inherits full `write_file` + `run_command` + `search_web` immediately on Turn 1 without needing a prior `define_subagent` turn!
+- **⚠️ `TypeName: "research"` Warning (NO Network & NO `write_file`)**: Antigravity's built-in `TypeName: "research"` has **NO network access (`search_web` disabled) and NO `write_file` tool** — **ALWAYS use `TypeName: "self"`** for `researcher`, `research-team`, any sub-agent needing `search_web`, or any `scouter` that writes `SCOUT-*.md`!
 - **📦 Pre-Embedded 5-Field Handoff Packet (Include in `Prompt`)**: `1. MISSION & ACCEPTANCE CRITERIA` | `2. SHARED_CONTRACT` (API/schema/types when ≥2 domains) | `3. OWNED_FILES` (write lock) | `4. READ_ONLY_FILES` (do not edit) | `5. VERIFICATION & DELIVERABLE`.
 - **Direct Plan-to-Executor Dispatch & Warm Session Reuse (`send_message`)**: Dispatch directly from `PLAN` to domain engineers (no `tech-lead` middleman hop) and record `Role → conversationId` to reuse warm sub-agents via `send_message(Recipient: conversationId, Message: ...)`.
 

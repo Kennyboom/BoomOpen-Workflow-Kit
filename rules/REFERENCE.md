@@ -9,7 +9,7 @@
 | Mode | Tier | Trigger Condition | Action |
 |------|------|-------------------|--------|
 | **🚀 Fast Parallel Sub-agents** | **TIER 1** | Unscoped codebase exploration, repo audit, bug hunt, or `> 2 files` without `/cmd` | Spawn subagents **immediately on Turn 1** (`TypeName: "research"` for read-only local scouting; `TypeName: "self"` for edits/tests/`search_web`; `Model: "inherit"`; 0 pre-flight reads, 0 report clutter) |
-| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **`> 2 files`**, **`≥ 2 domains`**, architectural design, `:hard`/`:team`, OR NL research/ideation (`auto_team` → `/brainstorm:team`) | **Turn-1 Instant Dispatch**: Read `commands/{cmd}.md` & spawn Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the same Turn-1 batch using pre-embedded 5-Field Handoff Packet + Warm Reuse (`send_message`) |
+| **🎻 MODE B (Orchestrated)** | **TIER 1** | Explicit `/cmd`, **`> 2 files`**, **`≥ 2 domains`**, architectural design, `:hard`/`:team`, OR NL research/ideation (`auto_team` → `/research:team` or `/brainstorm:team`) | **Turn-1 Instant Dispatch**: Read `commands/{cmd}.md` & spawn Phase 1 subagents (`TypeName: "self"`, `Model: "inherit"`) in the same Turn-1 batch using pre-embedded 5-Field Handoff Packet + Warm Reuse (`send_message`) |
 | **⚡ MODE A (Micro-Direct)** | **TIER 0** | Simple Q&A, explanation, or micro-edit where **exact `≤ 2 files` are already known on Turn 1**, 0 exploration needed, no `/cmd` | Execute, test, and verify **directly** (Pragmatic 2-Tier Coding Standards) |
 
 ---
@@ -38,6 +38,7 @@
 | `/design` | `design.md` | `fast`, `hard`, `team` |
 | `/deploy` | `deploy.md` | `check`, `preview`, `production`, `rollback` |
 | `/report` | `report.md` | `fast`, `hard`, `team` |
+| `/research` | `research.md` | `fast`, `hard`, `team` |
 | `/brainstorm` | `brainstorm.md` | `fast`, `hard`, `team` |
 | `/ask` | `ask.md` | `fast`, `hard` |
 | `/code` | `code.md` | `fast`, `hard`, `team` |

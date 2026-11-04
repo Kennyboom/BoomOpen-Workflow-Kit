@@ -6272,9 +6272,21 @@
       "category": "community",
       "path": "skills_library/wiki-qa/SKILL.md"
     },
+    "deep-research": {
+      "domain": "research",
+      "priority": 9,
+      "category": "core",
+      "path": "skills/deep-research/SKILL.md"
+    },
+    "docs-seeker": {
+      "domain": "research",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/docs-seeker/SKILL.md"
+    },
     "research": {
       "domain": "research",
-      "priority": 8,
+      "priority": 9,
       "category": "core",
       "path": "skills_library/research/SKILL.md"
     },
@@ -6283,12 +6295,6 @@
       "priority": 8,
       "category": "core",
       "path": "skills_library/documentation-templates/SKILL.md"
-    },
-    "docs-seeker": {
-      "domain": "research",
-      "priority": 7,
-      "category": "utility",
-      "path": "skills_library/docs-seeker/SKILL.md"
     },
     "repomix": {
       "domain": "research",
@@ -6445,12 +6451,6 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/daily-news-report/SKILL.md"
-    },
-    "deep-research": {
-      "domain": "research",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/deep-research/SKILL.md"
     },
     "docs-architect": {
       "domain": "research",

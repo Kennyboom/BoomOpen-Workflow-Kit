@@ -12,15 +12,37 @@ skill_count: 83
 
 skills:
   # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 8)
+  # CORE AUTONOMOUS RESEARCH ENGINE SKILLS (Priority P0 / Score 9)
   # --------------------------------------------------------------------------
+  - skill_id: deep-research
+    category: core
+    priority: P0
+    priority_score: 9
+    triggers: ["deep research", "research", "nghi?n c?u", "ph?n t?ch chuy?n s?u", "4-source triangulation", "STORM", "benchmark", "competitor teardown"]
+    relevance_mapping:
+      agents: [researcher, brainstormer, scouter, tech-lead, business-analyst]
+      profiles: ["research:*", "planning:discovery", "architecture:*"]
+    description: "Autonomous multi-hop deep research engine using 4-Source Triangulation, 3-Wave Iterative Search Loop, Stanford STORM decomposition, and Dual-Track 5-Lens analysis."
+
+  - skill_id: docs-seeker
+    category: core
+    priority: P0
+    priority_score: 9
+    triggers: ["llms.txt", "official docs", "documentation", "API reference", "changelog", "breaking changes", "migration guide", "type definitions"]
+    relevance_mapping:
+      agents: [researcher, scouter, backend-engineer, frontend-engineer, docs-manager]
+      profiles: ["research:*", "backend:*", "frontend:*"]
+    description: "Autonomous technical documentation, /llms.txt, GitHub release/changelog, and local SDK .d.ts hunter with version-compatibility matrices."
+
   - skill_id: research
     category: core
-    priority_score: 8
+    priority: P0
+    priority_score: 9
+    triggers: ["search query", "market intelligence", "technical analysis", "trade-off matrix", "citations", "quantitative benchmarks"]
     relevance_mapping:
-      agents: [researcher, brainstormer, reporter]
+      agents: [researcher, brainstormer, reporter, business-analyst]
       profiles: ["research:analysis", "planning:discovery", "reporting:synthesis"]
-    description: "Technical research, analysis, scalable solutions"
+    description: "Technical & Market Intelligence Search Engineering Playbook (2026) for multi-wave query crafting, benchmark extraction, and zero-hallucination citations."
 
   - skill_id: documentation-templates
     category: core
@@ -33,13 +55,6 @@ skills:
   # --------------------------------------------------------------------------
   # SPECIALIZED SKILLS (Priority 6-7)
   # --------------------------------------------------------------------------
-  - skill_id: docs-seeker
-    category: utility
-    priority_score: 7
-    relevance_mapping:
-      agents: [researcher, scouter]
-      profiles: ["research:*"]
-    description: "Documentation discovery, llms.txt, GitHub analysis"
 
   - skill_id: repomix
     category: utility
@@ -251,14 +266,6 @@ skills:
       agents: [researcher, scouter, reporter]
       profiles: ["research:*"]
     description: "Scrapes content based on a preset URL list, filters high-quality technical information, and generates daily Markdown ..."
-
-  - skill_id: deep-research
-    category: community
-    priority_score: 6
-    relevance_mapping:
-      agents: [researcher, scouter, reporter]
-      profiles: ["research:*"]
-    description: "Run autonomous research tasks that plan, search, read, and synthesize information into comprehensive reports."
 
   - skill_id: design-md
     category: community

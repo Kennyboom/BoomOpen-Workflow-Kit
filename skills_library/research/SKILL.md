@@ -1,191 +1,162 @@
 ---
 name: research
-description: Use when you need to research, analyze, and plan technical solutions that are scalable, secure, and maintainable.
+description: "Technical & Market Intelligence Search Engineering Playbook (2026). Multi-wave query crafting, domain-scoped operator patterns, quantitative benchmark extraction, cross-source verification, and zero-hallucination citation standards."
 license: MIT
+version: "5.5.0"
 ---
 
-# Research
+# 🧭 Technical & Market Intelligence Search Engineering Playbook (2026)
 
-## Research Methodology
+> **Strategic Search Query Engineering & Evidence Synthesis**
+> Transform vague questions into high-signal, multi-wave search campaigns that extract verifiable 2026 technical specifications, quantitative benchmarks, and competitive market intelligence.
 
-Always honoring **YAGNI**, **KISS**, and **DRY** principles.
-**Be honest, be brutal, straight to the point, and be concise.**
+---
 
-### Phase 1: Scope Definition
+## 1. Core Principles (2026 Research Standard)
 
-First, you will clearly define the research scope by:
+1. **No Arbitrary Tool-Call Caps**: Execute as many targeted `search_web` waves as needed to achieve high-confidence triangulation (`Wave 1 Discovery` → `Gap Reflection` → `Wave 2 Deep Dive` → `Wave 3 Adversarial Red-Team`).
+2. **Primary Sources Over SEO Aggregators**: Prioritize vendor documentation, W3C/IETF RFCs, GitHub repositories, peer-reviewed papers (arXiv), and first-party engineering blogs over generic SEO content farms.
+3. **2025–2026 Temporal Anchoring**: Always anchor queries to current 2025–2026 releases, changelogs, and benchmarks unless historical context is explicitly requested.
+4. **Quantitative Over Qualitative**: Replace vague adjectives (*"fast"*, *"scalable"*, *"popular"*) with concrete metrics (`p99 latency`, `req/sec`, `MB RSS memory`, `GitHub stars/weekly npm downloads`, `$/1M tokens`).
 
-- Identifying key terms and concepts to investigate
-- Determining the recency requirements (how current must information be)
-- Establishing evaluation criteria for sources
-- Setting boundaries for the research depth
+---
 
-### Phase 2: Systematic Information Gathering
+## 2. Advanced Search Query Engineering Matrix
 
-You will employ a multi-source research strategy:
+Craft surgical `search_web` queries using domain filters, exact-phrase quotes, and boolean operators:
 
-1. **Search Strategy**:
-   - Check if `gemini` bash command is available, if so, execute `gemini -m gemini-2.5-flash -p "...your search prompt..."` bash command (timeout: 10 minutes) and save the output to `./reports/plans/<plan-name>/reports/YYMMDD-<your-research-topic>.md` file (including all citations).
-   - If `gemini` bash command is not available, fallback to `WebSearch` tool.
-   - Run multiple `gemini` bash commands or `WebSearch` tools in parallel to search for relevant information.
-   - Craft precise search queries with relevant keywords
-   - Include terms like "best practices", "2024", "latest", "security", "performance"
-   - Search for official documentation, GitHub repositories, and authoritative blogs
-   - Prioritize results from recognized authorities (official docs, major tech companies, respected developers)
-   - **IMPORTANT:** You are allowed to perform at most **5 researches (max 5 tool calls)**, user might request less than this amount, **strictly respect it**, think carefully based on the task before performing each related research topic.
+| Research Objective | Query Construction Pattern | `domain` Parameter |
+|--------------------|----------------------------|--------------------|
+| **Official API & Config Schema** | `"<library>" "<function/config>" specification OR reference 2026` | `<official-docs-domain>` |
+| **Breaking Changes & Migrations** | `"<library>" ("breaking changes" OR "migration guide" OR "deprecated") v<X> 2025 2026` | `github.com` or vendor domain |
+| **Head-to-Head Benchmark** | `"<tech A>" vs "<tech B>" benchmark (latency OR throughput OR p99 OR memory) 2025 2026` | *(open or benchmark domain)* |
+| **Production Post-Mortem / Case Study** | `"<tech>" ("post-mortem" OR "production lessons" OR "why we migrated" OR "at scale")` | *(engineering blogs)* |
+| **Security Advisories & CVEs** | `"<package>" (CVE-2025 OR CVE-2026 OR GHSA OR "security advisory" OR vulnerability)` | `github.com` or `nvd.nist.gov` |
+| **Market & Pricing Teardown** | `"<product/competitor>" pricing tiers limits enterprise unit economics 2026` | `<competitor-domain>` |
+| **AI/LLM Model Capabilities & Cost** | `"<model-name>" context window pricing benchmark SWE-bench LMArena 2026` | `artificialanalysis.ai` |
+| **Game Engine & Graphics Perf** | `"<Unity 6 / Godot 4 / WebGPU>" ("draw calls" OR "ECS" OR "frame time" OR "memory") benchmark` | *(engine docs / forums)* |
 
-2. **Deep Content Analysis**:
-   - When you found a potential Github repository URL, use `docs-seeker` skill to find read it.
-   - Focus on official documentation, API references, and technical specifications
-   - Analyze README files from popular GitHub repositories
-   - Review changelog and release notes for version-specific information
+---
 
-3. **Video Content Research**:
-   - Prioritize content from official channels, recognized experts, and major conferences
-   - Focus on practical demonstrations and real-world implementations
+## 3. Multi-Wave Query Execution Protocol
 
-4. **Cross-Reference Validation**:
-   - Verify information across multiple independent sources
-   - Check publication dates to ensure currency
-   - Identify consensus vs. controversial approaches
-   - Note any conflicting information or debates in the community
+### Phase 1: Query Decomposition (Before Calling `search_web`)
+Break every complex user request into **3 distinct sub-questions**:
+- **Sub-Question A (Architecture & Official Spec)**: What is the canonical 2026 way to build or configure this?
+- **Sub-Question B (Empirical Performance & Economics)**: What are the measurable latency, resource, and cost trade-offs?
+- **Sub-Question C (Failure Modes & Edge Cases)**: What breaks under load, edge inputs, or version upgrades?
 
-### Phase 3: Analysis and Synthesis
+### Phase 2: Parallel Multi-Query Dispatch
+Launch `3–4` orthogonal `search_web` calls in Wave 1 rather than variations of the same phrase:
+- **Bad (Redundant & Low-Signal)**:
+  - `best react state management`
+  - `top state management libraries react`
+- **Good (Orthogonal 2026 Engineering Queries)**:
+  - `React 19 Next.js 15 Server Actions vs TanStack Query v5 state architecture 2026`
+  - `Zustand v5 vs Jotai bundle size re-render benchmark React 19`
+  - `site:github.com/pmndrs/zustand releases breaking changes v5`
 
-You will analyze gathered information by:
+### Phase 3: Conflict Resolution & Cross-Verification
+When two sources disagree (e.g., different API signatures or conflicting benchmarks):
+1. **Check Release Dates & Version Numbers**: A 2026 release note overrides a 2023 blog post 100% of the time.
+2. **Check Source Authority Hierarchy**:
+   - **Rank 1**: Local installed SDK `.d.ts` / source files & official GitHub repo (`main` branch / release tags)
+   - **Rank 2**: Official vendor documentation & `/llms.txt` specifications
+   - **Rank 3**: Reproducible, open-source benchmark suites & CVE databases
+   - **Rank 4**: First-party engineering post-mortems (Cloudflare, Stripe, Discord, Netflix, Figma, Vercel)
+   - **Rank 5**: Community tutorials, forums, and secondary blog posts
+3. **Document the Discrepancy Explicitly**: Note why older tutorials fail (e.g., *"Pre-v4 tutorials use `tailwind.config.js`, which was replaced by `@theme` in Tailwind v4.0"*).
 
-- Identifying common patterns and best practices
-- Evaluating pros and cons of different approaches
-- Assessing maturity and stability of technologies
-- Recognizing security implications and performance considerations
-- Determining compatibility and integration requirements
+---
 
-### Phase 4: Report Generation
+## 4. Quantitative Evidence Extraction Checklist
 
-**Notes:**
+For every candidate technology, architecture, or product option evaluated, extract at least **4 quantitative data points**:
+- [ ] **Version & Release Cadence**: Latest stable version + date of most recent release.
+- [ ] **Performance Metric**: Latency (`p50`/`p95`/`p99`), throughput (`ops/sec`), cold-start time, or bundle size (`kB gzipped`).
+- [ ] **Ecosystem Health**: Weekly downloads, active maintainers, GitHub stars/issues velocity, or enterprise backing.
+- [ ] **Economic / Operational Cost**: Licensing (MIT/Apache-2.0 vs. BSL/Proprietary), cloud/token unit cost, or infrastructural complexity.
 
-- Research reports are saved in `./reports/plans/YYMMDD-<your-research-topic>.md`.
-- If you are not given a plan name, ask main agent to provide it and continue the process.
+---
 
-You will create a comprehensive markdown report with the following structure:
+## 5. High-Signal Report Structure & Decision Synthesis
+
+Structure research outputs so engineers and product leads can act immediately:
 
 ```markdown
-# Research Report: [Topic]
+# 🧭 Research Synthesis: [Topic]
+**Date**: YYYY-MM-DD | **Scope**: [Technical / Market / Hybrid] | **Confidence**: [HIGH / MEDIUM / LOW]
 
-## Executive Summary
+## 1. Executive Summary & Decision Verdict
+- **Recommended Choice**: [Option Name + Version]
+- **Core Rationale**: [3 concise, evidence-backed reasons]
+- **Disqualifiers / When to Choose Alternative**: [Explicit trade-off boundary]
 
-[2-3 paragraph overview of key findings and recommendations]
+## 2. Quantitative Comparison Matrix
+| Dimension | Option A | Option B | Option C | Verified Source |
+|-----------|----------|----------|----------|-----------------|
+| Latest Stable Version | `...` | `...` | `...` | GitHub Releases (2026) |
+| Performance / Latency | `...` | `...` | `...` | Benchmark / Docs |
+| License & Cost Model | `...` | `...` | `...` | Vendor Pricing / Repo |
+| Lock-in & Migration Risk | `...` | `...` | `...` | Architecture Review |
 
-## Research Methodology
+## 3. Technical Architecture & Verified Code Patterns
+[Mermaid architecture diagram + minimal, copy-pasteable 2026 code/configuration snippet]
 
-- Sources consulted: [number]
-- Date range of materials: [earliest to most recent]
-- Key search terms used: [list]
+## 4. Production Risks, Security & Breaking Changes
+- **Known Pitfalls / CVEs**: [Specific failure modes and mitigations]
+- **Deprecation Warnings**: [APIs to avoid in 2026]
 
-## Key Findings
-
-### 1. Technology Overview
-
-[Comprehensive description of the technology/topic]
-
-### 2. Current State & Trends
-
-[Latest developments, version information, adoption trends]
-
-### 3. Best Practices
-
-[Detailed list of recommended practices with explanations]
-
-### 4. Security Considerations
-
-[Security implications, vulnerabilities, and mitigation strategies]
-
-### 5. Performance Insights
-
-[Performance characteristics, optimization techniques, benchmarks]
-
-## Comparative Analysis
-
-[If applicable, comparison of different solutions/approaches]
-
-## Implementation Recommendations
-
-### Quick Start Guide
-
-[Step-by-step getting started instructions]
-
-### Code Examples
-
-[Relevant code snippets with explanations]
-
-### Common Pitfalls
-
-[Mistakes to avoid and their solutions]
-
-## Resources & References
-
-### Official Documentation
-
-- [Linked list of official docs]
-
-### Recommended Tutorials
-
-- [Curated list with descriptions]
-
-### Community Resources
-
-- [Forums, Discord servers, Stack Overflow tags]
-
-### Further Reading
-
-- [Advanced topics and deep dives]
-
-## Appendices
-
-### A. Glossary
-
-[Technical terms and definitions]
-
-### B. Version Compatibility Matrix
-
-[If applicable]
-
-### C. Raw Research Notes
-
-[Optional: detailed notes from research process]
+## 5. Sources & Audit Trail
+- [1] `[Tier 3]` Official Docs / Release Notes — `<domain/url>`
+- [2] `[Tier 4]` Benchmark / Engineering Post-Mortem — `<domain/url>`
 ```
 
-## Quality Standards
+---
 
-You will ensure all research meets these criteria:
+## 6. Zero-Hallucination Citation & Reporting Standards
 
-- **Accuracy**: Information is verified across multiple sources
-- **Currency**: Prioritize information from the last 12 months unless historical context is needed
-- **Completeness**: Cover all aspects requested by the user
-- **Actionability**: Provide practical, implementable recommendations
-- **Clarity**: Use clear language, define technical terms, provide examples
-- **Attribution**: Always cite sources and provide links for verification
+1. **Inline Evidence Attribution**: Tag key facts with their source tier and domain/URL (e.g., `[Source: Cloudflare Workers Docs, 2026]`).
+2. **Confidence Grading**:
+   - **`[HIGH]`**: Verified across `≥ 2` authoritative sources (e.g., Official Docs + Local SDK/GitHub Release).
+   - **`[MEDIUM]`**: Verified in 1 authoritative source or multiple independent engineering reports.
+   - **`[LOW — Unverified]`**: Inferred or single secondary source; must be flagged for prototype verification.
+3. **Actionable Decision Tables**: Every research synthesis must culminate in a weighted **Trade-Off & Decision Matrix** and a concrete **Step-by-Step Implementation Plan**.
+4. **Clean Artifact Routing**: Save transient research reports to `<appDataDir>\brain\<conversation-id>\RESEARCH-{topic}.md` by default; write to `./reports/{topic}/` only when explicitly requested by the user or `/docs`.
 
-## Special Considerations
+---
 
-- When researching security topics, always check for recent CVEs and security advisories
-- For performance-related research, look for benchmarks and real-world case studies
-- When investigating new technologies, assess community adoption and support levels
-- For API documentation, verify endpoint availability and authentication requirements
-- Always note deprecation warnings and migration paths for older technologies
+## 7. Worked Playbook: 3-Wave Technical & Market Intelligence Campaign
 
-## Output Requirements
+### Scenario: Evaluating Real-Time Multiplayer / Collaborative Sync Engines in 2026
+1. **Wave 1 — Broad & Official Spec Discovery (`3 queries`)**:
+   - `search_web(query: "Cloudflare Durable Objects WebSockets Hibernation API pricing limits 2026", domain: "developers.cloudflare.com")`
+   - `search_web(query: "Liveblocks vs PartyKit vs Yjs Hocuspocus vs Supabase Realtime architecture 2026")`
+   - `search_web(query: "Colyseus 0.15 vs Hathora multiplayer state sync benchmark latency")`
+2. **Gap Reflection Gate**:
+   - *Unknowns identified*: What is the exact memory ceiling per Cloudflare Durable Object isolate, and how does WebSocket hibernation billing compare at 50,000 concurrent connections?
+3. **Wave 2 — Multi-Hop Internals & Quantitative Benchmarks (`3 queries`)**:
+   - `search_web(query: "Durable Objects 128MB memory limit WebSocket hibernation billing duration 2026", domain: "developers.cloudflare.com")`
+   - `search_web(query: "Yjs CRDT memory overhead large documents garbage collection benchmark")`
+   - `search_web(query: "site:github.com/colyseus/colyseus/releases v0.15 v0.16 schema delta compression", domain: "github.com")`
+4. **Wave 3 — Adversarial Counter-Evidence & Failure Modes (`2 queries`)**:
+   - `search_web(query: "\"Durable Objects\" (\"single thread bottleneck\" OR \"rate limit\" OR \"cold start\" OR \"post-mortem\")")`
+   - `search_web(query: "Yjs CRDT out of memory OR sync conflict production post-mortem")`
 
-Your final report must:
+---
 
-1. Be saved as a markdown file with a descriptive filename in `./reports/plans/YYMMDD-<your-research-topic>.md`
-2. Include a timestamp of when the research was conducted
-3. Provide clear section navigation with a table of contents for longer reports
-4. Use code blocks with appropriate syntax highlighting
-5. Include diagrams or architecture descriptions where helpful (in mermaid or ASCII art)
-6. Conclude with specific, actionable next steps
+## 8. Final Quality Gate Checklist
 
-**IMPORTANT:** Sacrifice grammar for the sake of concision when writing reports.
-**IMPORTANT:** In reports, list any unresolved questions at the end, if any.
+- [ ] **Multi-Wave Executed?** At least 2–3 distinct search waves (`Discovery` → `Deep Dive` → `Adversarial`) were executed.
+- [ ] **Quantitative Metrics Present?** Includes concrete latency, memory, throughput, or pricing numbers rather than vague claims.
+- [ ] **2025–2026 Currency Verified?** No outdated pre-2025 syntax or deprecated packages are recommended.
+- [ ] **Counter-Evidence Addressed?** Explicit failure modes, lock-in risks, and "When NOT to use" boundaries are documented.
+- [ ] **Audit Trail Complete?** Every key claim maps to a verified Tier 1–4 source in the report's audit table.
 
-**Remember:** You are not just collecting information, but providing strategic technical intelligence that enables informed decision-making. Your research should anticipate follow-up questions and provide comprehensive coverage of the topic while remaining focused and practical.
+### Related Research & Discovery Skills
+- **`deep-research` (`skills/deep-research/SKILL.md`)**: Full 4-Source Triangulation, 3-Wave Iterative Multi-Hop Loop, Stanford STORM 3-vector fan-out, and Dual-Track 5-Lens report schema.
+- **`docs-seeker` (`skills_library/docs-seeker/SKILL.md`)**: Autonomous `/llms.txt`, official vendor documentation, GitHub release/changelog, and local `.d.ts` type-definition hunter.
+- **`brainstorming` (`skills/brainstorming/SKILL.md`)**: Socratic discovery, Golden Triangle adversarial ideation (`/brainstorm:team`), and product/architecture option matrices.
+- **`skill-seeker` (`skills/skill-seeker/SKILL.md`)**: Fast 2-step lookup across `matrix-skills/compact-index.json` (`1,471+` domain skills).
+
+> **Remember**: Great engineering and product decisions come from triangulated, quantitative evidence—never from first-page SEO summaries.
