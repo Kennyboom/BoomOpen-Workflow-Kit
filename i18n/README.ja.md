@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>マルチプラットフォーム対応 スマートハイブリッド AI 開発オペレーティングシステム & マルチエージェント・オーケストレーションフレームワーク</strong></p>
+  <p><strong>マルチプラットフォーム対応 スマートハイブリッド AI 開発 OS — 21 名の専門エージェント、17 組のゴールデントライアングル・チーム &amp; 1,430+ オンデマンドスキル宝庫</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 簡単な質問にも毎回コールドスタート遅延を発生させていた従来の重いエージェントラッパーとは異なり、BoomOpen v5.5 は **2モード・スマート複雑度ゲート（2-Mode Smart Complexity Threshold Gate）** を導入しています：
 - **⚡ Mode A — 直接実行モード（コールドスタート 0 秒）**：日常的な Q&A、コード解説、単一ドメインのバグ修正、または **3 ファイル以下**（`/cmd` スラッシュコマンドなし）の明確な変更は、メインエージェントが**直接**実行・テスト・検証し、**実践的 2 階層コーディング規約（Pragmatic 2-Tier Coding Standards）** と **徹底的な検証・バグ修正（Persistent Testing & Bug Fixing）** を適用します。
 - **🎻 Mode B — 厳格マルチエージェント・オーケストレーション（Strict Multi-Agent Orchestration）**：複雑な機能開発（**4 ファイル以上** または **2 ドメイン以上**）や明示的な `/cmd` ワークフロー実行時には、**DAG 並列ファンアウト（Parallel Fan-Out）**、**計画から実行役への直接ディスパッチ（Direct Plan-to-Executor Dispatch）**、**契約ファーストのファイルロック（`SHARED_CONTRACT` + `OWNED_FILES`）**、および **ウォームサブエージェント再利用（`send_message`）** を駆使した厳格なオーケストレーターモードを起動します。
+
+- **📚 コンテキスト肥大化ゼロの 1,430+ スキル宝庫**：**48 個のコアスキル (`skills/`)** と **1,430 以上の専門ライブラリスキル (`skills_library/`)** を `matrix-skills/compact-index.json` に事前コンパイル。`O(1)` の 2 ステップ検索により、プロンプトウィンドウを圧迫することなくバックエンド、フロントエンド、モバイル、ゲーム開発 (Unity/Unreal/Godot)、AI/ML、BigQuery/データ基盤、クラウド/DevOps、OWASP セキュリティの専門知識を即座に注入します。
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **アーキテクチャ & 計画** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **品質・セキュリティ & デバッグ** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **リサーチ & ナレッジ** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1,430+ スキル宝庫（48 コアスキル + 1,430+ 専門ライブラリスキル）
+
+BoomOpen は、オープンソース最大級のエンジニアリングスキル体系を搭載しており、**2 ステップ O(1) オンデマンド検索**（`<skills>` コア確認 → `matrix-skills/compact-index.json` 検索 → 必要な `SKILL.md` のみ読み込み）により **待機時トークン消費ゼロ** を実現しています：
+
+| スキル階層 / ドメイン | 数 | 代表的なスキル & 専門領域 | 読み込み方式 |
+|:---|:---:|:---|:---|
+| **⚡ Tier 1: コアスキル (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | `<skills>` に事前登録、Turn 1 で即座に利用可能 |
+| **🌐 Web・バックエンド & 分散システム** | **380+** | Next.js/React 19、FastAPI、NestJS、Go/Rust マイクロサービス、GraphQL、gRPC、Redis/Kafka イベント駆動設計、マルチテナント SaaS | `compact-index.json` 経由のオンデマンド読み込み (`skills_library/`) |
+| **🤖 AI・LLM エージェント & データ基盤** | **310+** | RAG パイプライン、LangGraph/MCP サーバー、プロンプト設計、Vertex AI、BigQuery 分析、dbt、Spark、ベクトル DB | `compact-index.json` 経由のオンデマンド読み込み (`skills_library/`) |
+| **☁️ クラウド・DevOps・K8s & セキュリティ** | **290+** | Terraform/OpenTofu、AWS/GCP/Azure 設計、Docker/K8s GitOps、CI/CD、OWASP Top 10 監査、ゼロトラスト認証 | `compact-index.json` 経由のオンデマンド読み込み (`skills_library/`) |
+| **📱 モバイル・ゲームエンジン & 専門領域** | **450+** | iOS Swift/SwiftUI、Android Kotlin、React Native、Flutter、Unity 6、Unreal Engine 5、Godot 4、WebGL/Three.js、クオンツ金融、Web3 | `compact-index.json` 経由のオンデマンド読み込み (`skills_library/`) |
 
 ---
 

@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Hệ Điều Hành Nhân Sự AI Đa Nền Tảng &amp; Khung Điều Phối Đa Tác Tử Thông Minh (Smart-Hybrid)</strong></p>
+  <p><strong>Hệ Điều Hành Nhân Sự AI Đa Nền Tảng — 21 Đặc Vụ Chuyên Gia, 17 Đội Hình Tam Giác Vàng &amp; Kho Hơn 1.430+ Kỹ Năng Chuyên Sâu</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#-các-nền-tảng-ai-được-hỗ-trợ"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#-21-đặc-vụ-chuyên-gia--17-đội-hình-tam-giác-vàng"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#-6-trụ-cột-cốt-lõi-của-v55"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#-kho-hơn-1430-kỹ-năng-chuyên-sâu-48-kỹ-năng-lõi--1430-kỹ-năng-thư-viện"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -38,7 +38,8 @@
     <a href="#-cài-đặt-nhanh--kiểm-định"><b>🚀 Cài Đặt Nhanh</b></a> •
     <a href="#-hướng-dẫn-lựa-chọn-chế-độ--bảng-cài-đặt-settings-control-center"><b>🎛️ Chế Độ &amp; Cài Đặt</b></a> •
     <a href="#-bảng-tham-chiếu-lệnh-slash"><b>🎯 Lệnh Slash</b></a> •
-    <a href="#-21-đặc-vụ-chuyên-gia--17-đội-hình-tam-giác-vàng"><b>🤖 21 Agents &amp; 17 Teams</b></a>
+    <a href="#-21-đặc-vụ-chuyên-gia--17-đội-hình-tam-giác-vàng"><b>🤖 21 Agents &amp; 17 Teams</b></a> •
+    <a href="#-kho-hơn-1430-kỹ-năng-chuyên-sâu-48-kỹ-năng-lõi--1430-kỹ-năng-thư-viện"><b>📚 Kho 1.430+ Kỹ Năng</b></a>
   </p>
 </div>
 
@@ -59,11 +60,12 @@
 
 ## 🌟 BoomOpen Workflow Kit v5.5 là gì?
 
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** là hệ điều hành đa tác tử (Multi-Agent) mã nguồn mở giúp biến một AI Coding Assistant đơn lẻ thành một tổ chức kỹ thuật hoàn chỉnh gồm **21 Đặc vụ Chuyên gia (Specialist Agents)**, **17 Đội hình Tam Giác Vàng (Golden Triangle Teams)**, **48 Kỹ năng Lõi (Core Skills)** và **1.430+ Kỹ năng Chuyên sâu (`skills_library`)**.
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** là hệ điều hành đa tác tử (Multi-Agent) mã nguồn mở giúp biến một AI Coding Assistant đơn lẻ thành một tổ chức kỹ thuật hoàn chỉnh gồm **21 Đặc vụ Chuyên gia (Specialist Agents)**, **17 Đội hình Tam Giác Vàng (Golden Triangle Teams)**, **48 Kỹ năng Lõi (`skills/`)** và **Kho Hơn 1.430+ Kỹ Năng Chuyên Sâu (`skills_library/`)**.
 
-Khác với các bộ prompt đơn lẻ hoặc các wrapper nặng nề luôn gây độ trễ khởi động cho mọi câu hỏi nhỏ, BoomOpen v5.5 giới thiệu **Cổng Phân Loại Độ Phức Tập Thông Minh 2 Chế Độ (2-Mode Smart Complexity Threshold Gate)**:
-- **⚡ Mode A — Thực Thi Trực Tiếp (0 giây Cold-Start)**: Các câu hỏi Q&A, giải thích code, hoặc sửa lỗi/thay đổi cục bộ (`≤ 3 files`, 1 domain, không gọi lệnh `/cmd`) được Agent chính thực thi và kiểm thử **trực tiếp**, tuân thủ nghiêm ngặt **Chuẩn Code Thực Dụng 2 Tầng (Pragmatic 2-Tier Coding Standards)** và **Kiểm Thử & Sửa Lỗi Bền Bỉ (Persistent Testing & Bug Fixing)**.
-- **🎻 Mode B — Điều Phối Đa Tác Tử Nghiêm Ngặt (Strict Multi-Agent Orchestration)**: Các tính năng phức tạp (`> 3 files` hoặc `≥ 2 domains`), yêu cầu nghiên cứu/phân tích chuyên sâu bằng ngôn ngữ tự nhiên, hoặc khi gọi lệnh `/cmd` tường minh sẽ kích hoạt chế độ điều phối đa tác tử với **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Khóa Hợp Đồng & Quyền Ghi File (`SHARED_CONTRACT` + `OWNED_FILES`)**, và **Tái Sử Dụng Sub-agent Nóng (`send_message`)**.
+Khác với các bộ prompt đơn lẻ hoặc các wrapper nặng nề gây lãng phí ngữ cảnh ở mọi lượt hội thoại, BoomOpen v5.5 kết hợp **Cổng Ưu Tiên Sub-agent Ngay Từ Turn 1 (Proactive Sub-agent First Gate)** cùng **Cơ Chế Nạp Kỹ Năng O(1) Không Gây Phình Ngữ Cảnh**:
+- **🚀 Phân Tán Sub-agent Song Song Ngay Turn 1 & Điều Phối Đa Tác Tử Mode B**: Khi cần khám phá codebase (`> 2 files`), phát triển tính năng đa tầng (`≥ 2 domains`), nghiên cứu/phân tích chuyên sâu bằng ngôn ngữ tự nhiên (`auto_team` → `/brainstorm:team`), hoặc gọi lệnh `/cmd`, hệ thống lập tức khởi chạy song song các sub-agent ngay ở Turn 1 với **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Khóa Hợp Đồng & Quyền Ghi File (`SHARED_CONTRACT` + `OWNED_FILES`)**, và **Tái Sử Dụng Sub-agent Nóng (`send_message`)**.
+- **⚡ Mode A — Thực Thi Vi Mô Đích Danh**: Các câu hỏi Q&A, giải thích code, hoặc chỉnh sửa nhỏ khi đã biết chính xác `≤ 2 files` ngay từ Turn 1 được thực thi trực tiếp, tuân thủ nghiêm ngặt **Chuẩn Code Thực Dụng 2 Tầng (Pragmatic 2-Tier Coding Standards)** và **Kiểm Thử & Sửa Lỗi Bền Bỉ**.
+- **📚 Kho Hơn 1.430+ Kỹ Năng Chuyên Sâu Với 0% Phình Bộ Nhớ Ngữ Cảnh**: Được biên dịch sẵn vào chỉ mục `matrix-skills/compact-index.json` giúp tra cứu 2 bước `O(1)` — trang bị cho AI tri thức chuyên gia tức thì về Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps và Bảo mật OWASP **mà không làm đầy cửa sổ prompt**.
 
 ---
 
@@ -214,6 +216,20 @@ Mặc định ngay sau khi cài đặt, BoomOpen v5.5 tự động kích hoạt 
 | **Kiến Trúc & Hoạch Định** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Chất Lượng, Bảo Mật & Gỡ Lỗi** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Nghiên Cứu & Tri Thức** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 Kho Hơn 1.430+ Kỹ Năng Chuyên Sâu (48 Kỹ Năng Lõi + 1.430+ Kỹ Năng Thư Viện)
+
+BoomOpen tích hợp một trong những kho kỹ năng kỹ thuật phần mềm lớn nhất thế giới mã nguồn mở — được thiết kế với **chi phí token nhàn rỗi bằng 0 (Zero Context Bloat)** nhờ cơ chế **Tra Cứu Kỹ Năng 2 Bước O(1)** (Kiểm tra `<skills>` Lõi → Tra chỉ mục `matrix-skills/compact-index.json` → Chỉ nạp đúng file `SKILL.md` cần thiết):
+
+| Phân Tầng / Miền Kỹ Năng | Số Lượng | Kỹ Năng & Năng Lực Tiêu Biểu | Cơ Chế Nạp Ngữ Cảnh |
+|:-------------------------|:--------:|:-----------------------------|:--------------------|
+| **⚡ Tầng 1: Kỹ Năng Lõi (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Nạp sẵn chỉ mục trong `<skills>`, truy cập tức thì ở Turn 1 |
+| **🌐 Web, Backend & Hệ Thống Phân Tán** | **380+** | Next.js/React 19, FastAPI, NestJS, Go/Rust microservices, GraphQL, gRPC, kiến trúc hướng sự kiện Redis/Kafka, SaaS đa thuê bao (multi-tenant) | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
+| **🤖 AI, LLM Agents & Kỹ Thuật Dữ Liệu** | **310+** | Đường ống RAG, LangGraph/MCP servers, tối ưu prompt, Vertex AI, phân tích BigQuery, dbt, Spark, cơ sở dữ liệu Vector | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
+| **☁️ Cloud, DevOps, Kubernetes & Bảo Mật** | **290+** | Terraform/OpenTofu, kiến trúc AWS/GCP/Azure, Docker/K8s GitOps, đường ống CI/CD, kiểm toán bảo mật OWASP Top 10, xác thực Zero-Trust | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
+| **📱 Mobile, Game Engines & Miền Chuyên Biệt** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Tài chính định lượng, Web3 | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
 
 ---
 

@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Sistem Operasi Tenaga Kerja AI Smart-Hybrid Multi-Platform & Framework Orkestrasi Multi-Agen</strong></p>
+  <p><strong>Sistem Operasi Workforce AI Smart-Hybrid Multi-Platform — 21 Agen Spesialis, 17 Tim Golden Triangle &amp; Gudang 1.430+ Skill Sesuai Permintaan</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 Tidak seperti template prompt tunggal yang kaku atau wrapper agen berat yang menimbulkan latensi cold-start pada setiap pertanyaan sederhana, BoomOpen v5.5 menghadirkan **Gerbang Ambang Kompleksitas Cerdas 2-Mode (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ Mode A — Eksekusi Langsung (0d Cold-Start)**: Tanya jawab (Q&A) sederhana, penjelasan kode, perbaikan bug satu domain, atau perubahan jelas yang menyentuh **≤ 3 file** (tanpa perintah `/cmd`) dieksekusi, diuji, dan diverifikasi **secara langsung** oleh agen utama sambil menerapkan **Standar Pengkodean Pragmatis 2-Tingkat** serta **Pengujian & Perbaikan Bug Persisten**.
 - **🎻 Mode B — Orkestrasi Multi-Agen Ketat**: Fitur kompleks (**> 3 file** atau **≥ 2 domain**) atau pemanggilan perintah `/cmd` eksplisit mengaktifkan mode Orkestrator ketat dengan **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Kunci Kepemilikan File Berbasis Kontrak (`SHARED_CONTRACT` + `OWNED_FILES`)**, dan **Penggunaan Ulang Sub-agen Hangat (`send_message`)**.
+
+- **📚 Gudang 1.430+ Skill Masif Tanpa Pembengkakan Konteks (Zero Context Bloat)**: Menggabungkan **48 Core Skills (`skills/`)** dan **1.430+ Niche Library Skills (`skills_library/`)** yang telah dikompilasi ke `matrix-skills/compact-index.json` untuk pencarian `O(1)` 2 langkah — memberikan penguasaan instan di Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps, dan Keamanan OWASP tanpa memenuhi jendela prompt.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **Arsitektur & Perencanaan** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Kualitas, Keamanan & Debugging** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Riset & Pengetahuan** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 Gudang 1.430+ Skill (48 Skill Inti + 1.430+ Skill Pustaka)
+
+BoomOpen hadir dengan salah satu ekosistem skill rekayasa perangkat lunak terbesar di open source — dirancang untuk **0 beban token saat idle** melalui **Resolusi Skill Progresif O(1) 2 Langkah** (`<skills>` → `matrix-skills/compact-index.json` → muat `SKILL.md` tepat saat dibutuhkan):
+
+| Tingkatan / Domain Skill | Jumlah | Skill & Kapabilitas Utama | Mekanisme Pemuatan |
+|:---|:---:|:---|:---|
+| **⚡ Tier 1: Skill Inti (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Terindeks di `<skills>` untuk akses instan di Turn 1 |
+| **🌐 Web, Backend & Sistem Terdistribusi** | **380+** | Next.js/React 19, FastAPI, NestJS, microservice Go/Rust, GraphQL, gRPC, arsitektur berbasis event Redis/Kafka, SaaS multi-tenant | Sesuai permintaan via `compact-index.json` (`skills_library/`) |
+| **🤖 AI, Agen LLM & Rekayasa Data** | **310+** | Pipeline RAG, server LangGraph/MCP, prompt engineering, Vertex AI, analitik BigQuery, dbt, Spark, database vektor | Sesuai permintaan via `compact-index.json` (`skills_library/`) |
+| **☁️ Cloud, DevOps, Kubernetes & Keamanan** | **290+** | Terraform/OpenTofu, arsitektur AWS/GCP/Azure, Docker/K8s GitOps, pipeline CI/CD, audit OWASP Top 10, autentikasi Zero-Trust | Sesuai permintaan via `compact-index.json` (`skills_library/`) |
+| **📱 Mobile, Game Engine & Domain Khusus** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Keuangan Kuantitatif, Web3 | Sesuai permintaan via `compact-index.json` (`skills_library/`) |
 
 ---
 

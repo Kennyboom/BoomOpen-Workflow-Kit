@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Plattformübergreifendes Smart-Hybrid KI-Workforce-Betriebssystem & Multi-Agenten-Orchestrierungs-Framework</strong></p>
+  <p><strong>Plattformübergreifendes Smart-Hybrid KI-Entwicklungs-OS — 21 Spezial-Agenten, 17 Golden-Triangle-Teams &amp; 1.430+ On-Demand-Skills-Tresor</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 Im Gegensatz zu starren Einzel-Prompts oder schwerfälligen Agenten-Wrappern, die bei jeder einfachen Frage Kaltstart-Latenz verursachen, führt BoomOpen v5.5 ein **2-Modus Smart Complexity Threshold Gate** ein:
 - **⚡ Modus A — Direkte Ausführung (0s Kaltstart)**: Einfache Fragen & Antworten (Q&A), Code-Erklärungen, Bugfixes in einer einzelnen Domäne oder klare Änderungen an **≤ 3 Dateien** (ohne `/cmd`-Befehl) werden vom primären Agenten **direkt** ausgeführt, getestet und verifiziert — unter Einhaltung der **Pragmatischen 2-Stufen-Coding-Standards** und **Persistenter Tests & Fehlerbehebung**.
 - **🎻 Modus B — Strikte Multi-Agenten-Orchestrierung**: Komplexe Features (**> 3 Dateien** oder **≥ 2 Domänen**) oder explizite `/cmd`-Workflows aktivieren den strikten Orchestrator-Modus mit **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First Dateisperren (`SHARED_CONTRACT` + `OWNED_FILES`)** und **Warm Sub-agent Reuse (`send_message`)**.
+
+- **📚 Massiver Tresor mit 1.430+ Skills ohne Kontext-Aufblähung**: Vereint **48 Kern-Skills (`skills/`)** und **1.430+ Fach-Skills (`skills_library/`)**, vorkompiliert in `matrix-skills/compact-index.json` für eine `O(1)` 2-Stufen-Suche — für sofortige Expertise in Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), KI/ML, BigQuery/Data Engineering, Cloud/DevOps und OWASP-Sicherheit ohne Prompt-Überlastung.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **Architektur & Planung** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Qualität, Sicherheit & Debugging** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Forschung & Wissen** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1.430+ Skills-Tresor (48 Kern-Skills + 1.430+ Bibliotheks-Skills)
+
+BoomOpen bietet eines der größten kuratierten Engineering-Skill-Ökosysteme im Open-Source-Bereich — entwickelt für **0 Token-Overhead im Leerlauf** durch **2-stufige progressive O(1)-Auflösung** (`<skills>` → `matrix-skills/compact-index.json` → gezieltes Laden von `SKILL.md` bei Bedarf):
+
+| Skill-Ebene / Domäne | Anzahl | Repräsentative Skills & Fähigkeiten | Lademechanismus |
+|:---|:---:|:---|:---|
+| **⚡ Stufe 1: Kern-Skills (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Vorindiziert in `<skills>` für sofortigen Zugriff in Turn 1 |
+| **🌐 Web, Backend & Verteilte Systeme** | **380+** | Next.js/React 19, FastAPI, NestJS, Go/Rust-Microservices, GraphQL, gRPC, ereignisgesteuerte Redis/Kafka-Architektur, Multi-Tenant-SaaS | Bei Bedarf über `compact-index.json` (`skills_library/`) |
+| **🤖 KI, LLM-Agenten & Data Engineering** | **310+** | RAG-Pipelines, LangGraph/MCP-Server, Prompt Engineering, Vertex AI, BigQuery-Analytik, dbt, Spark, Vektordatenbanken | Bei Bedarf über `compact-index.json` (`skills_library/`) |
+| **☁️ Cloud, DevOps, Kubernetes & Sicherheit** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure-Architektur, Docker/K8s GitOps, CI/CD-Pipelines, OWASP Top 10 Audit, Zero-Trust-Auth | Bei Bedarf über `compact-index.json` (`skills_library/`) |
+| **📱 Mobile, Game-Engines & Spezialdomänen** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Quantitative Finance, Web3 | Bei Bedarf über `compact-index.json` (`skills_library/`) |
 
 ---
 

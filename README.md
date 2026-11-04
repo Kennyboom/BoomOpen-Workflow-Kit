@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Multi-Platform Smart-Hybrid AI Workforce Operating System &amp; Multi-Agent Orchestration Framework</strong></p>
+  <p><strong>Multi-Platform Smart-Hybrid AI Workforce OS — 21 Specialist Agents, 17 Golden Triangle Teams &amp; 1,430+ On-Demand Skills Vault</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#-supported-ai-platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#-21-specialist-agents--17-golden-triangle-teams"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#-6-core-pillars-of-v55"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#-1430-skills-vault-48-core--1430-niche-library-skills"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -38,7 +38,8 @@
     <a href="#-quick-start--installation"><b>🚀 Quick Start</b></a> •
     <a href="#-unified-settings--mode-selection-settings"><b>🎛️ Mode &amp; Settings</b></a> •
     <a href="#-slash-commands-reference"><b>🎯 Slash Commands</b></a> •
-    <a href="#-21-specialist-agents--17-golden-triangle-teams"><b>🤖 21 Agents &amp; 17 Teams</b></a>
+    <a href="#-21-specialist-agents--17-golden-triangle-teams"><b>🤖 21 Agents &amp; 17 Teams</b></a> •
+    <a href="#-1430-skills-vault-48-core--1430-niche-library-skills"><b>📚 1,430+ Skills Vault</b></a>
   </p>
 </div>
 
@@ -59,11 +60,12 @@
 
 ## 🌟 What is BoomOpen Workflow Kit?
 
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** is an open-source multi-agent operating system that transforms a single AI coding assistant into an orchestrated engineering organization of **21 specialist agents**, **17 adversarial Golden Triangle teams**, **48 Core Skills**, and **1,430+ Niche Library Skills**.
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** is an open-source multi-agent operating system that transforms a single AI coding assistant into an orchestrated engineering organization of **21 specialist agents**, **17 adversarial Golden Triangle teams**, **48 Core Skills**, and a **1,430+ On-Demand Niche Skills Vault (`skills_library/`)**.
 
-Unlike rigid single-prompt templates or heavyweight agent wrappers that add cold-start latency to every trivial question, BoomOpen v5.5 introduces a **2-Mode Smart Complexity Threshold Gate**:
-- **⚡ Mode A — Direct Execution (0s Cold-Start)**: Simple Q&A, code explanations, and localized changes (`≤ 3 files`, single domain, no `/cmd`) execute directly in the primary agent while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
-- **🎻 Mode B — Strict Multi-Agent Orchestration**: Complex features (`> 3 files` or `≥ 2 domains`), natural-language deep research/ideation, or explicit `/cmd` workflows activate full multi-agent orchestration with **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First File Locks (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Stateful Warm Sub-agent Reuse (`send_message`)**.
+Unlike rigid single-prompt templates or heavyweight agent wrappers that add cold-start latency and context bloat to every turn, BoomOpen v5.5 combines a **Proactive Sub-agent First Gate** with **O(1) Zero-Bloat Skill Resolution**:
+- **🚀 Turn-1 Zero-Tax Parallel Sub-agents & Mode B Orchestration**: Unscoped codebase exploration (`> 2 files`), multi-domain features (`≥ 2 domains`), natural-language deep research/ideation (`auto_team` → `/brainstorm:team`), or explicit `/cmd` workflows immediately spawn parallel sub-agents on Turn 1 using **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, **Contract-First File Locks (`SHARED_CONTRACT` + `OWNED_FILES`)**, and **Stateful Warm Sub-agent Reuse (`send_message`)**.
+- **⚡ Mode A — Known-Target Micro-Direct**: Simple Q&A, code explanations, and micro-edits where the exact `≤ 2 target files` are already known on Turn 1 execute directly while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
+- **📚 Massive 1,430+ Skills Vault with Zero Context Bloat**: Pre-compiled into `matrix-skills/compact-index.json` for `O(1)` 2-step lookup — equipping your AI with instant deep mastery across Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data Engineering, Cloud/DevOps, and OWASP Cybersecurity **without polluting the prompt window**.
 
 ---
 
@@ -214,6 +216,20 @@ BoomOpen v5.5 includes a **Zero-Latency Unified Control Center** that lets you s
 | **Architecture & Planning** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Quality, Security & Debug** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Research & Knowledge** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1,430+ Skills Vault (48 Core + 1,430+ Niche Library Skills)
+
+BoomOpen ships with one of the largest curated engineering skill ecosystems in open source — engineered for **0-token idle overhead** via **2-Step O(1) Progressive Skill Resolution** (`<skills>` Core check → `matrix-skills/compact-index.json` lookup → load exact `SKILL.md` on demand):
+
+| Skill Tier / Domain | Count | Representative Skills & Capabilities | Loading Mechanism |
+|:--------------------|:-----:|:-------------------------------------|:------------------|
+| **⚡ Tier 1: Core Skills (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Pre-indexed in `<skills>` for instant Turn-1 access |
+| **🌐 Web, Backend & Distributed Systems** | **380+** | Next.js/React 19, FastAPI, NestJS, Go/Rust microservices, GraphQL, gRPC, Redis/Kafka event-driven architecture, multi-tenant SaaS | On-demand via `compact-index.json` (`skills_library/`) |
+| **🤖 AI, LLM Agents & Data Engineering** | **310+** | RAG pipelines, LangGraph/MCP servers, prompt engineering, Vertex AI, BigQuery analytics, dbt, Spark, vector databases | On-demand via `compact-index.json` (`skills_library/`) |
+| **☁️ Cloud, DevOps, Kubernetes & Security** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure architecture, Docker/K8s GitOps, CI/CD pipelines, OWASP Top 10 auditing, zero-trust auth | On-demand via `compact-index.json` (`skills_library/`) |
+| **📱 Mobile, Game Engines & Specialized Domains** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Quantitative Finance, Web3 | On-demand via `compact-index.json` (`skills_library/`) |
 
 ---
 

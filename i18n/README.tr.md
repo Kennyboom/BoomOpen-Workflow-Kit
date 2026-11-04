@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Çok Platformlu Akıllı-Hibrit (Smart-Hybrid) Yapay Zeka İş Gücü İşletim Sistemi ve Çoklu Ajan Orkestrasyon Çerçevesi</strong></p>
+  <p><strong>Çok Platformlu Smart-Hybrid Yapay Zeka İş Gücü İS — 21 Uzman Ajan, 17 Altın Üçgen Ekibi ve 1.430+ İsteğe Bağlı Yetenek Kasası</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 Her basit soruda soğuk başlatma gecikmesine yol açan hantal ajan sarmalayıcılarının aksine, BoomOpen v5.5 **2 Modlu Akıllı Karmaşıklık Eşik Kapısını (2-Mode Smart Complexity Threshold Gate)** sunar:
 - **⚡ Mod A — Doğrudan Yürütme (0 sn Soğuk Başlatma)**: Basit soru-cevaplar (Q&A), kod açıklamaları, tek alanlı hata düzeltmeleri veya **≤ 3 dosyaya** dokunan net değişiklikler (`/cmd` komutu olmadan), **Pragmatik 2 Katmanlı Kodlama Standartları** ve **Kalıcı Test ve Hata Düzeltme** kuralları uygulanarak ana ajan tarafından **doğrudan** yürütülür, test edilir ve doğrulanır.
 - **🎻 Mod B — Katı Çoklu Ajan Orkestrasyonu**: Karmaşık özellikler (**> 3 dosya** veya **≥ 2 alan**) ya da açık `/cmd` iş akışı komutları; **DAG Paralel Dağıtım (Parallel Fan-Out)**, **Plandan Uygulayıcıya Doğrudan Görevlendirme**, **Sözleşme Öncelikli Dosya Kilitleri (`SHARED_CONTRACT` + `OWNED_FILES`)** ve **Sıcak Alt Ajan Yeniden Kullanımı (`send_message`)** özelliklerine sahip katı Orkestratör modunu etkinleştirir.
+
+- **📚 Sıfır Bağlam Şişkinliği ile 1.430+ Devasa Yetenek Kasası**: `matrix-skills/compact-index.json` içinde önceden derlenmiş **48 Çekirdek Yetenek (`skills/`)** ve **1.430+ Niş Kütüphane Yeteneği (`skills_library/`)** ile 2 adımlı `O(1)` arama sunar — istem penceresini kirletmeden Backend, Frontend, Mobil, Oyun Geliştirme (Unity/Unreal/Godot), AI/ML, BigQuery/Veri, Bulut/DevOps ve OWASP Siber Güvenlik alanlarında anında uzmanlık sağlar.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **Mimari ve Planlama** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Kalite, Güvenlik ve Hata Ayıklama** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Araştırma ve Bilgi Yönetimi** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1.430+ Yetenek Kasası (48 Çekirdek + 1.430+ Kütüphane Yeteneği)
+
+BoomOpen, **2 Adımlı O(1) Aşamalı Yetenek Çözümlemesi** (`<skills>` → `matrix-skills/compact-index.json` → yalnızca gereken `SKILL.md` dosyasını yükleme) sayesinde **boşta 0 token maliyeti** sunan en büyük açık kaynaklı mühendislik yetenek ekosistemlerinden birine sahiptir:
+
+| Yetenek Katmanı / Alanı | Sayı | Temsili Yetenekler ve Yetkinlikler | Yükleme Mekanizması |
+|:---|:---:|:---|:---|
+| **⚡ Katman 1: Çekirdek Yetenekler (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Turn 1'de anında erişim için `<skills>` içinde önceden indekslenmiştir |
+| **🌐 Web, Backend & Dağıtık Sistemler** | **380+** | Next.js/React 19, FastAPI, NestJS, Go/Rust mikroservisleri, GraphQL, gRPC, Redis/Kafka olay güdümlü mimari, çok kiracılı SaaS | `compact-index.json` üzerinden isteğe bağlı (`skills_library/`) |
+| **🤖 Yapay Zeka, LLM Ajanları & Veri Mühendisliği** | **310+** | RAG boru hatları, LangGraph/MCP sunucuları, istem mühendisliği, Vertex AI, BigQuery analitiği, dbt, Spark, vektör veritabanları | `compact-index.json` üzerinden isteğe bağlı (`skills_library/`) |
+| **☁️ Bulut, DevOps, Kubernetes & Güvenlik** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure mimarisi, Docker/K8s GitOps, CI/CD hatları, OWASP Top 10 denetimi, Zero-Trust kimlik doğrulama | `compact-index.json` üzerinden isteğe bağlı (`skills_library/`) |
+| **📱 Mobil, Oyun Motorları & Özel Alanlar** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Kantitatif Finans, Web3 | `compact-index.json` üzerinden isteğe bağlı (`skills_library/`) |
 
 ---
 

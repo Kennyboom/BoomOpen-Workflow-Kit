@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>멀티 플랫폼 스마트 하이브리드 (Smart-Hybrid) AI 워크포스 운영체제 & 멀티 에이전트 오케스트레이션 프레임워크</strong></p>
+  <p><strong>멀티 플랫폼 스마트 하이브리드 AI 개발 OS — 21개 전문 에이전트, 17개 골든 트라이앵글 팀 &amp; 1,430+ 온디맨드 스킬 볼트</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 단순한 질문에도 매번 콜드 스타트 지연을 유발하는 무거운 래퍼들과 달리, BoomOpen v5.5는 **2-모드 스마트 복잡도 임계값 게이트(2-Mode Smart Complexity Threshold Gate)**를 도입했습니다:
 - **⚡ Mode A — 직접 실행 모드 (콜드 스타트 0초)**: 간단한 Q&A, 코드 설명, 단일 도메인 버그 수정 또는 **3개 이하의 파일**(`/cmd` 슬래시 명령 없음)만 수정하는 명확한 작업은 메인 에이전트가 **직접** 실행·테스트·검증하며, **실용적 2계층 코딩 표준(Pragmatic 2-Tier Coding Standards)**과 **지속적 테스트 및 버그 수정(Persistent Testing & Bug Fixing)**을 엄격히 준수합니다.
 - **🎻 Mode B — 엄격한 멀티 에이전트 오케스트레이션 (Strict Multi-Agent Orchestration)**: 복잡한 기능 개발(**4개 이상의 파일** 또는 **2개 이상의 도메인**)이나 명시적인 `/cmd` 워크플로우 호출 시 **DAG 병렬 팬아웃(Parallel Fan-Out)**, **계획-실행자 직접 디스패치(Direct Plan-to-Executor Dispatch)**, **계약 우선 파일 잠금(`SHARED_CONTRACT` + `OWNED_FILES`)**, **웜 서브 에이전트 재사용(`send_message`)**을 갖춘 오케스트레이터 모드를 활성화합니다.
+
+- **📚 컨텍스트 낭비 없는 1,430+ 대규모 스킬 볼트**: **48개 코어 스킬 (`skills/`)** 과 **1,430+개 전문 라이브러리 스킬 (`skills_library/`)** 이 `matrix-skills/compact-index.json`에 사전 컴파일되어 `O(1)` 2단계 조회로 프롬프트 창 오염 없이 백엔드, 프론트엔드, 모바일, 게임 엔진(Unity/Unreal/Godot), AI/ML, BigQuery/데이터 엔지니어링, 클라우드/DevOps 및 OWASP 보안 전문성을 즉시 제공합니다.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **아키텍처 및 기획** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **품질, 보안 및 디버깅** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **리서치 및 지식 관리** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1,430+ 스킬 볼트 (48개 코어 스킬 + 1,430+ 전문 라이브러리 스킬)
+
+BoomOpen은 오픈소스 최대 규모의 엔지니어링 스킬 생태계를 탑재하고 있으며, **2단계 O(1) 점진적 스킬 조회**(`<skills>` 코어 확인 → `matrix-skills/compact-index.json` 검색 → 필요한 `SKILL.md`만 온디맨드 로드)를 통해 **유휴 토큰 소모 0**을 달성합니다:
+
+| 스킬 계층 / 도메인 | 개수 | 대표 스킬 및 핵심 역량 | 로딩 메커니즘 |
+|:---|:---:|:---|:---|
+| **⚡ Tier 1: 코어 스킬 (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | `<skills>`에 사전 인덱싱되어 Turn 1 즉시 사용 |
+| **🌐 웹, 백엔드 & 분산 시스템** | **380+** | Next.js/React 19, FastAPI, NestJS, Go/Rust 마이크로서비스, GraphQL, gRPC, Redis/Kafka 이벤트 기반 아키텍처, 멀티테넌트 SaaS | `compact-index.json` 기반 온디맨드 로드 (`skills_library/`) |
+| **🤖 AI, LLM 에이전트 & 데이터 엔지니어링** | **310+** | RAG 파이프라인, LangGraph/MCP 서버, 프롬프트 엔지니어링, Vertex AI, BigQuery 분석, dbt, Spark, 벡터 DB | `compact-index.json` 기반 온디맨드 로드 (`skills_library/`) |
+| **☁️ 클라우드, DevOps, K8s & 보안** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure 아키텍처, Docker/K8s GitOps, CI/CD, OWASP Top 10 감사, 제로 트러스트 인증 | `compact-index.json` 기반 온디맨드 로드 (`skills_library/`) |
+| **📱 모바일, 게임 엔진 & 특화 도메인** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, 퀀트 금융, Web3 | `compact-index.json` 기반 온디맨드 로드 (`skills_library/`) |
 
 ---
 

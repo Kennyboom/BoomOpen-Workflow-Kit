@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>跨平台智能混合 (Smart-Hybrid) AI 研发操作系统与多智能体协同编排框架</strong></p>
+  <p><strong>跨平台智能混合 (Smart-Hybrid) AI 研发操作系统 — 21 位专家级智能体、17 支黄金三角团队与 1,430+ 按需技能宝库</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 不同于每次简单提问都会带来冷启动延迟的笨重代理框架，BoomOpen v5.5 引入了 **双模式智能复杂度阈值门控（2-Mode Smart Complexity Threshold Gate）**：
 - **⚡ Mode A — 直接执行模式（0 秒冷启动）**：针对日常问答、代码解释、单领域缺陷修复或仅涉及 **≤ 3 个文件**（且未调用 `/cmd` 斜杠命令）的明确修改，由主智能体**直接**执行、测试与验证，同时严格执行 **务实双层编码规范（Pragmatic 2-Tier Coding Standards）** 与 **持续测试与缺陷修复（Persistent Testing & Bug Fixing）**。
 - **🎻 Mode B — 严格多智能体编排模式（Strict Multi-Agent Orchestration）**：针对复杂功能开发（**> 3 个文件** 或 **≥ 2 个领域**）或显式调用 `/cmd` 工作流命令时，激活严格编排器模式，支持 **DAG 并行扇出（Parallel Fan-Out）**、**计划直达执行者派发（Direct Plan-to-Executor Dispatch）**、**契约优先文件锁（`SHARED_CONTRACT` + `OWNED_FILES`）** 以及 **有状态热会话复用（`send_message`）**。
+
+- **📚 1,430+ 巨型专业技能库（零上下文膨胀）**：包含 **48 项核心技能 (`skills/`)** 与 **1,430+ 项垂直领域技能 (`skills_library/`)**，预编译至 `matrix-skills/compact-index.json` 实现 `O(1)` 两步按需加载，让 AI 瞬间掌握后端、前端、移动端、游戏开发 (Unity/Unreal/Godot)、AI/ML、BigQuery/数据工程、云原生/DevOps 与 OWASP 网络安全，且绝不污染上下文窗口。
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **架构设计与规划** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **质量、安全与调试** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **技术调研与知识管理** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1,430+ 专业技能宝库（48 项核心技能 + 1,430+ 项领域技能）
+
+BoomOpen 内置开源界规模最大的 AI 工程技能矩阵之一，通过 **两步 O(1) 渐进式检索**（`<skills>` 核心匹配 → `matrix-skills/compact-index.json` 索引检索 → 按需加载 `SKILL.md`）实现 **0 空闲 Token 消耗**：
+
+| 技能层级 / 领域 | 数量 | 代表性技能与核心能力 | 加载机制 |
+|:---|:---:|:---|:---|
+| **⚡ Tier 1：核心技能 (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | 预加载于 `<skills>`，首轮零延迟调用 |
+| **🌐 Web、后端与分布式系统** | **380+** | Next.js/React 19、FastAPI、NestJS、Go/Rust 微服务、GraphQL、gRPC、Redis/Kafka 事件驱动架构、多租户 SaaS | 经由 `compact-index.json` 按需加载 (`skills_library/`) |
+| **🤖 AI、LLM 智能体与数据工程** | **310+** | RAG 流水线、LangGraph/MCP 服务、提示词工程、Vertex AI、BigQuery 分析、dbt、Spark、向量数据库 | 经由 `compact-index.json` 按需加载 (`skills_library/`) |
+| **☁️ 云原生、DevOps、K8s 与网络安全** | **290+** | Terraform/OpenTofu、AWS/GCP/Azure 架构、Docker/K8s GitOps、CI/CD 流水线、OWASP Top 10 安全审计、零信任鉴权 | 经由 `compact-index.json` 按需加载 (`skills_library/`) |
+| **📱 移动端、游戏引擎与垂直行业** | **450+** | iOS Swift/SwiftUI、Android Kotlin、React Native、Flutter、Unity 6、Unreal Engine 5、Godot 4、WebGL/Three.js、量化金融、Web3 | 经由 `compact-index.json` 按需加载 (`skills_library/`) |
 
 ---
 

@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Мультиплатформенная гибридная (Smart-Hybrid) операционная система ИИ-разработки и фреймворк мультиагентной оркестрации</strong></p>
+  <p><strong>Кроссплатформенная Smart-Hybrid ИИ-ОС для разработки — 21 агент-специалист, 17 команд «Золотого треугольника» и хранилище из 1 430+ навыков по требованию</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 В отличие от громоздких обёрток, создающих задержку холодного старта при каждом простом вопросе, BoomOpen v5.5 внедряет **2-режимный умный шлюз сложности (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ Режим A — Прямое выполнение (0 с холодного старта)**: Вопросы и ответы (Q&A), объяснение кода, локальные исправления багов или понятные изменения в **≤ 3 файлах** (без вызова `/cmd`) выполняются, тестируются и проверяются **напрямую** основным агентом с соблюдением **Прагматичных двухуровневых стандартов кодирования** и **Настойчивого тестирования и исправления ошибок**.
 - **🎻 Режим B — Строгая мультиагентная оркестрация**: Сложные задачи (**> 3 файлов** или **≥ 2 домена**) либо явные команды `/cmd` активируют режим строгого Оркестратора с **параллельным DAG-разветвлением (Parallel Fan-Out)**, **прямой передачей плана исполнителям (Direct Plan-to-Executor Dispatch)**, **контрактной блокировкой файлов (`SHARED_CONTRACT` + `OWNED_FILES`)** и **повторным использованием «тёплых» субагентов (`send_message`)**.
+
+- **📚 Массивное хранилище из 1 430+ навыков без раздувания контекста**: объединяет **48 базовых навыков (`skills/`)** и **1 430+ узкоспециализированных навыков (`skills_library/`)**, предкомпилированных в `matrix-skills/compact-index.json` для двухшагового `O(1)` поиска — мгновенная экспертиза в Backend, Frontend, Mobile, GameDev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps и безопасности OWASP без засорения окна промпта.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **Архитектура и планирование** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Качество, безопасность и отладка** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Исследования и знания** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 Хранилище из 1 430+ навыков (48 базовых + 1 430+ библиотечных)
+
+BoomOpen включает одну из крупнейших в open-source коллекций инженерных навыков с **нулевым расходом токенов в простое** благодаря **двухшаговому прогрессивному разрешению навыков O(1)** (`<skills>` → `matrix-skills/compact-index.json` → точечная загрузка `SKILL.md` по требованию):
+
+| Уровень / Домен навыков | Кол-во | Ключевые навыки и возможности | Механизм загрузки |
+|:---|:---:|:---|:---|
+| **⚡ Уровень 1: Базовые навыки (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Прединдексированы в `<skills>` для мгновенного доступа на 1-м ходу |
+| **🌐 Web, Backend и распределённые системы** | **380+** | Next.js/React 19, FastAPI, NestJS, микросервисы Go/Rust, GraphQL, gRPC, событийная архитектура Redis/Kafka, мультитенантные SaaS | По требованию через `compact-index.json` (`skills_library/`) |
+| **🤖 ИИ, LLM-агенты и инженерия данных** | **310+** | RAG-пайплайны, серверы LangGraph/MCP, промпт-инжиниринг, Vertex AI, аналитика BigQuery, dbt, Spark, векторные БД | По требованию через `compact-index.json` (`skills_library/`) |
+| **☁️ Облако, DevOps, Kubernetes и безопасность** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure, Docker/K8s GitOps, CI/CD, аудит OWASP Top 10, Zero-Trust аутентификация | По требованию через `compact-index.json` (`skills_library/`) |
+| **📱 Мобайл, игровые движки и спецдомены** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Quant Finance, Web3 | По требованию через `compact-index.json` (`skills_library/`) |
 
 ---
 

@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>मल्टी-प्लेटफ़ॉर्म स्मार्ट-हाइब्रिड (Smart-Hybrid) AI वर्कफ़ोर्स ऑपरेटिंग सिस्टम और मल्टी-एजेंट ऑर्केस्ट्रेशन फ्रेमवर्क</strong></p>
+  <p><strong>मल्टी-प्लेटफ़ॉर्म स्मार्ट-हाइब्रिड AI वर्कफ़ोर्स OS — 21 विशेषज्ञ एजेंट, 17 गोल्डन ट्रायंगल टीमें और 1,430+ ऑन-डिमांड स्किल्स वॉल्ट</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 हर छोटे सवाल पर कोल्ड-स्टार्ट विलंब पैदा करने वाले भारी-भरकम एजेंट रैपर्स के विपरीत, BoomOpen v5.5 **2-मोड स्मार्ट कॉम्प्लेक्सिटी थ्रेशोल्ड गेट (2-Mode Smart Complexity Threshold Gate)** प्रस्तुत करता है:
 - **⚡ Mode A — प्रत्यक्ष निष्पादन (0 सेकंड कोल्ड-स्टार्ट)**: सामान्य प्रश्नोत्तर (Q&A), कोड व्याख्या, सिंगल-डोमेन बग फिक्स, या **≤ 3 फ़ाइलों** (बिना `/cmd` कमांड) को छूने वाले स्पष्ट बदलाव मुख्य एजेंट द्वारा **सीधे** निष्पादित, परीक्षित और सत्यापित किए जाते हैं, जिसमें **व्यावहारिक 2-स्तरीय कोडिंग मानक (Pragmatic 2-Tier Coding Standards)** और **सतत परीक्षण एवं बग निवारण** लागू होते हैं।
 - **🎻 Mode B — सख्त मल्टी-एजेंट ऑर्केस्ट्रेशन**: जटिल फ़ीचर्स (**> 3 फ़ाइलें** या **≥ 2 डोमेन**) या स्पष्ट `/cmd` वर्कफ़्लो कमांड **DAG समानांतर फैन-आउट**, **प्लान-टू-एग्जीक्यूटर डायरेक्ट डिस्पैच**, **अनुबंध-प्रथम फ़ाइल लॉक (`SHARED_CONTRACT` + `OWNED_FILES`)** और **वॉर्म सब-एजेंट रीयूज़ (`send_message`)** के साथ सख्त ऑर्केस्ट्रेटर मोड सक्रिय करते हैं।
+
+- **📚 ज़ीरो कॉन्टेक्स्ट ब्लोट के साथ 1,430+ विशाल स्किल्स वॉल्ट**: इसमें **48 कोर स्किल्स (`skills/`)** और **1,430+ विशिष्ट लाइब्रेरी स्किल्स (`skills_library/`)** शामिल हैं, जिन्हें `matrix-skills/compact-index.json` में प्री-कम्पाइल किया गया है ताकि `O(1)` 2-चरणीय लुकअप से प्रॉम्प्ट विंडो को भरे बिना Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps और OWASP सुरक्षा में तुरंत महारत मिल सके।
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **आर्किटेक्चर और योजना** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **गुणवत्ता, सुरक्षा और डीबगिंग** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **अनुसंधान और ज्ञान** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 1,430+ स्किल्स वॉल्ट (48 कोर + 1,430+ लाइब्रेरी स्किल्स)
+
+BoomOpen ओपन-सोर्स के सबसे बड़े इंजीनियरिंग स्किल इकोसिस्टम में से एक के साथ आता है — जो **2-चरणीय O(1) प्रोग्रेसिव स्किल लुकअप** (`<skills>` → `matrix-skills/compact-index.json` → ज़रूरत पड़ने पर सटीक `SKILL.md` लोड) के माध्यम से **0 निष्क्रिय टोकन खर्च** सुनिश्चित करता है:
+
+| स्किल स्तर / डोमेन | संख्या | प्रमुख स्किल्स और क्षमताएँ | लोडिंग तंत्र |
+|:---|:---:|:---|:---|
+| **⚡ स्तर 1: कोर स्किल्स (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Turn 1 पर त्वरित उपयोग के लिए `<skills>` में प्री-इंडेक्स्ड |
+| **🌐 वेब, बैकएंड और डिस्ट्रीब्यूटेड सिस्टम्स** | **380+** | Next.js/React 19, FastAPI, NestJS, Go/Rust माइक्रोसर्विसेज़, GraphQL, gRPC, Redis/Kafka इवेंट-ड्रिवन आर्किटेक्चर, मल्टी-टेनेंट SaaS | `compact-index.json` द्वारा ऑन-डिमांड (`skills_library/`) |
+| **🤖 AI, LLM एजेंट्स और डेटा इंजीनियरिंग** | **310+** | RAG पाइपलाइन, LangGraph/MCP सर्वर, प्रॉम्प्ट इंजीनियरिंग, Vertex AI, BigQuery एनालिटिक्स, dbt, Spark, वेक्टर डेटाबेस | `compact-index.json` द्वारा ऑन-डिमांड (`skills_library/`) |
+| **☁️ क्लाउड, DevOps, Kubernetes और सुरक्षा** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure आर्किटेक्चर, Docker/K8s GitOps, CI/CD पाइपलाइन, OWASP Top 10 ऑडिट, Zero-Trust ऑथेंटिकेशन | `compact-index.json` द्वारा ऑन-डिमांड (`skills_library/`) |
+| **📱 मोबाइल, गेम इंजन और विशेष डोमेन** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, क्वांट फाइनेंस, Web3 | `compact-index.json` द्वारा ऑन-डिमांड (`skills_library/`) |
 
 ---
 

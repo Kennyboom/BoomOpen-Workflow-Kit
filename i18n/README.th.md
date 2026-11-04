@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>ระบบปฏิบัติการกองทัพ AI แบบ Smart-Hybrid ข้ามแพลตฟอร์ม และเฟรมเวิร์กการประสานงานแบบ Multi-Agent</strong></p>
+  <p><strong>ระบบปฏิบัติการ AI อัจฉริยะแบบผสมผสาน (Smart-Hybrid) ข้ามแพลตฟอร์ม — 21 เอเจนต์ผู้เชี่ยวชาญ, 17 ทีมสามเหลี่ยมทองคำ และคลังทักษะ 1,430+ รายการแบบเรียกใช้ตามต้องการ</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 แตกต่างจากเทมเพลตคำสั่งแบบตายตัวหรือเฟรมเวิร์กขนาดใหญ่ที่ทำให้เกิดความหน่วง (Cold-Start) ในทุกคำถามง่ายๆ BoomOpen v5.5 ได้เปิดตัว **ประตูคัดกรองความซับซ้อนอัจฉริยะ 2 โหมด (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ โหมด A — ประมวลผลโดยตรง (Cold-Start 0 วินาที)**: คำถาม-คำตอบทั่วไป (Q&A), การอธิบายโค้ด, การแก้บั๊กในโดเมนเดียว หรือการแก้ไขที่ชัดเจนซึ่งกระทบไฟล์ **≤ 3 ไฟล์** (และไม่ได้เรียกคำสั่ง `/cmd`) จะถูกดำเนินการ ทดสอบ และตรวจสอบ **โดยตรง** โดยเอเจนต์หลัก พร้อมบังคับใช้ **มาตรฐานการเขียนโค้ดเชิงปฏิบัติ 2 ระดับ (Pragmatic 2-Tier Coding Standards)** และ **การทดสอบและแก้ไขบั๊กอย่างต่อเนื่อง**
 - **🎻 โหมด B — การประสานงาน Multi-Agent อย่างเคร่งครัด**: ฟีเจอร์ที่ซับซ้อน (**> 3 ไฟล์** หรือ **≥ 2 โดเมน**) หรือการเรียกใช้คำสั่ง `/cmd` จะเปิดใช้งานโหมด Orchestrator เต็มรูปแบบ พร้อม **การกระจายงานขนานแบบ DAG (Parallel Fan-Out)**, **การจ่ายงานตรงจากแผนสู่วิศวกร (Direct Plan-to-Executor Dispatch)**, **การล็อกสิทธิ์ไฟล์ตามสัญญา (`SHARED_CONTRACT` + `OWNED_FILES`)** และ **การนำซับเอเจนต์ที่พร้อมใช้งานกลับมาใช้ซ้ำ (`send_message`)**
+
+- **📚 คลังทักษะขนาดใหญ่ 1,430+ รายการโดยไม่เปลืองบริบท (Zero Context Bloat)**: ผสาน **48 ทักษะหลัก (`skills/`)** และ **1,430+ ทักษะเฉพาะทาง (`skills_library/`)** ที่คอมไพล์ล่วงหน้าไว้ใน `matrix-skills/compact-index.json` เพื่อการค้นหาแบบ 2 ขั้นตอน `O(1)` ช่วยให้ AI มีความเชี่ยวชาญทันทีทั้ง Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps และความปลอดภัย OWASP โดยไม่ทำให้หน้าต่างพรอมต์เต็ม
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **สถาปัตยกรรมและการวางแผน** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **คุณภาพ ความปลอดภัย และการดีบัก** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **การวิจัยและจัดการความรู้** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 คลังทักษะ 1,430+ รายการ (48 ทักษะหลัก + 1,430+ ทักษะไลบรารี)
+
+BoomOpen มาพร้อมกับหนึ่งในระบบนิเวศทักษะวิศวกรรมซอฟต์แวร์ที่ใหญ่ที่สุดในโอเพนซอร์ส ออกแบบให้ **ใช้โทเค็นขณะว่างเป็น 0** ผ่าน **การค้นหาทักษะแบบก้าวหน้า 2 ขั้นตอน O(1)** (`<skills>` → `matrix-skills/compact-index.json` → โหลดเฉพาะไฟล์ `SKILL.md` ที่ต้องการ):
+
+| ระดับ / หมวดหมู่ทักษะ | จำนวน | ทักษะและความสามารถเด่น | กลไกการโหลด |
+|:---|:---:|:---|:---|
+| **⚡ ระดับ 1: ทักษะหลัก (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | จัดทำดัชนีล่วงหน้าใน `<skills>` พร้อมใช้ทันทีใน Turn 1 |
+| **🌐 เว็บ, แบ็กเอนด์ และระบบกระจายศูนย์** | **380+** | Next.js/React 19, FastAPI, NestJS, ไมโครเซอร์วิส Go/Rust, GraphQL, gRPC, สถาปัตยกรรมขับเคลื่อนด้วยอีเวนต์ Redis/Kafka, Multi-tenant SaaS | โหลดตามต้องการผ่าน `compact-index.json` (`skills_library/`) |
+| **🤖 AI, เอเจนต์ LLM และวิศวกรรมข้อมูล** | **310+** | ไปป์ไลน์ RAG, เซิร์ฟเวอร์ LangGraph/MCP, Prompt Engineering, Vertex AI, การวิเคราะห์ BigQuery, dbt, Spark, ฐานข้อมูลเวกเตอร์ | โหลดตามต้องการผ่าน `compact-index.json` (`skills_library/`) |
+| **☁️ คลาวด์, DevOps, Kubernetes และความปลอดภัย** | **290+** | Terraform/OpenTofu, สถาปัตยกรรม AWS/GCP/Azure, Docker/K8s GitOps, ไปป์ไลน์ CI/CD, การตรวจสอบ OWASP Top 10, Zero-Trust Auth | โหลดตามต้องการผ่าน `compact-index.json` (`skills_library/`) |
+| **📱 โมบายล์, เกมเอนจิน และโดเมนเฉพาะทาง** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, การเงินเชิงปริมาณ, Web3 | โหลดตามต้องการผ่าน `compact-index.json` (`skills_library/`) |
 
 ---
 

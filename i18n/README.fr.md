@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Système d’Exploitation IA Hybride-Intelligent Multiplateforme & Framework d’Orchestration Multi-Agents</strong></p>
+  <p><strong>Système d&#39;Exploitation IA Smart-Hybrid Multiplateforme — 21 Agents Spécialistes, 17 Équipes Triangle d&#39;Or &amp; Coffre de 1 430+ Compétences à la Demande</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 Contrairement aux modèles rigides ou aux surcouches lourdes qui imposent une latence de démarrage à froid à chaque question simple, BoomOpen v5.5 introduit une **Porte de Complexité Intelligente à 2 Modes (2-Mode Smart Complexity Threshold Gate)** :
 - **⚡ Mode A — Exécution Directe (Démarrage à froid 0s)** : Les questions/réponses (Q&A), explications de code, corrections de bugs mono-domaine ou modifications ciblées touchant **≤ 3 fichiers** (sans commande `/cmd`) sont exécutées, testées et vérifiées **directement** par l’agent principal dans le respect des **Standards de Code Pragmatiques à 2 Niveaux** et des **Tests & Corrections Persistants**.
 - **🎻 Mode B — Orchestration Multi-Agents Stricte** : Les fonctionnalités complexes (**> 3 fichiers** ou **≥ 2 domaines**) ou les commandes explicites `/cmd` activent le mode Orchestrateur strict avec **Déploiement Parallèle DAG (Parallel Fan-Out)**, **Distribution Directe du Plan à l’Exécutant**, **Verrouillage de Fichiers par Contrat (`SHARED_CONTRACT` + `OWNED_FILES`)** et **Réutilisation à Chaud des Sous-agents (`send_message`)**.
+
+- **📚 Coffre Massif de 1 430+ Compétences sans Gonflement du Contexte** : Réunit **48 Compétences Clés (`skills/`)** et **1 430+ Compétences Spécialisées (`skills_library/`)** précompilées dans `matrix-skills/compact-index.json` pour une recherche `O(1)` en 2 étapes — offrant une maîtrise instantanée en Backend, Frontend, Mobile, Jeux (Unity/Unreal/Godot), IA/ML, BigQuery/Data, Cloud/DevOps et Cybersécurité OWASP sans saturer la fenêtre de prompt.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **Architecture & Planification** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **Qualité, Sécurité & Débogage** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **Recherche & Connaissances** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 Coffre de 1 430+ Compétences (48 Clés + 1 430+ de Bibliothèque)
+
+BoomOpen intègre l'un des plus vastes écosystèmes de compétences d'ingénierie open source, conçu pour **0 coût de tokens au repos** grâce à la **Résolution Progressive O(1) en 2 Étapes** (`<skills>` → `matrix-skills/compact-index.json` → chargement ciblé de `SKILL.md` à la demande) :
+
+| Niveau / Domaine de Compétence | Nombre | Compétences et Capacités Représentatives | Mécanisme de Chargement |
+|:---|:---:|:---|:---|
+| **⚡ Niveau 1 : Compétences Clés (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | Pré-indexé dans `<skills>` pour un accès immédiat au Tour 1 |
+| **🌐 Web, Backend & Systèmes Distribués** | **380+** | Next.js/React 19, FastAPI, NestJS, microservices Go/Rust, GraphQL, gRPC, architecture événementielle Redis/Kafka, SaaS multi-locataire | À la demande via `compact-index.json` (`skills_library/`) |
+| **🤖 IA, Agents LLM & Ingénierie des Données** | **310+** | Pipelines RAG, serveurs LangGraph/MCP, prompt engineering, Vertex AI, analytique BigQuery, dbt, Spark, bases vectorielles | À la demande via `compact-index.json` (`skills_library/`) |
+| **☁️ Cloud, DevOps, Kubernetes & Sécurité** | **290+** | Terraform/OpenTofu, AWS/GCP/Azure, Docker/K8s GitOps, CI/CD, audit OWASP Top 10, authentification Zero-Trust | À la demande via `compact-index.json` (`skills_library/`) |
+| **📱 Mobile, Moteurs de Jeux & Domaines Spécialisés** | **450+** | iOS Swift/SwiftUI, Android Kotlin, React Native, Flutter, Unity 6, Unreal Engine 5, Godot 4, WebGL/Three.js, Finance Quantitative, Web3 | À la demande via `compact-index.json` (`skills_library/`) |
 
 ---
 

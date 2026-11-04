@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>نظام تشغيل القوى العاملة بالذكاء الاصطناعي الهجين الذكي متعدد المنصات وإطار عمل تنسيق الوكلاء المتعددين</strong></p>
+  <p><strong>نظام تشغيل القوى العاملة الذكية Smart-Hybrid متعدد المنصات — 21 وكيلاً متخصصاً، 17 فريق المثلث الذهبي وخزينة تضم +1,430 مهارة عند الطلب</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
@@ -39,6 +39,8 @@
 على عكس القوالب الجامدة أو الأطر الثقيلة التي تسبب تأخيراً في التشغيل البارد مع كل سؤال بسيط، يقدم BoomOpen v5.5 **بوابة عتبة التعقيد الذكية ثنائية الوضع (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ الوضع A — التنفيذ المباشر (0 ثانية تشغيل بارد)**: الأسئلة والأجوبة السريعة، شرح الكود، إصلاح الأخطاء في نطاق واحد، أو التعديلات الواضحة التي تلمس **3 ملفات أو أقل** (دون أمر `/cmd`) يتم تنفيذها واختبارها والتحقق منها **مباشرة** بواسطة الوكيل الأساسي مع تطبيق **معايير البرمجة العملية ذات المستويين** و**الاختبار وإصلاح الأخطاء المستمر**.
 - **🎻 الوضع B — التنسيق الصارم للوكلاء المتعددين**: الميزات المعقدة (**أكثر من 3 ملفات** أو **مجالين فأكثر**) أو أوامر `/cmd` الصريحة تفعّل وضع المنسق الصارم مع **التفريع المتوازي DAG**، و**الإرسال المباشر من الخطة إلى المنفذ**، و**أقفال ملكية الملفات القائمة على العقود (`SHARED_CONTRACT` + `OWNED_FILES`)**، و**إعادة استخدام الجلسات النشطة للوكلاء الفرعيين (`send_message`)**.
+
+- **📚 خزينة ضخمة تضم +1,430 مهارة بدون تضخم السياق (Zero Context Bloat)**: تجمع بين **48 مهارة أساسية (`skills/`)** و**+1,430 مهارة تخصصية (`skills_library/`)** مُجمَّعة مسبقاً في `matrix-skills/compact-index.json` للبحث الفوري `O(1)` من خطوتين — مما يمنح الذكاء الاصطناعي إتقاناً فورياً في الواجهات الخلفية والأمامية، تطبيقات الجوال، محركات الألعاب (Unity/Unreal/Godot)، الذكاء الاصطناعي والبيانات (BigQuery)، السحابة/DevOps وأمن OWASP دون استهلاك نافذة السياق.
 
 ---
 
@@ -180,6 +182,20 @@ npm run settings -- reset
 | **البنية المعمارية والتخطيط** | `tech-lead`, `planner`, `brainstormer`, `business-analyst`, `project-manager`, `designer` | `planning-team`, `project-team`, `design-team` |
 | **الجودة والأمان وتصحيح الأخطاء** | `debugger`, `tester`, `reviewer`, `security-engineer`, `performance-engineer` | `debug-team`, `qa-team`, `review-team`, `security-team`, `performance-team` |
 | **البحث وإدارة المعرفة** | `researcher`, `scouter`, `docs-manager`, `reporter` | `research-team`, `docs-team`, `report-team` |
+
+---
+
+## 📚 خزينة +1,430 مهارة (48 مهارة أساسية + 1,430+ مهارة مكتبية)
+
+يأتي BoomOpen مزوداً بواحدة من أكبر منظومات المهارات الهندسية في المصادر المفتوحة، والمصممة لاستهلاك **0 توكن في وضع الخمول** عبر **الاستعلام التدريجي O(1) من خطوتين** (`<skills>` ← `matrix-skills/compact-index.json` ← تحميل ملف `SKILL.md` المطلوب فقط عند الطلب):
+
+| طبقة / مجال المهارات | العدد | أبرز المهارات والقدرات | آلية التحميل |
+|:---|:---:|:---|:---|
+| **⚡ الطبقة 1: المهارات الأساسية (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `api-patterns`, `database-design`, `testing-patterns`, `vulnerability-scanner`, `skill-seeker` | مفهرسة مسبقاً في `<skills>` للوصول الفوري في الجولة الأولى |
+| **🌐 الويب، الخلفية والأنظمة الموزعة** | **380+** | Next.js/React 19، FastAPI، NestJS، خدمات Go/Rust المصغرة، GraphQL، gRPC، بنية Redis/Kafka الحدثية، أنظمة SaaS متعددة المستأجرين | عند الطلب عبر `compact-index.json` (`skills_library/`) |
+| **🤖 الذكاء الاصطناعي، وكلاء LLM وهندسة البيانات** | **310+** | خطوط RAG، خوادم LangGraph/MCP، هندسة الأوامر، Vertex AI، تحليلات BigQuery، dbt، Spark، قواعد البيانات المتجهة | عند الطلب عبر `compact-index.json` (`skills_library/`) |
+| **☁️ السحابة، DevOps، Kubernetes والأمن السيبراني** | **290+** | Terraform/OpenTofu، بنية AWS/GCP/Azure، Docker/K8s GitOps، خطوط CI/CD، تدقيق OWASP Top 10، مصادقة Zero-Trust | عند الطلب عبر `compact-index.json` (`skills_library/`) |
+| **📱 الجوال، محركات الألعاب والمجالات المتخصصة** | **450+** | iOS Swift/SwiftUI، Android Kotlin، React Native، Flutter، Unity 6، Unreal Engine 5، Godot 4، WebGL/Three.js، التمويل الكمي، Web3 | عند الطلب عبر `compact-index.json` (`skills_library/`) |
 
 ---
 
