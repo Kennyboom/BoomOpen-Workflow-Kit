@@ -17,6 +17,7 @@ collaborates-with: [devops-team-techlead, devops-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Executor (Implementer + Defender)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `backend-engineer` (mode: infrastructure) — backend capabilities active, applied to infrastructure domain
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/terraform-opentofu-production/SKILL.md`, `skills_library/cloudflare-d1-r2-durable-objects/SKILL.md`.
 
 ---
 

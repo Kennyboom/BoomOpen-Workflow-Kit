@@ -40,7 +40,7 @@ execution-mode: execute
 | Phase 2 (Arch.)  | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{task}` (or `./reports/{topic}/researchers/RESEARCH-{task}`) + `<appDataDir>\\brain\\<conversation-id>\\ADR-{task}` (or `./reports/{topic}/designs/ADR-{task}`) |
 | Phase 3 (Plan)   | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`) (or `PLAN-{task}-phase1`, …) |
 | Phase 4 (Review) | `<appDataDir>\\brain\\<conversation-id>\\QA-PLAN-{task}` (or `./reports/{topic}/qa/QA-PLAN-{task}`)                |
-| ALL Phases        | `./reports/{topic}/MAILBOX-{date}.md`                  |
+| ALL Phases        | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English. If plan has **> 3 phases** or **> 3 days** effort → produce **multiple plan files** (one per phase/milestone), each executable in sequence.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → `{name}.md`. Large (> 150 lines) → `{name}/` folder.
@@ -207,7 +207,7 @@ FOR EACH requirement in BRAINSTORM-{task}.md:
 > Deliverables completed:
 > 1. ✅ Plan — `<appDataDir>\\brain\\<conversation-id>\\PLAN-{task}` (or `./reports/{topic}/plans/PLAN-{task}`) (or multi-phase files)
 > 2. ✅ QA — `<appDataDir>\\brain\\<conversation-id>\\QA-PLAN-{task}` (or `./reports/{topic}/qa/QA-PLAN-{task}`)
-> 3. 📬 Debate — `./reports/{topic}/MAILBOX-{date}.md`
+> 3. 📬 Debate — `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`)
 >
 > Suggested next steps (USER must explicitly choose):
 > 1. 🏗️ `/cook:team` or `/cook:hard` → Implement

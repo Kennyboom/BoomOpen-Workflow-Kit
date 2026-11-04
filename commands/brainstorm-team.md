@@ -40,7 +40,7 @@ execution-mode: execute
 | P1: Diverge | `<appDataDir>\\brain\\<conversation-id>\\IDEAS-{topic}` (or `./reports/{topic}/brainstorms/IDEAS-{topic}`) |
 | P2: Converge | `<appDataDir>\\brain\\<conversation-id>\\ANALYSIS-{topic}` (or `./reports/{topic}/brainstorms/ANALYSIS-{topic}`) |
 | P3: Synthesize | `<appDataDir>\\brain\\<conversation-id>\\BRAINSTORM-{topic}` (or `./reports/{topic}/brainstorms/BRAINSTORM-{topic}`) |
-| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
+| ALL Phases | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 

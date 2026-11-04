@@ -61,15 +61,23 @@
 
 ---
 
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
+
+---
+
 ## 📂 PATHS (Use These Exact Paths)
 
 ```
-COMMANDS = ~/.cursor/skills/boomopen-workflow-kit/commands/ (also ~/.cursor/commands/)
-AGENTS   = ~/.cursor/skills/boomopen-workflow-kit/agents/   (also ~/.cursor/agents/)
-SKILLS   = ~/.cursor/skills/
-LIBRARY  = ~/.cursor/skills_library/
-RULES    = ~/.cursor/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.cursor/skills/boomopen-workflow-kit/commands/ (also ~/.cursor/commands/)
+AGENTS    = ~/.cursor/skills/boomopen-workflow-kit/agents/   (also ~/.cursor/agents/)
+SKILLS    = ~/.cursor/skills/
+LIBRARY   = ~/.cursor/skills_library/
+RULES     = ~/.cursor/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\
+REPORTS   = ./reports/{topic}/
 ```
 
 ---
@@ -114,5 +122,5 @@ REPORTS  = ./reports/{topic}/
 | `PHASES.md` | DAG Parallel Fan-Out, Contract-First dispatch, Direct Plan execution |
 | `AGENTS.md` | Tiered execution, Warm Session Reuse, `OWNED_FILES` locks |
 | `TEAMS.md` | Golden Triangle team execution protocol (`:team` variants) |
-| `SKILLS.md` | Fast 2-step progressive skill resolution (`compact-index.json`) |
+| `SKILLS.md` | Fast 2-step progressive skill resolution (`1,460+` library skills / `1,470` indexed in `compact-index.json`) |
 | `ERRORS.md` / `REFERENCE.md` | Error recovery (`E0` auto-revive) & quick lookup tables |

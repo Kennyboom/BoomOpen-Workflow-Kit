@@ -118,3 +118,11 @@ skills:
       agents: [backend-engineer, tech-lead, researcher]
       profiles: ["mcp:*", "architecture:orchestration"]
     description: "Google Agent Development Kit (ADK) & Gemini 2.5 Pro multi-agent orchestration (Sequential, Parallel, Loop agents, Vertex AI)"
+
+  - skill_id: foundry-iq-agent
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, researcher]
+      profiles: ["mcp:*", "ai-ml:*"]
+    description: "Azure AI Foundry IQ agent integration for knowledge sources, retrieval pipelines, and grounded agentic workflows."

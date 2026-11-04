@@ -1,6 +1,6 @@
 ---
 name: webapp-testing
-description: Web application testing principles. E2E, Playwright, deep audit strategies.
+description: Web application testing principles. E2E, Playwright, Vitest + MSW v2, WCAG 2.2 accessibility, and deep audit strategies.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -14,9 +14,9 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 | Script | Purpose | Usage |
 |--------|---------|-------|
-| `scripts/playwright_runner.py` | Basic browser test | `python scripts/playwright_runner.py https://example.com` |
-| | With screenshot | `python scripts/playwright_runner.py <url> --screenshot` |
-| | Accessibility check | `python scripts/playwright_runner.py <url> --a11y` |
+| `scripts/playwright_runner.py` | Basic browser test | `python skills/webapp-testing/scripts/playwright_runner.py https://example.com` |
+| | With screenshot | `python skills/webapp-testing/scripts/playwright_runner.py <url> --screenshot` |
+| | Accessibility check | `python skills/webapp-testing/scripts/playwright_runner.py <url> --a11y` |
 
 **Requires:** `pip install playwright && playwright install chromium`
 
@@ -181,6 +181,16 @@ tests/
 | Hardcode waits | Use auto-wait |
 | Skip cleanup | Isolate tests |
 | Ignore flaky tests | Fix root cause |
+
+---
+
+## 10. 2026 Specialized Web Testing & Accessibility Skills
+
+| Testing Need | Skill Path |
+|--------------|------------|
+| Vitest + MSW v2 Component & Network Mocking | `../../skills_library/vitest-msw-testing-patterns/SKILL.md` (`skills_library/vitest-msw-testing-patterns/SKILL.md`) |
+| WCAG 2.2 AA/AAA Accessibility & Keyboard/Focus Auditing | `../../skills_library/wcag-22-accessibility-ergonomics/SKILL.md` (`skills_library/wcag-22-accessibility-ergonomics/SKILL.md`) |
+| Unit & Integration Test Patterns | `../testing-patterns/SKILL.md` (`skills/testing-patterns/SKILL.md`) |
 
 ---
 

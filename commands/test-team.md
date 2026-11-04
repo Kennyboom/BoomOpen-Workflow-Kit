@@ -41,7 +41,7 @@ execution-mode: execute
 | Phase 3          | Test files written to codebase                  |
 | Phase 4          | `<appDataDir>\\brain\\<conversation-id>\\TEST-RESULTS-{scope}` (or `./reports/{topic}/tests/TEST-RESULTS-{scope}`)       |
 | Phase 4          | `<appDataDir>\\brain\\<conversation-id>\\QA-{scope}` (or `./reports/{topic}/qa/QA-{scope}`)                    |
-| ALL Phases       | `./reports/{topic}/MAILBOX-{date}.md`                   |
+| ALL Phases       | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
@@ -197,7 +197,7 @@ Performance: no regressions beyond threshold | baselines established
 ## Summary
 Submissions: {n} | First-pass: {n} | Debates: {n} | Arbitrations: {n}
 Coverage: {pass/fail} | Health: {pass/fail} | Security: {pass/fail} | Perf: {pass/fail}
-Mailbox: `./reports/{topic}/MAILBOX-{date}.md`
+Mailbox: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`)
 
 ## Next Actions
 1. ✅ **All Pass** → quality gates met (triangle-validated)

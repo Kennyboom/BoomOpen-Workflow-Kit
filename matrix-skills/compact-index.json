@@ -1,6 +1,6 @@
 {
   "version": "5.5.0",
-  "totalSkills": 1462,
+  "totalSkills": 1471,
   "skills": {
     "senior-ml-engineer": {
       "domain": "ai-ml",
@@ -837,9 +837,9 @@
       "path": "skills_library/fp-taskeither-ref/SKILL.md"
     },
     "fp-ts-pragmatic": {
-      "domain": "ai-ml",
-      "priority": 6,
-      "category": "community",
+      "domain": "languages",
+      "priority": 7,
+      "category": "specialized",
       "path": "skills_library/fp-ts-pragmatic/SKILL.md"
     },
     "gemini-api-dev": {
@@ -2780,6 +2780,12 @@
       "category": "core",
       "path": "skills_library/hono-rpc-zod-openapi/SKILL.md"
     },
+    "odoo-upgrade-advisor": {
+      "domain": "backend",
+      "priority": 6,
+      "category": "specialized",
+      "path": "skills_library/odoo-upgrade-advisor/SKILL.md"
+    },
     "cloud-architect": {
       "domain": "cloud",
       "priority": 8,
@@ -3873,9 +3879,9 @@
       "path": "skills_library/event-store-design/SKILL.md"
     },
     "expo-cicd-workflows": {
-      "domain": "devops",
-      "priority": 6,
-      "category": "community",
+      "domain": "mobile",
+      "priority": 8,
+      "category": "specialized",
       "path": "skills_library/expo-cicd-workflows/SKILL.md"
     },
     "gitlab-ci-patterns": {
@@ -4057,6 +4063,12 @@
       "priority": 9,
       "category": "core",
       "path": "skills_library/terraform-opentofu-production/SKILL.md"
+    },
+    "linux-shell-scripting": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/linux-shell-scripting/SKILL.md"
     },
     "frontend-architecture": {
       "domain": "frontend",
@@ -4694,6 +4706,12 @@
       "category": "community",
       "path": "skills_library/zustand-store-ts/SKILL.md"
     },
+    "algolia-search": {
+      "domain": "languages",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/algolia-search/SKILL.md"
+    },
     "game-development": {
       "domain": "gaming",
       "priority": 9,
@@ -4897,12 +4915,6 @@
       "priority": 5,
       "category": "specialized",
       "path": "skills_library/embedded-systems/SKILL.md"
-    },
-    "algolia-search": {
-      "domain": "languages",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/algolia-search/SKILL.md"
     },
     "animejs-animation": {
       "domain": "languages",
@@ -5264,6 +5276,18 @@
       "category": "community",
       "path": "skills_library/trello-automation/SKILL.md"
     },
+    "micro-saas-launcher": {
+      "domain": "management",
+      "priority": 7,
+      "category": "community",
+      "path": "skills_library/micro-saas-launcher/SKILL.md"
+    },
+    "startup-business-analyst-market-opportunity": {
+      "domain": "management",
+      "priority": 7,
+      "category": "community",
+      "path": "skills_library/startup-business-analyst-market-opportunity/SKILL.md"
+    },
     "mcp-builder": {
       "domain": "mcp",
       "priority": 7,
@@ -5335,6 +5359,12 @@
       "priority": 9,
       "category": "core",
       "path": "skills_library/google-adk-gemini-agents/SKILL.md"
+    },
+    "foundry-iq-agent": {
+      "domain": "mcp",
+      "priority": 7,
+      "category": "specialized",
+      "path": "skills_library/foundry-iq-agent/SKILL.md"
     },
     "tauri-v2-rust-desktop-mobile": {
       "domain": "mobile",
@@ -5863,6 +5893,12 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/track-management/SKILL.md"
+    },
+    "SPDD": {
+      "domain": "planning",
+      "priority": 7,
+      "category": "specialized",
+      "path": "skills_library/SPDD/SKILL.md"
     },
     "vitest-msw-testing-patterns": {
       "domain": "quality",
@@ -7358,6 +7394,12 @@
       "category": "community",
       "path": "skills_library/variant-analysis/SKILL.md"
     },
+    "security": {
+      "domain": "security",
+      "priority": 7,
+      "category": "specialized",
+      "path": "skills_library/security/SKILL.md"
+    },
     "chrome-devtools": {
       "domain": "tools",
       "priority": 7,
@@ -8216,12 +8258,6 @@
       "category": "community",
       "path": "skills_library/linkedin-cli/SKILL.md"
     },
-    "linux-shell-scripting": {
-      "domain": "tools",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/linux-shell-scripting/SKILL.md"
-    },
     "mailchimp-automation": {
       "domain": "tools",
       "priority": 6,
@@ -8773,6 +8809,24 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/wellally-tech/SKILL.md"
+    },
+    "internal-comms-community": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/internal-comms-community/SKILL.md"
+    },
+    "document-skills": {
+      "domain": "tools",
+      "priority": 7,
+      "category": "specialized",
+      "path": "skills_library/document-skills/SKILL.md"
+    },
+    "libreoffice": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "specialized",
+      "path": "skills_library/libreoffice/SKILL.md"
     }
   }
 }

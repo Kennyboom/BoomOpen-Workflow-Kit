@@ -16,6 +16,7 @@ collaborates-with: [game-team-techlead, game-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Executor (Implementer + Defender)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `game-engineer` — all game-engineer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/unity-6-dots-ecs-architecture/SKILL.md`, `skills_library/godot-4-gdscript-shaders-2d-3d/SKILL.md`, `skills_library/webgpu-wgsl-three-tsl/SKILL.md`, `skills_library/react-three-fiber-rapier-3d/SKILL.md`, `skills_library/multiplayer-netcode-colyseus/SKILL.md`, `skills_library/pixijs-v8-phaser-2d-games/SKILL.md`.
 
 ---
 

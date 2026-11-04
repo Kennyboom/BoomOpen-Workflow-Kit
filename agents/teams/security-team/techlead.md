@@ -16,6 +16,7 @@ collaborates-with: [security-team-executor, security-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Tech Lead (Coordinator + Arbitrator)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `security-engineer` — all security-engineer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/owasp-llm-agent-security-2025/SKILL.md`, `skills_library/better-auth-typescript/SKILL.md`.
 
 ---
 

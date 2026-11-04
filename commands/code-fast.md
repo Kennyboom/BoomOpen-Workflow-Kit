@@ -6,8 +6,8 @@ version: "5.5"
 # /code:fast — Quick Implementation
 
 > **Mode Gate**:
-> - **Mode A (Direct Execution)**: When changes touch `≤ 3 files` in a single domain and no multi-agent coordination is needed, implement and verify directly.
-> - **Mode B (Direct Plan-to-Executor Dispatch)**: When reading from an existing `PLAN-{feature}.md` or touching `> 3 files`, dispatch directly to the domain specialist (`backend-engineer`, `frontend-engineer`, `mobile-engineer`, `database-architect`, etc.) with `Model: "inherit"`. Reuse existing warm sessions via `send_message` when iterating.
+> - **Mode A (Direct Execution)**: When changes touch `≤ 2 files` in a single domain and no multi-agent coordination is needed, implement and verify directly.
+> - **Mode B (Direct Plan-to-Executor Dispatch)**: When reading from an existing `PLAN-{feature}.md` or touching `> 2 files`, dispatch directly to the domain specialist (`backend-engineer`, `frontend-engineer`, `mobile-engineer`, `database-architect`, etc.) with `Model: "inherit"`. Reuse existing warm sessions via `send_message` when iterating.
 
 ---
 

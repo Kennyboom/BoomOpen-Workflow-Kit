@@ -1,23 +1,25 @@
 ---
 name: mobile-design
-description: Mobile-first design thinking and decision-making for iOS and Android apps. Touch interaction, performance patterns, platform conventions. Teaches principles, not fixed values. Use when building React Native, Flutter, or native mobile apps.
+description: Mobile-first design thinking and decision-making for iOS 18 and Android Material 3 Expressive apps. Touch interaction, performance patterns, platform conventions, and Tauri v2 mobile/desktop patterns.
 allowed-tools: Read, Glob, Grep, Bash
 ---
 
-# Mobile Design System
+# Mobile Design System (2026 Edition)
 
 > **Philosophy:** Touch-first. Battery-conscious. Platform-respectful. Offline-capable.
 > **Core Principle:** Mobile is NOT a small desktop. THINK mobile constraints, ASK platform choice.
 
 ---
 
-## 🔧 Runtime Scripts
+## 🔧 Runtime Scripts & 2026 Specialized Skills
 
-**Execute these for validation (don't read, just run):**
+**Execute these for validation:**
 
-| Script | Purpose | Usage |
-|--------|---------|-------|
-| `scripts/mobile_audit.py` | Mobile UX & Touch Audit | `python scripts/mobile_audit.py <project_path>` |
+| Script / Skill | Purpose | Path / Usage |
+|----------------|---------|--------------|
+| `scripts/mobile_audit.py` | Mobile UX & Touch Audit | `python skills/mobile-design/scripts/mobile_audit.py <project_path>` |
+| `ios18-hig-material3-expressive` | iOS 18 HIG + Material 3 Expressive Design System | `../../skills_library/ios18-hig-material3-expressive/SKILL.md` (`skills_library/ios18-hig-material3-expressive/SKILL.md`) |
+| `tauri-v2-rust-desktop-mobile` | Tauri v2 Cross-Platform Desktop & iOS/Android Mobile | `../../skills_library/tauri-v2-rust-desktop-mobile/SKILL.md` (`skills_library/tauri-v2-rust-desktop-mobile/SKILL.md`) |
 
 ---
 
@@ -46,9 +48,9 @@ allowed-tools: Read, Glob, Grep, Bash
 
 | Platform | File | Content | When to Read |
 |----------|------|---------|--------------|
-| **iOS** | [platform-ios.md](platform-ios.md) | Human Interface Guidelines, SF Pro, SwiftUI patterns | Building for iPhone/iPad |
-| **Android** | [platform-android.md](platform-android.md) | Material Design 3, Roboto, Compose patterns | Building for Android |
-| **Cross-Platform** | Both above | Platform divergence points | React Native / Flutter |
+| **iOS** | [platform-ios.md](platform-ios.md) + `ios18-hig-material3-expressive` | Human Interface Guidelines, SF Pro, SwiftUI patterns | Building for iPhone/iPad |
+| **Android** | [platform-android.md](platform-android.md) + `ios18-hig-material3-expressive` | Material Design 3 Expressive, Roboto, Compose patterns | Building for Android |
+| **Cross-Platform** | Both above + `tauri-v2-rust-desktop-mobile` | Platform divergence points | React Native / Flutter / Tauri v2 |
 
 > 🔴 **If building for iOS → Read platform-ios.md FIRST!**
 > 🔴 **If building for Android → Read platform-android.md FIRST!**
@@ -65,13 +67,13 @@ allowed-tools: Read, Glob, Grep, Bash
 | Aspect | Ask | Why |
 |--------|-----|-----|
 | **Platform** | "iOS, Android, or both?" | Affects EVERY design decision |
-| **Framework** | "React Native, Flutter, or native?" | Determines patterns and tools |
+| **Framework** | "React Native, Flutter, Tauri v2, or native?" | Determines patterns and tools |
 | **Navigation** | "Tab bar, drawer, or stack-based?" | Core UX decision |
 | **State** | "What state management? (Zustand/Redux/Riverpod/BLoC?)" | Architecture foundation |
 | **Offline** | "Does this need to work offline?" | Affects data strategy |
 | **Target devices** | "Phone only, or tablet support?" | Layout complexity |
 
-### ⛔ AI MOBILE ANTI-PATTERNS (YASAK LİSTESİ)
+### ⛔ AI MOBILE ANTI-PATTERNS (FORBIDDEN LIST)
 
 > 🚫 **These are AI default tendencies that MUST be avoided!**
 
@@ -278,7 +280,7 @@ For complete guide: [mobile-performance.md](mobile-performance.md)
 🧠 CHECKPOINT:
 
 Platform:   [ iOS / Android / Both ]
-Framework:  [ React Native / Flutter / SwiftUI / Kotlin ]
+Framework:  [ React Native / Flutter / SwiftUI / Kotlin / Tauri v2 ]
 Files Read: [ List the skill files you've read ]
 
 3 Principles I Will Apply:
@@ -290,27 +292,6 @@ Anti-Patterns I Will Avoid:
 1. _______________
 2. _______________
 ```
-
-**Example:**
-```
-🧠 CHECKPOINT:
-
-Platform:   iOS + Android (Cross-platform)
-Framework:  React Native + Expo
-Files Read: touch-psychology.md, mobile-performance.md, platform-ios.md, platform-android.md
-
-3 Principles I Will Apply:
-1. FlatList with React.memo + useCallback for all lists
-2. 48px touch targets, thumb zone for primary CTAs
-3. Platform-specific navigation (edge swipe iOS, back button Android)
-
-Anti-Patterns I Will Avoid:
-1. ScrollView for lists → FlatList
-2. Inline renderItem → Memoized
-3. AsyncStorage for tokens → SecureStore
-```
-
-> 🔴 **Can't fill the checkpoint? → GO BACK AND READ THE SKILL FILES.**
 
 ---
 
@@ -325,15 +306,15 @@ WHAT ARE YOU BUILDING?
         ├── Need pixel-perfect custom UI + performance critical
         │   └── ✅ Flutter
         │
+        ├── Need unified Rust backend + lightweight WebView on Desktop & Mobile
+        │   └── ✅ Tauri v2 (tauri-v2-rust-desktop-mobile)
+        │
         ├── Deep native features + single platform focus
-        │   ├── iOS only → SwiftUI
-        │   └── Android only → Kotlin + Jetpack Compose
+        │   ├── iOS only → SwiftUI (ios18-hig-material3-expressive)
+        │   └── Android only → Kotlin + Jetpack Compose (ios18-hig-material3-expressive)
         │
-        ├── Existing RN codebase + new features
-        │   └── ✅ React Native (bare workflow)
-        │
-        └── Enterprise + existing Flutter codebase
-            └── ✅ Flutter
+        └── Enterprise + existing RN/Flutter codebase
+            └── ✅ Match existing stack
 ```
 
 For complete decision trees: [decision-trees.md](decision-trees.md)
@@ -345,21 +326,12 @@ For complete decision trees: [decision-trees.md](decision-trees.md)
 ### Before Starting ANY Mobile Project
 
 - [ ] **Platform confirmed?** (iOS / Android / Both)
-- [ ] **Framework chosen?** (RN / Flutter / Native)
+- [ ] **Framework chosen?** (RN / Flutter / Tauri v2 / Native)
 - [ ] **Navigation pattern decided?** (Tabs / Stack / Drawer)
 - [ ] **State management selected?** (Zustand / Redux / Riverpod / BLoC)
 - [ ] **Offline requirements known?**
 - [ ] **Deep linking planned from day one?**
 - [ ] **Target devices defined?** (Phone / Tablet / Both)
-
-### Before Every Screen
-
-- [ ] **Touch targets ≥ 44-48px?**
-- [ ] **Primary CTA in thumb zone?**
-- [ ] **Loading state exists?**
-- [ ] **Error state with retry exists?**
-- [ ] **Offline handling considered?**
-- [ ] **Platform conventions followed?**
 
 ### Before Release
 
@@ -370,24 +342,6 @@ For complete decision trees: [decision-trees.md](decision-trees.md)
 - [ ] **Memory cleanup on unmount?**
 - [ ] **Tested on low-end devices?**
 - [ ] **Accessibility labels on all interactive elements?**
-
----
-
-## 📚 Reference Files
-
-For deeper guidance on specific areas:
-
-| File | When to Use |
-|------|-------------|
-| [mobile-design-thinking.md](mobile-design-thinking.md) | **FIRST! Anti-memorization, forces context-based thinking** |
-| [touch-psychology.md](touch-psychology.md) | Understanding touch interaction, Fitts' Law, gesture design |
-| [mobile-performance.md](mobile-performance.md) | Optimizing RN/Flutter, 60fps, memory/battery |
-| [platform-ios.md](platform-ios.md) | iOS-specific design, HIG compliance |
-| [platform-android.md](platform-android.md) | Android-specific design, Material Design 3 |
-| [mobile-navigation.md](mobile-navigation.md) | Navigation patterns, deep linking |
-| [mobile-typography.md](mobile-typography.md) | Type scale, system fonts, accessibility |
-| [mobile-color-system.md](mobile-color-system.md) | OLED optimization, dark mode, battery |
-| [decision-trees.md](decision-trees.md) | Framework, state, storage decisions |
 
 ---
 

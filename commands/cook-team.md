@@ -38,7 +38,7 @@ execution-mode: execute
 | P2: Research | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{feature}` (or `./reports/{topic}/researchers/RESEARCH-{feature}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{feature}` (or `./reports/{topic}/scouts/SCOUT-{feature}`) |
 | P4: Design | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-{feature}` (or `./reports/{topic}/designs/DESIGN-{feature}`) |
 | P5: Planning | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`) |
-| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
+| ALL Phases | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
@@ -133,7 +133,8 @@ execution-mode: execute
 > **⛔ MANDATORY: READ `_ref/implementation-loop.md` for the full step-by-step protocol.**
 
 **Prerequisite**: **READ and FOLLOW** `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`)
-**Exit Criteria**: All plan tasks implemented, reviews passed, no unauthorized deviations
+**Pragmatic 2-Tier Coding Standards Verification (MANDATORY)**: Run `node cli/install.js check <dir>` to verify Tier 1 strict quality (0 `any`, no debug `console.log`, `try/catch` boundaries) and Tier 2 cohesive structure (`≤ 400` soft / `≤ 500` hard lines).
+**Exit Criteria**: All plan tasks implemented, `node cli/install.js check` + reviews passed, no unauthorized deviations
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 
 ---

@@ -121,7 +121,7 @@ PRIORITIZE:
 
 | ❌ NEVER                            | ✅ ALWAYS            |
 | ----------------------------------- | -------------------- |
-| Write in non-English (./documents/) | Keep docs near code  |
+| Mix multiple languages in a single file — write `./documents/` in the user's input language (keep technical terms in English) | Keep docs near code  |
 | Outdated documentation              | Include working examples |
 | Assume reader has context           | Update docs with code|
 

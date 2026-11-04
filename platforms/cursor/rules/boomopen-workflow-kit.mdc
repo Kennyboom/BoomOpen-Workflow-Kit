@@ -8,7 +8,7 @@ commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, b
 
 # ⚡ BoomOpen Workflow Kit v5.5 (Smart-Hybrid Edition)
 
-> **ZERO-LATENCY ENTRYPOINT**: Load `rules/CORE.md`, `rules/PHASES.md`, and `rules/AGENTS.md` on-demand when **Mode B** (`> 3 files`, `≥ 2 domains`, or explicit `/cmd`) is triggered.
+> **ZERO-LATENCY ENTRYPOINT**: Load `rules/CORE.md`, `rules/PHASES.md`, and `rules/AGENTS.md` on-demand when **Mode B** (`> 2 files`, `≥ 2 domains`, or explicit `/cmd`) is triggered.
 
 <!-- BOOMOPEN-SETTINGS-START -->
 ## 🎛️ ACTIVE USER SETTINGS OVERRIDE (Managed via `/settings` & `~/.boomopen/settings.json`)
@@ -39,15 +39,23 @@ commands: [cook, fix, plan, debug, test, review, docs, design, deploy, report, b
 
 ---
 
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
+
+---
+
 ## 📂 PATHS
 
 ```
-COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
-AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
-SKILLS   = ~/.{TOOL}/skills/
-LIBRARY  = ~/.{TOOL}/skills_library/
-RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS    = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
+SKILLS    = ~/.{TOOL}/skills/
+LIBRARY   = ~/.{TOOL}/skills_library/
+RULES     = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\
+REPORTS   = ./reports/{topic}/
 ```
 
 ---
@@ -90,5 +98,5 @@ REPORTS  = ./reports/{topic}/
 | Running phases & DAG Fan-Out | `PHASES.md` |
 | Delegating & `OWNED_FILES` locks | `AGENTS.md` |
 | Team execution (`:team`) | `TEAMS.md` |
-| Skill resolution (`compact-index.json` — 1,450+ skills) | `SKILLS.md` |
+| Skill resolution (`compact-index.json` — `1,460+` library / `1,470` indexed skills) | `SKILLS.md` |
 | Error recovery (`E0`) / Lookup | `ERRORS.md` / `REFERENCE.md` |

@@ -57,14 +57,16 @@ ALWAYS:
 
 ## 🧠 Thinking Protocol
 
-### Step 0: CONTEXT CHECK (MANDATORY)
+### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-CHECK PROJECT DOCS (if ./documents/ exists):
-- business/business-prd/00-index.md → Existing PRD (drill into sub-files as needed)
-- business/business-features/00-index.md → Feature list (drill into sub-files as needed)
-- business/business-workflows/00-index.md → User workflows (drill into sub-files as needed)
-→ BUILD ON existing docs, don't start from scratch
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md, RESEARCH-{feature}.md, BRAINSTORM-{feature}.md
+   → READ prior artifacts and respect SHARED_CONTRACT + OWNED_FILES boundaries
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - business/business-prd/00-index.md → Existing PRD
+   - business/business-features/00-index.md → Feature list
+   - business/business-workflows/00-index.md → User workflows
 ```
 
 ### Step 1: STAKEHOLDER MAPPING
@@ -130,7 +132,7 @@ Acceptance Criteria:
 
 > **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
-**Small** (≤ 150 lines): Single file `./reports/{topic}/requirements/REQ-{feature}.md`
+**Small** (≤ 150 lines): Single file `<appDataDir>\brain\<conversation-id>\REQ-{feature}.md` (fallback: `./reports/{topic}/requirements/REQ-{feature}.md`)
 **Large** (> 150 lines OR ≥ 4 sections): Folder `./reports/{topic}/requirements/{feature}/` → create `00-index.md` first, then each section `01-*.md`, `02-*.md` sequentially.
 
 ### Single-file template

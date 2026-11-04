@@ -6,8 +6,8 @@ version: "5.5"
 # /test:fast — Quick Test
 
 > **Mode Gate**:
-> - **Mode A (Direct Execution)**: For `≤ 3 files` in a single domain, run tests and write missing unit tests directly.
-> - **Mode B (Tier 1 Delegation)**: For multi-module test runs, delegate to `tester` (`Model: "inherit"`) or message the warm `tester` session via `send_message`.
+> - **Mode A (Direct Execution)**: For `≤ 2 files` in a single domain, run tests and write missing unit tests directly.
+> - **Mode B (Tier 1 Delegation)**: For `> 2 files` or multi-module test runs, delegate to `tester` (`Model: "inherit"`) or message the warm `tester` session via `send_message`.
 
 ---
 

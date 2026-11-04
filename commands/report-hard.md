@@ -5,7 +5,7 @@ category: documentation
 execution-mode: execute
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+> **📂 Deliverable Routing (v5.5)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ---
 
@@ -21,13 +21,7 @@ execution-mode: execute
 
 ## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-
-⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Do **NOT** block Turn 1 reading `CORE.md`, `PHASES.md`, or `AGENTS.md` — route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `./rules/*.md` on-demand in parallel only when needed.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
 
@@ -48,7 +42,7 @@ execution-mode: execute
 
 | User intent | Reporter output |
 | ----------- | ---------------- |
-| **Create report** | New file: `./reports/{topic}/general/REPORT-{type}-{date}` (or path user asks) |
+| **Create report** | New file: `<appDataDir>\brain\<conversation-id>\REPORT-{type}-{date}.md` (or `./reports/{topic}/general/REPORT-{type}-{date}` / path user asks) |
 | **Update existing** | **Edit** related files (docs, README, etc.); do **not** create new report unless also asked |
 | **From template** | New file(s) matching user format/template (e.g. after scouting source) |
 
@@ -117,7 +111,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 | Agent | `reporter`                                                                 |
 | ----- | --------------------------------------------------------------------------- |
 | Goal  | From **user intent**: (1) create new report, (2) **update** existing files, or (3) generate from template/format |
-| Output| **Create**: `./reports/{topic}/general/REPORT-{type}-{date}` or path user asked. **Update**: edit related files. **Template**: file(s) matching user format. |
+| Output| **Create**: `<appDataDir>\brain\<conversation-id>\REPORT-{type}-{date}.md` (or `./reports/{topic}/general/REPORT-{type}-{date}`). **Update**: edit related files. **Template**: file(s) matching user format. |
 | Exit  | Deliverable matches intent — report file, updated docs, or template-based file(s). |
 
 ---
@@ -129,7 +123,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 > Present deliverable file links to user and STOP. Wait for explicit user command.
 >
 > Deliverable per **user intent**:
-> 1. ✅ **Create report** → `./reports/{topic}/general/REPORT-{type}-{date}`
+> 1. ✅ **Create report** → `<appDataDir>\brain\<conversation-id>\REPORT-{type}-{date}.md` (or `./reports/{topic}/general/REPORT-{type}-{date}`)
 > 2. ✅ **Update existing** → Related files edited; list what was updated
 > 3. ✅ **From template** → File(s) matching user format
 >

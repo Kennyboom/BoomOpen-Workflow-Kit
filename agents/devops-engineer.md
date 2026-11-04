@@ -35,6 +35,9 @@ category: execution
 
 > **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `devops:execution` | Domains: `devops`, `security`, `cloud`
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**:
+> - `skills_library/terraform-opentofu-production/SKILL.md` — Terraform 1.9+ / OpenTofu 1.8+ remote state, OIDC CI/CD, `check` blocks
+> - `skills_library/cloudflare-d1-r2-durable-objects/SKILL.md` — Cloudflare Workers edge runtime, D1, R2, Queues, Durable Objects
 ---
 
 ## 🎯 Expert Mindset
@@ -60,14 +63,14 @@ ALWAYS:
 ### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-1. CHECK PROJECT DOCS (if ./documents/ exists):
-   - knowledge-architecture/00-index.md → Infrastructure patterns (drill into sub-files as needed)
-   - knowledge-standards/00-index.md → Deployment standards (drill into sub-files as needed)
-   → FOLLOW existing infra conventions
-
-2. CHECK: ./reports/{topic}/plans/PLAN-{feature}
-   → EXISTS: READ infrastructure sections, follow EXACTLY
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   → EXISTS: READ infrastructure sections and strictly enforce SHARED_CONTRACT + OWNED_FILES write locks
    → PRODUCTION: REQUIRE explicit approval + rollback plan
+
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-architecture/00-index.md → Infrastructure patterns
+   - knowledge-standards/00-index.md → Deployment standards
 ```
 
 ### Step 1: INFRASTRUCTURE ASSESSMENT

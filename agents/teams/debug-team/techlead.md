@@ -16,6 +16,7 @@ collaborates-with: [debug-team-executor, debug-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Tech Lead (Coordinator + Arbitrator)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `debugger` — all debugger capabilities active
+> **MANDATORY SKILL & METHODOLOGY**: Load `skills/debugger/SKILL.md` (`~/.{TOOL}/skills/debugger/SKILL.md`) and strictly enforce **SPIE v3.0 5-Whys Root Cause Analysis**.
 
 ---
 

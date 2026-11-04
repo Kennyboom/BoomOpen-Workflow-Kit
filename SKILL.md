@@ -1,6 +1,6 @@
 ---
 name: boomopen-workflow-kit
-description: BoomOpen Workflow Kit (v5.5 Antigravity 2.0 Smart-Hybrid Edition) — Pragmatic 2-Tier Coding Standards, 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and 1,450+ compact skill index.
+description: BoomOpen Workflow Kit (v5.5 Antigravity 2.0 Smart-Hybrid Edition) — Pragmatic 2-Tier Coding Standards, 2-Mode Smart Complexity Threshold Gate, Quality-First Model Policy (Model inherit / Pro High default), DAG Parallel Fan-Out, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse (send_message), Contract-First File Ownership Locks, Brain Artifact routing, Golden Triangle teams, and 1,460+ library skills (1,470 indexed in compact-index.json).
 ---
 
 # ⚡ BoomOpen Workflow Kit (v5.5 — Antigravity 2.0 Smart-Hybrid Edition)
@@ -56,7 +56,7 @@ description: BoomOpen Workflow Kit (v5.5 Antigravity 2.0 Smart-Hybrid Edition) �
 | [`rules/AGENTS.md`](./rules/AGENTS.md) | Tiered Execution (TIER 0/1/2), Warm Sub-agent Reuse, Structured Handoff Packet (`OWNED_FILES`) | Before delegating to specialist subagents |
 | [`rules/PHASES.md`](./rules/PHASES.md) | DAG-Aware Parallel Fan-Out, Contract-First Dispatch, Direct Plan Execution | When running multi-phase workflows |
 | [`rules/TEAMS.md`](./rules/TEAMS.md) | Golden Triangle 3-Agent Adversarial Collaboration (`Tech Lead` + `Executor` + `Reviewer`) | When executing `:team` workflow variants |
-| [`rules/SKILLS.md`](./rules/SKILLS.md) | Fast 2-Step Progressive Skill Lookup (`<skills>` → `compact-index.json` 1,450+ skills / `skill-seeker`) | When resolving domain skills for complex tasks |
+| [`rules/SKILLS.md`](./rules/SKILLS.md) | Fast 2-Step Progressive Skill Lookup (`<skills>` → `compact-index.json` 1,460+ library / 1,470 indexed skills / `skill-seeker`) | When resolving domain skills for complex tasks |
 | [`rules/ERRORS.md`](./rules/ERRORS.md) | Self-healing, Error Classification (`E0` warm auto-revive – `E4`), Anti-Patterns (`A1`–`A12`) | When errors or protocol violations occur |
 | [`rules/REFERENCE.md`](./rules/REFERENCE.md) | Quick lookup tables for Commands, Agents, and Deliverable paths | Fast reference |
 

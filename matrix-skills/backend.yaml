@@ -1702,3 +1702,11 @@ skills:
       agents: [backend-engineer, tech-lead]
       profiles: ["backend:execution", "architecture:*"]
     description: "Hono ultra-fast edge/Node API routing, @hono/zod-openapi contract-first specs, and end-to-end type-safe hc<AppType> RPC"
+
+  - skill_id: odoo-upgrade-advisor
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, database-architect]
+      profiles: ["backend:*"]
+    description: "Step-by-step Odoo version upgrade advisor covering pre-upgrade checklist, OCA compatibility, and validation."

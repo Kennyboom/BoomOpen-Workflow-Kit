@@ -943,3 +943,11 @@ skills:
       profiles: ["frontend:*"]
     description: "Create Zustand stores following established patterns with proper TypeScript types and middleware."
 
+
+  - skill_id: algolia-search
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer, backend-engineer]
+      profiles: ["frontend:*", "backend:*"]
+    description: "Algolia InstantSearch, indexing pipelines, relevance tuning, and search UI integration."

@@ -17,6 +17,7 @@ collaborates-with: [security-team-techlead, security-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Executor (Auditor + Defender)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `backend-engineer` (mode: security audit) — backend capabilities active with offensive security focus
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/owasp-llm-agent-security-2025/SKILL.md`, `skills_library/better-auth-typescript/SKILL.md`.
 
 ---
 

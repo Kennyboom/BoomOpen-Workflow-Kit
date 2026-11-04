@@ -61,15 +61,23 @@
 
 ---
 
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
+
+---
+
 ## 📂 PATHS (Use These Exact Paths)
 
 ```
-COMMANDS = ~/.copilot/skills/boomopen-workflow-kit/commands/ (also ~/.copilot/commands/)
-AGENTS   = ~/.copilot/skills/boomopen-workflow-kit/agents/   (also ~/.copilot/agents/)
-SKILLS   = ~/.copilot/skills/
-LIBRARY  = ~/.copilot/skills_library/
-RULES    = ~/.copilot/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.copilot/skills/boomopen-workflow-kit/commands/ (also ~/.copilot/commands/)
+AGENTS    = ~/.copilot/skills/boomopen-workflow-kit/agents/   (also ~/.copilot/agents/)
+SKILLS    = ~/.copilot/skills/
+LIBRARY   = ~/.copilot/skills_library/
+RULES     = ~/.copilot/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\
+REPORTS   = ./reports/{topic}/
 ```
 
 ---
@@ -114,5 +122,5 @@ REPORTS  = ./reports/{topic}/
 | Running phases & DAG Fan-Out | `PHASES.md` |
 | Delegating & File Ownership Locks | `AGENTS.md` |
 | Team execution (`:team`) | `TEAMS.md` |
-| Skill resolution (`compact-index.json`) | `SKILLS.md` |
+| Skill resolution (`1,460+` library / `1,470` indexed in `compact-index.json`) | `SKILLS.md` |
 | Error recovery (`E0`) / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

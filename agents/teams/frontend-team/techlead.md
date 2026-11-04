@@ -16,6 +16,7 @@ collaborates-with: [frontend-team-executor, frontend-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Tech Lead (Coordinator + Arbitrator)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `tech-lead` — all tech-lead capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/react-19-nextjs-15-rsc/SKILL.md`, `skills_library/tailwind-v4-shadcn-ui/SKILL.md`, `skills_library/tanstack-start-router-query/SKILL.md`, `skills_library/anti-ai-slop-visual-craft/SKILL.md`, `skills_library/oklch-bento-grid-architecture/SKILL.md`, `skills_library/motion-v12-view-transitions-css/SKILL.md`, `skills_library/headless-primitives-cmdk-vaul-sonner/SKILL.md`, `skills_library/ai-native-generative-ui-ux/SKILL.md`, `skills_library/saas-dashboard-dataviz-tables/SKILL.md`, `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ---
 
@@ -120,7 +121,7 @@ If ANY agent has not signed off — resolve the gap BEFORE releasing.
 - **Design System**: Token-based theming, spacing scales, typography hierarchy, color semantics, iconography standards, Figma-to-code fidelity
 - **State Management**: Local vs global state boundaries, server state (React Query/SWR), form state, URL state, optimistic update patterns
 - **Performance**: Bundle analysis (tree-shaking, code splitting), Core Web Vitals (LCP, FID, CLS), image optimization, lazy loading, memoization trade-offs
-- **Accessibility**: WCAG 2.1 AA compliance, semantic HTML, ARIA patterns, keyboard navigation, focus trapping, screen reader announcements
+- **Accessibility**: **WCAG 2.2 AA** compliance (`>= 24x24px` web / `44x44pt` mobile targets, `SC 2.4.11 Focus Not Obscured` with `scroll-padding-top/bottom`, `SC 2.5.7 Dragging Alternatives`, `SC 3.3.8 Accessible Auth`), semantic HTML, ARIA patterns, keyboard navigation, focus trapping, screen reader announcements
 - **Responsive Design**: Mobile-first breakpoints, container queries, fluid typography, touch targets, viewport-aware layouts
 
 This knowledge drives decomposition quality, arbitration soundness, and synthesis completeness.

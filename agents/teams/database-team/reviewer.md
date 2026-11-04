@@ -26,6 +26,7 @@ mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 > **GOLDEN TRIANGLE ROLE**: Reviewer (Devil's Advocate + Quality Gate)  
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol  
 > **BASE AGENT**: `reviewer` — all reviewer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/supabase-rls-edge-realtime/SKILL.md`, `skills_library/drizzle-neon-turso-edge/SKILL.md`, `skills_library/cloudflare-d1-r2-durable-objects/SKILL.md`.
 
 ## 🆔 Identity
 

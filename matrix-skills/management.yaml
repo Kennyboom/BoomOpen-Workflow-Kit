@@ -188,3 +188,19 @@ skills:
       profiles: ["management:*"]
     description: "Automate Trello boards, cards, and workflows via Rube MCP (Composio). Create cards, manage lists, assign members, and..."
 
+
+  - skill_id: micro-saas-launcher
+    category: community
+    priority_score: 7
+    relevance_mapping:
+      agents: [business-analyst, project-manager, brainstormer]
+      profiles: ["management:*", "planning:*"]
+    description: "Micro-SaaS product validation, rapid MVP launch strategy, and sustainable indie business playbooks."
+
+  - skill_id: startup-business-analyst-market-opportunity
+    category: community
+    priority_score: 7
+    relevance_mapping:
+      agents: [business-analyst, researcher]
+      profiles: ["management:*", "research:*"]
+    description: "Generate comprehensive market opportunity analysis with TAM/SAM/SOM calculations."

@@ -16,6 +16,7 @@ collaborates-with: [frontend-team-techlead, frontend-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Executor (Implementer + Defender)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `frontend-engineer` — all frontend-engineer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/react-19-nextjs-15-rsc/SKILL.md`, `skills_library/tailwind-v4-shadcn-ui/SKILL.md`, `skills_library/tanstack-start-router-query/SKILL.md`, `skills_library/anti-ai-slop-visual-craft/SKILL.md`, `skills_library/oklch-bento-grid-architecture/SKILL.md`, `skills_library/motion-v12-view-transitions-css/SKILL.md`, `skills_library/headless-primitives-cmdk-vaul-sonner/SKILL.md`, `skills_library/ai-native-generative-ui-ux/SKILL.md`, `skills_library/saas-dashboard-dataviz-tables/SKILL.md`, `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ---
 
@@ -136,7 +137,7 @@ Every line you write is measured against these standards. Self-review against th
 
 **Performance (Core Web Vitals)**: LCP < 2.5s — optimize critical rendering path and hero images. FID/INP < 200ms — no long tasks blocking main thread. CLS < 0.1 — explicit dimensions on images/embeds, no layout shifting. Code split at route level minimum. Lazy load below-fold components. `React.memo` only with profiler evidence, not by default. Image optimization: WebP/AVIF, responsive `srcset`, lazy loading.
 
-**Accessibility (WCAG 2.1 AA)**: Semantic HTML elements over `div` soup. All interactive elements keyboard-accessible. Focus indicators visible and on-brand. ARIA labels on non-text controls. Color contrast ratio ≥ 4.5:1 for text. Skip-to-content link on every page. Form inputs with associated labels. Error messages announced to screen readers. Reduced motion support via `prefers-reduced-motion`.
+**Accessibility (WCAG 2.2 AA)**: Semantic HTML elements over `div` soup. All interactive elements keyboard-accessible with visible `:focus-visible` indicators and `scroll-padding-top/bottom` so sticky bars never obscure focus (`SC 2.4.11`). Interactive targets `>= 24x24px` on desktop/web (`SC 2.5.8`) and `>= 44x44pt` on mobile/touch. Single-pointer button/keyboard alternatives for all drag/slider UI (`SC 2.5.7`). Accessible authentication (`SC 3.3.8`). Color contrast ratio `>= 4.5:1` for text (`>= 3:1` for large text/UI boundaries). Skip-to-content link, associated form labels, `aria-live` error announcements, and `prefers-reduced-motion` support.
 
 ## ⚡ EXECUTION FLOW
 

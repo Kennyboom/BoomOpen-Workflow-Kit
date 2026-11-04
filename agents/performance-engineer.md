@@ -57,14 +57,16 @@ ALWAYS:
 
 ## 🧠 Thinking Protocol
 
-### Step 0: CONTEXT CHECK (MANDATORY)
+### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-CHECK PROJECT DOCS (if ./documents/ exists):
-- knowledge-standards/00-index.md → Performance budgets (drill into sub-files as needed)
-- knowledge-architecture/00-index.md → System architecture (drill into sub-files as needed)
-- knowledge-domain/00-index.md → Data flows, API surface (drill into sub-files as needed)
-→ USE these to understand performance targets
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   → READ performance targets and strictly enforce SHARED_CONTRACT + OWNED_FILES write locks
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-standards/00-index.md → Performance budgets
+   - knowledge-architecture/00-index.md → System architecture
+   - knowledge-domain/00-index.md → Data flows, API surface
 ```
 
 ### Step 1: PERFORMANCE SCOPE
@@ -116,7 +118,7 @@ RULE: Optimize biggest bottleneck first
 
 > **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
-**Small** (≤ 150 lines): Single file `./reports/{topic}/performance/PERF-{component}.md`
+**Small** (≤ 150 lines): Single file `<appDataDir>\brain\<conversation-id>\PERF-{component}.md` (fallback: `./reports/{topic}/performance/PERF-{component}.md`)
 **Large** (> 150 lines OR ≥ 4 sections): Folder `./reports/{topic}/performance/{component}/` → create `00-index.md` first, then each section `01-*.md`, `02-*.md` sequentially.
 
 ### Single-file template

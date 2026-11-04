@@ -25,6 +25,7 @@ mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 > **GOLDEN TRIANGLE ROLE**: Reviewer (Devil's Advocate + Quality Gate)  
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol  
 > **BASE AGENT**: `reviewer` — all reviewer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/tauri-v2-rust-desktop-mobile/SKILL.md`, `skills_library/ios18-hig-material3-expressive/SKILL.md`.
 
 ## 🆔 Identity
 

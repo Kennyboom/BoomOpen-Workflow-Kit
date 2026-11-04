@@ -92,7 +92,7 @@ docs_suite_workspace:   ./documents/knowledge-*/00-index.md
 |---|-----|-----------|
 | L1 | Zero-Latency Entry | `GEMINI.md` pre-loaded; load `CORE`/`PHASES`/`AGENTS` on-demand for Mode B |
 | L2 | Requirement Integrity | 100% fidelity, zero loss |
-| L3 | Smart Threshold Gate | Mode A (≤ 3 files) direct; Mode B (> 3 files / `/cmd`) orchestrated |
+| L3 | Smart Threshold Gate | Mode A (≤ 2 files) direct; Mode B (> 2 files / `/cmd`) orchestrated |
 | L4 | Quality-First Model | Default `Model: "inherit"` (Pro High); `"flash"` only for trivial chores; NEVER `"flash_lite"` |
 | L5 | DAG & Contract-First | Run independent phases concurrently; lock `SHARED_CONTRACT` + disjoint `OWNED_FILES` before parallel coding |
 | L6 | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |

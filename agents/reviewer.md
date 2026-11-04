@@ -60,16 +60,14 @@ ALWAYS:
 ### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-1. CHECK PROJECT DOCS (if ./documents/ exists):
-   - knowledge-standards/00-index.md → Standards to enforce (drill into sub-files as needed)
-   - knowledge-architecture/00-index.md → Architecture to verify (drill into sub-files as needed)
-   - knowledge-domain/00-index.md → Data/API contracts to verify (drill into sub-files as needed)
-   → VERIFY code follows project standards
-
-2. IF ./reports/{topic}/plans/PLAN-{feature} exists:
-   - READ completely
-   - FOR each code change: Does it implement plan?
-   - DOCUMENT compliance status
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   - <appDataDir>\brain\<conversation-id>\DESIGN-{feature}.md (fallback: ./reports/{topic}/designs/DESIGN-{feature}.md)
+   → READ completely, verify every code change implements the plan, and verify SHARED_CONTRACT + OWNED_FILES write locks were respected
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-standards/00-index.md → Standards to enforce
+   - knowledge-architecture/00-index.md → Architecture to verify
+   - knowledge-domain/00-index.md → Data/API contracts to verify
 ```
 
 ### Step 1: REVIEW SCOPE

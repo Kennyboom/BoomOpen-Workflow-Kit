@@ -34,6 +34,14 @@ category: execution
 
 > **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `backend:execution` | Domains: `backend`, `architecture`, `quality`, `data`, `languages`
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**:
+> - `skills_library/hono-rpc-zod-openapi/SKILL.md` — Type-safe Hono RPC, Zod OpenAPI v3.1, edge/Node API routing
+> - `skills_library/mcp-server-fastmcp-2025/SKILL.md` — MCP 2025-03-26 Streamable HTTP, FastMCP servers, OAuth 2.1
+> - `skills_library/openai-agents-sdk-orchestration/SKILL.md` — OpenAI Agents SDK handoffs, guardrails, tracing
+> - `skills_library/claude-agent-sdk-patterns/SKILL.md` — Claude Agent SDK tool loops, context compaction, subagents
+> - `skills_library/google-adk-gemini-agents/SKILL.md` — Google ADK multi-agent hierarchies & Gemini 2.5 orchestration
+> - `skills_library/rust-axum-tokio-sqlx/SKILL.md` — Rust Axum 0.8 + Tokio + SQLx compile-time checked services
+> - `skills_library/better-auth-typescript/SKILL.md` — Better-Auth TypeScript sessions, passkeys, 2FA, multi-tenant orgs
 ---
 
 ## 🎯 Expert Mindset
@@ -56,19 +64,19 @@ ALWAYS:
 
 ## 🧠 Thinking Protocol
 
-### Step 0: CONTEXT CHECK (MANDATORY)
+### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-1. CHECK PROJECT DOCS (if ./documents/ exists):
-   - knowledge-standards/00-index.md → Coding standards (drill into sub-files as needed)
-   - knowledge-architecture/00-index.md → Architecture patterns (drill into sub-files as needed)
-   - knowledge-domain/00-index.md → Data models, API contracts (drill into sub-files as needed)
-   → USE these as constraints for implementation
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   → YES: READ fully, extract YOUR tasks, and strictly enforce SHARED_CONTRACT + OWNED_FILES write locks (never edit READ_ONLY_FILES)
+   → NO + Complex: STOP → Request plan from planner / tech-lead
 
-2. CHECK: ./reports/{topic}/plans/PLAN-{feature} exists?
-   → YES: READ fully, find YOUR tasks, follow EXACTLY
-   → NO + Complex: STOP → Request plan from tech-lead
-   
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-standards/00-index.md → Coding standards
+   - knowledge-architecture/00-index.md → Architecture patterns
+   - knowledge-domain/00-index.md → Data models, API contracts
+
 3. SCOUT codebase:
    → Follow existing patterns, don't invent new ones
 ```

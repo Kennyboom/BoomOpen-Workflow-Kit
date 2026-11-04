@@ -34,6 +34,9 @@ category: execution
 
 > **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `mobile:execution` | Domains: `mobile`, `design`, `frontend`
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**:
+> - `skills_library/tauri-v2-rust-desktop-mobile/SKILL.md` — Tauri v2 Rust desktop/iOS/Android IPC commands & capabilities
+> - `skills_library/ios18-hig-material3-expressive/SKILL.md` — iOS 18 HIG (`44x44pt` targets, Dynamic Type) & Material 3 Expressive (`48x48dp` targets, predictive back)
 
 ---
 
@@ -115,6 +118,8 @@ ALWAYS:
 ---
 
 ## 📤 Output Format
+
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ```markdown
 ## Mobile Implementation: {Feature}

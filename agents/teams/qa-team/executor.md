@@ -16,6 +16,7 @@ collaborates-with: [qa-team-techlead, qa-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Executor (Implementer + Defender)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `tester` — all tester capabilities active, self-implements tests
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/vitest-msw-testing-patterns/SKILL.md`, `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ---
 

@@ -491,3 +491,11 @@ skills:
       profiles: ["languages:*"]
     description: "Comprehensive guide to using uv, an extremely fast Python package installer and resolver written in Rust, for modern ..."
 
+
+  - skill_id: fp-ts-pragmatic
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["languages:*", "backend:*"]
+    description: "Pragmatic functional programming in TypeScript with fp-ts Option, Either, TaskEither, and pipe pipelines."

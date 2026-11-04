@@ -16,6 +16,7 @@ collaborates-with: [qa-team-executor, qa-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Tech Lead (Coordinator + Arbitrator)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `tester` — test strategy and coverage knowledge active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/vitest-msw-testing-patterns/SKILL.md`, `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ---
 

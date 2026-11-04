@@ -1,6 +1,6 @@
 ---
 name: testing-patterns
-description: Testing patterns and principles. Unit, integration, mocking strategies.
+description: Testing patterns and principles. Unit, integration, mocking strategies, Vitest + MSW v2, and WCAG 2.2 accessibility verification.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -172,6 +172,16 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 | Complex test setup | Simplify or split |
 | Ignore flaky tests | Fix root cause |
 | Skip cleanup | Reset state |
+
+---
+
+## 11. 2026 Specialized Testing Skills
+
+| Testing Need | Skill Path |
+|--------------|------------|
+| Vitest + MSW v2 Network-Level API Mocking & Testing Library | `../../skills_library/vitest-msw-testing-patterns/SKILL.md` (`skills_library/vitest-msw-testing-patterns/SKILL.md`) |
+| WCAG 2.2 AA/AAA Accessibility & Keyboard/Focus Auditing | `../../skills_library/wcag-22-accessibility-ergonomics/SKILL.md` (`skills_library/wcag-22-accessibility-ergonomics/SKILL.md`) |
+| Browser E2E & Playwright Automation | `../webapp-testing/SKILL.md` (`skills/webapp-testing/SKILL.md`) |
 
 ---
 

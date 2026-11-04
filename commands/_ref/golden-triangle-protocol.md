@@ -15,10 +15,10 @@ type: reference
 
 | Tier | Condition | Action |
 |------|-----------|--------|
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`, `manage_subagents`) or `runSubagent` EXISTS | **MUST** invoke EACH triangle member as a SEPARATE isolated sub-agent call. Use `send_message` with **Reactive Async Wakeup** (never poll in a loop). |
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`invoke_subagent`, `send_message`, `manage_subagents`) or `runSubagent` EXISTS | **MUST** spawn each of the 3 triangle roles **once** on Turn 1 (`TypeName: "self"`, `Model: "inherit"`) and reuse their warm sessions across Round 2..3 via `send_message(Recipient: conversationId)` with **Reactive Async Wakeup** (never poll in a loop). |
 | **TIER 2** | Sub-agent tool MISSING or throws system error | Load agent `.md` file → adopt persona in explicit `[ROLE: ...]` blocks (LAST RESORT) |
 
-**❌ ANTI-LAZY RULE**: If native sub-agent tools (`invoke_subagent` / `runSubagent`) exist in your tool declarations, using TIER 2 is a **PROTOCOL VIOLATION**. Each of the 3 triangle roles MUST be a separate `invoke_subagent` (or `runSubagent`) invocation per round.
+**❌ ANTI-LAZY & WARM SESSION REUSE RULE**: If native sub-agent tools (`invoke_subagent` / `send_message` / `runSubagent`) exist in your tool declarations, using TIER 2 is a **PROTOCOL VIOLATION**. Spawn the 3 triangle roles (`Tech Lead`, `Executor`, `Reviewer`) **once** per phase (`TypeName: "self"`, `Model: "inherit"`), store their `conversationId`s, and conduct all subsequent round-2/round-3 critiques, revisions, defenses, and consensus checks via **Warm Sub-agent Session Reuse (`send_message(Recipient: conversationId)`)** — NEVER cold re-spawn new subagents every round!
 
 ---
 
@@ -42,41 +42,36 @@ Message types: `TASK_BRIEF`, `REPORT`, `CRITIQUE`, `REVISION`, `APPROVAL`, `CONS
 
 ---
 
-## 🛑 PRE-FLIGHT (LOAD BEFORE PHASE 1)
+## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
-Load in order from `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`:
-1. `CORE.md` — 2-Mode Gate, 10 Laws, Brain Artifact Routing
-2. `PHASES.md` — Phase Execution
-3. `AGENTS.md` — Tiered Execution (TIER 0 / TIER 1 / TIER 2)
-4. `TEAMS.md` — Golden Triangle Protocol
-5. `SKILLS.md` — Fast 2-Step Progressive Skill Lookup
+> **NO BLOCKING PRE-FLIGHT READS**: Core orchestration laws and the 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) are pre-embedded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Do **NOT** waste Turn 1 reading `CORE.md`, `PHASES.md`, or `AGENTS.md` before spawning Phase 1 triangle sub-agents! Load `rules/TEAMS.md` or `rules/SKILLS.md` on-demand only when needed.
 
 ---
 
-## 🔄 STANDARD TRIANGLE LOOP (FOR NON-CODE PHASES)
+## 🔄 STANDARD TRIANGLE LOOP (WITH WARM SESSION REUSE `send_message`)
 
 Each phase with a 🔺 Golden Triangle follows this loop (max 3 rounds):
 
 ```
-Round 1:
-  STEP A — SUB-AGENT CALL #1: {Tech Lead agent}
-    → Decomposes phase into specific tasks + acceptance criteria
-    → Appends [TASK_BRIEF] to MAILBOX file
+Round 1 (Initial Spawn via invoke_subagent(TypeName: "self", Model: "inherit") or Warm Reuse):
+  STEP A — TECH LEAD (`invoke_subagent` → save conversationId): {Tech Lead agent}
+    → Decomposes phase into specific tasks + SHARED_CONTRACT + OWNED_FILES + acceptance criteria
+    → Appends [TASK_BRIEF] to `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md`
 
-  STEP B — SUB-AGENT CALL #2: {Executor agent}
+  STEP B — EXECUTOR (`invoke_subagent` → save conversationId): {Executor agent}
     → Reads TASK_BRIEF from MAILBOX
     → Executes work (reads code, analyzes, designs, writes deliverable)
     → Appends [REPORT] to MAILBOX file
 
-  STEP C — SUB-AGENT CALL #3: {Reviewer agent}
+  STEP C — REVIEWER (`invoke_subagent` → save conversationId): {Reviewer agent}
     → Reads TASK_BRIEF + REPORT from MAILBOX
     → Challenges EVERY claim with concrete evidence
     → Appends [CRITIQUE] with issues (🔴 CRITICAL / 🟠 HIGH / 🟡 MEDIUM) OR [APPROVAL]
 
-Round 2..3 (ONLY if Reviewer found 🔴 CRITICAL or 🟠 HIGH issues):
-  STEP D — SUB-AGENT CALL: {Executor agent} addresses each issue → appends [REVISION]
-  STEP E — SUB-AGENT CALL: {Reviewer agent} re-evaluates → [APPROVAL] or [CRITIQUE]
-  STEP F — SUB-AGENT CALL: {Tech Lead agent} mediates if deadlocked → [CONSENSUS]
+Round 2..3 (WARM SESSION REUSE via `send_message(Recipient: conversationId)` — ONLY if 🔴 CRITICAL or 🟠 HIGH):
+  STEP D — WARM CALL (`send_message` to Executor `conversationId`): {Executor agent} addresses each issue (or defends with evidence) → appends [REVISION]
+  STEP E — WARM CALL (`send_message` to Reviewer `conversationId`): {Reviewer agent} re-evaluates → [APPROVAL] or [CRITIQUE]
+  STEP F — WARM CALL (`send_message` to Tech Lead `conversationId`): {Tech Lead agent} mediates if deadlocked → [CONSENSUS]
 
 Exit: "✅ CONSENSUS: {TL} ✓ | {Exec} ✓ | {Rev} ✓" appended to MAILBOX
 ```

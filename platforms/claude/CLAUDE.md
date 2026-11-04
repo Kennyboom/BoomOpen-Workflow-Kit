@@ -49,27 +49,35 @@
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
-  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **`> 2 files`** or **`≥ 2 domains`** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** — whenever the user asks in natural language to research, analyze, or propose an idea/product/architecture (*"nghiên cứu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"brainstorm"*, *"investigate"*, *"audit"*), **EVEN IF 0 code files are modified and no `/cmd` is typed** → route by default (`workflows.naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when configured as `"auto_hard"`, with parallel `researcher` + `brainstormer` + domain specialist subagents.
+  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) — EVEN IF 0 code files are modified and no `/cmd` is typed → route by default (`naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when `"auto_hard"`.
 - **Turn-1 Instant Dispatch**: Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) is pre-embedded below. Read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"` / `~/.claude/agents/*.md`, `Model: "inherit"`) in the **same Turn-1 tool batch**, using **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Warm Sub-agent Reuse (`send_message`)**.
 
 ### ⚡ MODE A — Known-Target Micro-Direct (TIER 0 — `≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
-- **When**: Strictly for simple factual Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, 0 exploration is needed, no `/cmd` was invoked, and NOT an open-ended research or ideation request.
+- **When**: Strictly for simple Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, 0 exploration is needed, and no `/cmd` was invoked.
 - **Action**: Execute, test, and verify directly while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
+
+---
+
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
 
 ---
 
 ## 📂 PATHS (Use These Exact Paths)
 
 ```
-COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/ (also ~/.claude/commands/)
-AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/   (also ~/.claude/agents/)
-SKILLS   = ~/.{TOOL}/skills/
-LIBRARY  = ~/.{TOOL}/skills_library/
-RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.claude/skills/boomopen-workflow-kit/commands/ (also ~/.claude/commands/)
+AGENTS    = ~/.claude/skills/boomopen-workflow-kit/agents/   (also ~/.claude/agents/)
+SKILLS    = ~/.claude/skills/
+LIBRARY   = ~/.claude/skills_library/
+RULES     = ~/.claude/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\
+REPORTS   = ./reports/{topic}/
 ```
 
 ---
@@ -114,5 +122,5 @@ REPORTS  = ./reports/{topic}/
 | `PHASES.md` | DAG Parallel Fan-Out, Contract-First dispatch, Direct Plan execution |
 | `AGENTS.md` | Tiered execution, Warm Session Reuse, `OWNED_FILES` locks |
 | `TEAMS.md` | Golden Triangle team execution protocol (`:team` variants) |
-| `SKILLS.md` | Fast 2-step progressive skill resolution (`compact-index.json` — 1,450+ skills) |
+| `SKILLS.md` | Fast 2-step progressive skill resolution (`1,460+` library skills / `1,470` indexed in `compact-index.json`) |
 | `ERRORS.md` / `REFERENCE.md` | Error recovery (`E0` auto-revive) & quick lookup tables |

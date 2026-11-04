@@ -1931,3 +1931,27 @@ skills:
       agents: [researcher]
       profiles: ["tools:*"]
     description: "Digital health data integration and clinical knowledge base connector patterns."
+
+  - skill_id: internal-comms-community
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [project-manager, docs-manager]
+      profiles: ["tools:*", "management:*"]
+    description: "Internal communications templates and 3P status update patterns."
+
+  - skill_id: document-skills
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [docs-manager, reporter]
+      profiles: ["tools:*"]
+    description: "Umbrella skill bundle for creating, editing, and analyzing DOCX, PDF, PPTX, and XLSX office documents."
+
+  - skill_id: libreoffice
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["tools:*"]
+    description: "LibreOffice automation suite for Writer, Calc, Impress, Draw, and Base document workflows."

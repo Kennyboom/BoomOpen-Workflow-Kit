@@ -1,6 +1,6 @@
 # 🔺 TEAMS — Golden Triangle Architecture
 
-> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When `:team` variant is invoked | **PURPOSE**: 3-agent adversarial collaboration with Warm Session Reuse (`send_message`)
+> **VERSION**: 5.5 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When `:team` variant is invoked | **PURPOSE**: 3-agent adversarial collaboration with Warm Session Reuse (`send_message`)
 
 ---
 
@@ -130,18 +130,17 @@ Output is released **ONLY** when one of these conditions is met:
 ### TIER 1 — Antigravity 2.0 Native Sub-agent Spawn + Warm `send_message` Reuse (MANDATORY)
 
 ```yaml
-1. Define Triangle Roles (if not already registered):
-   - Use define_subagent for tech-lead, executor, and reviewer roles (with EnableWriteTools: true/false)
-2. Initial Spawn via invoke_subagent (or reuse from Active Sub-agent Session Registry):
-   - Spawn Tech Lead (Model: "inherit", Workspace: inherit/share) → save conversationId
-   - Spawn Executor (Model: "inherit", Workspace: inherit/branch/share) → save conversationId
-   - Spawn Reviewer (Model: "inherit", Workspace: inherit/share) → save conversationId
+1. Initial Turn-1 Spawn via invoke_subagent (0-Turn Fast-Track Default, or reuse from Active Sub-agent Session Registry):
+   - Prefer `invoke_subagent(TypeName: "self", Role: "<triangle-role>", Model: "inherit", Prompt: ...)` on Turn 1 for 0-turn fast-track dispatch (`define_subagent` is optional when strict read/write tool sandboxing is desired)
+   - Spawn Tech Lead (TypeName: "self", Model: "inherit", Workspace: inherit/share) → save conversationId
+   - Spawn Executor (TypeName: "self", Model: "inherit", Workspace: inherit/branch/share) → save conversationId
+   - Spawn Reviewer (TypeName: "self", Model: "inherit", Workspace: inherit/share) → save conversationId
    - Cross-platform fallback alias: runSubagent(agent_name, context)
-3. Multi-turn Debate via send_message + Brain Artifact Mailbox:
+2. Multi-turn Debate via send_message + Brain Artifact Mailbox:
    - Coordinate all subsequent tasks and debate rounds using send_message(Recipient: conversationId)
      and <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md (NEVER cold re-spawn for Round 2/3!)
    - Rely on Reactive Async Wakeup (never poll in a loop)
-4. Tech Lead synthesizes final output with CONSENSUS stamp and returns to Orchestrator
+3. Tech Lead synthesizes final output with CONSENSUS stamp and returns to Orchestrator
 ```
 
 ### TIER 2 — Sequential Embodiment (Fallback only on tool error)

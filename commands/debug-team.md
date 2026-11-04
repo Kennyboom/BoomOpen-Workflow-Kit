@@ -41,7 +41,7 @@ execution-mode: execute
 | P2: Hypothesis Generation | `<appDataDir>\\brain\\<conversation-id>\\HYPOTHESES-{issue}` (or `./reports/{topic}/debugs/HYPOTHESES-{issue}`) |
 | P3: Hypothesis Testing | `<appDataDir>\\brain\\<conversation-id>\\EVIDENCE-{issue}` (or `./reports/{topic}/debugs/EVIDENCE-{issue}`) |
 | P4: Root Cause Report | `<appDataDir>\\brain\\<conversation-id>\\DEBUG-REPORT-{issue}` (or `./reports/{topic}/debugs/DEBUG-REPORT-{issue}`) |
-| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
+| ALL Phases | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
@@ -179,7 +179,7 @@ execution-mode: execute
    - Executive summary (2-3 sentences, non-technical)
    - Symptom timeline (chronological, with evidence links)
    - Hypothesis tree (tested, confirmed/refuted, with evidence)
-   - Root cause chain (trigger → system propagation → visible symptom)
+   - **SPIE v3.0 5-Whys Root Cause Chain** (`Why 1 Visible Symptom` → `Why 2` → `Why 3` → `Why 4` → `Why 5 Systemic Root Cause` with exact `[file:line]` evidence)
    - Impact analysis (affected users, data integrity, stability)
    - Recommended fix approaches (ranked by risk/effort/impact)
    - Prevention recommendations (how to avoid recurrence)
@@ -220,7 +220,7 @@ Present final investigation report with consensus stamps from ALL phases:
 - Arbitrations needed: {count}
 
 ## Mailbox Reference
-Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
+Full debate history: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`)
 
 ## Next Actions
 1. ✅ **Root Cause** — Identified (triangle-validated across all phases)

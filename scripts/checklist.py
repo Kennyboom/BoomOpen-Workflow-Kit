@@ -24,7 +24,7 @@ import sys
 import subprocess
 import argparse
 from pathlib import Path
-from typing import List, Tuple, Optional
+from typing import List, Optional
 
 # ANSI colors for terminal output
 class Colors:
@@ -56,17 +56,29 @@ def print_error(text: str):
 
 # Define priority-ordered checks
 CORE_CHECKS = [
+    ("Security Scan", "skills_library/vulnerability-scanner/scripts/security_scan.py", True),
+    ("Type Coverage", "skills_library/lint-and-validate/scripts/type_coverage.py", False),
     ("API Validation", "skills/api-patterns/scripts/api_validator.py", False),
     ("Schema Validation", "skills/database-design/scripts/schema_validator.py", False),
     ("Test Runner", "skills/testing-patterns/scripts/test_runner.py", False),
     ("UX Audit", "skills/frontend-design/scripts/ux_audit.py", False),
     ("SEO Check", "skills/seo-fundamentals/scripts/seo_checker.py", False),
+    ("GEO Check", "skills_library/geo-fundamentals/scripts/geo_checker.py", False),
+    ("i18n Check", "skills_library/i18n-localization/scripts/i18n_checker.py", False),
 ]
 
 PERFORMANCE_CHECKS = [
-    ("Lighthouse Audit", "skills/performance-profiling/scripts/lighthouse_audit.py", True),
+    ("Lighthouse Audit", "skills_library/performance-profiling/scripts/lighthouse_audit.py", True),
     ("Playwright E2E", "skills/webapp-testing/scripts/playwright_runner.py", False),
 ]
+
+def resolve_script_path(project_path: Path, rel_path: str) -> Path:
+    """Resolve script path from project_path or kit repository root."""
+    candidate = project_path / rel_path
+    if candidate.exists():
+        return candidate
+    kit_root = Path(__file__).resolve().parent.parent
+    return kit_root / rel_path
 
 def check_script_exists(script_path: Path) -> bool:
     """Check if script file exists"""
@@ -189,7 +201,7 @@ Examples:
     # Run core checks
     print_header("📋 CORE CHECKS")
     for name, script_path, required in CORE_CHECKS:
-        script = project_path / script_path
+        script = resolve_script_path(project_path, script_path)
         result = run_script(name, script, str(project_path))
         results.append(result)
         
@@ -203,7 +215,7 @@ Examples:
     if args.url and not args.skip_performance:
         print_header("⚡ PERFORMANCE CHECKS")
         for name, script_path, required in PERFORMANCE_CHECKS:
-            script = project_path / script_path
+            script = resolve_script_path(project_path, script_path)
             result = run_script(name, script, str(project_path), args.url)
             results.append(result)
     

@@ -1,4 +1,4 @@
-# CODEX.md — BoomOpen Workflow Kit Orchestrator for OpenAI Codex (v5.5 Smart-Hybrid Edition)
+# CODEX.md — OpenAI Codex Orchestrator Instructions (v5.5 Smart-Hybrid Edition)
 
 > **ZERO-LATENCY ENTRYPOINT**: This file (`CODEX.md` / `AGENTS.md`) is pre-loaded in your global context.
 > **DO NOT** read `rules/CORE.md` on Turn 1 for simple tasks. `rules/CORE.md`, `rules/PHASES.md`, `rules/AGENTS.md`, and `rules/TEAMS.md` are **Loaded On Demand** ONLY when **Mode B (Multi-Agent Orchestration)** or an explicit `/cmd` workflow is triggered.
@@ -49,36 +49,37 @@
 
 ### 🎻 MODE B — Strict Multi-Agent Orchestration & Golden Triangle (TIER 1 — Deep Path)
 - **When ANY of the following is true**:
-  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/brainstorm:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
+  1. User explicitly invokes a BoomOpen workflow command (`/cook`, `/fix`, `/plan:hard`, `/review:team`, `/docs:core`, `/orchestrate`, etc.).
   2. Task spans **`> 2 files`** or **`≥ 2 domains`** (e.g., Database + Backend + Frontend + Security).
   3. Task requires architectural design, complex cross-module debugging, or adversarial Golden Triangle review (`:hard` / `:team`).
-  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** — whenever the user asks in natural language to research, analyze, or propose an idea/product/architecture (*"nghiên cứu"*, *"phân tích chuyên sâu"*, *"đánh giá"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"đề xuất thêm"*, *"research"*, *"deep dive"*, *"analyze"*, *"brainstorm"*, *"investigate"*, *"audit"*), **EVEN IF 0 code files are modified and no `/cmd` is typed** → route by default (`workflows.naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when configured as `"auto_hard"`, with parallel `researcher` + `brainstormer` + domain specialist subagents.
+  4. **Natural-Language Deep Research, Product/Game/System Ideation, Competitor Analysis, or Architecture Discovery** (*"nghiên cứu"*, *"phân tích"*, *"khám phá ý tưởng"*, *"đề xuất ý tưởng"*, *"research"*, *"deep dive"*, *"brainstorm"*, *"audit"*) — EVEN IF 0 code files are modified and no `/cmd` is typed → route by default (`naturalLanguageResearchTrigger = "auto_team"`) to `commands/brainstorm-team.md` (`/brainstorm:team` Golden Triangle), or `commands/brainstorm-hard.md` when `"auto_hard"`.
 - **Turn-1 Instant Dispatch**: Do **NOT** waste Turn 1 reading `rules/CORE.md` + `rules/PHASES.md` + `rules/AGENTS.md` before spawning subagents! The 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) is pre-embedded below. Read `commands/{cmd}.md` AND launch Phase 1 subagents (`TypeName: "self"` / `~/.codex/agents/*.toml`, `Model: "inherit"`) in the **same Turn-1 tool batch**, using **DAG Parallel Fan-Out**, **Direct Plan-to-Executor Dispatch**, and **Warm Sub-agent Reuse (`send_message`)**.
 
 ### ⚡ MODE A — Known-Target Micro-Direct (TIER 0 — `≤ 2 Known Files`, `1 Domain`, 0 Exploration Needed, No `/cmd`)
-- **When**: Strictly for simple factual Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, 0 exploration is needed, no `/cmd` was invoked, and NOT an open-ended research or ideation request.
+- **When**: Strictly for simple Q&A, code explanations, or micro-edits where the **exact 1–2 target files are already known on Turn 1**, 0 exploration is needed, and no `/cmd` was invoked.
 - **Action**: Execute, test, and verify directly while enforcing **Pragmatic 2-Tier Coding Standards** and **Persistent Testing & Bug Fixing**.
+
+---
+
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
 
 ---
 
 ## 📂 PATHS (Use These Exact Paths)
 
 ```
-CONFIG   = ~/.codex/config.toml
-COMMANDS = ~/.codex/skills/boomopen-workflow-kit/commands/ (also ~/.codex/commands/)
-AGENTS   = ~/.codex/skills/boomopen-workflow-kit/agents/   (TOML configs in ~/.codex/agents/)
-SKILLS   = ~/.codex/skills/
-LIBRARY  = ~/.codex/skills_library/
-RULES    = ~/.codex/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+CONFIG    = ~/.codex/config.toml
+COMMANDS  = ~/.codex/skills/boomopen-workflow-kit/commands/ (also ~/.codex/commands/)
+AGENTS    = ~/.codex/skills/boomopen-workflow-kit/agents/   (TOML configs in ~/.codex/agents/)
+SKILLS    = ~/.codex/skills/
+LIBRARY   = ~/.codex/skills_library/
+RULES     = ~/.codex/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\
+REPORTS   = ./reports/{topic}/
 ```
-
----
-
-## 🤖 CODEX NATIVE MULTI-AGENT SYSTEM (21 SPECIALISTS)
-
-Codex registers all **21 specialist agents** in `~/.codex/config.toml` (`~/.codex/agents/{name}.toml` + `~/.codex/skills/boomopen-workflow-kit/agents/{name}.md`):
-`backend-engineer`, `brainstormer`, `business-analyst`, `database-architect`, `debugger`, `designer`, `devops-engineer`, `docs-manager`, `frontend-engineer`, `game-engineer`, `mobile-engineer`, `performance-engineer`, `planner`, `project-manager`, `reporter`, `researcher`, `reviewer`, `scouter`, `security-engineer`, `tech-lead`, `tester`.
 
 ---
 
@@ -122,5 +123,5 @@ Codex registers all **21 specialist agents** in `~/.codex/config.toml` (`~/.code
 | `PHASES.md` | DAG Parallel Fan-Out, Contract-First dispatch, Direct Plan execution |
 | `AGENTS.md` | Tiered execution, Warm Session Reuse, `OWNED_FILES` locks |
 | `TEAMS.md` | Golden Triangle team execution protocol (`:team` variants) |
-| `SKILLS.md` | Fast 2-step progressive skill resolution (`compact-index.json` — 1,450+ skills) |
+| `SKILLS.md` | Fast 2-step progressive skill resolution (`1,460+` library skills / `1,470` indexed in `compact-index.json`) |
 | `ERRORS.md` / `REFERENCE.md` | Error recovery (`E0` auto-revive) & quick lookup tables |

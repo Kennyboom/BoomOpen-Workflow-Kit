@@ -3,13 +3,13 @@ name: frontend-architecture
 description: How to organize frontend code — separation of concerns (UI / logic / data / type), file responsibility, state tiers, API services, schema validation, and framework conventions for React/Next and Vue. Structural rules, not visual design.
 when_to_use: "When structuring a frontend codebase or reviewing how frontend code is organized — where logic, API calls, state, types, and validation should live; component vs hook/composable boundaries; Next.js server/client split; Vue Composition API. NOT for visual design (use frontend-design) and NOT for React/Next performance rules (use nextjs-react-expert)."
 allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0.0
+version: 5.5.0
 ---
 
-# Frontend Architecture
+# Frontend Architecture (2026 Edition)
 
 > How to organize frontend code so it scales. Separation of concerns over file-type folders.
-> Applies to React/Next and Vue. For directory layout, follow [app-builder](../app-builder/scaffolding.md). For visual design, see [frontend-design](../frontend-design/SKILL.md). For React/Next performance, see [nextjs-react-expert](../nextjs-react-expert/SKILL.md).
+> Applies to React/Next and Vue. For directory layout, follow [app-builder](../app-builder/scaffolding.md). For visual design, see [frontend-design](../frontend-design/SKILL.md) and [anti-ai-slop-visual-craft](../../skills_library/anti-ai-slop-visual-craft/SKILL.md). For React/Next performance and 2026 architecture patterns, see [nextjs-react-expert](../../skills_library/nextjs-react-expert/SKILL.md), [react-19-nextjs-15-rsc](../../skills_library/react-19-nextjs-15-rsc/SKILL.md), [tailwind-v4-shadcn-ui](../../skills_library/tailwind-v4-shadcn-ui/SKILL.md), and [tanstack-start-router-query](../../skills_library/tanstack-start-router-query/SKILL.md).
 
 ---
 
@@ -70,15 +70,15 @@ function ProductList() {
 
 ---
 
-## 4. Next.js — Server Components by default
+## 4. Next.js 15 & React 19 — Server Components by default
 
-In the App Router, `page.tsx` and `layout.tsx` are Server Components. Reach for `"use client"` only when you actually need the client.
+In the App Router (`react-19-nextjs-15-rsc`), `page.tsx` and `layout.tsx` are Server Components. Reach for `"use client"` only when you actually need the client.
 
 | Server Component | Client Component |
 |------------------|------------------|
 | Fetch data, read DB/API | Form, modal, dropdown |
 | Handle secret tokens | Event handlers, animation |
-| Render static/semi-static layout | `useState`/`useEffect`, browser APIs (`window`, `localStorage`) |
+| Render static/semi-static layout | `useState`/`useEffect`, `useActionState`, browser APIs (`window`, `localStorage`) |
 
 Keep client components small. Don't `"use client"` a whole page for one interactive button — extract the button into its own client component and keep the page a Server Component.
 
@@ -104,7 +104,7 @@ Use a composable for reusable pure logic; use a component when reusing both logi
 | Reusable state/logic in one feature | custom hook / composable |
 | Shared UI state in a subtree | Context (React) / `provide`-`inject` (Vue) |
 | Cross-app, complex, persisted | Zustand / Pinia / Redux |
-| Server state / API cache | TanStack Query (react-query) / similar |
+| Server state / API cache & routing | TanStack Query / TanStack Router (`tanstack-start-router-query`) |
 
 Don't reach for global state (or Redux) on day one of a small app. Server state belongs in a query library, not a global store.
 
@@ -135,7 +135,7 @@ Always handle loading, error, and empty states explicitly.
 
 Don't inline long validation inside a component.
 
-- React/Next: react-hook-form + zod (or yup)
+- React/Next: react-hook-form + zod (or React 19 `useActionState` + zod)
 - Vue: vee-validate + zod/yup
 
 Keep schemas in `*.schema.ts` next to the form they validate.
@@ -193,10 +193,11 @@ Page
 
 ---
 
-## 12. Tailwind class hygiene
+## 12. Tailwind v4 & shadcn/ui class hygiene
 
+- Follow CSS-first tokens (`@theme`) from `tailwind-v4-shadcn-ui`.
 - If a `className` runs past ~5–8 logical groups, extract a component.
-- Repeated patterns → a reusable component or variant helper.
+- Repeated patterns → a reusable component or variant helper (`cva`).
 - No complex conditional logic inline in `className` — use `cn()`.
 
 ```tsx
@@ -225,15 +226,15 @@ const cardClassName = cn(
 Don't test everything up front; do cover:
 
 - utilities → unit tests
-- important hooks/composables → unit tests
+- important hooks/composables → unit tests (`vitest-msw-testing-patterns`)
 - main forms → validation tests
-- critical flows → e2e
+- critical flows → e2e (`webapp-testing`)
 
 Colocate (`useBooking.test.ts` next to `useBooking.ts`) or keep `tests/unit` + `tests/e2e` — pick one and stay consistent.
 
 ---
 
-## 15. Accessibility floor
+## 15. Accessibility floor (`wcag-22-accessibility-ergonomics`)
 
 - Use `<button>` for actions, not `<div onClick>`.
 - Every input has a label; every image has `alt`.

@@ -34,6 +34,9 @@ category: validation
 
 > **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `quality:validation` | Domains: `quality`
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**:
+> - `skills_library/vitest-msw-testing-patterns/SKILL.md` — Vitest v2/v3, MSW v2 network boundary mocking, deterministic fake timers
+> - `skills_library/wcag-22-accessibility-ergonomics/SKILL.md` — WCAG 2.2 AA accessibility verification (`>= 24x24px` web / `44x44pt` mobile targets, focus order, `scroll-padding-top/bottom`)
 ---
 
 ## 🎯 Expert Mindset
@@ -59,15 +62,12 @@ ALWAYS:
 ### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-1. CHECK PROJECT DOCS (if ./documents/ exists):
-   - knowledge-standards/00-index.md → Testing standards (drill into sub-files as needed)
-   - knowledge-domain/00-index.md → Data shapes, API contracts (drill into sub-files as needed)
-   → USE these for test fixtures/assertions
-
-2. IF ./reports/{topic}/plans/PLAN-{feature} exists:
-   - READ completely
-   - EXTRACT acceptance criteria
-   - CREATE test-to-checkpoint mapping
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   → READ completely, extract acceptance criteria, and strictly enforce SHARED_CONTRACT + OWNED_FILES write locks
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-standards/00-index.md → Testing standards
+   - knowledge-domain/00-index.md → Data shapes, API contracts
 ```
 
 ### Step 1: TEST PYRAMID
@@ -123,7 +123,7 @@ Assert: Verify expected outcome
 
 > **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
-**Small** (≤ 150 lines): Single file `./reports/{topic}/tests/TEST-{feature}.md`
+**Small** (≤ 150 lines): Single file `<appDataDir>\brain\<conversation-id>\TEST-{feature}.md` (fallback: `./reports/{topic}/tests/TEST-{feature}.md`)
 **Large** (> 150 lines OR ≥ 4 sections): Folder `./reports/{topic}/tests/{feature}/` → create `00-index` first, then each section `01-*`, `02-*` sequentially.
 
 ### Single-file template

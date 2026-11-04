@@ -66,7 +66,7 @@ execution-mode: execute
 | Phase 1 (Scope)   | Shared Task List in Mailbox                     |
 | Phase 2 (Impl.)   | Code changes + review trail in Mailbox          |
 | Phase 3 (Verify)  | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{task}` (or `./reports/{topic}/reviews/REVIEW-{task}`)            |
-| ALL Phases         | `./reports/{topic}/MAILBOX-{date}.md`                  |
+| ALL Phases         | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
@@ -178,7 +178,8 @@ IF other domain → Consult TEAMS.md roster for correct triangle
    Severity: CRITICAL | Action: "Remove out-of-scope code or get scope amended"
 ```
 
-**Exit Criteria**: All scoped tasks implemented, all reviews passed, no unauthorized scope creep, integration verified
+**Pragmatic 2-Tier Coding Standards Verification (MANDATORY)**: Run `node cli/install.js check <dir>` to verify Tier 1 strict quality (0 `any`, no debug `console.log`, `try/catch` boundaries) and Tier 2 cohesive structure (`≤ 400` soft / `≤ 500` hard lines).
+**Exit Criteria**: All scoped tasks implemented, `node cli/install.js check` + all reviews passed, no unauthorized scope creep, integration verified
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 
 ---
@@ -241,7 +242,7 @@ Present final code implementation report with consensus stamps from ALL phases:
 {list of all files created/modified}
 
 ## Mailbox Reference
-Full debate history: `./reports/{topic}/MAILBOX-{date}.md`
+Full debate history: `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`)
 
 ## Next Actions
 1. ✅ **Done** — Code complete (triangle-validated across all phases)

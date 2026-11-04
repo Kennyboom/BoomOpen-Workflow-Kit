@@ -6,8 +6,8 @@ version: "5.5"
 # /review:fast — Quick Code Review
 
 > **Mode Gate**:
-> - **Mode A (Direct Execution)**: For small diffs (`≤ 3 files`), review directly against the Pragmatic 2-Tier Coding Standards.
-> - **Mode B (Tier 1 Delegation)**: For larger diffs, delegate to `reviewer` (`EnableWriteTools: false`, `Model: "inherit"`) or reuse the warm `reviewer` session via `send_message`.
+> - **Mode A (Direct Execution)**: For small diffs (`≤ 2 files`), review directly against the Pragmatic 2-Tier Coding Standards.
+> - **Mode B (Tier 1 Delegation)**: For larger diffs (`> 2 files`), delegate to `reviewer` (`EnableWriteTools: false`, `Model: "inherit"`) or reuse the warm `reviewer` session via `send_message`.
 
 ---
 

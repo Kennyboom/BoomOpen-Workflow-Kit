@@ -32,9 +32,9 @@ execution-mode: execute
 | Phase | Output |
 |-------|--------|
 | P1: Data | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{topic}` (or `./reports/{topic}/scouts/SCOUT-{topic}`) + `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{topic}` (or `./reports/{topic}/researchers/RESEARCH-{topic}`) |
-| P2: Draft | `./reports/{topic}/general/REPORT-{topic}-{date}` |
-| P3: Final | `./reports/{topic}/general/REPORT-{topic}-{date}` (polished) |
-| ALL | `./reports/{topic}/MAILBOX-{date}.md` |
+| P2: Draft | `<appDataDir>\brain\<conversation-id>\REPORT-{topic}-{date}` (or `./reports/{topic}/general/REPORT-{topic}-{date}`) |
+| P3: Final | `<appDataDir>\brain\<conversation-id>\REPORT-{topic}-{date}` (polished) (or `./reports/{topic}/general/REPORT-{topic}-{date}`) |
+| ALL | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 

@@ -6,8 +6,8 @@ version: "5.5"
 # /debug:fast — Quick Debug
 
 > **Mode Gate**:
-> - **Mode A (Direct Execution)**: If single-domain and `≤ 3 files`, execute directly using the `debugger` skill mindset (`skills/debugger/SKILL.md`).
-> - **Mode B (Tier 1 Delegation)**: If multi-domain or part of a multi-agent workflow, delegate to `debugger` (`Model: "inherit"`) or reuse a warm `debugger` session via `send_message`.
+> - **Mode A (Direct Execution)**: If single-domain and `≤ 2 files`, execute directly using the `debugger` skill mindset (`skills/debugger/SKILL.md`).
+> - **Mode B (Tier 1 Delegation)**: If multi-domain, `> 2 files`, or part of a multi-agent workflow, delegate to `debugger` (`Model: "inherit"`) or reuse a warm `debugger` session via `send_message`.
 
 ---
 

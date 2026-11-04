@@ -40,7 +40,7 @@ execution-mode: execute
 | P1: Scope & Context | `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{scope}` (or `./reports/{topic}/scouts/SCOUT-{scope}`) |
 | P3: Improvement Plan | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-REPORT-{scope}` (or `./reports/{topic}/reviews/REVIEW-REPORT-{scope}`) |
 | P4: Final Review | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{scope}` (or `./reports/{topic}/reviews/REVIEW-{scope}`) |
-| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
+| ALL Phases | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
@@ -223,7 +223,7 @@ FOR EACH phase in PLAN-{scope}.md:
 > - ❌ NEVER write implementation code or fix code directly
 > - ❌ NEVER modify source files
 > - ❌ NEVER auto-transition to `/fix`, `/code`, `/cook`
-> - ✅ ONLY produce review report files in `./reports/{topic}/`
+> - ✅ ONLY produce review report files in `<appDataDir>\brain\<conversation-id>\` (or `./reports/{topic}/`)
 > - ✅ Report files MUST be written in the same language the user communicates with you
 >
 > If user wants fixes, they must EXPLICITLY invoke `/fix` workflow.

@@ -25,6 +25,7 @@ mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 > **GOLDEN TRIANGLE ROLE**: Reviewer (Root-Cause Validator + Quality Gate)  
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol  
 > **BASE AGENT**: `reviewer` — all reviewer capabilities active
+> **MANDATORY SKILL & METHODOLOGY**: Load `skills/debugger/SKILL.md` (`~/.{TOOL}/skills/debugger/SKILL.md`) and strictly enforce **SPIE v3.0 5-Whys Root Cause Analysis**.
 
 ## 🆔 Identity
 

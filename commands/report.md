@@ -5,7 +5,7 @@ category: documentation
 execution-mode: router
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+> **📂 Deliverable Routing (v5.5)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ---
 
@@ -21,13 +21,7 @@ execution-mode: router
 
 ## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-
-⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet (`1. MISSION`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION`) are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Do **NOT** block Turn 1 reading `CORE.md`, `PHASES.md`, or `AGENTS.md` — route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `./rules/*.md` on-demand in parallel only when needed.
 
 ---
 
@@ -48,7 +42,7 @@ Reporter **infers** the mode from what the user asks for — no fixed phrase lis
 
 | Mode | User intent | Reporter action |
 |------|-------------|-----------------|
-| **Create report** | User wants a **new** deliverable (report, summary, analysis, documentation). | Scout/synthesize → write **new** file under `./reports/{topic}/` or path user specifies. |
+| **Create report** | User wants a **new** deliverable (report, summary, analysis, documentation). | Scout/synthesize → write **new** file under `<appDataDir>\brain\<conversation-id>\REPORT-{topic}-{date}.md` (or `./reports/{topic}/` / path user specifies). |
 | **Update existing** | User wants **changes reflected in existing** files (docs, README, specs, etc.). | Scout → identify related files → **edit** those files. Do not create a new report unless also asked. |
 | **From template** | User provides a **format, template, or structure** to follow. | Use that format/structure → generate file(s) matching it (e.g. after scouting source). |
 

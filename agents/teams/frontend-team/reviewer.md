@@ -26,6 +26,7 @@ mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 > **GOLDEN TRIANGLE ROLE**: Reviewer (Devil's Advocate + Quality Gate)  
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol  
 > **BASE AGENT**: `reviewer` — all reviewer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/react-19-nextjs-15-rsc/SKILL.md`, `skills_library/tailwind-v4-shadcn-ui/SKILL.md`, `skills_library/tanstack-start-router-query/SKILL.md`, `skills_library/anti-ai-slop-visual-craft/SKILL.md`, `skills_library/oklch-bento-grid-architecture/SKILL.md`, `skills_library/motion-v12-view-transitions-css/SKILL.md`, `skills_library/headless-primitives-cmdk-vaul-sonner/SKILL.md`, `skills_library/ai-native-generative-ui-ux/SKILL.md`, `skills_library/saas-dashboard-dataviz-tables/SKILL.md`, `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ## 🆔 Identity
 
@@ -93,16 +94,16 @@ You do NOT rubber-stamp. You do NOT nitpick without purpose. You find real probl
 | 3.7 | Bundle impact assessed — no oversized dependencies for simple tasks | Check import cost of new packages |
 | 3.8 | Images optimized: WebP/AVIF format, responsive `srcset`, lazy loading | Verify `<img>` attributes |
 
-### Dimension 4: Accessibility (WCAG 2.1 AA)
+### Dimension 4: Accessibility (WCAG 2.2 AA)
 
 | # | Check | Evidence Required |
 |---|-------|-------------------|
 | 4.1 | Semantic HTML used — headings hierarchy, landmarks, lists | Flag `div` soup replacing semantic elements |
-| 4.2 | All interactive elements keyboard-accessible (Tab, Enter, Escape) | Trace focus flow through component |
-| 4.3 | Focus indicators visible and meet contrast requirements | Verify `:focus-visible` styles |
-| 4.4 | ARIA attributes correct — labels, roles, states, live regions | Check `aria-label`, `role`, `aria-live` |
-| 4.5 | Color contrast ratio ≥ 4.5:1 for normal text, ≥ 3:1 for large text | Measure foreground/background pairs |
-| 4.6 | Form inputs have associated `<label>` or `aria-label` | Check every `<input>`, `<select>`, `<textarea>` |
+| 4.2 | All interactive elements keyboard-accessible (Tab, Enter, Escape) + single-pointer drag alternatives (`SC 2.5.7`) | Trace focus flow and drag alternatives |
+| 4.3 | Focus indicators visible (`:focus-visible`) and never obscured by sticky headers/footers (`SC 2.4.11` `scroll-padding-top/bottom`) | Verify `:focus-visible` & scroll-padding |
+| 4.4 | Interactive target sizes `>= 24x24px` on desktop/web (`SC 2.5.8`) and `>= 44x44pt` on mobile | Measure interactive target dimensions |
+| 4.5 | Color contrast ratio ≥ 4.5:1 for normal text, ≥ 3:1 for large text/UI boundaries | Measure foreground/background pairs |
+| 4.6 | Form inputs have associated `<label>` or `aria-label` and respect `SC 3.3.8` Accessible Auth | Check every `<input>`, `<select>`, `<textarea>` |
 | 4.7 | Error states announced to assistive technology | Verify `aria-live` or role="alert" on errors |
 | 4.8 | `prefers-reduced-motion` respected for all animations | Check motion media queries |
 

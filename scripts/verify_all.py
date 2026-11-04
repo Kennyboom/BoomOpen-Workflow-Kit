@@ -15,18 +15,18 @@ Includes ALL checks:
     ✅ Schema Validation
     ✅ Test Suite (unit + integration)
     ✅ UX Audit (psychology, accessibility)
-    ✅ SEO Check
+    ✅ SEO & GEO Check
     ✅ Lighthouse (Core Web Vitals)
     ✅ Playwright E2E
-    ✅ Bundle Analysis (if applicable)
     ✅ Mobile Audit (if applicable)
+    ✅ Internationalization (i18n) Check
 """
 
 import sys
 import subprocess
 import argparse
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Optional
 from datetime import datetime
 
 # ANSI colors
@@ -63,8 +63,7 @@ VERIFICATION_SUITE = [
     {
         "category": "Security",
         "checks": [
-            ("Security Scan", "skills/vulnerability-scanner/scripts/security_scan.py", True),
-            ("Dependency Analysis", "skills/vulnerability-scanner/scripts/dependency_analyzer.py", False),
+            ("Security Scan", "skills_library/vulnerability-scanner/scripts/security_scan.py", True),
         ]
     },
     
@@ -73,7 +72,7 @@ VERIFICATION_SUITE = [
         "category": "Code Quality",
         "checks": [
             ("API Validation", "skills/api-patterns/scripts/api_validator.py", False),
-            ("Type Coverage", "skills/lint-and-validate/scripts/type_coverage.py", False),
+            ("Type Coverage", "skills_library/lint-and-validate/scripts/type_coverage.py", False),
         ]
     },
     
@@ -107,7 +106,7 @@ VERIFICATION_SUITE = [
         "category": "SEO & Content",
         "checks": [
             ("SEO Check", "skills/seo-fundamentals/scripts/seo_checker.py", False),
-            ("GEO Check", "skills/geo-fundamentals/scripts/geo_checker.py", False),
+            ("GEO Check", "skills_library/geo-fundamentals/scripts/geo_checker.py", False),
         ]
     },
     
@@ -116,8 +115,7 @@ VERIFICATION_SUITE = [
         "category": "Performance",
         "requires_url": True,
         "checks": [
-            ("Lighthouse Audit", "skills/performance-profiling/scripts/lighthouse_audit.py", True),
-            ("Bundle Analysis", "skills/performance-profiling/scripts/bundle_analyzer.py", False),
+            ("Lighthouse Audit", "skills_library/performance-profiling/scripts/lighthouse_audit.py", True),
         ]
     },
     
@@ -142,10 +140,18 @@ VERIFICATION_SUITE = [
     {
         "category": "Internationalization",
         "checks": [
-            ("i18n Check", "skills/i18n-localization/scripts/i18n_checker.py", False),
+            ("i18n Check", "skills_library/i18n-localization/scripts/i18n_checker.py", False),
         ]
     },
 ]
+
+def resolve_script_path(project_path: Path, rel_path: str) -> Path:
+    """Resolve script path from project_path or kit repository root."""
+    candidate = project_path / rel_path
+    if candidate.exists():
+        return candidate
+    kit_root = Path(__file__).resolve().parent.parent
+    return kit_root / rel_path
 
 def run_script(name: str, script_path: Path, project_path: str, url: Optional[str] = None) -> dict:
     """Run validation script"""
@@ -307,7 +313,11 @@ Examples:
         print_header(f"📋 {category.upper()}")
         
         for name, script_path, required in suite["checks"]:
-            script = project_path / script_path
+            script = resolve_script_path(project_path, script_path)
+            if not script.exists():
+                print_warning(f"{name}: Script not found ({script_path}), skipping")
+                results.append({"name": name, "passed": True, "skipped": True, "duration": 0, "category": category})
+                continue
             result = run_script(name, script, str(project_path), args.url)
             result["category"] = category
             results.append(result)

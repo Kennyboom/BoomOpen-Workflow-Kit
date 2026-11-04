@@ -55,7 +55,14 @@ function parseDomainYaml(yamlContent, domainName, coreSkillNames) {
 function buildCompactSkillIndex(repoRoot) {
   const matrixDir = path.join(repoRoot, 'matrix-skills');
   const skillsDir = path.join(repoRoot, 'skills');
-  const coreSkills = new Set(fs.existsSync(skillsDir) ? fs.readdirSync(skillsDir) : []);
+  const coreSkills = new Set(
+    fs.existsSync(skillsDir)
+      ? fs
+          .readdirSync(skillsDir, { withFileTypes: true })
+          .filter((d) => d.isDirectory())
+          .map((d) => d.name)
+      : []
+  );
   const indexMap = {};
   const yamlFiles = fs
     .readdirSync(matrixDir)
@@ -206,6 +213,9 @@ function runDoctor(options = {}) {
   const compactPath = path.join(repoRoot, 'matrix-skills', 'compact-index.json');
   if (!fs.existsSync(compactPath)) buildCompactSkillIndex(repoRoot);
   const compactData = JSON.parse(fs.readFileSync(compactPath, 'utf8'));
+  const missingOnDisk = Object.values(compactData.skills || {}).filter(
+    (entry) => !fs.existsSync(path.join(repoRoot, entry.path))
+  ).length;
   const checks = [
     checkGeminiEntrypoint(homeDir),
     ...checkSkillsManifest(homeDir),
@@ -217,8 +227,8 @@ function runDoctor(options = {}) {
     auditMarkdownDir(path.join(repoRoot, 'i18n'), 'i18n/README.*.md'),
     {
       name: 'matrix-skills/compact-index.json',
-      passed: compactData.totalSkills >= MIN_COMPACT_SKILLS,
-      detail: `${compactData.totalSkills} skills indexed`,
+      passed: compactData.totalSkills >= MIN_COMPACT_SKILLS && missingOnDisk === 0,
+      detail: `${compactData.totalSkills} skills indexed (${missingOnDisk} missing)`,
     },
     checkSettingsIntegrity(homeDir),
   ];

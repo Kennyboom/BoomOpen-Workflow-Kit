@@ -26,6 +26,7 @@ mailbox: <appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md
 > **GOLDEN TRIANGLE ROLE**: Reviewer (Pen-Test Mindset + Quality Gate)  
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol  
 > **BASE AGENT**: `reviewer` — all reviewer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/owasp-llm-agent-security-2025/SKILL.md`, `skills_library/better-auth-typescript/SKILL.md`.
 
 ## 🆔 Identity
 

@@ -5,7 +5,7 @@ category: engineering
 execution-mode: execute
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+> **📂 Deliverable Routing (v5.5)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ---
 
@@ -19,13 +19,7 @@ execution-mode: execute
 
 ## ⚡ TURN-1 ZERO-TAX DISPATCH & ON-DEMAND RULES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/boomopen-workflow-kit/rules/`):
-
-1. CORE.md — Identity, Laws, Routing
-2. PHASES.md — Phase Execution
-3. AGENTS.md — Tiered Execution
-
-⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
+⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the **5-Field Handoff Packet** (`1. MISSION & ACCEPTANCE CRITERIA`, `2. SHARED_CONTRACT`, `3. OWNED_FILES`, `4. READ_ONLY_FILES`, `5. VERIFICATION & DELIVERABLE`) are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Do **NOT** block Turn 1 reading `CORE.md`, `PHASES.md`, or `AGENTS.md` — launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")` (0-turn fast-track) or `TypeName: "research"` for read-only local scouting, and load `./rules/*.md` on-demand only when needed.
 
 **Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
 
@@ -35,7 +29,7 @@ execution-mode: execute
 
 | Tier       | When               | Action                       |
 | ---------- | ------------------ | ---------------------------- |
-| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`define_subagent`, `invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Invoke isolated sub-agent (MANDATORY) |
+| **TIER 1** | Antigravity 2.0 Native Sub-Agents (`invoke_subagent`, `send_message`) or `runSubagent` EXISTS | Spawn via `invoke_subagent(TypeName: "self", Model: "inherit")` with 5-Field Handoff Packet (`SHARED_CONTRACT` + `OWNED_FILES`) & reuse warm sessions via `send_message` (MANDATORY) |
 | **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
 
 **❌ Anti-Lazy**: Never use TIER 2 when TIER 1 tool available.
@@ -84,10 +78,10 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 | Agent        | Route by domain                                                               |
 | ------------ | ----------------------------------------------------------------------------- |
-| Route        | UI → `frontend-engineer`, API → `backend-engineer`, DB → `database-architect` |
-| Prerequisite | READ `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`) if exists                            |
-| Goal         | Implement feature                                                             |
-| Exit         | Feature implemented, code compiles, basic testing done                        |
+| Route        | UI → `frontend-engineer`, API → `backend-engineer`, DB → `database-architect` (`TypeName: "self"`, `Model: "inherit"`) |
+| Prerequisite | READ `<appDataDir>\\brain\\<conversation-id>\\PLAN-{feature}` (or `./reports/{topic}/plans/PLAN-{feature}`) if exists and lock `SHARED_CONTRACT` + disjoint `OWNED_FILES` |
+| Goal         | Implement feature adhering strictly to **Pragmatic 2-Tier Coding Standards** (Tier 1 zero `any`/no debug `console.log`/`try-catch` boundaries + Tier 2 cohesive `~200–350` lines target, `≤ 400–450` soft ceiling) |
+| Exit         | Feature implemented, `node cli/install.js check <dir>` + build/typecheck/tests pass |
 
 ---
 

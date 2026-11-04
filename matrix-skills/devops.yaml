@@ -566,3 +566,11 @@ skills:
       agents: [devops-engineer, security-engineer, tech-lead]
       profiles: ["devops:*", "cloud:*", "security:validation"]
     description: "Production Terraform 1.10+ & OpenTofu 1.9+ modular architecture, S3 lockfile state, moved/import refactoring, and tflint/trivy/checkov CI gates"
+
+  - skill_id: linux-shell-scripting
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:*"]
+    description: "Production-grade Bash and POSIX shell scripting patterns, strict error handling, and automation workflows."

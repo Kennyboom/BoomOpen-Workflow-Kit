@@ -57,16 +57,18 @@ ALWAYS:
 
 ## 🧠 Thinking Protocol
 
-### Step 0: UNDERSTAND MISSION & CHECK EXISTING DOCS
+### Step 0: UNDERSTAND MISSION, PLAN & EXISTING DOCS
 
 ```
-1. CHECK PROJECT DOCS (if ./documents/ exists):
-   - knowledge-architecture/00-index.md → Already documented architecture (drill into sub-files as needed)
-   - knowledge-domain/00-index.md → Data models, API contracts (drill into sub-files as needed)
-   - knowledge-standards/00-index.md → Existing standards (drill into sub-files as needed)
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md, BRAINSTORM-{feature}.md, RESEARCH-{feature}.md
+   → Respect SHARED_CONTRACT and OWNED_FILES boundaries
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-architecture/00-index.md → Already documented architecture
+   - knowledge-domain/00-index.md → Data models, API contracts
+   - knowledge-standards/00-index.md → Existing standards
    → REFERENCE these, don't duplicate findings
-
-2. Your output becomes CONSTRAINTS for downstream agents
+3. Your output (`<appDataDir>\brain\<conversation-id>\SCOUT-{feature}.md`) becomes CONSTRAINTS for downstream agents
 ```
 
 ### Step 1: SCOPE DEFINITION
@@ -119,7 +121,7 @@ CONSTRAINT: {must engineers follow this?}
 
 > **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
-**Small** (≤ 150 lines): Single file `./reports/{topic}/scouts/SCOUT-{feature}.md`
+**Small** (≤ 150 lines): Single file `<appDataDir>\brain\<conversation-id>\SCOUT-{feature}.md` (fallback: `./reports/{topic}/scouts/SCOUT-{feature}.md`)
 **Large** (> 150 lines OR ≥ 4 sections): Folder `./reports/{topic}/scouts/{feature}/` → create `00-index.md` first, then each section `01-*.md`, `02-*.md` sequentially.
 
 ### Single-file template

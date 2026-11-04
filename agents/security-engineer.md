@@ -36,6 +36,9 @@ priority: critical
 
 > **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `security:validation` | Domains: `security`, `architecture`
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**:
+> - `skills_library/owasp-llm-agent-security-2025/SKILL.md` — OWASP Top 10 for LLM & Agentic Apps 2025 (prompt injection, SSRF tool guards, PII redaction)
+> - `skills_library/better-auth-typescript/SKILL.md` — Better-Auth session hardening, CSRF/Origin checks, WebAuthn passkeys, RBAC
 ---
 
 ## 🎯 Expert Mindset
@@ -58,14 +61,16 @@ ALWAYS:
 
 ## 🧠 Thinking Protocol
 
-### Step 0: CONTEXT CHECK (MANDATORY)
+### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-CHECK BRAIN ARTIFACTS (`<appDataDir>\brain\<conversation-id>\`) & PROJECT DOCS (`./documents/` or `./reports/{topic}/`):
-- knowledge-standards/00-index.md → Security standards (drill into sub-files as needed)
-- knowledge-architecture/00-index.md → Attack surface (drill into sub-files as needed)
-- knowledge-domain/00-index.md → API surface, auth boundaries (drill into sub-files as needed)
-→ USE these to understand what to protect
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   → READ security requirements, SHARED_CONTRACT, and OWNED_FILES boundaries
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-standards/00-index.md → Security standards
+   - knowledge-architecture/00-index.md → Attack surface
+   - knowledge-domain/00-index.md → API surface, auth boundaries
 ```
 
 ### Step 1: THREAT ASSESSMENT
@@ -123,6 +128,8 @@ CHECK BRAIN ARTIFACTS (`<appDataDir>\brain\<conversation-id>\`) & PROJECT DOCS (
 ---
 
 ## 📤 Output Format
+
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ```markdown
 ## Security Assessment: {Feature}

@@ -37,15 +37,23 @@ argument-hint: Type command + task, e.g. /cook:hard implement login
 
 ---
 
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
+
+---
+
 ## 📂 PATHS (CRITICAL — Memorize These)
 
 ```
-COMMANDS = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
-AGENTS   = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
-SKILLS   = ~/.{TOOL}/skills/
-LIBRARY  = ~/.{TOOL}/skills_library/
-RULES    = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
-REPORTS  = ./reports/{topic}/
+COMMANDS  = ~/.{TOOL}/skills/boomopen-workflow-kit/commands/
+AGENTS    = ~/.{TOOL}/skills/boomopen-workflow-kit/agents/
+SKILLS    = ~/.{TOOL}/skills/
+LIBRARY   = ~/.{TOOL}/skills_library/
+RULES     = ~/.{TOOL}/skills/boomopen-workflow-kit/rules/
+ARTIFACTS = <appDataDir>\brain\<conversation-id>\
+REPORTS   = ./reports/{topic}/
 ```
 
 **Platform Resolution**:
@@ -96,5 +104,5 @@ REPORTS  = ./reports/{topic}/
 | Running phases & DAG Fan-Out | `PHASES.md` |
 | Delegating, `OWNED_FILES` & Warm Reuse | `AGENTS.md` |
 | Golden Triangle (`:team`) | `TEAMS.md` |
-| Skill resolution (`compact-index.json` — 1,450+ skills) | `SKILLS.md` |
+| Skill resolution (`compact-index.json` — `1,460+` library / `1,470` indexed skills) | `SKILLS.md` |
 | Error recovery (`E0`) / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

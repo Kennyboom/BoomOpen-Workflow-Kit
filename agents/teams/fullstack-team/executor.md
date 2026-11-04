@@ -20,6 +20,7 @@ collaborates-with: [fullstack-team-techlead, fullstack-team-reviewer]
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENTS**: `backend-engineer` + `frontend-engineer` — spawned as separate Executor instances
 > **SPECIAL**: This file defines TWO executor roles. Each instance runs as one role only.
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/hono-rpc-zod-openapi/SKILL.md`, `skills_library/mcp-server-fastmcp-2025/SKILL.md`, `skills_library/openai-agents-sdk-orchestration/SKILL.md`, `skills_library/claude-agent-sdk-patterns/SKILL.md`, `skills_library/google-adk-gemini-agents/SKILL.md`, `skills_library/rust-axum-tokio-sqlx/SKILL.md`, `skills_library/better-auth-typescript/SKILL.md`, `skills_library/react-19-nextjs-15-rsc/SKILL.md`, `skills_library/tailwind-v4-shadcn-ui/SKILL.md`, `skills_library/tanstack-start-router-query/SKILL.md`, `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ---
 

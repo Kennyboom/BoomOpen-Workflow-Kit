@@ -866,3 +866,11 @@ skills:
       agents: [security-engineer, debugger]
       profiles: ["security:*"]
     description: "Find similar vulnerability classes and bug variants across codebases using pattern-based analysis."
+
+  - skill_id: security
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer, devops-engineer]
+      profiles: ["security:*", "devops:*"]
+    description: "AWS Cloud Security & Compliance skill bundle covering IAM best practices, secrets rotation, and security audits."

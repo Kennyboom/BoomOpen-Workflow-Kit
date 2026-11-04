@@ -36,7 +36,7 @@ execution-mode: execute
 | P2: Root Cause | `<appDataDir>\\brain\\<conversation-id>\\DEBUG-{issue}` (or `./reports/{topic}/debugs/DEBUG-{issue}`) |
 | P3: Fix Planning | `<appDataDir>\\brain\\<conversation-id>\\PLAN-{issue}` (or `./reports/{topic}/plans/PLAN-{issue}`) |
 | P5: Testing | `<appDataDir>\\brain\\<conversation-id>\\QA-{issue}` (or `./reports/{topic}/qa/QA-{issue}`) |
-| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
+| ALL Phases | `<appDataDir>\brain\<conversation-id>\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
@@ -79,7 +79,8 @@ execution-mode: execute
 > Executor selection: server/API/DB bug → backend-engineer. UI/state bug → frontend-engineer.
 
 **Prerequisite**: READ `INVESTIGATION-{issue}`
-**Deliverable**: `DEBUG-{issue}` — confirmed root cause, exact fault lines, impact scope, related issues
+**SPIE v3.0 5-Whys Root Cause Analysis (MANDATORY)**: Trace minimum 3 ranked hypotheses and the full **5-Whys causal chain** (`Why 1 Symptom` → `Why 5 Systemic Root Cause`) with exact `[file:line]` proof.
+**Deliverable**: `DEBUG-{issue}` — confirmed 5-Whys root cause, exact fault lines, impact scope, related issues
 **Consensus**: ✅ CONSENSUS: debugger ✓ | {executor} ✓ | reviewer ✓
 
 ---
@@ -104,7 +105,8 @@ execution-mode: execute
 > **⛔ READ `_ref/implementation-loop.md` for full step-by-step protocol and team selection.**
 
 **Prerequisite**: READ and FOLLOW `PLAN-{issue}`
-**Exit Criteria**: All fix tasks implemented, reviews passed, root cause addressed
+**Pragmatic 2-Tier Coding Standards Verification (MANDATORY)**: Run `node cli/install.js check <dir>` to verify Tier 1 strict quality (0 `any`, no debug `console.log`, `try/catch` boundaries) and Tier 2 cohesive structure (`≤ 400` soft / `≤ 500` hard lines).
+**Exit Criteria**: All fix tasks implemented, `node cli/install.js check` + reviews passed, root cause addressed
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | {executor} ✓ | reviewer ✓
 
 ---

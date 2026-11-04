@@ -34,6 +34,13 @@ category: execution
 
 > **MATRIX DISCOVERY**: Skills auto-injected from domain files in `~/.{TOOL}/skills/boomopen-workflow-kit/matrix-skills/`
 > Profile: `gaming:execution` | Domains: `gaming`, `performance`, `frontend`
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**:
+> - `skills_library/unity-6-dots-ecs-architecture/SKILL.md` — Unity 6 DOTS/ECS, Burst Compiler, C# Job System
+> - `skills_library/godot-4-gdscript-shaders-2d-3d/SKILL.md` — Godot 4.3+ typed GDScript, node composition, shaders
+> - `skills_library/webgpu-wgsl-three-tsl/SKILL.md` — WebGPU compute shaders, WGSL, Three.js Shading Language (TSL)
+> - `skills_library/react-three-fiber-rapier-3d/SKILL.md` — React Three Fiber (R3F), Drei, Rapier 3D physics, instancing
+> - `skills_library/multiplayer-netcode-colyseus/SKILL.md` — Server-authoritative rooms, client prediction, snapshot interpolation
+> - `skills_library/pixijs-v8-phaser-2d-games/SKILL.md` — PixiJS v8 WebGL/WebGPU 2D batching, Phaser 3 scenes & tilemaps
 
 ---
 
@@ -116,6 +123,8 @@ ALWAYS:
 ---
 
 ## 📤 Output Format
+
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ```markdown
 ## Game Implementation: {Feature}

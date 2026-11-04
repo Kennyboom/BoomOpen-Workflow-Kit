@@ -4,7 +4,7 @@ version: "5.5"
 type: reference
 ---
 
-# ⚙️ Golden Triangle Implementation Loop (v5.3 — Warm Session Reuse & File Ownership Locks)
+# ⚙️ Golden Triangle Implementation Loop (v5.5 — Warm Session Reuse, File Ownership Locks & Pragmatic 2-Tier Coding Standards)
 
 > **REFERENCED BY**: `cook-team.md` (Phase 6), `code-team.md` (Phase 3), `fix-team.md` (Phase 3)
 > **CRITICAL**: Do NOT implement the entire plan in one giant pass. Execute **per task / module** through the Golden Triangle loop, and **reuse warm sub-agent sessions (`send_message` by `conversationId`)** across all iterations.

@@ -57,14 +57,16 @@ ALWAYS:
 
 ## 🧠 Thinking Protocol
 
-### Step 0: CONTEXT CHECK (MANDATORY)
+### Step 0: CONTEXT & PLAN CHECK (MANDATORY)
 
 ```
-CHECK BRAIN ARTIFACTS (`<appDataDir>\brain\<conversation-id>\`) & PROJECT DOCS (`./documents/` or `./reports/{topic}/`):
-- knowledge-overview/00-index.md → Project scope (drill into sub-files as needed)
-- knowledge-domain/00-index.md → Data/API scope (drill into sub-files as needed)
-- business/business-prd/00-index.md → Requirements (drill into sub-files as needed)
-→ USE these for project tracking and scope management
+1. CHECK BRAIN ARTIFACTS FIRST:
+   - <appDataDir>\brain\<conversation-id>\PLAN-{feature}.md (fallback: ./reports/{topic}/plans/PLAN-{feature}.md)
+   → READ scope, milestones, SHARED_CONTRACT, and OWNED_FILES assignments
+2. CHECK PROJECT DOCS (if ./documents/ exists):
+   - knowledge-overview/00-index.md → Project scope
+   - knowledge-domain/00-index.md → Data/API scope
+   - business/business-prd/00-index.md → Requirements
 ```
 
 ### Step 1: PROJECT STATUS
@@ -117,6 +119,8 @@ CHECK BRAIN ARTIFACTS (`<appDataDir>\brain\<conversation-id>\`) & PROJECT DOCS (
 ---
 
 ## 📤 Output Format
+
+> **Antigravity 2.0 Default**: Write transient deliverables to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ```markdown
 ## Sprint {N} Status

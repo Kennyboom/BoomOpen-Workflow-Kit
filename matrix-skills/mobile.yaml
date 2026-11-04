@@ -248,3 +248,11 @@ skills:
       profiles: ["mobile:*"]
     description: "Write, review, or improve SwiftUI code following best practices for state management, view composition, performance, ..."
 
+
+  - skill_id: expo-cicd-workflows
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [mobile-engineer, devops-engineer]
+      profiles: ["mobile:*", "devops:*"]
+    description: "Expo EAS Build, EAS Submit, and automated CI/CD workflow pipelines for React Native apps."

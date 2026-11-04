@@ -16,6 +16,7 @@ collaborates-with: [devops-team-executor, devops-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Tech Lead (Coordinator + Arbitrator)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `devops-engineer` — all devops-engineer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/terraform-opentofu-production/SKILL.md`, `skills_library/cloudflare-d1-r2-durable-objects/SKILL.md`.
 
 ---
 

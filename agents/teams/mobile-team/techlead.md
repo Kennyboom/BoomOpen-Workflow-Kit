@@ -16,6 +16,7 @@ collaborates-with: [mobile-team-executor, mobile-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Tech Lead (Coordinator + Arbitrator)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `tech-lead` — all tech-lead capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/tauri-v2-rust-desktop-mobile/SKILL.md`, `skills_library/ios18-hig-material3-expressive/SKILL.md`.
 
 ---
 

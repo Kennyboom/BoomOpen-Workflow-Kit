@@ -63,6 +63,13 @@ handoffs:
 
 ---
 
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
+
+---
+
 ## 📂 PATHS & ARTIFACT ROUTING
 
 ```
@@ -116,6 +123,6 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | Running phases & DAG Fan-Out | `rules/PHASES.md` |
 | Delegating, `OWNED_FILES` & Warm Reuse | `rules/AGENTS.md` |
 | Golden Triangle (`:team`) | `rules/TEAMS.md` |
-| Skill resolution | `rules/SKILLS.md` |
+| Skill resolution (`1,460+` library / `1,470` indexed in `compact-index.json`) | `rules/SKILLS.md` |
 | Error recovery (`E0` auto-revive) / Lookup | `rules/ERRORS.md` / `rules/REFERENCE.md` |
 ```

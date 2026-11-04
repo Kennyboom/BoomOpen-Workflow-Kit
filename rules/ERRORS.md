@@ -1,6 +1,6 @@
 # 🛠️ ERRORS
 
-> **VERSION**: 5.4 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When errors occur | **PURPOSE**: Self-healing & Warm Sub-agent Auto-Revive Protocols
+> **VERSION**: 5.5 — Antigravity 2.0 Smart-Hybrid Edition | **LOAD**: When errors occur | **PURPOSE**: Self-healing & Warm Sub-agent Auto-Revive Protocols
 
 ---
 
@@ -90,7 +90,7 @@ on_limit: Escalate to user
 
 | Code | Anti-Pattern | Correct v5.5 Behavior |
 |------|--------------|-----------------------|
-| **A1** | Orchestrator coding in Mode B | In Mode B (`> 3 files`, `≥ 2 domains`, or `/cmd`), delegate to execution specialists; only execute directly in Mode A (`≤ 3 files`, no `/cmd`) |
+| **A1** | Orchestrator coding in Mode B | In Mode B (`> 2 files`, `≥ 2 domains`, or `/cmd`), delegate to execution specialists; only execute directly in Mode A (`≤ 2 files`, no `/cmd`) |
 | **A2** | Workflow gate bypass | Respect sequential DAG gates (`Plan` → `Implement` → `Test` → `Review`) |
 | **A3** | Silent halt | Notify user + provide actionable recovery options |
 | **A4** | Skipped verification step | Always run tests + `node cli/install.js check <dir>` before marking complete |

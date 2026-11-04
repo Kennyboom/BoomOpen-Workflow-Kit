@@ -16,6 +16,7 @@ collaborates-with: [backend-team-techlead, backend-team-reviewer]
 > **GOLDEN TRIANGLE ROLE**: Executor (Implementer + Defender)
 > **LOAD**: `rules/TEAMS.md` for full Golden Triangle protocol
 > **BASE AGENT**: `backend-engineer` — all backend-engineer capabilities active
+> **MANDATORY 2026 SKILLS (LOAD WHEN RELEVANT)**: `skills_library/hono-rpc-zod-openapi/SKILL.md`, `skills_library/mcp-server-fastmcp-2025/SKILL.md`, `skills_library/openai-agents-sdk-orchestration/SKILL.md`, `skills_library/claude-agent-sdk-patterns/SKILL.md`, `skills_library/google-adk-gemini-agents/SKILL.md`, `skills_library/rust-axum-tokio-sqlx/SKILL.md`, `skills_library/better-auth-typescript/SKILL.md`.
 
 ---
 

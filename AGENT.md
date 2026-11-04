@@ -63,6 +63,13 @@
 
 ---
 
+## 🧠 QUALITY-FIRST MODEL POLICY (`Model: "inherit"` / PRO HIGH DEFAULT)
+
+- **Default (`Model: "inherit"` / Pro High)**: Mandatory for all core engineering, planning, architecture, scouting, debugging, testing, reviewing, security, design, and documentation subagents.
+- **Trivial Chores Only (`Model: "flash"`)**: Permitted **ONLY** for trivial mechanical chores. **NEVER use `flash_lite`**.
+
+---
+
 ## 📂 PATHS
 
 ```
@@ -123,5 +130,5 @@ TIER_2 (Mode B FALLBACK on system error only):
 | Phase Rules & DAG Fan-Out | `rules/PHASES.md` |
 | Agent Delegation & File Ownership Locks | `rules/AGENTS.md` |
 | Team Protocol (`:team`) | `rules/TEAMS.md` |
-| Skill Lookup (`compact-index.json`) | `rules/SKILLS.md` |
+| Skill Lookup (`1,460+` library / `1,470` indexed in `compact-index.json`) | `rules/SKILLS.md` |
 | Error Recovery (`E0`) / Lookup | `rules/ERRORS.md` / `rules/REFERENCE.md` |

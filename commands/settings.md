@@ -54,8 +54,8 @@ Run `node <SETTINGS_CLI> settings status` (or read `~/.boomopen/settings.json` +
 | Category | Setting Key | Active Value | Description |
 |:---------|:------------|:-------------|:------------|
 | **Preset & Scope** | `preset` / `scope` | `⚡ smart-hybrid` (`global`) | Active profile & persistence tier (`global` or `project`) |
-| **1. Orchestration** | `execution.mode` | `auto` | `auto` (`≤3` files Mode A) \| `mode_a` \| `mode_b` \| `team` |
-| **1. Orchestration** | `execution.modeAThresholdFiles` | `3` | Max files for Mode A direct execution (`1` \| `3` \| `5` \| `10`) |
+| **1. Orchestration** | `execution.mode` | `auto` | `auto` (`≤2` files Mode A) \| `mode_a` \| `mode_b` \| `team` |
+| **1. Orchestration** | `execution.modeAThresholdFiles` | `2` | Max files for Mode A direct execution (`1` \| `2` \| `3` \| `5` \| `10`) |
 | **1. Orchestration** | `workflows.defaultVariant` | `auto` | Default `/cmd` variant (`auto` \| `fast` \| `hard` \| `team` \| `ask`) |
 | **1. Orchestration** | `workflows.naturalLanguageResearchTrigger` | `auto_team` | NL research/ideation → `/brainstorm:team` (`auto_team` \| `auto_hard` \| `ask_first` \| `off`) |
 | **2. Intelligence** | `models.subagentPolicy` | `quality_first` | `quality_first` (`inherit` Pro High) \| `strict_inherit` \| `balanced_speed` |
@@ -72,7 +72,7 @@ Run `node <SETTINGS_CLI> settings status` (or read `~/.boomopen/settings.json` +
 Invoke the platform's native **`ask_question`** tool (or numbered Markdown menu if `ask_question` is unavailable) with these structured choices:
 
 1. **Question 1 — Preset Profile or Execution Mode**:
-   - `⚡ Preset: smart-hybrid (Default: Mode A ≤3 files, NL Research → /brainstorm:team)`
+   - `⚡ Preset: smart-hybrid (Default: Mode A ≤2 files, NL Research → /brainstorm:team)`
    - `🚀 Preset: solo-fast (Force Mode A Direct Execution, :fast variant, relaxed 600/800 lines)`
    - `🧠 Preset: deep-architect (Force Mode B Orchestrator, :hard variant, strict 300/400 lines)`
    - `🔺 Preset: adversarial-team (Force Golden Triangle :team on all workflows, strict E2E)`
@@ -104,7 +104,7 @@ Invoke the platform's native **`ask_question`** tool (or numbered Markdown menu 
 | Setting Key | `smart-hybrid` (Default) | `solo-fast` | `deep-architect` | `adversarial-team` |
 |:------------|:------------------------:|:-----------:|:----------------:|:------------------:|
 | `execution.mode` | `auto` | `mode_a` | `mode_b` | `team` |
-| `execution.modeAThresholdFiles` | `3` | `10` | `1` | `1` |
+| `execution.modeAThresholdFiles` | `2` | `10` | `1` | `1` |
 | `workflows.defaultVariant` | `auto` | `fast` | `hard` | `team` |
 | `workflows.naturalLanguageResearchTrigger` | **`auto_team`** | `off` | `auto_hard` | **`auto_team`** |
 | `models.subagentPolicy` | `quality_first` | `balanced_speed` | `strict_inherit` | `strict_inherit` |

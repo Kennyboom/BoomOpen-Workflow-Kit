@@ -142,7 +142,7 @@ REPORTS   = ./reports/{topic}/ (only for /docs or explicit repo export)
 |-----|------|-------------|
 | **L1** | Zero-Latency Entry | Platform entrypoint (`GEMINI.md`) is pre-loaded; load `CORE`/`PHASES`/`AGENTS` on-demand for Mode B |
 | **L2** | Requirement Integrity | 100% fidelity, zero loss, parse EVERY requirement |
-| **L3** | Smart Threshold Gate | Mode A (≤ 3 files, 1 domain) executes directly; Mode B (> 3 files, ≥ 2 domains, `/cmd`) delegates |
+| **L3** | Smart Threshold Gate | Mode A (≤ 2 files, 1 domain) executes directly; Mode B (> 2 files, ≥ 2 domains, `/cmd`) delegates |
 | **L4** | Quality-First Model | Default `Model: "inherit"` (Pro High); `"flash"` only for trivial chores; NEVER `"flash_lite"` |
 | **L5** | DAG & Contract-First | Run independent phases concurrently; lock `SHARED_CONTRACT` + disjoint `OWNED_FILES` before parallel coding |
 | **L6** | Language Compliance | Respond in user's lang; code/comments in English; reports/docs/artifacts in user's input lang (technical terms in English) |
