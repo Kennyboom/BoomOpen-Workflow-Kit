@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>跨平台智慧混合 (Smart-Hybrid) AI 研發作業系統 — 21 位專家級智慧體、17 支黃金三角團隊與 1,430+ 按需技能寶庫</strong></p>
+  <p><strong>跨平台智慧混合 (Smart-Hybrid) AI 研發作業系統 — 21 位專家級智慧體、17 支黃金三角團隊與 1,450+ 按需技能寶庫</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 什麼是 BoomOpen Workflow Kit v5.5？
 
-**BoomOpen Workflow Kit v5.5（跨平台統一與智慧混合版）** 是一套開源的多代理人（Multi-Agent）研發作業系統，能將單一 AI 程式設計助手升級為由 **21 位專家級代理人（Specialist Agents）**、**17 支黃金三角對抗團隊（Golden Triangle Teams）**、**48 項核心技能（Core Skills）** 以及 **1,430+ 項專業領域技能庫（`skills_library`）** 組成的協同工程團隊。
+**BoomOpen Workflow Kit v5.5（跨平台統一與智慧混合版）** 是一套開源的多代理人（Multi-Agent）研發作業系統，能將單一 AI 程式設計助手升級為由 **21 位專家級代理人（Specialist Agents）**、**17 支黃金三角對抗團隊（Golden Triangle Teams）**、**48 項核心技能（Core Skills）** 以及 **1,450+ 項專業領域技能庫（`skills_library`）** 組成的協同工程團隊。
 
 不同於每次簡單提問都會產生冷啟動延遲的笨重框架，BoomOpen v5.5 引入了 **雙模式智慧複雜度閾值閘門（2-Mode Smart Complexity Threshold Gate）**：
 - **⚡ Mode A — 直接執行模式（0 秒冷啟動）**：針對日常問答、程式碼解釋、單一領域錯誤修復或僅觸及 **≤ 3 個檔案**（且未呼叫 `/cmd` 斜線指令）的明確修改，由主代理人**直接**執行、測試與驗證，同時嚴格執行 **務實雙層編碼規範（Pragmatic 2-Tier Coding Standards）** 與 **持續測試與除錯（Persistent Testing & Bug Fixing）**。
 - **🎻 Mode B — 嚴格多代理人編排模式（Strict Multi-Agent Orchestration）**：針對複雜功能開發（**> 3 個檔案** 或 **≥ 2 個領域**）或明確呼叫 `/cmd` 工作流指令時，啟動嚴格編排器模式，支援 **DAG 平行扇出（Parallel Fan-Out）**、**計畫直達執行者派發（Direct Plan-to-Executor Dispatch）**、**契約優先檔案鎖（`SHARED_CONTRACT` + `OWNED_FILES`）** 以及 **有狀態熱會話重用（`send_message`）**。
 
-- **📚 1,430+ 巨型專業技能庫（零上下文膨脹）**：包含 **48 項核心技能 (`skills/`)** 與 **1,430+ 項垂直領域技能 (`skills_library/`)**，預編譯至 `matrix-skills/compact-index.json` 實現 `O(1)` 兩步按需載入，讓 AI 瞬間掌握後端、前端、行動端、遊戲開發 (Unity/Unreal/Godot)、AI/ML、BigQuery/資料工程、雲端原生/DevOps 與 OWASP 資安，且絕不污染提示詞視窗。
+- **📚 1,450+ 巨型專業技能庫（零上下文膨脹）**：包含 **48 項核心技能 (`skills/`)** 與 **1,450+ 項垂直領域技能 (`skills_library/`)**，預編譯至 `matrix-skills/compact-index.json` 實現 `O(1)` 兩步按需載入，讓 AI 瞬間掌握後端、前端、行動端、遊戲開發 (Unity/Unreal/Godot)、AI/ML、BigQuery/資料工程、雲端原生/DevOps 與 OWASP 資安，且絕不污染提示詞視窗。
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 5-Whys (SPIE v3.0) 根因除錯與 100% 潔淨 Git 樹**：
    - `debugger` 透過 3 個優先級假設與 **5-Whys 因果鏈**（`Why 1 直接症狀` → `Why 5 系統性根因`）定位問題。所有暫態產物（`PLAN`、`DEBUG`、`TEST`、`REVIEW`、`MAILBOX`）預設寫入 `<appDataDir>\brain\<conversation-id>\`，保持專案 Git 工作區 100% 潔淨。
 6. **🩺 內建 CLI 診斷工具 (`doctor` & `check`) 與 O(1) 技能索引**：
-   - `npm run doctor` 自動檢驗五大平台配置、21 個代理人、51 個團隊檔案、72 個指令及 `matrix-skills/compact-index.json`（索引 `1,430+` 項技能）。`npm run check <dir>` 自動執行雙層程式碼規範檢查。
+   - `npm run doctor` 自動檢驗五大平台配置、21 個代理人、51 個團隊檔案、72 個指令及 `matrix-skills/compact-index.json`（索引 `1,450+` 項技能）。`npm run check <dir>` 自動執行雙層程式碼規範檢查。
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 1,430+ 專業技能寶庫（48 項核心技能 + 1,430+ 項領域技能）
+## 📚 1,450+ 專業技能寶庫（48 項核心技能 + 1,450+ 項領域技能）
 
 BoomOpen 內建開源界規模最大的 AI 工程技能矩陣之一，透過 **兩步 O(1) 漸進式檢索**（`<skills>` 核心匹配 → `matrix-skills/compact-index.json` 索引檢索 → 按需載入 `SKILL.md`）實現 **0 閒置 Token 消耗**：
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 個斜線指令工作流 (:fast, :hard, :team) + _ref/ 共享協定
 ├── documents/               # 雙層架構、領域模型、原始碼底座與編碼規範文件
 ├── i18n/                    # 多語言國際化文件目錄（包含 16 種主流語言的完整譯本）
-├── matrix-skills/           # 領域技能矩陣 YAML + 預編譯 compact-index.json (1,430+ 項技能)
+├── matrix-skills/           # 領域技能矩陣 YAML + 預編譯 compact-index.json (1,450+ 項技能)
 ├── platforms/               # 五大平台統一配置範本 (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # Mode B 按需載入核心規則 (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Python 自動化檢驗與輔助腳本 (checklist.py, verify_all.py 等)
 ├── skills/                  # 48 項核心技能 (clean-code, debugger, plan-writing, frontend-design 等)
-├── skills_library/          # 1,430+ 項專業領域按需載入技能庫（透過兩步快速檢索載入）
+├── skills_library/          # 1,450+ 項專業領域按需載入技能庫（透過兩步快速檢索載入）
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

@@ -122,5 +122,5 @@ Codex registers all **21 specialist agents** in `~/.codex/config.toml` (`~/.code
 | `PHASES.md` | DAG Parallel Fan-Out, Contract-First dispatch, Direct Plan execution |
 | `AGENTS.md` | Tiered execution, Warm Session Reuse, `OWNED_FILES` locks |
 | `TEAMS.md` | Golden Triangle team execution protocol (`:team` variants) |
-| `SKILLS.md` | Fast 2-step progressive skill resolution (`compact-index.json`) |
+| `SKILLS.md` | Fast 2-step progressive skill resolution (`compact-index.json` — 1,450+ skills) |
 | `ERRORS.md` / `REFERENCE.md` | Error recovery (`E0` auto-revive) & quick lookup tables |

@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Système d&#39;Exploitation IA Smart-Hybrid Multiplateforme — 21 Agents Spécialistes, 17 Équipes Triangle d&#39;Or &amp; Coffre de 1 430+ Compétences à la Demande</strong></p>
+  <p><strong>Système d&#39;Exploitation IA Smart-Hybrid Multiplateforme — 21 Agents Spécialistes, 17 Équipes Triangle d&#39;Or &amp; Coffre de 1 450+ Compétences à la Demande</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 Qu’est-ce que BoomOpen Workflow Kit v5.5 ?
 
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** est un système d’exploitation multi-agents open-source qui transforme un simple assistant de codage IA en une véritable organisation d’ingénierie coordonnée réunissant **21 agents spécialistes**, **17 équipes contradictoires Golden Triangle**, **48 compétences clés (Core Skills)** et **plus de 1 430 compétences spécialisées (`skills_library`)**.
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** est un système d’exploitation multi-agents open-source qui transforme un simple assistant de codage IA en une véritable organisation d’ingénierie coordonnée réunissant **21 agents spécialistes**, **17 équipes contradictoires Golden Triangle**, **48 compétences clés (Core Skills)** et **plus de 1 450 compétences spécialisées (`skills_library`)**.
 
 Contrairement aux modèles rigides ou aux surcouches lourdes qui imposent une latence de démarrage à froid à chaque question simple, BoomOpen v5.5 introduit une **Porte de Complexité Intelligente à 2 Modes (2-Mode Smart Complexity Threshold Gate)** :
 - **⚡ Mode A — Exécution Directe (Démarrage à froid 0s)** : Les questions/réponses (Q&A), explications de code, corrections de bugs mono-domaine ou modifications ciblées touchant **≤ 3 fichiers** (sans commande `/cmd`) sont exécutées, testées et vérifiées **directement** par l’agent principal dans le respect des **Standards de Code Pragmatiques à 2 Niveaux** et des **Tests & Corrections Persistants**.
 - **🎻 Mode B — Orchestration Multi-Agents Stricte** : Les fonctionnalités complexes (**> 3 fichiers** ou **≥ 2 domaines**) ou les commandes explicites `/cmd` activent le mode Orchestrateur strict avec **Déploiement Parallèle DAG (Parallel Fan-Out)**, **Distribution Directe du Plan à l’Exécutant**, **Verrouillage de Fichiers par Contrat (`SHARED_CONTRACT` + `OWNED_FILES`)** et **Réutilisation à Chaud des Sous-agents (`send_message`)**.
 
-- **📚 Coffre Massif de 1 430+ Compétences sans Gonflement du Contexte** : Réunit **48 Compétences Clés (`skills/`)** et **1 430+ Compétences Spécialisées (`skills_library/`)** précompilées dans `matrix-skills/compact-index.json` pour une recherche `O(1)` en 2 étapes — offrant une maîtrise instantanée en Backend, Frontend, Mobile, Jeux (Unity/Unreal/Godot), IA/ML, BigQuery/Data, Cloud/DevOps et Cybersécurité OWASP sans saturer la fenêtre de prompt.
+- **📚 Coffre Massif de 1 450+ Compétences sans Gonflement du Contexte** : Réunit **48 Compétences Clés (`skills/`)** et **1 450+ Compétences Spécialisées (`skills_library/`)** précompilées dans `matrix-skills/compact-index.json` pour une recherche `O(1)` en 2 étapes — offrant une maîtrise instantanée en Backend, Frontend, Mobile, Jeux (Unity/Unreal/Godot), IA/ML, BigQuery/Data, Cloud/DevOps et Cybersécurité OWASP sans saturer la fenêtre de prompt.
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 Débogage Cause Racine 5-Whys (SPIE v3.0) & Arbre Git 100% Propre** :
    - `debugger` analyse chaque bug via 3 hypothèses classées et une chaîne causale **5-Whys** (`Pourquoi 1 Symptôme` → `Pourquoi 5 Cause Racine Systémique`). Les artefacts transitoires (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) sont écrits dans `<appDataDir>\brain\<conversation-id>\` afin de garder l’arbre Git 100% propre.
 6. **🩺 Diagnostics CLI Intégrés (`doctor` & `check`) & Index de Compétences O(1)** :
-   - `npm run doctor` valide les 5 plateformes, 21 agents, 51 fichiers d’équipe, 72 commandes et `matrix-skills/compact-index.json` (`1 430+` compétences indexées). `npm run check <dir>` audite les standards de code de Niveau 1 et Niveau 2.
+   - `npm run doctor` valide les 5 plateformes, 21 agents, 51 fichiers d’équipe, 72 commandes et `matrix-skills/compact-index.json` (`1 450+` compétences indexées). `npm run check <dir>` audite les standards de code de Niveau 1 et Niveau 2.
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 Coffre de 1 430+ Compétences (48 Clés + 1 430+ de Bibliothèque)
+## 📚 Coffre de 1 450+ Compétences (48 Clés + 1 450+ de Bibliothèque)
 
 BoomOpen intègre l'un des plus vastes écosystèmes de compétences d'ingénierie open source, conçu pour **0 coût de tokens au repos** grâce à la **Résolution Progressive O(1) en 2 Étapes** (`<skills>` → `matrix-skills/compact-index.json` → chargement ciblé de `SKILL.md` à la demande) :
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 workflows de commandes Slash (:fast, :hard, :team) + protocoles _ref/
 ├── documents/               # Documentation à 2 niveaux (Architecture, Domaine, Base de Code & Standards)
 ├── i18n/                    # Documentation multilingue (16 traductions complètes du README)
-├── matrix-skills/           # Matrices YAML de compétences par domaine + compact-index.json précompilé (1 430+ compétences)
+├── matrix-skills/           # Matrices YAML de compétences par domaine + compact-index.json précompilé (1 450+ compétences)
 ├── platforms/               # Modèles unifiés pour les 5 plateformes (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # Règles Mode B chargées à la demande (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Scripts Python d’automatisation et de vérification (checklist.py, verify_all.py, etc.)
 ├── skills/                  # 48 Compétences Clés (clean-code, debugger, plan-writing, frontend-design, etc.)
-├── skills_library/          # Plus de 1 430 compétences spécialisées chargées à la demande en 2 étapes
+├── skills_library/          # Plus de 1 450 compétences spécialisées chargées à la demande en 2 étapes
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

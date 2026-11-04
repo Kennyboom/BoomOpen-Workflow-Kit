@@ -133,5 +133,5 @@ ARTIFACTS = <appDataDir>\brain\<conversation-id>\
 | `PHASES.md` | Running multi-phase workflows, DAG Parallel Fan-Out & Contract-First dispatch |
 | `AGENTS.md` | Delegating to specialist sub-agents, File Ownership Locks & Warm Reuse |
 | `TEAMS.md` | Executing `:team` Golden Triangle adversarial workflows |
-| `SKILLS.md` | Resolving niche skills via 2-step lookup (`<skills>` → `compact-index.json` / `skill-seeker`) |
+| `SKILLS.md` | Resolving 1,450+ niche skills via 2-step lookup (`<skills>` → `compact-index.json` / `skill-seeker`) |
 | `ERRORS.md` / `REFERENCE.md` | Error recovery (`E0` warm auto-revive) or fast lookup tables |

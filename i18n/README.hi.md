@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>मल्टी-प्लेटफ़ॉर्म स्मार्ट-हाइब्रिड AI वर्कफ़ोर्स OS — 21 विशेषज्ञ एजेंट, 17 गोल्डन ट्रायंगल टीमें और 1,430+ ऑन-डिमांड स्किल्स वॉल्ट</strong></p>
+  <p><strong>मल्टी-प्लेटफ़ॉर्म स्मार्ट-हाइब्रिड AI वर्कफ़ोर्स OS — 21 विशेषज्ञ एजेंट, 17 गोल्डन ट्रायंगल टीमें और 1,450+ ऑन-डिमांड स्किल्स वॉल्ट</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 BoomOpen Workflow Kit v5.5 क्या है?
 
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** एक ओपन-सोर्स मल्टी-एजेंट ऑपरेटिंग सिस्टम है जो एक सिंगल AI कोडिंग असिस्टेंट को **21 विशेषज्ञ एजेंटों (Specialist Agents)**, **17 गोल्डन ट्रायंगल टीमों (Golden Triangle Teams)**, **48 कोर स्किल्स (Core Skills)** और **1,430+ विशिष्ट लाइब्रेरी स्किल्स (`skills_library`)** के एक समन्वित इंजीनियरिंग संगठन में बदल देता है।
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** एक ओपन-सोर्स मल्टी-एजेंट ऑपरेटिंग सिस्टम है जो एक सिंगल AI कोडिंग असिस्टेंट को **21 विशेषज्ञ एजेंटों (Specialist Agents)**, **17 गोल्डन ट्रायंगल टीमों (Golden Triangle Teams)**, **48 कोर स्किल्स (Core Skills)** और **1,450+ विशिष्ट लाइब्रेरी स्किल्स (`skills_library`)** के एक समन्वित इंजीनियरिंग संगठन में बदल देता है।
 
 हर छोटे सवाल पर कोल्ड-स्टार्ट विलंब पैदा करने वाले भारी-भरकम एजेंट रैपर्स के विपरीत, BoomOpen v5.5 **2-मोड स्मार्ट कॉम्प्लेक्सिटी थ्रेशोल्ड गेट (2-Mode Smart Complexity Threshold Gate)** प्रस्तुत करता है:
 - **⚡ Mode A — प्रत्यक्ष निष्पादन (0 सेकंड कोल्ड-स्टार्ट)**: सामान्य प्रश्नोत्तर (Q&A), कोड व्याख्या, सिंगल-डोमेन बग फिक्स, या **≤ 3 फ़ाइलों** (बिना `/cmd` कमांड) को छूने वाले स्पष्ट बदलाव मुख्य एजेंट द्वारा **सीधे** निष्पादित, परीक्षित और सत्यापित किए जाते हैं, जिसमें **व्यावहारिक 2-स्तरीय कोडिंग मानक (Pragmatic 2-Tier Coding Standards)** और **सतत परीक्षण एवं बग निवारण** लागू होते हैं।
 - **🎻 Mode B — सख्त मल्टी-एजेंट ऑर्केस्ट्रेशन**: जटिल फ़ीचर्स (**> 3 फ़ाइलें** या **≥ 2 डोमेन**) या स्पष्ट `/cmd` वर्कफ़्लो कमांड **DAG समानांतर फैन-आउट**, **प्लान-टू-एग्जीक्यूटर डायरेक्ट डिस्पैच**, **अनुबंध-प्रथम फ़ाइल लॉक (`SHARED_CONTRACT` + `OWNED_FILES`)** और **वॉर्म सब-एजेंट रीयूज़ (`send_message`)** के साथ सख्त ऑर्केस्ट्रेटर मोड सक्रिय करते हैं।
 
-- **📚 ज़ीरो कॉन्टेक्स्ट ब्लोट के साथ 1,430+ विशाल स्किल्स वॉल्ट**: इसमें **48 कोर स्किल्स (`skills/`)** और **1,430+ विशिष्ट लाइब्रेरी स्किल्स (`skills_library/`)** शामिल हैं, जिन्हें `matrix-skills/compact-index.json` में प्री-कम्पाइल किया गया है ताकि `O(1)` 2-चरणीय लुकअप से प्रॉम्प्ट विंडो को भरे बिना Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps और OWASP सुरक्षा में तुरंत महारत मिल सके।
+- **📚 ज़ीरो कॉन्टेक्स्ट ब्लोट के साथ 1,450+ विशाल स्किल्स वॉल्ट**: इसमें **48 कोर स्किल्स (`skills/`)** और **1,450+ विशिष्ट लाइब्रेरी स्किल्स (`skills_library/`)** शामिल हैं, जिन्हें `matrix-skills/compact-index.json` में प्री-कम्पाइल किया गया है ताकि `O(1)` 2-चरणीय लुकअप से प्रॉम्प्ट विंडो को भरे बिना Backend, Frontend, Mobile, Game Dev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps और OWASP सुरक्षा में तुरंत महारत मिल सके।
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 5-Whys (SPIE v3.0) मूल-कारण डीबगिंग और 100% स्वच्छ Git ट्री**:
    - `debugger` 3 क्रमबद्ध परिकल्पनाओं और **5-Whys कारण श्रृंखला** (`Why 1 लक्षण` → `Why 5 प्रणालीगत मूल कारण`) के माध्यम से बग की जांच करता है। सभी अस्थायी रिपोर्ट (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) `<appDataDir>\brain\<conversation-id>\` में सहेजी जाती हैं जिससे Git वर्किंग ट्री 100% साफ रहता है।
 6. **🩺 इन-बिल्ट CLI डायग्नोस्टिक्स (`doctor` & `check`) और O(1) स्किल इंडेक्स**:
-   - `npm run doctor` सभी 5 प्लेटफ़ॉर्म बंडलों, 21 एजेंटों, 51 टीम फ़ाइलों, 72 कमांड्स और `matrix-skills/compact-index.json` (`1,430+` स्किल्स) की जांच करता है। `npm run check <dir>` टियर 1 और टियर 2 कोडिंग मानकों का ऑडिट करता है।
+   - `npm run doctor` सभी 5 प्लेटफ़ॉर्म बंडलों, 21 एजेंटों, 51 टीम फ़ाइलों, 72 कमांड्स और `matrix-skills/compact-index.json` (`1,450+` स्किल्स) की जांच करता है। `npm run check <dir>` टियर 1 और टियर 2 कोडिंग मानकों का ऑडिट करता है।
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 1,430+ स्किल्स वॉल्ट (48 कोर + 1,430+ लाइब्रेरी स्किल्स)
+## 📚 1,450+ स्किल्स वॉल्ट (48 कोर + 1,450+ लाइब्रेरी स्किल्स)
 
 BoomOpen ओपन-सोर्स के सबसे बड़े इंजीनियरिंग स्किल इकोसिस्टम में से एक के साथ आता है — जो **2-चरणीय O(1) प्रोग्रेसिव स्किल लुकअप** (`<skills>` → `matrix-skills/compact-index.json` → ज़रूरत पड़ने पर सटीक `SKILL.md` लोड) के माध्यम से **0 निष्क्रिय टोकन खर्च** सुनिश्चित करता है:
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 स्लैश कमांड वर्कफ़्लो (:fast, :hard, :team) + _ref/ प्रोटोकॉल
 ├── documents/               # 2-स्तरीय आर्किटेक्चर, डोमेन, सोर्स-बेस और कोडिंग मानक दस्तावेज़
 ├── i18n/                    # बहुभाषी दस्तावेज़ीकरण (16 प्रमुख भाषाओं में पूर्ण README अनुवाद)
-├── matrix-skills/           # डोमेन YAML स्किल मैट्रिक्स + प्री-कम्पाइल्ड compact-index.json (1,430+ स्किल्स)
+├── matrix-skills/           # डोमेन YAML स्किल मैट्रिक्स + प्री-कम्पाइल्ड compact-index.json (1,450+ स्किल्स)
 ├── platforms/               # सभी 5 प्लेटफ़ॉर्म के लिए एकीकृत टेम्पलेट्स (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # Mode B ऑन-डिमांड नियम (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Python ऑटोमेशन और सत्यापन स्क्रिप्ट्स (checklist.py, verify_all.py आदि)
 ├── skills/                  # 48 कोर स्किल्स (clean-code, debugger, plan-writing, frontend-design आदि)
-├── skills_library/          # 2-चरण फास्ट लुकअप द्वारा ऑन-डिमांड लोड होने वाली 1,430+ विशिष्ट स्किल्स
+├── skills_library/          # 2-चरण फास्ट लुकअप द्वारा ऑन-डिमांड लोड होने वाली 1,450+ विशिष्ट स्किल्स
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>マルチプラットフォーム対応 スマートハイブリッド AI 開発 OS — 21 名の専門エージェント、17 組のゴールデントライアングル・チーム &amp; 1,430+ オンデマンドスキル宝庫</strong></p>
+  <p><strong>マルチプラットフォーム対応 スマートハイブリッド AI 開発 OS — 21 名の専門エージェント、17 組のゴールデントライアングル・チーム &amp; 1,450+ オンデマンドスキル宝庫</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 BoomOpen Workflow Kit v5.5 とは？
 
-**BoomOpen Workflow Kit v5.5（Multi-Platform Unified & Smart-Hybrid Edition）** は、単一の AI コーディングアシスタントを **21 名の専門エージェント（Specialist Agents）**、**17 組のゴールデントライアングル・チーム（Golden Triangle Teams）**、**48 個のコアスキル（Core Skills）**、および **1,430 以上の専門ライブラリスキル（`skills_library`）** から成るエンジニアリング組織へと進化させるオープンソースのマルチエージェント OS です。
+**BoomOpen Workflow Kit v5.5（Multi-Platform Unified & Smart-Hybrid Edition）** は、単一の AI コーディングアシスタントを **21 名の専門エージェント（Specialist Agents）**、**17 組のゴールデントライアングル・チーム（Golden Triangle Teams）**、**48 個のコアスキル（Core Skills）**、および **1,450 以上の専門ライブラリスキル（`skills_library`）** から成るエンジニアリング組織へと進化させるオープンソースのマルチエージェント OS です。
 
 簡単な質問にも毎回コールドスタート遅延を発生させていた従来の重いエージェントラッパーとは異なり、BoomOpen v5.5 は **2モード・スマート複雑度ゲート（2-Mode Smart Complexity Threshold Gate）** を導入しています：
 - **⚡ Mode A — 直接実行モード（コールドスタート 0 秒）**：日常的な Q&A、コード解説、単一ドメインのバグ修正、または **3 ファイル以下**（`/cmd` スラッシュコマンドなし）の明確な変更は、メインエージェントが**直接**実行・テスト・検証し、**実践的 2 階層コーディング規約（Pragmatic 2-Tier Coding Standards）** と **徹底的な検証・バグ修正（Persistent Testing & Bug Fixing）** を適用します。
 - **🎻 Mode B — 厳格マルチエージェント・オーケストレーション（Strict Multi-Agent Orchestration）**：複雑な機能開発（**4 ファイル以上** または **2 ドメイン以上**）や明示的な `/cmd` ワークフロー実行時には、**DAG 並列ファンアウト（Parallel Fan-Out）**、**計画から実行役への直接ディスパッチ（Direct Plan-to-Executor Dispatch）**、**契約ファーストのファイルロック（`SHARED_CONTRACT` + `OWNED_FILES`）**、および **ウォームサブエージェント再利用（`send_message`）** を駆使した厳格なオーケストレーターモードを起動します。
 
-- **📚 コンテキスト肥大化ゼロの 1,430+ スキル宝庫**：**48 個のコアスキル (`skills/`)** と **1,430 以上の専門ライブラリスキル (`skills_library/`)** を `matrix-skills/compact-index.json` に事前コンパイル。`O(1)` の 2 ステップ検索により、プロンプトウィンドウを圧迫することなくバックエンド、フロントエンド、モバイル、ゲーム開発 (Unity/Unreal/Godot)、AI/ML、BigQuery/データ基盤、クラウド/DevOps、OWASP セキュリティの専門知識を即座に注入します。
+- **📚 コンテキスト肥大化ゼロの 1,450+ スキル宝庫**：**48 個のコアスキル (`skills/`)** と **1,450 以上の専門ライブラリスキル (`skills_library/`)** を `matrix-skills/compact-index.json` に事前コンパイル。`O(1)` の 2 ステップ検索により、プロンプトウィンドウを圧迫することなくバックエンド、フロントエンド、モバイル、ゲーム開発 (Unity/Unreal/Godot)、AI/ML、BigQuery/データ基盤、クラウド/DevOps、OWASP セキュリティの専門知識を即座に注入します。
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 5-Whys (SPIE v3.0) 根本原因デバッグ & 100% クリーンな Git ツリー**：
    - `debugger` は最低 3 つの仮説検証と **5-Whys 因果チェーン**（`Why 1 直接の症状` → `Why 5 システム的根本原因`）でバグを追跡します。一時成果物（`PLAN`、`DEBUG`、`TEST`、`REVIEW`、`MAILBOX`）は `<appDataDir>\brain\<conversation-id>\` に出力され、Git 作業ツリーを 100% クリーンに保ちます。
 6. **🩺 組み込み CLI 診断 (`doctor` & `check`) & O(1) スキルインデックス**：
-   - `npm run doctor` は 5 つのプラットフォーム資産、21 エージェント、51 チームファイル、72 コマンド、および `matrix-skills/compact-index.json`（`1,430+` スキル）を検証します。`npm run check <dir>` は Tier 1・Tier 2 コーディング規約を自動監査します。
+   - `npm run doctor` は 5 つのプラットフォーム資産、21 エージェント、51 チームファイル、72 コマンド、および `matrix-skills/compact-index.json`（`1,450+` スキル）を検証します。`npm run check <dir>` は Tier 1・Tier 2 コーディング規約を自動監査します。
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 1,430+ スキル宝庫（48 コアスキル + 1,430+ 専門ライブラリスキル）
+## 📚 1,450+ スキル宝庫（48 コアスキル + 1,450+ 専門ライブラリスキル）
 
 BoomOpen は、オープンソース最大級のエンジニアリングスキル体系を搭載しており、**2 ステップ O(1) オンデマンド検索**（`<skills>` コア確認 → `matrix-skills/compact-index.json` 検索 → 必要な `SKILL.md` のみ読み込み）により **待機時トークン消費ゼロ** を実現しています：
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 のスラッシュコマンドワークフロー (:fast, :hard, :team) + _ref/ プロトコル
 ├── documents/               # 2階層アーキテクチャ、ドメイン、ソースベース、コーディング規約ドキュメント
 ├── i18n/                    # 多言語ドキュメント（主要 16 言語の完全翻訳版 README）
-├── matrix-skills/           # ドメイン別 YAML スキルマトリクス + 事前コンパイル済み compact-index.json (1,430+ スキル)
+├── matrix-skills/           # ドメイン別 YAML スキルマトリクス + 事前コンパイル済み compact-index.json (1,450+ スキル)
 ├── platforms/               # 5大プラットフォーム統合テンプレート (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # Mode B オンデマンドルール (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Python 自動検証・補助スクリプト (checklist.py, verify_all.py など)
 ├── skills/                  # 48 のコアスキル (clean-code, debugger, plan-writing, frontend-design など)
-├── skills_library/          # 2ステップ高速検索でオンデマンド読み込みされる 1,430+ の専門スキルライブラリ
+├── skills_library/          # 2ステップ高速検索でオンデマンド読み込みされる 1,450+ の専門スキルライブラリ
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

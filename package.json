@@ -1,7 +1,7 @@
 {
   "name": "@boomopen/workflow-kit",
   "version": "5.5.0",
-  "description": "BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition) - 100% unified orchestration across Antigravity, Claude Code, Codex, Cursor, and GitHub Copilot with Pragmatic 2-Tier Coding Standards, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse, Contract-First Parallel Fan-Out, and CLI doctor/check.",
+  "description": "BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition) - 100% unified orchestration across Antigravity, Claude Code, Codex, Cursor, and GitHub Copilot with 21 Specialist Agents, 17 Golden Triangle Teams, 1,450+ On-Demand Skills Vault, Pragmatic 2-Tier Coding Standards, Direct Plan-to-Executor Dispatch, Warm Sub-agent Reuse, and CLI doctor/check.",
   "main": "cli/install.js",
   "bin": {
     "boomopen": "./cli/install.js"

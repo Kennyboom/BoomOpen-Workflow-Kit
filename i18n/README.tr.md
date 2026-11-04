@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Çok Platformlu Smart-Hybrid Yapay Zeka İş Gücü İS — 21 Uzman Ajan, 17 Altın Üçgen Ekibi ve 1.430+ İsteğe Bağlı Yetenek Kasası</strong></p>
+  <p><strong>Çok Platformlu Smart-Hybrid Yapay Zeka İş Gücü İS — 21 Uzman Ajan, 17 Altın Üçgen Ekibi ve 1.450+ İsteğe Bağlı Yetenek Kasası</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 BoomOpen Workflow Kit v5.5 Nedir?
 
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)**, tek bir yapay zeka kodlama asistanını **21 uzman ajan (Specialist Agents)**, **17 çapraz denetimli Altın Üçgen ekibi (Golden Triangle Teams)**, **48 temel yetenek (Core Skills)** ve **1.430’dan fazla niş kütüphane yeteneğinden (`skills_library`)** oluşan koordine bir mühendislik organizasyonuna dönüştüren açık kaynaklı bir çoklu ajan işletim sistemidir.
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)**, tek bir yapay zeka kodlama asistanını **21 uzman ajan (Specialist Agents)**, **17 çapraz denetimli Altın Üçgen ekibi (Golden Triangle Teams)**, **48 temel yetenek (Core Skills)** ve **1.450’dan fazla niş kütüphane yeteneğinden (`skills_library`)** oluşan koordine bir mühendislik organizasyonuna dönüştüren açık kaynaklı bir çoklu ajan işletim sistemidir.
 
 Her basit soruda soğuk başlatma gecikmesine yol açan hantal ajan sarmalayıcılarının aksine, BoomOpen v5.5 **2 Modlu Akıllı Karmaşıklık Eşik Kapısını (2-Mode Smart Complexity Threshold Gate)** sunar:
 - **⚡ Mod A — Doğrudan Yürütme (0 sn Soğuk Başlatma)**: Basit soru-cevaplar (Q&A), kod açıklamaları, tek alanlı hata düzeltmeleri veya **≤ 3 dosyaya** dokunan net değişiklikler (`/cmd` komutu olmadan), **Pragmatik 2 Katmanlı Kodlama Standartları** ve **Kalıcı Test ve Hata Düzeltme** kuralları uygulanarak ana ajan tarafından **doğrudan** yürütülür, test edilir ve doğrulanır.
 - **🎻 Mod B — Katı Çoklu Ajan Orkestrasyonu**: Karmaşık özellikler (**> 3 dosya** veya **≥ 2 alan**) ya da açık `/cmd` iş akışı komutları; **DAG Paralel Dağıtım (Parallel Fan-Out)**, **Plandan Uygulayıcıya Doğrudan Görevlendirme**, **Sözleşme Öncelikli Dosya Kilitleri (`SHARED_CONTRACT` + `OWNED_FILES`)** ve **Sıcak Alt Ajan Yeniden Kullanımı (`send_message`)** özelliklerine sahip katı Orkestratör modunu etkinleştirir.
 
-- **📚 Sıfır Bağlam Şişkinliği ile 1.430+ Devasa Yetenek Kasası**: `matrix-skills/compact-index.json` içinde önceden derlenmiş **48 Çekirdek Yetenek (`skills/`)** ve **1.430+ Niş Kütüphane Yeteneği (`skills_library/`)** ile 2 adımlı `O(1)` arama sunar — istem penceresini kirletmeden Backend, Frontend, Mobil, Oyun Geliştirme (Unity/Unreal/Godot), AI/ML, BigQuery/Veri, Bulut/DevOps ve OWASP Siber Güvenlik alanlarında anında uzmanlık sağlar.
+- **📚 Sıfır Bağlam Şişkinliği ile 1.450+ Devasa Yetenek Kasası**: `matrix-skills/compact-index.json` içinde önceden derlenmiş **48 Çekirdek Yetenek (`skills/`)** ve **1.450+ Niş Kütüphane Yeteneği (`skills_library/`)** ile 2 adımlı `O(1)` arama sunar — istem penceresini kirletmeden Backend, Frontend, Mobil, Oyun Geliştirme (Unity/Unreal/Godot), AI/ML, BigQuery/Veri, Bulut/DevOps ve OWASP Siber Güvenlik alanlarında anında uzmanlık sağlar.
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 5-Whys (SPIE v3.0) Kök Neden Hata Ayıklama ve %100 Temiz Git Ağacı**:
    - `debugger`, her hatayı en az 3 derecelendirilmiş hipotez ve **5-Whys nedensellik zinciri** (`Neden 1 Belirti` → `Neden 5 Sistemik Kök Neden`) üzerinden izler. Geçici çıktılar (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) öncelikle `<appDataDir>\brain\<conversation-id>\` dizinine yazılarak Git çalışma ağacı %100 temiz tutulur.
 6. **🩺 Yerleşik CLI Tanılama (`doctor` & `check`) ve O(1) Yetenek İndeksi**:
-   - `npm run doctor` tüm 5 platform paketini, 21 ajanı, 51 ekip dosyasını, 72 komutu ve `matrix-skills/compact-index.json` (`1.430+` yetenek) dosyasını doğrular. `npm run check <dir>` Katman 1 ve Katman 2 standartlarını otomatik olarak denetler.
+   - `npm run doctor` tüm 5 platform paketini, 21 ajanı, 51 ekip dosyasını, 72 komutu ve `matrix-skills/compact-index.json` (`1.450+` yetenek) dosyasını doğrular. `npm run check <dir>` Katman 1 ve Katman 2 standartlarını otomatik olarak denetler.
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 1.430+ Yetenek Kasası (48 Çekirdek + 1.430+ Kütüphane Yeteneği)
+## 📚 1.450+ Yetenek Kasası (48 Çekirdek + 1.450+ Kütüphane Yeteneği)
 
 BoomOpen, **2 Adımlı O(1) Aşamalı Yetenek Çözümlemesi** (`<skills>` → `matrix-skills/compact-index.json` → yalnızca gereken `SKILL.md` dosyasını yükleme) sayesinde **boşta 0 token maliyeti** sunan en büyük açık kaynaklı mühendislik yetenek ekosistemlerinden birine sahiptir:
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 Slash komutu iş akışı (:fast, :hard, :team) + _ref/ protokolleri
 ├── documents/               # 2 katmanlı Mimari, Alan, Kaynak Kod ve Kodlama Standartları dokümantasyonu
 ├── i18n/                    # Çok dilli dokümantasyon (16 dilde eksiksiz README çevirisi)
-├── matrix-skills/           # Alan bazlı YAML yetenek matrisleri + önceden derlenmiş compact-index.json (1.430+ yetenek)
+├── matrix-skills/           # Alan bazlı YAML yetenek matrisleri + önceden derlenmiş compact-index.json (1.450+ yetenek)
 ├── platforms/               # 5 platform için birleşik şablonlar (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # İsteğe bağlı yüklenen Mod B kuralları (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Python otomasyon ve doğrulama betikleri (checklist.py, verify_all.py vb.)
 ├── skills/                  # 48 Temel Yetenek (clean-code, debugger, plan-writing, frontend-design vb.)
-├── skills_library/          # 2 adımlı hızlı arama ile isteğe bağlı yüklenen 1.430+ niş yetenek kütüphanesi
+├── skills_library/          # 2 adımlı hızlı arama ile isteğe bağlı yüklenen 1.450+ niş yetenek kütüphanesi
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

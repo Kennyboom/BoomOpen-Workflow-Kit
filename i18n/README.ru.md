@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>Кроссплатформенная Smart-Hybrid ИИ-ОС для разработки — 21 агент-специалист, 17 команд «Золотого треугольника» и хранилище из 1 430+ навыков по требованию</strong></p>
+  <p><strong>Кроссплатформенная Smart-Hybrid ИИ-ОС для разработки — 21 агент-специалист, 17 команд «Золотого треугольника» и хранилище из 1 450+ навыков по требованию</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 Что такое BoomOpen Workflow Kit v5.5?
 
-**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** — это мультиагентная операционная система с открытым исходным кодом, превращающая одного ИИ-ассистента по программированию в слаженную инженерную организацию из **21 агента-специалиста**, **17 состязательных команд «Золотого треугольника» (Golden Triangle Teams)**, **48 базовых навыков (Core Skills)** и **более 1 430 узкоспециализированных навыков (`skills_library`)**.
+**BoomOpen Workflow Kit v5.5 (Multi-Platform Unified & Smart-Hybrid Edition)** — это мультиагентная операционная система с открытым исходным кодом, превращающая одного ИИ-ассистента по программированию в слаженную инженерную организацию из **21 агента-специалиста**, **17 состязательных команд «Золотого треугольника» (Golden Triangle Teams)**, **48 базовых навыков (Core Skills)** и **более 1 450 узкоспециализированных навыков (`skills_library`)**.
 
 В отличие от громоздких обёрток, создающих задержку холодного старта при каждом простом вопросе, BoomOpen v5.5 внедряет **2-режимный умный шлюз сложности (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ Режим A — Прямое выполнение (0 с холодного старта)**: Вопросы и ответы (Q&A), объяснение кода, локальные исправления багов или понятные изменения в **≤ 3 файлах** (без вызова `/cmd`) выполняются, тестируются и проверяются **напрямую** основным агентом с соблюдением **Прагматичных двухуровневых стандартов кодирования** и **Настойчивого тестирования и исправления ошибок**.
 - **🎻 Режим B — Строгая мультиагентная оркестрация**: Сложные задачи (**> 3 файлов** или **≥ 2 домена**) либо явные команды `/cmd` активируют режим строгого Оркестратора с **параллельным DAG-разветвлением (Parallel Fan-Out)**, **прямой передачей плана исполнителям (Direct Plan-to-Executor Dispatch)**, **контрактной блокировкой файлов (`SHARED_CONTRACT` + `OWNED_FILES`)** и **повторным использованием «тёплых» субагентов (`send_message`)**.
 
-- **📚 Массивное хранилище из 1 430+ навыков без раздувания контекста**: объединяет **48 базовых навыков (`skills/`)** и **1 430+ узкоспециализированных навыков (`skills_library/`)**, предкомпилированных в `matrix-skills/compact-index.json` для двухшагового `O(1)` поиска — мгновенная экспертиза в Backend, Frontend, Mobile, GameDev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps и безопасности OWASP без засорения окна промпта.
+- **📚 Массивное хранилище из 1 450+ навыков без раздувания контекста**: объединяет **48 базовых навыков (`skills/`)** и **1 450+ узкоспециализированных навыков (`skills_library/`)**, предкомпилированных в `matrix-skills/compact-index.json` для двухшагового `O(1)` поиска — мгновенная экспертиза в Backend, Frontend, Mobile, GameDev (Unity/Unreal/Godot), AI/ML, BigQuery/Data, Cloud/DevOps и безопасности OWASP без засорения окна промпта.
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 Поиск первопричины 5-Whys (SPIE v3.0) и 100% чистое дерево Git**:
    - `debugger` исследует каждый сбой через 3 ранжированные гипотезы и причинно-следственную цепочку **5-Whys** (`Почему 1 Симптом` → `Почему 5 Системная первопричина`). Временные артефакты (`PLAN`, `DEBUG`, `TEST`, `REVIEW`, `MAILBOX`) сохраняются в `<appDataDir>\brain\<conversation-id>\`, оставляя рабочее дерево Git идеально чистым.
 6. **🩺 Встроенная CLI-диагностика (`doctor` & `check`) и O(1) индекс навыков**:
-   - `npm run doctor` проверяет все 5 платформ, 21 агента, 51 файл команд, 72 команды и `matrix-skills/compact-index.json` (`1 430+` навыков). `npm run check <dir>` автоматически проверяет код на соответствие стандартам Уровня 1 и Уровня 2.
+   - `npm run doctor` проверяет все 5 платформ, 21 агента, 51 файл команд, 72 команды и `matrix-skills/compact-index.json` (`1 450+` навыков). `npm run check <dir>` автоматически проверяет код на соответствие стандартам Уровня 1 и Уровня 2.
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 Хранилище из 1 430+ навыков (48 базовых + 1 430+ библиотечных)
+## 📚 Хранилище из 1 450+ навыков (48 базовых + 1 450+ библиотечных)
 
 BoomOpen включает одну из крупнейших в open-source коллекций инженерных навыков с **нулевым расходом токенов в простое** благодаря **двухшаговому прогрессивному разрешению навыков O(1)** (`<skills>` → `matrix-skills/compact-index.json` → точечная загрузка `SKILL.md` по требованию):
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 рабочих процесса Slash-команд (:fast, :hard, :team) + протоколы _ref/
 ├── documents/               # Двухуровневая документация по архитектуре, доменам, кодовой базе и стандартам
 ├── i18n/                    # Многоязычная документация (16 полных переводов README)
-├── matrix-skills/           # YAML-матрицы навыков по доменам + предкомпилированный compact-index.json (1 430+ навыков)
+├── matrix-skills/           # YAML-матрицы навыков по доменам + предкомпилированный compact-index.json (1 450+ навыков)
 ├── platforms/               # Унифицированные шаблоны для 5 платформ (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # Правила Режима B по требованию (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Python-скрипты автоматизации и верификации (checklist.py, verify_all.py и др.)
 ├── skills/                  # 48 базовых навыков (clean-code, debugger, plan-writing, frontend-design и др.)
-├── skills_library/          # 1 430+ специализированных навыков, загружаемых за 2 шага по требованию
+├── skills_library/          # 1 450+ специализированных навыков, загружаемых за 2 шага по требованию
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>نظام تشغيل القوى العاملة الذكية Smart-Hybrid متعدد المنصات — 21 وكيلاً متخصصاً، 17 فريق المثلث الذهبي وخزينة تضم +1,430 مهارة عند الطلب</strong></p>
+  <p><strong>نظام تشغيل القوى العاملة الذكية Smart-Hybrid متعدد المنصات — 21 وكيلاً متخصصاً، 17 فريق المثلث الذهبي وخزينة تضم +1,450 مهارة عند الطلب</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 ما هو BoomOpen Workflow Kit v5.5؟
 
-**BoomOpen Workflow Kit v5.5 (الإصدار الموحد متعدد المنصات والهجين الذكي)** هو نظام تشغيل مفتوح المصدر متعدد الوكلاء (Multi-Agent) يحوّل مساعد البرمجة الفردي بالذكاء الاصطناعي إلى منظمة هندسية متكاملة تضم **21 وكيلاً متخصصاً (Specialist Agents)**، و**17 فريقاً تنافسياً بنموذج المثلث الذهبي (Golden Triangle Teams)**، و**48 مهارة أساسية (Core Skills)**، وأكثر من **1,430 مهارة مكتبية متخصصة (`skills_library`)**.
+**BoomOpen Workflow Kit v5.5 (الإصدار الموحد متعدد المنصات والهجين الذكي)** هو نظام تشغيل مفتوح المصدر متعدد الوكلاء (Multi-Agent) يحوّل مساعد البرمجة الفردي بالذكاء الاصطناعي إلى منظمة هندسية متكاملة تضم **21 وكيلاً متخصصاً (Specialist Agents)**، و**17 فريقاً تنافسياً بنموذج المثلث الذهبي (Golden Triangle Teams)**، و**48 مهارة أساسية (Core Skills)**، وأكثر من **1,450 مهارة مكتبية متخصصة (`skills_library`)**.
 
 على عكس القوالب الجامدة أو الأطر الثقيلة التي تسبب تأخيراً في التشغيل البارد مع كل سؤال بسيط، يقدم BoomOpen v5.5 **بوابة عتبة التعقيد الذكية ثنائية الوضع (2-Mode Smart Complexity Threshold Gate)**:
 - **⚡ الوضع A — التنفيذ المباشر (0 ثانية تشغيل بارد)**: الأسئلة والأجوبة السريعة، شرح الكود، إصلاح الأخطاء في نطاق واحد، أو التعديلات الواضحة التي تلمس **3 ملفات أو أقل** (دون أمر `/cmd`) يتم تنفيذها واختبارها والتحقق منها **مباشرة** بواسطة الوكيل الأساسي مع تطبيق **معايير البرمجة العملية ذات المستويين** و**الاختبار وإصلاح الأخطاء المستمر**.
 - **🎻 الوضع B — التنسيق الصارم للوكلاء المتعددين**: الميزات المعقدة (**أكثر من 3 ملفات** أو **مجالين فأكثر**) أو أوامر `/cmd` الصريحة تفعّل وضع المنسق الصارم مع **التفريع المتوازي DAG**، و**الإرسال المباشر من الخطة إلى المنفذ**، و**أقفال ملكية الملفات القائمة على العقود (`SHARED_CONTRACT` + `OWNED_FILES`)**، و**إعادة استخدام الجلسات النشطة للوكلاء الفرعيين (`send_message`)**.
 
-- **📚 خزينة ضخمة تضم +1,430 مهارة بدون تضخم السياق (Zero Context Bloat)**: تجمع بين **48 مهارة أساسية (`skills/`)** و**+1,430 مهارة تخصصية (`skills_library/`)** مُجمَّعة مسبقاً في `matrix-skills/compact-index.json` للبحث الفوري `O(1)` من خطوتين — مما يمنح الذكاء الاصطناعي إتقاناً فورياً في الواجهات الخلفية والأمامية، تطبيقات الجوال، محركات الألعاب (Unity/Unreal/Godot)، الذكاء الاصطناعي والبيانات (BigQuery)، السحابة/DevOps وأمن OWASP دون استهلاك نافذة السياق.
+- **📚 خزينة ضخمة تضم +1,450 مهارة بدون تضخم السياق (Zero Context Bloat)**: تجمع بين **48 مهارة أساسية (`skills/`)** و**+1,450 مهارة تخصصية (`skills_library/`)** مُجمَّعة مسبقاً في `matrix-skills/compact-index.json` للبحث الفوري `O(1)` من خطوتين — مما يمنح الذكاء الاصطناعي إتقاناً فورياً في الواجهات الخلفية والأمامية، تطبيقات الجوال، محركات الألعاب (Unity/Unreal/Godot)، الذكاء الاصطناعي والبيانات (BigQuery)، السحابة/DevOps وأمن OWASP دون استهلاك نافذة السياق.
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 تشخيص السبب الجذري 5-Whys (SPIE v3.0) وشجرة Git نظيفة 100%**:
    - يتتبع `debugger` كل خطأ عبر 3 فرضيات مرتبة وسلسلة سببية **5-Whys** (`لماذا 1 العرض المباشر` ← `لماذا 5 السبب الجذري النظامي`). تُحفظ جميع المخرجات المؤقتة (`PLAN`، `DEBUG`، `TEST`، `REVIEW`، `MAILBOX`) في `<appDataDir>\brain\<conversation-id>\` للحفاظ على نظافة شجرة عمل Git بنسبة 100%.
 6. **🩺 أدوات تشخيص CLI مدمجة (`doctor` & `check`) وفهرس مهارات بسرعة O(1)**:
-   - يتحقق `npm run doctor` من حزم المنصات الخمس، و21 وكيلاً، و51 ملف فريق، و72 أمراً، وملف `matrix-skills/compact-index.json` (`1,430+` مهارة مفهرسة). ويفحص `npm run check <dir>` التزام الكود بمعايير المستويين الأول والثاني.
+   - يتحقق `npm run doctor` من حزم المنصات الخمس، و21 وكيلاً، و51 ملف فريق، و72 أمراً، وملف `matrix-skills/compact-index.json` (`1,450+` مهارة مفهرسة). ويفحص `npm run check <dir>` التزام الكود بمعايير المستويين الأول والثاني.
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 خزينة +1,430 مهارة (48 مهارة أساسية + 1,430+ مهارة مكتبية)
+## 📚 خزينة +1,450 مهارة (48 مهارة أساسية + 1,450+ مهارة مكتبية)
 
 يأتي BoomOpen مزوداً بواحدة من أكبر منظومات المهارات الهندسية في المصادر المفتوحة، والمصممة لاستهلاك **0 توكن في وضع الخمول** عبر **الاستعلام التدريجي O(1) من خطوتين** (`<skills>` ← `matrix-skills/compact-index.json` ← تحميل ملف `SKILL.md` المطلوب فقط عند الطلب):
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 مسار عمل لأوامر Slash (:fast, :hard, :team) + بروتوكولات _ref/
 ├── documents/               # وثائق ثنائية المستوى للبنية المعمارية والمجال وقاعدة الكود والمعايير
 ├── i18n/                    # وثائق متعددة اللغات (16 ترجمة كاملة لملف README)
-├── matrix-skills/           # مصفوفات مهارات YAML حسب المجال + ملف compact-index.json المجمّع مسبقاً (1,430+ مهارة)
+├── matrix-skills/           # مصفوفات مهارات YAML حسب المجال + ملف compact-index.json المجمّع مسبقاً (1,450+ مهارة)
 ├── platforms/               # قوالب موحدة للمنصات الخمس (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # قواعد الوضع B المحملة عند الطلب (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # نصوص Python للأتمتة والتحقق (checklist.py, verify_all.py وغيرها)
 ├── skills/                  # 48 مهارة أساسية (clean-code, debugger, plan-writing, frontend-design وغيرها)
-├── skills_library/          # أكثر من 1,430 مهارة متخصصة تُحمّل عند الطلب عبر بحث سريع من خطوتين
+├── skills_library/          # أكثر من 1,450 مهارة متخصصة تُحمّل عند الطلب عبر بحث سريع من خطوتين
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 

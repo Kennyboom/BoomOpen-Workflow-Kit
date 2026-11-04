@@ -89,5 +89,5 @@ REPORTS  = ./reports/{topic}/
 | Running phases & DAG Fan-Out | `PHASES.md` |
 | Delegating & `OWNED_FILES` locks | `AGENTS.md` |
 | Team execution (`:team`) | `TEAMS.md` |
-| Skill resolution (`compact-index.json`) | `SKILLS.md` |
+| Skill resolution (`compact-index.json` — 1,450+ skills) | `SKILLS.md` |
 | Error recovery (`E0`) / Quick lookup | `ERRORS.md` / `REFERENCE.md` |

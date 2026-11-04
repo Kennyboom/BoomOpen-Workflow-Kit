@@ -1,12 +1,12 @@
 <div align="center">
   <h1>⚡ BoomOpen Workflow Kit v5.5.0</h1>
-  <p><strong>跨平台智能混合 (Smart-Hybrid) AI 研发操作系统 — 21 位专家级智能体、17 支黄金三角团队与 1,430+ 按需技能宝库</strong></p>
+  <p><strong>跨平台智能混合 (Smart-Hybrid) AI 研发操作系统 — 21 位专家级智能体、17 支黄金三角团队与 1,450+ 按需技能宝库</strong></p>
 
   <p>
     <a href="https://github.com/Kennyboom/BoomOpen-Workflow-Kit/releases"><img src="https://img.shields.io/badge/Version-5.5.0-7c3aed.svg" alt="Version: 5.5.0" /></a>
     <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-0ea5e9.svg" alt="Platforms: 5 Unified" /></a>
     <a href="#agents"><img src="https://img.shields.io/badge/Agents-21%20Specialists%20%2B%2017%20Teams-10b981.svg" alt="Agents: 21 Specialists + 17 Teams" /></a>
-    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C430%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,430+ Library" /></a>
+    <a href="#pillars"><img src="https://img.shields.io/badge/Skills-48%20Core%20%2B%201%2C450%2B%20Library-f59e0b.svg" alt="Skills: 48 Core + 1,450+ Library" /></a>
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-22c55e.svg" alt="Node.js: >=18.0.0" /></a>
     <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   </p>
@@ -34,13 +34,13 @@
 
 ## 🌟 什么是 BoomOpen Workflow Kit v5.5？
 
-**BoomOpen Workflow Kit v5.5（跨平台统一与智能混合版）** 是一个开源的多智能体（Multi-Agent）研发操作系统，能够将单一的 AI 编程助手升级为由 **21 位专家级智能体（Specialist Agents）**、**17 支黄金三角对抗团队（Golden Triangle Teams）**、**48 项核心技能（Core Skills）** 以及 **1,430+ 项垂直领域技能库（`skills_library`）** 组成的协同工程团队。
+**BoomOpen Workflow Kit v5.5（跨平台统一与智能混合版）** 是一个开源的多智能体（Multi-Agent）研发操作系统，能够将单一的 AI 编程助手升级为由 **21 位专家级智能体（Specialist Agents）**、**17 支黄金三角对抗团队（Golden Triangle Teams）**、**48 项核心技能（Core Skills）** 以及 **1,450+ 项垂直领域技能库（`skills_library`）** 组成的协同工程团队。
 
 不同于每次简单提问都会带来冷启动延迟的笨重代理框架，BoomOpen v5.5 引入了 **双模式智能复杂度阈值门控（2-Mode Smart Complexity Threshold Gate）**：
 - **⚡ Mode A — 直接执行模式（0 秒冷启动）**：针对日常问答、代码解释、单领域缺陷修复或仅涉及 **≤ 3 个文件**（且未调用 `/cmd` 斜杠命令）的明确修改，由主智能体**直接**执行、测试与验证，同时严格执行 **务实双层编码规范（Pragmatic 2-Tier Coding Standards）** 与 **持续测试与缺陷修复（Persistent Testing & Bug Fixing）**。
 - **🎻 Mode B — 严格多智能体编排模式（Strict Multi-Agent Orchestration）**：针对复杂功能开发（**> 3 个文件** 或 **≥ 2 个领域**）或显式调用 `/cmd` 工作流命令时，激活严格编排器模式，支持 **DAG 并行扇出（Parallel Fan-Out）**、**计划直达执行者派发（Direct Plan-to-Executor Dispatch）**、**契约优先文件锁（`SHARED_CONTRACT` + `OWNED_FILES`）** 以及 **有状态热会话复用（`send_message`）**。
 
-- **📚 1,430+ 巨型专业技能库（零上下文膨胀）**：包含 **48 项核心技能 (`skills/`)** 与 **1,430+ 项垂直领域技能 (`skills_library/`)**，预编译至 `matrix-skills/compact-index.json` 实现 `O(1)` 两步按需加载，让 AI 瞬间掌握后端、前端、移动端、游戏开发 (Unity/Unreal/Godot)、AI/ML、BigQuery/数据工程、云原生/DevOps 与 OWASP 网络安全，且绝不污染上下文窗口。
+- **📚 1,450+ 巨型专业技能库（零上下文膨胀）**：包含 **48 项核心技能 (`skills/`)** 与 **1,450+ 项垂直领域技能 (`skills_library/`)**，预编译至 `matrix-skills/compact-index.json` 实现 `O(1)` 两步按需加载，让 AI 瞬间掌握后端、前端、移动端、游戏开发 (Unity/Unreal/Godot)、AI/ML、BigQuery/数据工程、云原生/DevOps 与 OWASP 网络安全，且绝不污染上下文窗口。
 
 ---
 
@@ -80,7 +80,7 @@ flowchart TD
 5. **🔍 5-Whys (SPIE v3.0) 根因调试与 100% 洁净 Git 树**：
    - `debugger` 通过 3 个优先级假设与 **5-Whys 因果链**（`Why 1 直接症状` → `Why 5 系统性根因`）定位问题。所有过程产物（`PLAN`、`DEBUG`、`TEST`、`REVIEW`、`MAILBOX`）默认写入 `<appDataDir>\brain\<conversation-id>\`，保持项目 Git 工作区 100% 洁净。
 6. **🩺 内置 CLI 诊断工具 (`doctor` & `check`) 与 O(1) 技能索引**：
-   - `npm run doctor` 自动校验五大平台配置、21 个智能体、51 个团队文件、72 个命令及 `matrix-skills/compact-index.json`（索引 `1,430+` 项技能）。`npm run check <dir>` 自动执行双层代码规范检查。
+   - `npm run doctor` 自动校验五大平台配置、21 个智能体、51 个团队文件、72 个命令及 `matrix-skills/compact-index.json`（索引 `1,450+` 项技能）。`npm run check <dir>` 自动执行双层代码规范检查。
 
 ---
 
@@ -185,7 +185,7 @@ npm run settings -- reset
 
 ---
 
-## 📚 1,430+ 专业技能宝库（48 项核心技能 + 1,430+ 项领域技能）
+## 📚 1,450+ 专业技能宝库（48 项核心技能 + 1,450+ 项领域技能）
 
 BoomOpen 内置开源界规模最大的 AI 工程技能矩阵之一，通过 **两步 O(1) 渐进式检索**（`<skills>` 核心匹配 → `matrix-skills/compact-index.json` 索引检索 → 按需加载 `SKILL.md`）实现 **0 空闲 Token 消耗**：
 
@@ -208,12 +208,12 @@ BoomOpen-Workflow-Kit/
 ├── commands/                # 72 个斜杠命令工作流 (:fast, :hard, :team) + _ref/ 共享协议
 ├── documents/               # 双层架构、领域模型、源码底座与编码规范文档
 ├── i18n/                    # 多语言国际化文档目录（包含 16 种主流语言的完整译本）
-├── matrix-skills/           # 领域技能矩阵 YAML + 预编译 compact-index.json (1,430+ 项技能)
+├── matrix-skills/           # 领域技能矩阵 YAML + 预编译 compact-index.json (1,450+ 项技能)
 ├── platforms/               # 五大平台统一配置模板 (antigravity/, claude/, codex/, copilot/, cursor/)
 ├── rules/                   # Mode B 按需加载核心规则 (CORE, PHASES, AGENTS, TEAMS, SKILLS, ERRORS, REFERENCE)
 ├── scripts/                 # Python 自动化校验与辅助脚本 (checklist.py, verify_all.py 等)
 ├── skills/                  # 48 项核心技能 (clean-code, debugger, plan-writing, frontend-design 等)
-├── skills_library/          # 1,430+ 项垂直领域按需加载技能库（通过两步快速检索加载）
+├── skills_library/          # 1,450+ 项垂直领域按需加载技能库（通过两步快速检索加载）
 └── GEMINI.md | CLAUDE.md | CODEX.md | COPILOT.md | CURSOR.md | AGENT.md
 ```
 
