@@ -1,6 +1,6 @@
 {
   "version": "5.5.0",
-  "totalSkills": 1452,
+  "totalSkills": 1462,
   "skills": {
     "senior-ml-engineer": {
       "domain": "ai-ml",
@@ -1519,6 +1519,12 @@
       "priority": 9,
       "category": "core",
       "path": "skills/intelligent-routing/SKILL.md"
+    },
+    "c4-context": {
+      "domain": "architecture",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/c4-context/SKILL.md"
     },
     "api-patterns": {
       "domain": "backend",
@@ -3392,11 +3398,83 @@
       "category": "core",
       "path": "skills_library/drizzle-neon-turso-edge/SKILL.md"
     },
+    "seaborn": {
+      "domain": "data",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/seaborn/SKILL.md"
+    },
     "design-spec": {
       "domain": "design",
       "priority": 9,
       "category": "core",
       "path": "skills/design-spec/SKILL.md"
+    },
+    "frontend-design": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills/frontend-design/SKILL.md"
+    },
+    "anti-ai-slop-visual-craft": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/anti-ai-slop-visual-craft/SKILL.md"
+    },
+    "oklch-bento-grid-architecture": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/oklch-bento-grid-architecture/SKILL.md"
+    },
+    "motion-v12-view-transitions-css": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/motion-v12-view-transitions-css/SKILL.md"
+    },
+    "headless-primitives-cmdk-vaul-sonner": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/headless-primitives-cmdk-vaul-sonner/SKILL.md"
+    },
+    "ios18-hig-material3-expressive": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/ios18-hig-material3-expressive/SKILL.md"
+    },
+    "ai-native-generative-ui-ux": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/ai-native-generative-ui-ux/SKILL.md"
+    },
+    "saas-dashboard-dataviz-tables": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/saas-dashboard-dataviz-tables/SKILL.md"
+    },
+    "figma-mcp-dtcg-design-tokens": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/figma-mcp-dtcg-design-tokens/SKILL.md"
+    },
+    "wcag-22-accessibility-ergonomics": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/wcag-22-accessibility-ergonomics/SKILL.md"
+    },
+    "conversion-landing-onboarding-ux": {
+      "domain": "design",
+      "priority": 8,
+      "category": "expert",
+      "path": "skills_library/conversion-landing-onboarding-ux/SKILL.md"
     },
     "aesthetic": {
       "domain": "design",
@@ -3409,6 +3487,12 @@
       "priority": 9,
       "category": "expert",
       "path": "skills_library/ui-ux-pro-max/SKILL.md"
+    },
+    "tailwind-v4-shadcn-ui": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/tailwind-v4-shadcn-ui/SKILL.md"
     },
     "ui-styling": {
       "domain": "design",
@@ -3427,6 +3511,54 @@
       "priority": 8,
       "category": "expert",
       "path": "skills_library/ui-design-system/SKILL.md"
+    },
+    "radix-ui-design-system": {
+      "domain": "frontend",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/radix-ui-design-system/SKILL.md"
+    },
+    "tailwind-patterns": {
+      "domain": "frontend",
+      "priority": 8,
+      "category": "core",
+      "path": "skills_library/tailwind-patterns/SKILL.md"
+    },
+    "react-ui-patterns": {
+      "domain": "frontend",
+      "priority": 8,
+      "category": "expert",
+      "path": "skills_library/react-ui-patterns/SKILL.md"
+    },
+    "scroll-experience": {
+      "domain": "frontend",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/scroll-experience/SKILL.md"
+    },
+    "fixing-motion-performance": {
+      "domain": "frontend",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/fixing-motion-performance/SKILL.md"
+    },
+    "3d-web-experience": {
+      "domain": "frontend",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/3d-web-experience/SKILL.md"
+    },
+    "design-md": {
+      "domain": "research",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/design-md/SKILL.md"
+    },
+    "interactive-portfolio": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/interactive-portfolio/SKILL.md"
     },
     "ux-researcher-designer": {
       "domain": "design",
@@ -3476,12 +3608,6 @@
       "category": "community",
       "path": "skills_library/brand-guidelines-community/SKILL.md"
     },
-    "c4-context": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/c4-context/SKILL.md"
-    },
     "favicon": {
       "domain": "design",
       "priority": 6,
@@ -3512,35 +3638,11 @@
       "category": "community",
       "path": "skills_library/makepad-dsl/SKILL.md"
     },
-    "personal-tool-builder": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/personal-tool-builder/SKILL.md"
-    },
     "product-design": {
       "domain": "design",
       "priority": 6,
       "category": "community",
       "path": "skills_library/product-design/SKILL.md"
-    },
-    "seaborn": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/seaborn/SKILL.md"
-    },
-    "semgrep-rule-variant-creator": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/semgrep-rule-variant-creator/SKILL.md"
-    },
-    "seo-sitemap": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/seo-sitemap/SKILL.md"
     },
     "ui-ux-designer": {
       "domain": "design",
@@ -3553,18 +3655,6 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/ui-visual-validator/SKILL.md"
-    },
-    "variant-analysis": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/variant-analysis/SKILL.md"
-    },
-    "wellally-tech": {
-      "domain": "design",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/wellally-tech/SKILL.md"
     },
     "devops": {
       "domain": "devops",
@@ -3980,12 +4070,6 @@
       "category": "expert",
       "path": "skills_library/nextjs-react-expert/SKILL.md"
     },
-    "tailwind-v4-shadcn-ui": {
-      "domain": "frontend",
-      "priority": 9,
-      "category": "core",
-      "path": "skills_library/tailwind-v4-shadcn-ui/SKILL.md"
-    },
     "react-19-nextjs-15-rsc": {
       "domain": "frontend",
       "priority": 9,
@@ -4010,12 +4094,6 @@
       "category": "core",
       "path": "skills_library/react-best-practices/SKILL.md"
     },
-    "frontend-design": {
-      "domain": "frontend",
-      "priority": 9,
-      "category": "core",
-      "path": "skills/frontend-design/SKILL.md"
-    },
     "react-expert": {
       "domain": "frontend",
       "priority": 8,
@@ -4033,12 +4111,6 @@
       "priority": 8,
       "category": "expert",
       "path": "skills_library/nextjs-developer/SKILL.md"
-    },
-    "tailwind-patterns": {
-      "domain": "frontend",
-      "priority": 8,
-      "category": "core",
-      "path": "skills_library/tailwind-patterns/SKILL.md"
     },
     "frontend-development": {
       "domain": "frontend",
@@ -4112,12 +4184,6 @@
       "category": "core",
       "path": "skills_library/frontend-dev-guidelines/SKILL.md"
     },
-    "react-ui-patterns": {
-      "domain": "frontend",
-      "priority": 8,
-      "category": "expert",
-      "path": "skills_library/react-ui-patterns/SKILL.md"
-    },
     "javascript-mastery": {
       "domain": "frontend",
       "priority": 7,
@@ -4141,12 +4207,6 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/20-andruia-niche-intelligence/SKILL.md"
-    },
-    "3d-web-experience": {
-      "domain": "frontend",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/3d-web-experience/SKILL.md"
     },
     "advogado-criminal": {
       "domain": "frontend",
@@ -4285,12 +4345,6 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/expo-tailwind-setup/SKILL.md"
-    },
-    "fixing-motion-performance": {
-      "domain": "frontend",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/fixing-motion-performance/SKILL.md"
     },
     "fp-react": {
       "domain": "frontend",
@@ -4448,12 +4502,6 @@
       "category": "community",
       "path": "skills_library/progressive-web-app/SKILL.md"
     },
-    "radix-ui-design-system": {
-      "domain": "frontend",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/radix-ui-design-system/SKILL.md"
-    },
     "react-flow-node-ts": {
       "domain": "frontend",
       "priority": 6,
@@ -4501,12 +4549,6 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/sankhya-dashboard-html-jsp-custom-best-pratices/SKILL.md"
-    },
-    "scroll-experience": {
-      "domain": "frontend",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/scroll-experience/SKILL.md"
     },
     "shadcn": {
       "domain": "frontend",
@@ -6374,12 +6416,6 @@
       "category": "community",
       "path": "skills_library/deep-research/SKILL.md"
     },
-    "design-md": {
-      "domain": "research",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/design-md/SKILL.md"
-    },
     "docs-architect": {
       "domain": "research",
       "priority": 6,
@@ -7310,6 +7346,18 @@
       "category": "core",
       "path": "skills_library/owasp-llm-agent-security-2025/SKILL.md"
     },
+    "semgrep-rule-variant-creator": {
+      "domain": "security",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/semgrep-rule-variant-creator/SKILL.md"
+    },
+    "variant-analysis": {
+      "domain": "security",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/variant-analysis/SKILL.md"
+    },
     "chrome-devtools": {
       "domain": "tools",
       "priority": 7,
@@ -8108,12 +8156,6 @@
       "category": "community",
       "path": "skills_library/instagram-automation/SKILL.md"
     },
-    "interactive-portfolio": {
-      "domain": "tools",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/interactive-portfolio/SKILL.md"
-    },
     "intercom-automation": {
       "domain": "tools",
       "priority": 6,
@@ -8713,6 +8755,24 @@
       "priority": 9,
       "category": "expert",
       "path": "skills_library/ai-ide-plugin-authoring/SKILL.md"
+    },
+    "personal-tool-builder": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/personal-tool-builder/SKILL.md"
+    },
+    "seo-sitemap": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/seo-sitemap/SKILL.md"
+    },
+    "wellally-tech": {
+      "domain": "tools",
+      "priority": 6,
+      "category": "community",
+      "path": "skills_library/wellally-tech/SKILL.md"
     }
   }
 }

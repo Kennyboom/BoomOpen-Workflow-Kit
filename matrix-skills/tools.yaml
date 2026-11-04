@@ -8,7 +8,7 @@
 domain: tools
 name: "Tools & Utilities"
 description: "Productivity tools, document processing"
-skill_count: 234
+skill_count: 237
 
 skills:
   # --------------------------------------------------------------------------
@@ -1907,3 +1907,27 @@ skills:
       agents: [backend-engineer, tech-lead, docs-manager]
       profiles: ["tools:*", "architecture:orchestration"]
     description: "Authoring multi-platform AI coding assistant rules, SKILL.md modules, PreToolUse hooks, and .mdc rules across all 5 platforms"
+
+  - skill_id: personal-tool-builder
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["tools:*"]
+    description: "Rapidly design and ship personal productivity CLI and web micro-tools."
+
+  - skill_id: seo-sitemap
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer, docs-manager]
+      profiles: ["tools:*"]
+    description: "Analyze and generate validated XML sitemaps for technical SEO."
+
+  - skill_id: wellally-tech
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["tools:*"]
+    description: "Digital health data integration and clinical knowledge base connector patterns."

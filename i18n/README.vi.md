@@ -221,15 +221,16 @@ Mặc định ngay sau khi cài đặt, BoomOpen v5.5 tự động kích hoạt 
 
 ## 📚 Kho Hơn 1.450+ Kỹ Năng Chuyên Sâu (48 Kỹ Năng Lõi + 1.450+ Kỹ Năng Thư Viện)
 
-BoomOpen tích hợp một trong những kho kỹ năng kỹ thuật phần mềm lớn nhất thế giới mã nguồn mở (`1.452` kỹ năng trên 19 domains) — được thiết kế với **chi phí token nhàn rỗi bằng 0 (Zero Context Bloat)** nhờ cơ chế **Tra Cứu Kỹ Năng 2 Bước O(1)** (Kiểm tra `<skills>` Lõi → Tra chỉ mục `matrix-skills/compact-index.json` → Chỉ nạp đúng file `SKILL.md` cần thiết):
+BoomOpen tích hợp một trong những kho kỹ năng kỹ thuật phần mềm lớn nhất thế giới mã nguồn mở (`1.462` kỹ năng trên 19 domains) — được thiết kế với **chi phí token nhàn rỗi bằng 0 (Zero Context Bloat)** nhờ cơ chế **Tra Cứu Kỹ Năng 2 Bước O(1)** (Kiểm tra `<skills>` Lõi → Tra chỉ mục `matrix-skills/compact-index.json` → Chỉ nạp đúng file `SKILL.md` cần thiết):
 
 | Phân Tầng / Miền Kỹ Năng | Số Lượng | Kỹ Năng & Năng Lực Tiêu Biểu (Chuẩn Công Nghệ 2026) | Cơ Chế Nạp Ngữ Cảnh |
 |:-------------------------|:--------:|:----------------------------------------------------|:--------------------|
 | **⚡ Tầng 1: Kỹ Năng Lõi (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `frontend-architecture`, `design-spec`, `api-patterns`, `database-design`, `testing-patterns`, `skill-seeker` | Nạp sẵn chỉ mục trong `<skills>`, truy cập tức thì ở Turn 1 |
-| **🌐 Web, Backend & Edge Data Stack** | **390+** | React 19 & Next.js 15 RSC, Tailwind v4 + `shadcn/ui`, TanStack Start/Router/Query, Hono RPC + Zod OpenAPI, Rust Axum/Tokio/SQLx, Supabase RLS/Realtime, Drizzle + Neon/Turso, FastAPI, NestJS | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
+| **🎨 Thiết Kế UI/UX, Motion & Design Systems** | **42** | Anti-AI-Slop Visual Craft, Hệ màu OKLCH & Bento Grid, Motion v12 + CSS View Transitions & Scroll-Driven Animations, AI-Native Generative UI UX, Headless Primitives (`cmdk`/`vaul`/`sonner`), Figma MCP + W3C DTCG Tokens, WCAG 2.2 AA/AAA, iOS 18 HIG & Material 3 Expressive | Nạp theo yêu cầu qua `compact-index.json` (`matrix-skills/design.yaml`) |
+| **🌐 Web, Backend & Edge Data Stack** | **390+** | React 19 & Next.js 15 RSC, Tailwind v4 + `shadcn/ui`, TanStack Start/Router/Query, SaaS Dashboards & TanStack Table v8, Hono RPC + Zod OpenAPI, Rust Axum/Tokio/SQLx, Supabase RLS/Realtime, Drizzle + Neon/Turso | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
 | **🤖 AI, Agentic SDKs, MCP & Dữ Liệu** | **320+** | MCP FastMCP 2025 (`StreamableHTTP`), OpenAI Agents SDK, Claude Agent SDK, Google ADK (Gemini), Vercel AI SDK v4 & Mastra, AI IDE Plugin Authoring, RAG, BigQuery, dbt | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
 | **☁️ Cloud, DevOps, Kiểm Thử & Bảo Mật** | **300+** | Cloudflare Workers/D1/R2/Durable Objects, Terraform/OpenTofu, Docker/K8s GitOps, kiểm thử Vitest + MSW v2, Better Auth (Passkeys/2FA), OWASP Top 10 cho LLM & Agentic Apps 2025 | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
-| **🎮 Game Engines, 3D Web & Mobile** | **440+** | Unity 6 DOTS/ECS & `.asmdef`, Godot 4 GDScript/Shaders, WebGPU/WGSL & Three.js TSL, React Three Fiber + Rapier 3D, Colyseus Multiplayer Netcode, PixiJS v8/Phaser, Tauri v2 (Rust Desktop/Mobile), SwiftUI, Kotlin, React Native, Flutter | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
+| **🎮 Game Engines, 3D Web & Mobile** | **410+** | Unity 6 DOTS/ECS & `.asmdef`, Godot 4 GDScript/Shaders, WebGPU/WGSL & Three.js TSL, React Three Fiber + Rapier 3D, Colyseus Multiplayer Netcode, PixiJS v8/Phaser, Tauri v2 (Rust Desktop/Mobile), SwiftUI, Kotlin, React Native, Flutter | Nạp theo yêu cầu qua `compact-index.json` (`skills_library/`) |
 
 ---
 

@@ -15,13 +15,20 @@ execution-mode: execute
 
 ---
 
-## ⛔ MANDATORY REFERENCE — READ BEFORE PROCEEDING
+## ⛔ MANDATORY REFERENCE & 2026 UI/UX SKILL BUNDLE
 
 > **🔴 YOU MUST READ these reference files NOW. Do NOT skip.**
 >
 > 1. `~/.{TOOL}/skills/boomopen-workflow-kit/commands/_ref/golden-triangle-protocol.md` — Tiered Execution, Mailbox, Pre-Flight, Triangle Loop
+> 2. **Core Design Skills**: `skills/design-spec/SKILL.md` and `skills/frontend-design/SKILL.md`
+> 3. **2026 Craft & Accessibility Library Skills**:
+>    - `skills_library/anti-ai-slop-visual-craft/SKILL.md` (Anti-Slop Aesthetic Direction & 1-Axis Border Rule)
+>    - `skills_library/oklch-bento-grid-architecture/SKILL.md` (OKLCH Tokens & Responsive Bento Grids)
+>    - `skills_library/motion-v12-view-transitions-css/SKILL.md` (Spring Physics & View Transitions)
+>    - `skills_library/ai-native-generative-ui-ux/SKILL.md` (Streaming Skeletons, Tool Cards & Artifact Panes)
+>    - `skills_library/wcag-22-accessibility-ergonomics/SKILL.md` (WCAG 2.2 AA: `Target Size >= 24x24px web / 44x44pt mobile`, `2.4.11 Focus Not Obscured`, `2.5.7 Dragging Alternatives`, `3.3.8 Accessible Auth`)
 >
-> **Failure to read = incorrect execution. These files contain BINDING protocols.**
+> **Failure to load = incorrect execution. These files contain BINDING protocols.**
 
 ---
 
@@ -31,11 +38,11 @@ execution-mode: execute
 
 | Phase | Output |
 |-------|--------|
-| P1: Research | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{request}` (or `./reports/{topic}/researchers/RESEARCH-{request}`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{request}` (or `./reports/{topic}/scouts/SCOUT-{request}`) |
-| P2: Design Spec | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-{request}` (or `./reports/{topic}/designs/DESIGN-{request}`) |
-| P3: Impl Spec | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-SPEC-{request}` (or `./reports/{topic}/designs/DESIGN-SPEC-{request}`) |
-| P4: Handoff | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{request}` (or `./reports/{topic}/reviews/REVIEW-{request}`) |
-| ALL Phases | `./reports/{topic}/MAILBOX-{date}.md` |
+| P1: Research | `<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{request}.md` (or `./reports/{topic}/researchers/RESEARCH-{request}.md`) + `<appDataDir>\\brain\\<conversation-id>\\SCOUT-{request}.md` (or `./reports/{topic}/scouts/SCOUT-{request}.md`) |
+| P2: Design Spec | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-{request}.md` (or `./reports/{topic}/designs/DESIGN-{request}.md`) |
+| P3: Impl Spec | `<appDataDir>\\brain\\<conversation-id>\\DESIGN-SPEC-{request}.md` (or `./reports/{topic}/designs/DESIGN-SPEC-{request}.md`) |
+| P4: Handoff | `<appDataDir>\\brain\\<conversation-id>\\REVIEW-{request}.md` (or `./reports/{topic}/reviews/REVIEW-{request}.md`) |
+| ALL Phases | `<appDataDir>\\brain\\<conversation-id>\\MAILBOX-{date}.md` (or `./reports/{topic}/MAILBOX-{date}.md`) |
 
 **⚠️ Paths = base names.** ≤ 150 lines → `{name}.md`. > 150 lines → `{name}/` folder.
 
@@ -56,12 +63,12 @@ execution-mode: execute
 
 | Role | Agent | Mission |
 |------|-------|---------|
-| Tech Lead | `designer` | Research areas, user needs, design constraints |
-| Executor | `researcher` + `scouter` | Audit existing design system, competitive analysis, UX patterns |
-| Reviewer | `brainstormer` (Devil's Advocate) | Challenge user assumptions, missing personas, accessibility gaps |
+| Tech Lead | `designer` (`design-team-techlead`) | Research areas, JTBD user needs, design constraints |
+| Executor | `researcher` + `scouter` (parallel fan-out) | Audit existing design system, competitive analysis, 2026 UX patterns |
+| Reviewer | `brainstormer` (Devil's Advocate) | Challenge user assumptions, missing personas, WCAG 2.2 AA accessibility gaps |
 
-**Focus**: User needs, existing design audit, competitive patterns, WCAG 2.1 AA requirements
-**Deliverable**: `RESEARCH-{request}` + `SCOUT-{request}`
+**Focus**: User needs (JTBD), existing design token audit, competitive patterns, **WCAG 2.2 AA** requirements (`2.4.11 Focus Not Obscured`, `2.5.7 Dragging Movements`, `2.5.8 Target Size >= 24x24px web / 44x44pt mobile`, `3.3.8 Accessible Auth`)
+**Deliverable**: `RESEARCH-{request}.md` + `SCOUT-{request}.md`
 **Consensus**: ✅ CONSENSUS: designer ✓ | researcher+scouter ✓ | brainstormer ✓
 
 ---
@@ -70,13 +77,13 @@ execution-mode: execute
 
 | Role | Agent | Mission |
 |------|-------|---------|
-| Tech Lead | `designer` | Component hierarchy, interaction patterns, design tokens |
-| Executor | `designer` (self-implements) | Detailed design specs, layouts, component structures |
-| Reviewer | `frontend-engineer` + `reviewer` | Technical feasibility, responsive, a11y, performance |
+| Tech Lead | `designer` (`design-team-techlead`) | Component hierarchy, interaction patterns, OKLCH design tokens |
+| Executor | `designer` (`design-team-executor`) | Detailed design specs, Bento/Swiss layouts, 5-state component structures |
+| Reviewer | `frontend-engineer` + `reviewer` (`design-team-reviewer`) | Technical feasibility, Anti-AI-Slop visual craft, responsive, WCAG 2.2 AA, performance |
 
-**Prerequisite**: READ RESEARCH + SCOUT files from P1
+**Prerequisite**: READ `RESEARCH-{request}.md` + `SCOUT-{request}.md` from P1
 
-**Deliverable must include**: Visual specs (layout/typography/color/spacing), design tokens, component hierarchy with all states (default/hover/active/disabled/error/loading/empty/focused), micro-interactions, responsive breakpoints, WCAG a11y specs, feasibility notes
+**Deliverable must include**: Visual specs (layout/typography/OKLCH color/spacing), W3C DTCG / Tailwind v4 `@theme inline` tokens, component hierarchy with all 5 UI states (`Idle`, `Loading`, `Empty`, `Error`, `Success`) + interactive states (`hover`, `focus-visible`, `active`, `disabled`), spring micro-interactions, responsive container queries, **WCAG 2.2 AA** specs (`>= 24x24px` web / `44x44pt` mobile targets, `scroll-padding-top/bottom` for sticky bars, single-pointer drag alternatives), feasibility notes
 
 **Consensus**: ✅ CONSENSUS: designer ✓ | designer(exec) ✓ | frontend-engineer ✓
 
@@ -87,12 +94,12 @@ execution-mode: execute
 | Role | Agent | Mission |
 |------|-------|---------|
 | Tech Lead | `tech-lead` | Bridge design → code, define component contracts |
-| Executor | `frontend-engineer` | Write DESIGN-SPEC with component APIs, state machines |
-| Reviewer | `designer` | Verify spec matches design intent, visual fidelity |
+| Executor | `frontend-engineer` | Write `DESIGN-SPEC` with TypeScript/CVA component APIs, state machines |
+| Reviewer | `designer` | Verify spec matches design intent, visual fidelity, and WCAG 2.2 AA |
 
-**Prerequisite**: READ `DESIGN-{request}`
+**Prerequisite**: READ `DESIGN-{request}.md`
 
-**Deliverable must include**: TypeScript component interfaces, state machine definitions, design token → CSS variable mapping, animation specs, ARIA implementation plan, integration points
+**Deliverable must include**: TypeScript component interfaces (`cva` variants + Radix `asChild`), 5-state machine definitions, design token → CSS variable mapping, spring/view-transition animation specs (`prefers-reduced-motion`), ARIA + WCAG 2.2 AA implementation plan, integration points
 
 **Consensus**: ✅ CONSENSUS: tech-lead ✓ | frontend-engineer ✓ | designer ✓
 
@@ -102,11 +109,11 @@ execution-mode: execute
 
 | Role | Agent | Mission |
 |------|-------|---------|
-| Tech Lead | `designer` | Final review, design system compliance |
+| Tech Lead | `designer` | Final review, design system & Anti-AI-Slop compliance |
 | Executor | `docs-manager` | Write component catalog, usage guidelines, developer FAQ |
-| Reviewer | `tech-lead` | Can a developer implement from this alone? Edge states covered? |
+| Reviewer | `tech-lead` | Can a developer implement from this alone? All 5 states + WCAG 2.2 AA covered? |
 
-**Prerequisite**: READ `DESIGN-{request}` + `DESIGN-SPEC-{request}`
+**Prerequisite**: READ `DESIGN-{request}.md` + `DESIGN-SPEC-{request}.md`
 
 **Deliverable must include**: Component catalog entries, usage do/don't examples, design token reference, developer integration guide, edge case documentation
 

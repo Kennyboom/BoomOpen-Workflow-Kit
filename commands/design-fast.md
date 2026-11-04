@@ -5,13 +5,13 @@ category: design
 execution-mode: execute
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+> **📂 Deliverable Routing (v5.5)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ---
 
 # /design:fast — Rapid Design
 
-> **MISSION**: Quickly create design for simple components or UI elements.
+> **MISSION**: Quickly create design for simple components or UI elements with 2026 visual craft and WCAG 2.2 AA compliance.
 
 <request>$ARGUMENTS</request>
 
@@ -27,13 +27,13 @@ execution-mode: execute
 
 ⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
 
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand. Fast variant uses matrix-only (no dynamic discovery for speed optimization).
+**Mandatory Design Skills for Sub-agents**: Instruct `designer` to load `skills/design-spec/SKILL.md`, `skills/frontend-design/SKILL.md`, `skills_library/anti-ai-slop-visual-craft/SKILL.md`, and `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 ---
 
 ## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
 
-> **Reference: AGENTS.md (Tiered Execution)`
+> **Reference: AGENTS.md (Tiered Execution)**
 
 ```yaml
 tiered_execution:
@@ -52,14 +52,14 @@ tiered_execution:
 
 ```yaml
 deliverable_files:
-  designer: "./reports/{topic}/designs/DESIGN-{request}" # For substantial designs
+  designer: "<appDataDir>\\brain\\<conversation-id>\\DESIGN-{request}.md" # Fallback: ./reports/{topic}/designs/DESIGN-{request}.md
 
 enforcement:
   - Simple component → Chat output OK
-  - Page/feature design → MUST create design file
+  - Page/feature design → MUST create DESIGN-{request}.md artifact in <appDataDir>\brain\<conversation-id>\
 ```
 
-All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\brain\<conversation-id>\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -81,7 +81,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `scouter`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent(TypeName: "research", Role: "Codebase Scouter", Model: "inherit")`) for `scouter`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -90,7 +90,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **Exit Criteria:**
 
-- [ ] Existing patterns found
+- [ ] Existing patterns and design tokens found
 - [ ] Design system understood
 - [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol
 
@@ -107,7 +107,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `designer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent(TypeName: "self", Role: "Principal Design Architect", Model: "inherit")`) for `designer`. Instruct `designer` to load `skills/design-spec/SKILL.md`, `skills/frontend-design/SKILL.md`, `skills_library/anti-ai-slop-visual-craft/SKILL.md`, and `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -116,9 +116,9 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **Exit Criteria:**
 
-- [ ] Design created
-- [ ] Accessibility considered
-- [ ] Specs provided
+- [ ] Design created with OKLCH tokens and all 5 UI states (`Idle`, `Loading`, `Empty`, `Error`, `Success`)
+- [ ] **WCAG 2.2 AA** verified (`Target Size >= 24x24px web / 44x44pt mobile`, `Focus Not Obscured` via `scroll-padding-top/bottom`, `Dragging Alternatives`)
+- [ ] Anti-AI-Slop visual craft verified (no generic `#6366f1` indigo-to-purple gradient clichés)
 - [ ] **METHODOLOGY CHECK**: Output aligns with `designer` Thinking Protocol
 
 ---

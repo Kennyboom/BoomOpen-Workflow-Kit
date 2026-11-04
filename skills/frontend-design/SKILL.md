@@ -1,452 +1,195 @@
 ---
 name: frontend-design
-description: Design thinking and decision-making for web UI. Use when designing components, layouts, color schemes, typography, or creating aesthetic interfaces. Teaches principles, not fixed values.
+description: Design thinking, 2026 visual craft, OKLCH color architecture, 3-axis typography, spring motion, and WCAG 2.2 AA decision-making for web UI. Pair with anti-ai-slop-visual-craft and design-spec.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+version: 2.0.0
 ---
 
-# Frontend Design System
+# Frontend Design System (v2.0 — 2026 Anti-AI-Slop & WCAG 2.2 AA Edition)
 
 > **Philosophy:** Every pixel has purpose. Restraint is luxury. User psychology drives decisions.
-> **Core Principle:** THINK, don't memorize. ASK, don't assume.
+> **Core Principle:** THINK, don't memorize. ASK, don't assume. Lock an Aesthetic Archetype BEFORE coding.
 
 ---
 
-## 🎯 Selective Reading Rule (MANDATORY)
+## 🎯 Selective Reading & Companion Skills Rule (MANDATORY)
 
-**Read REQUIRED files always, OPTIONAL only when needed:**
-
-| File | Status | When to Read |
-|------|--------|--------------|
+| Resource / Companion Skill | Status | When to Read |
+|----------------------------|--------|--------------|
 | [ux-psychology.md](ux-psychology.md) | 🔴 **REQUIRED** | Always read first! |
-| [color-system.md](color-system.md) | ⚪ Optional | Color/palette decisions |
-| [typography-system.md](typography-system.md) | ⚪ Optional | Font selection/pairing |
-| [visual-effects.md](visual-effects.md) | ⚪ Optional | Glassmorphism, shadows, gradients |
-| [animation-guide.md](animation-guide.md) | ⚪ Optional | Animation needed |
-| [motion-graphics.md](motion-graphics.md) | ⚪ Optional | Lottie, GSAP, 3D |
-| [decision-trees.md](decision-trees.md) | ⚪ Optional | Context templates |
+| `anti-ai-slop-visual-craft` (`skills_library/`) | 🔴 **REQUIRED** | Pre-Coding Aesthetic Gate, Anti-Slop Ban List, 1px specular borders, optical alignment |
+| `design-spec` (`skills/design-spec/SKILL.md`) | 🔴 **REQUIRED** | Authoring `DESIGN.md` with OKLCH, surface elevation & motion tokens |
+| [color-system.md](color-system.md) / `oklch-bento-grid-architecture` | ⚪ Optional | OKLCH palettes, dark mode surface ladders & asymmetric Bento grids |
+| [typography-system.md](typography-system.md) | ⚪ Optional | 3-axis font pairing (`Display` + `UI Sans` + `Tabular Mono`) & fluid `clamp()` scales |
+| [animation-guide.md](animation-guide.md) / `motion-v12-view-transitions-css` | ⚪ Optional | View Transitions API, CSS `@starting-style`/`scroll()`, `motion/react` v12 springs |
+| [visual-effects.md](visual-effects.md) / [decision-trees.md](decision-trees.md) | ⚪ Optional | Specular depth, tactile textures, context templates |
 
-> 🔴 **ux-psychology.md = ALWAYS READ. Others = only if relevant.**
-
----
-
-## 🔧 Runtime Scripts
-
-**Execute these for audits (don't read, just run):**
+## 🔧 Runtime Audit Script
 
 | Script | Purpose | Usage |
 |--------|---------|-------|
-| `scripts/ux_audit.py` | UX Psychology & Accessibility Audit | `python ~/.gemini/config/skills/frontend-design/scripts/ux_audit.py <project_path>` |
+| `scripts/ux_audit.py` | UX Psychology & WCAG 2.2 AA Audit | `python ~/.gemini/config/skills/frontend-design/scripts/ux_audit.py <project_path>` |
 
 ---
 
-## ⚠️ CRITICAL: ASK BEFORE ASSUMING (MANDATORY)
+## ⚠️ CRITICAL: PRE-CODING AESTHETIC GATE & ASK BEFORE ASSUMING
 
-> **STOP! If the user's request is open-ended, DO NOT default to your favorites.**
+> **STOP! If the user's request is open-ended, DO NOT default to generic Tailwind SaaS templates.**
 
-### When User Prompt is Vague, ASK:
+### 1. When User Prompt is Vague, Ask or Propose an Archetype:
+- **Aesthetic Archetype**: *Swiss Editorial Grid* (warm paper + serif + exposed `1px` hairlines), *Linear Technical Dark* (obsidian OKLCH surface ladder + top specular border), *Quiet Luxury Minimal* (tonal limestone + generous whitespace), or *Tactile Neo-Brutalist* (`2px` ink border + hard offset shadow)?
+- **Color & Theme**: Light-first, Dark-first, or Adaptive OKLCH dual theme?
+- **Layout Architecture**: Editorial narrative, Asymmetric 12-column Bento Grid (`7:5` / `8:4`), or Dense Workspace Workbench?
 
-**Color not specified?** Ask:
-> "What color palette do you prefer? (blue/green/orange/neutral/other?)"
+### 2. ⛔ Explicit Anti-AI-Slop Ban List (Zero Tolerance)
 
-**Style not specified?** Ask: 
-> "What style are you going for? (minimal/bold/retro/futuristic/organic?)"
-
-**Layout not specified?** Ask:
-> "Do you have a layout preference? (single column/grid/asymmetric/full-width?)"
-
-### ⛔ DEFAULT TENDENCIES TO AVOID (ANTI-SAFE HARBOR):
-
-| AI Default Tendency | Why It's Bad | Think Instead |
-|---------------------|--------------|---------------|
-| **Bento Grids (Modern Cliché)** | Used in every AI design | Why does this content NEED a grid? |
-| **Hero Split (Left/Right)** | Predictable & Boring | How about Massive Typography or Vertical Narrative? |
-| **Mesh/Aurora Gradients** | The "new" lazy background | What's a radical color pairing? |
-| **Glassmorphism** | AI's idea of "premium" | How about solid, high-contrast flat? |
-| **Deep Cyan / Fintech Blue** | Safe harbor from purple ban | Why not Red, Black, or Neon Green? |
-| **"Orchestrate / Empower"** | AI-generated copywriting | How would a human say this? |
-| Dark background + neon glow | Overused, "AI look" | What does the BRAND actually need? |
-| **Rounded everything** | Generic/Safe | Where can I use sharp, brutalist edges? |
-
-> 🔴 **"Every 'safe' structure you choose brings you one step closer to a generic template. TAKE RISKS."**
+| AI Default Tendency | Why It Fails | 2026 Craft Replacement |
+|---------------------|--------------|------------------------|
+| **Purple/Indigo Gradient (`#6366f1 → #a855f7`)** | Universal LLM cliché; screams uncurated AI output | Single high-conviction OKLCH accent (`oklch(0.62 0.19 28)` ember, emerald, or monochrome ink) |
+| **3 Equal Cards in a Row (`grid-cols-3 gap-6`)** | Zero visual hierarchy; boring template rhythm | Asymmetric Bento Grid (`8:4` or `7:5` split) or numbered editorial index (`01 / 02 / 03`) |
+| **Floating Blurred Neon Blobs (`blur-3xl`)** | Muddy contrast, GPU overdraw, dated 2021 look | Stepped OKLCH surface elevation + `1px` hairline border with top inner specular highlight |
+| **Centered Everything (`text-center` on all sections)** | Destroys scannability and reading anchor | Left-align thesis headlines (`max-w-[58ch]`) and body copy; right-align metadata/actions |
+| **Naked Icons in Colored Circles** | Overused boilerplate filler | Interactive micro-UI previews, live sparklines, or `<kbd>⌘K</kbd>` shortcut badges |
+| **AI Copywriting (*"Unleash"*, *"Empower"*, *"Next-Gen"*)** | Zero information density | Concrete, metric-backed copy (*"Sub-10ms hot-sync across 5 IDEs"*) |
 
 ---
 
-## 1. Constraint Analysis (ALWAYS FIRST)
+## 1. Constraint & Audience Analysis (Always First)
 
-Before any design work, ANSWER THESE or ASK USER:
-
-| Constraint | Question | Why It Matters |
-|------------|----------|----------------|
-| **Timeline** | How much time? | Determines complexity |
-| **Content** | Ready or placeholder? | Affects layout flexibility |
-| **Brand** | Existing guidelines? | May dictate colors/fonts |
-| **Tech** | What stack? | Affects capabilities |
-| **Audience** | Who exactly? | Drives all visual decisions |
-
-### Audience → Design Approach
-
-| Audience | Think About |
-|----------|-------------|
-| **Gen Z** | Bold, fast, mobile-first, authentic |
-| **Millennials** | Clean, minimal, value-driven |
-| **Gen X** | Familiar, trustworthy, clear |
-| **Boomers** | Readable, high contrast, simple |
-| **B2B** | Professional, data-focused, trust |
-| **Luxury** | Restrained elegance, whitespace |
+| Constraint | Question | Design Impact |
+|------------|----------|---------------|
+| **Audience** | Developers, Enterprise B2B, Consumer Gen-Z, or Luxury? | Drives density, typography, and motion tempo |
+| **Brand / `DESIGN.md`** | Does `DESIGN.md` or Figma variables exist? | Conform strictly to existing tokens |
+| **Device Mix** | Desktop keyboard-first (`⌘K`) or Mobile thumb-zone? | Dictates `<ResponsiveModal>` (`vaul` drawer vs Radix dialog) and `44pt`/`48dp` targets |
 
 ---
 
 ## 2. UX Psychology Principles
 
-### Core Laws (Internalize These)
-
-| Law | Principle | Application |
-|-----|-----------|-------------|
-| **Hick's Law** | More choices = slower decisions | Limit options, use progressive disclosure |
-| **Fitts' Law** | Bigger + closer = easier to click | Size CTAs appropriately |
-| **Miller's Law** | ~7 items in working memory | Chunk content into groups |
-| **Von Restorff** | Different = memorable | Make CTAs visually distinct |
-| **Serial Position** | First/last remembered most | Key info at start/end |
-
-### Emotional Design Levels
-
-```
-VISCERAL (instant)  → First impression: colors, imagery, overall feel
-BEHAVIORAL (use)    → Using it: speed, feedback, efficiency
-REFLECTIVE (memory) → After: "I like what this says about me"
-```
-
-### Trust Building
-
-- Security indicators on sensitive actions
-- Social proof where relevant
-- Clear contact/support access
-- Consistent, professional design
-- Transparent policies
+| Law | Principle | UI Engineering Application |
+|-----|-----------|----------------------------|
+| **Hick's Law** | More choices = slower decisions | Progressive disclosure; move secondary actions into `⌘K` (`cmdk`) or overflow menus |
+| **Fitts' Law** | Bigger + closer = faster acquisition | Keep primary CTAs in the thumb zone on mobile (`>= 44×44pt` iOS / `>= 48×48dp` Android) |
+| **Miller's Law** | `5 ± 2` items in working memory | Group navigation and dashboard KPIs into chunks of `3–5` cards |
+| **Von Restorff Effect** | The distinct item is remembered | Limit primary accent color (`10%` budget) to **one primary CTA per viewport** |
+| **Doherty Threshold** | `< 400ms` response feels instantaneous | Use optimistic UI updates (`useOptimistic` + `sonner` Undo toast) and skeleton shimmer |
 
 ---
 
-## 3. Layout Principles
+## 3. Layout, Viewport & Bento Grid Architecture
 
-### Golden Ratio (φ = 1.618)
-
-```
-Use for proportional harmony:
-├── Content : Sidebar = roughly 62% : 38%
-├── Each heading size = previous × 1.618 (for dramatic scale)
-├── Spacing can follow: sm → md → lg (each × 1.618)
-```
-
-### 8-Point Grid Concept
-
-```
-All spacing and sizing in multiples of 8:
-├── Tight: 4px (half-step for micro)
-├── Small: 8px
-├── Medium: 16px
-├── Large: 24px, 32px
-├── XL: 48px, 64px, 80px
-└── Adjust based on content density
-```
-
-### Key Sizing Principles
-
-| Element | Consideration |
-|---------|---------------|
-| **Touch targets** | Minimum comfortable tap size |
-| **Buttons** | Height based on importance hierarchy |
-| **Inputs** | Match button height for alignment |
-| **Cards** | Consistent padding, breathable |
-| **Reading width** | 45-75 characters optimal |
+1. **8-Point Spatial System & Concentric Radii**:
+   - Spacing uses `4px` micro-steps and `8px` structural multiples (`8, 16, 24, 32, 48, 64, 96px`).
+   - **Concentric Border Radius Formula**: `R_outer = R_inner + Padding` (e.g., outer card `rounded-2xl` `20px` with `p-2` `8px` padding requires inner container `rounded-xl` `12px`).
+2. **Modern CSS Viewport & Container Queries**:
+   - Always use **`min-h-dvh`** (dynamic viewport height) instead of `100vh` so mobile browser chrome never clips bottom CTAs.
+   - Mark reusable cards and Bento cells with **`@container`** so internal layouts switch from stacked to horizontal based on component width (`@min-[520px]:flex-row`), not global screen width.
+3. **Reading Measure & Text Wrapping**:
+   - Constrain body prose strictly to **`45ch–68ch`** (`max-w-prose`) with `text-wrap: pretty`, and apply `text-wrap: balance` to all headings.
 
 ---
 
-## 4. Color Principles
+## 4. Perceptual Color Architecture (OKLCH First)
 
-### 60-30-10 Rule
+### 60-30-10 Allocation & Dark Mode Surface Elevation
 
+```text
+60% → Canvas & Primary Surfaces (calm neutral OKLCH base)
+30% → Elevated Cards, Hairline Borders & Secondary Typography
+10% → High-Conviction Accent (Primary CTA, active indicators, focus rings)
 ```
-60% → Primary/Background (calm, neutral base)
-30% → Secondary (supporting areas)
-10% → Accent (CTAs, highlights, attention)
-```
 
-### Color Psychology (For Decision Making)
+- **Why OKLCH (`oklch(L C H / alpha)`)**: Guarantees uniform perceived lightness across hues.
+- **Dark Mode by Lightness Stepping (Never Black Drop Shadows)**:
+  - Canvas: `oklch(0.12 0.012 H)` → Card: `oklch(0.155 0.014 H)` → Elevated: `oklch(0.19 0.016 H)` → Overlay: `oklch(0.225 0.018 H / 0.88)`.
+  - Avoid pure `#000000` backgrounds with `#FFFFFF` text (prevents OLED halation/astigmatism blur).
+- **CSS Relative Color Syntax**: Derive hover and subtle states dynamically via `oklch(from var(--primary) calc(l + 0.06) c h)`.
 
-| If You Need... | Consider Hues | Avoid |
-|----------------|---------------|-------|
-| Trust, calm | Blue family | Aggressive reds |
-| Growth, nature | Green family | Industrial grays |
-| Energy, urgency | Orange, red | Passive blues |
-| Luxury, creativity | Deep Teal, Gold, Emerald | Cheap-feeling brights |
-| Clean, minimal | Neutrals | Overwhelming color |
-
-### Selection Process
-
-1. **What's the industry?** (narrows options)
-2. **What's the emotion?** (picks primary)
-3. **Light or dark mode?** (sets foundation)
-4. **ASK USER** if not specified
-
-For detailed color theory: [color-system.md](color-system.md)
+For deep color theory: [color-system.md](color-system.md) & `oklch-bento-grid-architecture`.
 
 ---
 
-## 5. Typography Principles
+## 5. 3-Axis Typography System & `tabular-nums`
 
-### Scale Selection
+1. **3-Axis Font Pairing**:
+   - **`--font-display`**: High-character editorial serif (*Instrument Serif*, *Newsreader*) or geometric display (*Geist*, *Space Grotesk*) with tight tracking (`-0.025em` to `-0.035em`) and tight leading (`1.06–1.15`).
+   - **`--font-sans`**: Neutral, high-x-height UI sans (*Plus Jakarta Sans*, *Inter*, *Satoshi*) with `1.5–1.65` line height and `>= 16px` mobile input font size (prevents iOS Safari auto-zoom).
+   - **`--font-mono`**: Technical monospace (*JetBrains Mono*, *Geist Mono*) for IDs, code, keyboard shortcuts, and metrics.
+2. **Mandatory Tabular Numerals**:
+   - Every number in a dashboard, price tag, timer, counter, or table cell MUST apply `font-variant-numeric: tabular-nums` (`tabular-nums` in Tailwind) so digits align vertically and never jitter during live updates.
 
-| Content Type | Scale Ratio | Feel |
-|--------------|-------------|------|
-| Dense UI | 1.125-1.2 | Compact, efficient |
-| General web | 1.25 | Balanced (most common) |
-| Editorial | 1.333 | Readable, spacious |
-| Hero/display | 1.5-1.618 | Dramatic impact |
-
-### Pairing Concept
-
-```
-Contrast + Harmony:
-├── DIFFERENT enough for hierarchy
-├── SIMILAR enough for cohesion
-└── Usually: display + neutral, or serif + sans
-```
-
-### Readability Rules
-
-- **Line length**: 45-75 characters optimal
-- **Line height**: 1.4-1.6 for body text
-- **Contrast**: Check WCAG requirements
-- **Size**: 16px+ for body on web
-
-For detailed typography: [typography-system.md](typography-system.md)
+For detailed typography: [typography-system.md](typography-system.md).
 
 ---
 
-## 6. Visual Effects Principles
+## 6. Specular Depth, Borders & Tactile Surfaces
 
-### Glassmorphism (When Appropriate)
-
-```
-Key properties:
-├── Semi-transparent background
-├── Backdrop blur
-├── Subtle border for definition
-└── ⚠️ **WARNING:** Standard blue/white glassmorphism is a modern cliché. Use it radically or not at all.
-```
-
-### Shadow Hierarchy
-
-```
-Elevation concept:
-├── Higher elements = larger shadows
-├── Y-offset > X-offset (light from above)
-├── Multiple layers = more realistic
-└── Dark mode: may need glow instead
-```
-
-### Gradient Usage
-
-```
-Harmonious gradients:
-├── Adjacent colors on wheel (analogous)
-├── OR same hue, different lightness
-├── Avoid harsh complementary pairs
-├── 🚫 **NO Mesh/Aurora Gradients** (floating blobs)
-└── VARY from project to project radically
-```
-
-For complete effects guide: [visual-effects.md](visual-effects.md)
+- **1px Hairline + Top Specular Highlight**:
+  Instead of heavy diffuse drop shadows, frame dark-mode cards with `border: 1px solid oklch(1 0 0 / 0.08)` and `box-shadow: inset 0 1px 0 0 oklch(1 0 0 / 0.07), 0 1px 2px 0 oklch(0 0 0 / 0.4)`.
+- **Restrained Translucent Chrome**:
+  Reserve `backdrop-filter: blur(16px) saturate(180%)` strictly for sticky headers, floating bottom bars, and `cmdk` command palettes — never make every card on a page translucent glass.
 
 ---
 
-## 7. Animation Principles
+## 7. 3-Tier Motion & Choreography (60–120 FPS)
 
-### Timing Concept
+| Tier | Technology | Use Case |
+|------|------------|----------|
+| **Tier 1** | **Native CSS View Transitions API** (`document.startViewTransition`) | Route changes, tab content switches, and Bento grid filter sorting |
+| **Tier 2** | **Pure CSS `@starting-style` & `animation-timeline: view()`** | Zero-JS dialog/popover entry/exit and off-main-thread scroll reveals |
+| **Tier 3** | **`motion/react` (Motion v12 Springs)** (`stiffness: 420, damping: 32, mass: 0.8`) | Shared `layoutId` active pills, swipeable `vaul` drawers, and physics gestures |
 
-```
-Duration based on:
-├── Distance (further = longer)
-├── Size (larger = slower)
-├── Importance (critical = clear)
-└── Context (urgent = fast, luxury = slow)
-```
-
-### Easing Selection
-
-| Action | Easing | Why |
-|--------|--------|-----|
-| Entering | Ease-out | Decelerate, settle in |
-| Leaving | Ease-in | Accelerate, exit |
-| Emphasis | Ease-in-out | Smooth, deliberate |
-| Playful | Bounce | Fun, energetic |
-
-### Performance
-
-- Animate only transform and opacity
-- Respect reduced-motion preference
-- Test on low-end devices
-
-For animation patterns: [animation-guide.md](animation-guide.md), for advanced: [motion-graphics.md](motion-graphics.md)
+- **Compositor-Only Rule**: Animate only `transform` and `opacity`.
+- **Mandatory Accessibility**: Always honor `@media (prefers-reduced-motion: reduce)` and `useReducedMotion()` by collapsing spatial movement into instant opacity crossfades.
 
 ---
 
-## 8. "Wow Factor" Checklist
+## 8. WCAG 2.2 AA Accessibility & Ergonomics Gate (Mandatory)
 
-### Premium Indicators
-
-- [ ] Generous whitespace (luxury = breathing room)
-- [ ] Subtle depth and dimension
-- [ ] Smooth, purposeful animations
-- [ ] Attention to detail (alignment, consistency)
-- [ ] Cohesive visual rhythm
-- [ ] Custom elements (not all defaults)
-
-### Trust Builders
-
-- [ ] Security cues where appropriate
-- [ ] Social proof / testimonials
-- [ ] Clear value proposition
-- [ ] Professional imagery
-- [ ] Consistent design language
-
-### Emotional Triggers
-
-- [ ] Hero that evokes intended emotion
-- [ ] Human elements (faces, stories)
-- [ ] Progress/achievement indicators
-- [ ] Moments of delight
+Every UI component must pass **WCAG 2.2 Level AA** before completion:
+- [ ] **Contrast Ratios (`1.4.3` & `1.4.11`)**: `>= 4.5:1` for normal text, `>= 3.0:1` for large text (`>= 18pt` or `14pt bold`) and functional UI borders/icons.
+- [ ] **Target Size (`2.5.8` — New in WCAG 2.2 AA)**: Interactive targets are **at least `24×24 CSS px`** on desktop and **`>= 44×44pt` (`48×48dp`)** on mobile touchscreens.
+- [ ] **Focus Not Obscured (`2.4.11` — New in WCAG 2.2 AA)** & **Focus Appearance**: Sticky headers/footers never cover the focused element (`scroll-padding-top`), and `:focus-visible` renders a crisp `2px` ring with `2px` offset.
+- [ ] **Accessible Authentication (`3.3.8`) & Drag Alternatives (`2.5.7`)**: Never block paste (`onPaste`) on password/OTP fields; provide single-click buttons alongside any drag-and-drop or slider gesture.
 
 ---
 
-## 9. Anti-Patterns (What NOT to Do)
+## 9. Next.js 15/16+ Modern `<Form>` & Server Action UX
 
-### ❌ Lazy Design Indicators
+For Next.js 15/16+ App Router projects:
+- **Use `next/form` (`<Form action="/search">`)** for GET-based search, filtering, sorting, and pagination (automatic client navigation, URL sync, and progressive enhancement).
+- **Use `<form action={formAction}>` with React 19 `useActionState` + `useOptimistic`** for POST mutations, rendering inline field errors (`aria-invalid`, `aria-describedby`) and non-blocking `sonner` feedback.
 
-- Default system fonts without consideration
-- Stock imagery that doesn't match
-- Inconsistent spacing
-- Too many competing colors
-- Walls of text without hierarchy
-- Inaccessible contrast
-
-### ❌ AI Tendency Patterns (AVOID!)
-
-- **Same colors every project**
-- **Dark + neon as default**
-- **Purple/violet everything (PURPLE BAN ✅)**
-- **Bento grids for simple landing pages**
-- **Mesh Gradients & Glow Effects**
-- **Same layout structure / Vercel clone**
-- **Not asking user preferences**
-
-### ❌ Dark Patterns (Unethical)
-
-- Hidden costs
-- Fake urgency
-- Forced actions
-- Deceptive UI
-- Confirmshaming
-
----
-
-## 10. Decision Process Summary
-
-```
-For EVERY design task:
-
-1. CONSTRAINTS
-   └── What's the timeline, brand, tech, audience?
-   └── If unclear → ASK
-
-2. CONTENT
-   └── What content exists?
-   └── What's the hierarchy?
-
-3. STYLE DIRECTION
-   └── What's appropriate for context?
-   └── If unclear → ASK (don't default!)
-
-4. EXECUTION
-   └── Apply principles above
-   └── Check against anti-patterns
-
-5. REVIEW
-   └── "Does this serve the user?"
-   └── "Is this different from my defaults?"
-   └── "Would I be proud of this?"
-```
-
----
-
-## Reference Files
-
-For deeper guidance on specific areas:
-
-- [color-system.md](color-system.md) - Color theory and selection process
-- [typography-system.md](typography-system.md) - Font pairing and scale decisions
-- [visual-effects.md](visual-effects.md) - Effects principles and techniques
-- [animation-guide.md](animation-guide.md) - Motion design principles
-- [motion-graphics.md](motion-graphics.md) - Advanced: Lottie, GSAP, SVG, 3D, Particles
-- [decision-trees.md](decision-trees.md) - Context-specific templates
-- [ux-psychology.md](ux-psychology.md) - User psychology deep dive
-
----
-
-## Related Skills
-
-| Skill | When to Use |
-|-------|-------------|
-| **frontend-design** (this) | Before coding - Learn design principles (color, typography, UX psychology) |
-| **[frontend-architecture](../frontend-architecture/SKILL.md)** | After coding - Audit for accessibility, performance, and best practices |
-
-## Post-Design Workflow
-
-After implementing your design, run the audit:
-
-```
-1. DESIGN   → Read frontend-design principles ← YOU ARE HERE
-2. CODE     → Implement the design
-3. AUDIT    → Run web-design-guidelines review
-4. FIX      → Address findings from audit
-```
-
-> **Next Step:** After coding, use `web-design-guidelines` skill to audit your implementation for accessibility, focus states, animations, and performance issues.
-
----
-
-> **Remember:** Design is THINKING, not copying. Every project deserves fresh consideration based on its unique context and users. **Avoid the Modern SaaS Safe Harbor!**
-
----
-
-## 11. Next.js 16+ Modern Form Patterns
-
-> [!IMPORTANT]
-> For Next.js 16+ projects, use the native `next/form` component instead of standard HTML `<form>` for all GET-based search/filter operations.
-
-### The `<Form>` Component Advantage
-- **Automatic Client Navigation:** Performs client-side transitions on submit.
-- **Progressive Enhancement:** Works even without JavaScript.
-- **URL Sync:** Automatically encodes input values into search params.
-
-### Implementation Example (Search Bar)
 ```tsx
-import Form from 'next/form'
+import Form from 'next/form';
 
-export default function SearchBar() {
+export function ProductSearchBar() {
   return (
-    <Form action="/search" className="flex gap-2">
-      <input 
-        name="q" 
-        placeholder="Search products..." 
-        className="border p-2"
+    <Form action="/search" className="flex items-center gap-2">
+      <input
+        name="q"
+        type="search"
+        placeholder="Search components..."
+        className="min-h-11 rounded-xl border border-[var(--border-hairline)] bg-[var(--surface-card)] px-3.5 text-base md:text-sm"
       />
-      <button type="submit">Search</button>
+      <button
+        type="submit"
+        className="min-h-11 rounded-xl bg-[var(--primary)] px-4 text-sm font-medium text-white"
+      >
+        Search
+      </button>
     </Form>
-  )
+  );
 }
 ```
 
-### When to use `<Form>` vs. standard `<form>`:
-- **Use `next/form`** for: Search, Filtering, Sorting, Pagination (GET requests).
-- **Use standard `<form>`** for: Mutations, Login, Data Entry (POST requests via Server Actions).
+---
+
+## 10. Post-Design Verification Workflow
+
+```text
+1. ARCHETYPE & TOKENS → Lock archetype in DESIGN.md (design-spec + anti-ai-slop-visual-craft)
+2. ARCHITECTURE       → Structure state & components (frontend-architecture)
+3. IMPLEMENTATION     → Build with OKLCH, Bento @container, cmdk/vaul/sonner & motion/react
+4. WCAG 2.2 AA AUDIT  → Verify contrast, 24px/44px targets, focus-visible, tabular-nums & reduced-motion
+```

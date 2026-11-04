@@ -8,7 +8,7 @@
 domain: security
 name: "Security Engineering"
 description: "Threat modeling, secure coding, compliance"
-skill_count: 103
+skill_count: 105
 
 skills:
   # --------------------------------------------------------------------------
@@ -850,3 +850,19 @@ skills:
       agents: [security-engineer, reviewer, backend-engineer, tech-lead]
       profiles: ["security:*", "mcp:*", "quality:review"]
     description: "OWASP Top 10 for LLM & Agentic Applications (2025): indirect prompt injection defense, tool privilege separation, SSRF guards, and secret redaction"
+
+  - skill_id: semgrep-rule-variant-creator
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer, reviewer]
+      profiles: ["security:*"]
+    description: "Port and author Semgrep SAST rule variants across target programming languages."
+
+  - skill_id: variant-analysis
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer, debugger]
+      profiles: ["security:*"]
+    description: "Find similar vulnerability classes and bug variants across codebases using pattern-based analysis."

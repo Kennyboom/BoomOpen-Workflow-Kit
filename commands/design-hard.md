@@ -5,13 +5,13 @@ category: design
 execution-mode: execute
 ---
 
-> **📂 Deliverable Routing (v5.1)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
+> **📂 Deliverable Routing (v5.5)**: On Antigravity 2.0, write transient deliverables (`BRAINSTORM`, `RESEARCH`, `SCOUT`, `DESIGN`, `PLAN`, `DEBUG`, `TEST`, `REVIEW`, `REPORT`, `MAILBOX`) to `<appDataDir>\brain\<conversation-id>\` to keep the Git tree clean (use `./reports/{topic}/` on non-Antigravity tools or when explicitly requested).
 
 ---
 
 # /design:hard — Full Design Process
 
-> **MISSION**: Execute complete design process with research, exploration, and iteration.
+> **MISSION**: Execute complete design process with parallel research + codebase scouting, 2026 visual craft, and WCAG 2.2 AA verification.
 
 <request>$ARGUMENTS</request>
 
@@ -27,13 +27,17 @@ execution-mode: execute
 
 ⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
 
-**Skills Resolution**: When delegating, load `SKILLS.md` on-demand for fitness calculation and dynamic discovery (hard/team variants enable find-skills).
+**Mandatory Design Skills for Sub-agents**: Instruct `designer` and `reviewer` to load:
+- `skills/design-spec/SKILL.md` & `skills/frontend-design/SKILL.md`
+- `skills_library/anti-ai-slop-visual-craft/SKILL.md` & `skills_library/oklch-bento-grid-architecture/SKILL.md`
+- `skills_library/motion-v12-view-transitions-css/SKILL.md` & `skills_library/ai-native-generative-ui-ux/SKILL.md`
+- `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`
 
 ---
 
 ## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
 
-> **Reference: AGENTS.md (Tiered Execution)`
+> **Reference: AGENTS.md (Tiered Execution)**
 
 ```yaml
 tiered_execution:
@@ -52,16 +56,16 @@ tiered_execution:
 
 ```yaml
 deliverable_files:
-  researcher: "./reports/{topic}/researchers/RESEARCH-{request}"
-  scouter: "./reports/{topic}/scouts/SCOUT-{request}"
-  designer: "./reports/{topic}/designs/DESIGN-{request}" # MANDATORY OUTPUT
+  researcher: "<appDataDir>\\brain\\<conversation-id>\\RESEARCH-{request}.md" # Fallback: ./reports/{topic}/researchers/RESEARCH-{request}.md
+  scouter: "<appDataDir>\\brain\\<conversation-id>\\SCOUT-{request}.md"       # Fallback: ./reports/{topic}/scouts/SCOUT-{request}.md
+  designer: "<appDataDir>\\brain\\<conversation-id>\\DESIGN-{request}.md"     # MANDATORY OUTPUT (Fallback: ./reports/{topic}/designs/DESIGN-{request}.md)
 
 enforcement:
-  - Design phase MUST create design file
-  - Design file is the deliverable for implementation phases
+  - Design phase MUST create DESIGN-{request}.md in <appDataDir>\brain\<conversation-id>\
+  - Design file is the canonical contract for downstream implementation phases
 ```
 
-All deliverables in `<appDataDir>\\brain\\<conversation-id>\\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
+All deliverables in `<appDataDir>\brain\<conversation-id>\` (or `./reports/{topic}/`) → Write in the same language the user communicates with you. Code comments remain in English.
 **⚠️ Paths above = base names.** Small (≤ 150 lines) → create as `{name}.md`. Large (> 150 lines or ≥ 4 sections) → create as `{name}/` folder with `00-index.md` + `01-*.md`, `02-*.md` section files.
 
 ---
@@ -83,7 +87,7 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `brainstormer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent(TypeName: "self", Role: "UX Discovery Brainstormer", Model: "inherit")`) for `brainstormer`. Context: ISOLATED.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -92,67 +96,41 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **Exit Criteria:**
 
-- [ ] Requirements clear
-- [ ] User needs identified
-- [ ] Constraints documented
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol (Socratic questioning, assumption surfacing)
+- [ ] Requirements and JTBD Job Stories clear
+- [ ] User needs and constraints documented
+- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol
 
 ---
 
-## 🎭 Phase 2: RESEARCH
+## 🎭 Phase 2: PARALLEL RESEARCH & CODEBASE SCOUTING (DAG FAN-OUT)
 
-| Attribute | Value                           |
-| --------- | ------------------------------- |
-| **Agent** | `researcher`                    |
-| **Goal**  | Research design patterns and UX |
+| Attribute | Value                                                                 |
+| --------- | --------------------------------------------------------------------- |
+| **Agents**| `researcher` + `scouter` (**PARALLEL DAG FAN-OUT** in single turn)    |
+| **Goal**  | Research 2026 UX/design patterns AND map existing codebase tokens/UI  |
 
-### ⚡ TIERED EXECUTION
+### ⚡ TIERED EXECUTION (PARALLEL FAN-OUT)
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `researcher`. Context: ISOLATED.
+> Spawn **BOTH** sub-agents in parallel in the same tool call batch:
+> 1. `invoke_subagent(TypeName: "self", Role: "UX Researcher", Model: "inherit")` → writes `<appDataDir>\brain\<conversation-id>\RESEARCH-{request}.md` (loads `skills_library/ux-researcher-designer/SKILL.md`).
+> 2. `invoke_subagent(TypeName: "research", Role: "Codebase Design Scouter", Model: "inherit")` → writes `<appDataDir>\brain\<conversation-id>\SCOUT-{request}.md` (audits existing CSS/Tailwind tokens, components, and layouts).
 
 **TIER 2 (FALLBACK on system error only):**
 
-> Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] — Requires logged system error justification.
+> Load `{AGENTS_PATH}/researcher.md` and `{AGENTS_PATH}/scouter.md`
+> EMBODY [researcher] + [scouter] — Requires logged system error justification.
 
 **Exit Criteria:**
 
-- [ ] Patterns researched
-- [ ] Best practices identified
-- [ ] **METHODOLOGY CHECK**: Output aligns with `researcher` Thinking Protocol (sources cited, evidence-based)
+- [ ] `RESEARCH-{request}.md` created with evidence-based UX patterns
+- [ ] `SCOUT-{request}.md` created with existing design token and component inventory
+- [ ] **METHODOLOGY CHECK**: Outputs align with `researcher` and `scouter` Thinking Protocols
 
 ---
 
-## 🎭 Phase 3: CODEBASE ANALYSIS
-
-| Attribute | Value                      |
-| --------- | -------------------------- |
-| **Agent** | `scouter`                  |
-| **Goal**  | Map existing design system |
-
-### ⚡ TIERED EXECUTION
-
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
-
-**Exit Criteria:**
-
-- [ ] Design system documented
-- [ ] Component inventory
-- [ ] Integration points
-- [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol (file locations, patterns documented)
-
----
-
-## 🎭 Phase 4: DESIGN CREATION
+## 🎭 Phase 3: DESIGN CREATION
 
 | Attribute | Value                  |
 | --------- | ---------------------- |
@@ -163,7 +141,9 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `designer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent(TypeName: "self", Role: "Principal Design Architect", Model: "inherit")`) for `designer`.
+> **Mandatory Skills**: Load `skills/design-spec/SKILL.md`, `skills/frontend-design/SKILL.md`, `skills_library/anti-ai-slop-visual-craft/SKILL.md`, `skills_library/oklch-bento-grid-architecture/SKILL.md`, `skills_library/motion-v12-view-transitions-css/SKILL.md`, `skills_library/ai-native-generative-ui-ux/SKILL.md`, and `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
+> Write output to `<appDataDir>\brain\<conversation-id>\DESIGN-{request}.md`.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -172,28 +152,25 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **Exit Criteria:**
 
-- [ ] Design complete
-- [ ] All states covered
-- [ ] Accessibility verified
-- [ ] Specs documented
-- [ ] **METHODOLOGY CHECK**: Output aligns with `designer` Thinking Protocol (user empathy, accessibility-first, visual hierarchy)
+- [ ] `DESIGN-{request}.md` complete with YAML token frontmatter and OKLCH color system
+- [ ] All 5 UI states (`Idle`, `Loading`, `Empty`, `Error`, `Success`) specified
+- [ ] **WCAG 2.2 AA** verified (`Target Size >= 24x24px web / 44x44pt mobile`, `Focus Not Obscured` with `scroll-padding-top/bottom`, `Dragging Alternatives`, `Accessible Auth`)
+- [ ] **METHODOLOGY CHECK**: Output aligns with `designer` Thinking Protocol
 
 ---
 
----
+## 🎭 Phase 4: DESIGN & ACCESSIBILITY REVIEW
 
-## 🎭 Phase 5: DESIGN REVIEW
-
-| Attribute | Value                 |
-| --------- | --------------------- |
-| **Agent** | `reviewer`            |
-| **Goal**  | Review design quality |
+| Attribute | Value                                           |
+| --------- | ----------------------------------------------- |
+| **Agent** | `reviewer`                                      |
+| **Goal**  | Audit visual craft, token fidelity & WCAG 2.2 AA|
 
 ### ⚡ TIERED EXECUTION
 
 **TIER 1 (MANDATORY when tool exists):**
 
-> Invoke native sub-agent (`invoke_subagent` / `runSubagent`) for `reviewer`. Context: ISOLATED.
+> Invoke native sub-agent (`invoke_subagent(TypeName: "self", Role: "Design & WCAG 2.2 AA Reviewer", Model: "inherit")`) for `reviewer`. Instruct `reviewer` to audit `DESIGN-{request}.md` against `skills_library/anti-ai-slop-visual-craft/SKILL.md` and `skills_library/wcag-22-accessibility-ergonomics/SKILL.md`.
 
 **TIER 2 (FALLBACK on system error only):**
 
@@ -202,10 +179,9 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 **Exit Criteria:**
 
-- [ ] Design reviewed
-- [ ] Standards met
-- [ ] Approved
-- [ ] **METHODOLOGY CHECK**: Output aligns with `reviewer` Thinking Protocol (specific feedback, priority matrix)
+- [ ] Design reviewed against Anti-AI-Slop rubric and WCAG 2.2 AA criteria
+- [ ] Standards met and approved
+- [ ] **METHODOLOGY CHECK**: Output aligns with `reviewer` Thinking Protocol
 
 ---
 
@@ -213,6 +189,6 @@ Execute phases using **DAG Parallel Fan-Out** for independent tracks, **Direct P
 
 Present design with:
 
-1. ✅ **Done** — Design complete
+1. ✅ **Done** — Design complete (`<appDataDir>\brain\<conversation-id>\DESIGN-{request}.md`)
 2. 💻 **Implement** → `/code:hard`
 3. 🔄 **Iterate** — Further refinement

@@ -1,358 +1,161 @@
 ---
 name: product-design
-description: "Design de produto nivel Apple — sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo."
-risk: none
-source: community
-date_added: '2026-03-06'
-author: renat
-tags:
-- design
-- ux
-- design-systems
-- accessibility
-- figma
-tools:
-- claude-code
-- antigravity
-- cursor
-- gemini-cli
-- codex-cli
+description: End-to-end Product Design framework from problem framing and Opportunity Solution Trees to user flows, the mandatory 5-State UI Matrix (Empty, Loading, Partial, Ideal, Error), and design critique rubrics.
+version: "2.0.0"
+category: "design"
+domain: "design"
+tags: ["product-design", "ui-states", "opportunity-solution-tree", "design-critique", "user-flows", "specification"]
 ---
 
-# PRODUCT DESIGN — Nivel Apple
+# End-to-End Product Design Framework: Discovery to Delivery (2026)
 
-## Overview
-
-Design de produto nivel Apple — sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo. Ativar para: criar design system, definir visual language, revisar UX, acessibilidade, tokens de design, branding de produto, UI critique.
-
-## When to Use This Skill
-
-- When you need specialized assistance with this domain
-
-## Do Not Use This Skill When
-
-- The task is unrelated to product design
-- A simpler, more specific tool can handle the request
-- The user needs general-purpose assistance without domain expertise
-
-## How It Works
-
-> "Design is not just what it looks like and feels like. Design is how it works."
-> — Steve Jobs
+## 1. When to Use This Skill
+Use this skill when leading **end-to-end product feature design (`/design`, `/cook`, `/plan`)**, translating ambiguous business goals into concrete user flows, specifying complete UI screen states, or running structured **Design Critiques**, including:
+- Framing product initiatives with **Outcome-Driven Problem Statements** and **Opportunity Solution Trees (OST)**.
+- Enforcing the **Mandatory 5-State UI Matrix (`Empty`, `Loading`, `Partial`, `Ideal`, `Error`)** on every screen and data widget.
+- Authoring developer-ready design specifications that bridge UX intent, visual hierarchy, and technical constraints.
 
 ---
 
-## Os 10 Principios De Jony Ive / Apple
+## 2. Phase 1: Problem Framing & Opportunity Solution Tree (OST)
 
-1. **Simplicidade radical** — remova tudo que nao e essencial
-2. **Honestidade material** — cada elemento existe por uma razao
-3. **Menos e mais** — restraint e uma decisao de design
-4. **Coerencia sistemica** — tudo faz parte de um sistema unico
-5. **Detalhes importam** — o usuario sente, mesmo sem notar
-6. **Funcao define forma** — a estetica serve ao proposito
-7. **Durabilidade** — design que envelhece bem
-8. **Acessibilidade como padrao** — nao como adicional
-9. **Continuidade entre telas** — experiencia unificada
-10. **Surpresa deleitosa** — o inesperado que encanta
+Never jump straight from a feature request (*"Add a custom report builder"*) to pixels. Anchor the design in a measurable user and business outcome:
 
-## Design Cognitivo
-
-- **Carga cognitiva zero** — o usuario nunca deve pensar
-- **Affordances claras** — o que e clicavel parece clicavel
-- **Feedback imediato** — toda acao tem resposta visual
-- **Erros previnem-se** — design que impossibilita erros
-
----
-
-## Estrutura De Um Design System De Elite
-
-```
-design-system/
-├── tokens/
-│   ├── colors.json       # paleta completa com semantica
-│   ├── typography.json   # escala tipografica
-│   ├── spacing.json      # grid e espacamento
-│   ├── shadows.json      # elevacao e profundidade
-│   ├── motion.json       # duracao e easing
-│   └── radius.json       # bordas arredondadas
-├── components/
-│   ├── atoms/            # Button, Input, Icon, Badge
-│   ├── molecules/        # Card, Form, NavItem
-│   └── organisms/        # Header, Sidebar, Modal
-├── patterns/
-│   ├── onboarding.md     # primeiro acesso
-│   ├── empty-states.md   # estados vazios
-│   ├── loading.md        # estados de carregamento
-│   └── errors.md         # tratamento de erros
-└── guidelines/
-    ├── voice-tone.md     # voz e tom
-    ├── imagery.md        # fotografia e ilustracao
-    └── accessibility.md  # WCAG 2.1 AA
+```markdown
+### Product Design Brief Header
+1. **Target Persona & Context**: Who is experiencing this friction, and what triggers the workflow?
+2. **Core Problem Statement**: What is broken, slow, or error-prone in their current workflow?
+3. **Target Outcome Metric**: How will we measure success? (e.g., Reduce incident triage time from 8m → 90s; increase onboarding completion from 42% → 70%).
+4. **Non-Goals (Scope Guardrails)**: What are we explicitly NOT building in this iteration?
 ```
 
-## Design Tokens — Exemplo Auri
+```mermaid
+flowchart TD
+    Outcome["🎯 Target Outcome<br/>Reduce Time-to-First-Deployment &lt; 2 Minutes"]
+    Outcome --> Opp1["🔍 Opportunity 1<br/>Users get stuck configuring env vars manually"]
+    Outcome --> Opp2["🔍 Opportunity 2<br/>Users don't know if their CLI auth succeeded"]
+    Opp1 --> Sol1A["💡 Solution A: 1-Click .env Import &amp; Auto-Detection"]
+    Opp1 --> Sol1B["💡 Solution B: Interactive Starter Template Preset"]
+    Opp2 --> Sol2A["💡 Solution C: Live Connection Health Pill in Header"]
+```
 
-```json
-{
-  "color": {
-    "brand": {
-      "primary": "#6C63FF",
-      "primary-dark": "#5A52E0",
-      "accent": "#FF6B6B",
-      "surface": "#F8F7FF"
-    },
-    "semantic": {
-      "success": "#22C55E",
-      "warning": "#F59E0B",
-      "error": "#EF4444",
-      "info": "#3B82F6"
-    },
-    "neutral": {
-      "900": "#111827",
-      "800": "#1F2937",
-      "600": "#4B5563",
-      "400": "#9CA3AF",
-      "200": "#E5E7EB",
-      "50":  "#F9FAFB"
-    }
-  },
-  "typography": {
-    "display": { "size": "48px", "weight": "700", "line": "1.1" },
-    "h1": { "size": "36px", "weight": "700", "line": "1.2" },
-    "h2": { "size": "28px", "weight": "600", "line": "1.3" },
-    "body": { "size": "16px", "weight": "400", "line": "1.6" },
-    "small": { "size": "14px", "weight": "400", "line": "1.5" }
-  },
-  "spacing": {
-    "xs": "4px", "sm": "8px", "md": "16px",
-    "lg": "24px", "xl": "32px", "2xl": "48px", "3xl": "64px"
-  },
-  "radius": {
-    "sm": "4px", "md": "8px", "lg": "12px",
-    "xl": "16px", "full": "9999px"
-  },
-  "shadow": {
-    "sm": "0 1px 3px rgba(0,0,0,0.12)",
-    "md": "0 4px 12px rgba(0,0,0,0.15)",
-    "lg": "0 8px 24px rgba(0,0,0,0.18)",
-    "xl": "0 20px 60px rgba(0,0,0,0.22)"
-  },
-  "motion": {
-    "fast": "150ms ease-out",
-    "normal": "250ms ease-in-out",
-    "slow": "400ms cubic-bezier(0.34, 1.56, 0.64, 1)"
+---
+
+## 3. Phase 2: The Mandatory 5-State UI Matrix
+
+The #1 cause of front-end rework during engineering implementation is designing only the **"Ideal State"** (when the user has 12 perfectly formatted items). Every view, card, and table in a product design specification MUST define all **5 canonical UI states**:
+
+| UI State | Trigger Condition | Mandatory UX & Visual Specification |
+|:---------|:------------------|:------------------------------------|
+| **1. Empty (First-Run / Zero-Results)** | `items.length === 0` (either brand-new workspace OR filter returned 0 matches) | Distinguish **First-Run Empty** (show value preview + primary creation CTA + `Load Sample Data` button) from **Zero Filter Matches** (show `No results for "xyz"` + `Clear Filters` button) |
+| **2. Loading (Initial & Incremental)** | Initial fetch (`> 150ms`), pagination, or background mutation | Render geometry-matched shimmer skeletons (matching exact row/card heights to guarantee `CLS = 0.00`); use inline button spinners (`aria-busy="true"`) for mutations |
+| **3. Partial / Sparse / Overflow** | `1` item on screen, missing optional fields, or `500-char` unbroken strings | Verify layout does not collapse when only `1` card exists; enforce `truncate` / `line-clamp-2` with tooltip for long user-generated titles |
+| **4. Ideal (High-Density Production)** | Normal operational load (`10–1,000+` items) | Clear visual hierarchy: primary metric/title (`font-semibold`), secondary metadata (`text-muted`), `tabular-nums` alignment, and keyboard accelerators |
+| **5. Error / Degraded / Offline** | Network timeout, `403 Forbidden`, `422 Validation`, or `500` upstream outage | Preserve user input (never wipe a form on submit error!); display human-readable cause + trace ID + `Retry` button |
+
+---
+
+## 4. Production TypeScript Pattern: Type-Safe 5-State View Switcher
+
+```tsx
+import React from 'react';
+
+export type AsyncViewState<T> =
+  | { status: 'loading' }
+  | { status: 'error'; message: string; onRetry: () => void }
+  | { status: 'empty'; isFiltered: boolean; onResetFilters?: () => void; onCreateNew: () => void }
+  | { status: 'ready'; data: T };
+
+export function FiveStateViewContainer<T>({
+  state,
+  loadingSkeleton,
+  emptyTitle,
+  emptyDescription,
+  emptyCtaLabel,
+  children,
+}: {
+  state: AsyncViewState<T>;
+  loadingSkeleton: React.ReactNode;
+  emptyTitle: string;
+  emptyDescription: string;
+  emptyCtaLabel: string;
+  children: (data: T) => React.ReactNode;
+}) {
+  if (state.status === 'loading') {
+    return <div aria-busy="true" aria-live="polite">{loadingSkeleton}</div>;
   }
+
+  if (state.status === 'error') {
+    return (
+      <div
+        role="alert"
+        className="rounded-xl border border-rose-500/30 bg-rose-950/20 p-6 text-center"
+      >
+        <h3 className="text-sm font-semibold text-rose-200">Unable to load view</h3>
+        <p className="mt-1 text-xs text-rose-300/80">{state.message}</p>
+        <button
+          type="button"
+          onClick={state.onRetry}
+          className="mt-4 min-h-9 rounded-lg bg-rose-600 px-4 py-1.5 text-xs font-semibold text-white hover:bg-rose-500"
+        >
+          Retry Request
+        </button>
+      </div>
+    );
+  }
+
+  if (state.status === 'empty') {
+    return (
+      <div className="rounded-xl border border-dashed border-slate-800 bg-slate-900/40 p-10 text-center">
+        <h3 className="text-base font-semibold text-slate-100">
+          {state.isFiltered ? 'No matching items found' : emptyTitle}
+        </h3>
+        <p className="mx-auto mt-1.5 max-w-md text-xs text-slate-400">
+          {state.isFiltered
+            ? 'Try adjusting your search query or clearing active filter facets.'
+            : emptyDescription}
+        </p>
+        <div className="mt-5 flex items-center justify-center gap-3">
+          {state.isFiltered && state.onResetFilters ? (
+            <button
+              type="button"
+              onClick={state.onResetFilters}
+              className="min-h-9 rounded-lg border border-slate-700 px-4 py-1.5 text-xs font-medium text-slate-200 hover:bg-slate-800"
+            >
+              Clear All Filters
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={state.onCreateNew}
+              className="min-h-9 rounded-lg bg-indigo-600 px-4 py-1.5 text-xs font-semibold text-white hover:bg-indigo-500"
+            >
+              {emptyCtaLabel}
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  return <>{children(state.data)}</>;
 }
 ```
 
 ---
 
-## Estrutura De Um Ux Flow
+## 5. Phase 3: Design Critique & Handoff Rubric
 
-```
-1. Entry Point (como o usuario chega)
-2. Context (o que o usuario sabe/quer)
-3. Action (o que o usuario faz)
-4. Feedback (resposta imediata do sistema)
-5. Outcome (o que o usuario conseguiu)
-6. Next Step (o que vem depois naturalmente)
-```
-
-## Onboarding De Elite (Primeiros 5 Minutos)
-
-```
-Tela 1: Promessa — "O que voce vai conseguir"
-  - Uma frase impactante
-  - Uma imagem que mostra o resultado
-  - CTA: "Comecar" (nao "Criar conta")
-
-Tela 2: Acao imediata — primeiro valor antes de cadastro
-  - Deixe o usuario experimentar algo real
-  - Formulario minimo (email apenas)
-  - Progresso visivel (1 de 3)
-
-Tela 3: Personalizacao — "Me conte sobre voce"
-  - Max 3 perguntas
-  - Visual, nao texto
-  - Pula disponivel sempre
-
-Tela 4: Momento Aha — primeiro sucesso real
-  - O usuario faz algo que funciona
-  - Celebracao genuina (nao excessiva)
-  - "Voce acabou de [acao de valor]"
-```
-
-## Empty States Que Encantam
-
-```
-Nao mostre: "Nenhum item encontrado"
-Mostre:
-  - Ilustracao contextual
-  - Mensagem de oportunidade: "Ainda nao ha [X]. Crie o primeiro!"
-  - CTA primario
-  - Talvez: dica de como comecar
-```
+Before approving any product design for implementation, evaluate these 4 dimensions:
+1. **Value & Friction (`UX Lead`)**: Can a first-time user complete the core job without reading external documentation? Can a daily power user complete it via keyboard in `< 5 seconds`?
+2. **Visual Craft & Hierarchy (`UI Architect`)**: If you squint at the screen, is the #1 primary action and #1 focal metric immediately unmistakable? Are all colors, radii, and spacings bound to semantic tokens?
+3. **Edge-Case Completeness (`Product Engineer`)**: Are all 5 states (`Empty`, `Loading`, `Partial`, `Ideal`, `Error`) explicitly specified? What happens on a `375px` mobile screen or when a title is `180 characters` long?
+4. **Inclusive Ergonomics (`A11y Critic`)**: Does every interactive control meet `WCAG 2.2 AA` (`>= 24x24px` web / `44x44pt` touch, `>= 4.5:1` text contrast, full keyboard + screen-reader parity)?
 
 ---
 
-## Principios Unicos Para Voice Ui
-
-1. **Zero carga visual** — o usuario nao ve nada (apenas ouve)
-2. **Reversibilidade facil** — "desfazer" e sempre possivel
-3. **Confirmacao opcional** — so para acoes irreversiveis
-4. **Variedade de resposta** — nunca a mesma frase duas vezes
-5. **Silencio e ok** — pausa de 2s antes de perguntar se precisa de ajuda
-
-## Estrutura De Resposta De Voz
-
-```
-[Hook opcional] + [Resposta core] + [Acao ou pergunta]
-
-Ruim: "Desculpe, nao entendi o que voce disse. Pode repetir?"
-Bom:  "Nao captei bem. Pode repetir de outro jeito?"
-
-Ruim: "Claro! Posso ajudar com isso. A resposta para sua pergunta e..."
-Bom:  "A resposta e: [resposta direta]"
-```
-
-## Scripts De Interacao Auri
-
-```
-Primeiro uso:
-"Oi! Sou a Auri. Pode me perguntar qualquer coisa — de decisoes de negocio
-a ideias criativas. Como posso ajudar hoje?"
-
-Retorno (usuario ja conhecido):
-"Bem-vindo de volta! Onde paramos foi em [topico]. Quer continuar?"
-
-Nao entendeu:
-"Nao peguei bem. Tenta de outro jeito?"
-
-Encerramento:
-"Qualquer coisa, e so chamar. Ate logo!"
-```
-
----
-
-## Framework De Critica Construtiva
-
-```
-1. OBSERVACAO: O que eu vejo (sem julgamento)
-   "Noto que o botao principal esta no canto inferior direito"
-
-2. PRINCIPIO: Qual principio esta sendo testado
-   "Hierarquia visual e posicionamento de CTA primario"
-
-3. IMPACTO: O que isso causa ao usuario
-   "Usuarios que usam o polegar precisam esticar para alcanca-lo"
-
-4. ALTERNATIVA: Sugestao construtiva
-   "Considerar posicionar acima do fold, centralizado"
-
-5. TRADE-OFF: O que se perde/ganha
-   "Mais acessivel, mas perde area para conteudo"
-```
-
-## Checklist De Critica De Ui
-
-- [ ] Hierarquia visual clara (o olho sabe para onde ir)
-- [ ] Contraste adequado (WCAG AA: 4.5:1 para texto)
-- [ ] Tamanho de toque minimo (44x44px em mobile)
-- [ ] Consistencia com design system
-- [ ] Estados interativos definidos (hover/active/disabled/focus)
-- [ ] Responsividade (mobile-first)
-- [ ] Loading states e empty states
-- [ ] Tratamento de erros com mensagem util
-- [ ] Acessibilidade (labels, roles ARIA, keyboard nav)
-- [ ] Performance percebida (skeleton screens, optimistic UI)
-
----
-
-## Conceito Visual
-
-A Auri e **inteligencia com calor humano**. Nao e um robo — e uma presenca.
-A identidade visual deve comunicar: sofisticacao acessivel.
-
-## Paleta Principal
-
-```
-Roxo Auri:     #6C63FF  — identidade, inteligencia, inovacao
-Rosa Auri:     #FF6B9D  — calor, empatia, humanidade
-Branco Puro:   #FFFFFF  — clareza, espaco, respiro
-Grafite Suave: #1A1A2E  — autoridade, profundidade, noite
-```
-
-## Tipografia
-
-```
-Display/Titulos: Inter (ou SF Pro para Apple) — Bold 700
-Corpo de texto:  Inter Regular 400 — linha 1.6
-Mono/Codigo:     JetBrains Mono — para elementos tecnicos
-```
-
-## Logo Conceito
-
-```
-Forma: Onda de audio estilizada formando a letra "A"
-Cor: Gradiente roxo → rosa (esquerda para direita)
-Espaco negativo: Sugestao de microfone ou ear
-Versao dark/light: Ambas definidas
-Tamanho minimo: 24px (icone), 120px (lockup completo)
-```
-
----
-
-## Stack De Design
-
-| Ferramenta | Uso |
-|-----------|-----|
-| Figma | Design de UI, prototipagem, handoff |
-| FigJam | User journeys, workshops, ideacao |
-| Zeroheight | Documentacao do design system |
-| Lottie | Animacoes (exportadas do After Effects/Figma) |
-| Mobbin | Referencia de patterns de UI |
-| Screenlane | Inspiracao de UI real |
-
-## Processo De Design Sprint (5 Dias)
-
-```
-Segunda: Entender — pesquisa, user interviews, definir o problema
-Terca:   Divergir — crazy 8s, sketches individuais, lightning demos
-Quarta:  Decidir — vote, storyboard, decisao final
-Quinta:  Prototipar — prototipo de alta fidelidade no Figma
-Sexta:   Testar — 5 usuarios, insights, iterar
-```
-
----
-
-## 8. Comandos
-
-| Comando | Acao |
-|---------|------|
-| `/design-critique` | Critica estruturada de um design |
-| `/design-tokens` | Gera tokens para um projeto |
-| `/ux-flow` | Mapeia fluxo de experiencia |
-| `/voice-ux` | Design de interacao por voz |
-| `/onboarding` | Cria fluxo de onboarding |
-| `/design-system` | Estrutura design system completo |
-| `/accessibility` | Auditoria de acessibilidade |
-| `/visual-identity` | Define identidade visual de produto |
-
-## Best Practices
-
-- Provide clear, specific context about your project and requirements
-- Review all suggestions before applying them to production code
-- Combine with other complementary skills for comprehensive analysis
-
-## Common Pitfalls
-
-- Using this skill for tasks outside its domain expertise
-- Applying recommendations without understanding your specific context
-- Not providing enough project context for accurate analysis
-
-## Related Skills
-
-- `analytics-product` - Complementary skill for enhanced analysis
-- `growth-engine` - Complementary skill for enhanced analysis
-- `monetization` - Complementary skill for enhanced analysis
-- `product-inventor` - Complementary skill for enhanced analysis
+## 6. Verification Checklist
+- [ ] Problem statement, target user job, and measurable outcome metric are documented before UI layout.
+- [ ] Every screen and data widget defines all 5 UI states (`Empty`, `Loading`, `Partial`, `Ideal`, `Error`).
+- [ ] First-run empty states are differentiated from zero-match filter states.
+- [ ] Responsive behavior (`375px` mobile, `768px` tablet, `1440px` desktop) and text-overflow truncation rules are specified.

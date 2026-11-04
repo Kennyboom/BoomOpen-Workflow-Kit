@@ -23,6 +23,16 @@ execution-mode: router
 
 ⚡ **TURN-1 ZERO-TAX DISPATCH**: Core orchestration laws and the 5-Field Handoff Packet are pre-loaded in your global entrypoint (`GEMINI.md` / `CLAUDE.md` / `CODEX.md`). Route and launch Phase 1 sub-agents **immediately on Turn 1** via `invoke_subagent(TypeName: "self", Model: "inherit")`; load `rules/TEAMS.md` or `rules/PHASES.md` in parallel only when needed.
 
+### 🎨 Mandatory 2026 UI/UX Skill Bundle & WCAG 2.2 AA Baseline
+
+Every delegated design agent (`designer`, `frontend-engineer`, `reviewer`, `design-team`) **MUST** load and enforce:
+- **Core Design Skills**: `skills/design-spec/SKILL.md` and `skills/frontend-design/SKILL.md`
+- **2026 Visual Craft & Token Architecture**: `skills_library/anti-ai-slop-visual-craft/SKILL.md`, `skills_library/oklch-bento-grid-architecture/SKILL.md`, `skills_library/motion-v12-view-transitions-css/SKILL.md`, `skills_library/ai-native-generative-ui-ux/SKILL.md`
+- **WCAG 2.2 AA Ergonomics (`skills_library/wcag-22-accessibility-ergonomics/SKILL.md`)**:
+  - `SC 2.5.8 Target Size (Minimum)`: `>= 24x24px` on desktop/web (`>= 44x44pt` on mobile/touch)
+  - `SC 2.4.11 Focus Not Obscured`: Sticky headers/footers MUST declare `scroll-padding-top` / `scroll-padding-bottom`
+  - `SC 2.5.7 Dragging Movements`: Single-pointer click/keyboard alternatives for all drag/slider UI
+
 ---
 
 ## 🎯 INTENT DETECTION (BEFORE ROUTING — MANDATORY)
@@ -31,7 +41,7 @@ execution-mode: router
 >
 > - ❌ NEVER write implementation code
 > - ❌ NEVER auto-transition to `/code`, `/cook`, `/fix` after designing
-> - ✅ Output design documents and STOP. Wait for user's explicit next command.
+> - ✅ Output design documents to `<appDataDir>\brain\<conversation-id>\DESIGN-{request}.md` and STOP. Wait for user's explicit next command.
 > - ✅ Design files MUST be written in the same language the user communicates with you.
 
 ---
@@ -56,11 +66,11 @@ IF unsure:
 
 ## AVAILABLE ROUTES
 
-| Route           | When to Use                                        |
-| --------------- | -------------------------------------------------- |
-| `/design:fast`  | Quick component design, simple UI                  |
-| `/design:hard`  | Full feature design, system design                 |
-| `/design:team`  | Maximum quality with parallel agent team collaboration |
+| Route           | When to Use                                             |
+| --------------- | ------------------------------------------------------- |
+| `/design:fast`  | Quick component design, simple UI                       |
+| `/design:hard`  | Full feature design, system design (parallel discovery) |
+| `/design:team`  | Maximum quality with Golden Triangle adversarial review |
 
 ---
 

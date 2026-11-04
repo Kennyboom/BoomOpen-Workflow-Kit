@@ -8,7 +8,7 @@
 domain: architecture
 name: "System Architecture"
 description: "Design patterns, system design, ADRs"
-skill_count: 23
+skill_count: 24
 
 skills:
   # --------------------------------------------------------------------------
@@ -210,3 +210,11 @@ skills:
       agents: [tech-lead, planner, scouter]
       profiles: ["*:orchestration", "architecture:*"]
     description: "Smart-Hybrid 2-Mode complexity threshold gate, Proactive Sub-agent First fan-out, and warm sub-agent session reuse"
+
+  - skill_id: c4-context
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [tech-lead, planner]
+      profiles: ["architecture:*"]
+    description: "C4 Context-level system architecture diagrams, personas, and boundary documentation."

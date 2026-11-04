@@ -8,7 +8,7 @@
 domain: data
 name: "Data & Database"
 description: "Schema design, queries, migrations"
-skill_count: 35
+skill_count: 36
 
 skills:
   # --------------------------------------------------------------------------
@@ -302,3 +302,11 @@ skills:
       agents: [database-architect, backend-engineer]
       profiles: ["data:*", "backend:execution"]
     description: "Drizzle ORM relational queries, zero-downtime drizzle-kit migrations, Neon Serverless Postgres HTTP/WS drivers, and Turso LibSQL"
+
+  - skill_id: seaborn
+    category: community
+    priority_score: 6
+    relevance_mapping:
+      agents: [database-architect, backend-engineer]
+      profiles: ["data:*"]
+    description: "Python statistical data visualization and publication-quality graphics with Seaborn."

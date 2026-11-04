@@ -221,15 +221,16 @@ BoomOpen v5.5 includes a **Zero-Latency Unified Control Center** that lets you s
 
 ## 📚 1,450+ Skills Vault (48 Core + 1,450+ Niche Library Skills)
 
-BoomOpen ships with one of the largest curated engineering skill ecosystems in open source (`1,452` indexed skills across 19 domains) — engineered for **0-token idle overhead** via **2-Step O(1) Progressive Skill Resolution** (`<skills>` Core check → `matrix-skills/compact-index.json` lookup → load exact `SKILL.md` on demand):
+BoomOpen ships with one of the largest curated engineering skill ecosystems in open source (`1,462` indexed skills across 19 domains) — engineered for **0-token idle overhead** via **2-Step O(1) Progressive Skill Resolution** (`<skills>` Core check → `matrix-skills/compact-index.json` lookup → load exact `SKILL.md` on demand):
 
 | Skill Tier / Domain | Count | Representative 2026 Flagship Skills & Capabilities | Loading Mechanism |
 |:--------------------|:-----:|:---------------------------------------------------|:------------------|
 | **⚡ Tier 1: Core Skills (`skills/`)** | **48** | `clean-code`, `systematic-debugging`, `plan-writing`, `brainstorming`, `frontend-design`, `frontend-architecture`, `design-spec`, `api-patterns`, `database-design`, `testing-patterns`, `skill-seeker` | Pre-indexed in `<skills>` for instant Turn-1 access |
-| **🌐 Web, Backend & Edge Data Stack** | **390+** | React 19 & Next.js 15 RSC, Tailwind v4 + `shadcn/ui`, TanStack Start/Router/Query, Hono RPC + Zod OpenAPI, Rust Axum/Tokio/SQLx, Supabase RLS/Realtime, Drizzle + Neon/Turso, FastAPI, NestJS | On-demand via `compact-index.json` (`skills_library/`) |
+| **🎨 UI/UX Craft, Motion & Design Systems** | **42** | Anti-AI-Slop Visual Craft, OKLCH Perceptual Palettes & Bento Grids, Motion v12 + CSS View Transitions & Scroll-Driven Animations, AI-Native Generative UI UX, Headless Primitives (`cmdk`/`vaul`/`sonner`), Figma MCP + W3C DTCG Tokens, WCAG 2.2 AA/AAA, iOS 18 HIG & Material 3 Expressive | On-demand via `compact-index.json` (`matrix-skills/design.yaml`) |
+| **🌐 Web, Backend & Edge Data Stack** | **390+** | React 19 & Next.js 15 RSC, Tailwind v4 + `shadcn/ui`, TanStack Start/Router/Query, SaaS Dashboards & TanStack Table v8, Hono RPC + Zod OpenAPI, Rust Axum/Tokio/SQLx, Supabase RLS/Realtime, Drizzle + Neon/Turso | On-demand via `compact-index.json` (`skills_library/`) |
 | **🤖 AI, Agentic SDKs, MCP & Data** | **320+** | MCP FastMCP 2025 (`StreamableHTTP`), OpenAI Agents SDK, Claude Agent SDK, Google ADK (Gemini), Vercel AI SDK v4 & Mastra, AI IDE Plugin Authoring, RAG, BigQuery, dbt | On-demand via `compact-index.json` (`skills_library/`) |
 | **☁️ Cloud, DevOps, Testing & Security** | **300+** | Cloudflare Workers/D1/R2/Durable Objects, Terraform/OpenTofu, Docker/K8s GitOps, Vitest + MSW v2 testing, Better Auth (Passkeys/2FA), OWASP Top 10 for LLM & Agentic Apps 2025 | On-demand via `compact-index.json` (`skills_library/`) |
-| **🎮 Game Engines, 3D Web & Mobile** | **440+** | Unity 6 DOTS/ECS & `.asmdef`, Godot 4 GDScript/Shaders, WebGPU/WGSL & Three.js TSL, React Three Fiber + Rapier 3D, Colyseus Multiplayer Netcode, PixiJS v8/Phaser, Tauri v2 (Rust Desktop/Mobile), SwiftUI, Kotlin, React Native, Flutter | On-demand via `compact-index.json` (`skills_library/`) |
+| **🎮 Game Engines, 3D Web & Mobile** | **410+** | Unity 6 DOTS/ECS & `.asmdef`, Godot 4 GDScript/Shaders, WebGPU/WGSL & Three.js TSL, React Three Fiber + Rapier 3D, Colyseus Multiplayer Netcode, PixiJS v8/Phaser, Tauri v2 (Rust Desktop/Mobile), SwiftUI, Kotlin, React Native, Flutter | On-demand via `compact-index.json` (`skills_library/`) |
 
 ---
 
