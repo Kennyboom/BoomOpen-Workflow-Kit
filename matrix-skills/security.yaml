@@ -8,12 +8,13 @@
 domain: security
 name: "Security Engineering"
 description: "Threat modeling, secure coding, compliance"
-skill_count: 102
+skill_count: 103
 
 skills:
   # --------------------------------------------------------------------------
   # CORE SKILLS (Priority 9-10)
   # --------------------------------------------------------------------------
+
   - skill_id: vulnerability-scanner
     category: core
     priority_score: 10
@@ -33,6 +34,7 @@ skills:
   # --------------------------------------------------------------------------
   # EXPERT SKILLS (Priority 8)
   # --------------------------------------------------------------------------
+
   - skill_id: red-team-tactics
     category: expert
     priority_score: 8
@@ -68,6 +70,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS - PENETRATION TESTING (Added from skills-more)
   # --------------------------------------------------------------------------
+
   - skill_id: active-directory-attacks
     category: specialized
     priority_score: 7
@@ -295,7 +298,8 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS (Auto-cataloged 68 skills)
   # --------------------------------------------------------------------------
-  - skill_id: "007"
+
+  - skill_id: 007
     category: community
     priority_score: 6
     relevance_mapping:
@@ -695,14 +699,6 @@ skills:
       profiles: ["security:*"]
     description: "Secure secrets management practices for CI/CD pipelines using Vault, AWS Secrets Manager, and other tools."
 
-  - skill_id: security
-    category: community
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:*"]
-    description: "security skill"
-
   - skill_id: security-audit
     category: community
     priority_score: 6
@@ -839,3 +835,18 @@ skills:
       profiles: ["security:*"]
     description: "Web application security testing workflow for OWASP Top 10 vulnerabilities including injection, XSS, authentication f..."
 
+  - skill_id: better-auth-typescript
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [security-engineer, backend-engineer, frontend-engineer]
+      profiles: ["security:*", "backend:execution"]
+    description: "Better-Auth TypeScript authentication, OAuth, Passkeys/WebAuthn, 2FA/TOTP, Multi-Tenant Organizations & RBAC, and session hardening"
+
+  - skill_id: owasp-llm-agent-security-2025
+    category: core
+    priority_score: 10
+    relevance_mapping:
+      agents: [security-engineer, reviewer, backend-engineer, tech-lead]
+      profiles: ["security:*", "mcp:*", "quality:review"]
+    description: "OWASP Top 10 for LLM & Agentic Applications (2025): indirect prompt injection defense, tool privilege separation, SSRF guards, and secret redaction"

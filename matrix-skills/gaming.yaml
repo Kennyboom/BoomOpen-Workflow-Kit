@@ -8,7 +8,7 @@
 domain: gaming
 name: "Game Development"
 description: "Game engines, graphics, game loop"
-skill_count: 14
+skill_count: 16
 
 skills:
   # --------------------------------------------------------------------------
@@ -21,6 +21,60 @@ skills:
       agents: [game-engineer]
       profiles: ["gaming:*"]
     description: "Game loop, ECS, physics, 2D/3D, multiplayer"
+
+  - skill_id: unity-6-dots-ecs-architecture
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer]
+      profiles: ["gaming:*"]
+    description: "Unity 6 C# architecture, Assembly Definitions (.asmdef), ScriptableObject event channels, DOTS/Entities 1.3+ (ISystem, Burst, IJobEntity), object pooling, and 0-GC-allocation Update loops."
+
+  - skill_id: godot-4-gdscript-shaders-2d-3d
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer]
+      profiles: ["gaming:*"]
+    description: "Godot 4.3+ strict static-typed GDScript architecture, node composition, signal bus, custom Resource data, CharacterBody2D/3D state machines, and Godot Shader Language."
+
+  - skill_id: webgpu-wgsl-three-tsl
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer, frontend-engineer]
+      profiles: ["gaming:*", "frontend:execution"]
+    description: "WebGPU compute & render pipelines, WGSL shaders, storage buffers, and Three.js r170+ Three Shading Language (TSL) node materials & GPU-driven instanced rendering."
+
+  - skill_id: react-three-fiber-rapier-3d
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer, frontend-engineer]
+      profiles: ["gaming:*", "frontend:execution"]
+    description: "React Three Fiber (R3F), @react-three/drei, @react-three/rapier physics, useFrame zero-allocation mutation rules, GLTF instancing, and KTX2/Draco asset optimization."
+
+  - skill_id: multiplayer-netcode-colyseus
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer, backend-engineer]
+      profiles: ["gaming:*", "backend:execution"]
+    description: "Authoritative multiplayer server architecture (Colyseus / WebSockets / WebTransport), client-side prediction, server reconciliation, entity interpolation, and anti-cheat tick validation."
+
+  - skill_id: pixijs-v8-phaser-2d-games
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer, frontend-engineer]
+      profiles: ["gaming:*", "frontend:execution"]
+    description: "High-FPS 2D web games with PixiJS v8 (WebGL2/WebGPU renderer, ParticleContainer, sprite batching, texture atlases) and Phaser 3 scene/physics/tilemap architecture."
 
   - skill_id: game-developer
     category: expert
@@ -39,7 +93,7 @@ skills:
     description: "WebGL/WebGPU, 3D graphics, shaders, animations"
 
   # --------------------------------------------------------------------------
-  # NEW SKILLS (Auto-cataloged 11 skills)
+  # COMMUNITY & SPECIALIZED GAME SKILLS (Priority 6)
   # --------------------------------------------------------------------------
   - skill_id: bevy-ecs-expert
     category: community
@@ -57,14 +111,6 @@ skills:
       profiles: ["gaming:*"]
     description: "Master Godot 4 GDScript patterns including signals, scenes, state machines, and optimization. Use when building Godot..."
 
-  - skill_id: internal-comms-community
-    category: community
-    priority_score: 6
-    relevance_mapping:
-      agents: [game-engineer]
-      profiles: ["gaming:*"]
-    description: "To write internal communications, use this skill for:"
-
   - skill_id: makepad-shaders
     category: community
     priority_score: 6
@@ -81,22 +127,6 @@ skills:
       profiles: ["gaming:*"]
     description: "Makepad UI development skills for Rust apps: setup, patterns, shaders, packaging, and troubleshooting."
 
-  - skill_id: micro-saas-launcher
-    category: community
-    priority_score: 6
-    relevance_mapping:
-      agents: [game-engineer]
-      profiles: ["gaming:*"]
-    description: "You ship fast and iterate. You know the difference between a side project and a business. You've seen what works in t..."
-
-  - skill_id: odoo-upgrade-advisor
-    category: community
-    priority_score: 6
-    relevance_mapping:
-      agents: [game-engineer]
-      profiles: ["gaming:*"]
-    description: "Step-by-step Odoo version upgrade advisor: pre-upgrade checklist, community vs enterprise upgrade path, OCA module co..."
-
   - skill_id: shader-programming-glsl
     category: community
     priority_score: 6
@@ -104,14 +134,6 @@ skills:
       agents: [game-engineer]
       profiles: ["gaming:*"]
     description: "Expert guide for writing efficient GLSL shaders (Vertex/Fragment) for web and game engines, covering syntax, uniforms..."
-
-  - skill_id: startup-business-analyst-market-opportunity
-    category: community
-    priority_score: 6
-    relevance_mapping:
-      agents: [game-engineer]
-      profiles: ["gaming:*"]
-    description: "Generate comprehensive market opportunity analysis with TAM/SAM/SOM"
 
   - skill_id: unity-developer
     category: community
@@ -128,4 +150,3 @@ skills:
       agents: [game-engineer]
       profiles: ["gaming:*"]
     description: "Production patterns for Unity's Data-Oriented Technology Stack (DOTS) including Entity Component System, Job System, ..."
-

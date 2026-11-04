@@ -8,12 +8,21 @@
 domain: mobile
 name: "Mobile Development"
 description: "iOS, Android, cross-platform apps"
-skill_count: 27
+skill_count: 28
 
 skills:
   # --------------------------------------------------------------------------
   # CORE SKILLS (Priority 8-9)
   # --------------------------------------------------------------------------
+- skill_id: tauri-v2-rust-desktop-mobile
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [mobile-engineer, frontend-engineer, backend-engineer]
+      profiles: ["mobile:*", "frontend:execution"]
+    description: "Tauri v2 cross-platform desktop & mobile apps, Rust #[tauri::command] IPC state management, fine-grained capabilities/*.json permissions, and streaming Channel events."
+
   - skill_id: mobile-development
     category: core
     priority_score: 9

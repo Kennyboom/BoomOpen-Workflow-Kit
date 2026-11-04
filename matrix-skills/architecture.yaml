@@ -8,12 +8,13 @@
 domain: architecture
 name: "System Architecture"
 description: "Design patterns, system design, ADRs"
-skill_count: 22
+skill_count: 23
 
 skills:
   # --------------------------------------------------------------------------
   # CORE SKILLS (Priority 9-10)
   # --------------------------------------------------------------------------
+
   - skill_id: architecture
     category: core
     priority_score: 10
@@ -41,6 +42,7 @@ skills:
   # --------------------------------------------------------------------------
   # EXPERT SKILLS (Priority 7-8)
   # --------------------------------------------------------------------------
+
   - skill_id: architecture-designer
     category: expert
     priority_score: 8
@@ -84,6 +86,7 @@ skills:
   # --------------------------------------------------------------------------
   # UTILITY SKILLS (Priority 6)
   # --------------------------------------------------------------------------
+
   - skill_id: feature-forge
     category: utility
     priority_score: 6
@@ -95,6 +98,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS (Auto-cataloged 13 skills)
   # --------------------------------------------------------------------------
+
   - skill_id: architecture-decision-records
     category: community
     priority_score: 6
@@ -199,3 +203,10 @@ skills:
       profiles: ["architecture:*"]
     description: "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns,..."
 
+  - skill_id: intelligent-routing
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [tech-lead, planner, scouter]
+      profiles: ["*:orchestration", "architecture:*"]
+    description: "Smart-Hybrid 2-Mode complexity threshold gate, Proactive Sub-agent First fan-out, and warm sub-agent session reuse"

@@ -8,12 +8,13 @@
 domain: backend
 name: "Backend Development"
 description: "Server-side logic, APIs, data access"
-skill_count: 208
+skill_count: 209
 
 skills:
   # --------------------------------------------------------------------------
   # CORE SKILLS (Priority 8-9)
   # --------------------------------------------------------------------------
+
   - skill_id: api-patterns
     category: core
     priority_score: 9
@@ -81,6 +82,7 @@ skills:
   # --------------------------------------------------------------------------
   # FRAMEWORK SPECIALISTS (Priority 7)
   # --------------------------------------------------------------------------
+
   - skill_id: nestjs-expert
     category: specialized
     priority_score: 7
@@ -164,6 +166,7 @@ skills:
   # --------------------------------------------------------------------------
   # UTILITY SKILLS (Priority 6)
   # --------------------------------------------------------------------------
+
   - skill_id: fastapi-router
     category: specialized
     priority_score: 6
@@ -183,6 +186,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS (Added from skills-more)
   # --------------------------------------------------------------------------
+
   - skill_id: backend-dev-guidelines
     category: core
     priority_score: 8
@@ -282,6 +286,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS (Auto-cataloged 176 skills)
   # --------------------------------------------------------------------------
+
   - skill_id: anti-reversing-techniques
     category: community
     priority_score: 6
@@ -1690,3 +1695,10 @@ skills:
       profiles: ["backend:*"]
     description: "6-layer AI governance: safety gates, evidence-based debugging, anti-slack detection, and machine-enforced hooks. Make..."
 
+  - skill_id: hono-rpc-zod-openapi
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution", "architecture:*"]
+    description: "Hono ultra-fast edge/Node API routing, @hono/zod-openapi contract-first specs, and end-to-end type-safe hc<AppType> RPC"

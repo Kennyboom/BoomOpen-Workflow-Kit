@@ -25,7 +25,7 @@
 # ============================================================================
 
 version: "1.1"
-last_updated: "2026-01-30"
+last_updated: "2026-11-04"
 total_matrix_skills: 1430
 
 # ============================================================================
@@ -110,7 +110,7 @@ domains:
     file: "backend.yaml"
     name: "Backend Development"
     description: "Server-side logic, APIs, data access"
-    skill_count: 208
+    skill_count: 209
 
   frontend:
     file: "frontend.yaml"
@@ -122,7 +122,7 @@ domains:
     file: "architecture.yaml"
     name: "System Architecture"
     description: "Design patterns, system design, ADRs"
-    skill_count: 22
+    skill_count: 23
 
   quality:
     file: "quality.yaml"
@@ -134,7 +134,7 @@ domains:
     file: "security.yaml"
     name: "Security Engineering"
     description: "Threat modeling, secure coding, compliance"
-    skill_count: 102
+    skill_count: 103
 
   design:
     file: "design.yaml"
@@ -152,13 +152,13 @@ domains:
     file: "devops.yaml"
     name: "DevOps & Deployment"
     description: "CI/CD, infrastructure, containerization"
-    skill_count: 66
+    skill_count: 67
 
   data:
     file: "data.yaml"
     name: "Data & Database"
     description: "Schema design, queries, migrations"
-    skill_count: 33
+    skill_count: 35
 
   performance:
     file: "performance.yaml"
@@ -194,13 +194,13 @@ domains:
     file: "ai-ml.yaml"
     name: "AI/ML Engineering"
     description: "Machine learning, LLMs, data science"
-    skill_count: 229
+    skill_count: 230
 
   cloud:
     file: "cloud.yaml"
     name: "Cloud & Infrastructure"
     description: "AWS, Azure, GCP, serverless"
-    skill_count: 67
+    skill_count: 68
 
   languages:
     file: "languages.yaml"
@@ -218,7 +218,7 @@ domains:
     file: "mcp.yaml"
     name: "MCP & Agents"
     description: "Model Context Protocol, agent frameworks"
-    skill_count: 9
+    skill_count: 12
 
 # ============================================================================
 # AGENT PROFILES
@@ -227,7 +227,7 @@ domains:
 agent_profiles:
   backend-engineer:
     profile: "backend:execution"
-    inherit_from: ["backend", "architecture", "quality", "data", "languages"]
+    inherit_from: ["backend", "architecture", "quality", "data", "languages", "mcp", "ai-ml"]
     primary_domain: "backend"
 
   frontend-engineer:
@@ -237,12 +237,12 @@ agent_profiles:
 
   tech-lead:
     profile: "architecture:orchestration"
-    inherit_from: ["architecture", "quality", "planning"]
+    inherit_from: ["architecture", "quality", "planning", "mcp", "ai-ml"]
     primary_domain: "architecture"
 
   researcher:
     profile: "research:analysis"
-    inherit_from: ["research", "planning"]
+    inherit_from: ["research", "planning", "mcp", "ai-ml"]
     primary_domain: "research"
 
   debugger:

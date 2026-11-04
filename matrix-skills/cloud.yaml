@@ -8,12 +8,13 @@
 domain: cloud
 name: "Cloud & Infrastructure"
 description: "AWS, Azure, GCP, serverless"
-skill_count: 67
+skill_count: 68
 
 skills:
   # --------------------------------------------------------------------------
   # EXPERT SKILLS (Priority 8)
   # --------------------------------------------------------------------------
+
   - skill_id: cloud-architect
     category: expert
     priority_score: 8
@@ -25,6 +26,7 @@ skills:
   # --------------------------------------------------------------------------
   # SPECIALIZED SKILLS - AWS (Priority 6-7)
   # --------------------------------------------------------------------------
+
   - skill_id: aws-agentic-ai
     category: specialized
     priority_score: 7
@@ -60,6 +62,7 @@ skills:
   # --------------------------------------------------------------------------
   # SPECIALIZED SKILLS - AZURE (Priority 5-7)
   # --------------------------------------------------------------------------
+
   - skill_id: azd-deployment
     category: specialized
     priority_score: 7
@@ -95,6 +98,7 @@ skills:
   # --------------------------------------------------------------------------
   # SPECIALIZED SKILLS - CLOUDFLARE (Priority 7)
   # --------------------------------------------------------------------------
+
   - skill_id: building-ai-agent-on-cloudflare
     category: specialized
     priority_score: 7
@@ -114,6 +118,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS (Auto-cataloged 56 skills)
   # --------------------------------------------------------------------------
+
   - skill_id: amazon-alexa
     category: community
     priority_score: 6
@@ -562,3 +567,10 @@ skills:
       profiles: ["cloud:*"]
     description: "Plan and audit programmatic SEO pages generated at scale from structured data. Use when designing templates, URL syst..."
 
+  - skill_id: cloudflare-d1-r2-durable-objects
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer, devops-engineer, database-architect]
+      profiles: ["cloud:*", "backend:execution", "devops:execution"]
+    description: "Cloudflare Workers, D1 serverless SQLite batching, R2 streaming storage, Durable Objects WebSockets/state, and Queues"

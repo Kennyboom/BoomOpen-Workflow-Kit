@@ -8,12 +8,57 @@
 domain: frontend
 name: "Frontend Development"
 description: "UI/UX, web applications, client-side"
-skill_count: 109
+skill_count: 114
 
 skills:
   # --------------------------------------------------------------------------
   # CORE SKILLS (Priority 8-9)
   # --------------------------------------------------------------------------
+- skill_id: frontend-architecture
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer, tech-lead]
+      profiles: ["frontend:*", "architecture:*"]
+    description: "Separation of concerns (UI / logic / data / type), state tiers, API services, schema validation, and framework conventions for React/Next and Vue."
+
+  - skill_id: nextjs-react-expert
+    category: expert
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer, performance-engineer]
+      profiles: ["frontend:execution", "performance:*"]
+    description: "React and Next.js 57-rule performance optimization playbook from Vercel Engineering (waterfall elimination, bundle & RSC optimization)."
+
+  - skill_id: tailwind-v4-shadcn-ui
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer, designer]
+      profiles: ["frontend:execution", "design:*"]
+    description: "Tailwind CSS v4 CSS-first @theme configuration, OKLCH design tokens, container queries, and accessible shadcn/ui Radix primitive composition."
+
+  - skill_id: react-19-nextjs-15-rsc
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "React 19 (useActionState, useOptimistic, use, React Compiler) and Next.js 15 App Router (async params/searchParams, Server Actions validation, Suspense streaming)."
+
+  - skill_id: tanstack-start-router-query
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "TanStack Router type-safe file routing, search param Zod validation, loader pre-fetching, and TanStack Query v5 optimistic cache invalidation."
+
   - skill_id: react-patterns
     category: core
     priority_score: 9

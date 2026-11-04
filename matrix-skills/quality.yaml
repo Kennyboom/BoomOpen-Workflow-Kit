@@ -8,12 +8,21 @@
 domain: quality
 name: "Quality Assurance"
 description: "Testing, code review, validation"
-skill_count: 61
+skill_count: 62
 
 skills:
   # --------------------------------------------------------------------------
   # TESTING SKILLS (Priority 8-9)
   # --------------------------------------------------------------------------
+- skill_id: vitest-msw-testing-patterns
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [tester, frontend-engineer, backend-engineer]
+      profiles: ["quality:validation", "frontend:execution", "backend:execution"]
+    description: "Fast unit & integration testing with Vitest workspace mode, Mock Service Worker (MSW v2) network-level API mocking, and deterministic time/state assertions."
+
   - skill_id: testing-patterns
     category: core
     priority_score: 9

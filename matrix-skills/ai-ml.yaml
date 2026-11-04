@@ -8,12 +8,13 @@
 domain: ai_ml
 name: "AI/ML Engineering"
 description: "Machine learning, LLMs, data science"
-skill_count: 229
+skill_count: 230
 
 skills:
   # --------------------------------------------------------------------------
   # EXPERT SKILLS (Priority 8)
   # --------------------------------------------------------------------------
+
   - skill_id: senior-ml-engineer
     category: expert
     priority_score: 8
@@ -49,6 +50,7 @@ skills:
   # --------------------------------------------------------------------------
   # SPECIALIZED SKILLS (Priority 6-7)
   # --------------------------------------------------------------------------
+
   - skill_id: senior-computer-vision
     category: specialized
     priority_score: 7
@@ -100,6 +102,7 @@ skills:
   # --------------------------------------------------------------------------
   # UTILITY SKILLS (Priority 6)
   # --------------------------------------------------------------------------
+
   - skill_id: pandas-pro
     category: utility
     priority_score: 6
@@ -127,6 +130,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS - AGENT DEVELOPMENT (Added from skills-more)
   # --------------------------------------------------------------------------
+
   - skill_id: agent-evaluation
     category: expert
     priority_score: 8
@@ -234,6 +238,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS - LLM & PROMPT ENGINEERING (Added from skills-more)
   # --------------------------------------------------------------------------
+
   - skill_id: llm-app-patterns
     category: expert
     priority_score: 8
@@ -293,6 +298,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS - RAG & VOICE AI (Added from skills-more)
   # --------------------------------------------------------------------------
+
   - skill_id: rag-engineer
     category: expert
     priority_score: 8
@@ -328,6 +334,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS - AI PRODUCT (Added from skills-more)
   # --------------------------------------------------------------------------
+
   - skill_id: ai-product
     category: expert
     priority_score: 8
@@ -355,6 +362,7 @@ skills:
   # --------------------------------------------------------------------------
   # NEW SKILLS (Auto-cataloged 189 skills)
   # --------------------------------------------------------------------------
+
   - skill_id: activecampaign-automation
     category: community
     priority_score: 6
@@ -1867,3 +1875,10 @@ skills:
       profiles: ["ai-ml:*"]
     description: "Sub-skill de debates e posições de Yann LeCun. Cobre críticas técnicas detalhadas aos LLMs, rivalidades intelectuais ..."
 
+  - skill_id: vercel-ai-sdk-v4-mastra
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer, tech-lead]
+      profiles: ["ai-ml:*", "backend:execution", "frontend:execution"]
+    description: "Vercel AI SDK v4/v5 (streamText, generateObject, maxSteps tool calling) and Mastra TypeScript agent workflows/RAG"

@@ -1,6 +1,6 @@
 {
   "version": "5.5.0",
-  "totalSkills": 1430,
+  "totalSkills": 1452,
   "skills": {
     "senior-ml-engineer": {
       "domain": "ai-ml",
@@ -1376,6 +1376,12 @@
       "category": "community",
       "path": "skills_library/yann-lecun-debate/SKILL.md"
     },
+    "vercel-ai-sdk-v4-mastra": {
+      "domain": "ai-ml",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/vercel-ai-sdk-v4-mastra/SKILL.md"
+    },
     "architecture": {
       "domain": "architecture",
       "priority": 10,
@@ -1507,6 +1513,12 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/workflow-orchestration-patterns/SKILL.md"
+    },
+    "intelligent-routing": {
+      "domain": "architecture",
+      "priority": 9,
+      "category": "core",
+      "path": "skills/intelligent-routing/SKILL.md"
     },
     "api-patterns": {
       "domain": "backend",
@@ -2756,6 +2768,12 @@
       "category": "community",
       "path": "skills_library/yes-md/SKILL.md"
     },
+    "hono-rpc-zod-openapi": {
+      "domain": "backend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/hono-rpc-zod-openapi/SKILL.md"
+    },
     "cloud-architect": {
       "domain": "cloud",
       "priority": 8,
@@ -3158,6 +3176,12 @@
       "category": "community",
       "path": "skills_library/seo-programmatic/SKILL.md"
     },
+    "cloudflare-d1-r2-durable-objects": {
+      "domain": "cloud",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/cloudflare-d1-r2-durable-objects/SKILL.md"
+    },
     "database-design": {
       "domain": "data",
       "priority": 9,
@@ -3355,6 +3379,24 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/uniprot-database/SKILL.md"
+    },
+    "supabase-rls-edge-realtime": {
+      "domain": "data",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/supabase-rls-edge-realtime/SKILL.md"
+    },
+    "drizzle-neon-turso-edge": {
+      "domain": "data",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/drizzle-neon-turso-edge/SKILL.md"
+    },
+    "design-spec": {
+      "domain": "design",
+      "priority": 9,
+      "category": "core",
+      "path": "skills/design-spec/SKILL.md"
     },
     "aesthetic": {
       "domain": "design",
@@ -3919,6 +3961,42 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/vercel-deployment/SKILL.md"
+    },
+    "terraform-opentofu-production": {
+      "domain": "devops",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/terraform-opentofu-production/SKILL.md"
+    },
+    "frontend-architecture": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills/frontend-architecture/SKILL.md"
+    },
+    "nextjs-react-expert": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "expert",
+      "path": "skills_library/nextjs-react-expert/SKILL.md"
+    },
+    "tailwind-v4-shadcn-ui": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/tailwind-v4-shadcn-ui/SKILL.md"
+    },
+    "react-19-nextjs-15-rsc": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/react-19-nextjs-15-rsc/SKILL.md"
+    },
+    "tanstack-start-router-query": {
+      "domain": "frontend",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/tanstack-start-router-query/SKILL.md"
     },
     "react-patterns": {
       "domain": "frontend",
@@ -4580,6 +4658,42 @@
       "category": "core",
       "path": "skills_library/game-development/SKILL.md"
     },
+    "unity-6-dots-ecs-architecture": {
+      "domain": "gaming",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/unity-6-dots-ecs-architecture/SKILL.md"
+    },
+    "godot-4-gdscript-shaders-2d-3d": {
+      "domain": "gaming",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/godot-4-gdscript-shaders-2d-3d/SKILL.md"
+    },
+    "webgpu-wgsl-three-tsl": {
+      "domain": "gaming",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/webgpu-wgsl-three-tsl/SKILL.md"
+    },
+    "react-three-fiber-rapier-3d": {
+      "domain": "gaming",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/react-three-fiber-rapier-3d/SKILL.md"
+    },
+    "multiplayer-netcode-colyseus": {
+      "domain": "gaming",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/multiplayer-netcode-colyseus/SKILL.md"
+    },
+    "pixijs-v8-phaser-2d-games": {
+      "domain": "gaming",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/pixijs-v8-phaser-2d-games/SKILL.md"
+    },
     "game-developer": {
       "domain": "gaming",
       "priority": 8,
@@ -4604,12 +4718,6 @@
       "category": "community",
       "path": "skills_library/godot-gdscript-patterns/SKILL.md"
     },
-    "internal-comms-community": {
-      "domain": "gaming",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/internal-comms-community/SKILL.md"
-    },
     "makepad-shaders": {
       "domain": "gaming",
       "priority": 6,
@@ -4622,29 +4730,11 @@
       "category": "community",
       "path": "skills_library/makepad-skills/SKILL.md"
     },
-    "micro-saas-launcher": {
-      "domain": "gaming",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/micro-saas-launcher/SKILL.md"
-    },
-    "odoo-upgrade-advisor": {
-      "domain": "gaming",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/odoo-upgrade-advisor/SKILL.md"
-    },
     "shader-programming-glsl": {
       "domain": "gaming",
       "priority": 6,
       "category": "community",
       "path": "skills_library/shader-programming-glsl/SKILL.md"
-    },
-    "startup-business-analyst-market-opportunity": {
-      "domain": "gaming",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/startup-business-analyst-market-opportunity/SKILL.md"
     },
     "unity-developer": {
       "domain": "gaming",
@@ -4657,6 +4747,12 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/unity-ecs-patterns/SKILL.md"
+    },
+    "rust-axum-tokio-sqlx": {
+      "domain": "languages",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/rust-axum-tokio-sqlx/SKILL.md"
     },
     "typescript-expert": {
       "domain": "languages",
@@ -5150,12 +5246,6 @@
       "category": "specialized",
       "path": "skills_library/agent-framework-azure-hosted-agents/SKILL.md"
     },
-    "foundry-iq-agent": {
-      "domain": "mcp",
-      "priority": 5,
-      "category": "specialized",
-      "path": "skills_library/foundry-iq-agent/SKILL.md"
-    },
     "foundry-iq-python": {
       "domain": "mcp",
       "priority": 5,
@@ -5179,6 +5269,36 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/mcp-builder-ms/SKILL.md"
+    },
+    "mcp-server-fastmcp-2025": {
+      "domain": "mcp",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/mcp-server-fastmcp-2025/SKILL.md"
+    },
+    "openai-agents-sdk-orchestration": {
+      "domain": "mcp",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/openai-agents-sdk-orchestration/SKILL.md"
+    },
+    "claude-agent-sdk-patterns": {
+      "domain": "mcp",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/claude-agent-sdk-patterns/SKILL.md"
+    },
+    "google-adk-gemini-agents": {
+      "domain": "mcp",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/google-adk-gemini-agents/SKILL.md"
+    },
+    "tauri-v2-rust-desktop-mobile": {
+      "domain": "mobile",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/tauri-v2-rust-desktop-mobile/SKILL.md"
     },
     "mobile-development": {
       "domain": "mobile",
@@ -5701,6 +5821,12 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/track-management/SKILL.md"
+    },
+    "vitest-msw-testing-patterns": {
+      "domain": "quality",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/vitest-msw-testing-patterns/SKILL.md"
     },
     "testing-patterns": {
       "domain": "quality",
@@ -6770,11 +6896,11 @@
       "category": "specialized",
       "path": "skills_library/xss-html-injection/SKILL.md"
     },
-    "\"007\"": {
+    "007": {
       "domain": "security",
       "priority": 6,
       "category": "community",
-      "path": "skills_library/\"007\"/SKILL.md"
+      "path": "skills_library/007/SKILL.md"
     },
     "10-andruia-skill-smith": {
       "domain": "security",
@@ -7070,12 +7196,6 @@
       "category": "community",
       "path": "skills_library/secrets-management/SKILL.md"
     },
-    "security": {
-      "domain": "security",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/security/SKILL.md"
-    },
     "security-audit": {
       "domain": "security",
       "priority": 6,
@@ -7178,17 +7298,23 @@
       "category": "community",
       "path": "skills_library/web-security-testing/SKILL.md"
     },
+    "better-auth-typescript": {
+      "domain": "security",
+      "priority": 9,
+      "category": "core",
+      "path": "skills_library/better-auth-typescript/SKILL.md"
+    },
+    "owasp-llm-agent-security-2025": {
+      "domain": "security",
+      "priority": 10,
+      "category": "core",
+      "path": "skills_library/owasp-llm-agent-security-2025/SKILL.md"
+    },
     "chrome-devtools": {
       "domain": "tools",
       "priority": 7,
       "category": "utility",
       "path": "skills_library/chrome-devtools/SKILL.md"
-    },
-    "document-skills": {
-      "domain": "tools",
-      "priority": 6,
-      "category": "utility",
-      "path": "skills_library/document-skills/SKILL.md"
     },
     "changelog-generator": {
       "domain": "tools",
@@ -7423,12 +7549,6 @@
       "priority": 6,
       "category": "utility",
       "path": "skills_library/api-documentation-generator/SKILL.md"
-    },
-    "SPDD": {
-      "domain": "tools",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/SPDD/SKILL.md"
     },
     "address-github-comments": {
       "domain": "tools",
@@ -8042,12 +8162,6 @@
       "category": "community",
       "path": "skills_library/lead-magnets/SKILL.md"
     },
-    "libreoffice": {
-      "domain": "tools",
-      "priority": 6,
-      "category": "community",
-      "path": "skills_library/libreoffice/SKILL.md"
-    },
     "linkedin-automation": {
       "domain": "tools",
       "priority": 6,
@@ -8581,6 +8695,24 @@
       "priority": 6,
       "category": "community",
       "path": "skills_library/zoom-automation/SKILL.md"
+    },
+    "skill-seeker": {
+      "domain": "tools",
+      "priority": 9,
+      "category": "core",
+      "path": "skills/skill-seeker/SKILL.md"
+    },
+    "gitnexus-intelligence": {
+      "domain": "tools",
+      "priority": 8,
+      "category": "specialized",
+      "path": "skills_library/gitnexus-intelligence/SKILL.md"
+    },
+    "ai-ide-plugin-authoring": {
+      "domain": "tools",
+      "priority": 9,
+      "category": "expert",
+      "path": "skills_library/ai-ide-plugin-authoring/SKILL.md"
     }
   }
 }

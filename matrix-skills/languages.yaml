@@ -8,12 +8,21 @@
 domain: languages
 name: "Programming Languages"
 description: "Language-specific patterns and expertise"
-skill_count: 57
+skill_count: 58
 
 skills:
   # --------------------------------------------------------------------------
   # TYPESCRIPT/JAVASCRIPT (Priority 7-8)
   # --------------------------------------------------------------------------
+- skill_id: rust-axum-tokio-sqlx
+    category: core
+    priority: P0
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution", "languages:*"]
+    description: "Production async Rust with Tokio, Axum 0.8 state/extractor routing, Tower middleware, SQLx compile-time checked Postgres queries, and thiserror/tracing error handling."
+
   - skill_id: typescript-expert
     category: expert
     priority_score: 8
